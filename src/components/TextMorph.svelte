@@ -156,9 +156,6 @@ onMount(() => {
 		text-align: left;
 		font-weight: 600;
 		user-select: none;
-		/*background:  linear-gradient(to right, #D2B0EC, #AAC4A2, #8CB2D3, #F2DC9B);*/
-		/*-webkit-background-clip: text;*/
-		/*-webkit-text-fill-color: transparent;*/
 	}
 	#filters {
 		height: 0;

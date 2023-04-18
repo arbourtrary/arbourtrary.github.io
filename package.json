@@ -16,7 +16,6 @@
 	"type": "module",
 	"dependencies": {
 		"n": "^9.0.1",
-		"svelte-inview": "^4.0.0",
 		"three": "^0.151.2"
 	}
 }

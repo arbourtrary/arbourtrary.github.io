@@ -1,9 +1,9 @@
 <script>
-import { onMount } from "svelte";
 import * as THREE from 'three';
 // TODO: generalize to have this extend a platonic solid gallery component
 export let platonicSolid = "dodecahedron"
 export let filename = "./assets/dodecahedron.json";
+export let scrollY = 0;
 
 let numberOfSides = getNumberOfSides(platonicSolid)
 let drawn = false;
@@ -317,9 +317,8 @@ function drawPlatonicSolid(platonicSolid) {
 // }
 
 function updateGallery() {
-    const scrollY = window.scrollY;
-    const itemHeight = window.innerHeight
-    index = Math.floor((scrollY - gallery.offsetTop) / itemHeight);
+    const itemHeight = window.innerHeight;
+    index = gallery ? Math.floor((scrollY - gallery?.parentElement?.offsetTop) / itemHeight) : 0;
     
     if (index >= numberOfSides) {
         index = numberOfSides - 1

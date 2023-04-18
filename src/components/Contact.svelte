@@ -1,37 +1,27 @@
 <script>
     import { section } from "../store.js"
-	import { onMount } from "svelte";
-    import { inview } from 'svelte-inview';
 
     export let sectionIndex = 3;
     export let scrollY = 0;
 
-    let contact;
-    let isInView = false;
-    const options = {
-        rootMargin: '5px',
-        unobserveOnEnter: false,
-    };
-
-    const handleChange = ((e) => isInView = e.detail.inView);
-    $: isInView && section.set(sectionIndex)
+    let outerContainer;
+    $: offset = window.innerHeight / 2
+    $: outerContainer && (scrollY >= (outerContainer.offsetTop - offset)) && (scrollY < (outerContainer.offsetTop + outerContainer.offsetHeight - offset)) && $section !== sectionIndex && section.set(sectionIndex)
 
     let percent = 0
     let opacity = 0;
 
-    $: if (contact && scrollY > 0) {
-        percent = 1 - (contact.getBoundingClientRect().top + window.innerHeight / 2) / (window.innerHeight);
+    $: if (outerContainer && scrollY > 0) {
+        percent = 1 - (outerContainer.getBoundingClientRect().top + window.innerHeight / 2) / (window.innerHeight);
         opacity = percent / 2.5 - 0.2;
     } else {
     	opacity = 0;
     }
 </script>
 
-<div use:inview={options} on:inview_change={handleChange} style="position: relative; height: 100vh; width: 100vw"></div>
-<div class="background" bind:this={contact}>
+<div id="contact" class="background" bind:this={outerContainer}>
 	<img class="background-image" src="/images/bg_bw.png" style={`opacity: ${opacity};`}>
 </div>
-<div id="contact" style="height: 0;"></div>
 
 <style>
     .background {

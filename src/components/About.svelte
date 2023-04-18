@@ -1,21 +1,13 @@
 <script>
     import { section } from "../store.js"
     import TextMorph from "./TextMorph.svelte";
-    import { onMount } from "svelte";
-    import { inview } from 'svelte-inview';
 
     export let sectionIndex = 0;
-    let about;
-    let isInView = false;
-    const options = {
-        rootMargin: '-50px',
-        unobserveOnEnter: false,
-    };
-
-    const handleChange = ((e) => isInView = e.detail.inView);
-    $: isInView && section.set(sectionIndex)
-
     export let scrollY = 0;
+
+    let outerContainer;
+    $: offset = window.innerHeight / 2
+    $: outerContainer && (scrollY >= (outerContainer.offsetTop - offset)) && (scrollY < (outerContainer.offsetTop + outerContainer.offsetHeight - offset)) && $section !== sectionIndex && section.set(sectionIndex)
 
     let linearGradient;
     let morphTexts = ["David Newcomb", "arbourtrary"];
@@ -48,37 +40,39 @@
 
     // Create a function that highlights the correct header based on the equal splits of the height of the scrolling-anchor component
     function highlightHeader() {
-        const initialOffset = window.innerHeight / 4
-        const headers = about.querySelectorAll('.about-header');
-        const imgs = about.querySelectorAll('.about-img');
+        if (outerContainer) {
+            const initialOffset = window.innerHeight / 4
+            const headers = outerContainer.querySelectorAll('.about-header');
+            const imgs = outerContainer.querySelectorAll('.about-img');
 
-        const scrollingAnchorHeight = about.offsetHeight - window.innerHeight - initialOffset;
-        const headerHeight = scrollingAnchorHeight / headers.length;
-        const currentIndex = Math.floor((scrollY - initialOffset) / headerHeight);
+            const scrollingAnchorHeight = outerContainer.offsetHeight - window.innerHeight - initialOffset;
+            const headerHeight = scrollingAnchorHeight / headers.length;
+            const currentIndex = Math.floor((scrollY - initialOffset) / headerHeight);
 
-        // Loop through the headers
+            // Loop through the headers
 
-        for (let i = 0; i < headers.length; i++) {
-            if (scrollY > initialOffset) {
-                // If the current index is the same as the looped index
-                if (i === currentIndex) {
-                    // Add the active class
-                    headers[i].classList.add('active');
-                    headers[i].style.color = aboutColors[i]
-                    imgs[i].classList.add('active');
-                    interests = aboutInterests[i]
-                    linearGradient = linearGradients[i]
+            for (let i = 0; i < headers.length; i++) {
+                if (scrollY > initialOffset) {
+                    // If the current index is the same as the looped index
+                    if (i === currentIndex) {
+                        // Add the active class
+                        headers[i].classList.add('active');
+                        headers[i].style.color = aboutColors[i]
+                        imgs[i].classList.add('active');
+                        interests = aboutInterests[i]
+                        linearGradient = linearGradients[i]
+                    } else {
+                        // Remove the active class
+                        headers[i].classList.remove('active');
+                        headers[i].style.color = "lightgray"
+                        imgs[i].classList.remove('active');
+                    }
                 } else {
-                    // Remove the active class
+                    linearGradient = "linear-gradient(to right, #D2B0EC, #AAC4A2, #8CB2D3, #F2DC9B)";
                     headers[i].classList.remove('active');
                     headers[i].style.color = "lightgray"
-                    imgs[i].classList.remove('active');
+                    imgs[i].classList.add('active');
                 }
-            } else {
-                linearGradient = "linear-gradient(to right, #D2B0EC, #AAC4A2, #8CB2D3, #F2DC9B)";
-                headers[i].classList.remove('active');
-                headers[i].style.color = "lightgray"
-                imgs[i].classList.add('active');
             }
         }
         window.requestAnimationFrame(highlightHeader);
@@ -87,7 +81,7 @@
     window.requestAnimationFrame(() => { highlightHeader() })
 </script>
 
-<scrolling-anchor use:inview={options} on:inview_change="{handleChange}" id="about" bind:this={about} style="width: min(90vw, 1000px); margin: 0 auto; position: relative; height: 600vh; display: block;">
+<scrolling-anchor id="about" bind:this={outerContainer} style="width: min(90vw, 1000px); margin: 0 auto; position: relative; height: 600vh; display: block;">
     <div style="position: sticky; top: 0; display: flex; padding-top: 75px; height: calc(100vh - 75px); flex-direction: row; margin: auto 0; justify-content: center;">
 
         <div style="width: 375px; display: flex; flex-direction: column; margin: auto;">

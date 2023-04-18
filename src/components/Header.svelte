@@ -11,6 +11,8 @@
         titles.forEach((x, i) => { i !== $section && x.classList.remove("active") });
         titles[$section].classList.add("active")
     }
+
+    $: console.log($section)
 </script>
 
 <div class="header" bind:this={header}>

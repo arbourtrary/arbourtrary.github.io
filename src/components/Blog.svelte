@@ -1,21 +1,15 @@
 <script>
     import { section } from "../store.js"
-    import { onMount } from "svelte";
     import BlogRow from "./BlogRow.svelte";
-    import { inview } from 'svelte-inview';
 
     export let sectionIndex = 2;
     export let scrollY = 0;
 
-    let blog;
-    let isInView = false;
-    const options = {
-        rootMargin: '-50px',
-        unobserveOnEnter: false,
-    };
 
-    const handleChange = ((e) => isInView = e.detail.inView);
-    $: isInView && section.set(sectionIndex)
+    let outerContainer;
+    $: offset = window.innerHeight / 2
+    $: outerContainer && (scrollY >= (outerContainer.offsetTop - offset)) && (scrollY < (outerContainer.offsetTop + outerContainer.offsetHeight - offset)) && $section !== sectionIndex && section.set(sectionIndex)
+
 
     const blogPosts = [
         {date: "7/1/23", title: "Forest for the trees", slug: "forest-for-the-trees"},
@@ -50,7 +44,7 @@
 
 </script>
 
-<div id="blog" style={`height: auto; width: 100vw`} bind:this={blog} use:inview={options} on:inview_change={handleChange}>
+<div id="blog" style={`height: auto; width: 100vw`} bind:this={outerContainer}>
     <div style="position: relative; top: 0; display: flex; padding-top: 75px; flex-direction: row; margin: auto 0; justify-content: center;">
 
         <div style="height: 25vh;"></div>

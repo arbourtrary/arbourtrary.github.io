@@ -115,6 +115,7 @@
 />
 <Projects
     sectionIndex={1}
+    {scrollY}
 />
 <Blog
     sectionIndex={2}
