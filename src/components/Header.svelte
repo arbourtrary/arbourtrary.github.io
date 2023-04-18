@@ -1,0 +1,59 @@
+<script>
+    import { section } from "../store.js"
+
+    let header;
+    let titles = [];
+    $: if (header) {
+        titles = header.querySelectorAll(".title")
+    }
+
+    $: if (titles.length) {
+        titles.forEach((x, i) => { i !== $section && x.classList.remove("active") });
+        titles[$section].classList.add("active")
+    }
+</script>
+
+<div class="header" bind:this={header}>
+    <div class="title active"><a on:click={() => section.set(0)} href="#about">About</a></div>
+    <div class="title"><a on:click={() => section.set(1)} href="#projects">Projects</a></div>
+    <div class="title"><a on:click={() => section.set(2)} href="#blog">Blog</a></div>
+    <div class="title"><a on:click={() => section.set(3)} href="#contact">Contact</a></div>
+</div>
+
+<style>
+    .header {
+        width: 100vw;
+        margin: 0 auto;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-top: 30px;
+        background: white;
+        z-index: 10;
+        padding-bottom: 20px;
+    }
+    .title {
+        width: 100px;
+        font-size: 15px;
+        text-transform: uppercase;
+        font-family: 'Avenir';
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-align: center;
+        margin: 0px 40px;
+        padding-bottom: 5px;
+        color: lightgray !important;
+        border-bottom: 1px solid lightgray;
+    }
+    .title.active {
+        color: black !important;
+        border-bottom: 1px solid black !important;
+    }
+    .title a {
+        text-decoration: none;
+        color: inherit !important;
+    }
+</style>
