@@ -11,8 +11,6 @@
         titles.forEach((x, i) => { i !== $section && x.classList.remove("active") });
         titles[$section].classList.add("active")
     }
-
-    $: console.log($section)
 </script>
 
 <div class="header" bind:this={header}>
@@ -57,5 +55,24 @@
     .title a {
         text-decoration: none;
         color: inherit !important;
+    }
+    @media screen and (max-width: 992px) {
+        .title {
+            padding-top: 15px;
+            width: auto;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin: 0px 16px;
+            padding-bottom: 2px;
+        }
+        .header {
+            box-shadow: 
+                0px 0px 10px white,
+                0px 0px 10px white,
+                0px 0px 10px white,
+                0px 0px 10px white,
+                0px 0px 10px white;
+            padding:  0;
+        }
     }
 </style>

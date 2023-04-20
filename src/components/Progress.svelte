@@ -41,6 +41,10 @@
     </svg>
 </div>
 
+<div class="progress-container-mobile">
+    <div class="progress-bar" style={`width: ${scrollProgress * 100}%`}></div>
+</div>
+
 <style>
     .progress-container {
         pointer-events: none;
@@ -68,5 +72,32 @@
         stroke-dashoffset: 1;
         transition: stroke-dashoffset 250ms linear;
         opacity: 1;
+    }
+    .progress-container-mobile {
+        display: none;
+    }
+    @media screen and (max-width: 992px) {
+        .progress-container {
+            display: none;
+        }
+        .progress-container-mobile {
+            display: block;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 3px;
+            z-index: 11;
+            background: lightgray;
+        }
+        .progress-bar {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 0;
+            height: 3px;
+            z-index: 12;
+            background: darkgray;
+        }
     }
 </style>

@@ -13,20 +13,31 @@
 
     $: if (outerContainer && scrollY > 0) {
         percent = 1 - (outerContainer.getBoundingClientRect().top + window.innerHeight / 2) / (window.innerHeight);
-        opacity = percent / 2.5 - 0.2;
+        opacity = percent / 10;
     } else {
+        percent = 0;
     	opacity = 0;
     }
 </script>
 
-<div id="contact" class="background" bind:this={outerContainer}>
+<div class="background" bind:this={outerContainer}>
 	<img class="background-image" src="/images/bg_bw.png" style={`opacity: ${opacity};`}>
+    <div class="background-contacts" style={`opacity: ${Math.pow(percent, 3)};`}>
+        <p class="logo-text" style={`pointer-events: ${$section === sectionIndex ? 'all' : 'none'};`}>Follow me on Twitter :)</p>
+        <a class="logo twitter" style={`pointer-events: ${$section === sectionIndex ? 'all' : 'none'};`} href="https://www.twitter.com/arbourtrary" target="_blank"></a>
+        <p class="logo-text" style={`pointer-events: ${$section === sectionIndex ? 'all' : 'none'};`}>Check out my code on Github</p>
+        <a class="logo github" style={`pointer-events: ${$section === sectionIndex ? 'all' : 'none'};`} href="https://github.com/arbourtrary" target="_blank"></a>
+    </div>
 </div>
-
+<div id="contact"></div>
 <style>
+    #id {
+        height: 0px;
+    }
     .background {
     	height: 150vh;
     	position: relative;
+        pointer-events: none;
     }
     .background-image {
 		transition: opacity 250ms linear;
@@ -39,6 +50,44 @@
 		pointer-events: none;
 		object-fit: cover;
 		object-position: right;
-		pointer-events: none;
+    }
+    .background-contacts {
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        top: 0px;
+        left: 0px;
+        z-index: 11;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+    .logo-text {
+        text-align: center;
+        margin: 5px;
+        font-family: 'Avenir';
+    }
+    .logo {
+        height: 50px;
+        width: 50px;
+        margin: 20px auto;
+        background: gray;
+        transition: all 100ms ease-in;
+    }
+    .logo:hover {
+        transform: scale(1.2);
+    }
+    .twitter {
+        background: no-repeat center url("/images/twitter.png");
+        background-size: contain;
+    }
+    .mastodon {
+        background: no-repeat center url("/images/mastodon.png");
+        background-size: contain;
+    }
+    .github {
+        background: no-repeat center url("/images/github.svg");
+        background-size: contain;
     }
 </style>

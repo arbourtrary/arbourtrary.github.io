@@ -44,10 +44,10 @@
 
 </script>
 
-<div id="blog" style={`height: auto; width: 100vw`} bind:this={outerContainer}>
-    <div style="position: relative; top: 0; display: flex; padding-top: 75px; flex-direction: row; margin: auto 0; justify-content: center;">
 
-        <div style="height: 25vh;"></div>
+<div id="blog" style={`height: auto; width: 100vw`} bind:this={outerContainer}>
+    <div class="blog-spacer"></div>
+    <div style="position: relative; top: 0; display: flex; flex-direction: row; margin: auto 0; justify-content: center;">
         <div style="width: min(95vw, 500px); display: flex; flex-direction: column; margin: auto;">
             {#each blogPosts as blogPost, i}
                 <BlogRow 
@@ -63,5 +63,13 @@
 <style>
     #blog {
         width: 100vw;
+    }
+    .blog-spacer {
+        height: 25vh;
+    }
+    @media screen and (max-width: 992px) {
+        .blog-spacer {
+            height: 50px;
+        }
     }
 </style>

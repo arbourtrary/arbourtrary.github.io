@@ -85,6 +85,20 @@
         color: black;
         font-family: 'Avenir';
     }
+    :global(.desktop) {
+        display: block;
+    }
+    :global(.mobile) {
+        display: none;
+    }
+    @media screen and (max-width: 992px) {
+        :global(.desktop) {
+            display: none;
+        }
+        :global(.mobile) {
+            display: block;
+        }
+    }
 </style>
 <script>
     import Header from "../components/Header.svelte"

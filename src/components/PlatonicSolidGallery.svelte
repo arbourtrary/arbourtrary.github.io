@@ -226,9 +226,10 @@ awards = data[0].awards.join(", ");
 tags = data[0].tags.join(", ");
 
 function drawPlatonicSolid(platonicSolid) {
+    console.log(canvas)
     // TODO: figure out how to get gallery height non-circularly
-    const width = 550// window.innerWidth / 2;
-    const height = 550//window.innerHeight / 2;
+    const width = .8 * Math.min(window.innerHeight, window.innerHeight); // window.innerWidth / 2;
+    const height =  .8 * Math.min(window.innerHeight, window.innerHeight); 
     const dimension = Math.max(width, height);
     const pixelRatio = Math.min(window.devicePixelRatio, 2);
     scene = new THREE.Scene();
@@ -356,38 +357,65 @@ window.requestAnimationFrame(() => { updateGallery() })
 
 $: windowHeight = 789; //window.innerHeight;
 $: galleryHeight = windowHeight * numberOfSides;
+    
+    let innerWidth = window.innerWidth
+
+    $: isMobile = innerWidth < 1000;
 
 </script>
+
+<svelte:window bind:innerWidth={innerWidth}/>
 
 <div class="platonic-gallery" bind:this={gallery}>
     <div class="foreground" style={`height: ${galleryHeight}px`}></div>
 
     <div class="background" style="height: calc(100vh - 75px);">
 
-        <div style="width: 375px; display: flex; flex-direction: column; margin: auto;">
+        <div class="details-container">
             <div class="title">{@html title}</div>
             <div class="description">{description}</div>
-            <div class="details">
-                <div class="detail">
-                    <p class="section-subtitle">Tags</p>
-                    <p class="detail-description">{tags}</p>
-                </div>
-                {#if awards}
+            {#if !isMobile}
+                <div class="details">
                     <div class="detail">
-                        <p class="section-subtitle">Awards</p>
-                        <p class="detail-description">{awards}</p>
+                        <p class="section-subtitle">Tags</p>
+                        <p class="detail-description">{tags}</p>
                     </div>
-                {/if}
-                <div class="detail">
-                    <p class="section-subtitle">Year</p>
-                    <p class="detail-description">{year}</p>
+                    {#if awards}
+                        <div class="detail">
+                            <p class="section-subtitle">Awards</p>
+                            <p class="detail-description">{awards}</p>
+                        </div>
+                    {/if}
+                    <div class="detail">
+                        <p class="section-subtitle">Year</p>
+                        <p class="detail-description">{year}</p>
+                    </div>
                 </div>
-            </div>
+            {/if}
         </div>
 
         <div class="canvas"> 
-            <canvas bind:this={canvas} width="1252" height="1052" data-engine="three.js r148dev"></canvas>
+            <canvas bind:this={canvas}></canvas>
         </div>
+
+        {#if isMobile}
+            <div class="details">
+                    <div class="detail">
+                        <p class="section-subtitle">Tags</p>
+                        <p class="detail-description">{tags}</p>
+                    </div>
+                    {#if awards}
+                        <div class="detail">
+                            <p class="section-subtitle">Awards</p>
+                            <p class="detail-description">{awards}</p>
+                        </div>
+                    {/if}
+                    <div class="detail">
+                        <p class="section-subtitle">Year</p>
+                        <p class="detail-description">{year}</p>
+                    </div>
+                </div>
+        {/if}
     </div>
 </div>
 
@@ -395,32 +423,73 @@ $: galleryHeight = windowHeight * numberOfSides;
     .platonic-gallery {
         display: flex;
         justify-content: center;
-        width: min(90vw, 1000px); margin: 0 auto;
+        width: min(90vw, 1000px);
+        margin: 0 auto;
     }
     .background {
-        width: min(90vw, 1000px);
+        width: 100%;
         position: sticky;
         top: 0px;
         display: flex;
         flex-direction: row;
-        padding-top: 75px; height: calc(100vh - 75px); 
+        padding-top: 75px;
+        height: calc(100vh - 75px); 
     }
     .details {
         margin-top: 50px;
     }
-    .canvas {
+    .details-container {
+        width: 375px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        height: min(80vh, 800px);
-        width: min(80vh, 800px);
         margin: auto;
     }
+    .canvas {
+        height: min(80vh, 90vw);
+        width: min(80vh, 90vw);
+        margin: auto;
+        position: relative;
+    }
+
     .title, .description, .details {
         margin: 5px 40px 0px 0px;
         font-family: 'Avenir';
     }
     .title {
         font-size: 28px;
+    }
+    @media screen and (max-width: 992px) {
+        .background {
+            flex-direction: column;
+            padding-top: 50px;
+            height: calc(100vh - 50px); 
+            justify-content: center;
+        }
+        .details-container {
+            width: min(100%, 400px);
+            height: 100px;
+            margin: 0;
+        }
+        .canvas {
+            height: min(80vh, 90vw, 500px);
+            width: min(80vh, 90vw, 500px);
+            margin: 10px auto;
+        }
+        canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+        .detail-description {
+            margin: 5px;
+        }
+        .section-subtitle {
+            margin: 0px;
+        }
+        .details {
+            height: 155px;
+        }
+        .description, .details {
+            font-size: 14px;
+        }
     }
 </style>

@@ -51,4 +51,21 @@
         line-height: 40px;
         margin-left: 10px;
     }
+    @media screen and (max-width: 992px) {
+        .row {
+            height: 25px;
+        }
+        .date {
+            font-size: 10px;
+            line-height: 12px;
+        }
+        .droplet {
+            width: 25px;
+            height: 25px;
+        }
+        .title {
+            font-size: 16px;
+            line-height: 25px;
+        }
+    }
 </style>

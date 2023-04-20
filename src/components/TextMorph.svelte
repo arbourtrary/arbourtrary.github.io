@@ -152,12 +152,18 @@ onMount(() => {
 		display: inline-block;
 		letter-spacing: 0.1px;
 		font-family: 'Raleway', sans-serif;
-		font-size: 35px;
+		font-size: 42px;
 		text-align: left;
 		font-weight: 600;
 		user-select: none;
 	}
 	#filters {
 		height: 0;
+	}
+	@media screen and (max-width: 992px) {
+		#text1, #text2 {
+			width: 100%;
+			text-align: center;
+		}
 	}
 </style>
