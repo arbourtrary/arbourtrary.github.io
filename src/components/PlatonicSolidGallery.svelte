@@ -115,7 +115,6 @@ function getFaceMidpoints() {
     const faceMidpoints = []
     for (var i = 0; i < dodecaFaces.length; i++) {
         const faceVertices = dodecaFaces[i]
-        console.log(faceVertices, i)
         const faceMidpoint = [0,0,0]
         for (var j = faceVertices.length - 1; j >= 0; j--) {
             const faceVertex = faceVertices[j]
@@ -226,7 +225,6 @@ awards = data[0].awards.join(", ");
 tags = data[0].tags.join(", ");
 
 function drawPlatonicSolid(platonicSolid) {
-    console.log(canvas)
     // TODO: figure out how to get gallery height non-circularly
     const width = .8 * Math.min(window.innerHeight, window.innerHeight); // window.innerWidth / 2;
     const height =  .8 * Math.min(window.innerHeight, window.innerHeight); 
@@ -376,10 +374,6 @@ $: galleryHeight = windowHeight * numberOfSides;
             <div class="description">{description}</div>
             {#if !isMobile}
                 <div class="details">
-                    <div class="detail">
-                        <p class="section-subtitle">Tags</p>
-                        <p class="detail-description">{tags}</p>
-                    </div>
                     {#if awards}
                         <div class="detail">
                             <p class="section-subtitle">Awards</p>
@@ -387,9 +381,13 @@ $: galleryHeight = windowHeight * numberOfSides;
                         </div>
                     {/if}
                     <div class="detail">
+                        <p class="section-subtitle">Tags</p>
+                        <p class="detail-description">{tags}</p>
+                    </div>
+                    <!-- <div class="detail">
                         <p class="section-subtitle">Year</p>
                         <p class="detail-description">{year}</p>
-                    </div>
+                    </div> -->
                 </div>
             {/if}
         </div>
@@ -400,10 +398,6 @@ $: galleryHeight = windowHeight * numberOfSides;
 
         {#if isMobile}
             <div class="details">
-                    <div class="detail">
-                        <p class="section-subtitle">Tags</p>
-                        <p class="detail-description">{tags}</p>
-                    </div>
                     {#if awards}
                         <div class="detail">
                             <p class="section-subtitle">Awards</p>
@@ -411,9 +405,13 @@ $: galleryHeight = windowHeight * numberOfSides;
                         </div>
                     {/if}
                     <div class="detail">
+                        <p class="section-subtitle">Tags</p>
+                        <p class="detail-description">{tags}</p>
+                    </div>
+                    <!-- <div class="detail">
                         <p class="section-subtitle">Year</p>
                         <p class="detail-description">{year}</p>
-                    </div>
+                    </div> -->
                 </div>
         {/if}
     </div>
@@ -445,9 +443,9 @@ $: galleryHeight = windowHeight * numberOfSides;
         margin: auto;
     }
     .canvas {
-        height: min(80vh, 90vw);
-        width: min(80vh, 90vw);
-        margin: auto;
+        height: min(80vh, 85vw);
+        width: min(80vh, 85vw);
+        margin: 0 auto;
         position: relative;
     }
 
@@ -468,11 +466,11 @@ $: galleryHeight = windowHeight * numberOfSides;
         .details-container {
             width: min(100%, 400px);
             height: 100px;
-            margin: 0;
+            margin: 0 auto;
         }
         .canvas {
-            height: min(80vh, 90vw, 500px);
-            width: min(80vh, 90vw, 500px);
+            height: min(80vh, 90vw, 600px);
+            width: min(80vh, 90vw, 600px);
             margin: 10px auto;
         }
         canvas {
@@ -483,13 +481,33 @@ $: galleryHeight = windowHeight * numberOfSides;
             margin: 5px;
         }
         .section-subtitle {
-            margin: 0px;
+            margin: 0px auto;
+            padding-right: 0px;
+            padding-bottom: 1px;
+            font-size: 11px;
         }
         .details {
             height: 155px;
+            margin: 0 auto;
+        }
+        .detail {
+            padding-bottom: 10px;
+        }
+        .title {
+            text-align: center;
+            margin: 5px 0 0 0;
         }
         .description, .details {
             font-size: 14px;
+            text-align: center;
+            margin: 5px 0 0 0;
+        }
+    }
+
+    @media screen and (max-width: 700px) {
+        .img-container {
+            height: min(80vh, 90vw, 500px);
+            width: min(80vh, 90vw, 500px);
         }
     }
 </style>

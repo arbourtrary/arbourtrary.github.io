@@ -21,7 +21,7 @@ onMount(() => {
 	};
 
 	// Controls the speed of morphing.
-	const morphTime = 5;
+	const morphTime = 2;
 	const cooldownTime = 3;
 
 	let textIndex = texts.length - 1;
@@ -152,18 +152,20 @@ onMount(() => {
 		display: inline-block;
 		letter-spacing: 0.1px;
 		font-family: 'Raleway', sans-serif;
-		font-size: 42px;
+		font-size: 40px;
 		text-align: left;
 		font-weight: 600;
 		user-select: none;
+		width: max-content;
 	}
 	#filters {
 		height: 0;
 	}
-	@media screen and (max-width: 992px) {
+	@media screen and (max-width: 1000px) {
 		#text1, #text2 {
-			width: 100%;
 			text-align: center;
+			transform: translate(-50%, 0);
+    		left: 50%;
 		}
 	}
 </style>

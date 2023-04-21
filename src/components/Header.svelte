@@ -56,9 +56,9 @@
         text-decoration: none;
         color: inherit !important;
     }
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 1000px) {
         .title {
-            padding-top: 15px;
+            padding-top: min(2vh, 12px);
             width: auto;
             font-size: 12px;
             letter-spacing: 2px;

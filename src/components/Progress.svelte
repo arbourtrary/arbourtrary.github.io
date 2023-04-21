@@ -21,10 +21,10 @@
     <svg
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
-        viewBox="0 0 4320 2366"
+        viewBox="0 0 4290 2366"
         width="100%"
         height="100%"
-        preserveAspectRatio={window.innerWidth / window.innerHeight > (4320 / 2366) ? "xMidYMid slice" : "xMaxYMax slice"}
+        preserveAspectRatio={window.innerWidth / window.innerHeight > (4290 / 2366) ? "xMidYMid slice" : "xMaxYMax slice"}
         xmlns:xlink="http://www.w3.org/1999/xlink"
     >
 
@@ -42,7 +42,7 @@
 </div>
 
 <div class="progress-container-mobile">
-    <div class="progress-bar" style={`width: ${scrollProgress * 100}%`}></div>
+    <div class="progress-bar" style={`height: ${scrollProgress * 100}%`}></div>
 </div>
 
 <style>
@@ -76,7 +76,7 @@
     .progress-container-mobile {
         display: none;
     }
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 1000px) {
         .progress-container {
             display: none;
         }
@@ -85,8 +85,8 @@
             position: fixed;
             top: 0px;
             left: 0px;
-            width: 100%;
-            height: 3px;
+            height: 100%;
+            width: 3px;
             z-index: 11;
             background: lightgray;
         }
@@ -94,10 +94,10 @@
             position: absolute;
             top: 0px;
             left: 0px;
-            width: 0;
-            height: 3px;
+            width: 3px;
+            height: 0px;
             z-index: 12;
-            background: darkgray;
+            background: #444;
         }
     }
 </style>

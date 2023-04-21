@@ -91,7 +91,7 @@
     :global(.mobile) {
         display: none;
     }
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 1000px) {
         :global(.desktop) {
             display: none;
         }
@@ -110,14 +110,14 @@
 
     let scrollY = 0;
 
-    function updateScrollY() {
-        scrollY = window.scrollY
-        window.requestAnimationFrame(updateScrollY);
-    }
+    // function updateScrollY() {
+    //     scrollY = window.scrollY
+    //     window.requestAnimationFrame(updateScrollY);
+    // }
 
-    window.requestAnimationFrame(() => { updateScrollY() })
+    // window.requestAnimationFrame(() => { updateScrollY() })
 </script>
-
+<svelte:window bind:scrollY={scrollY}/>
 <!-- Sticky elements -->
 <Header/>
 <Progress {scrollY}/>

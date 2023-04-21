@@ -14,24 +14,24 @@
     const blogPosts = [
         {date: "7/1/23", title: "Forest for the trees", slug: "forest-for-the-trees"},
         {date: "6/1/23", title: "ChatGOT & other puns", slug: "chat-got-puns"},
-        {date: "5/1/23", title: "Orbital tensors, false inventions", slug: "orbital-tensors-false-inventions"},
-        {date: "4/1/23", title: "Scrollytelling with MapLibre", slug: "scrollytelling-maplibre"},
-        {date: "7/1/23", title: "Forest for the trees", slug: "forest-for-the-trees"},
-        {date: "6/1/23", title: "ChatGOT & other puns", slug: "chat-got-puns"},
-        {date: "5/1/23", title: "Orbital tensors, false inventions", slug: "orbital-tensors-false-inventions"},
-        {date: "4/1/23", title: "Scrollytelling with MapLibre", slug: "scrollytelling-maplibre"},
-        {date: "7/1/23", title: "Forest for the trees", slug: "forest-for-the-trees"},
-        {date: "6/1/23", title: "ChatGOT & other puns", slug: "chat-got-puns"},
-        {date: "5/1/23", title: "Orbital tensors, false inventions", slug: "orbital-tensors-false-inventions"},
-        {date: "4/1/23", title: "Scrollytelling with MapLibre", slug: "scrollytelling-maplibre"},
-        {date: "7/1/23", title: "Forest for the trees", slug: "forest-for-the-trees"},
-        {date: "6/1/23", title: "ChatGOT & other puns", slug: "chat-got-puns"},
-        {date: "5/1/23", title: "Orbital tensors, false inventions", slug: "orbital-tensors-false-inventions"},
-        {date: "4/1/23", title: "Scrollytelling with MapLibre", slug: "scrollytelling-maplibre"},
-        {date: "7/1/23", title: "Forest for the trees", slug: "forest-for-the-trees"},
-        {date: "6/1/23", title: "ChatGOT & other puns", slug: "chat-got-puns"},
-        {date: "5/1/23", title: "Orbital tensors, false inventions", slug: "orbital-tensors-false-inventions"},
-        {date: "4/1/23", title: "Scrollytelling with MapLibre", slug: "scrollytelling-maplibre"},
+        {date: "5/1/23", title: "Orbital tensors, false inventions", slug: "orbital-tensors-false-inventions"}
+        // {date: "4/1/23", title: "Scrollytelling with MapLibre", slug: "scrollytelling-maplibre"},
+        // {date: "7/1/23", title: "Forest for the trees", slug: "forest-for-the-trees"},
+        // {date: "6/1/23", title: "ChatGOT & other puns", slug: "chat-got-puns"},
+        // {date: "5/1/23", title: "Orbital tensors, false inventions", slug: "orbital-tensors-false-inventions"},
+        // {date: "4/1/23", title: "Scrollytelling with MapLibre", slug: "scrollytelling-maplibre"},
+        // {date: "7/1/23", title: "Forest for the trees", slug: "forest-for-the-trees"},
+        // {date: "6/1/23", title: "ChatGOT & other puns", slug: "chat-got-puns"},
+        // {date: "5/1/23", title: "Orbital tensors, false inventions", slug: "orbital-tensors-false-inventions"},
+        // {date: "4/1/23", title: "Scrollytelling with MapLibre", slug: "scrollytelling-maplibre"},
+        // {date: "7/1/23", title: "Forest for the trees", slug: "forest-for-the-trees"},
+        // {date: "6/1/23", title: "ChatGOT & other puns", slug: "chat-got-puns"},
+        // {date: "5/1/23", title: "Orbital tensors, false inventions", slug: "orbital-tensors-false-inventions"},
+        // {date: "4/1/23", title: "Scrollytelling with MapLibre", slug: "scrollytelling-maplibre"},
+        // {date: "7/1/23", title: "Forest for the trees", slug: "forest-for-the-trees"},
+        // {date: "6/1/23", title: "ChatGOT & other puns", slug: "chat-got-puns"},
+        // {date: "5/1/23", title: "Orbital tensors, false inventions", slug: "orbital-tensors-false-inventions"},
+        // {date: "4/1/23", title: "Scrollytelling with MapLibre", slug: "scrollytelling-maplibre"},
     ]  
 
 
@@ -46,9 +46,9 @@
 
 
 <div id="blog" style={`height: auto; width: 100vw`} bind:this={outerContainer}>
-    <div class="blog-spacer"></div>
+    <!-- <div class="blog-spacer"></div> -->
     <div style="position: relative; top: 0; display: flex; flex-direction: row; margin: auto 0; justify-content: center;">
-        <div style="width: min(95vw, 500px); display: flex; flex-direction: column; margin: auto;">
+        <div style="width: min(95vw, 500px); display: flex; flex-direction: column; margin: auto; min-height: 100vh; justify-content: center;">
             {#each blogPosts as blogPost, i}
                 <BlogRow 
                     {scrollY}
@@ -65,9 +65,9 @@
         width: 100vw;
     }
     .blog-spacer {
-        height: 25vh;
+        height: 15vh;
     }
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 1000px) {
         .blog-spacer {
             height: 50px;
         }

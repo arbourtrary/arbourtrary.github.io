@@ -9,12 +9,14 @@
 
     $: if (blogRow && scrollY) {
         percent = 1 - blogRow.getBoundingClientRect().top / (window.innerHeight)
-        opacity = percent > 0.6 ? 0.8 - (percent - 0.4) : percent < 0.4 ? 2 * percent : 0.8
+        opacity = percent < 0.5 ? 1.5 * percent : 1
+        // fadein til midpage then fadeout
+        // opacity = percent > 0.6 ? 0.8 - (percent - 0.4) : percent < 0.4 ? 2 * percent : 0.8
         opacity = opacity > 1.0 ? 1 : opacity < 0 ? 0 : opacity;
     }
 </script>
 
-<div bind:this={blogRow} class="row" style={`display: flex; flex-direction: row; opacity: ${opacity}`}>
+<div bind:this={blogRow} class="row" style={`opacity: ${opacity}`}>
     <div class="date">{@html blogPost.date}</div>
     <div class="droplet"><span 
         style="filter:invert(81%) sepia(6%) saturate(2525%) hue-rotate(178deg) brightness(86%) contrast(92%);"
@@ -28,6 +30,9 @@
         margin: 10px;
         height: 40px;
         transition: opacity 50ms linear;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
     .row:hover {
         opacity: 1 !important;
@@ -40,7 +45,6 @@
         white-space: pre-line;
         margin-right: 10px;
         line-height: 20px;
-        margin-left: 20px;
     }
     .droplet {
         width: 40px;
@@ -51,7 +55,7 @@
         line-height: 40px;
         margin-left: 10px;
     }
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 1000px) {
         .row {
             height: 25px;
         }

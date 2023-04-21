@@ -1,6 +1,7 @@
 <script>
     import { section } from "../store.js"
     import TextMorph from "./TextMorph.svelte";
+    import { onMount } from "svelte";
 
     export let sectionIndex = 0;
     export let scrollY = 0;
@@ -31,7 +32,7 @@
         "linear-gradient(to right, #e6e6e6, #e6e6e6, #e6e6e6, #e6e6e6)"
     ]
 
-    const headerTexts = ["Creative Developer", "Environmentalist", "Mathematician", "Poetry Enthusiast"]
+    const headerTexts = ["Creative Developer", "Environmentalist", "Applied Mathematician", "Poetry Enthusiast"]
 
     const aboutInterests = [
         ['threeJS', 'generative art', 'threeJS', 'generative art', 'threeJS', 'generative art', 'threeJS', 'generative art'],
@@ -39,15 +40,20 @@
         ['threeJS', 'generative art'],
         ['threeJS', 'generative art', 'threeJS', 'generative art', 'threeJS', 'generative art', 'threeJS', 'generative art', 'threeJS', 'generative art']
     ]
-    let interests  = aboutInterests[0]
+    let interests = [];
     let currentIndex = -1;
+
+    let headers = []
+    let imgs = []
+    onMount(() => {
+        headers = outerContainer.querySelectorAll('.about-header');
+        imgs = outerContainer.querySelectorAll('.about-img');
+    });
+
     // Create a function that highlights the correct header based on the equal splits of the height of the scrolling-anchor component
     function highlightHeader() {
         if (outerContainer) {
             const initialOffset = window.innerHeight / 4
-            const headers = outerContainer.querySelectorAll('.about-header');
-            const imgs = outerContainer.querySelectorAll('.about-img');
-
             const scrollingAnchorHeight = outerContainer.offsetHeight - window.innerHeight - initialOffset;
             const headerHeight = scrollingAnchorHeight / headerTexts.length;
             currentIndex = Math.floor((scrollY - initialOffset) / headerHeight);
@@ -81,18 +87,20 @@
                         headers[i].style.color = "lightgray"                        
                     }
                     imgs[i].classList.add('active');
+                    interests = []
                 }
             }
         }
         window.requestAnimationFrame(highlightHeader);
     }
-    let innerWidth = window.innerWidth
-
-    $: isMobile = innerWidth < 1000;
-
     window.requestAnimationFrame(() => { highlightHeader() })
 
+
+
+    let innerWidth = window.innerWidth
+    $: isMobile = innerWidth < 1000;
 </script>
+
 <svelte:window bind:innerWidth={innerWidth}/>
 
 <scrolling-anchor id="about" bind:this={outerContainer}>
@@ -120,7 +128,7 @@
                 <div class="about-header">Mathematician</div>
                 <div class="about-header">Poetry Enthusiast</div>
                 <div class="about-interests">
-                    <div class="section-subtitle">Interests</div>
+                    <div class="section-subtitle" style={`visibility: ${interests.length ? 'visible' : 'hidden'}`}>Interests</div>
                     <div class="section-description">{@html interests.join(", ")}</div>
                 </div>
             </div>
@@ -146,9 +154,20 @@
                     style={`
                         color: ${currentIndex >= 0 ? aboutColors[currentIndex] : 'gray'};
                         font-weight: ${currentIndex >= 0 ? '900' : '300'};
+                        ${currentIndex >= 0 ? "" : "margin: 15px auto 0px auto; border: none; text-transform: none; letter-spacing: normal;"}
                     `}
-                    class="section-subtitle center">{currentIndex >= 0 ? headerTexts[currentIndex] : "Interests"}
+                    class="section-subtitle center">{currentIndex >= 0 ? headerTexts[currentIndex] : "Scroll to explore"}
                 </div>
+                {#if currentIndex < 0}
+                    <div class="line line-one"></div>
+                    <div class="line line-two"></div>
+                    <div class="line line-three"></div>
+                    <div class="line line-four"></div>
+                    <div class="line line-five"></div>
+                    <div class="line line-six"></div>
+                    <div class="line line-seven"></div>
+                    <div class="line line-eight"></div>
+                {/if}
                 <div class="section-description center">{@html interests.join(", ")}</div>
             </div>
         {/if}
@@ -156,17 +175,154 @@
 </scrolling-anchor>
 
 <style>
+    .line {
+        display:block;
+        border-top:1px solid black;
+        text-align:center;
+        padding-bottom: 5px;
+        margin: 0 auto;
+    }
+    .line-one {
+        width:75px;
+        animation: line1 3s infinite linear;
+        animation-delay: 100ms;
+    }
+    .line-two {
+        width:58px;
+        animation: line2 3s infinite linear;
+        animation-delay: 200ms;
+    }
+    .line-three {
+        width:40px;
+        animation: line3 3s infinite linear;
+        animation-delay: 300ms;
+    }
+    .line-four {
+        width:25px;
+        animation: line4 3s infinite linear;
+        animation-delay: 400ms;
+    }
+    .line-five {
+        width:15px;
+        animation: line5 3s infinite linear;
+        animation-delay: 500ms;
+    }
+    .line-six {
+        width:8px;
+        animation: line6 3s infinite linear;
+        animation-delay: 600ms;
+    }
+    .line-seven {
+        width:5px;
+        animation: line7 3s infinite linear;
+        animation-delay: 700ms;
+    }
+    .line-eight {
+        width:2px;
+        animation: line8 3s infinite linear;
+        animation-delay: 800ms;
+    }
+
+    @keyframes line1 {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.1;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes line2 {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.1;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes line3 {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.1;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes line4 {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.1;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes line5 {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.1;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes line6 {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.1;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes line7 {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.1;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes line8 {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.1;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
     scrolling-anchor {
         padding-bottom: 20px;
         width: min(90vw, 1000px);
         margin: 0 auto;
         position:relative;
-        height: 600vh;
+        height: 400vh;
         display: block;
     }
     .about-container {
         position: sticky;
         top: 0;
+        -webkit-display: flex;
         display: flex;
         padding-top: 75px;
         height: calc(100vh - 75px);
@@ -175,9 +331,8 @@
         justify-content: center;
     }
     .img-container {
-        background: white;
-        height: min(80vh, 90vw);
-        width: min(80vh, 90vw);
+        height: min(80vh, 85vw);
+        width: min(80vh, 85vw);
         margin: auto;
         position: relative;
     }
@@ -209,12 +364,12 @@
         left: 0;
         filter: saturate(120%);
         opacity: 0.2;
-        transition: all 0.5s ease-out;
+        transition: all 0.3s ease-out;
     }
     :global(.about-img.active) {
         opacity: 1;
     }
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 1000px) {
         .about-container {
             flex-direction: column;
             height: 100vh;
@@ -232,8 +387,8 @@
         }
         .img-container {
             margin: 0 auto;
-            height: min(80vh, 90vw, 500px);
-            width: min(80vh, 90vw, 500px);
+            height: min(80vh, 90vw, 600px);
+            width: min(80vh, 90vw, 600px);
         }
         .center {
             text-align: center !important;
@@ -243,6 +398,15 @@
             font-size: 16px;
             border-bottom: 1px solid lightgray;
             padding: 0px 5px 5px 5px;
+        }
+        .section-description {
+             font-size: 14px;
+        }
+    }
+    @media screen and (max-width: 700px) {
+        .img-container {
+            height: min(80vh, 90vw, 500px);
+            width: min(80vh, 90vw, 500px);
         }
     }
 </style>

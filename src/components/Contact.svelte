@@ -13,7 +13,7 @@
 
     $: if (outerContainer && scrollY > 0) {
         percent = 1 - (outerContainer.getBoundingClientRect().top + window.innerHeight / 2) / (window.innerHeight);
-        opacity = percent / 10;
+        opacity = percent / 5;
     } else {
         percent = 0;
     	opacity = 0;
@@ -21,7 +21,7 @@
 </script>
 
 <div class="background" bind:this={outerContainer}>
-	<img class="background-image" src="/images/bg_bw.png" style={`opacity: ${opacity};`}>
+	<img class="background-image" src={`${(window.innerWidth < 1000) && (window.innerWidth < window.innerHeight) ? "/images/bg_bw_portrait.jpeg" : "/images/bg_bw_landscape.jpeg"}`} style={`opacity: ${opacity};`}>
     <div class="background-contacts" style={`opacity: ${Math.pow(percent, 3)};`}>
         <p class="logo-text" style={`pointer-events: ${$section === sectionIndex ? 'all' : 'none'};`}>Follow me on Twitter :)</p>
         <a class="logo twitter" style={`pointer-events: ${$section === sectionIndex ? 'all' : 'none'};`} href="https://www.twitter.com/arbourtrary" target="_blank"></a>
@@ -89,5 +89,10 @@
     .github {
         background: no-repeat center url("/images/github.svg");
         background-size: contain;
+    }
+    @media screen and (max-width: 1000px) {
+        .background-image {
+            object-position: center;
+        }
     }
 </style>
