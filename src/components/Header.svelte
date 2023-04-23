@@ -31,7 +31,8 @@
         flex-direction: row;
         justify-content: center;
         padding-top: 30px;
-        background: white;
+        background: #f6f5f1;
+        /*background: white;*/
         z-index: 10;
         padding-bottom: 20px;
     }
@@ -66,12 +67,18 @@
             padding-bottom: 2px;
         }
         .header {
+/*            box-shadow: 
+                0px 0px 10px white,
+                0px 0px 10px white,
+                0px 0px 10px white,
+                0px 0px 10px white,
+                0px 0px 10px white;*/
             box-shadow: 
-                0px 0px 10px white,
-                0px 0px 10px white,
-                0px 0px 10px white,
-                0px 0px 10px white,
-                0px 0px 10px white;
+                0px 0px 10px #f6f5f1,
+                0px 0px 10px #f6f5f1,
+                0px 0px 10px #f6f5f1,
+                0px 0px 10px #f6f5f1,
+                0px 0px 10px #f6f5f1;
             padding:  0;
         }
     }

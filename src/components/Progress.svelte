@@ -56,6 +56,8 @@
         opacity: 1;
         display: flex;
         justify-content: right;
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
         z-index: 11; 
     }
     .progress-container svg {
@@ -66,12 +68,16 @@
         image-rendering: optimizeQuality;
         fill-rule: evenodd;
         clip-rule: evenodd;
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
     }
     .progress-container path {
         stroke-dasharray: 1;
         stroke-dashoffset: 1;
-        transition: stroke-dashoffset 250ms linear;
+        transition: stroke-dashoffset 150ms linear;
         opacity: 1;
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
     }
     .progress-container-mobile {
         display: none;

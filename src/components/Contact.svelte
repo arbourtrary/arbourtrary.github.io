@@ -18,10 +18,15 @@
         percent = 0;
     	opacity = 0;
     }
+
+    let innerWidth = window.innerWidth
+    let innerHeight = window.innerHeight
 </script>
 
+<svelte:window bind:innerWidth={innerWidth} bind:innerHeight={innerHeight}/>
+
 <div class="background" bind:this={outerContainer}>
-	<img class="background-image" src={`${(window.innerWidth < 1000) && (window.innerWidth < window.innerHeight) ? "/images/bg_bw_portrait.jpeg" : "/images/bg_bw_landscape.jpeg"}`} style={`opacity: ${opacity};`}>
+	<img class="background-image" src={`${(innerWidth < 1000) && (innerWidth < innerHeight) ? "/images/bg_bw_portrait.jpeg" : "/images/bg_bw_landscape.jpeg"}`} style={`opacity: ${opacity};`}>
     <div class="background-contacts" style={`opacity: ${Math.pow(percent, 3)};`}>
         <p class="logo-text" style={`pointer-events: ${$section === sectionIndex ? 'all' : 'none'};`}>Follow me on Twitter :)</p>
         <a class="logo twitter" style={`pointer-events: ${$section === sectionIndex ? 'all' : 'none'};`} href="https://www.twitter.com/arbourtrary" target="_blank"></a>

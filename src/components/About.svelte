@@ -42,59 +42,157 @@
     ]
     let interests = [];
     let currentIndex = -1;
+    let prevIndex;
 
     let headers = []
-    let imgs = []
+    // let imgs = []
     onMount(() => {
         headers = outerContainer.querySelectorAll('.about-header');
-        imgs = outerContainer.querySelectorAll('.about-img');
+        // imgs = outerContainer.querySelectorAll('.about-img');
     });
 
     // Create a function that highlights the correct header based on the equal splits of the height of the scrolling-anchor component
     function highlightHeader() {
-        if (outerContainer) {
+        if (outerContainer && $section === 0) {
+
             const initialOffset = window.innerHeight / 4
             const scrollingAnchorHeight = outerContainer.offsetHeight - window.innerHeight - initialOffset;
             const headerHeight = scrollingAnchorHeight / headerTexts.length;
-            currentIndex = Math.floor((scrollY - initialOffset) / headerHeight);
+            currentIndex = Math.floor((window.scrollY - initialOffset) / headerHeight);
             currentIndex = currentIndex > (headerTexts.length - 1) ? (headerTexts.length - 1) : currentIndex;
             // Loop through the headers
 
-            for (let i = 0; i < headerTexts.length; i++) {
-                if (scrollY > initialOffset) {
-                    // If the current index is the same as the looped index
-                    if (i === currentIndex) {
-                        // Add the active class
-                        if (headers.length) {
-                            headers[i].classList.add('active');
-                            headers[i].style.color = aboutColors[i]
+            if (prevIndex !== currentIndex) {
+                context.clearRect(0, 0, canvas.width, canvas.height)
+                for (let i = 0; i < headerTexts.length; i++) {
+                    if (window.scrollY > initialOffset) {
+                        // If the current index is the same as the looped index
+                        if (i === currentIndex) {
+                            // Add the active class
+                            if (headers.length) {
+                                headers[i].classList.add('active');
+                                headers[i].style.color = aboutColors[i]
+                            }
+                            // imgs[i].classList.add('active');
+                            paintBackground(canvas, context, images[i], 1)
+                            interests = aboutInterests[i]
+                            linearGradient = linearGradients[i]
+                        } else {
+                            // Remove the active class
+                            if (headers.length) {
+                                headers[i].classList.remove('active');
+                                headers[i].style.color = "lightgray"                            
+                            }
+                            paintBackground(canvas, context, images[i], 0.2)
+                            // imgs[i].classList.remove('active');
                         }
-                        imgs[i].classList.add('active');
-                        interests = aboutInterests[i]
-                        linearGradient = linearGradients[i]
                     } else {
-                        // Remove the active class
+                        linearGradient = "linear-gradient(to right, #D2B0EC, #AAC4A2, #8CB2D3, #F2DC9B)";
                         if (headers.length) {
                             headers[i].classList.remove('active');
-                            headers[i].style.color = "lightgray"                            
+                            headers[i].style.color = "lightgray"                        
                         }
-                        imgs[i].classList.remove('active');
+                        // imgs[i].classList.add('active');
+                        paintBackground(canvas, context, images[i], 1)
+                        interests = []
                     }
-                } else {
-                    linearGradient = "linear-gradient(to right, #D2B0EC, #AAC4A2, #8CB2D3, #F2DC9B)";
-                    if (headers.length) {
-                        headers[i].classList.remove('active');
-                        headers[i].style.color = "lightgray"                        
-                    }
-                    imgs[i].classList.add('active');
-                    interests = []
                 }
             }
+            prevIndex = currentIndex;
         }
         window.requestAnimationFrame(highlightHeader);
     }
     window.requestAnimationFrame(() => { highlightHeader() })
 
+
+    let images = []
+    function make_base(canvas, context, filename, opacity) {
+      let base_image = new Image();
+      base_image.src = filename;
+      base_image.onload = function(){
+        paintBackground(canvas, context, base_image, opacity)
+      }
+      return base_image
+    }
+
+    let viewport;
+    let canvas;
+    let context;
+    const imgFiles = [
+        "/images/drawing_purple.png",
+        "/images/drawing_green.png",
+        "/images/drawing_blue.png",
+        "/images/drawing_yellow.png",
+    ]
+    // // let context;
+    $: if (viewport) {
+        canvas = document.getElementById('viewport');
+        context = canvas.getContext('2d');
+        imgFiles.forEach((imgFile) => {
+            const img = make_base(canvas, context, imgFile, 1);
+            images.push(img);
+        })
+    }
+
+  function paintBackground(canvas, context, element, opacity) {
+    if (element) {
+      let mode = "contain";
+      let percent = 0.5;
+
+      // Background width and height
+      let bw = element.width;
+      let bh = element.height;
+
+      if(element.nodeName == "VIDEO") {
+        bw = element.videoWidth;
+        bh = element.videoHeight;
+      }
+
+      // Canvas width and height
+      let cw = canvas.width;
+      let ch = canvas.height;
+
+      // Horizontal and vertical ratios of canvas to image
+      let hr = cw / bw;
+      let vr = ch / bh;
+
+      // Figure out the draw ratio
+      let dr;
+      switch(mode) {
+        case "horizontal":
+          dr = vr;
+          break;
+        case "vertical":
+          dr = hr;
+          break;
+        case "cover":
+          dr = Math.max(hr, vr);
+          percent = .5;
+          break;
+        case "contain":
+          dr = Math.min(hr, vr);
+          percent = .5;
+          break;
+      }
+
+      // Scale the image by the draw ratio
+      let dw = bw * dr;
+      let dh = bh * dr;
+
+      // Figure out the x and y for the image
+      let dx = (cw - dw) * percent;
+      let dy = (ch - dh) * percent;
+
+      // Clear it
+      // context.clearRect(0, 0, cw, ch)
+
+      // Draw the image
+      // context.save()
+      context.globalAlpha = opacity;
+      context.drawImage(element, 0,0, bw, bh, dx, dy, dw, dh);  
+      // context.restore();
+    }
+  }
 
 
     let innerWidth = window.innerWidth
@@ -105,16 +203,6 @@
 
 <scrolling-anchor id="about" bind:this={outerContainer}>
     <div class="about-container">
-
-        {#if isMobile}
-            <div class="about-name mobile">
-                <TextMorph
-                    texts={morphTexts}
-                    {linearGradient}
-                />
-            </div>
-        {/if}
-
         {#if !isMobile}
             <div style="width: 375px; display: flex; flex-direction: column; margin: auto;">
                 <div class="about-name desktop">
@@ -132,23 +220,20 @@
                     <div class="section-description">{@html interests.join(", ")}</div>
                 </div>
             </div>
-        {:else}
             <div class="img-container">
-                <img class="about-img active" src="/images/drawing_purple.png">
-                <img class="about-img active" src="/images/drawing_green.png">
-                <img class="about-img active" src="/images/drawing_blue.png">
-                <img class="about-img active" src="/images/drawing_yellow.png">
-            </div>
-        {/if}
-
-        {#if !isMobile}
-            <div class="img-container">
-                <img class="about-img active" src="/images/drawing_purple.png">
-                <img class="about-img active" src="/images/drawing_green.png">
-                <img class="about-img active" src="/images/drawing_blue.png">
-                <img class="about-img active" src="/images/drawing_yellow.png">
+                <canvas id="viewport"  height="700" width="700" bind:this={viewport}/>
             </div>
         {:else}
+            <div class="about-name mobile">
+                <TextMorph
+                    texts={morphTexts}
+                    {linearGradient}
+                />
+            </div>
+            <div class="img-container">
+                <canvas id="viewport" height="700" width="700" bind:this={viewport}>
+                </canvas>
+            </div>
             <div class="about-interests">
                 <div
                     style={`
@@ -175,6 +260,13 @@
 </scrolling-anchor>
 
 <style>
+    #viewport {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
     .line {
         display:block;
         border-top:1px solid black;
@@ -316,13 +408,12 @@
         width: min(90vw, 1000px);
         margin: 0 auto;
         position:relative;
-        height: 400vh;
+        height: 500vh;
         display: block;
     }
     .about-container {
         position: sticky;
         top: 0;
-        -webkit-display: flex;
         display: flex;
         padding-top: 75px;
         height: calc(100vh - 75px);
@@ -335,6 +426,8 @@
         width: min(80vh, 85vw);
         margin: auto;
         position: relative;
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
     }
     .about-header {
         font-size: 28px;
@@ -364,7 +457,10 @@
         left: 0;
         filter: saturate(120%);
         opacity: 0.2;
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
         transition: all 0.3s ease-out;
+        display: none;
     }
     :global(.about-img.active) {
         opacity: 1;

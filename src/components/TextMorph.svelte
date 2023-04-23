@@ -2,6 +2,7 @@
 
 <script>
 import { onMount } from "svelte";
+import { section } from "../store.js"
 
 export let linearGradient = "linear-gradient(to right, #D2B0EC, #AAC4A2, #8CB2D3, #F2DC9B)"
 
@@ -21,7 +22,7 @@ onMount(() => {
 	};
 
 	// Controls the speed of morphing.
-	const morphTime = 2;
+	const morphTime = 1;
 	const cooldownTime = 3;
 
 	let textIndex = texts.length - 1;
@@ -42,14 +43,14 @@ onMount(() => {
 			cooldown = cooldownTime;
 			fraction = 1;
 		}
-		
+		// fraction = 0.5
 		setMorph(fraction);
 	}
 
 	// A lot of the magic happens here, this is what applies the blur filter to the text.
 	function setMorph(fraction) {
 		// fraction = Math.cos(fraction * Math.PI) / -2 + .5;
-		
+
 		elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
 		elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
 		
@@ -74,22 +75,23 @@ onMount(() => {
 	// Animation loop, which is called every frame.
 	function animate() {
 		requestAnimationFrame(animate);
-		
-		let newTime = new Date();
-		let shouldIncrementIndex = cooldown > 0;
-		let dt = (newTime - time) / 1000;
-		time = newTime;
-		
-		cooldown -= dt;
-		
-		if (cooldown <= 0) {
-			if (shouldIncrementIndex) {
-				textIndex++;
-			}
+		if ($section === 0) {
+			let newTime = new Date();
+			let shouldIncrementIndex = cooldown > 0;
+			let dt = (newTime - time) / 1000;
+			time = newTime;
 			
-			doMorph();
-		} else {
-			doCooldown();
+			cooldown -= dt;
+			
+			if (cooldown <= 0) {
+				if (shouldIncrementIndex) {
+					textIndex++;
+				}
+				
+				doMorph();
+			} else {
+				doCooldown();
+			}
 		}
 	}
 
@@ -117,7 +119,7 @@ onMount(() => {
 					values="1 0 0 0 0
 									0 1 0 0 0
 									0 0 1 0 0
-									0 0 0 255 -140" />
+									0 0 0 255 -130" />
 		</filter>
 	</defs>
 </svg>
@@ -142,8 +144,7 @@ onMount(() => {
 		bottom: 0;
 		z-index: 20;
 		/* This filter is a lot of the magic, try commenting it out to see how the morphing works! */
-		/*filter: url(#threshold) blur(0.6px);*/
-		filter: url(#threshold) blur(0.6px);
+		filter: url(#threshold);
 	}
 
 	/* Your average text styling */
@@ -157,6 +158,14 @@ onMount(() => {
 		font-weight: 600;
 		user-select: none;
 		width: max-content;
+		-webkit-backface-visibility: hidden;
+		-webkit-perspective: 1000;
+		-webkit-transform: translate3d(0,0,0);
+		-webkit-transform: translateZ(0);
+		backface-visibility: hidden;
+		perspective: 1000;
+		transform: translate3d(0,0,0);
+		transform: translateZ(0);
 	}
 	#filters {
 		height: 0;

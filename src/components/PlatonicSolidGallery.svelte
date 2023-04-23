@@ -1,28 +1,29 @@
-<script>
-import * as THREE from 'three';
-// TODO: generalize to have this extend a platonic solid gallery component
-export let platonicSolid = "dodecahedron"
-export let filename = "./assets/dodecahedron.json";
-export let scrollY = 0;
+<script defer>
+    import { section } from "../store.js"
+    import * as THREE from 'three';
+    // TODO: generalize to have this extend a platonic solid gallery component
+    export let platonicSolid = "dodecahedron"
+    export let filename = "./assets/dodecahedron.json";
+    export let scrollY = 0;
 
-let numberOfSides = getNumberOfSides(platonicSolid)
-let drawn = false;
-let initiated = false;
-let canvas;
-let scene;
-let camera;
-let mesh;
-let renderer;
-let angles;
-let title;
-let description;
-let year;
-let awards;
-let tags;
-let gallery;
-let edges;
-let prevIndex = 0;
-let index = 0;
+    let numberOfSides = getNumberOfSides(platonicSolid)
+    let drawn = false;
+    let initiated = false;
+    let canvas;
+    let scene;
+    let camera;
+    let mesh;
+    let renderer;
+    let angles;
+    let title;
+    let description;
+    let year;
+    let awards;
+    let tags;
+    let gallery;
+    let edges;
+    let prevIndex = 0;
+    let index = 0;
 
 function equals( v1, v2, epsilon = Number.EPSILON ) {
     return ( ( Math.abs( v1.x - v2.x ) < epsilon ) && ( Math.abs( v1.y - v2.y ) < epsilon ) && ( Math.abs( v1.z - v2.z ) < epsilon ) );
@@ -242,19 +243,19 @@ function drawPlatonicSolid(platonicSolid) {
     });
     renderer.setPixelRatio(pixelRatio)
     renderer.setSize(dimension, dimension);
-    renderer.setClearColor( 0xffffff, 0 );
+    // renderer.setClearColor( 0xffffff, 0 );
+    renderer.setClearColor( 0xf6f5f1);
     renderer.render(scene, camera);
 
-    const color = 0xFFFFFF;
-    const skyColor = 0xB1E1FF;  // light blue
-    const groundColor = 0xB97A20;  // brownish orange
+    const color = 0xf6f5f1 // 0xFFFFFF;
     const intensity = 1;
     const ambientLight = new THREE.AmbientLight(color, intensity);
-    var light = new THREE.HemisphereLight(0x404040, 0xFFFFFF, 0.95);
+    var light = new THREE.HemisphereLight(0x404040, 0xf6f5f1, 0.1);
+    // var light = new THREE.HemisphereLight(0x404040, 0xFFFFFF, 0.95);
 
-    const fogColor = 0xFFFFFF;  // white
+    const fogColor = 0xf6f5f1 // 0xFFFFFF;  // white
     const near = 7;
-    const far = 18;
+    const far = 15;
     scene.fog = new THREE.Fog(fogColor, near, far);
 
     scene.add(light);
@@ -297,7 +298,7 @@ function drawPlatonicSolid(platonicSolid) {
     //     new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load( 'assets/textures/test2.png' ), side: THREE.DoubleSide } ), // back
     // ];
 
-    mesh = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({color: 0xfff0ff}));
+    mesh = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({color: 0xf6f5f1}));
     mesh.position.set(0,0,0); // Set the position of the mesh
     scene.add(mesh);
     drawn = true;
@@ -316,36 +317,37 @@ function drawPlatonicSolid(platonicSolid) {
 // }
 
 function updateGallery() {
-    const itemHeight = window.innerHeight;
-    index = gallery ? Math.floor((scrollY - gallery?.parentElement?.offsetTop) / itemHeight) : 0;
-    
-    if (index >= numberOfSides) {
-        index = numberOfSides - 1
-    } else if (index < 0) {
-        index = 0;
-    }
-
-    if (index !== prevIndex) {
-        const indexData = data[index];
-        if (indexData) {
-            title = indexData.title;
-            description = indexData.description;
-            year = indexData.year;
-            awards = indexData.awards.join(", ");
-            tags = indexData.tags.join(", ");
+    if ($section === 1) {
+        const itemHeight = window.innerHeight;
+        index = gallery ? Math.floor((scrollY - gallery?.parentElement?.offsetTop) / itemHeight) : 0;
+        
+        if (index >= numberOfSides) {
+            index = numberOfSides - 1
+        } else if (index < 0) {
+            index = 0;
         }
-        prevIndex = index;
+
+        if (index !== prevIndex) {
+            const indexData = data[index];
+            if (indexData) {
+                title = indexData.title;
+                description = indexData.description;
+                year = indexData.year;
+                awards = indexData.awards.join(", ");
+                tags = indexData.tags.join(", ");
+            }
+            prevIndex = index;
+        }
+
+        mesh.rotation.x += (angles[index].x - mesh.rotation.x) * 0.05;
+        mesh.rotation.y += (angles[index].y - mesh.rotation.y) * 0.05;
+        mesh.rotation.z += (angles[index].z - mesh.rotation.z) * 0.05;
+
+        edges.rotation.x += (angles[index].x - edges.rotation.x) * 0.05;
+        edges.rotation.y += (angles[index].y - edges.rotation.y) * 0.05;
+        edges.rotation.z += (angles[index].z - edges.rotation.z) * 0.05;
+        renderer.render(scene, camera);
     }
-
-    mesh.rotation.x += (angles[index].x - mesh.rotation.x) * 0.05;
-    mesh.rotation.y += (angles[index].y - mesh.rotation.y) * 0.05;
-    mesh.rotation.z += (angles[index].z - mesh.rotation.z) * 0.05;
-
-    edges.rotation.x += (angles[index].x - edges.rotation.x) * 0.05;
-    edges.rotation.y += (angles[index].y - edges.rotation.y) * 0.05;
-    edges.rotation.z += (angles[index].z - edges.rotation.z) * 0.05;
-    renderer.render(scene, camera);
-
     window.requestAnimationFrame(updateGallery);
 };
 
@@ -469,8 +471,8 @@ $: galleryHeight = windowHeight * numberOfSides;
             margin: 0 auto;
         }
         .canvas {
-            height: min(80vh, 90vw, 600px);
-            width: min(80vh, 90vw, 600px);
+            height: min(80vh, 70vw);
+            width: min(80vh, 70vw);
             margin: 10px auto;
         }
         canvas {
@@ -506,8 +508,13 @@ $: galleryHeight = windowHeight * numberOfSides;
 
     @media screen and (max-width: 700px) {
         .img-container {
+            max-height: min(80vh, 90vw, 500px);
+            max-width: min(80vh, 90vw, 500px);
+        }
+        .canvas {
             height: min(80vh, 90vw, 500px);
             width: min(80vh, 90vw, 500px);
+            margin: 10px auto;
         }
     }
 </style>
