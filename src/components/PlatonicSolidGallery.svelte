@@ -1,6 +1,5 @@
 <script defer>
     import { section } from "../store.js"
-    import { generateUVs } from "../utils/math.js"
     import * as THREE from 'three';
     // TODO: generalize to have this extend a platonic solid gallery component
     export let platonicSolid = "dodecahedron"
@@ -242,15 +241,12 @@ function drawPlatonicSolid(platonicSolid) {
         gltf.scene.traverse(function(obj){
             if(obj.type === 'Mesh'){
                 meshes.push(obj)
-                console.log(obj.name)
             }
         });
 
         const orderedMeshes = meshes.sort(function(a, b) {
             return (a.name).localeCompare(b.name)
         });
-        console.log(meshes)
-        console.log(orderedMeshes)
         for (var k = 0; k < meshes.length; k++) {
             const face = meshes[k]
             face.material = materials[k]
@@ -259,7 +255,6 @@ function drawPlatonicSolid(platonicSolid) {
             faces.push(face)
             actualGroup.add(face)
         }
-        console.log(actualGroup)
         actualGroup.position.set(0,0,0);
         actualGroup.scale.set(5,5,5)
         scene.add(actualGroup)

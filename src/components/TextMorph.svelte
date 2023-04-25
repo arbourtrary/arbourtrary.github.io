@@ -80,7 +80,6 @@ onMount(() => {
 	function animate() {
 		requestAnimationFrame(animate);
 		if ($section === 0) {
-			console.log($section)
 			let newTime = new Date();
 			let shouldIncrementIndex = cooldown > 0;
 			let dt = (newTime - time) / 1000;
