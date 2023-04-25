@@ -110,14 +110,14 @@
 
     let scrollY = 0;
 
-    function updateScrollY() {
-        scrollY = window.scrollY
-        window.requestAnimationFrame(updateScrollY);
-    }
+    // function updateScrollY() {
+    //     scrollY = window.scrollY
+    //     window.requestAnimationFrame(updateScrollY);
+    // }
 
-    window.requestAnimationFrame(() => { updateScrollY() })
+    // window.requestAnimationFrame(() => { updateScrollY() })
 </script>
-<!-- <svelte:window bind:scrollY={scrollY}/> -->
+<svelte:window bind:scrollY={scrollY}/>
 <!-- Sticky elements -->
 <Header/>
 <Progress {scrollY}/>

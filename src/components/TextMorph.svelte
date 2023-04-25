@@ -30,8 +30,12 @@ onMount(() => {
 	let morph = 0;
 	let cooldown = cooldownTime;
 
-	elts.text1.textContent = texts[textIndex % texts.length];
-	elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+	// TODO: COULD NOT FIGURE OUT PERFORMANT ADAPTION
+	// TRY OOUT EFFECT IN THREEJS LATER
+
+	elts.text1.textContent = texts[Math.round(Math.random())];
+	// elts.text1.textContent = texts[textIndex % texts.length];
+	// elts.text2.textContent = texts[(textIndex + 1) % texts.length];
 
 	function doMorph() {
 		morph -= cooldown;
@@ -76,6 +80,7 @@ onMount(() => {
 	function animate() {
 		requestAnimationFrame(animate);
 		if ($section === 0) {
+			console.log($section)
 			let newTime = new Date();
 			let shouldIncrementIndex = cooldown > 0;
 			let dt = (newTime - time) / 1000;
@@ -95,8 +100,8 @@ onMount(() => {
 		}
 	}
 
-	// Start the animation.
-	animate();
+	// TODO: make performant Start the animation.
+	// animate();
 })
 
 </script>

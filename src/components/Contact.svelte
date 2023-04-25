@@ -28,9 +28,9 @@
 <div class="background" bind:this={outerContainer}>
 	<img class="background-image" src={`${(innerWidth < 1000) && (innerWidth < innerHeight) ? "/images/bg_bw_portrait.jpeg" : "/images/bg_bw_landscape.jpeg"}`} style={`opacity: ${opacity};`}>
     <div class="background-contacts" style={`opacity: ${Math.pow(percent, 3)};`}>
-        <p class="logo-text" style={`pointer-events: ${$section === sectionIndex ? 'all' : 'none'};`}>Follow me on Twitter :)</p>
+        <!-- <p class="logo-text" style={`pointer-events: ${$section === sectionIndex ? 'all' : 'none'};`}>Follow me on Twitter :)</p> -->
         <a class="logo twitter" style={`pointer-events: ${$section === sectionIndex ? 'all' : 'none'};`} href="https://www.twitter.com/arbourtrary" target="_blank"></a>
-        <p class="logo-text" style={`pointer-events: ${$section === sectionIndex ? 'all' : 'none'};`}>Check out my code on Github</p>
+       <!--  <p class="logo-text" style={`pointer-events: ${$section === sectionIndex ? 'all' : 'none'};`}>Check out my code on Github</p> -->
         <a class="logo github" style={`pointer-events: ${$section === sectionIndex ? 'all' : 'none'};`} href="https://github.com/arbourtrary" target="_blank"></a>
     </div>
 </div>
@@ -74,9 +74,9 @@
         font-family: 'Avenir';
     }
     .logo {
-        height: 50px;
-        width: 50px;
-        margin: 20px auto;
+        height: 75px;
+        width: 75px;
+        margin: 40px auto;
         background: gray;
         transition: all 100ms ease-in;
     }

@@ -128,6 +128,7 @@
     $: if (viewport) {
         canvas = document.getElementById('viewport');
         context = canvas.getContext('2d');
+        context.clearRect(0, 0, canvas.width, canvas.height)
         imgFiles.forEach((imgFile) => {
             const img = make_base(canvas, context, imgFile, 1);
             images.push(img);
@@ -190,6 +191,9 @@
       // context.save()
       context.globalAlpha = opacity;
       context.drawImage(element, 0,0, bw, bh, dx, dy, dw, dh);  
+      // context.globalAlpha = 1.0;
+        context.globalCompositeOperation = "saturation";
+        context.fillStyle = "hsl(0,200%,50%)";  // saturation at 100%
       // context.restore();
     }
   }
@@ -203,6 +207,7 @@
 
 <scrolling-anchor id="about" bind:this={outerContainer}>
     <div class="about-container">
+
         {#if !isMobile}
             <div style="width: 375px; display: flex; flex-direction: column; margin: auto;">
                 <div class="about-name desktop">
@@ -221,7 +226,8 @@
                 </div>
             </div>
             <div class="img-container">
-                <canvas id="viewport"  height="700" width="700" bind:this={viewport}/>
+                <div class="about-circle"></div>
+                <canvas id="viewport"  height="1000" width="1000" bind:this={viewport}/>
             </div>
         {:else}
             <div class="about-name mobile">
@@ -231,6 +237,7 @@
                 />
             </div>
             <div class="img-container">
+                <div class="about-circle"></div>
                 <canvas id="viewport" height="700" width="700" bind:this={viewport}>
                 </canvas>
             </div>
@@ -256,6 +263,8 @@
                 <div class="section-description center">{@html interests.join(", ")}</div>
             </div>
         {/if}
+    <div class="grid"></div>
+
     </div>
 </scrolling-anchor>
 
@@ -266,6 +275,9 @@
         position: absolute;
         top: 0;
         left: 0;
+        z-index: 22;
+        -webkit-transform: translate3d(0,0,1);
+        transform: translate3d(0,0,1);
     }
     .line {
         display:block;
@@ -408,7 +420,7 @@
         width: min(90vw, 1000px);
         margin: 0 auto;
         position:relative;
-        height: 500vh;
+        height: 300vh;
         display: block;
     }
     .about-container {
@@ -421,13 +433,27 @@
         margin: auto 0;
         justify-content: center;
     }
+    .grid {
+        display: none;
+        position: absolute;
+        top: 0;
+        height: min(100vw, 100vh);
+        width: min(100vw, 100vh);
+        z-index: 0;
+        background-size: 20px 20px;
+        transform: rotate(-35deg);
+        background-image:
+            linear-gradient(to right, #88888822 1px, transparent 1px),
+            linear-gradient(to bottom, #88888822 1px, transparent 1px);
+    }
     .img-container {
         height: min(80vh, 85vw);
         width: min(80vh, 85vw);
         margin: auto;
         position: relative;
-        -webkit-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
+        -webkit-transform: translate3d(0,0,1px);
+        transform: translate3d(0,0,1px);
+        z-index: 20;
     }
     .about-header {
         font-size: 28px;
@@ -447,6 +473,25 @@
         padding-top: 30px;
         margin: 5px 40px 0px 0px;
         height: 100px;
+    }
+    .about-circle {
+        object-fit: contain;
+        height: 95%;
+        width: 95%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /*background: #f6f5f1;*/
+        /*border:  1px solid #f6f5f1;*/
+        /*box-shadow: 
+                0px 0px 50px #aaa,
+                0px 0px 40px #aaa,
+                0px 0px 30px #aaa,
+                0px 0px 20px #aaa,
+                0px 0px 10px #aaa;*/
+        z-index: 22;
+        border-radius: 50%;
     }
     .about-img {
         object-fit: contain;
@@ -470,6 +515,10 @@
             flex-direction: column;
             height: 100vh;
             padding-top: 0px;
+        }
+        .grid {
+            height: 100%;
+            width: 100%;
         }
         .about-header {
             font-size: 22px;
