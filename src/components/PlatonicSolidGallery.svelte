@@ -164,10 +164,100 @@ year = data[0].year;
 awards = data[0].awards.join(", ");
 tags = data[0].tags.join(", ");
 
+function createMaterial(texture, perlinTexture=null) {
+    const uniforms = {
+      uTexture: {
+          value: texture
+      },
+      uTime: {
+          value: .1
+      },
+      uRevealTexture: {
+          value: perlinTexture
+      },
+      uRevealTextureFrequency: {
+          value: new THREE.Vector2(1, 1)
+      },
+      uRevealRandomFrequency: {
+          value: new THREE.Vector2(1, 1)
+      },
+      uRevealProgress: {
+          value: 1
+      },
+      uProgress : {
+        value: 0
+      },
+      offset: {
+          value: 1
+      },
+      shifting: {
+          value: 0
+      },
+      count: {
+        value: 2
+      }
+    };
+    const vertexShader = () => {
+     return `
+        attribute vec2 uv;
+        attribute vec4 position;
+        uniform float uProgress;
+        uniform mat4 projectionMatrix;
+        uniform mat4 modelViewMatrix;
+        varying float progress;
+        varying vec2 vUv; 
+
+        void main() {
+            progress = uProgress;
+            vUv = uv;
+            vec4 modelViewPosition = modelViewMatrix * position;
+            gl_Position = projectionMatrix * modelViewPosition;
+        }
+      `
+    }
+
+
+    // float radius = sqrt(pow((vUv.x - 0.5), 2.0) + pow((vUv.y - 0.5), 2.0));
+    // float shiftedRadius = clamp(radius - 0.36, 0.0, 0.36) * 5.0;
+    // float radialOpacity = 1.0 - shiftedRadius * 1.;
+    // clamp(progress, 0.1, radialOpacity);
+    const fragmentShader = () => {
+      return `
+        precision lowp float;
+
+        uniform sampler2D uTexture;
+        varying float progress;
+        varying vec2 vUv;
+
+        void main()
+        {
+            vec4 color = texture2D(uTexture, vUv);
+            vec4 colorStatic = texture2D(uTexture, vUv);
+            float grayscale = 0.3 * (color.r + .01 ) + 0.59 * (color.g + .01) + 0.11 * (color.b + .01);
+            color.r = mix(colorStatic.r, grayscale, 1.0 - progress);
+            color.g = mix(colorStatic.g, grayscale, 1.0 - progress);
+            color.b = mix(colorStatic.b, grayscale, 1.0 - progress);
+            color.a = clamp(progress, 0.1, 1.0);
+            gl_FragColor = color;
+        }
+      `
+    } 
+
+    const material = new THREE.RawShaderMaterial({
+        transparent: true,
+        depthTest: false,
+        depthWrite: false,
+        uniforms: uniforms,
+        vertexShader: vertexShader(),
+        fragmentShader: fragmentShader()
+    })
+    return material;
+}
+
 function drawPlatonicSolid(platonicSolid) {
     // TODO: figure out how to get gallery height non-circularly
-    const width = .8 * Math.min(window.innerHeight, window.innerHeight); // window.innerWidth / 2;
-    const height =  .8 * Math.min(window.innerHeight, window.innerHeight); 
+    const width = Math.min(.8 * window.innerHeight, .85 * window.innerWidth); // window.innerWidth / 2;
+    const height =  Math.min(.8 * window.innerHeight, .85 * window.innerWidth); 
     const dimension = Math.max(width, height);
     const pixelRatio = Math.min(window.devicePixelRatio, 2);
     scene = new THREE.Scene();
@@ -189,7 +279,7 @@ function drawPlatonicSolid(platonicSolid) {
     const intensity = 1;
     const ambientLight = new THREE.AmbientLight(color, intensity);
 
-    const fogColor = 0xf6f5f1 // 0xFFFFFF;  // white
+    const fogColor = 0xffffff// 0xFFFFFF;  // white
     const near = 10;
     const far = 17;
     scene.fog = new THREE.Fog(fogColor, near, far);
@@ -215,24 +305,25 @@ function drawPlatonicSolid(platonicSolid) {
 
     const edgesGeometry = new THREE.EdgesGeometry(geometry);
     const material = new THREE.LineBasicMaterial({ color: 0xaaaaaa, linewidth: 2});
-    // const material = new THREE.LineBasicMaterial({ color: 0x222222, linewidth: 2});
     edges = new THREE.LineSegments(edgesGeometry, material);
     scene.add(edges);
 
-    const materials = [
-        new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load( 'textures/fade.png' ), side: THREE.DoubleSide, opacity: 1, transparent: true } ), // 1
-        new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load( 'textures/desaturated_elevation_ridgelines.png' ), side: THREE.DoubleSide, opacity: 0.2, transparent: true } ), // 2
-        new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load( 'textures/desaturated_puerto_rico_migration.png' ), side: THREE.DoubleSide, opacity: 0.2, transparent: true } ), // 3
-        new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load( 'textures/desaturated_house_of_cards.png' ), side: THREE.DoubleSide, opacity: 0.2, transparent: true } ), // 4
-        new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load( 'textures/desaturated_nba_season_paths.png' ), side: THREE.DoubleSide, opacity: 0.2, transparent: true } ), // 5
-        new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load( 'textures/desaturated_linguistics.png' ), side: THREE.DoubleSide, opacity: 0.2, transparent: true } ), // 6
-        new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load( 'textures/desaturated_around_the_world.png' ), side: THREE.DoubleSide, opacity: 0.2, transparent: true } ), // 7
-        new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load( 'textures/desaturated_wnba_season_triangle.png' ), side: THREE.DoubleSide, opacity: 0.2, transparent: true } ), // 8
-        new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load( 'textures/desaturated_wnba_season_paths.png' ), side: THREE.DoubleSide, opacity: 0.2, transparent: true } ), // 9
-        new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load( 'textures/desaturated_wnba_recordigami.png' ), side: THREE.DoubleSide, opacity: 0.2, transparent: true } ), // 10
-        new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load( 'textures/desaturated_nba_season_triangle.png' ), side: THREE.DoubleSide, opacity: 0.2, transparent: true } ), // 11
-        new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load( 'textures/desaturated_poem_wheel.jpg' ), side: THREE.DoubleSide, opacity: 0.2, transparent: true } ), // 12
+    const textures = [
+        new THREE.TextureLoader().load('textures/fade.png'),
+        new THREE.TextureLoader().load('textures/puerto_rico_migration.png'),
+        new THREE.TextureLoader().load('textures/elevation_ridgelines.png'),
+        new THREE.TextureLoader().load('textures/house_of_cards.png'),
+        new THREE.TextureLoader().load('textures/nba_season_paths.png'),
+        new THREE.TextureLoader().load('textures/linguistics.png'),
+        new THREE.TextureLoader().load('textures/around_the_world.png'),
+        new THREE.TextureLoader().load('textures/made_in_miami.png'),
+        new THREE.TextureLoader().load('textures/wnba_season_paths.png'),
+        new THREE.TextureLoader().load('textures/security_for_sale.png'),
+        new THREE.TextureLoader().load('textures/nba_season_triangle.png'),
+        new THREE.TextureLoader().load('textures/poem_wheel.png')
     ];
+
+    const materials = textures.map((texture) => createMaterial(texture))
     actualGroup = new THREE.Group();
 
     let faces = []
@@ -256,6 +347,9 @@ function drawPlatonicSolid(platonicSolid) {
             actualGroup.add(face)
         }
         actualGroup.position.set(0,0,0);
+        actualGroup.rotation.set(angles[0].x, angles[0].y, angles[0].z);
+        edges.rotation.set(angles[0].x, angles[0].y, angles[0].z);
+
         actualGroup.scale.set(5,5,5)
         scene.add(actualGroup)
     }, undefined, function ( error ) {
@@ -266,8 +360,8 @@ function drawPlatonicSolid(platonicSolid) {
 }
 
 function updateGallery() {
-    if ($section === 1) {
-        const itemHeight = window.innerHeight / 2;
+    if ($section === 1 && actualGroup.children.length) {
+        const itemHeight = window.innerHeight / 1.2;
         index = gallery ? Math.floor((scrollY - gallery?.parentElement?.offsetTop) / itemHeight) : 0;
         
         if (index >= numberOfSides) {
@@ -275,6 +369,13 @@ function updateGallery() {
         } else if (index < 0) {
             index = 0;
         }
+
+
+        actualGroup.children.filter((child,i) => i != index).forEach((child) => {
+            if (child.material.uniforms.uProgress.value > 0) {
+                child.material.uniforms.uProgress.value += (0 - child.material.uniforms.uProgress.value) * 0.05;
+            }
+        })
 
         if (index !== prevIndex) {
             const indexData = data[index];
@@ -288,13 +389,15 @@ function updateGallery() {
             prevIndex = index;
         }
 
-        actualGroup.rotation.x += (angles[index].x - actualGroup.rotation.x) * 0.05;
-        actualGroup.rotation.y += (angles[index].y - actualGroup.rotation.y) * 0.05;
-        actualGroup.rotation.z += (angles[index].z - actualGroup.rotation.z) * 0.05;
+        actualGroup.children[index].material.uniforms.uProgress.value += (1 - actualGroup.children[index].material.uniforms.uProgress.value) * 0.04;
 
-        edges.rotation.x += (angles[index].x - edges.rotation.x) * 0.05;
-        edges.rotation.y += (angles[index].y - edges.rotation.y) * 0.05;
-        edges.rotation.z += (angles[index].z - edges.rotation.z) * 0.05;
+        actualGroup.rotation.x += (angles[index].x - actualGroup.rotation.x) * 0.07;
+        actualGroup.rotation.y += (angles[index].y - actualGroup.rotation.y) * 0.07;
+        actualGroup.rotation.z += (angles[index].z - actualGroup.rotation.z) * 0.07;
+
+        edges.rotation.x += (angles[index].x - edges.rotation.x) * 0.07;
+        edges.rotation.y += (angles[index].y - edges.rotation.y) * 0.07;
+        edges.rotation.z += (angles[index].z - edges.rotation.z) * 0.07;
         renderer.render(scene, camera);
     }
     window.requestAnimationFrame(updateGallery);
@@ -305,7 +408,7 @@ $: !drawn && canvas && drawPlatonicSolid(platonicSolid);
 window.requestAnimationFrame(() => { updateGallery() })
 
 $: windowHeight = window.innerHeight;
-$: galleryHeight = windowHeight * numberOfSides / 2 + windowHeight;
+$: galleryHeight = windowHeight * numberOfSides / 1.2 + windowHeight;
     
     let innerWidth = window.innerWidth
 
@@ -394,7 +497,7 @@ $: galleryHeight = windowHeight * numberOfSides / 2 + windowHeight;
         margin: auto;
     }
     .canvas {
-        height: min(80vh, 85vw);
+        /*height: min(80vh, 85vw);*/
         width: min(80vh, 85vw);
         margin: auto;
         position: relative;
@@ -405,10 +508,26 @@ $: galleryHeight = windowHeight * numberOfSides / 2 + windowHeight;
     }
     .title, .description, .details {
         margin: 5px 40px 0px 0px;
-        font-family: 'Avenir';
+        font-family: 'IM Fell English';
+    }
+    .description {
+        font-size: 18px;
+        color: #444;
+    }
+    .details {
+        font-size: 16px;
+        color: #444;
+        margin-bottom: 15px;
+    }
+    .detail-description {
+        margin: 0px;
+    }
+    .section-subtitle {
+        margin-bottom: 10px;
     }
     .title {
         font-size: 28px;
+        font-family: 'IM Fell English';
     }
     @media screen and (max-width: 992px) {
         .background {

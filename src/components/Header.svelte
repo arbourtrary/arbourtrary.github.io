@@ -40,7 +40,7 @@
         width: 100px;
         font-size: 15px;
         text-transform: uppercase;
-        font-family: 'Avenir';
+        font-family: 'IM Fell English';
         font-weight: 300;
         letter-spacing: 2px;
         text-align: center;
@@ -48,6 +48,7 @@
         padding-bottom: 5px;
         color: lightgray !important;
         border-bottom: 1px solid lightgray;
+        transition: all 300ms ease-out;
     }
     .title.active {
         color: black !important;

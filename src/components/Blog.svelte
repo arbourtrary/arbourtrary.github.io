@@ -58,6 +58,8 @@
             {/each}
         </div>
     </div>
+    <div class="grid"></div>
+
 </div> 
 
 <style>
@@ -71,5 +73,18 @@
         .blog-spacer {
             height: 50px;
         }
+    }
+    .grid {
+        display: none;
+        position: absolute;
+        top: 0;
+        height: min(100vw, 100vh);
+        width: min(100vw, 100vh);
+        z-index: 0;
+        background-size: 20px 20px;
+        transform: rotate(-35deg);
+        background-image:
+            linear-gradient(to right, #88888822 1px, transparent 1px),
+            linear-gradient(to bottom, #88888822 1px, transparent 1px);
     }
 </style>

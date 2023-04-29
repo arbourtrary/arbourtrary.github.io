@@ -11,28 +11,33 @@
     $: outerContainer && (scrollY >= (outerContainer.offsetTop - offset)) && (scrollY < (outerContainer.offsetTop + outerContainer.offsetHeight - offset)) && $section !== sectionIndex && section.set(sectionIndex)
 
     let linearGradient;
-    let morphTexts = ["David Newcomb", "arbourtrary"];
+    let morphTexts = ["arbourtrary", "David Newcomb"];
 
     let aboutColors = [
-        /*purple*/
-        "#D2B0EC",
-        /*green*/
-        "#AAC4A2",
         /*blue*/
         "#8CB2D3",
+        /*green*/
+        "#AAC4A2",
+        // orange
+        "#EFBD8D",
+        /*purple*/
+        "#D2B0EC"
+
+
         /*yellow*/
-        "#fcd361"
+        // "#fcd361",
     ]
 
     let linearGradients = [
-        "linear-gradient(to right, #D2B0EC, #e6e6e6, #e6e6e6, #e6e6e6)",
+        "linear-gradient(to right, #8CB2D3, #e6e6e6, #e6e6e6, #e6e6e6)",
         "linear-gradient(to right, #e6e6e6, #AAC4A2, #e6e6e6, #e6e6e6)",
-        "linear-gradient(to right, #e6e6e6, #e6e6e6, #8CB2D3, #e6e6e6)",
-        "linear-gradient(to right, #e6e6e6, #e6e6e6, #e6e6e6, #fcd361)",
+        "linear-gradient(to right, #e6e6e6, #e6e6e6, #EFBD8D, #e6e6e6)",
+        // "linear-gradient(to right, #e6e6e6, #e6e6e6, #e6e6e6, #fcd361)",
+        "linear-gradient(to right, #e6e6e6, #e6e6e6, #e6e6e6, #D2B0EC)",
         "linear-gradient(to right, #e6e6e6, #e6e6e6, #e6e6e6, #e6e6e6)"
     ]
 
-    const headerTexts = ["Creative Developer", "Environmentalist", "Applied Mathematician", "Poetry Enthusiast"]
+    const headerTexts = ["Creative Developer", "Environmentalist", "Poetry Enthusiast", "Mathematician",]
 
     const aboutInterests = [
         ['threeJS', 'generative art', 'threeJS', 'generative art', 'threeJS', 'generative art', 'threeJS', 'generative art'],
@@ -44,19 +49,33 @@
     let currentIndex = -1;
     let prevIndex;
 
+    let scrollingAnchorHeight;
+    let initialOffset;
     let headers = []
+    let headerPoints = []
+    let activeColor = "lightgray"
     // let imgs = []
     onMount(() => {
         headers = outerContainer.querySelectorAll('.about-header');
+        headerPoints = outerContainer.querySelectorAll('.about-point');
         // imgs = outerContainer.querySelectorAll('.about-img');
+        initialOffset = window.innerHeight / 2;
+
+        scrollingAnchorHeight = outerContainer.offsetHeight - window.innerHeight - initialOffset;
+
     });
+
+    let progress = 0;
+    $: if(scrollingAnchorHeight && scrollY && initialOffset) {
+        progress = (window.scrollY - initialOffset) / scrollingAnchorHeight;
+        progress = progress > 1 ? 1 : progress < 0 ? 0 : progress;
+    }
 
     // Create a function that highlights the correct header based on the equal splits of the height of the scrolling-anchor component
     function highlightHeader() {
-        if (outerContainer && $section === 0) {
+        if (outerContainer && $section === 0 && initialOffset) {
 
-            const initialOffset = window.innerHeight / 4
-            const scrollingAnchorHeight = outerContainer.offsetHeight - window.innerHeight - initialOffset;
+            // const scrollingAnchorHeight = outerContainer.offsetHeight - window.innerHeight - initialOffset;
             const headerHeight = scrollingAnchorHeight / headerTexts.length;
             currentIndex = Math.floor((window.scrollY - initialOffset) / headerHeight);
             currentIndex = currentIndex > (headerTexts.length - 1) ? (headerTexts.length - 1) : currentIndex;
@@ -68,10 +87,17 @@
                     if (window.scrollY > initialOffset) {
                         // If the current index is the same as the looped index
                         if (i === currentIndex) {
+                                activeColor = aboutColors[i]
+
                             // Add the active class
                             if (headers.length) {
+
                                 headers[i].classList.add('active');
                                 headers[i].style.color = aboutColors[i]
+
+                                headerPoints[i].classList.add('active');
+                                headerPoints[i].style.background = aboutColors[i]
+                                headerPoints[i].style.border = `1px solid ${aboutColors[i]}`
                             }
                             // imgs[i].classList.add('active');
                             paintBackground(canvas, context, images[i], 1)
@@ -81,16 +107,42 @@
                             // Remove the active class
                             if (headers.length) {
                                 headers[i].classList.remove('active');
-                                headers[i].style.color = "lightgray"                            
+                                headers[i].style.color = "lightgray"   
+
+                                headerPoints[i].classList.remove('active');
+                                headerPoints[i].style.background = "#ddd"  
+                                headerPoints[i].style.border = "1px solid #ddd"  
                             }
                             paintBackground(canvas, context, images[i], 0.2)
                             // imgs[i].classList.remove('active');
                         }
                     } else {
-                        linearGradient = "linear-gradient(to right, #D2B0EC, #AAC4A2, #8CB2D3, #F2DC9B)";
+  //                       linearGradient = `
+  //                           linear-gradient(
+  //                               to right,
+  // hsl(208deg 45% 69%) 0%,
+  // hsl(224deg 43% 75%) 9%,
+  // hsl(246deg 44% 79%) 18%,
+  // hsl(265deg 54% 80%) 27%,
+  // hsl(273deg 51% 80%) 36%,
+  // hsl(267deg 25% 78%) 45%,
+  // hsl(209deg 5% 74%) 55%,
+  // hsl(110deg 17% 71%) 64%,
+  // hsl(75deg 23% 68%) 73%,
+  // hsl(45deg 35% 68%) 82%,
+  // hsl(34deg 54% 69%) 91%,
+  // hsl(30deg 73% 69%) 100%
+  //                           )
+  //                       `;
+                        linearGradient = "linear-gradient(to right, #8CB2D3, #AAC4A2, #EFBD8D, #D2B0EC)";
+                        // linearGradient = "linear-gradient(to right, #D2B0EC, #AAC4A2, #8CB2D3, #F2DC9B)";
                         if (headers.length) {
                             headers[i].classList.remove('active');
-                            headers[i].style.color = "lightgray"                        
+                            headers[i].style.color = "lightgray"
+                            headerPoints[i].classList.remove('active');      
+                            headerPoints[i].style.background = "#ddd"  
+                            headerPoints[i].style.border = "1px solid #ddd"    
+                            activeColor = "lightgray"                
                         }
                         // imgs[i].classList.add('active');
                         paintBackground(canvas, context, images[i], 1)
@@ -119,10 +171,11 @@
     let canvas;
     let context;
     const imgFiles = [
-        "/images/drawing_purple.png",
-        "/images/drawing_green.png",
         "/images/drawing_blue.png",
-        "/images/drawing_yellow.png",
+        "/images/drawing_green.png",
+        // "/images/drawing_yellow.png",
+        "/images/drawing_orange.png",
+        "/images/drawing_purple.png"
     ]
     // // let context;
     $: if (viewport) {
@@ -198,7 +251,7 @@
     }
   }
 
-
+    $: linearGradientLine = Array.from({length: (currentIndex + 2)}, (_, i) => i + 1).map((elem) => "#f6f5f1").join(", ")
     let innerWidth = window.innerWidth
     $: isMobile = innerWidth < 1000;
 </script>
@@ -214,27 +267,55 @@
                     <TextMorph
                         texts={morphTexts}
                         {linearGradient}
+                        shouldPause={currentIndex >= 0}
                     />
                 </div>
-                <div class="about-header">Creative Developer</div>
-                <div class="about-header">Environmentalist</div>
-                <div class="about-header">Mathematician</div>
-                <div class="about-header">Poetry Enthusiast</div>
+                <div style="display: flex; flex-direction: row; position: relative;">
+                    <div style={`width: 1px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; position: absolute; top: 0; left: 6px; background: #ddd; z-index: 1;`}>
+                    </div>
+                    <div style={`width: 3px; height: ${progress * 100}%; display: flex; flex-direction: column; justify-content: space-between; position: absolute; top: 0; left: 5px; background: linear-gradient(${linearGradientLine}, ${activeColor}); z-index: 2;`}>
+                    </div>
+                    <div>
+                        <div style="display: flex; flex-direction: row; justify-content: start;">
+                            <div class="about-point"></div>
+                            <div class="about-header">Creative Developer</div>
+                        </div>
+                        <div style="display: flex; flex-direction: row; justify-content: start;">
+                            <div class="about-point"></div>
+                            <div class="about-header">Environmentalist</div>
+                        </div>
+                        <div style="display: flex; flex-direction: row; justify-content: start;">
+                            <div class="about-point"></div>
+                            <div class="about-header">Poetry Enthusiast</div>
+                        </div>
+                        <div style="display: flex; flex-direction: row; justify-content: start;">
+                            <div class="about-point"></div>
+                            <div class="about-header">Mathematician</div>
+                        </div>
+                    </div>
+                </div>
                 <div class="about-interests">
                     <div class="section-subtitle" style={`visibility: ${interests.length ? 'visible' : 'hidden'}`}>Interests</div>
                     <div class="section-description">{@html interests.join(", ")}</div>
                 </div>
             </div>
+
             <div class="img-container">
                 <div class="about-circle"></div>
                 <canvas id="viewport"  height="1000" width="1000" bind:this={viewport}/>
             </div>
+
         {:else}
-            <div class="about-name mobile">
+            <div class="about-name mobile" style="position: relative;">
                 <TextMorph
                     texts={morphTexts}
                     {linearGradient}
+                    shouldPause={currentIndex >= 0}
                 />
+                <div style={`height: 1px; width: 100%; display: flex; flex-direction: column; justify-content: space-between; position: absolute; bottom: 6px; left: 0px; background: #ddd; z-index: 1;`}>
+                </div>
+                <div style={`height: 3px; width: ${progress * 100}%; display: flex; flex-direction: column; justify-content: space-between; position: absolute; bottom: 5px; left: 0px; background: linear-gradient(to right, ${linearGradientLine}, ${activeColor}); z-index: 2;`}>
+                </div>
             </div>
             <div class="img-container">
                 <div class="about-circle"></div>
@@ -264,11 +345,19 @@
             </div>
         {/if}
     <div class="grid"></div>
-
     </div>
 </scrolling-anchor>
 
 <style>
+    .about-point {
+        border-radius: 50%;
+        height: 11px;
+        width: 11px;
+        margin: auto 0;
+        border: 1px solid #DDD;
+        z-index: 50;
+        visibility: hidden;
+    }
     #viewport {
         height: 100%;
         width: 100%;
@@ -285,6 +374,11 @@
         text-align:center;
         padding-bottom: 5px;
         margin: 0 auto;
+    }
+    .line-zero {
+        width:95px;
+        animation: line1 3s infinite linear;
+        animation-delay: 100ms;
     }
     .line-one {
         width:75px;
@@ -455,19 +549,22 @@
         transform: translate3d(0,0,1px);
         z-index: 20;
     }
+    canvas {
+        width: 100% !important;
+        height: 100% !important;
+    }
     .about-header {
         font-size: 28px;
-        font-family: 'Avenir';
+        font-family: 'IM Fell English';
         font-weight: 300;
         text-align: left;
         margin: 5px 40px 0px 0px;
         padding-bottom: 5px;
         color: lightgray;
+        margin-left: 10px;
     }
     :global(.about-header.active) {
-
         filter: saturate(150%);
-        font-weight: bold;
     }
     .about-interests {
         padding-top: 30px;
@@ -509,6 +606,12 @@
     }
     :global(.about-img.active) {
         opacity: 1;
+    }
+    :global(.about-point.active) {
+        opacity: 1;
+    }
+    .section-description {
+         font-size: 18px;
     }
     @media screen and (max-width: 1000px) {
         .about-container {

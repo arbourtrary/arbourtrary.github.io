@@ -10,11 +10,12 @@
         dashArray = [pathLength, pathLength];
     };
 
-    $: scrollProgress = scrollY / (document.body.offsetHeight - window.innerHeight);
+    let scrollProgress = 0;
+    // $: scrollProgress = scrollY / (document.body.offsetHeight - window.innerHeight);
 
-    $: if (path) {
-        path.style.strokeDashoffset = 1 - scrollProgress;
-    }
+    // $: if (path) {
+    //     path.style.strokeDashoffset = 1 - scrollProgress;
+    // }
 </script>
 
 <div class="progress-container">

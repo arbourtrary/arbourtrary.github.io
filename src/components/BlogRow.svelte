@@ -40,7 +40,7 @@
     }
     .date {
         text-align: center;
-        font-family: 'Avenir';
+        font-family: 'IM Fell English';
         font-size: 14px;
         white-space: pre-line;
         margin-right: 10px;
@@ -50,7 +50,7 @@
         width: 40px;
     }
     .title {
-        font-family: 'Avenir';
+        font-family: 'IM Fell English';
         font-size: 24px;
         line-height: 40px;
         margin-left: 10px;

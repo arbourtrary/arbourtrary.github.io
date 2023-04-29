@@ -4,11 +4,12 @@
 import { onMount } from "svelte";
 import { section } from "../store.js"
 
-export let linearGradient = "linear-gradient(to right, #D2B0EC, #AAC4A2, #8CB2D3, #F2DC9B)"
+// export let linearGradient = "linear-gradient(to right, #D2B0EC, #AAC4A2, #8CB2D3, #F2DC9B)"
+export let linearGradient = "linear-gradient(to right, #D2B0EC, #AAC4A2, #8CB2D3, #EFBD8D)"
 
 // The strings to morph between. You can change these to anything you want!
 export let texts = []
-
+export let shouldPause = false;
 
 onMount(() => {
 
@@ -29,13 +30,14 @@ onMount(() => {
 	let time = new Date();
 	let morph = 0;
 	let cooldown = cooldownTime;
+	let morphDone = false;
 
 	// TODO: COULD NOT FIGURE OUT PERFORMANT ADAPTION
 	// TRY OOUT EFFECT IN THREEJS LATER
 
-	elts.text1.textContent = texts[Math.round(Math.random())];
-	// elts.text1.textContent = texts[textIndex % texts.length];
-	// elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+	// elts.text1.textContent = texts[Math.round(Math.random())];
+	elts.text1.textContent = texts[textIndex % texts.length];
+	elts.text2.textContent = texts[(textIndex + 1) % texts.length];
 
 	function doMorph() {
 		morph -= cooldown;
@@ -45,6 +47,7 @@ onMount(() => {
 		
 		if (fraction > 1) {
 			cooldown = cooldownTime;
+			morphDone = true;
 			fraction = 1;
 		}
 		// fraction = 0.5
@@ -80,27 +83,34 @@ onMount(() => {
 	function animate() {
 		requestAnimationFrame(animate);
 		if ($section === 0) {
-			let newTime = new Date();
-			let shouldIncrementIndex = cooldown > 0;
-			let dt = (newTime - time) / 1000;
-			time = newTime;
-			
-			cooldown -= dt;
-			
-			if (cooldown <= 0) {
-				if (shouldIncrementIndex) {
-					textIndex++;
-				}
-				
-				doMorph();
-			} else {
+			if (shouldPause && morphDone) {
 				doCooldown();
+			} else {
+				let newTime = new Date();
+				let shouldIncrementIndex = cooldown > 0;
+				let dt = (newTime - time) / 1000;
+				time = newTime;
+				
+				cooldown -= dt;
+				
+				if (cooldown <= 0) {
+					if (shouldIncrementIndex) {
+						textIndex++;
+						morphDone = false;
+					}
+					
+					doMorph();
+				} else {
+					doCooldown();
+				}
 			}
+
+			
 		}
 	}
 
 	// TODO: make performant Start the animation.
-	// animate();
+	animate();
 })
 
 </script>
@@ -123,7 +133,7 @@ onMount(() => {
 					values="1 0 0 0 0
 									0 1 0 0 0
 									0 0 1 0 0
-									0 0 0 255 -130" />
+									0 0 0 255 -100" />
 		</filter>
 	</defs>
 </svg>
@@ -132,7 +142,7 @@ onMount(() => {
 	/* Explanation in JS tab */
 
 	/* Cool font from Google Fonts! */
-	@import url('https://fonts.googleapis.com/css?family=Raleway:900&display=swap');
+	@import url('https://fonts.googleapis.com/css?family=IM Fell English:900&display=swap');
 
 	body {
 		margin: 0px;
@@ -143,7 +153,7 @@ onMount(() => {
 		position: relative;
 		margin: auto;
 		width: 100%;
-		height: 35px;
+		height: 40px;
 		top: 0;
 		bottom: 0;
 		z-index: 20;
@@ -155,9 +165,9 @@ onMount(() => {
 	#text1, #text2 {
 		position: absolute;
 		display: inline-block;
-		letter-spacing: 0.1px;
-		font-family: 'Raleway', sans-serif;
-		font-size: 40px;
+		letter-spacing: .1px;
+		font-family: 'IM Fell English', sans-serif;
+		font-size: 45px;
 		text-align: left;
 		font-weight: 600;
 		user-select: none;
@@ -179,6 +189,8 @@ onMount(() => {
 			text-align: center;
 			transform: translate(-50%, 0);
     		left: 50%;
+			letter-spacing: .1px;
+
 		}
 	}
 </style>

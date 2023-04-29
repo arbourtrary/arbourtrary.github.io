@@ -71,19 +71,19 @@
     }
     :global(.section-subtitle) {
         width: fit-content;
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        color: gray;
-        font-family: 'Avenir';
-        padding-bottom: 5px;
+        font-size: 16px;
+        /*text-transform: uppercase;*/
+        /*letter-spacing: 2px;*/
+        color: #999;
+        font-family: 'IM Fell English';
+        padding-bottom: 2px;
         border-bottom: 1px solid gray;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         padding-right: 5px;
     }
     :global(.section-description) {
-        color: black;
-        font-family: 'Avenir';
+        color: #555;
+        font-family: 'IM Fell English';
     }
     :global(.desktop) {
         display: block;
@@ -100,6 +100,10 @@
         }
     }
 </style>
+<svelte:head>
+  <link href="https://fonts.googleapis.com/css?family=IM+Fell+English" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet">
+</svelte:head>
 <script>
     import Header from "../components/Header.svelte"
     import Progress from "../components/Progress.svelte"
@@ -120,7 +124,7 @@
 <svelte:window bind:scrollY={scrollY}/>
 <!-- Sticky elements -->
 <Header/>
-<Progress {scrollY}/>
+<!-- <Progress {scrollY}/> -->
 
 <!-- Sections -->
 <About
