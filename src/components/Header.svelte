@@ -37,15 +37,14 @@
         padding-bottom: 20px;
     }
     .title {
-        width: 100px;
+        width: 70px;
         font-size: 15px;
-        text-transform: uppercase;
         font-family: 'IM Fell English';
         font-weight: 300;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
         text-align: center;
         margin: 0px 40px;
-        padding-bottom: 5px;
+        padding-bottom: 3px;
         color: lightgray !important;
         border-bottom: 1px solid lightgray;
         transition: all 300ms ease-out;
@@ -63,8 +62,8 @@
             padding-top: min(2vh, 12px);
             width: auto;
             font-size: 12px;
-            letter-spacing: 2px;
-            margin: 0px 16px;
+            letter-spacing: 1px;
+            margin: 0px 20px;
             padding-bottom: 2px;
         }
         .header {

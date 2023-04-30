@@ -59,7 +59,7 @@
         headers = outerContainer.querySelectorAll('.about-header');
         headerPoints = outerContainer.querySelectorAll('.about-point');
         // imgs = outerContainer.querySelectorAll('.about-img');
-        initialOffset = window.innerHeight / 2;
+        initialOffset = window.innerHeight / 5;
 
         scrollingAnchorHeight = outerContainer.offsetHeight - window.innerHeight - initialOffset;
 

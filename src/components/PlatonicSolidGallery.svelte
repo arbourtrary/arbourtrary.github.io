@@ -1,5 +1,7 @@
 <script defer>
     import { section } from "../store.js"
+    import { onMount } from "svelte";
+
     import * as THREE from 'three';
     // TODO: generalize to have this extend a platonic solid gallery component
     export let platonicSolid = "dodecahedron"
@@ -25,13 +27,54 @@
     let awards;
     let tags;
     let gallery;
+    let foreground;
     let edges;
     let prevIndex = 0;
     let index = 0;
+    let manifoldFaces = [];
 
     const loader = new GLTFLoader();
 
-    
+    let path;
+    let pathLength;
+    let dashArray;
+
+    const setPathLength = () => {
+        pathLength = path.getTotalLength();
+        dashArray = [pathLength, pathLength];
+    };
+
+    onMount(() => {
+        manifoldFaces = [...document.querySelectorAll(".pentagon")];
+    });
+
+    function calculateScrollPercentage(element, scrollY, offset=0) {
+      const elementOffsetTop = -1 * element.getBoundingClientRect().top;
+      const elementHeight = element.clientHeight;
+      const windowHeight = window.innerHeight;
+      const offsetHeight = elementHeight * offset;
+      let scrollPercentage = clamp((elementOffsetTop - offsetHeight) / (elementHeight - windowHeight), 0, 1);
+      return scrollPercentage
+    }
+
+    function clamp(val, min, max) {
+        return val > max ? max : val < min ? min : val;
+    }
+
+
+    const piecewisePoints = [0, 0.047, 0.145, 0.238, 0.326, 0.415, 0.502, 0.593, 0.687, 0.776, 0.871, 0.958, 1]
+    const lerpPoints = [0, 0.083, 0.167,0.25, 0.333, 0.417, 0.5, 0.583, 0.667, 0.75, 0.833, 0.917, 1]
+
+    let scrollProgress = 0;
+    let piecewiseProgress = 0;
+    $: if(foreground) {
+        scrollProgress = calculateScrollPercentage(foreground, scrollY)
+        piecewiseProgress = clamp(piecewisePoints[index] + (scrollProgress - lerpPoints[index]) / (lerpPoints[index + 1] - lerpPoints[index]) * (piecewisePoints[index + 1] - piecewisePoints[index]), 0, 1)
+
+    }
+    $: if (path) {
+        path.style.strokeDashoffset = 1 - piecewiseProgress;
+    }
 
 function equals( v1, v2, epsilon = Number.EPSILON ) {
     return ( ( Math.abs( v1.x - v2.x ) < epsilon ) && ( Math.abs( v1.y - v2.y ) < epsilon ) && ( Math.abs( v1.z - v2.z ) < epsilon ) );
@@ -385,6 +428,22 @@ function updateGallery() {
                 year = indexData.year;
                 awards = indexData.awards.join(", ");
                 tags = indexData.tags.join(", ");
+                // document.querySelector(`#pentagon-${prevIndex + 1}`).style.opacity = 0.2
+
+                // TODO - replace query selector by array
+                if (index > prevIndex){
+                    manifoldFaces.filter((item, i) => i < index).forEach((item) => {
+                        item.style.fillOpacity = 0.2
+                    })
+                } else {
+                    manifoldFaces.filter((item, i) => i > index).forEach((item) => {
+                        item.style.fillOpacity = 0
+                    })
+                }
+                manifoldFaces[index].style.opacity = 1
+                manifoldFaces[index].style.fillOpacity = 1
+                manifoldFaces[index].style.fill = "gray"
+
             }
             prevIndex = index;
         }
@@ -419,7 +478,7 @@ $: galleryHeight = windowHeight * numberOfSides / 1.2 + windowHeight;
 <svelte:window bind:innerWidth={innerWidth}/>
 
 <div class="platonic-gallery" bind:this={gallery}>
-    <div class="foreground" style={`height: ${galleryHeight}px`}></div>
+    <div class="foreground" style={`height: ${galleryHeight}px`} bind:this={foreground}></div>
 
     <div class="background" style="height: calc(100vh - 75px);">
 
@@ -446,8 +505,100 @@ $: galleryHeight = windowHeight * numberOfSides / 1.2 + windowHeight;
             {/if}
         </div>
 
-        <div class="canvas"> 
-            <canvas height="800" width="800" bind:this={canvas}></canvas>
+        <div style="display: flex; flex-direction: column; justify-content: center;">
+            <div class="canvas"> 
+                <canvas height="800" width="800" bind:this={canvas}></canvas>
+            </div>
+            <div>
+            <div style="width: 100%; margin:  10px 0; height: 70px; object-fit: contain;">
+                <svg
+   width="100%"
+   height="100%"
+   viewBox="0 0 527.96284 261.57872"
+   version="1.1"
+   id="svg5"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+     id="defs2" /><g
+     id="layer1"
+     transform="translate(-0.30301638,-0.43095359)"><path
+       style="fill:gray;stroke:#7d7d7d;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       id="pentagon-1"
+       class="pentagon"
+       d="m 41.231933,140.49878 -17.912028,2.821 -17.9070843,2.85219 -8.2180441,-16.16361 -8.2461946,-16.14927 12.8329968,-12.81066 12.8106562,-12.832997 16.149272,8.246195 16.163615,8.218042 -2.852197,17.90709 z"
+       transform="matrix(1.7551409,0.27798701,-0.27798701,1.7551409,136.43801,-96.294659)" /><path
+       style="fill:gray;stroke:#7d7d7d;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       id="pentagon-2"
+       class="pentagon"
+       d="m 41.231933,140.49878 -17.912028,2.821 -17.9070843,2.85219 -8.2180441,-16.16361 -8.2461946,-16.14927 12.8329968,-12.81066 12.8106562,-12.832997 16.149272,8.246195 16.163615,8.218042 -2.852197,17.90709 z"
+       transform="matrix(-1.7551409,-0.27798702,0.27798702,-1.7551409,138.61539,419.71701)" /><path
+       style="fill:gray;stroke:#7d7d7d;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       id="pentagon-3"
+       class="pentagon"
+       d="m 41.231933,140.49878 -17.912028,2.821 -17.9070843,2.85219 -8.2180441,-16.16361 -8.2461946,-16.14927 12.8329968,-12.81066 12.8106562,-12.832997 16.149272,8.246195 16.163615,8.218042 -2.852197,17.90709 z"
+       transform="matrix(1.2565422,1.2565422,-1.2565422,1.2565422,178.218,-28.624215)" /><path
+       style="fill:gray;stroke:#7d7d7d;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       id="pentagon-4"
+       class="pentagon"
+       d="m 41.231933,140.49878 -17.912028,2.821 -17.9070843,2.85219 -8.2180441,-16.16361 -8.2461946,-16.14927 12.8329968,-12.81066 12.8106562,-12.832997 16.149272,8.246195 16.163615,8.218042 -2.852197,17.90709 z"
+       transform="matrix(1.5833355,-0.80674972,0.80674972,1.5833355,-41.15203,-126.58232)" /><path
+       style="fill:gray;stroke:#7d7d7d;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       id="pentagon-5"
+       class="pentagon"
+       d="m 41.231933,140.49878 -17.912028,2.821 -17.9070843,2.85219 -8.2180441,-16.16361 -8.2461946,-16.14927 12.8329968,-12.81066 12.8106562,-12.832997 16.149272,8.246195 16.163615,8.218042 -2.852197,17.90709 z"
+       transform="matrix(1.2565422,1.2565422,-1.2565422,1.2565422,314.61852,-127.79833)" /><path
+       style="fill:gray;stroke:#7d7d7d;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       id="pentagon-6"
+       class="pentagon"
+       d="m 41.231933,140.49878 -17.912028,2.821 -17.9070843,2.85219 -8.2180441,-16.16361 -8.2461946,-16.14927 12.8329968,-12.81066 12.8106562,-12.832997 16.149272,8.246195 16.163615,8.218042 -2.852197,17.90709 z"
+       transform="matrix(-0.80674972,1.5833355,-1.5833355,-0.80674972,425.59887,209.91183)" /><path
+       style="fill:gray;stroke:#7d7d7d;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       id="pentagon-7"
+       class="pentagon"
+       d="m 41.231933,140.49878 -17.912028,2.821 -17.9070843,2.85219 -8.2180441,-16.16361 -8.2461946,-16.14927 12.8329968,-12.81066 12.8106562,-12.832997 16.149272,8.246195 16.163615,8.218042 -2.852197,17.90709 z"
+       transform="matrix(0.80674972,-1.5833355,1.5833355,0.80674972,102.97001,52.528782)" /><path
+       style="fill:gray;stroke:#7d7d7d;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       id="pentagon-8"
+       class="pentagon"
+       d="m 41.231933,140.49878 -17.912028,2.821 -17.9070843,2.85219 -8.2180441,-16.16361 -8.2461946,-16.14927 12.8329968,-12.81066 12.8106562,-12.832997 16.149272,8.246195 16.163615,8.218042 -2.852197,17.90709 z"
+       transform="matrix(-1.2565422,-1.2565422,1.2565422,-1.2565422,213.95036,390.23893)" /><path
+       style="fill:gray;stroke:#7d7d7d;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       id="pentagon-9"
+       class="pentagon"
+       d="m 41.231933,140.49878 -17.912028,2.821 -17.9070843,2.85219 -8.2180441,-16.16361 -8.2461946,-16.14927 12.8329968,-12.81066 12.8106562,-12.832997 16.149272,8.246195 16.163615,8.218042 -2.852197,17.90709 z"
+       transform="matrix(-1.5833355,0.80674972,-0.80674972,-1.5833355,569.72092,389.02296)" /><path
+       style="fill:gray;stroke:#7d7d7d;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       id="pentagon-10"
+       class="pentagon"
+       d="m 41.231933,140.49878 -17.912028,2.821 -17.9070843,2.85219 -8.2180441,-16.16361 -8.2461946,-16.14927 12.8329968,-12.81066 12.8106562,-12.832997 16.149272,8.246195 16.163615,8.218042 -2.852197,17.90709 z"
+       transform="matrix(-1.2565422,-1.2565422,1.2565422,-1.2565422,350.3509,291.06486)" /><path
+       style="fill:gray;stroke:#7d7d7d;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       id="pentagon-11"
+       class="pentagon"
+       d="m 41.231933,140.49878 -17.912028,2.821 -17.9070843,2.85219 -8.2180441,-16.16361 -8.2461946,-16.14927 12.8329968,-12.81066 12.8106562,-12.832997 16.149272,8.246195 16.163615,8.218042 -2.852197,17.90709 z"
+       transform="matrix(1.7551409,0.27798701,-0.27798701,1.7551409,389.95349,-157.27642)" /><path
+       style="fill:gray;stroke:#7d7d7d;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       id="pentagon-12"
+       class="pentagon"
+       d="m 41.231933,140.49878 -17.912028,2.821 -17.9070843,2.85219 -8.2180441,-16.16361 -8.2461946,-16.14927 12.8329968,-12.81066 12.8106562,-12.832997 16.149272,8.246195 16.163615,8.218042 -2.852197,17.90709 z"
+       transform="matrix(-1.7551409,-0.27798702,0.27798702,-1.7551409,392.13086,358.73531)" />
+           <path
+                bind:this={path}
+                on:resize={setPathLength}
+                id="pentagon-route"
+                pathLength="1"
+                stroke-width="1"
+                stroke="black"
+                fill="none" 
+                d="m 137.52669,112.07243 2e-5,99.27748 -84.041698,-61.10194 31.857468,-99.237934 104.54305,0.06382 32.1296,99.174094 84.5386,-38.05529 32.1296,99.17408 104.54307,0.0639 31.85747,-99.23793 -84.04169,-61.101995 v 99.277535"
+            />
+        </g>
+    </svg>
+            </div>
+<!-- 
+                <img src="/images/dodecahedron_manifold.svg" style="width: 100%; margin:  10px 0; height: 70px; object-fit: contain;"> -->
+            </div>
         </div>
 
         {#if isMobile}
@@ -472,6 +623,19 @@ $: galleryHeight = windowHeight * numberOfSides / 1.2 + windowHeight;
 </div>
 
 <style>
+    .pentagon {
+        opacity: 1;
+        fill-opacity: 0;
+        transition: all 150ms ease-in;
+    }
+    #pentagon-route {
+        stroke-dasharray: 1;
+        stroke-dashoffset: 1;
+        transition: stroke-dashoffset 20ms linear;
+        opacity: 1;
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
     .platonic-gallery {
         display: flex;
         justify-content: center;
@@ -498,8 +662,8 @@ $: galleryHeight = windowHeight * numberOfSides / 1.2 + windowHeight;
     }
     .canvas {
         /*height: min(80vh, 85vw);*/
-        width: min(80vh, 85vw);
-        margin: auto;
+        width: calc(min(80vh, 85vw) - 100px);
+        /*margin: auto;*/
         position: relative;
     }
     canvas {
@@ -522,8 +686,12 @@ $: galleryHeight = windowHeight * numberOfSides / 1.2 + windowHeight;
     .detail-description {
         margin: 0px;
     }
+    .detail {
+        margin-bottom: 20px;
+    }
     .section-subtitle {
-        margin-bottom: 10px;
+        margin-bottom: 0px;
+        border-bottom: none;
     }
     .title {
         font-size: 28px;
