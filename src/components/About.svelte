@@ -66,15 +66,18 @@
     });
 
     let progress = 0;
-    $: if(scrollingAnchorHeight && scrollY && initialOffset) {
-        progress = (window.scrollY - initialOffset) / scrollingAnchorHeight;
-        progress = progress > 1 ? 1 : progress < 0 ? 0 : progress;
-    }
+    // $: if(scrollingAnchorHeight && scrollY && initialOffset) {
+    //     progress = (window.scrollY - initialOffset) / scrollingAnchorHeight;
+    //     progress = progress > 1 ? 1 : progress < 0 ? 0 : progress;
+    // }
 
     // Create a function that highlights the correct header based on the equal splits of the height of the scrolling-anchor component
     function highlightHeader() {
-        if (outerContainer && $section === 0 && initialOffset) {
 
+        if (outerContainer && $section === 0 && initialOffset) {
+            progress = (window.scrollY - initialOffset) / scrollingAnchorHeight;
+            progress = progress > 1 ? 1 : progress < 0 ? 0 : progress;
+            
             // const scrollingAnchorHeight = outerContainer.offsetHeight - window.innerHeight - initialOffset;
             const headerHeight = scrollingAnchorHeight / headerTexts.length;
             currentIndex = Math.floor((window.scrollY - initialOffset) / headerHeight);
@@ -117,23 +120,6 @@
                             // imgs[i].classList.remove('active');
                         }
                     } else {
-  //                       linearGradient = `
-  //                           linear-gradient(
-  //                               to right,
-  // hsl(208deg 45% 69%) 0%,
-  // hsl(224deg 43% 75%) 9%,
-  // hsl(246deg 44% 79%) 18%,
-  // hsl(265deg 54% 80%) 27%,
-  // hsl(273deg 51% 80%) 36%,
-  // hsl(267deg 25% 78%) 45%,
-  // hsl(209deg 5% 74%) 55%,
-  // hsl(110deg 17% 71%) 64%,
-  // hsl(75deg 23% 68%) 73%,
-  // hsl(45deg 35% 68%) 82%,
-  // hsl(34deg 54% 69%) 91%,
-  // hsl(30deg 73% 69%) 100%
-  //                           )
-  //                       `;
                         linearGradient = "linear-gradient(to right, #8CB2D3, #AAC4A2, #EFBD8D, #D2B0EC)";
                         // linearGradient = "linear-gradient(to right, #D2B0EC, #AAC4A2, #8CB2D3, #F2DC9B)";
                         if (headers.length) {
@@ -275,6 +261,7 @@
                     </div>
                     <div style={`width: 3px; height: ${progress * 100}%; display: flex; flex-direction: column; justify-content: space-between; position: absolute; top: 0; left: 5px; background: linear-gradient(${linearGradientLine}, ${activeColor}); z-index: 2;`}>
                     </div>
+
                     <div>
                         <div style="display: flex; flex-direction: row; justify-content: start;">
                             <div class="about-point"></div>
@@ -301,7 +288,6 @@
             </div>
 
             <div class="img-container">
-                <div class="about-circle"></div>
                 <canvas id="viewport"  height="1000" width="1000" bind:this={viewport}/>
             </div>
 
@@ -312,13 +298,17 @@
                     {linearGradient}
                     shouldPause={currentIndex >= 0}
                 />
-                <div style={`height: 1px; width: 100%; display: flex; flex-direction: column; justify-content: space-between; position: absolute; bottom: 6px; left: 0px; background: #ddd; z-index: 1;`}>
-                </div>
-                <div style={`height: 3px; width: ${progress * 100}%; display: flex; flex-direction: column; justify-content: space-between; position: absolute; bottom: 5px; left: 0px; background: linear-gradient(to right, ${linearGradientLine}, ${activeColor}); z-index: 2;`}>
+                <div style="width: min(350px, 100%);
+                        position: relative;
+                        margin: 0 auto;">
+
+                    <div style={`height: 1px; width: 100%; display: flex; flex-direction: column; justify-content: space-between; position: absolute; bottom: 6px; left: 0px; background: #ddd; z-index: 1;`}>
+                    </div>
+                    <div style={`height: 3px; width: ${progress * 100}%; display: flex; flex-direction: column; justify-content: space-between; position: absolute; bottom: 5px; left: 0px; background: linear-gradient(to right, ${linearGradientLine}, ${activeColor}); z-index: 2;`}>
+                    </div>
                 </div>
             </div>
             <div class="img-container">
-                <div class="about-circle"></div>
                 <canvas id="viewport" height="700" width="700" bind:this={viewport}>
                 </canvas>
             </div>
@@ -327,6 +317,7 @@
                     style={`
                         color: ${currentIndex >= 0 ? aboutColors[currentIndex] : 'gray'};
                         font-weight: ${currentIndex >= 0 ? '900' : '300'};
+                        font-size: ${currentIndex >= 0 ? '26px' : '16px'};
                         ${currentIndex >= 0 ? "" : "margin: 15px auto 0px auto; border: none; text-transform: none; letter-spacing: normal;"}
                     `}
                     class="section-subtitle center">{currentIndex >= 0 ? headerTexts[currentIndex] : "Scroll to explore"}
@@ -362,11 +353,10 @@
         height: 100%;
         width: 100%;
         position: absolute;
-        top: 0;
-        left: 0;
         z-index: 22;
-        -webkit-transform: translate3d(0,0,1);
-        transform: translate3d(0,0,1);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     .line {
         display:block;
@@ -548,10 +538,14 @@
         -webkit-transform: translate3d(0,0,1px);
         transform: translate3d(0,0,1px);
         z-index: 20;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
-    canvas {
+    scrolling-anchor canvas {
         width: 100% !important;
-        height: 100% !important;
+        height: unset !important;
     }
     .about-header {
         font-size: 28px;
@@ -570,25 +564,6 @@
         padding-top: 30px;
         margin: 5px 40px 0px 0px;
         height: 100px;
-    }
-    .about-circle {
-        object-fit: contain;
-        height: 95%;
-        width: 95%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        /*background: #f6f5f1;*/
-        /*border:  1px solid #f6f5f1;*/
-        /*box-shadow: 
-                0px 0px 50px #aaa,
-                0px 0px 40px #aaa,
-                0px 0px 30px #aaa,
-                0px 0px 20px #aaa,
-                0px 0px 10px #aaa;*/
-        z-index: 22;
-        border-radius: 50%;
     }
     .about-img {
         object-fit: contain;
@@ -616,8 +591,14 @@
     @media screen and (max-width: 1000px) {
         .about-container {
             flex-direction: column;
-            height: 100vh;
+            height: calc(100vh - 75px);
+            top: 35px;
+            transform: translate(0,0);
             padding-top: 0px;
+            grid-row-gap: max(2vh, 10px);
+            min-height: 0;
+            /*top: 50vh;*/
+            /*transform: translate(0, -50%);*/
         }
         .grid {
             height: 100%;
@@ -653,6 +634,7 @@
     }
     @media screen and (max-width: 700px) {
         .img-container {
+            margin: 0 auto;
             height: min(80vh, 90vw, 500px);
             width: min(80vh, 90vw, 500px);
         }
