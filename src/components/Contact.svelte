@@ -19,6 +19,8 @@
     	opacity = 0;
     }
 
+    $: pointerEvents = $section === sectionIndex ? 'all' : 'none'
+
     let innerWidth = window.innerWidth
     let innerHeight = window.innerHeight
 </script>
@@ -26,12 +28,27 @@
 <svelte:window bind:innerWidth={innerWidth} bind:innerHeight={innerHeight}/>
 
 <div class="background" bind:this={outerContainer}>
-	<img class="background-image" src={`${(innerWidth < 1000) && (innerWidth < innerHeight) ? "/images/bg_bw_portrait.jpeg" : "/images/bg_bw_landscape.jpeg"}`} style={`opacity: ${opacity};`}>
-    <div class="background-contacts" style={`opacity: ${Math.pow(percent, 3)};`}>
-        <!-- <p class="logo-text" style={`pointer-events: ${$section === sectionIndex ? 'all' : 'none'};`}>Follow me on Twitter :)</p> -->
-        <a class="logo twitter" style={`pointer-events: ${$section === sectionIndex ? 'all' : 'none'};`} href="https://www.twitter.com/arbourtrary" target="_blank"></a>
-       <!--  <p class="logo-text" style={`pointer-events: ${$section === sectionIndex ? 'all' : 'none'};`}>Check out my code on Github</p> -->
-        <a class="logo github" style={`pointer-events: ${$section === sectionIndex ? 'all' : 'none'};`} href="https://github.com/arbourtrary" target="_blank"></a>
+	<img
+        class="background-image"
+        src={`${(innerWidth < 1000) && (innerWidth < innerHeight) ? "/images/bg_bw_portrait.jpeg" : "/images/bg_bw_landscape.jpeg"}`}
+        style={`opacity: ${opacity};`}
+    >
+    <div 
+        class="background-contacts"
+        style={`opacity: ${Math.pow(percent, 3)};`}
+    >
+        <a
+            class="logo twitter"
+            style={`pointer-events: ${pointerEvents};`}
+            href="https://www.twitter.com/arbourtrary"
+            target="_blank">
+        </a>
+        <a
+            class="logo github"
+            style={`pointer-events: ${pointerEvents};`}
+            href="https://github.com/arbourtrary"
+            target="_blank">
+        </a>
     </div>
 </div>
 <div id="contact"></div>
@@ -54,7 +71,7 @@
 		z-index: 10;
 		pointer-events: none;
 		object-fit: cover;
-		object-position: right;
+		object-position: top right;
     }
     .background-contacts {
         position: fixed;
@@ -92,7 +109,7 @@
         background-size: contain;
     }
     .github {
-        background: no-repeat center url("/images/github.svg");
+        background: no-repeat center url("/images/github.png");
         background-size: contain;
     }
     @media screen and (max-width: 1000px) {

@@ -30,11 +30,16 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-        padding-top: 30px;
         background: #f6f5f1;
         /*background: white;*/
         z-index: 10;
-        padding-bottom: 20px;
+        padding: 20px 0;
+        box-shadow: 
+            0px 0px 10px #f6f5f1,
+            0px 0px 10px #f6f5f1,
+            0px 0px 10px #f6f5f1,
+            0px 0px 10px #f6f5f1,
+            0px 0px 10px #f6f5f1;
     }
     .title {
         width: 70px;

@@ -14,21 +14,32 @@
         // opacity = percent > 0.6 ? 0.8 - (percent - 0.4) : percent < 0.4 ? 2 * percent : 0.8
         opacity = opacity > 1.0 ? 1 : opacity < 0 ? 0 : opacity;
     }
+    console.log(blogPost)
 </script>
 
-<div bind:this={blogRow} class="row" style={`opacity: ${opacity}`}>
-    <div class="date">{@html blogPost.date}</div>
-    <div class="droplet"><span 
-        style="filter:invert(81%) sepia(6%) saturate(2525%) hue-rotate(178deg) brightness(86%) contrast(92%);"
-        ><img style="width:100%; height: 100%" src={`/images/droplet_${index}.png`}></span>
-</div>
-    <div class="title">{blogPost.title}</div>
-</div>
+<a href={`/blog/${blogPost.slug}`} target="_blank">
+    <div bind:this={blogRow} class="row" style={`opacity: ${opacity}`}>
+        <div class="date">{@html blogPost.date}</div>
+        <div class="droplet">
+            <span style={`filter: ${blogPost?.filter}`}>
+                <img src={`/images/droplet_${index}.png`}>
+            </span>
+        </div>
+        <div class="title">{blogPost.title}</div>
+    </div>
+</a>
 
 <style>
+    a {
+        color: unset;
+        text-decoration: none;
+    }
+    img {
+        width:100%;
+        height: 100%
+    }
     .row {
         margin: 10px;
-        height: 40px;
         transition: opacity 50ms linear;
         display: flex;
         flex-direction: row;
@@ -38,38 +49,53 @@
         opacity: 1 !important;
         cursor: pointer;
     }
+    .row:hover .title {
+        text-decoration: underline;
+    }
+    .row:hover .droplet {
+        filter: brightness(1.05);
+    }
+    .row:hover .date {
+        color: black;
+    }
     .date {
         text-align: center;
         font-family: 'IM Fell English';
         font-size: 14px;
         white-space: pre-line;
+        margin: auto 0;
         margin-right: 10px;
-        line-height: 20px;
+        color: #444;
     }
     .droplet {
-        width: 40px;
+        width: 50px;
+        height: 50px;
     }
     .title {
         font-family: 'IM Fell English';
         font-size: 24px;
-        line-height: 40px;
+        margin: auto 0;
         margin-left: 10px;
     }
-    @media screen and (max-width: 1000px) {
-        .row {
-            height: 25px;
-        }
+    @media screen and (max-width: 700px) {
         .date {
-            font-size: 10px;
-            line-height: 12px;
+            display: none;
+            font-size: 14px;
         }
         .droplet {
-            width: 25px;
-            height: 25px;
+            width: 40px;
+            height: 40px;
         }
         .title {
-            font-size: 16px;
-            line-height: 25px;
+            font-size: 22px;
+        }
+    }
+    @media screen and (max-width: 400px) {
+        .date {
+            display: none;
+        }
+        .title {
+            font-size: 18px;
         }
     }
 </style>

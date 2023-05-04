@@ -1,16 +1,33 @@
 <script>
     import { section } from "../store.js"
+    import { paintImage, paintBackground } from "../utils/canvas.js"
     import TextMorph from "./TextMorph.svelte";
     import { onMount } from "svelte";
 
     export let sectionIndex = 0;
     export let scrollY = 0;
 
+    let currentIndex = -1;
+    let prevIndex;
+    let scrollingAnchorHeight;
+    let initialOffset;
+    let interests = [];
+    let images = []
+    let headers = []
+    let headerPoints = []
+    let activeColor = "lightgray"
+    let progress = 0;
+    let linearGradient;
     let outerContainer;
+    let innerWidth = window.innerWidth
+    let viewport;
+    let canvas;
+    let context;
+
     $: offset = window.innerHeight / 2
     $: outerContainer && (scrollY >= (outerContainer.offsetTop - offset)) && (scrollY < (outerContainer.offsetTop + outerContainer.offsetHeight - offset)) && $section !== sectionIndex && section.set(sectionIndex)
 
-    let linearGradient;
+    // "ɑrbərtrɛri", "deɪvɪd njukəm"
     let morphTexts = ["arbourtrary", "David Newcomb"];
 
     let aboutColors = [
@@ -22,17 +39,12 @@
         "#EFBD8D",
         /*purple*/
         "#D2B0EC"
-
-
-        /*yellow*/
-        // "#fcd361",
     ]
 
     let linearGradients = [
         "linear-gradient(to right, #8CB2D3, #e6e6e6, #e6e6e6, #e6e6e6)",
         "linear-gradient(to right, #e6e6e6, #AAC4A2, #e6e6e6, #e6e6e6)",
         "linear-gradient(to right, #e6e6e6, #e6e6e6, #EFBD8D, #e6e6e6)",
-        // "linear-gradient(to right, #e6e6e6, #e6e6e6, #e6e6e6, #fcd361)",
         "linear-gradient(to right, #e6e6e6, #e6e6e6, #e6e6e6, #D2B0EC)",
         "linear-gradient(to right, #e6e6e6, #e6e6e6, #e6e6e6, #e6e6e6)"
     ]
@@ -45,39 +57,28 @@
         ['threeJS', 'generative art'],
         ['threeJS', 'generative art', 'threeJS', 'generative art', 'threeJS', 'generative art', 'threeJS', 'generative art', 'threeJS', 'generative art']
     ]
-    let interests = [];
-    let currentIndex = -1;
-    let prevIndex;
 
-    let scrollingAnchorHeight;
-    let initialOffset;
-    let headers = []
-    let headerPoints = []
-    let activeColor = "lightgray"
-    // let imgs = []
+    const imgFiles = [
+        "/images/drawing_blue.png",
+        "/images/drawing_green.png",
+        "/images/drawing_orange.png",
+        "/images/drawing_purple.png"
+    ]
+
     onMount(() => {
         headers = outerContainer.querySelectorAll('.about-header');
         headerPoints = outerContainer.querySelectorAll('.about-point');
-        // imgs = outerContainer.querySelectorAll('.about-img');
         initialOffset = window.innerHeight / 5;
 
         scrollingAnchorHeight = outerContainer.offsetHeight - window.innerHeight - initialOffset;
-
     });
-
-    let progress = 0;
-    // $: if(scrollingAnchorHeight && scrollY && initialOffset) {
-    //     progress = (window.scrollY - initialOffset) / scrollingAnchorHeight;
-    //     progress = progress > 1 ? 1 : progress < 0 ? 0 : progress;
-    // }
 
     // Create a function that highlights the correct header based on the equal splits of the height of the scrolling-anchor component
     function highlightHeader() {
-
         if (outerContainer && $section === 0 && initialOffset) {
             progress = (window.scrollY - initialOffset) / scrollingAnchorHeight;
             progress = progress > 1 ? 1 : progress < 0 ? 0 : progress;
-            
+
             // const scrollingAnchorHeight = outerContainer.offsetHeight - window.innerHeight - initialOffset;
             const headerHeight = scrollingAnchorHeight / headerTexts.length;
             currentIndex = Math.floor((window.scrollY - initialOffset) / headerHeight);
@@ -142,103 +143,17 @@
     }
     window.requestAnimationFrame(() => { highlightHeader() })
 
-
-    let images = []
-    function make_base(canvas, context, filename, opacity) {
-      let base_image = new Image();
-      base_image.src = filename;
-      base_image.onload = function(){
-        paintBackground(canvas, context, base_image, opacity)
-      }
-      return base_image
-    }
-
-    let viewport;
-    let canvas;
-    let context;
-    const imgFiles = [
-        "/images/drawing_blue.png",
-        "/images/drawing_green.png",
-        // "/images/drawing_yellow.png",
-        "/images/drawing_orange.png",
-        "/images/drawing_purple.png"
-    ]
-    // // let context;
     $: if (viewport) {
         canvas = document.getElementById('viewport');
         context = canvas.getContext('2d');
         context.clearRect(0, 0, canvas.width, canvas.height)
         imgFiles.forEach((imgFile) => {
-            const img = make_base(canvas, context, imgFile, 1);
+            const img = paintImage(canvas, context, imgFile, 1);
             images.push(img);
         })
     }
 
-  function paintBackground(canvas, context, element, opacity) {
-    if (element) {
-      let mode = "contain";
-      let percent = 0.5;
-
-      // Background width and height
-      let bw = element.width;
-      let bh = element.height;
-
-      if(element.nodeName == "VIDEO") {
-        bw = element.videoWidth;
-        bh = element.videoHeight;
-      }
-
-      // Canvas width and height
-      let cw = canvas.width;
-      let ch = canvas.height;
-
-      // Horizontal and vertical ratios of canvas to image
-      let hr = cw / bw;
-      let vr = ch / bh;
-
-      // Figure out the draw ratio
-      let dr;
-      switch(mode) {
-        case "horizontal":
-          dr = vr;
-          break;
-        case "vertical":
-          dr = hr;
-          break;
-        case "cover":
-          dr = Math.max(hr, vr);
-          percent = .5;
-          break;
-        case "contain":
-          dr = Math.min(hr, vr);
-          percent = .5;
-          break;
-      }
-
-      // Scale the image by the draw ratio
-      let dw = bw * dr;
-      let dh = bh * dr;
-
-      // Figure out the x and y for the image
-      let dx = (cw - dw) * percent;
-      let dy = (ch - dh) * percent;
-
-      // Clear it
-      // context.clearRect(0, 0, cw, ch)
-
-      // Draw the image
-      // context.save()
-      context.globalAlpha = opacity;
-      context.drawImage(element, 0,0, bw, bh, dx, dy, dw, dh);  
-      // context.globalAlpha = 1.0;
-        context.globalCompositeOperation = "saturation";
-        context.fillStyle = "hsl(0,200%,50%)";  // saturation at 100%
-      // context.restore();
-    }
-  }
-
     $: linearGradientLine = Array.from({length: (currentIndex + 2)}, (_, i) => i + 1).map((elem) => "#f6f5f1").join(", ")
-    let innerWidth = window.innerWidth
     $: isMobile = innerWidth < 1000;
 </script>
 
@@ -248,7 +163,7 @@
     <div class="about-container">
 
         {#if !isMobile}
-            <div style="width: 375px; display: flex; flex-direction: column; margin: auto;">
+            <div class="about-intro">
                 <div class="about-name desktop">
                     <TextMorph
                         texts={morphTexts}
@@ -256,32 +171,52 @@
                         shouldPause={currentIndex >= 0}
                     />
                 </div>
-                <div style="display: flex; flex-direction: row; position: relative;">
-                    <div style={`width: 1px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; position: absolute; top: 0; left: 6px; background: #ddd; z-index: 1;`}>
-                    </div>
-                    <div style={`width: 3px; height: ${progress * 100}%; display: flex; flex-direction: column; justify-content: space-between; position: absolute; top: 0; left: 5px; background: linear-gradient(${linearGradientLine}, ${activeColor}); z-index: 2;`}>
+                <div class="header-container">
+                    <div class="progress-bar-bg"></div>
+                    <div
+                        class="progress-bar-fg" 
+                        style={`
+                            height: ${progress * 100}%;
+                            background: linear-gradient(${linearGradientLine}, ${activeColor});
+                        `}>
                     </div>
 
                     <div>
-                        <div style="display: flex; flex-direction: row; justify-content: start;">
+                        <div class="about-row">
                             <div class="about-point"></div>
                             <div class="about-header">Creative Developer</div>
                         </div>
-                        <div style="display: flex; flex-direction: row; justify-content: start;">
+                        <div class="about-row">
                             <div class="about-point"></div>
                             <div class="about-header">Environmentalist</div>
                         </div>
-                        <div style="display: flex; flex-direction: row; justify-content: start;">
+                        <div class="about-row">
                             <div class="about-point"></div>
                             <div class="about-header">Poetry Enthusiast</div>
                         </div>
-                        <div style="display: flex; flex-direction: row; justify-content: start;">
+                        <div class="about-row">
                             <div class="about-point"></div>
                             <div class="about-header">Mathematician</div>
                         </div>
                     </div>
                 </div>
                 <div class="about-interests">
+                    {#if currentIndex < 0}
+                        <div
+                            class="section-subtitle center">Scroll to explore
+                        </div>
+                        <div class="line line-neg left"></div>
+                        <div class="line line-zero left"></div>
+                        <div class="line line-one left"></div>
+                        <div class="line line-two left"></div>
+                        <div class="line line-three left"></div>
+                        <div class="line line-four left"></div>
+                        <div class="line line-five left"></div>
+                        <div class="line line-six left"></div>
+                        <div class="line line-seven left"></div>
+                        <div class="line line-eight left"></div>
+                    {/if}
+
                     <div class="section-subtitle" style={`visibility: ${interests.length ? 'visible' : 'hidden'}`}>Interests</div>
                     <div class="section-description">{@html interests.join(", ")}</div>
                 </div>
@@ -292,19 +227,20 @@
             </div>
 
         {:else}
-            <div class="about-name mobile" style="position: relative;">
+            <div class="about-name mobile">
                 <TextMorph
                     texts={morphTexts}
                     {linearGradient}
                     shouldPause={currentIndex >= 0}
                 />
-                <div style="width: min(350px, 100%);
-                        position: relative;
-                        margin: 0 auto;">
-
-                    <div style={`height: 1px; width: 100%; display: flex; flex-direction: column; justify-content: space-between; position: absolute; bottom: 6px; left: 0px; background: #ddd; z-index: 1;`}>
-                    </div>
-                    <div style={`height: 3px; width: ${progress * 100}%; display: flex; flex-direction: column; justify-content: space-between; position: absolute; bottom: 5px; left: 0px; background: linear-gradient(to right, ${linearGradientLine}, ${activeColor}); z-index: 2;`}>
+                <div class="header-container">
+                    <div class="progress-bar-bg"></div>
+                    <div
+                        class="progress-bar-fg" 
+                        style={`
+                            width: ${progress * 100}%;
+                            background: linear-gradient(to right, ${linearGradientLine}, ${activeColor});
+                        `}>
                     </div>
                 </div>
             </div>
@@ -335,11 +271,57 @@
                 <div class="section-description center">{@html interests.join(", ")}</div>
             </div>
         {/if}
-    <div class="grid"></div>
     </div>
 </scrolling-anchor>
 
 <style>
+    .about-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+    }
+    .progress-bar-bg {
+        height: 1px;
+        width: 100%;
+        top: unset;
+        bottom: 6px;
+        left: 0px;
+
+        width: 1px;
+        height: 100%;
+        top: 0;
+        left: 6px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: absolute;
+        background: #ddd;
+        z-index: 1;
+    }
+    .progress-bar-fg {
+        width: 3px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: absolute;
+        top: 0;
+        left: 5px;
+        z-index: 2;
+    }
+    .header-container {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+    }
+    .about-name {
+        position: relative;
+    }
+    .about-intro {
+        width: 375px;
+        display: flex;
+        flex-direction: column;
+        margin: auto 0;
+    }
     .about-point {
         border-radius: 50%;
         height: 11px;
@@ -358,12 +340,21 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
+    .left {
+        text-align: left !important;
+        margin: 0 !important;
+    }
     .line {
         display:block;
         border-top:1px solid black;
         text-align:center;
-        padding-bottom: 5px;
+        padding-bottom: 8px;
         margin: 0 auto;
+    }
+    .line-neg {
+        width:110px;
+        animation: line1 3s infinite linear;
+        animation-delay: 100ms;
     }
     .line-zero {
         width:95px;
@@ -416,7 +407,7 @@
         opacity: 1;
       }
       50% {
-        opacity: 0.1;
+        opacity: 0.05;
       }
       100% {
         opacity: 1;
@@ -427,7 +418,7 @@
         opacity: 1;
       }
       50% {
-        opacity: 0.1;
+        opacity: 0.05;
       }
       100% {
         opacity: 1;
@@ -438,7 +429,7 @@
         opacity: 1;
       }
       50% {
-        opacity: 0.1;
+        opacity: 0.05;
       }
       100% {
         opacity: 1;
@@ -449,7 +440,7 @@
         opacity: 1;
       }
       50% {
-        opacity: 0.1;
+        opacity: 0.05;
       }
       100% {
         opacity: 1;
@@ -460,7 +451,7 @@
         opacity: 1;
       }
       50% {
-        opacity: 0.1;
+        opacity: 0.05;
       }
       100% {
         opacity: 1;
@@ -471,7 +462,7 @@
         opacity: 1;
       }
       50% {
-        opacity: 0.1;
+        opacity: 0.05;
       }
       100% {
         opacity: 1;
@@ -482,7 +473,7 @@
         opacity: 1;
       }
       50% {
-        opacity: 0.1;
+        opacity: 0.05;
       }
       100% {
         opacity: 1;
@@ -493,7 +484,7 @@
         opacity: 1;
       }
       50% {
-        opacity: 0.1;
+        opacity: 0.05;
       }
       100% {
         opacity: 1;
@@ -517,23 +508,10 @@
         margin: auto 0;
         justify-content: center;
     }
-    .grid {
-        display: none;
-        position: absolute;
-        top: 0;
-        height: min(100vw, 100vh);
-        width: min(100vw, 100vh);
-        z-index: 0;
-        background-size: 20px 20px;
-        transform: rotate(-35deg);
-        background-image:
-            linear-gradient(to right, #88888822 1px, transparent 1px),
-            linear-gradient(to bottom, #88888822 1px, transparent 1px);
-    }
     .img-container {
         height: min(80vh, 85vw);
         width: min(80vh, 85vw);
-        margin: auto;
+        margin: auto 0;
         position: relative;
         -webkit-transform: translate3d(0,0,1px);
         transform: translate3d(0,0,1px);
@@ -561,7 +539,7 @@
         filter: saturate(150%);
     }
     .about-interests {
-        padding-top: 30px;
+        padding-top: 15px;
         margin: 5px 40px 0px 0px;
         height: 100px;
     }
@@ -588,11 +566,41 @@
     .section-description {
          font-size: 18px;
     }
+    .section-subtitle {
+        font-weight: 300;
+        font-size: 16px;
+        border: none;
+        text-transform: none;
+        letter-spacing: normal;
+        padding-bottom: 4px;
+        margin-bottom: 0px;
+    }
     @media screen and (max-width: 1000px) {
+        .progress-bar-bg {
+            height: 1px;
+            width: 100%;
+            top: unset;
+            bottom: 6px;
+            left: 0px;
+        }
+        .progress-bar-fg {
+            height: 3px;
+            top: unset;
+            left: 0px;
+            bottom: 5px;
+        }
+        .header-container {
+            width: min(350px, 100%);
+            position: relative;
+            margin: 0 auto;
+        }
+        .line {
+            padding-bottom: 5px;
+        }
         .about-container {
             flex-direction: column;
             height: calc(100vh - 75px);
-            top: 35px;
+            top: 55px;
             transform: translate(0,0);
             padding-top: 0px;
             grid-row-gap: max(2vh, 10px);
@@ -600,9 +608,9 @@
             /*top: 50vh;*/
             /*transform: translate(0, -50%);*/
         }
-        .grid {
-            height: 100%;
-            width: 100%;
+        scrolling-anchor canvas {
+            height: 100% !important;
+            width: unset !important;
         }
         .about-header {
             font-size: 22px;

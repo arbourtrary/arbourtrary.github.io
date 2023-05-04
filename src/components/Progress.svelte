@@ -1,4 +1,6 @@
 <script>
+    import { clamp } from "../utils/math.js";
+
     export let scrollY = 0;
 
     let path;
@@ -10,12 +12,22 @@
         dashArray = [pathLength, pathLength];
     };
 
+    const svgAspectRatio = (4290 / 2366)
     let scrollProgress = 0;
-    // $: scrollProgress = scrollY / (document.body.offsetHeight - window.innerHeight);
+    let start = 0;
+    // let end = 1;
+    // let diff = 0;
 
-    // $: if (path) {
-    //     path.style.strokeDashoffset = 1 - scrollProgress;
-    // }
+    $: diff =  (1 - svgAspectRatio / windowAspectRatio);
+    $: end = svgAspectRatio < windowAspectRatio ? 1 - diff : 1;
+
+    $: scrollProgress = start + clamp(scrollY / (document.body.offsetHeight - window.innerHeight), 0, 1) * (end - start);
+
+    $: if (path) {
+        path.style.strokeDashoffset = 1 - scrollProgress;
+    }
+
+    $: windowAspectRatio = window.innerWidth / window.innerHeight
 </script>
 
 <div class="progress-container">
@@ -25,7 +37,7 @@
         viewBox="0 0 4290 2366"
         width="100%"
         height="100%"
-        preserveAspectRatio={window.innerWidth / window.innerHeight > (4290 / 2366) ? "xMidYMid slice" : "xMaxYMax slice"}
+        preserveAspectRatio={windowAspectRatio > svgAspectRatio ? "xMinYMin slice" : "xMaxYMax slice"}
         xmlns:xlink="http://www.w3.org/1999/xlink"
     >
 
@@ -75,7 +87,7 @@
     .progress-container path {
         stroke-dasharray: 1;
         stroke-dashoffset: 1;
-        transition: stroke-dashoffset 150ms linear;
+        /*transition: stroke-dashoffset 150ms linear;*/
         opacity: 1;
         -webkit-transform: translate3d(0,0,0);
         transform: translate3d(0,0,0);

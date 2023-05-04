@@ -131,7 +131,7 @@ window.addEventListener('resize', () => {
 <svelte:window bind:scrollY={scrollY}/>
 <!-- Sticky elements -->
 <Header/>
-<!-- <Progress {scrollY}/> -->
+<Progress {scrollY}/>
 
 <!-- Sections -->
 <About
