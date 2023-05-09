@@ -14,7 +14,6 @@
         // opacity = percent > 0.6 ? 0.8 - (percent - 0.4) : percent < 0.4 ? 2 * percent : 0.8
         opacity = opacity > 1.0 ? 1 : opacity < 0 ? 0 : opacity;
     }
-    console.log(blogPost)
 </script>
 
 <a href={`/blog/${blogPost.slug}`} target="_blank">
@@ -44,6 +43,7 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
+        color: var(--color-1);
     }
     .row:hover {
         opacity: 1 !important;
@@ -53,26 +53,26 @@
         text-decoration: underline;
     }
     .row:hover .droplet {
-        filter: brightness(1.05);
+        filter: brightness(0.95);
     }
-    .row:hover .date {
-        color: black;
+    .row:hover .date, .title {
+        color: var(--black);
     }
     .date {
         text-align: center;
-        font-family: 'IM Fell English';
+        font-family: var(--sans);
         font-size: 14px;
         white-space: pre-line;
         margin: auto 0;
         margin-right: 10px;
-        color: #444;
     }
     .droplet {
         width: 50px;
         height: 50px;
+        filter: brightness(1.05);
     }
     .title {
-        font-family: 'IM Fell English';
+        font-family: var(--sans);
         font-size: 24px;
         margin: auto 0;
         margin-left: 10px;

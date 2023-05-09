@@ -1,89 +1,65 @@
 <style>
-    /*
-    ********************
-           Raleway
-    ********************
-    */
+    :global(:root){
+       --sans: "IM Fell English", serif;
+       --selection-bg-color: #CBC3B4;
+       --selection-color: #FFFFFF;
+       --bg-color: #F5F2EB;
 
-    @font-face {
-        font-family: 'Raleway';
-        src: url('https://narro.design/assets/fonts/raleway/Raleway-extralight.woff');
-        font-weight: 400;
-        font-style: normal;
-        font-stretch: normal;
-        font-display: swap;
+       /* In case I want an off-shade of black/white */
+       --black: #000000;
+       --white: #FFFFFF;
+
+       /* Shades of color, ordered darkest (1) to lightest (n) */
+       --color-1: #373531;
+       --color-2: #908B80;
+       --color-3: #A8A195;
+       --color-4: #EAE6DF;
     }
 
-    @font-face {
-        font-family: 'Raleway';
-        src: url('https://narro.design/assets/fonts/raleway/Raleway-medium.woff');
-        font-weight: 500;
-        font-style: normal;
-        font-stretch: normal;
-        font-display: swap;
+    /*** Works on common browsers ***/
+    :global(::selection) {
+        background-color: var(--selection-bg-color);
+        color: var(--selection-color);
+    }
+    /*** Mozilla based browsers ***/
+    :global(::-moz-selection) {
+        background-color: var(--selection-bg-color);
+        color: var(--selection-color);
     }
 
-    @font-face {
-        font-family: 'Raleway';
-        src: url('https://narro.design/assets/fonts/raleway/Raleway-heavy.woff');
-        font-weight: 700;
-        font-style: normal;
-        font-stretch: normal;
-        font-display: swap;
+    /***For Other Browsers ***/
+    :global(::-o-selection) {
+        background-color: var(--selection-bg-color);
+        color: var(--selection-color);
     }
 
-    /*
-    ********************
-           Avenir
-    ********************
-    */
-
-    @font-face {
-        font-family: 'Avenir';
-        src: url('https://narro.design/assets/fonts/avenir/Avenir-Light.woff');
-        font-weight: 400;
-        font-style: normal;
-        font-stretch: normal;
-        font-display: swap;
+    :global(::-ms-selection) {
+        background-color: var(--selection-bg-color);
+        color: var(--selection-color);
     }
 
-    @font-face {
-        font-family: 'Avenir';
-        src: url('https://narro.design/assets/fonts/avenir/Avenir-Medium.woff');
-        font-weight: 500;
-        font-style: normal;
-        font-stretch: normal;
-        font-display: swap;
-    }
-
-    @font-face {
-        font-family: 'Avenir';
-        src: url('https://narro.design/assets/fonts/avenir/Avenir-Heavy.woff');
-        font-weight: 700;
-        font-style: normal;
-        font-stretch: normal;
-        font-display: swap;
+    /*** For Webkit ***/
+    :global(::-webkit-selection) {
+        background-color: var(--selection-bg-color);
+        color: var(--selection-color);
     }
 
     :global(body) {
         margin: 0;
-        background: #f6f5f1;
+        background: var(--bg-color);
     }
     :global(.section-subtitle) {
         width: fit-content;
         font-size: 16px;
-        /*text-transform: uppercase;*/
-        /*letter-spacing: 2px;*/
-        color: #999;
-        font-family: 'IM Fell English';
+        color: var(--color-2);
+        font-family: var(--sans);
         padding-bottom: 2px;
-        border-bottom: 1px solid gray;
         margin-bottom: 10px;
         padding-right: 5px;
     }
     :global(.section-description) {
-        color: #555;
-        font-family: 'IM Fell English';
+        color: var(--color-1);
+        font-family: var(--sans);
     }
     :global(.desktop) {
         display: block;
@@ -100,11 +76,8 @@
         }
     }
 </style>
-<svelte:head>
-  <link href="https://fonts.googleapis.com/css?family=IM+Fell+English" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet">
-</svelte:head>
 <script>
+    import { isPortrait, bgColor, textColor1, textColor2, textColor3, textColor4, white } from '../store.js'
     import Header from "../components/Header.svelte"
     import Progress from "../components/Progress.svelte"
     import About from "../components/About.svelte"
@@ -113,22 +86,28 @@
     import Contact from "../components/Contact.svelte"
 
     let scrollY = 0;
+    let innerWidth = window.innerWidth;
 
-    // function updateScrollY() {
-    //     scrollY = window.scrollY
-    //     window.requestAnimationFrame(updateScrollY);
-    // }
+    window.addEventListener('resize', () => {
+      let vh = window.outerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
 
-    // window.requestAnimationFrame(() => { updateScrollY() })
-// We listen to the resize event
-window.addEventListener('resize', () => {
-  // We execute the same script as before
-  let vh = window.outerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-});
+    $: isPortrait.set(innerWidth < 1000)
 
+    bgColor.set(window.getComputedStyle(document.body).getPropertyValue('--bg-color'))
+    textColor1.set(window.getComputedStyle(document.body).getPropertyValue('--color-1'))
+    textColor2.set(window.getComputedStyle(document.body).getPropertyValue('--color-2'))
+    textColor3.set(window.getComputedStyle(document.body).getPropertyValue('--color-3'))
+    textColor4.set(window.getComputedStyle(document.body).getPropertyValue('--color-4'))
+    white.set(window.getComputedStyle(document.body).getPropertyValue('--white'))
 </script>
-<svelte:window bind:scrollY={scrollY}/>
+
+<svelte:head>
+  <link href="https://fonts.googleapis.com/css?family=IM+Fell+English" rel="stylesheet">
+</svelte:head>
+<svelte:window bind:scrollY bind:innerWidth/>
+
 <!-- Sticky elements -->
 <Header/>
 <Progress {scrollY}/>

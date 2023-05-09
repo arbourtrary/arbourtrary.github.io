@@ -1,5 +1,5 @@
 <script>
-    import { section } from "../store.js"
+    import { section, isPortrait, bgColor, textColor3 } from "../store.js"
     import { paintImage, paintBackground } from "../utils/canvas.js"
     import TextMorph from "./TextMorph.svelte";
     import { onMount } from "svelte";
@@ -14,8 +14,7 @@
     let interests = [];
     let images = []
     let headers = []
-    let headerPoints = []
-    let activeColor = "lightgray"
+    let activeColor = "#D0C6B6"
     let progress = 0;
     let linearGradient;
     let outerContainer;
@@ -35,18 +34,18 @@
         "#8CB2D3",
         /*green*/
         "#AAC4A2",
-        // orange
+        /*orange*/
         "#EFBD8D",
         /*purple*/
         "#D2B0EC"
     ]
 
     let linearGradients = [
-        "linear-gradient(to right, #8CB2D3, #e6e6e6, #e6e6e6, #e6e6e6)",
-        "linear-gradient(to right, #e6e6e6, #AAC4A2, #e6e6e6, #e6e6e6)",
-        "linear-gradient(to right, #e6e6e6, #e6e6e6, #EFBD8D, #e6e6e6)",
-        "linear-gradient(to right, #e6e6e6, #e6e6e6, #e6e6e6, #D2B0EC)",
-        "linear-gradient(to right, #e6e6e6, #e6e6e6, #e6e6e6, #e6e6e6)"
+        "linear-gradient(to right, #8CB2D3, #EAE6DF, #EAE6DF, #EAE6DF)",
+        "linear-gradient(to right, #EAE6DF, #AAC4A2, #EAE6DF, #EAE6DF)",
+        "linear-gradient(to right, #EAE6DF, #EAE6DF, #EFBD8D, #EAE6DF)",
+        "linear-gradient(to right, #EAE6DF, #EAE6DF, #EAE6DF, #D2B0EC)",
+        "linear-gradient(to right, #EAE6DF, #EAE6DF, #EAE6DF, #EAE6DF)"
     ]
 
     const headerTexts = ["Creative Developer", "Environmentalist", "Poetry Enthusiast", "Mathematician",]
@@ -67,9 +66,7 @@
 
     onMount(() => {
         headers = outerContainer.querySelectorAll('.about-header');
-        headerPoints = outerContainer.querySelectorAll('.about-point');
         initialOffset = window.innerHeight / 5;
-
         scrollingAnchorHeight = outerContainer.offsetHeight - window.innerHeight - initialOffset;
     });
 
@@ -79,31 +76,23 @@
             progress = (window.scrollY - initialOffset) / scrollingAnchorHeight;
             progress = progress > 1 ? 1 : progress < 0 ? 0 : progress;
 
-            // const scrollingAnchorHeight = outerContainer.offsetHeight - window.innerHeight - initialOffset;
             const headerHeight = scrollingAnchorHeight / headerTexts.length;
             currentIndex = Math.floor((window.scrollY - initialOffset) / headerHeight);
             currentIndex = currentIndex > (headerTexts.length - 1) ? (headerTexts.length - 1) : currentIndex;
+            
             // Loop through the headers
-
             if (prevIndex !== currentIndex) {
                 context.clearRect(0, 0, canvas.width, canvas.height)
                 for (let i = 0; i < headerTexts.length; i++) {
                     if (window.scrollY > initialOffset) {
                         // If the current index is the same as the looped index
                         if (i === currentIndex) {
-                                activeColor = aboutColors[i]
-
+                            activeColor = aboutColors[i]
                             // Add the active class
                             if (headers.length) {
-
                                 headers[i].classList.add('active');
-                                headers[i].style.color = aboutColors[i]
-
-                                headerPoints[i].classList.add('active');
-                                headerPoints[i].style.background = aboutColors[i]
-                                headerPoints[i].style.border = `1px solid ${aboutColors[i]}`
+                                headers[i].style.color = activeColor
                             }
-                            // imgs[i].classList.add('active');
                             paintBackground(canvas, context, images[i], 1)
                             interests = aboutInterests[i]
                             linearGradient = linearGradients[i]
@@ -111,27 +100,17 @@
                             // Remove the active class
                             if (headers.length) {
                                 headers[i].classList.remove('active');
-                                headers[i].style.color = "lightgray"   
-
-                                headerPoints[i].classList.remove('active');
-                                headerPoints[i].style.background = "#ddd"  
-                                headerPoints[i].style.border = "1px solid #ddd"  
+                                headers[i].style.color = "#EAE6DF"
                             }
                             paintBackground(canvas, context, images[i], 0.2)
-                            // imgs[i].classList.remove('active');
                         }
                     } else {
                         linearGradient = "linear-gradient(to right, #8CB2D3, #AAC4A2, #EFBD8D, #D2B0EC)";
-                        // linearGradient = "linear-gradient(to right, #D2B0EC, #AAC4A2, #8CB2D3, #F2DC9B)";
                         if (headers.length) {
                             headers[i].classList.remove('active');
-                            headers[i].style.color = "lightgray"
-                            headerPoints[i].classList.remove('active');      
-                            headerPoints[i].style.background = "#ddd"  
-                            headerPoints[i].style.border = "1px solid #ddd"    
-                            activeColor = "lightgray"                
+                            headers[i].style.color = $textColor3;
+                            activeColor = "#D0C6B6"                
                         }
-                        // imgs[i].classList.add('active');
                         paintBackground(canvas, context, images[i], 1)
                         interests = []
                     }
@@ -153,8 +132,7 @@
         })
     }
 
-    $: linearGradientLine = Array.from({length: (currentIndex + 2)}, (_, i) => i + 1).map((elem) => "#f6f5f1").join(", ")
-    $: isMobile = innerWidth < 1000;
+    $: linearGradientLine = Array.from({length: (currentIndex + 2)}, (_, i) => i + 1).map((elem) => $bgColor).join(", ")
 </script>
 
 <svelte:window bind:innerWidth={innerWidth}/>
@@ -162,7 +140,7 @@
 <scrolling-anchor id="about" bind:this={outerContainer}>
     <div class="about-container">
 
-        {#if !isMobile}
+        {#if !$isPortrait}
             <div class="about-intro">
                 <div class="about-name desktop">
                     <TextMorph
@@ -182,22 +160,11 @@
                     </div>
 
                     <div>
-                        <div class="about-row">
-                            <div class="about-point"></div>
-                            <div class="about-header">Creative Developer</div>
-                        </div>
-                        <div class="about-row">
-                            <div class="about-point"></div>
-                            <div class="about-header">Environmentalist</div>
-                        </div>
-                        <div class="about-row">
-                            <div class="about-point"></div>
-                            <div class="about-header">Poetry Enthusiast</div>
-                        </div>
-                        <div class="about-row">
-                            <div class="about-point"></div>
-                            <div class="about-header">Mathematician</div>
-                        </div>
+                        {#each headerTexts as headerText}
+                            <div class="about-row">
+                                <div class="about-header" tabindex="0">{headerText}</div>
+                            </div>
+                        {/each}
                     </div>
                 </div>
                 <div class="about-interests">
@@ -251,7 +218,7 @@
             <div class="about-interests">
                 <div
                     style={`
-                        color: ${currentIndex >= 0 ? aboutColors[currentIndex] : 'gray'};
+                        color: ${currentIndex >= 0 ? aboutColors[currentIndex] : 'var(--color-1)'};
                         font-weight: ${currentIndex >= 0 ? '900' : '300'};
                         font-size: ${currentIndex >= 0 ? '26px' : '16px'};
                         ${currentIndex >= 0 ? "" : "margin: 15px auto 0px auto; border: none; text-transform: none; letter-spacing: normal;"}
@@ -295,7 +262,7 @@
         flex-direction: column;
         justify-content: space-between;
         position: absolute;
-        background: #ddd;
+        background: #D0C6B6;
         z-index: 1;
     }
     .progress-bar-fg {
@@ -322,15 +289,6 @@
         flex-direction: column;
         margin: auto 0;
     }
-    .about-point {
-        border-radius: 50%;
-        height: 11px;
-        width: 11px;
-        margin: auto 0;
-        border: 1px solid #DDD;
-        z-index: 50;
-        visibility: hidden;
-    }
     #viewport {
         height: 100%;
         width: 100%;
@@ -346,7 +304,7 @@
     }
     .line {
         display:block;
-        border-top:1px solid black;
+        border-top:1px solid #4E4D4A;
         text-align:center;
         padding-bottom: 8px;
         margin: 0 auto;
@@ -502,8 +460,8 @@
         position: sticky;
         top: 0;
         display: flex;
-        padding-top: 75px;
-        height: calc(100vh - 75px);
+        padding-top: 25px;
+        height: calc(100vh - 25px);
         flex-direction: row;
         margin: auto 0;
         justify-content: center;
@@ -516,7 +474,6 @@
         -webkit-transform: translate3d(0,0,1px);
         transform: translate3d(0,0,1px);
         z-index: 20;
-
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -527,16 +484,16 @@
     }
     .about-header {
         font-size: 28px;
-        font-family: 'IM Fell English';
+        font-family: var(--sans);
         font-weight: 300;
         text-align: left;
         margin: 5px 40px 0px 0px;
         padding-bottom: 5px;
-        color: lightgray;
-        margin-left: 10px;
+        color: var(--color-3);
+        padding-left: 21px;
     }
     :global(.about-header.active) {
-        filter: saturate(150%);
+        filter: saturate(130%);
     }
     .about-interests {
         padding-top: 15px;
@@ -558,9 +515,6 @@
         display: none;
     }
     :global(.about-img.active) {
-        opacity: 1;
-    }
-    :global(.about-point.active) {
         opacity: 1;
     }
     .section-description {
@@ -598,15 +552,13 @@
             padding-bottom: 5px;
         }
         .about-container {
-            flex-direction: column;
             height: calc(100vh - 75px);
+            flex-direction: column;
             top: 55px;
             transform: translate(0,0);
             padding-top: 0px;
             grid-row-gap: max(2vh, 10px);
             min-height: 0;
-            /*top: 50vh;*/
-            /*transform: translate(0, -50%);*/
         }
         scrolling-anchor canvas {
             height: 100% !important;
@@ -633,7 +585,7 @@
         .section-subtitle {
             margin: 15px auto;
             font-size: 16px;
-            border-bottom: 1px solid lightgray;
+            border-bottom: 1px solid #D0C6B6;
             padding: 0px 5px 5px 5px;
         }
         .section-description {

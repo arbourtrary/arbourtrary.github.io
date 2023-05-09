@@ -94,7 +94,6 @@
         height: 75px;
         width: 75px;
         margin: 40px auto;
-        background: gray;
         transition: all 100ms ease-in;
     }
     .logo:hover {

@@ -166,7 +166,7 @@ onMount(() => {
 		position: absolute;
 		display: inline-block;
 		letter-spacing: .1px;
-		font-family: 'IM Fell English', sans-serif;
+		font-family: var(--sans), sans-serif, sans-serif;
 		font-size: 45px;
 		text-align: left;
 		font-weight: 600;
