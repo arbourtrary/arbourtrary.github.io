@@ -50,7 +50,7 @@
         cursor: pointer;
     }
     .row:hover .title {
-        text-decoration: underline;
+        border-bottom: 1px solid var(--black) !important;
     }
     .row:hover .droplet {
         filter: brightness(0.95);
@@ -60,7 +60,7 @@
     }
     .date {
         text-align: center;
-        font-family: var(--sans);
+        font-family: var(--serif);
         font-size: 14px;
         white-space: pre-line;
         margin: auto 0;
@@ -72,10 +72,11 @@
         filter: brightness(1.05);
     }
     .title {
-        font-family: var(--sans);
+        font-family: var(--serif);
         font-size: 24px;
         margin: auto 0;
         margin-left: 10px;
+        border-bottom: 1px solid #00000000;
     }
     @media screen and (max-width: 700px) {
         .date {

@@ -24,8 +24,11 @@
     let angles;
     let title;
     let description;
+    let publication;
+    let url;
     let year;
     let awards;
+    let awardsShort;
     let tags;
     let gallery;
     let foreground;
@@ -47,98 +50,174 @@
     const piecewisePoints = [0, 0.047, 0.145, 0.238, 0.326, 0.415, 0.502, 0.593, 0.687, 0.776, 0.871, 0.958, 1]
     const lerpPoints = [0, 0.083, 0.167,0.25, 0.333, 0.417, 0.5, 0.583, 0.667, 0.75, 0.833, 0.917, 1]
 
+        // const textures = [
+        //     new THREE.TextureLoader().load('textures/fade_security_for_sale.png'),
+        //     new THREE.TextureLoader().load('textures/fade_cut_off.png'),
+        //     new THREE.TextureLoader().load('textures/fade_big_poultry.png'),
 
+        //     new THREE.TextureLoader().load('textures/fade_made_in_miami.png'),
+        //     new THREE.TextureLoader().load('textures/fade_revival.png'),
+
+        //     new THREE.TextureLoader().load('textures/fade_puerto_rico_migration.png'),
+        //     new THREE.TextureLoader().load('textures/fade_linguistics.png'),
+        //     new THREE.TextureLoader().load('textures/fade_fallen_trees.png'),
+
+        //     new THREE.TextureLoader().load('textures/fade_nba_season_paths.png'),
+        //     new THREE.TextureLoader().load('textures/fade_in_a_word.png')
+        // ];
     let data = [
       {
-        "title": "<b>NBA:</b> Recordigami",
-        "description": "Pioneering wins and losses through the history of the NBA’s regular season",
-        "year": "2022",
-        "awards": ["Pudding Cup Honorary Mention"],
-        "tags": ["d3", "basketball", "triangle"]
+        "title": "NBA Recordigami",
+        "publication": "Narro",
+        "description": "Tracing the history of the NBA through pioneering wins and losses during the regular season",
+        "year": "2021",
+        "awards": ["<a href='https://pudding.cool/process/pudding-cup-2021/'>Pudding Cup Honorary Mention</a>"],
+        "awardsShort": ["<a href='https://pudding.cool/process/pudding-cup-2021/'>Pudding Cup Honorary Mention</a>"],
+        "tags": ["d3", "basketball", "triangle"],
+        "image": "textures/fade_recordigami.png",
+        "url": "https://narro.design/html/nba-recordigami.html"
       },
       {
-        "title": "<b>Puerto Rico:</b> Migration",
+        "title": "House of Cards",
+        "publication": "Miami Herald",
+        "description": "An interactive reconstruction of the collapse of the Champlain Towers South 12-story condo in Surfside",
+        "year": "2021",
+        "awards": [
+            "<a href='https://scripps.com/wp-content/uploads/2022/06/SHA-2021_Program_2.pdf' target='_blank'>Scripps Howard Award</a>",
+            "<a href='https://winners.webbyawards.com/2022/websites-and-mobile-sites/features-design/best-individual-editorial-feature-media-company/219009/house-of-cards'>Webby for Best Editorial Feature</a>",
+            "<a href='https://knightfoundation.org/esserman-knight-journalism-awards-2022-nominations/' target='_blank'>Esserman-Knight Journalism Award</a>",
+            "<a href='https://snd.org/best-of-design-competitions/2020-best-of-digital-design-results/' target='_blank'>Society of News Design Award of Excellence</a>",
+           "<a href='https://www.inma.org/blogs/main/post.cfm/inma-reveals-60-global-media-awards-first-place-winners-miami-herald-takes-top-prize' target='_blank'>INMA Best in Show</a>"
+        ],
+        "awardsShort": [
+            "<a href='https://scripps.com/wp-content/uploads/2022/06/SHA-2021_Program_2.pdf' target='_blank'>Scripps Howard</a>",
+            "<a href='https://winners.webbyawards.com/2022/websites-and-mobile-sites/features-design/best-individual-editorial-feature-media-company/219009/house-of-cards'>Webby</a>",
+            "<a href='https://knightfoundation.org/esserman-knight-journalism-awards-2022-nominations/' target='_blank'>Esserman-Knight</a>",
+           "<a href='https://www.inma.org/blogs/main/post.cfm/inma-reveals-60-global-media-awards-first-place-winners-miami-herald-takes-top-prize' target='_blank'>INMA</a>"
+        ],
+        "tags": ["d3", "Puerto Rico", "Census", "choropleth", "small multiples"],
+        "image": "textures/fade_house_of_cards.png",
+        "url": "https://www.miamiherald.com/news/special-reports/surfside-investigation/article256633336.html"
+      },
+      {
+        "title": "Big Poultry",
+        "publication": "Charlotte Observer",
+        "description": "With little oversight, NC poultry farms generate billions of pounds of untreated waste. Who pays the cost?",
+        "year": "2023",
+        "awards": ["<a href='https://news.mit.edu/2023/mcelheny-award-science-journalism-honors-series-poultry-farming-environment-0403' target='_blank'>MIT Knight Science Journalism</a>", "<a href='https://nationalpress.org/award-story/capital-main-charlotte-observer-raleigh-news-observer-win-npf-stokes-award-for-best-environmental-reporting/' target='_blank'>Stokes Award for Energy & Environment</a>", "<a href='https://www.ire.org/2022-ire-award-winners/' target='_blank'>Investigative Reporters & Editors - IRE Award</a>"],
+        "awardsShort": ["<a href='https://news.mit.edu/2023/mcelheny-award-science-journalism-honors-series-poultry-farming-environment-0403' target='_blank'>MIT Knight</a>", "<a href='https://nationalpress.org/award-story/capital-main-charlotte-observer-raleigh-news-observer-win-npf-stokes-award-for-best-environmental-reporting/' target='_blank'>Thomas Stokes</a>", "<a href='https://www.ire.org/2022-ire-award-winners/' target='_blank'>IRE</a>"],
+        "tags": ["Tag 6", "Tag 7", "Tag 8"],
+        "image": "textures/fade_big_poultry.png",
+        "url": "https://www.charlotteobserver.com/news/state/north-carolina/article267887592.html"
+      },
+      {
+        "title": "Made in Miami",
+        "publication": "Miami Herald",
+        "description": "A deep dive into a network of indivduals linked to the assassination of Haitian President Jovenel Moïse",
+        "year": "2022",
+        "awards": ["<a href='https://opcofamerica.org/Awardarchive/the-kim-wall-award-2022/' target='_blank'>Overseas Press Club - Kim Wall Award</a>"],
+        "awardsShort": ["<a href='https://opcofamerica.org/Awardarchive/the-kim-wall-award-2022/' target='_blank'>Overseas Press Club</a>"],
+        "tags": ["Tag 3", "Tag 4", "Tag 5"],
+        "image": "textures/fade_made_in_miami.png",
+        "url": "https://www.miamiherald.com/news/nation-world/world/americas/haiti/article266152901.html"
+      },
+      {
+        "title": "Cut Off",
+        "publication": "The State",
+        "description": "In Columbia's 29203, limbs are being amputated at an alarming rate. It doesn't have to be this way.",
+        "year": "2022",
+        "awards": ["<a href='https://scpress.org/23-annual-meeting/' target='_blank'>S.C. Press Association - Mixed Media First Place</a>"],
+        "awardsShort": ["<a href='https://scpress.org/23-annual-meeting/' target='_blank'>S.C. Press Association</a>"],
+        "tags": ["Tag 5", "Tag 6", "Tag 7"],
+        "image": "textures/fade_cut_off.png",
+        "url": "https://www.thestate.com/news/state/south-carolina/article258302413.html"
+      },
+      {
+        "title": "In a Word",
+        "publication": "Article",
+        "description": "A self-published, quasi-surrealist collection driven by associations with each poem's single-word title",
+        "year": "2016",
+        "awards": [],
+        "awardsShort": [],
+        "tags": ["Tag 11", "Tag 12", "Tag 13"],
+        "image": "",
+        "url": "https://www.blurb.com/books/10322155-in-a-word"
+      },
+      {
+        "title": "Security for Sale",
+        "publication": "Charlotte Observer",
+        "description": "In 10 years, Wall Street amassed 40k residential homes in NC. Now renters & home buyers are paying the price",
+        "year": "2023",
+        "awards": [],
+        "awardsShort": [],
+        "tags": ["Tag 6", "Tag 7", "Tag 8"],
+        "image": "textures/fade_security_for_sale.png",
+        "url": ""
+      },
+      {
+        "title": "Puerto Rican Migration",
+        "publication": "Article",
         "description": "A pre-pandemic breakdown of Puerto Ricans in the diaspora who were returning to the island",
         "year": "2021",
-        "awards": ["Award 1", "Award 2"],
-        "tags": ["d3", "Puerto Rico", "Census", "choropleth", "small multiples"]
+        "awards": [],
+        "awardsShort": [],
+        "tags": ["Tag 4", "Tag 5", "Tag 6"],
+        "image": "textures/fade_puerto_rico_migration.png",
+        "url": ""
       },
       {
-        "title": "Side 3",
-        "description": "Description of Side 3",
+        "title": "Fallen Trees",
+        "publication": "Sacramento Bee",
+        "description": "Tree damage ‘we’ve never seen.’ Map shows thousands of 311 calls during Sacramento storms",
         "year": "2023",
         "awards": [],
-        "tags": ["Tag 3", "Tag 4", "Tag 5"]
+        "awardsShort": [],
+        "tags": ["Tag 9", "Tag 10", "Tag 11"],
+        "image": "textures/fade_fallen_trees.png",
+        "url": "https://www.sacbee.com/news/local/article272039637.html"
       },
       {
-        "title": "Side 4",
-        "description": "Description of Side 4",
+        "title": "Linguistics",
+        "publication": "Narro",
+        "description": "Phonemes and graphemes of a complex language - the sounds and spellings of English",
         "year": "2021",
-        "awards": ["Award 3"],
-        "tags": ["Tag 4", "Tag 5", "Tag 6"]
-      },
-      {
-        "title": "Side 5",
-        "description": "Description of Side 5",
-        "year": "2022",
-        "awards": ["Award 1", "Award 2", "Award 3"],
-        "tags": ["Tag 5", "Tag 6", "Tag 7"]
-      },
-      {
-        "title": "Side 6",
-        "description": "Description of Side 6",
-        "year": "2023",
         "awards": [],
-        "tags": ["Tag 6", "Tag 7", "Tag 8"]
+        "awardsShort": [],
+        "tags": ["Tag 8", "Tag 9", "Tag 10"],
+        "image": "textures/fade_linguistics.png",
+        "url": "https://narro.design/html/linguistics-intro.html"
       },
       {
-        "title": "Side 7",
-        "description": "Description of Side 7",
+        "title": "Around the World",
+        "publication": "Narro",
+        "description": "Exploring what it would look like to go from your doorstep, around the world and back again",
         "year": "2021",
-        "awards": ["Award 2", "Award 3"],
-        "tags": ["Tag 7", "Tag 8", "Tag 9"]
-      },
-      {
-        "title": "Side 8",
-        "description": "Description of Side 8",
-        "year": "2022",
-        "awards": ["Award 1"],
-        "tags": ["Tag 8", "Tag 9", "Tag 10"]
-      },
-      {
-        "title": "Side 9",
-        "description": "Description of Side 9",
-        "year": "2023",
         "awards": [],
-        "tags": ["Tag 9", "Tag 10", "Tag 11"]
+        "awardsShort": [],
+        "tags": ["Tag 10", "Tag 11", "Tag 12"],
+        "image": "textures/fade_around_the_world.png",
+        "url": "https://narro.design/html/around-the-world.html"
       },
       {
-        "title": "Side 10",
-        "description": "Description of Side 10",
+        "title": "Revival",
+        "publication": "Blurb",
+        "description": "A self-published poetry collection observing San Francisco's strained natural, technological, and human bindings",
         "year": "2021",
-        "awards": ["Award 3"],
-        "tags": ["Tag 10", "Tag 11", "Tag 12"]
-      },
-      {
-        "title": "Side 11",
-        "description": "Description of Side 11",
-        "year": "2022",
-        "awards": ["Award 1", "Award 2"],
-        "tags": ["Tag 11", "Tag 12", "Tag 13"]
-      },
-      {
-        "title": "Side 12",
-        "description": "Description of Side 12",
-        "year": "2023",
         "awards": [],
-        "tags": ["Tag 12", "Tag 13", "Tag 14"]
+        "awardsShort": [],
+        "tags": ["Tag 7", "Tag 8", "Tag 9"],
+        "image": "textures/fade_revival.png",
+        "url": "https://www.blurb.com/b/10322111-revival"
       }
     ]
 
     title = data[0].title;
     description = data[0].description;
+    publication = data[0].publication;
+    url = data[0].url;
     year = data[0].year;
-    awards = data[0].awards.join(", ");
+    awards = data[0].awards.join(" <div style='height: 5px'></div>");
+    awardsShort = data[0].awardsShort.join(" &ensp;");
     tags = data[0].tags.join(", ");
 
     onMount(() => {
@@ -345,20 +424,19 @@
         scene.add(edges);
 
         const textures = [
-            new THREE.TextureLoader().load('textures/fade_house_of_cards.png'),
-            new THREE.TextureLoader().load('textures/fade_made_in_miami.png'),
             new THREE.TextureLoader().load('textures/fade_recordigami.png'),
-            new THREE.TextureLoader().load('textures/fade_revival.png'),
+            new THREE.TextureLoader().load('textures/fade_house_of_cards.png'),
+            new THREE.TextureLoader().load('textures/fade_big_poultry.png'),
+            new THREE.TextureLoader().load('textures/fade_made_in_miami.png'),
+            new THREE.TextureLoader().load('textures/fade_cut_off.png'),
+            new THREE.TextureLoader().load('textures/fade_in_a_word.png'),
 
             new THREE.TextureLoader().load('textures/fade_security_for_sale.png'),
             new THREE.TextureLoader().load('textures/fade_puerto_rico_migration.png'),
             new THREE.TextureLoader().load('textures/fade_fallen_trees.png'),
             new THREE.TextureLoader().load('textures/fade_linguistics.png'),
-
-            new THREE.TextureLoader().load('textures/fade_nba_season_paths.png'),
-            new THREE.TextureLoader().load('textures/fade_cut_off.png'),
-            new THREE.TextureLoader().load('textures/fade_narro.png'),
-            new THREE.TextureLoader().load('textures/fade_in_a_word.png')
+            new THREE.TextureLoader().load('textures/fade_around_the_world.png'),
+            new THREE.TextureLoader().load('textures/fade_revival.png'),
         ];
 
         const materials = textures.map((texture) => createMaterial(texture))
@@ -400,7 +478,6 @@
 
     function updateGallery() {
         if ($section === 1 && actualGroup.children.length) {
-            const itemHeight = window.outerHeight / 1.2;
             index = gallery ? Math.floor((scrollY - gallery?.parentElement?.offsetTop) / itemHeight) : 0;
             index = clamp(index, 0, numberOfSides - 1)
 
@@ -415,11 +492,13 @@
                 if (indexData) {
                     title = indexData.title;
                     description = indexData.description;
+                    publication = indexData.publication;
+                    url = indexData.url;
                     year = indexData.year;
-                    awards = indexData.awards.join(", ");
+                    awards = indexData.awards.join(" <div style='height: 5px'></div>");
+                    awardsShort = indexData.awardsShort.join(" &ensp;");
                     tags = indexData.tags.join(", ");
 
-                    // TODO - replace query selector by array
                     if (index > prevIndex){
                         unraveledFaces.filter((item, i) => i < index).forEach((item) => {
                             item.style.fillOpacity = 0
@@ -459,7 +538,8 @@
 
     $: !drawn && canvas && drawPlatonicSolid(platonicSolid);
     $: windowHeight = window.outerHeight;
-    $: galleryHeight = windowHeight * numberOfSides / 1.2 + windowHeight;
+    $: itemHeight = windowHeight / 1.2
+    $: galleryHeight = itemHeight * numberOfSides + windowHeight;
 
     // Updating the minimap paths
     $: if(foreground) {
@@ -479,15 +559,19 @@
     <div class="foreground" style={`height: ${galleryHeight}px`} bind:this={foreground}></div>
 
     <div class="background">
-        <div class="details-container" tabindex="0">
-            <div class="title">{@html title}</div>
+        <div class="details-container" tabindex="0">            
+            <a href={url} target="_blank">
+                <div class="title"><span class="title-text">{@html title}</span>
+                    <div class="external-link"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></div>
+                </div>
+            </a>
             <div class="description">{description}</div>
             {#if !$isPortrait}
                 <div class="details">
                     {#if awards}
                         <div class="detail">
                             <p class="section-subtitle">Awards</p>
-                            <p class="detail-description">{awards}</p>
+                            <p class="detail-description">{@html awards}</p>
                         </div>
                     {/if}
                     <div class="detail">
@@ -697,7 +781,7 @@
                 {#if awards}
                     <div class="detail">
                         <p class="section-subtitle">Awards</p>
-                        <p class="detail-description">{awards}</p>
+                        <p class="detail-description">{@html awardsShort}</p>
                     </div>
                 {/if}
                 <div class="detail">
@@ -710,6 +794,19 @@
 </div>
 
 <style>
+    .details-container a {
+        color: unset;
+        text-decoration: none;
+    }
+    :global(.detail-description a) {
+        color: unset;
+        text-decoration: none;
+        padding-bottom: 0px;
+    }
+    :global(.detail-description a:hover) {
+        color: var(--black);
+        border-bottom: 1px solid var(--black);
+    }
     .unraveled-container {
         width: 100%;
         height: 70px;
@@ -720,6 +817,9 @@
         fill-opacity: 0;
         fill: #C2BBAC;
         transition: all 150ms ease-in;
+    }
+    .pentagon:first-child {
+        fill-opacity: 1;
     }
     .outline-pentagon {
         opacity: 1;
@@ -785,7 +885,7 @@
         right: 10px;
         top: 0;
         font-size: 16px;
-        font-family: var(--sans);
+        font-family: var(--serif);
         color: var(--color-3);
     }
     .canvas {
@@ -799,8 +899,36 @@
     }
     .title, .description, .details {
         margin: 5px 40px 0px 0px;
-        font-family: var(--sans);
+        font-family: var(--serif);
         color: var(--color-1);
+    }
+    .title {
+        margin-top: 0px;
+        position: relative;
+        padding-bottom: 5px;
+    }
+    .title-text {
+        border-bottom: 1px solid var(--color-2);
+    }
+    .external-link {
+        visibility: hidden;
+        display: inline-block;
+        height: 13px;
+        width: 13px;
+        position: absolute;
+        top: 0px;
+        padding-left: 5px;
+        color: var(--color-2);
+    }
+    .title:hover {
+         cursor: pointer;
+    }
+    .title:hover .title-text {
+        border-bottom: 2px solid var(--black);
+        color: var(--black);
+    }
+    .title:hover .external-link {
+        color: var(--black);
     }
     .description {
         font-size: 18px;
@@ -811,19 +939,24 @@
     }
     .detail-description {
         margin: 0px;
+        padding-bottom: 5px;
     }
     .detail {
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
     .section-subtitle {
         margin-bottom: 0px;
         border-bottom: none;
+        margin-top:  30px;
     }
     .title {
         font-size: 28px;
-        font-family: var(--sans);
+        font-family: var(--serif);
     }
     @media screen and (max-width: 1000px) {
+        :global(.detail-description a) {
+            border-bottom: 1px solid var(--color-2);
+        }
         .counter { 
             display: none;
         }

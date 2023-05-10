@@ -484,7 +484,7 @@
     }
     .about-header {
         font-size: 28px;
-        font-family: var(--sans);
+        font-family: var(--serif);
         font-weight: 300;
         text-align: left;
         margin: 5px 40px 0px 0px;

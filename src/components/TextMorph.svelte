@@ -141,9 +141,6 @@ onMount(() => {
 <style>
 	/* Explanation in JS tab */
 
-	/* Cool font from Google Fonts! */
-	@import url('https://fonts.googleapis.com/css?family=IM Fell English:900&display=swap');
-
 	body {
 		margin: 0px;
 	}
@@ -166,7 +163,7 @@ onMount(() => {
 		position: absolute;
 		display: inline-block;
 		letter-spacing: .1px;
-		font-family: var(--sans), sans-serif, sans-serif;
+		font-family: var(--serif), sans-serif, sans-serif;
 		font-size: 45px;
 		text-align: left;
 		font-weight: 600;

@@ -43,13 +43,13 @@
     .title {
         width: 70px;
         font-size: 15px;
-        font-family: var(--sans);
+        font-family: var(--serif);
         font-weight: 300;
         letter-spacing: 0.8px;
         text-align: center;
         margin: 0px 40px;
         padding-bottom: 3px;
-        color: var(--color-2) !important;
+        color: var(--color-2);
         transition: all 100ms ease-out;
     }
     .title.active {
@@ -58,6 +58,11 @@
     .title a {
         text-decoration: none;
         color: inherit !important;
+    }
+    .title:hover {
+        cursor: pointer;
+        color: var(--black);
+        border-bottom: 1px solid var(--black) !important;
     }
     @media screen and (max-width: 1000px) {
         .title {

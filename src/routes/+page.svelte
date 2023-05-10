@@ -1,6 +1,6 @@
 <style>
     :global(:root){
-       --sans: "IM Fell English", serif;
+       --serif: "IM Fell English", serif;
        --selection-bg-color: #CBC3B4;
        --selection-color: #FFFFFF;
        --bg-color: #F5F2EB;
@@ -52,14 +52,14 @@
         width: fit-content;
         font-size: 16px;
         color: var(--color-2);
-        font-family: var(--sans);
+        font-family: var(--serif);
         padding-bottom: 2px;
         margin-bottom: 10px;
         padding-right: 5px;
     }
     :global(.section-description) {
         color: var(--color-1);
-        font-family: var(--sans);
+        font-family: var(--serif);
     }
     :global(.desktop) {
         display: block;
