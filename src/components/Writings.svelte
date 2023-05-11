@@ -1,6 +1,6 @@
 <script>
     import { section } from "../store.js"
-    import BlogRow from "./BlogRow.svelte";
+    import WritingRow from "./WritingRow.svelte";
 
     export let sectionIndex = 2;
     export let scrollY = 0;
@@ -10,7 +10,7 @@
     $: outerContainer && (scrollY >= (outerContainer.offsetTop - offset)) && (scrollY < (outerContainer.offsetTop + outerContainer.offsetHeight - offset)) && $section !== sectionIndex && section.set(sectionIndex)
 
 
-    const blogPosts = [
+    const writings = [
         {
             date: "5/1/23",
             title: "Forest for the trees", 
@@ -39,21 +39,21 @@
 
 
     const newline = "&#10;"
-    for(const blogPost of blogPosts) {
-        const date = new Date(blogPost.date)
+    for(const writing of writings) {
+        const date = new Date(writing.date)
         const dateFormatted = `${date.toLocaleString('default', { month: 'short' })}${newline}${date.getUTCFullYear()}`
-        blogPost.date = dateFormatted
+        writing.date = dateFormatted
     }
 
 </script>
 
 
-<div id="blog" bind:this={outerContainer}>
-    <div class="blog-container">
-        {#each blogPosts as blogPost, i}
-            <BlogRow 
+<div id="writings" bind:this={outerContainer}>
+    <div class="writings-container">
+        {#each writings as writing, i}
+            <WritingRow 
                 {scrollY}
-                {blogPost}
+                {writing}
                 index={i}
             />
         {/each}
@@ -61,7 +61,7 @@
 </div> 
 
 <style>
-    #blog {
+    #writings {
         width: 100vw;
         position: relative;
         display: flex;
@@ -69,17 +69,12 @@
         margin: auto 0;
         justify-content: center;
     }
-    .blog-container {
+    .writings-container {
         width: min(95vw, 500px);
         display: flex;
         flex-direction: column;
         margin: auto;
         min-height: 100vh;
         justify-content: center;
-    }
-    @media screen and (max-width: 1000px) {
-        .blog-spacer {
-            height: 50px;
-        }
     }
 </style>

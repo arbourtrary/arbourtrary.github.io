@@ -2,6 +2,7 @@
     import { section, isPortrait, bgColor, textColor2, white } from "../store.js"
     import { onMount } from "svelte";
     import { clamp } from "../utils/math.js";
+    import { hexToRgb } from "../utils/color.js";
 
     import * as THREE from 'three';
     // TODO: generalize to have this extend a platonic solid gallery component
@@ -50,21 +51,6 @@
     const piecewisePoints = [0, 0.047, 0.145, 0.238, 0.326, 0.415, 0.502, 0.593, 0.687, 0.776, 0.871, 0.958, 1]
     const lerpPoints = [0, 0.083, 0.167,0.25, 0.333, 0.417, 0.5, 0.583, 0.667, 0.75, 0.833, 0.917, 1]
 
-        // const textures = [
-        //     new THREE.TextureLoader().load('textures/fade_security_for_sale.png'),
-        //     new THREE.TextureLoader().load('textures/fade_cut_off.png'),
-        //     new THREE.TextureLoader().load('textures/fade_big_poultry.png'),
-
-        //     new THREE.TextureLoader().load('textures/fade_made_in_miami.png'),
-        //     new THREE.TextureLoader().load('textures/fade_revival.png'),
-
-        //     new THREE.TextureLoader().load('textures/fade_puerto_rico_migration.png'),
-        //     new THREE.TextureLoader().load('textures/fade_linguistics.png'),
-        //     new THREE.TextureLoader().load('textures/fade_fallen_trees.png'),
-
-        //     new THREE.TextureLoader().load('textures/fade_nba_season_paths.png'),
-        //     new THREE.TextureLoader().load('textures/fade_in_a_word.png')
-        // ];
     let data = [
       {
         "title": "NBA Recordigami",
@@ -73,7 +59,7 @@
         "year": "2021",
         "awards": ["<a href='https://pudding.cool/process/pudding-cup-2021/'>Pudding Cup Honorary Mention</a>"],
         "awardsShort": ["<a href='https://pudding.cool/process/pudding-cup-2021/'>Pudding Cup Honorary Mention</a>"],
-        "tags": ["d3", "basketball", "triangle"],
+        "tags": ["d3", "svg", "basketball", "NBA", "triangle"],
         "image": "textures/fade_recordigami.png",
         "url": "https://narro.design/html/nba-recordigami.html"
       },
@@ -93,9 +79,10 @@
             "<a href='https://scripps.com/wp-content/uploads/2022/06/SHA-2021_Program_2.pdf' target='_blank'>Scripps Howard</a>",
             "<a href='https://winners.webbyawards.com/2022/websites-and-mobile-sites/features-design/best-individual-editorial-feature-media-company/219009/house-of-cards'>Webby</a>",
             "<a href='https://knightfoundation.org/esserman-knight-journalism-awards-2022-nominations/' target='_blank'>Esserman-Knight</a>",
+             "<a href='https://snd.org/best-of-design-competitions/2020-best-of-digital-design-results/' target='_blank'>SND</a>",
            "<a href='https://www.inma.org/blogs/main/post.cfm/inma-reveals-60-global-media-awards-first-place-winners-miami-herald-takes-top-prize' target='_blank'>INMA</a>"
         ],
-        "tags": ["d3", "Puerto Rico", "Census", "choropleth", "small multiples"],
+        "tags": ["svelte", "scrolling video", "audio", "surfside"],
         "image": "textures/fade_house_of_cards.png",
         "url": "https://www.miamiherald.com/news/special-reports/surfside-investigation/article256633336.html"
       },
@@ -106,7 +93,7 @@
         "year": "2023",
         "awards": ["<a href='https://news.mit.edu/2023/mcelheny-award-science-journalism-honors-series-poultry-farming-environment-0403' target='_blank'>MIT Knight Science Journalism</a>", "<a href='https://nationalpress.org/award-story/capital-main-charlotte-observer-raleigh-news-observer-win-npf-stokes-award-for-best-environmental-reporting/' target='_blank'>Stokes Award for Energy & Environment</a>", "<a href='https://www.ire.org/2022-ire-award-winners/' target='_blank'>Investigative Reporters & Editors - IRE Award</a>"],
         "awardsShort": ["<a href='https://news.mit.edu/2023/mcelheny-award-science-journalism-honors-series-poultry-farming-environment-0403' target='_blank'>MIT Knight</a>", "<a href='https://nationalpress.org/award-story/capital-main-charlotte-observer-raleigh-news-observer-win-npf-stokes-award-for-best-environmental-reporting/' target='_blank'>Thomas Stokes</a>", "<a href='https://www.ire.org/2022-ire-award-winners/' target='_blank'>IRE</a>"],
-        "tags": ["Tag 6", "Tag 7", "Tag 8"],
+        "tags": ["svelte", "incremental video", "maplibre", "north carolina"],
         "image": "textures/fade_big_poultry.png",
         "url": "https://www.charlotteobserver.com/news/state/north-carolina/article267887592.html"
       },
@@ -117,7 +104,7 @@
         "year": "2022",
         "awards": ["<a href='https://opcofamerica.org/Awardarchive/the-kim-wall-award-2022/' target='_blank'>Overseas Press Club - Kim Wall Award</a>"],
         "awardsShort": ["<a href='https://opcofamerica.org/Awardarchive/the-kim-wall-award-2022/' target='_blank'>Overseas Press Club</a>"],
-        "tags": ["Tag 3", "Tag 4", "Tag 5"],
+        "tags": ["d3", "js", "web component", "network", "haiti"],
         "image": "textures/fade_made_in_miami.png",
         "url": "https://www.miamiherald.com/news/nation-world/world/americas/haiti/article266152901.html"
       },
@@ -128,7 +115,7 @@
         "year": "2022",
         "awards": ["<a href='https://scpress.org/23-annual-meeting/' target='_blank'>S.C. Press Association - Mixed Media First Place</a>"],
         "awardsShort": ["<a href='https://scpress.org/23-annual-meeting/' target='_blank'>S.C. Press Association</a>"],
-        "tags": ["Tag 5", "Tag 6", "Tag 7"],
+        "tags": ["svelte", "maplibre", "dataviz", "south carolina"],
         "image": "textures/fade_cut_off.png",
         "url": "https://www.thestate.com/news/state/south-carolina/article258302413.html"
       },
@@ -139,7 +126,7 @@
         "year": "2016",
         "awards": [],
         "awardsShort": [],
-        "tags": ["Tag 11", "Tag 12", "Tag 13"],
+        "tags": ["r", "lda", "network", "blurb", "book", "poetry", "surrealist", "stream of consciousness"],
         "image": "",
         "url": "https://www.blurb.com/books/10322155-in-a-word"
       },
@@ -150,7 +137,7 @@
         "year": "2023",
         "awards": [],
         "awardsShort": [],
-        "tags": ["Tag 6", "Tag 7", "Tag 8"],
+        "tags": ["svelte", "maplibre", "hexbins", "american dream", "real estate", "north carolina"],
         "image": "textures/fade_security_for_sale.png",
         "url": ""
       },
@@ -161,7 +148,7 @@
         "year": "2021",
         "awards": [],
         "awardsShort": [],
-        "tags": ["Tag 4", "Tag 5", "Tag 6"],
+        "tags": ["d3", "Puerto Rico", "Census", "choropleth", "small multiples"],
         "image": "textures/fade_puerto_rico_migration.png",
         "url": ""
       },
@@ -172,7 +159,7 @@
         "year": "2023",
         "awards": [],
         "awardsShort": [],
-        "tags": ["Tag 9", "Tag 10", "Tag 11"],
+        "tags": ["svelte", "maplibre", "ai2svelte", "bar chart", "trees", "311", "sacramento", "service journalism"],
         "image": "textures/fade_fallen_trees.png",
         "url": "https://www.sacbee.com/news/local/article272039637.html"
       },
@@ -183,7 +170,7 @@
         "year": "2021",
         "awards": [],
         "awardsShort": [],
-        "tags": ["Tag 8", "Tag 9", "Tag 10"],
+        "tags": ["svelte", "gallery", "circle packing", "phoneme", "grapheme", "linguistics"],
         "image": "textures/fade_linguistics.png",
         "url": "https://narro.design/html/linguistics-intro.html"
       },
@@ -194,7 +181,7 @@
         "year": "2021",
         "awards": [],
         "awardsShort": [],
-        "tags": ["Tag 10", "Tag 11", "Tag 12"],
+        "tags": ["d3", "r", "s3", "aws", "westworld", "international", "flags"],
         "image": "textures/fade_around_the_world.png",
         "url": "https://narro.design/html/around-the-world.html"
       },
@@ -202,10 +189,10 @@
         "title": "Revival",
         "publication": "Blurb",
         "description": "A self-published poetry collection observing San Francisco's strained natural, technological, and human bindings",
-        "year": "2021",
+        "year": "2018",
         "awards": [],
         "awardsShort": [],
-        "tags": ["Tag 7", "Tag 8", "Tag 9"],
+        "tags": ["r", "graph theory", "spanning tree", "blurb", "book", "poetry", "nature", "technology", "humanity", "san francisco"],
         "image": "textures/fade_revival.png",
         "url": "https://www.blurb.com/b/10322111-revival"
       }
@@ -281,7 +268,7 @@
               value: .1
           },
           uFogColor: {
-              value: new THREE.Color($bgColor)
+              value: new THREE.Color(hexToRgb($bgColor))
           },
           uFogNear: {
               value: 10
@@ -371,9 +358,9 @@
     }
 
     function drawPlatonicSolid(platonicSolid) {
-        const fogColor = new THREE.Color($white);
-        const backgroundColor = new THREE.Color($bgColor);
-        const edgeColor = new THREE.Color($textColor2);
+        const fogColor = new THREE.Color(hexToRgb($white));
+        const backgroundColor = new THREE.Color(hexToRgb($bgColor));
+        const edgeColor = new THREE.Color(hexToRgb($textColor2));
         const width = Math.min(.8 * window.outerHeight, .95 * window.innerWidth);
         const height =  Math.min(.8 * window.outerHeight, .95 * window.innerWidth); 
         const dimension = Math.max(width, height);
@@ -559,10 +546,12 @@
     <div class="foreground" style={`height: ${galleryHeight}px`} bind:this={foreground}></div>
 
     <div class="background">
-        <div class="details-container" tabindex="0">            
+        <div class="details-container">            
             <a href={url} target="_blank">
                 <div class="title"><span class="title-text">{@html title}</span>
-                    <div class="external-link"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></div>
+                    <div class="external-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </div>
                 </div>
             </a>
             <div class="description">{description}</div>
@@ -576,7 +565,7 @@
                     {/if}
                     <div class="detail">
                         <p class="section-subtitle">Tags</p>
-                        <p class="detail-description">{tags}</p>
+                        <p class="detail-description tags">{@html tags}</p>
                     </div>
                 </div>
             {/if}
@@ -783,11 +772,12 @@
                         <p class="section-subtitle">Awards</p>
                         <p class="detail-description">{@html awardsShort}</p>
                     </div>
+                {:else}
+                    <div class="detail">
+                        <p class="section-subtitle">Tags</p>
+                        <p class="detail-description tags">{@html tags}</p>
+                    </div>
                 {/if}
-                <div class="detail">
-                    <p class="section-subtitle">Tags</p>
-                    <p class="detail-description">{tags}</p>
-                </div>
             </div>
         {/if}
     </div>
@@ -851,7 +841,7 @@
     .platonic-gallery {
         display: flex;
         justify-content: center;
-        width: min(95vw, 1000px);
+        width: min(95vw, 1200px);
         margin: 0 auto;
     }
     .background {
@@ -911,12 +901,11 @@
         border-bottom: 1px solid var(--color-2);
     }
     .external-link {
-        visibility: hidden;
         display: inline-block;
         height: 13px;
         width: 13px;
         position: absolute;
-        top: 0px;
+        top: -5px;
         padding-left: 5px;
         color: var(--color-2);
     }
@@ -967,8 +956,8 @@
             justify-content: center;
         }
         .details-container {
-            width: min(100%, 350px);
-            height: 85px;
+            width: 480px;
+            height: 110px;
             margin: 0 auto;
         }
         .canvas-container {
@@ -994,7 +983,6 @@
             margin: 0px auto;
             padding-right: 0px;
             padding-bottom: 1px;
-            font-size: 11px;
         }
         .details {
             min-height: 105px;
@@ -1009,7 +997,6 @@
             margin: 5px 0 0 0;
         }
         .description, .details {
-            font-size: 14px;
             text-align: center;
             margin: 5px 0 0 0;
         }
@@ -1019,18 +1006,25 @@
     }
 
     @media screen and (max-width: 700px) {
-        .img-container {
-            max-height: min(80vh, 95vw, 350px);
-            max-width: min(80vh, 95vw, 350px);
-        }
         .detail {
             margin-bottom: 0px;
         }
     }
     @media screen and (max-width: 500px) {
-        .img-container {
-            max-height: min(80vh, 80vw, 400px);
-            max-width: min(80vh, 80vw, 400px);
+        .detail-description {
+            margin: 0 auto;
+            margin-top: 3px;
+            max-width: 80vw;
+            line-height: 1.8;
+        }
+        .tags {
+            line-height: unset !important;
+        }
+        .description, .details {
+            font-size: 16px;
+        }
+        .details-container {
+            width: min(100%, 350px);
         }
         .detail {
             margin-bottom: 0px;
@@ -1040,12 +1034,11 @@
             margin-top: 0px;
             padding-bottom: 20px;
         }
+        .section-subtitle {
+            font-size: 14px;
+        }
     }
     @media screen and (max-width: 375px) {
-        .img-container {
-            max-height: min(80vh, 95vw, 280px);
-            max-width: min(80vh, 95vw, 280px);
-        }
         .canvas {
             padding-top: 5px;
         }

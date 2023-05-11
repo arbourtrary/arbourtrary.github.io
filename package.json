@@ -5,16 +5,18 @@
 	"scripts": {
 		"dev": "vite dev --host",
 		"build": "vite build",
-		"preview": "vite preview"
+		"preview": "vite preview --host"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
-		"@sveltejs/kit": "^1.5.0",
+		"@sveltejs/kit": "^1.16.3",
 		"svelte": "^3.54.0",
 		"vite": "^4.2.0"
 	},
 	"type": "module",
 	"dependencies": {
+		"@fontsource/im-fell-english": "^4.5.8",
+		"@sveltejs/adapter-static": "^2.0.2",
 		"n": "^9.0.1",
 		"three": "^0.151.2"
 	}

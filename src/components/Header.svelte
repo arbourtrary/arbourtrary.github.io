@@ -16,7 +16,7 @@
 <div class="header" bind:this={header}>
     <div class="title active"><a on:click={() => section.set(0)} href="#about">About</a></div>
     <div class="title"><a on:click={() => section.set(1)} href="#projects">Projects</a></div>
-    <div class="title"><a on:click={() => section.set(2)} href="#blog">Blog</a></div>
+    <div class="title"><a on:click={() => section.set(2)} href="#writings">Writings</a></div>
     <div class="title"><a on:click={() => section.set(3)} href="#contact">Contact</a></div>
 </div>
 
@@ -42,10 +42,10 @@
     }
     .title {
         width: 70px;
-        font-size: 15px;
+        font-size: 16px;
         font-family: var(--serif);
         font-weight: 300;
-        letter-spacing: 0.8px;
+        letter-spacing: 0.5px;
         text-align: center;
         margin: 0px 40px;
         padding-bottom: 3px;
@@ -53,7 +53,8 @@
         transition: all 100ms ease-out;
     }
     .title.active {
-        border-bottom: 1px solid var(--color-2) !important;
+        color: var(--color-1);
+        border-bottom: 1px solid var(--color-1) !important;
     }
     .title a {
         text-decoration: none;
@@ -61,20 +62,23 @@
     }
     .title:hover {
         cursor: pointer;
-        color: var(--black);
-        border-bottom: 1px solid var(--black) !important;
+        color: var(--color-1);
+        border-bottom: 1px solid var(--color-1) !important;
     }
     @media screen and (max-width: 1000px) {
         .title {
             padding-top: min(2vh, 12px);
             width: auto;
-            font-size: 12px;
-            letter-spacing: 1px;
             margin: 0px 20px;
             padding-bottom: 2px;
         }
         .header {
             padding:  0;
+        }
+    }
+    @media screen and (max-width: 500px) {
+        .title {
+            font-size: 14px;
         }
     }
 </style>

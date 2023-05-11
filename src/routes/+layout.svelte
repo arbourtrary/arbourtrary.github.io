@@ -1,6 +1,5 @@
-<!-- <nav>
-    <a href="/">Home</a>
-    <a href="/blog">Blog</a>
-</nav>
- -->
+
 <slot></slot>
+<script>
+    import "@fontsource/im-fell-english"
+</script>

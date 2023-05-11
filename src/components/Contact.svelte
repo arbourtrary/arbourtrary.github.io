@@ -53,7 +53,7 @@
 </div>
 <div id="contact"></div>
 <style>
-    #id {
+    #contact {
         height: 0px;
     }
     .background {
@@ -85,11 +85,6 @@
         justify-content: center;
         align-content: center;
     }
-    .logo-text {
-        text-align: center;
-        margin: 5px;
-        font-family: 'Avenir';
-    }
     .logo {
         height: 75px;
         width: 75px;
@@ -101,10 +96,6 @@
     }
     .twitter {
         background: no-repeat center url("/images/twitter.png");
-        background-size: contain;
-    }
-    .mastodon {
-        background: no-repeat center url("/images/mastodon.png");
         background-size: contain;
     }
     .github {

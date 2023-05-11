@@ -1,0 +1,76 @@
+:root {
+   --serif: "IM Fell English", serif;
+   --selection-bg-color: #CBC3B4;
+   --selection-color: #FFFFFF;
+   --bg-color: #F5F2EB;
+
+   /* In case I want an off-shade of black/white */
+   --black: #000000;
+   --white: #FFFFFF;
+
+   /* Shades of color, ordered darkest (1) to lightest (n) */
+   --color-1: #373531;
+   --color-2: #908B80;
+   --color-3: #A8A195;
+   --color-4: #EAE6DF;
+}
+
+/*** Works on common browsers ***/
+::selection{
+    background-color: var(--selection-bg-color);
+    color: var(--selection-color);
+}
+/*** Mozilla based browsers ***/
+::-moz-selection{
+    background-color: var(--selection-bg-color);
+    color: var(--selection-color);
+}
+
+/***For Other Browsers ***/
+::-o-selection{
+    background-color: var(--selection-bg-color);
+    color: var(--selection-color);
+}
+
+::-ms-selection{
+    background-color: var(--selection-bg-color);
+    color: var(--selection-color);
+}
+
+/*** For Webkit ***/
+::-webkit-selection{
+    background-color: var(--selection-bg-color);
+    color: var(--selection-color);
+}
+
+body{
+    margin: 0;
+    background: var(--bg-color);
+}
+.section-subtitle{
+    width: fit-content;
+    font-size: 16px;
+    color: var(--color-2);
+    font-family: var(--serif);
+    padding-bottom: 2px;
+    margin-bottom: 10px;
+    padding-right: 5px;
+}
+.section-description{
+    color: var(--color-1);
+    font-family: var(--serif);
+}
+.desktop{
+    display: block;
+}
+.mobile{
+    display: none;
+}
+@media screen and (max-width: 1000px) {
+    .desktop{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
+}

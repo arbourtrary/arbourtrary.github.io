@@ -140,11 +140,6 @@ onMount(() => {
 
 <style>
 	/* Explanation in JS tab */
-
-	body {
-		margin: 0px;
-	}
-
 	#container {
 		/* Center the text in the viewport. */
 		position: relative;

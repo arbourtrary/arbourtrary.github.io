@@ -27,6 +27,8 @@
     $: outerContainer && (scrollY >= (outerContainer.offsetTop - offset)) && (scrollY < (outerContainer.offsetTop + outerContainer.offsetHeight - offset)) && $section !== sectionIndex && section.set(sectionIndex)
 
     // "ɑrbərtrɛri", "deɪvɪd njukəm"
+    // TODO: Build Spanish version toggle later
+    // "David Morales" appears and everything switches - easter egg
     let morphTexts = ["arbourtrary", "David Newcomb"];
 
     let aboutColors = [
@@ -51,10 +53,60 @@
     const headerTexts = ["Creative Developer", "Environmentalist", "Poetry Enthusiast", "Mathematician",]
 
     const aboutInterests = [
-        ['threeJS', 'generative art', 'threeJS', 'generative art', 'threeJS', 'generative art', 'threeJS', 'generative art'],
-        ['renewables', 'wind energy'],
-        ['threeJS', 'generative art'],
-        ['threeJS', 'generative art', 'threeJS', 'generative art', 'threeJS', 'generative art', 'threeJS', 'generative art', 'threeJS', 'generative art']
+        // Creative Developer
+        [
+            'The Pudding',
+            'scrollytelling',
+            'Svelte',
+            'mapping',
+            'R2D3',
+            'visual explainers',
+            'Immersive Garden',
+            'threeJS',
+            'Book of Shaders',
+            'webGPU',
+            'generative human intelligence'
+        ],
+        // Environmentalist
+        [
+            'Work on Climate',
+            'circular economy',
+            'Pachama',
+            'forest management',
+            'Elemental Excelerator',
+            'renewables',
+            'Carbon Lighthouse',
+            'efficiency',
+            'fusion'
+        ],
+        // Poetry Enthusiast
+        [
+            'Jorge Luis Borges',
+            'dreams',
+            'Langston Hughes',
+            'myth',
+            'Mary Oliver',
+            'faith',
+            'Stephen Dunn',
+            'contemplation',
+            'Tim Seibles',
+            'lyric',
+            'Walt Whitman',
+            'yawp',
+            'Poetry Off the Shelf'
+        ],
+        // Mathematician
+        [
+            'M.C. Escher',
+            'group theory',
+            'La Alhambra',
+            'topology',
+            'Ramanujan',
+            'embeddings',
+            'Georg Cantor',
+            'perfect packing',
+            "Gödel's Incompleteness Theorem",
+        ]
     ]
 
     const imgFiles = [
@@ -162,7 +214,7 @@
                     <div>
                         {#each headerTexts as headerText}
                             <div class="about-row">
-                                <div class="about-header" tabindex="0">{headerText}</div>
+                                <div class="about-header">{headerText}</div>
                             </div>
                         {/each}
                     </div>
@@ -498,24 +550,7 @@
     .about-interests {
         padding-top: 15px;
         margin: 5px 40px 0px 0px;
-        height: 100px;
-    }
-    .about-img {
-        object-fit: contain;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        filter: saturate(120%);
-        opacity: 0.2;
-        -webkit-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-        transition: all 0.3s ease-out;
-        display: none;
-    }
-    :global(.about-img.active) {
-        opacity: 1;
+        height: 140px;
     }
     .section-description {
          font-size: 18px;
@@ -588,15 +623,17 @@
             border-bottom: 1px solid #D0C6B6;
             padding: 0px 5px 5px 5px;
         }
-        .section-description {
-             font-size: 14px;
-        }
     }
     @media screen and (max-width: 700px) {
         .img-container {
             margin: 0 auto;
             height: min(80vh, 90vw, 500px);
             width: min(80vh, 90vw, 500px);
+        }
+    }
+    @media screen and (max-width: 500px) {
+        .section-description {
+            font-size: 16px;
         }
     }
 </style>
