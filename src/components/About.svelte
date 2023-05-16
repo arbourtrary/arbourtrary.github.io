@@ -12,6 +12,7 @@
     let scrollingAnchorHeight;
     let initialOffset;
     let interests = [];
+    let inspirations = [];
     let images = []
     let headers = []
     let activeColor = "#D0C6B6"
@@ -55,57 +56,66 @@
     const aboutInterests = [
         // Creative Developer
         [
-            'The Pudding',
-            'scrollytelling',
-            'Svelte',
-            'mapping',
-            'R2D3',
+            'generative human intelligence',
             'visual explainers',
-            'Immersive Garden',
-            'threeJS',
-            'Book of Shaders',
-            'webGPU',
-            'generative human intelligence'
+            'mapping',
+            'threeJS'
         ],
         // Environmentalist
         [
-            'Work on Climate',
-            'circular economy',
-            'Pachama',
             'forest management',
-            'Elemental Excelerator',
+            'circular economy',
             'renewables',
-            'Carbon Lighthouse',
             'efficiency',
             'fusion'
         ],
         // Poetry Enthusiast
         [
-            'Jorge Luis Borges',
-            'dreams',
-            'Langston Hughes',
-            'myth',
-            'Mary Oliver',
-            'faith',
-            'Stephen Dunn',
             'contemplation',
-            'Tim Seibles',
-            'lyric',
-            'Walt Whitman',
-            'yawp',
-            'Poetry Off the Shelf'
+            'lyricism',
+            'dreams',
+            'faith',
+            'myth'
         ],
         // Mathematician
         [
-            'M.C. Escher',
-            'group theory',
-            'La Alhambra',
-            'topology',
-            'Ramanujan',
-            'embeddings',
-            'Georg Cantor',
             'perfect packing',
-            "Gödel's Incompleteness Theorem",
+            'group theory',
+            'embeddings',
+            'topology'
+        ]
+    ]
+
+    const aboutInspirations = [
+        // Creative Developer
+        [
+            'Immersive Garden',
+            'Book of Shaders',
+            'The Pudding',
+            'R2D3'
+        ],
+        // Environmentalist
+        [
+            'Elemental Excelerator',
+            'Carbon Lighthouse',
+            'Work on Climate',
+            'Pachama'
+        ],
+        // Poetry Enthusiast
+        [
+            'Jorge Luis Borges',
+            'Langston Hughes',
+            'Mary Oliver',
+            'Walt Whitman',
+            'Tim Seibles',
+            'Stephen Dunn',
+        ],
+        // Mathematician
+        [
+            'Georg Cantor',
+            'M.C. Escher',
+            'La Alhambra',
+            'Ramanujan'
         ]
     ]
 
@@ -147,6 +157,7 @@
                             }
                             paintBackground(canvas, context, images[i], 1)
                             interests = aboutInterests[i]
+                            inspirations = aboutInspirations[i]
                             linearGradient = linearGradients[i]
                         } else {
                             // Remove the active class
@@ -165,6 +176,7 @@
                         }
                         paintBackground(canvas, context, images[i], 1)
                         interests = []
+                        inspirations = []
                     }
                 }
             }
@@ -238,6 +250,8 @@
 
                     <div class="section-subtitle" style={`visibility: ${interests.length ? 'visible' : 'hidden'}`}>Interests</div>
                     <div class="section-description">{@html interests.join(", ")}</div>
+                    <div class="section-subtitle about-inspirations" style={`visibility: ${inspirations.length ? 'visible' : 'hidden'}`}>Inspirations</div>
+                    <div class="section-description">{@html inspirations.join(", ")}</div>
                 </div>
             </div>
 
@@ -270,9 +284,10 @@
             <div class="about-interests">
                 <div
                     style={`
+                        padding-bottom: ${currentIndex >= 0 ? "0px" : '5px'};
                         color: ${currentIndex >= 0 ? aboutColors[currentIndex] : 'var(--color-1)'};
                         font-weight: ${currentIndex >= 0 ? '900' : '300'};
-                        font-size: ${currentIndex >= 0 ? '26px' : '16px'};
+                        font-size: ${currentIndex >= 0 ? '28px' : '16px'};
                         ${currentIndex >= 0 ? "" : "margin: 15px auto 0px auto; border: none; text-transform: none; letter-spacing: normal;"}
                     `}
                     class="section-subtitle center">{currentIndex >= 0 ? headerTexts[currentIndex] : "Scroll to explore"}
@@ -287,13 +302,34 @@
                     <div class="line line-seven"></div>
                     <div class="line line-eight"></div>
                 {/if}
-                <div class="section-description center">{@html interests.join(", ")}</div>
+                <div class="about-details flex-column">
+                    {#if Math.random() > 0.5}
+                        <div class="flex-column">
+                            <div class="section-column-title" style={`visibility: ${interests.length ? 'visible' : 'hidden'}`}>Interests</div>
+                            <div class="section-description">{@html interests.join(", ")}</div>
+                        </div>
+                    {:else}
+                        <div class="flex-column">
+                            <div class="section-column-title" style={`visibility: ${inspirations.length ? 'visible' : 'hidden'}`}>Inspirations</div>
+                            <div class="section-description">{@html inspirations.join(", ")}</div>
+                        </div>
+                    {/if}
+                </div>
             </div>
         {/if}
     </div>
 </scrolling-anchor>
 
 <style>
+    .flex-column {
+        display: flex;
+        flex-direction: column;
+    }
+    .about-details {
+        text-align: center;
+        width: 80%;
+        margin: 0 auto;
+    }
     .about-row {
         display: flex;
         flex-direction: row;
@@ -550,12 +586,15 @@
     .about-interests {
         padding-top: 15px;
         margin: 5px 40px 0px 0px;
-        height: 140px;
+        height: 180px;
+    }
+    .about-inspirations {
+        padding-top: 20px;
     }
     .section-description {
          font-size: 18px;
     }
-    .section-subtitle {
+    .section-subtitle, .section-column-title {
         font-weight: 300;
         font-size: 16px;
         border: none;
@@ -592,7 +631,7 @@
             top: 55px;
             transform: translate(0,0);
             padding-top: 0px;
-            grid-row-gap: max(2vh, 10px);
+            grid-row-gap: min(2vh, 10px);
             min-height: 0;
         }
         scrolling-anchor canvas {
@@ -608,6 +647,7 @@
             padding-top: 0px;
             margin: 0px auto;
             max-width: 340px;
+            height: 120px;
         }
         .img-container {
             margin: 0 auto;
@@ -618,10 +658,16 @@
             text-align: center !important;
         }
         .section-subtitle {
-            margin: 15px auto;
+            padding: 0px 5px 0px 5px;
             font-size: 16px;
-            border-bottom: 1px solid #D0C6B6;
-            padding: 0px 5px 5px 5px;
+            margin: 0px auto 7px auto;
+        }
+        .section-column-title {
+            margin:  0px;
+            font-size: 14px;
+            padding: 0px 5px 2px 0px;
+            color: var(--color-2);
+            font-family: var(--serif);
         }
     }
     @media screen and (max-width: 700px) {
