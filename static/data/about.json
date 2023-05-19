@@ -1,0 +1,77 @@
+[
+    {
+        "header": "Creative Developer",
+        "interests": [
+            "visual explainers",
+            "mapping",
+            "threeJS",
+            "generative human intelligence"
+        ],
+        "inspirations": [
+            "Immersive Garden",
+            "Book of Shaders",
+            "The Pudding",
+            "R2D3"
+        ],
+        "image": "/images/drawing_blue.png",
+        "color": "#8CB2D3"
+    },
+    {
+        "header": "Environmentalist",
+        "interests": [
+            "forest management",
+            "circular economy",
+            "renewables",
+            "efficiency",
+            "fusion"
+        ],
+        "inspirations": [
+            "Elemental Excelerator",
+            "Carbon Lighthouse",
+            "Work on Climate",
+            "Pachama"
+        ],
+        "image": "/images/drawing_green.png",
+        "color": "#AAC4A2"
+    },
+    {
+        "header": "Poetry Enthusiast",
+        "interests": [
+            "contemplation",
+            "lyricism",
+            "forests",
+            "dreams",
+            "rivers",
+            "faith",
+            "myth"
+        ],
+        "inspirations": [
+            "Jorge Luis Borges",
+            "Langston Hughes",
+            "Mary Oliver",
+            "Walt Whitman",
+            "Tim Seibles",
+            "Stephen Dunn"
+        ],
+        "image": "/images/drawing_orange.png",
+        "color": "#EFBD8D"
+    },
+    {
+        "header": "Mathematician",
+        "interests": [
+            "perfect packing",
+            "group theory",
+            "embeddings",
+            "topology",
+            "Gödel's Incompleteness Theorem"
+        ],
+        "inspirations": [
+            "Georg Cantor",
+            "M.C. Escher",
+            "La Alhambra",
+            "Ramanujan"
+        ],
+        "image": "/images/drawing_purple.png",
+        "color": "#D2B0EC"
+    }
+]

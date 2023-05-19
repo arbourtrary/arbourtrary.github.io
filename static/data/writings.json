@@ -1,0 +1,34 @@
+[
+        {
+            "date": "5/1/23",
+            "title": "Forest for the trees", 
+            "slug": "forest-for-the-trees",
+            "filename": "/data/writings/forest-for-the-trees.txt",
+            "filter": "invert(94%) sepia(10%) saturate(700%) hue-rotate(52deg) brightness(83%) contrast(83%)",
+            "image": "/images/droplet_0.png"
+        },
+        {
+            "date": "6/1/23",
+            "title": "ChatGOT & other puns",
+            "slug": "chat-got-puns",
+            "filename": "/data/writings/chat-got-puns.txt",
+            "filter": "invert(81%) sepia(6%) saturate(2525%) hue-rotate(178deg) brightness(86%) contrast(92%)",
+            "image": "/images/droplet_1.png"
+        },
+        {
+            "date": "7/1/23",
+            "title": "Orbital tensors, false inventions",
+            "slug": "orbital-tensors-false-inventions",
+            "filename": "/data/writings/orbital-tensors-false-inventions.txt",
+            "filter": "invert(91%) sepia(12%) saturate(3946%) hue-rotate(186deg) brightness(92%) contrast(90%)",
+            "image": "/images/droplet_2.png"
+        },
+        {
+            "date": "8/1/23",
+            "title": "Scrollytelling with MapLibre",
+            "slug": "scrollytelling-maplibre",
+            "filename": "/data/writings/scrollytelling-maplibre.txt",
+            "filter": "invert(81%) sepia(6%) saturate(2525%) hue-rotate(178deg) brightness(86%) contrast(92%)",
+            "image": "/images/droplet_3.png"
+        }
+    ]

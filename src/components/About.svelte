@@ -1,11 +1,14 @@
 <script>
-    import { section, isPortrait, bgColor, textColor3 } from "../store.js"
+    import { section, isPortrait, bgColor, textColor3, textColor4 } from "../store.js"
     import { paintImage, paintBackground } from "../utils/canvas.js"
     import TextMorph from "./TextMorph.svelte";
     import { onMount } from "svelte";
+    import { loadJSON } from "../utils/file.js";
+    import { getFieldFromArrayOfObjects } from "../utils/array.js";
 
     export let sectionIndex = 0;
     export let scrollY = 0;
+    export let dataFilename = "";
 
     let currentIndex = -1;
     let prevIndex;
@@ -14,7 +17,7 @@
     let interests = [];
     let inspirations = [];
     let images = []
-    let headers = []
+    // let headers = []
     let activeColor = "#D0C6B6"
     let progress = 0;
     let linearGradient;
@@ -24,124 +27,50 @@
     let canvas;
     let context;
 
-    $: offset = window.innerHeight / 2
-    $: outerContainer && (scrollY >= (outerContainer.offsetTop - offset)) && (scrollY < (outerContainer.offsetTop + outerContainer.offsetHeight - offset)) && $section !== sectionIndex && section.set(sectionIndex)
+    let data = null;
+    let allColors = []
+    let headers = [];
+    let headerTexts = []
+    let allInterests = []
+    let allInspirations = []
+    let allImages = []
+    let gradients = []
 
     // "ɑrbərtrɛri", "deɪvɪd njukəm"
     // TODO: Build Spanish version toggle later
     // "David Morales" appears and everything switches - easter egg
     let morphTexts = ["arbourtrary", "David Newcomb"];
 
-    let aboutColors = [
-        /*blue*/
-        "#8CB2D3",
-        /*green*/
-        "#AAC4A2",
-        /*orange*/
-        "#EFBD8D",
-        /*purple*/
-        "#D2B0EC"
-    ]
-
-    let linearGradients = [
-        "linear-gradient(to right, #8CB2D3, #EAE6DF, #EAE6DF, #EAE6DF)",
-        "linear-gradient(to right, #EAE6DF, #AAC4A2, #EAE6DF, #EAE6DF)",
-        "linear-gradient(to right, #EAE6DF, #EAE6DF, #EFBD8D, #EAE6DF)",
-        "linear-gradient(to right, #EAE6DF, #EAE6DF, #EAE6DF, #D2B0EC)"
-    ]
-
-    const headerTexts = ["Creative Developer", "Environmentalist", "Poetry Enthusiast", "Mathematician",]
-
-    const aboutInterests = [
-        // Creative Developer
-        [
-            'visual explainers',
-            'mapping',
-            'threeJS',
-            'generative human intelligence'
-        ],
-        // Environmentalist
-        [
-            'forest management',
-            'circular economy',
-            'renewables',
-            'efficiency',
-            'fusion'
-        ],
-        // Poetry Enthusiast
-        [
-            'contemplation',
-            'lyricism',
-            'dreams',
-            'faith',
-            'myth'
-        ],
-        // Mathematician
-        [
-            'perfect packing',
-            'group theory',
-            'embeddings',
-            'topology',
-            "Gödel's Incompleteness Theorem"
-        ]
-    ]
-
-    const aboutInspirations = [
-        // Creative Developer
-        [
-            'Immersive Garden',
-            'Book of Shaders',
-            'The Pudding',
-            'R2D3'
-        ],
-        // Environmentalist
-        [
-            'Elemental Excelerator',
-            'Carbon Lighthouse',
-            'Work on Climate',
-            'Pachama'
-        ],
-        // Poetry Enthusiast
-        [
-            'Jorge Luis Borges',
-            'Langston Hughes',
-            'Mary Oliver',
-            'Walt Whitman',
-            'Tim Seibles',
-            'Stephen Dunn',
-        ],
-        // Mathematician
-        [
-            'Georg Cantor',
-            'M.C. Escher',
-            'La Alhambra',
-            'Ramanujan'
-        ]
-    ]
-
-    const imgFiles = [
-        "/images/drawing_blue.png",
-        "/images/drawing_green.png",
-        "/images/drawing_orange.png",
-        "/images/drawing_purple.png"
-    ]
-
-    onMount(() => {
-        headers = outerContainer.querySelectorAll('.about-header');
+    onMount(async () => {
         initialOffset = window.innerHeight / 5;
         scrollingAnchorHeight = outerContainer.offsetHeight - window.innerHeight - initialOffset;
+        data = await loadJSON(dataFilename);
+        allColors = getFieldFromArrayOfObjects(data, 'color');
+        headerTexts = getFieldFromArrayOfObjects(data, 'header');
+        allInterests = getFieldFromArrayOfObjects(data, 'interests');
+        allInspirations = getFieldFromArrayOfObjects(data, 'inspirations');
+        allImages = getFieldFromArrayOfObjects(data, 'image');
+        gradients = [
+            `linear-gradient(to right, ${allColors[0]}, ${$textColor4}, ${$textColor4}, ${$textColor4})`,
+            `linear-gradient(to right, ${$textColor4}, ${allColors[1]}, ${$textColor4}, ${$textColor4})`,
+            `linear-gradient(to right, ${$textColor4}, ${$textColor4}, ${allColors[2]}, ${$textColor4})`,
+            `linear-gradient(to right, ${$textColor4}, ${$textColor4}, ${$textColor4}, ${allColors[3]})`
+        ]
     });
 
     // Create a function that highlights the correct header based on the equal splits of the height of the scrolling-anchor component
     function highlightHeader() {
-        if (outerContainer && $section === 0 && initialOffset) {
+        if (data && outerContainer && $section === 0 && initialOffset) {
+            if (!headers.length) {
+                headers = outerContainer.querySelectorAll('.about-header');
+            }
             progress = (window.scrollY - initialOffset) / scrollingAnchorHeight;
             progress = progress > 1 ? 1 : progress < 0 ? 0 : progress;
 
             const headerHeight = scrollingAnchorHeight / headerTexts.length;
             currentIndex = Math.floor((window.scrollY - initialOffset) / headerHeight);
             currentIndex = currentIndex > (headerTexts.length - 1) ? (headerTexts.length - 1) : currentIndex;
-            
+
             // Loop through the headers
             if (prevIndex !== currentIndex) {
                 context.clearRect(0, 0, canvas.width, canvas.height)
@@ -149,26 +78,26 @@
                     if (window.scrollY > initialOffset) {
                         // If the current index is the same as the looped index
                         if (i === currentIndex) {
-                            activeColor = aboutColors[i]
+                            activeColor = allColors[i]
                             // Add the active class
                             if (headers.length) {
                                 headers[i].classList.add('active');
                                 headers[i].style.color = activeColor
                             }
                             paintBackground(canvas, context, images[i], 1)
-                            interests = aboutInterests[i]
-                            inspirations = aboutInspirations[i]
-                            linearGradient = linearGradients[i]
+                            interests = allInterests[i]
+                            inspirations = allInspirations[i]
+                            linearGradient = gradients[i]
                         } else {
                             // Remove the active class
                             if (headers.length) {
                                 headers[i].classList.remove('active');
-                                headers[i].style.color = "#EAE6DF"
+                                headers[i].style.color = $textColor4
                             }
                             paintBackground(canvas, context, images[i], 0.2)
                         }
                     } else {
-                        linearGradient = "linear-gradient(to right, #8CB2D3, #AAC4A2, #EFBD8D, #D2B0EC)";
+                        linearGradient = `linear-gradient(to right, ${allColors.join(', ')})`;
                         if (headers.length) {
                             headers[i].classList.remove('active');
                             headers[i].style.color = $textColor3;
@@ -186,11 +115,16 @@
     }
     window.requestAnimationFrame(() => { highlightHeader() })
 
-    $: if (viewport) {
+
+    $: offset = window.innerHeight / 2
+
+    $: outerContainer && (scrollY >= (outerContainer.offsetTop - offset)) && (scrollY < (outerContainer.offsetTop + outerContainer.offsetHeight - offset)) && $section !== sectionIndex && section.set(sectionIndex)
+
+    $: if (data && viewport) {
         canvas = document.getElementById('viewport');
         context = canvas.getContext('2d');
         context.clearRect(0, 0, canvas.width, canvas.height)
-        imgFiles.forEach((imgFile) => {
+        allImages.forEach((imgFile) => {
             const img = paintImage(canvas, context, imgFile, 1);
             images.push(img);
         })
@@ -285,7 +219,7 @@
                 <div
                     style={`
                         padding-bottom: ${currentIndex >= 0 ? "0px" : '5px'};
-                        color: ${currentIndex >= 0 ? aboutColors[currentIndex] : 'var(--color-1)'};
+                        color: ${currentIndex >= 0 ? allColors[currentIndex] : 'var(--color-1)'};
                         font-weight: ${currentIndex >= 0 ? '900' : '300'};
                         font-size: ${currentIndex >= 0 ? '28px' : '16px'};
                         ${currentIndex >= 0 ? "" : "margin: 15px auto 0px auto; border: none; text-transform: none; letter-spacing: normal;"}

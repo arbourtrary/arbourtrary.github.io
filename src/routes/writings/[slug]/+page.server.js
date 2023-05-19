@@ -1,5 +1,3 @@
-/** @type {import('./$types').EntryGenerator} */
-
 export function entries() {
     return [
         { slug: 'forest-for-the-trees' },

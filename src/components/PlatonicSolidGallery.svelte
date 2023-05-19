@@ -8,7 +8,8 @@
     import * as THREE from 'three';
     // TODO: generalize to have this extend a platonic solid gallery component
     export let platonicSolid = "dodecahedron"
-    export let filename = "";
+    export let modelFilename = `models/${platonicSolid}.glb`
+    export let dataFilename = "";
     export let scrollY = 0;
 
     import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';    
@@ -67,7 +68,7 @@
 
     onMount(async () => {
         unraveledFaces = [...document.querySelectorAll(".pentagon")];
-        projects = await loadJSON(filename);
+        projects = await loadJSON(dataFilename);
     });
 
     const setPathLength = () => {
@@ -269,27 +270,12 @@
         edges = new THREE.LineSegments(edgesGeometry, material);
         scene.add(edges);
 
-        const textures = [
-            new THREE.TextureLoader().load('textures/fade_recordigami.png'),
-            new THREE.TextureLoader().load('textures/fade_house_of_cards.png'),
-            new THREE.TextureLoader().load('textures/fade_big_poultry.png'),
-            new THREE.TextureLoader().load('textures/fade_made_in_miami.png'),
-            new THREE.TextureLoader().load('textures/fade_cut_off.png'),
-            new THREE.TextureLoader().load('textures/fade_in_a_word.png'),
-
-            new THREE.TextureLoader().load('textures/fade_security_for_sale.png'),
-            new THREE.TextureLoader().load('textures/fade_puerto_rico_migration.png'),
-            new THREE.TextureLoader().load('textures/fade_fallen_trees.png'),
-            new THREE.TextureLoader().load('textures/fade_linguistics.png'),
-            new THREE.TextureLoader().load('textures/fade_around_the_world.png'),
-            new THREE.TextureLoader().load('textures/fade_revival.png'),
-        ];
-
+        const textures = projects.map(project => new THREE.TextureLoader().load(project.image));
         const materials = textures.map((texture) => createMaterial(texture))
         actualGroup = new THREE.Group();
 
         let faces = []
-        loader.load( 'models/dodecahedron.glb', function ( gltf ) {
+        loader.load( modelFilename, function ( gltf ) {
             const meshes = []
             gltf.scene.traverse(function(obj){
                 if(obj.type === 'Mesh'){
@@ -395,7 +381,7 @@
     }
     $: if (path) {
         path.style.strokeDashoffset = 1 - piecewiseProgress;
-        eraserPath.style.strokeDashoffset = 1 - (piecewiseProgress - 0.083);
+        eraserPath.style.strokeDashoffset = 1 - (piecewiseProgress - 1 / numberOfSides);
     }
 </script>
 

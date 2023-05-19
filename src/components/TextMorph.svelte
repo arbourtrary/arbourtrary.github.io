@@ -4,12 +4,10 @@
 import { onMount } from "svelte";
 import { section } from "../store.js"
 
-// export let linearGradient = "linear-gradient(to right, #D2B0EC, #AAC4A2, #8CB2D3, #F2DC9B)"
-export let linearGradient = "linear-gradient(to right, #D2B0EC, #AAC4A2, #8CB2D3, #EFBD8D)"
-
 // The strings to morph between. You can change these to anything you want!
 export let texts = []
 export let shouldPause = false;
+export let linearGradient = ""
 
 onMount(() => {
 

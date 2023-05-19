@@ -2,23 +2,18 @@
     import { onMount } from 'svelte';
     import { clamp, mapToUnitRange } from '../../../utils/math.js';
     export let data;
-    let scrollY = 0;
 
+    let scrollY = 0;
+    let content = "";
     let body;
-    let html;
-    onMount(() => {
+
+    onMount(async () => {
+        const response = await fetch(data.filename)
+        content = await response.text();
         body = document.body;
-        html = document.documentElement;
     })
 
-    $: pageHeight = body && html && Math.max(
-        body.scrollHeight,
-        body.offsetHeight, 
-        html.clientHeight,
-        html.scrollHeight,
-        html.offsetHeight
-    );
-    $: scrollProgress = pageHeight && clamp(scrollY / (pageHeight - window.innerHeight), 0, 1)
+    $: scrollProgress = body && clamp(scrollY / (body.scrollHeight - window.innerHeight), 0, 1)
 </script>
 
 <svelte:window bind:scrollY/>
@@ -88,7 +83,7 @@
 </div>
 <div class="writ">
     <div class="title">{data.title}</div>
-    <div class="content">{@html data.content}</div>
+    <div class="content">{@html content}</div>
 </div>
 
 <style>

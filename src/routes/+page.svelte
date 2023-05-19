@@ -35,13 +35,16 @@
 <About
     sectionIndex={0}
     {scrollY}
+    dataFilename={'/data/about.json'}
 />
 <Projects
     sectionIndex={1}
+    dataFilename={'/data/projects.json'}
     {scrollY}
 />
 <Writings
     sectionIndex={2}
+    dataFilename={'/data/writings.json'}
     {scrollY}
 />
 <Contact

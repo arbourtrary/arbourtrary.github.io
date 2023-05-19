@@ -18,7 +18,7 @@
       "<a href='https://scripps.com/wp-content/uploads/2022/06/SHA-2021_Program_2.pdf' target='_blank'>Scripps Howard Award</a>",
       "<a href='https://winners.webbyawards.com/2022/websites-and-mobile-sites/features-design/best-individual-editorial-feature-media-company/219009/house-of-cards'>Webby for Best Editorial Feature</a>",
       "<a href='https://knightfoundation.org/esserman-knight-journalism-awards-2022-nominations/' target='_blank'>Esserman-Knight Journalism Award</a>",
-      "<a href='https://snd.org/best-of-design-competitions/2020-best-of-digital-design-results/' target='_blank'>Society of News Design Award of Excellence</a>",
+      "<a href='https://snd.org/best-of-design-competitions/2020-best-of-digital-design-results/' target='_blank'>Society for News Design Award of Excellence</a>",
       "<a href='https://www.inma.org/blogs/main/post.cfm/inma-reveals-60-global-media-awards-first-place-winners-miami-herald-takes-top-prize' target='_blank'>INMA Best in Show</a>"
     ],
     "awardsShort": [
@@ -65,8 +65,12 @@
     "publication": "The State",
     "description": "In Columbia's 29203, limbs are being amputated at an alarming rate. It doesn't have to be this way.",
     "year": "2022",
-    "awards": ["<a href='https://scpress.org/23-annual-meeting/' target='_blank'>S.C. Press Association - Mixed Media First Place</a>"],
-    "awardsShort": ["<a href='https://scpress.org/23-annual-meeting/' target='_blank'>S.C. Press Association</a>"],
+    "awards": [
+      "<a href='https://snd.org/best-of-design-competitions/snd44-annual-creative-competition-results/' target='_blank'>Society for News Design Bronze Medal</a>",
+      "<a href='https://scpress.org/23-annual-meeting/' target='_blank'>S.C. Press Association - Mixed Media First Place</a>"],
+    "awardsShort": [
+      "<a href='https://snd.org/best-of-design-competitions/snd44-annual-creative-competition-results/' target='_blank'>SND Bronze Medal</a>",
+      "<a href='https://scpress.org/23-annual-meeting/' target='_blank'>S.C. Press Association</a>"],
     "tags": ["svelte", "maplibre", "dataviz", "south carolina"],
     "image": "textures/fade_cut_off.png",
     "url": "https://www.thestate.com/news/state/south-carolina/article258302413.html"

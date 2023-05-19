@@ -1,4 +1,5 @@
 <script>
+    import { clamp } from '../utils/math.js'
     export let writing = {};
     export let index = 0;
     export let scrollY = 0;
@@ -9,10 +10,9 @@
 
     $: if (row && scrollY) {
         percent = 1 - row.getBoundingClientRect().top / (window.innerHeight)
-        opacity = percent < 0.5 ? 1.5 * percent : 1
+        opacity = clamp(percent < 0.5 ? 1.5 * percent : 1, 0, 1);
         // fadein til midpage then fadeout
         // opacity = percent > 0.6 ? 0.8 - (percent - 0.4) : percent < 0.4 ? 2 * percent : 0.8
-        opacity = opacity > 1.0 ? 1 : opacity < 0 ? 0 : opacity;
     }
 </script>
 
@@ -20,8 +20,8 @@
     <div bind:this={row} class="row" style={`opacity: ${opacity}`}>
         <!-- <div class="date">{@html writing.date}</div> -->
         <div class="droplet">
-            <span style={`filter: ${writing?.filter}`}>
-                <img src={`/images/droplet_${index}.png`}>
+            <span style={`filter: ${writing?.filter};`}>
+                <img src={writing?.image} alt="watercolor droplet">
             </span>
         </div>
         <div class="title">{writing.title}</div>
