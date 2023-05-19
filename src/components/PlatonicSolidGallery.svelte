@@ -1,13 +1,14 @@
 <script defer>
     import { section, isPortrait, bgColor, textColor2, white } from "../store.js"
     import { onMount } from "svelte";
+    import { loadJSON } from "../utils/file.js";
     import { clamp } from "../utils/math.js";
     import { hexToRgb } from "../utils/color.js";
 
     import * as THREE from 'three';
     // TODO: generalize to have this extend a platonic solid gallery component
     export let platonicSolid = "dodecahedron"
-    export let filename = "./assets/dodecahedron.json";
+    export let filename = "";
     export let scrollY = 0;
 
     import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';    
@@ -37,6 +38,7 @@
     let prevIndex = 0;
     let index = 0;
     let unraveledFaces = [];
+    let projects = [];
 
     const loader = new GLTFLoader();
 
@@ -51,164 +53,21 @@
     const piecewisePoints = [0, 0.047, 0.145, 0.238, 0.326, 0.415, 0.502, 0.593, 0.687, 0.776, 0.871, 0.958, 1]
     const lerpPoints = [0, 0.083, 0.167,0.25, 0.333, 0.417, 0.5, 0.583, 0.667, 0.75, 0.833, 0.917, 1]
 
-    let data = [
-      {
-        "title": "NBA Recordigami",
-        "publication": "Narro",
-        "description": "Tracing the history of the NBA through pioneering wins and losses during the regular season",
-        "year": "2021",
-        "awards": ["<a href='https://pudding.cool/process/pudding-cup-2021/'>Pudding Cup Honorary Mention</a>"],
-        "awardsShort": ["<a href='https://pudding.cool/process/pudding-cup-2021/'>Pudding Cup Honorary Mention</a>"],
-        "tags": ["d3", "svg", "basketball", "NBA", "triangle"],
-        "image": "textures/fade_recordigami.png",
-        "url": "https://narro.design/html/nba-recordigami.html"
-      },
-      {
-        "title": "House of Cards",
-        "publication": "Miami Herald",
-        "description": "An interactive reconstruction of the collapse of the Champlain Towers South 12-story condo in Surfside",
-        "year": "2021",
-        "awards": [
-            "<a href='https://scripps.com/wp-content/uploads/2022/06/SHA-2021_Program_2.pdf' target='_blank'>Scripps Howard Award</a>",
-            "<a href='https://winners.webbyawards.com/2022/websites-and-mobile-sites/features-design/best-individual-editorial-feature-media-company/219009/house-of-cards'>Webby for Best Editorial Feature</a>",
-            "<a href='https://knightfoundation.org/esserman-knight-journalism-awards-2022-nominations/' target='_blank'>Esserman-Knight Journalism Award</a>",
-            "<a href='https://snd.org/best-of-design-competitions/2020-best-of-digital-design-results/' target='_blank'>Society of News Design Award of Excellence</a>",
-           "<a href='https://www.inma.org/blogs/main/post.cfm/inma-reveals-60-global-media-awards-first-place-winners-miami-herald-takes-top-prize' target='_blank'>INMA Best in Show</a>"
-        ],
-        "awardsShort": [
-            "<a href='https://scripps.com/wp-content/uploads/2022/06/SHA-2021_Program_2.pdf' target='_blank'>Scripps Howard</a>",
-            "<a href='https://winners.webbyawards.com/2022/websites-and-mobile-sites/features-design/best-individual-editorial-feature-media-company/219009/house-of-cards'>Webby</a>",
-            "<a href='https://knightfoundation.org/esserman-knight-journalism-awards-2022-nominations/' target='_blank'>Esserman-Knight</a>",
-             "<a href='https://snd.org/best-of-design-competitions/2020-best-of-digital-design-results/' target='_blank'>SND</a>",
-           "<a href='https://www.inma.org/blogs/main/post.cfm/inma-reveals-60-global-media-awards-first-place-winners-miami-herald-takes-top-prize' target='_blank'>INMA</a>"
-        ],
-        "tags": ["svelte", "scrolling video", "audio", "surfside"],
-        "image": "textures/fade_house_of_cards.png",
-        "url": "https://www.miamiherald.com/news/special-reports/surfside-investigation/article256633336.html"
-      },
-      {
-        "title": "Big Poultry",
-        "publication": "Charlotte Observer",
-        "description": "With little oversight, NC poultry farms generate billions of pounds of untreated waste. Who pays the cost?",
-        "year": "2023",
-        "awards": ["<a href='https://news.mit.edu/2023/mcelheny-award-science-journalism-honors-series-poultry-farming-environment-0403' target='_blank'>MIT Knight Science Journalism</a>", "<a href='https://nationalpress.org/award-story/capital-main-charlotte-observer-raleigh-news-observer-win-npf-stokes-award-for-best-environmental-reporting/' target='_blank'>Stokes Award for Energy & Environment</a>", "<a href='https://www.ire.org/2022-ire-award-winners/' target='_blank'>Investigative Reporters & Editors - IRE Award</a>"],
-        "awardsShort": ["<a href='https://news.mit.edu/2023/mcelheny-award-science-journalism-honors-series-poultry-farming-environment-0403' target='_blank'>MIT Knight</a>", "<a href='https://nationalpress.org/award-story/capital-main-charlotte-observer-raleigh-news-observer-win-npf-stokes-award-for-best-environmental-reporting/' target='_blank'>Thomas Stokes</a>", "<a href='https://www.ire.org/2022-ire-award-winners/' target='_blank'>IRE</a>"],
-        "tags": ["svelte", "incremental video", "maplibre", "north carolina"],
-        "image": "textures/fade_big_poultry.png",
-        "url": "https://www.charlotteobserver.com/news/state/north-carolina/article267887592.html"
-      },
-      {
-        "title": "Made in Miami",
-        "publication": "Miami Herald",
-        "description": "A deep dive into a network of indivduals linked to the assassination of Haitian President Jovenel Moïse",
-        "year": "2022",
-        "awards": ["<a href='https://opcofamerica.org/Awardarchive/the-kim-wall-award-2022/' target='_blank'>Overseas Press Club - Kim Wall Award</a>"],
-        "awardsShort": ["<a href='https://opcofamerica.org/Awardarchive/the-kim-wall-award-2022/' target='_blank'>Overseas Press Club</a>"],
-        "tags": ["d3", "js", "web component", "network", "haiti"],
-        "image": "textures/fade_made_in_miami.png",
-        "url": "https://www.miamiherald.com/news/nation-world/world/americas/haiti/article266152901.html"
-      },
-      {
-        "title": "Cut Off",
-        "publication": "The State",
-        "description": "In Columbia's 29203, limbs are being amputated at an alarming rate. It doesn't have to be this way.",
-        "year": "2022",
-        "awards": ["<a href='https://scpress.org/23-annual-meeting/' target='_blank'>S.C. Press Association - Mixed Media First Place</a>"],
-        "awardsShort": ["<a href='https://scpress.org/23-annual-meeting/' target='_blank'>S.C. Press Association</a>"],
-        "tags": ["svelte", "maplibre", "dataviz", "south carolina"],
-        "image": "textures/fade_cut_off.png",
-        "url": "https://www.thestate.com/news/state/south-carolina/article258302413.html"
-      },
-      {
-        "title": "In a Word",
-        "publication": "Article",
-        "description": "A self-published, quasi-surrealist collection driven by associations with each poem's single-word title",
-        "year": "2016",
-        "awards": [],
-        "awardsShort": [],
-        "tags": ["r", "lda", "network", "blurb", "book", "poetry", "surrealist", "stream of consciousness"],
-        "image": "",
-        "url": "https://www.blurb.com/books/10322155-in-a-word"
-      },
-      {
-        "title": "Security for Sale",
-        "publication": "Charlotte Observer",
-        "description": "In 10 years, Wall Street amassed 40k residential homes in NC. Now renters & home buyers are paying the price",
-        "year": "2023",
-        "awards": [],
-        "awardsShort": [],
-        "tags": ["svelte", "maplibre", "hexbins", "american dream", "real estate", "north carolina"],
-        "image": "textures/fade_security_for_sale.png",
-        "url": ""
-      },
-      {
-        "title": "Puerto Rican Migration",
-        "publication": "Article",
-        "description": "A pre-pandemic breakdown of Puerto Ricans in the diaspora who were returning to the island",
-        "year": "2021",
-        "awards": [],
-        "awardsShort": [],
-        "tags": ["d3", "Puerto Rico", "Census", "choropleth", "small multiples"],
-        "image": "textures/fade_puerto_rico_migration.png",
-        "url": ""
-      },
-      {
-        "title": "Fallen Trees",
-        "publication": "Sacramento Bee",
-        "description": "Tree damage ‘we’ve never seen.’ Map shows thousands of 311 calls during Sacramento storms",
-        "year": "2023",
-        "awards": [],
-        "awardsShort": [],
-        "tags": ["svelte", "maplibre", "ai2svelte", "bar chart", "trees", "311", "sacramento", "service journalism"],
-        "image": "textures/fade_fallen_trees.png",
-        "url": "https://www.sacbee.com/news/local/article272039637.html"
-      },
-      {
-        "title": "Linguistics",
-        "publication": "Narro",
-        "description": "Phonemes and graphemes of a complex language - the sounds and spellings of English",
-        "year": "2021",
-        "awards": [],
-        "awardsShort": [],
-        "tags": ["svelte", "gallery", "circle packing", "phoneme", "grapheme", "linguistics"],
-        "image": "textures/fade_linguistics.png",
-        "url": "https://narro.design/html/linguistics-intro.html"
-      },
-      {
-        "title": "Around the World",
-        "publication": "Narro",
-        "description": "Exploring what it would look like to go from your doorstep, around the world and back again",
-        "year": "2021",
-        "awards": [],
-        "awardsShort": [],
-        "tags": ["d3", "r", "s3", "aws", "westworld", "international", "flags"],
-        "image": "textures/fade_around_the_world.png",
-        "url": "https://narro.design/html/around-the-world.html"
-      },
-      {
-        "title": "Revival",
-        "publication": "Blurb",
-        "description": "A self-published poetry collection observing San Francisco's strained natural, technological, and human bindings",
-        "year": "2018",
-        "awards": [],
-        "awardsShort": [],
-        "tags": ["r", "graph theory", "spanning tree", "blurb", "book", "poetry", "nature", "technology", "humanity", "san francisco"],
-        "image": "textures/fade_revival.png",
-        "url": "https://www.blurb.com/b/10322111-revival"
-      }
-    ]
+    $: if (projects.length) {
+        title = projects[0].title;
+        description = projects[0].description;
+        publication = projects[0].publication;
+        url = projects[0].url;
+        year = projects[0].year;
+        awards = projects[0].awards.join(" <div style='height: 5px'></div>");
+        awardsShort = projects[0].awardsShort.join(" &ensp;");
+        tags = projects[0].tags.join(", ");
+    }
+    
 
-    title = data[0].title;
-    description = data[0].description;
-    publication = data[0].publication;
-    url = data[0].url;
-    year = data[0].year;
-    awards = data[0].awards.join(" <div style='height: 5px'></div>");
-    awardsShort = data[0].awardsShort.join(" &ensp;");
-    tags = data[0].tags.join(", ");
-
-    onMount(() => {
+    onMount(async () => {
         unraveledFaces = [...document.querySelectorAll(".pentagon")];
+        projects = await loadJSON(filename);
     });
 
     const setPathLength = () => {
@@ -464,7 +323,7 @@
     }
 
     function updateGallery() {
-        if ($section === 1 && actualGroup.children.length) {
+        if ($section === 1 && projects.length && actualGroup.children.length) {
             index = gallery ? Math.floor((scrollY - gallery?.parentElement?.offsetTop) / itemHeight) : 0;
             index = clamp(index, 0, numberOfSides - 1)
 
@@ -475,7 +334,7 @@
             })
 
             if (index !== prevIndex) {
-                const indexData = data[index];
+                const indexData = projects[index];
                 if (indexData) {
                     title = indexData.title;
                     description = indexData.description;
@@ -523,7 +382,7 @@
 
     window.requestAnimationFrame(() => { updateGallery() })
 
-    $: !drawn && canvas && drawPlatonicSolid(platonicSolid);
+    $: !drawn && canvas && projects.length && drawPlatonicSolid(platonicSolid);
     $: windowHeight = window.outerHeight;
     $: itemHeight = windowHeight / 1.2
     $: galleryHeight = itemHeight * numberOfSides + windowHeight;

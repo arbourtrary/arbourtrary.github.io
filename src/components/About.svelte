@@ -47,8 +47,7 @@
         "linear-gradient(to right, #8CB2D3, #EAE6DF, #EAE6DF, #EAE6DF)",
         "linear-gradient(to right, #EAE6DF, #AAC4A2, #EAE6DF, #EAE6DF)",
         "linear-gradient(to right, #EAE6DF, #EAE6DF, #EFBD8D, #EAE6DF)",
-        "linear-gradient(to right, #EAE6DF, #EAE6DF, #EAE6DF, #D2B0EC)",
-        "linear-gradient(to right, #EAE6DF, #EAE6DF, #EAE6DF, #EAE6DF)"
+        "linear-gradient(to right, #EAE6DF, #EAE6DF, #EAE6DF, #D2B0EC)"
     ]
 
     const headerTexts = ["Creative Developer", "Environmentalist", "Poetry Enthusiast", "Mathematician",]
@@ -56,10 +55,10 @@
     const aboutInterests = [
         // Creative Developer
         [
-            'generative human intelligence',
             'visual explainers',
             'mapping',
-            'threeJS'
+            'threeJS',
+            'generative human intelligence'
         ],
         // Environmentalist
         [
@@ -82,7 +81,8 @@
             'perfect packing',
             'group theory',
             'embeddings',
-            'topology'
+            'topology',
+            "Gödel's Incompleteness Theorem"
         ]
     ]
 
