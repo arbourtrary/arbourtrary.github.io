@@ -392,7 +392,6 @@
         path.style.strokeDashoffset = 1 - piecewiseProgress;
         eraserPath.style.strokeDashoffset = 1 - (piecewiseProgress - 1 / numberOfSides);
     }
-    $: console.log(hover)
 </script>
 
 <svelte:window bind:innerWidth={innerWidth}/>
