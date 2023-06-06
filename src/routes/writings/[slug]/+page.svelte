@@ -12,9 +12,12 @@
         const response = await fetch(data.filename)
         content = await response.text();
         body = document.body;
+        document.documentElement.style.setProperty('--highlight', data.highlight);
     })
 
     $: scrollProgress = body && clamp(scrollY / (body.scrollHeight - window.innerHeight), 0, 1)
+
+    
 </script>
 
 <svelte:window bind:scrollY/>
@@ -89,7 +92,7 @@
 
 <style>
     :global(:root) {
-        --selection-bg-color: var(--green);
+        --selection-bg-color: var(--highlight);
     }
     .horizontal-mirror {
         -moz-transform: scale(-1, 1);
@@ -158,12 +161,11 @@
     }
     :global(.content a) {
         text-decoration: underline;
-        transition: all 200ms ease-in;
         padding: 2px;
-        color: var(--green);
+        color: var(--highlight);
     }
     :global(.content a:hover) {
-        background: var(--green);
+        background: var(--highlight);
         text-decoration: none;
         border-radius: 5px;
         color: white;
@@ -179,7 +181,7 @@
         margin-top: 45px;
     }
     :global(.bold) {
-        color: var(--green);
+        color: var(--highlight);
         font-weight: bold;
     }
     :global(.superscript) {
@@ -188,7 +190,7 @@
         position: relative;
         top: -0.4em;
         text-decoration:none !important;
-        color: var(--green);
+        color: var(--highlight);
     }
     :global(.superscript:hover) {
         text-decoration: underline;
