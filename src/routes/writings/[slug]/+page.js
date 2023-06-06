@@ -12,8 +12,8 @@ const writings = [
     "filename": "/data/writings/forest-for-the-trees.txt",
     "highlight": "var(--green)",
     "filter": "invert(94%) sepia(10%) saturate(700%) hue-rotate(52deg) brightness(83%) contrast(83%)",
-    "image": "/images/droplet_0.png",
-    "socialImage": "social_droplet_0.jpg"
+    "image": "https://arbourtrary.com/images/droplet_0.png",
+    "socialImage": "https://arbourtrary.com/images/social_droplet_0.jpg"
   }
 ]
 

@@ -27,14 +27,14 @@
     <meta property='og:url' content={`https://arbourtrary.com/writings/${data.slug}`} />
     <meta property='og:description' content={data.description} />
     <meta property='og:locale' content='en_US' />
-    <meta property='og:image' content={`https://arbourtrary.com/images/${data.socialImage}`} />
+    <meta property='og:image' content={data.socialImage} />
     
     <meta name='twitter:card' content='summary_large_image' />
     <meta name='twitter:site' content={`https://arbourtrary.com/writings/${data.slug}`} />
     <meta name='twitter:creator' content='arbourtrary' />
     <meta name='twitter:title' content={data.title} />
     <meta name='twitter:description' content={data.description} />
-    <meta name='twitter:image:src' content={`https://arbourtrary.com/images/${data.socialImage}`} />
+    <meta name='twitter:image:src' content={data.socialImage} />
 </svelte:head>
 <svelte:window bind:scrollY/>
 
