@@ -35,7 +35,25 @@
         "color": "#AAC4A2"
     },
     {
-        "header": "Poetry Enthusiast",
+        "header": "Mathematician",
+        "interests": [
+            "perfect packing",
+            "group theory",
+            "embeddings",
+            "topology",
+            "Gödel's Incompleteness Theorem"
+        ],
+        "inspirations": [
+            "Georg Cantor",
+            "M.C. Escher",
+            "La Alhambra",
+            "Ramanujan"
+        ],
+        "image": "/images/drawing_orange.png",
+        "color": "#EFBD8D"
+    },
+    {
+        "header": "Poet",
         "interests": [
             "contemplation",
             "lyricism",
@@ -52,24 +70,6 @@
             "Walt Whitman",
             "Tim Seibles",
             "Stephen Dunn"
-        ],
-        "image": "/images/drawing_orange.png",
-        "color": "#EFBD8D"
-    },
-    {
-        "header": "Mathematician",
-        "interests": [
-            "perfect packing",
-            "group theory",
-            "embeddings",
-            "topology",
-            "Gödel's Incompleteness Theorem"
-        ],
-        "inspirations": [
-            "Georg Cantor",
-            "M.C. Escher",
-            "La Alhambra",
-            "Ramanujan"
         ],
         "image": "/images/drawing_purple.png",
         "color": "#D2B0EC"
