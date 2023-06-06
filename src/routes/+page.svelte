@@ -28,6 +28,7 @@
 <svelte:window bind:scrollY bind:innerWidth/>
 
 <svelte:head>
+    <title>ɑrbərtrɛri</title>
     <meta name='description' content='Trying out a couple concepts. Writing about nature, tech, poetry, mathematics. Providing safe arbour in a darkening forest.' />
         
     <meta property='og:title' content='arbourtrary' />

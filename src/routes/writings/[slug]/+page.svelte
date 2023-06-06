@@ -20,8 +20,8 @@
     
 </script>
 <svelte:head>
-    <meta name='description' content={data.description} />
-        
+    <title>{data.title}</title>
+    <meta name='description' content={data.description} />        
     <meta property='og:title' content={data.title} />
     <meta property='og:site_name' content='arbourtrary' />
     <meta property='og:url' content={`https://arbourtrary.com/writings/${data.slug}`} />
