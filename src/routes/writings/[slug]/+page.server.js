@@ -1,10 +1,8 @@
 export function entries() {
     return [
-        { slug: 'forest-for-the-trees' },
-        { slug: 'chat-got-puns' },
-        { slug: 'orbital-tensors-false-inventions' },
-        { slug: 'scrollytelling-maplibre' }
+        { slug: 'forest-for-the-trees' }
     ];
 }
 
+export const ssr = true;
 export const prerender = true;
