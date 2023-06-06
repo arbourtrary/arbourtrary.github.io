@@ -472,7 +472,7 @@
     }
     scrolling-anchor {
         padding-bottom: 20px;
-        width: min(90vw, 1000px);
+        width: min(90vw, 1100px);
         margin: 0 auto;
         position:relative;
         height: 300vh;

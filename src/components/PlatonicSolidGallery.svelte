@@ -40,6 +40,8 @@
     let index = 0;
     let unraveledFaces = [];
     let projects = [];
+    let hover = false;
+    let hoverScale = 5;
 
     const loader = new GLTFLoader();
 
@@ -360,6 +362,13 @@
                 edges.rotation.y += (angles[index].y - edges.rotation.y) * 0.07;
                 edges.rotation.z += (angles[index].z - edges.rotation.z) * 0.07;
             }
+
+            const scaleDiff = Math.abs(actualGroup.scale.x - hoverScale) + Math.abs(actualGroup.rotation.y - hoverScale) + Math.abs(actualGroup.rotation.z - hoverScale)
+            if (scaleDiff > 0.01) {
+                actualGroup.scale.x += (hoverScale - actualGroup.scale.x) * 0.07;
+                actualGroup.scale.y += (hoverScale - actualGroup.scale.y) * 0.07;
+                actualGroup.scale.z += (hoverScale - actualGroup.scale.z) * 0.07;
+            }
             renderer.render(scene, camera);
         }
         window.requestAnimationFrame(updateGallery);
@@ -383,6 +392,7 @@
         path.style.strokeDashoffset = 1 - piecewiseProgress;
         eraserPath.style.strokeDashoffset = 1 - (piecewiseProgress - 1 / numberOfSides);
     }
+    $: console.log(hover)
 </script>
 
 <svelte:window bind:innerWidth={innerWidth}/>
@@ -415,12 +425,15 @@
                 </div>
             {/if}
         </div>
-
         <div class="canvas-container">
-            <div class="canvas"> 
-                <div class="counter">{index + 1} / 12</div>
-                <canvas height="800" width="800" bind:this={canvas}></canvas>
-            </div>
+                <div class="canvas"> 
+                <a href={url} target="_blank" on:mouseenter={() => hoverScale = 5.2 } on:mouseleave={() => hoverScale = 5 }>
+                    <div class="hover-circle"></div>
+                </a>
+
+                    <div class="counter">{index + 1} / 12</div>
+                    <canvas height="800" width="800" bind:this={canvas}></canvas>
+                </div>
         <div>
             <div class="unraveled-container">
                 <svg
@@ -629,6 +642,15 @@
 </div>
 
 <style>
+    .hover-circle {
+        width: 80%;
+        height: 80%;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
     .details-container a {
         color: unset;
         text-decoration: none;

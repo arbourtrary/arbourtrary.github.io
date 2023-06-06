@@ -8,6 +8,11 @@
    --black: #000000;
    --white: #FFFFFF;
 
+   /* derivative of #8CB2D3 */
+   --blue: #7594B0;
+    /* derivative of #AAC4A2 */
+   --green: #6D8A64;
+
    /* Shades of color, ordered darkest (1) to lightest (n) */
    --color-1: #373531;
    --color-2: #908B80;

@@ -16,7 +16,7 @@
     }
 </script>
 
-<a href={`/writings/${writing.slug}`} target="_blank">
+<a href={`/writings/${writing.slug}`}>
     <div bind:this={row} class="row" style={`opacity: ${opacity}`}>
         <!-- <div class="date">{@html writing.date}</div> -->
         <div class="droplet">

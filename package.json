@@ -16,7 +16,10 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource/im-fell-english": "^4.5.8",
+		"@fontsource/libre-caslon-text": "^5.0.2",
+		"@fontsource/lora": "^5.0.2",
 		"@sveltejs/adapter-static": "^2.0.2",
+		"marked": "^5.0.4",
 		"n": "^9.0.1",
 		"three": "^0.151.2"
 	}

@@ -1,4 +1,5 @@
 <script>
+    import { marked } from "marked";
     import { onMount } from 'svelte';
     import { clamp, mapToUnitRange } from '../../../utils/math.js';
     export let data;
@@ -83,10 +84,13 @@
 </div>
 <div class="writ">
     <div class="title">{data.title}</div>
-    <div class="content">{@html content}</div>
+    <div class="content">{@html marked(content)}</div>
 </div>
 
 <style>
+    :global(:root) {
+        --selection-bg-color: var(--green);
+    }
     .horizontal-mirror {
         -moz-transform: scale(-1, 1);
         -o-transform: scale(-1, 1);
@@ -128,7 +132,7 @@
         position: relative;
         height: 100%;
         width: auto;
-        margin: auto 0px;
+        margin: auto -15px;
     }
     .image-container img {
         height: 100%;
@@ -141,7 +145,7 @@
     }
     .title {
         width: min(600px, 90vw);
-        font-size: 2em;
+        font-size: 2.4em;
         margin: 0 auto;
         padding-top: 80px;
         text-align: center;
@@ -149,6 +153,63 @@
     .content {
         width: min(600px, 90vw);
         margin: 0 auto;
-        font-size: 20px;
+        font-size: 22px;
+        line-height: 1.4;
+    }
+    :global(.content a) {
+        text-decoration: underline;
+        transition: all 200ms ease-in;
+        padding: 2px;
+        color: var(--green);
+    }
+    :global(.content a:hover) {
+        background: var(--green);
+        text-decoration: none;
+        border-radius: 5px;
+        color: white;
+    }
+    :global(.content > li) {
+        margin: 20px 0;
+    }
+    :global(.content > p) {
+        color: #333;
+    }
+    :global(.content > h3) {
+        margin-bottom: 0px;
+        margin-top: 45px;
+    }
+    :global(.bold) {
+        color: var(--green);
+        font-weight: bold;
+    }
+    :global(.superscript) {
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        top: -0.4em;
+        text-decoration:none !important;
+        color: var(--green);
+    }
+    :global(.superscript:hover) {
+        text-decoration: underline;
+        color: var(--color-1);
+    }
+    :global(.italic) {
+        font-style: italic;
+    }
+    @media only screen and (max-width: 600px) {
+        .title {
+            font-size: 2em;
+        }
+        :global(.content > p > a) {
+            padding: 0px;
+            text-decoration: underline;
+        }
+        :global(.content > h3) {
+            font-size: 1.2em;
+        }
+        .content {
+            font-size: 20px;
+        }
     }
 </style>
