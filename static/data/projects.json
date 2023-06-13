@@ -95,7 +95,7 @@
     "awardsShort": [],
     "tags": ["svelte", "maplibre", "hexbins", "american dream", "real estate", "north carolina"],
     "image": "textures/fade_security_for_sale.png",
-    "url": ""
+    "url": "https://pulitzercenter.org/projects/security-sale"
   },
   {
     "title": "Puerto Rican Migration",
@@ -106,7 +106,7 @@
     "awardsShort": [],
     "tags": ["d3", "Puerto Rico", "Census", "choropleth", "small multiples"],
     "image": "textures/fade_puerto_rico_migration.png",
-    "url": ""
+    "url": "https://narro.design/html/puerto-rico-migration.html"
   },
   {
     "title": "Fallen Trees",
