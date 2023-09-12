@@ -48,29 +48,29 @@
     <div class="image-container"  style="height: 30%;">
         <img src={data.image} style={`
             filter: ${data.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, 0, .25)) * 100}%);
-            opacity: ${clamp(0.4 + mapToUnitRange(scrollProgress, 0, .25), 0.4, 1)}
+            opacity: ${clamp(0 + mapToUnitRange(scrollProgress, 0, .25), 0, 1)}
         `}/>
     </div>
     <div class="image-container" style="height: 40%;">
         <img src={data.image} style={`
             filter: ${data.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .25, .5)) * 100}%);
-            opacity: ${clamp(0.4 + mapToUnitRange(scrollProgress, 0.25, .5, 0.4, 1))}
+            opacity: ${clamp(0 + mapToUnitRange(scrollProgress, 0.25, .5, 0, 1))}
         `}/>
     </div>
     <div class="image-container" style="height: 70%;">
         <img src={data.image} style={`
             filter: ${data.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .5, .75)) * 100}%);
-            opacity: ${clamp(0.4 + mapToUnitRange(scrollProgress, 0.5, .75, 0.4, 1))}
+            opacity: ${clamp(0 + mapToUnitRange(scrollProgress, 0.5, .75, 0, 1))}
         `}/>
     </div>
     <div class="image-container">
         <img src={data.image} style={`
             filter: ${data.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .75, 1)) * 100}%);
-            opacity: ${0.2 + mapToUnitRange(scrollProgress, 0.75, 1) / 2}
+            opacity: ${0 + mapToUnitRange(scrollProgress, 0.75, 1) / 2}
         `}/>
         <img src={data.image} style={`
             filter: ${data.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .75, 1)) * 100}%);
-            opacity: ${0.2 + mapToUnitRange(scrollProgress, 0.75, 1) / 2};
+            opacity: ${0 + mapToUnitRange(scrollProgress, 0.75, 1) / 2};
             position: absolute;
             top: 0;
             left: 50%;
@@ -80,19 +80,19 @@
     <div class="image-container"  style="height: 70%;">
         <img class="horizontal-mirror" src={data.image} style={`
             filter: ${data.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .5, .75)) * 100}%);
-            opacity: ${clamp(0.4 + mapToUnitRange(scrollProgress, .5, .75), 0.4, 1)}
+            opacity: ${clamp(0 + mapToUnitRange(scrollProgress, .5, .75), 0, 1)}
         `}/>
     </div>
     <div class="image-container" style="height: 40%;">
         <img class="horizontal-mirror" src={data.image} style={`
             filter: ${data.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .25, .5)) * 100}%);
-            opacity: ${clamp(0.4 + mapToUnitRange(scrollProgress, .25, .5), 0.4, 1)}
+            opacity: ${clamp(0 + mapToUnitRange(scrollProgress, .25, .5), 0, 1)}
         `}/>
     </div>
     <div class="image-container"  style="height: 30%;">
         <img class="horizontal-mirror" src={data.image} style={`
             filter: ${data.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, 0, .25)) * 100}%);
-            opacity: ${clamp(0.4 + mapToUnitRange(scrollProgress, 0, .25), 0.4, 1)};
+            opacity: ${clamp(0 + mapToUnitRange(scrollProgress, 0, .25), 0, 1)};
         `}/>
     </div>
 <!--     <a href="https://arbourtrary.com">
@@ -100,6 +100,12 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
         </div>
     </a> -->
+    <div class="donate">
+        <div class="logo">
+            <a href="https://ko-fi.com/arbourtrary" target="_blank">
+            <img src="/images/kofi.png">
+        </div>
+    </div>
 </div>
 <div class="writ">
     <div class="title">{data.title}</div>
@@ -121,7 +127,7 @@
         position: relative;
     }
     .header {
-        height: 50px;
+        height: 40px;
         margin: 0 0 10px 0;
         width: 100%;
         display: flex;
@@ -131,16 +137,42 @@
         justify-content: center;
         z-index: 1;
         padding: 5px 0;
+        border-bottom:  0.5px solid var(--color-2);
+        /*box-shadow: 0 0 1px var(--color-1)*/
         /*box-shadow: 0px 0px 40px var(--color-4);*/
+    }
+    .donate {
+        position: absolute;
+        right: 10px;
+        height: 40px;
+        display: flex;
+        align-items: center;  
+    }
+    .donate .logo {
+        height: 18px;
+    }
+    .donate img {
+        height: 100%;
+        width: 100%;
+        opacity: 0.4;
+        filter: grayscale(100%);
+    }
+    .donate img:hover {
+        cursor: pointer;
+        opacity: 1;
+        filter: saturate(100%);
     }
     .home {
         position: absolute;
-        left: 15px;
+        left: 10px;
+        height: 40px;
+        display: flex;
+        align-items: center;
     }
     .home svg {
-        height: 50px;
-        width: 22px;
-        color: var(--color-3);
+        height: 20px;
+        width: 20px;
+        color: darkgray;
     }
     .home svg:hover {
         cursor: pointer;
@@ -151,13 +183,13 @@
         position: relative;
         height: 100%;
         width: auto;
-        margin: auto -15px;
+        margin: auto -11px;
     }
     .image-container img {
         height: 100%;
         width: auto;
         object-fit: contain;
-        opacity: 0.1;
+        opacity: 0;
     }
     .title, .content {
         font-family: var(--serif);
