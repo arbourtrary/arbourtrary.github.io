@@ -1,23 +1,27 @@
 :root {
-   --serif: "IM Fell English", serif;
-   --selection-bg-color: #CBC3B4;
-   --selection-color: #FFFFFF;
-   --bg-color: #F5F2EB;
+    --serif: "IM Fell English", serif;
+    --selection-bg-color: #CBC3B4;
+    --selection-color: #FFFFFF;
+    --bg-color: #F5F2EB;
 
-   /* In case I want an off-shade of black/white */
-   --black: #000000;
-   --white: #FFFFFF;
+    /* In case I want an off-shade of black/white */
+    --black: #000000;
+    --white: #FFFFFF;
 
-   /* derivative of #8CB2D3 */
-   --blue: #7594B0;
+    /* derivative of #8CB2D3 */
+    --blue: #7594B0;
     /* derivative of #AAC4A2 */
-   --green: #6D8A64;
+    --green: #6D8A64;
+    /* derivative of #EFBD8D */
+    --orange: #D8A06B;
+    /* derivative of #D2B0EC */
+    --purple: ;
 
-   /* Shades of color, ordered darkest (1) to lightest (n) */
-   --color-1: #373531;
-   --color-2: #908B80;
-   --color-3: #A8A195;
-   --color-4: #EAE6DF;
+    /* Shades of color, ordered darkest (1) to lightest (n) */
+    --color-1: #373531;
+    --color-2: #908B80;
+    --color-3: #A8A195;
+    --color-4: #EAE6DF;
 }
 
 /*** Works on common browsers ***/

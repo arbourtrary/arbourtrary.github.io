@@ -66,11 +66,11 @@
     <div class="image-container">
         <img src={data.image} style={`
             filter: ${data.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .75, 1)) * 100}%);
-            opacity: ${0 + mapToUnitRange(scrollProgress, 0.75, 1) / 2}
+            opacity: ${0 + mapToUnitRange(scrollProgress, 0.75, 1)}
         `}/>
         <img src={data.image} style={`
             filter: ${data.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .75, 1)) * 100}%);
-            opacity: ${0 + mapToUnitRange(scrollProgress, 0.75, 1) / 2};
+            opacity: ${0 + mapToUnitRange(scrollProgress, 0.75, 1)};
             position: absolute;
             top: 0;
             left: 50%;
@@ -183,7 +183,7 @@
         position: relative;
         height: 100%;
         width: auto;
-        margin: auto -11px;
+        margin: auto -6px;
     }
     .image-container img {
         height: 100%;
