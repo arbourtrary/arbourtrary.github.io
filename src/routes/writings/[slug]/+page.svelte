@@ -150,6 +150,7 @@
     }
     .donate .logo {
         height: 18px;
+        width: 27px;
     }
     .donate img {
         height: 100%;
