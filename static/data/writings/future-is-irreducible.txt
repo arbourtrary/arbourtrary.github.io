@@ -1,5 +1,4 @@
-<h3>An intractable reality</h3>
-<p>Depending on who you are, I give you good news or bad news: the future is irreducible. What I mean to say is that the future is, in an essential way, unknowable. It cannot be reduced to algorithmic understanding or predictive models.</p>
+<p>Depending on your outlook, here's some good or bad news: the future is irreducible. What I mean is that the future is, in an essential way, unknowable. It cannot be reduced to algorithmic understanding or predictive models.</p>
 
 <p>You and I, will, on some level, always be guessing. We don't have all the variables, we never will, and even if we did, the future will be irreconcilable from the present, and especially from the past.</p>
 
@@ -8,23 +7,27 @@
 
 <p>Religiously, we've looked for telltale signs, prophesies or omens. Scientifically, from the dizzying matrix of existence, we've strung out threads of knowledge. And some of these are even powerfully predictive (e.g. movement of celestial bodies).</p>
 
-<p>Despite this progress, the future across all domains remains, in the truest sense, unknowable. Why? There is irreducible uncertainty in systems that can only be modeled probabilistically.</p>
+<p>Despite this progress, the vast future across all domains remains, in the truest sense, unknowable. Why? There is irreducible uncertainty in systems that can only be modeled probabilistically.</p>
 
 <h3>Physical systems</h3>
 <p>In the physical world we have to deal with a hazy cloud of possible outcomes all the time. Weather systems are a prominent example.</p>
 
 <p>Despite knowing how these systems work on a physical level, their behavior is nonlinear and is very, very sensitive to <a href="https://www.popularmechanics.com/science/a41334070/what-is-chaos-theory/" target="_blank">initial conditions</a>. We can work on the reducible uncertainty portion of this problem, i.e. add more sensors, collect more data points in the atmosphere, the oceans, etc.</p>
 
-<p>This helps us better understand the initial conditions, and helps predict what will happen in the near future. However, the uncertainty will compound exponentially the farther you move away from those initial conditions.</p>
+<p>This helps us better understand the initial conditions, and helps predict what will happen in the near future with a little more confidence. However, the uncertainty compounds exponentially the farther you move away from those initial conditions, quickly dissolving confidence in our predictions.</p>
 
 <h3>Computers</h3>
-<p>There are many systems that don't behave nearly as chaotically as weather, yet remain subject to irreducible uncertainty. The computer is one of those systems. It is an unbelievably reliable and flexible invention.</p>
+<p>There are many systems that don't behave nearly as chaotically as weather, yet remain subject to irreducible uncertainty. The computer is one of those systems. It is an unbelievably reliable invention.</p>
 
-<p>We can almost always predict that the computer will do what we tell it to do. Yet, on its most essential level, at the bit operator, a computer can be affected by chaotic natural phenomena.</p>
+<p>We can almost always predict that the computer will do what we tell it to do. Yet, on its most essential level, at the <a href="https://en.wikipedia.org/wiki/Bitwise_operation" target="_blank">bitwise operator</a>, a computer can be affected by chaotic natural phenomena.</p>
 
 <p>The typical way a computer stores bits is with a transistor gate, marking the presence or absence of voltage as a 1 or 0, respectively. If rogue electrons flow through this gate, they could unexpectedly flip the bit from a 0 to a 1 or vice versa. Too much heat or faulty hardware can cause such an error, known as a <a href="https://arstechnica.com/gadgets/2021/03/windows-com-bitsquatting-hack-can-wreak-unknown-havoc-on-pcs/" target="_blank">bit-flip</a>.</p>
 
-<p>But so can the magnetic field created as <a href="https://www.scienceabc.com/innovation/what-are-bit-flips-and-how-are-spacecraft-protected-from-them.html" target="_blank">cosmic rays</a> hit the transistor. The frequency of these rays can be modeled probabilistically, but will always leave the observer in a gray area of uncertainty. We'll never know exactly when one of these randomly occuring events will actually occur.</p>
+<p>But so can the magnetic field created as <a href="https://www.scienceabc.com/innovation/what-are-bit-flips-and-how-are-spacecraft-protected-from-them.html" target="_blank">cosmic rays</a> hit the transistor. Because outer space is awash in cosmic radiation (and other risk factors), spaceships minimize risk with <a href="https://people.cs.rutgers.edu/~uli/cs673/papers/RedundancyManagementSpaceShuttleIBM76.pdf" target="_blank">redundancy</a> in their physical computer systems, sometimes employing 5 computers.</p>
+
+<p>If there's a discrepancy in the expected output at any given time, the computers tally what their outputs are showing, and proceed with majority agreement.</p>
+
+<p>While the frequency of these cosmic rays can be modeled probabilistically, the observer remains fogged in a gray area of uncertainty. We'll never know exactly when one of these randomly occuring events will actually occur.</p>
 
 <p>So even for our most robust input/output machine, operating on a millisecond-into-the-future time scale, we cannot be 100% certain it will provide us with the future outcome we predict / expect. Wild.</p>
 
