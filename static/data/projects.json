@@ -93,8 +93,12 @@
     "publication": "Charlotte Observer",
     "description": "In 10 years, Wall Street amassed 40k residential homes in NC. Now renters & home buyers are paying the price",
     "year": "2023",
-    "awards": [],
-    "awardsShort": [],
+    "awards": [
+      "<a href='https://scripps.com/fund/journalism/award-finalists/security-for-sale/' target='_blank'>Scripps Howard Award Finalist</a>"
+    ],
+    "awardsShort": [
+      "<a href='https://scripps.com/fund/journalism/award-finalists/security-for-sale/' target='_blank'>Scripps Howard Award Finalist</a>"
+    ],
     "tags": ["svelte", "maplibre", "hexbins", "american dream", "real estate", "north carolina"],
     "image": "textures/fade_security_for_sale.png",
     "url": "https://pulitzercenter.org/projects/security-sale"
