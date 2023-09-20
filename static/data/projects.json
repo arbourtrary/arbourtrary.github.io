@@ -49,11 +49,13 @@
     "description": "A deep dive into a network of indivduals linked to the assassination of Haitian President Jovenel Moïse",
     "year": "2022",
     "awards": [
+      "<a href='https://awards.journalists.org/entries/made-in-miami-the-assassination-of-haitis-jovenel-moise-2/' target='_blank'>Online Journalism Award</a>",
       "<a href='https://opcofamerica.org/Awardarchive/the-kim-wall-award-2022/' target='_blank'>Overseas Press Club - Kim Wall Award</a>",
       "<a href='https://www.headlinerawards.org/wp-content/uploads/2023/05/2023-headliner-winners.pdf' target='_blank'>National Headliner Award</a>"
     ],
     "awardsShort": [
-      "<a href='https://opcofamerica.org/Awardarchive/the-kim-wall-award-2022/' target='_blank'>Overseas Press Club</a>",
+      "<a href='https://awards.journalists.org/entries/made-in-miami-the-assassination-of-haitis-jovenel-moise-2/' target='_blank'>Online Journalism Award</a>",
+      "<a href='https://opcofamerica.org/Awardarchive/the-kim-wall-award-2022/' target='_blank'>OPC</a>",
       "<a href='https://www.headlinerawards.org/wp-content/uploads/2023/05/2023-headliner-winners.pdf' target='_blank' style='white-space: nowrap;'>National Headliner Award</a>"
     ],
     "tags": ["d3", "js", "web component", "network", "haiti"],
