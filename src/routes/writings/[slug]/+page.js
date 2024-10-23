@@ -35,6 +35,17 @@ const writings = [
     "filter": "invert(58%) sepia(57%) saturate(315%) hue-rotate(231deg) brightness(81%) contrast(88%)",
     "image": "https://arbourtrary.com/images/droplet_2.png",
     "socialImage": "https://arbourtrary.com/images/social_droplet_2.jpg"
+  },
+  {
+    "date": "10/23/24",
+    "title": "Silvology", 
+    "slug": "silvology",
+    "description": "Reminding ourselves that we can move away from the false time of computation and encouraging ourselves to live in real time",
+    "filename": "/data/writings/silvology.txt",
+    "highlight": "var(--green)",
+    "filter": "invert(94%) sepia(10%) saturate(700%) hue-rotate(52deg) brightness(83%) contrast(83%)",
+    "image": "https://arbourtrary.com/images/droplet_3.png",
+    "socialImage": "https://arbourtrary.com/images/social_droplet_3.jpg"
   }
 ]
 
