@@ -40,7 +40,7 @@ const writings = [
     "date": "10/23/24",
     "title": "Silvology", 
     "slug": "silvology",
-    "description": "Reminding ourselves that we can move away from the false time of computation and encouraging ourselves to live in real time",
+    "description": "An ongoing poetic dictionary of the forest, the woods and all things silviculture",
     "filename": "/data/writings/silvology.txt",
     "highlight": "var(--green)",
     "filter": "invert(94%) sepia(10%) saturate(700%) hue-rotate(52deg) brightness(83%) contrast(83%)",
