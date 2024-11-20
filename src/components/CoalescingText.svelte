@@ -14,14 +14,16 @@
   let csvData;
 
   const WORDS_FILEPATH = "/data/sketches/categorized-words.csv";
-  // TODO: Need to variable-ize all transition durations to make this scale correctly
   const TIMING_MULTIPLIER = 1;
   const TIMING = {
     INNER_RADIUS: TIMING_MULTIPLIER * 10,
     FINAL_POSITION: TIMING_MULTIPLIER * 7800,
     NEXT: TIMING_MULTIPLIER * 18500,
     FADE_OUT: TIMING_MULTIPLIER * 23800,
-    RESET: TIMING_MULTIPLIER * 32800
+    RESET: TIMING_MULTIPLIER * 30800,
+    INNER_RADIUS_SPEED: TIMING_MULTIPLIER * 8000,
+    OUTER_RADIUS_SPEED: TIMING_MULTIPLIER * 15000,
+    FADE_SPEED: TIMING_MULTIPLIER * 14000
   };
 
   // Phoneme categories and colors
@@ -264,13 +266,14 @@
           });
         });
         activeLetterArray.push(activeLetters);
-        requestAnimationFrame(animate);
+        // requestAnimationFrame(animate);
       }
 
       function setInitialStyles(element, text, textIndex, letterIndex, textDiv, wordLetterColorMap) {
         const backgroundColor = wordLetterColorMap[text][letterIndex];
-        const dropShadow = `drop-shadow(0 0 ${dropShadowRatio * graphicWidth}px ${backgroundColor}) drop-shadow(0 0 ${2 * dropShadowRatio * graphicWidth}px ${backgroundColor}) drop-shadow(0 0 ${3 * dropShadowRatio * graphicWidth}px ${backgroundColor})`;
-        
+        const dropShadow = "" // `drop-shadow(0 0 ${dropShadowRatio * graphicWidth}px ${backgroundColor}) drop-shadow(0 0 ${2 * dropShadowRatio * graphicWidth}px ${backgroundColor})`;
+        const textShadow = `0 0 ${dropShadowRatio * graphicWidth}px ${backgroundColor}, 0 0 ${2 * dropShadowRatio * graphicWidth}px ${backgroundColor}, 0 0 ${3 * dropShadowRatio * graphicWidth}px ${backgroundColor}`
+
         const initialPosition = getInitialPosition(textIndex);
         const rect = textDiv.children[letterIndex].getClientRects()[0];
         const initialBlur = Math.random() * 2;
@@ -282,15 +285,17 @@
         Object.assign(element.style, {
           width: `${rect.width - 2}px`,
           height: `${rect.height - 2}px`,
-          zIndex: "10",
+          zIndex: `${textIndex * numTexts * 10 + letterIndex + 1}`,
           transform: `scale(${initialScale})`,
-          transition: "all 8000ms linear",
+          transition: `all ${TIMING.INNER_RADIUS_SPEED}ms linear`,
           opacity: "0",
           filter: `blur(${initialBlur}px) ${dropShadow}`,
           top: `${initialTop}px`,
           left: `${initialLeft}px`,
+          textShadow: textShadow,
           position: "absolute"
         });
+        requestAnimationFrame(animate)
       }
 
       function animate(timestamp) {
@@ -340,46 +345,66 @@
       }
 
       function applyInnerRadiusStyles(element, textDiv, letterIndex) {
-        const initialLeft = parseFloat(element.style.left);
-        const initialTop = parseFloat(element.style.top);
-        
         const rect = textDiv.children[letterIndex].getClientRects()[0];
         const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+        const initialLeft = parseFloat(element.style.left);
+        const initialTop = parseFloat(element.style.top);
+
         const finalTop = rect.top + scrollTop - textContainer.offsetTop;
         const finalLeft = rect.left - window.innerWidth / 2 + textContainer.offsetWidth / 2;
 
-        element.style.transition = "all 8000ms linear";
+        const innerTop = initialTop + 0.3 * (finalTop - initialTop);
+        const innerLeft = initialLeft + 0.2 * (finalLeft - initialLeft);
+
+        const innerTranslateTop = innerTop - initialTop;
+        const innerTranslateLeft = innerLeft - initialLeft;
+
+        element.style.transition = `all ${TIMING.INNER_RADIUS_SPEED}ms linear`;
+
+        element.initialTop = initialTop;
+        element.initialLeft = initialLeft;
+
+        element.innerTop = innerTop;
+        element.innerLeft = innerLeft;
+
+        element.finalTop = finalTop;
+        element.finalLeft = finalLeft;
         
-        requestAnimationFrame(() => {
+        // requestAnimationFrame(() => {
           Object.assign(element.style, {
-            left: `${initialLeft + 0.2 * (finalLeft - initialLeft)}px`,
-            top: `${initialTop + 0.3 * (finalTop - initialTop)}px`,
-            transform: "translate(0%, -50%) scale(0.5)",
+            transform: `translate3d(${innerTranslateLeft}px, ${innerTranslateTop}px, 1px) scale(0.5)`,
             filter: element.style.filter.replace(/blur\([^)]+\)/, "blur(1px)"),
             opacity: (0.2 + 0.4 * Math.random()).toString()
           });
-        });
+        // });
       }
 
       function applyFinalStyles(element, textDiv, letterIndex) {
         const rect = textDiv.children[letterIndex].getClientRects()[0];
         const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        const finalTop = rect.top + scrollTop - textContainer.offsetTop;
-        const finalLeft = rect.left - window.innerWidth / 2 + textContainer.offsetWidth / 2;
-        
-        const randomizeAnimatedTime = (0.85 + Math.random() * .15) * 15000;
 
-        element.style.transition = `transform ${randomizeAnimatedTime}ms linear, top ${randomizeAnimatedTime}ms linear, left ${randomizeAnimatedTime}ms linear, filter ${randomizeAnimatedTime}ms linear, opacity ${randomizeAnimatedTime + 1000}ms linear`;
+        const initialTop = element.initialTop;
+        const initialLeft = element.initialLeft;
+
+        const finalTop = element.finalTop; //rect.top + scrollTop - textContainer.offsetTop;
+        const finalLeft = element.finalLeft; // rect.left - window.innerWidth / 2 + textContainer.offsetWidth / 2;
+
+        const outerTranslateTop = finalTop - initialTop;
+        const outerTranslateLeft = finalLeft - initialLeft;
+
+        const randomizeAnimatedTime = (0.85 + Math.random() * .15) * TIMING.OUTER_RADIUS_SPEED;
+
+        element.style.transition = `all ${TIMING.OUTER_RADIUS_SPEED}ms linear`;
+        //`transform ${TIMING.OUTER_RADIUS_SPEED}ms linear, filter ${randomizeAnimatedTime}ms linear, opacity ${randomizeAnimatedTime + 1000}ms linear`;
         
-        requestAnimationFrame(() => {
+        // requestAnimationFrame(() => {
           Object.assign(element.style, {
-            top: `${finalTop}px`,
-            left: `${finalLeft}px`,
             filter: element.style.filter.replace(/blur\([^)]+\)/, "blur(0px)"),
-            opacity: "0.75",
-            transform: "translate(0) scale(1)"
+            opacity: "0.85",
+            transform: `translate3d(${outerTranslateLeft}px, ${outerTranslateTop}px, 2px) scale(1)`
           });
-        });
+        // });
       }
 
       function applyFadeOutStyles(element, fadeTextDiv, letterIndex, text) {
@@ -389,19 +414,23 @@
         const fadeLeft = fadeRect.left - window.innerWidth / 2 + textContainer.offsetWidth / 2;
         
         const fadeMultiplier = 9 + Math.sqrt(Math.abs(letterIndex + 0.5 - text.length / 2));
-        const fadeSpeed = 14000 - fadeMultiplier * 75;
-        const fadeSpeedFast = 10500 - fadeMultiplier * 75;
+        const fadeSpeed = TIMING.FADE_SPEED - fadeMultiplier * 75;
+        const fadeSpeedFast = 0.75 * TIMING.FADE_SPEED - fadeMultiplier * 75;
 
-        element.style.transition = `top ${fadeSpeed}ms linear, left ${fadeSpeed}ms linear, opacity ${fadeSpeedFast}ms linear, transform ${fadeSpeedFast}ms linear`;
+        const initialTop = element.initialTop;
+        const initialLeft = element.initialLeft;
+
+        const fadeTranslateLeft = fadeLeft - initialLeft;
+        const fadeTranslateTop = fadeTop - initialTop;
+
+        element.style.transition = `opacity ${fadeSpeedFast}ms linear, transform ${fadeSpeedFast}ms linear`;
         
-        requestAnimationFrame(() => {
+        // requestAnimationFrame(() => {
           Object.assign(element.style, {
-            top: `${fadeTop}px`,
-            left: `${fadeLeft}px`,
             opacity: "0.25",
-            transform: "translate(0) scale(0.3)"
+            transform: `translate3d(${fadeTranslateLeft}px, ${fadeTranslateTop}px, 3px) scale(0.3)`
           });
-        });
+        // });
       }
 </script>
 
@@ -424,7 +453,7 @@
     width: calc(100% - 40px);
     padding: 20px;
     box-sizing: border-box;
-    max-width: 650px;
+    max-width: 600px;
     aspect-ratio: 1;
     border-radius: 50%;
     border: 1px solid var(--color-4);
@@ -474,7 +503,6 @@
     justify-content: center;
     align-items: center;
     opacity: 1;
-    transition: opacity 0.8s linear;
     z-index: 10;
     letter-spacing: var(--letter-spacing);
     text-transform: uppercase;
@@ -487,15 +515,13 @@
     font-size: var(--letter-size, 18px);
     box-sizing: inherit;
     text-transform: uppercase;
-    transition: transform 0.8s linear, opacity 0.8s linear;
+    will-change: transform;
   }
 
   :global(.animated) {
     color: var(--color-1);
     visibility: visible !important;
     position: absolute !important;
-    top: 0;
-    left: 0;
-    transition: all 8000ms linear;
+    will-change: transform;
   }
 </style>
