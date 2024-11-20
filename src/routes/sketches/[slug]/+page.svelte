@@ -122,7 +122,7 @@
         top: 0;
         background: var(--bg-color);
         justify-content: center;
-        z-index: 100;
+        z-index: 99999999;
         padding: 5px 0;
         border-bottom:  0.5px solid var(--color-2);
     }
