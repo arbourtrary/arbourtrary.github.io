@@ -8,12 +8,18 @@
     --black: #000000;
     --white: #FFFFFF;
 
-    /* derivative of #8CB2D3 */
-    --blue: #7594B0;
-    /* derivative of #AAC4A2 */
-    --green: #6D8A64;
+    /* A muted rose red */
+    --red: #B07676;
     /* derivative of #EFBD8D */
     --orange: #D8A06B;
+    /* A softened yellow */
+    --yellow: #B0A675;
+    /* derivative of #AAC4A2 */
+    --green: #6D8A64;
+    /* derivative of #8CB2D3 */
+    --blue: #7594B0;
+    /* A muted indigo */
+    --indigo: #757AB0;
     /* derivative of #D2B0EC */
     --purple: #9F79BC;
 

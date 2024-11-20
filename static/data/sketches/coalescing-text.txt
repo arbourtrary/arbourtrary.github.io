@@ -1,0 +1,37 @@
+<h2>Coalescing Text, 2024</h2>
+    <p><b>Inspiration</b>: Exhibit at <a href="https://www.museetahiti.pf/" target="_blank">Musée de Tahiti et des îles</a></p>
+    <p><b>Description</b>: Just wanted to have fun animating letters, trying to come up with something interesting, slow, evolving. Maybe evoking synaesthesia? The colors of the letters (graphemes) correspond to the categories of <a href="https://www.researchgate.net/figure/Phonetic-Alphabet-for-IPA-and-ARPAbet-symbols_tbl1_2865098" target="_blank">ARPAbet consonants / vowels</a> (phonemes) in the legend below. The mapping of graphemes to phonemes comes from some of my previous (non-academic, non-official) <a href="https://narro.design/html/linguistics-intro.html" target="_blank">explorations</a>.</p>
+    <p><b>Legend</b></p>
+    <p class="indent plosives">plosives:
+        <span>B</span><span>D</span><span>G</span><span>K</span><span>P</span><span>Q</span><span>T</span>
+    </p>
+    <p class="indent fricatives">fricatives:
+        <span>DH</span><span>F</span><span>V</span><span>S</span><span>SH</span><span>TH</span><span>Z</span><span>ZH</span>
+    </p>
+    <p class="indent nasal">nasal:
+        <span>EM</span><span>EN</span><span>M</span><span>N</span><span>NG</span>
+    </p>
+    <p class="indent affricates">affricates:
+        <span>CH</span><span>JH</span>
+    </p>
+    <p class="indent liquids">liquids:
+        <span>EL</span><span>L</span><span>R</span>
+    </p>
+    <p class="indent glides">glides:
+        <span>W</span><span>WH</span><span>Y</span>
+    </p>
+    <p class="indent whisper">whisper:
+        <span>HH</span>
+    </p>
+    <p class="indent front">front:
+        <span>AE</span><span>EH</span><span>EY</span><span>IH</span><span>IY</span>
+    </p>
+    <p class="indent mid">mid:
+        <span>AH</span><span>ER</span>
+    </p>
+    <p class="indent dipthongs">dipthongs:
+        <span>AW</span><span>AY</span><span>OY</span>
+    </p>
+    <p class="indent back">back:
+        <span>AA</span><span>AO</span><span>OW</span><span>UH</span><span>UW</span>
+    </p>

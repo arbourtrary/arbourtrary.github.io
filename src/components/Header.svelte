@@ -17,7 +17,8 @@
     <div class="title active"><a on:click={() => section.set(0)} href="#about">About</a></div>
     <div class="title"><a on:click={() => section.set(1)} href="#projects">Projects</a></div>
     <div class="title"><a on:click={() => section.set(2)} href="#writings">Writings</a></div>
-    <div class="title"><a on:click={() => section.set(3)} href="#contact">Contact</a></div>
+    <div class="title"><a on:click={() => section.set(3)} href="#sketches">Sketches</a></div>
+    <div class="title"><a on:click={() => section.set(4)} href="#contact">Contact</a></div>
 </div>
 
 <style>
@@ -79,6 +80,7 @@
     @media screen and (max-width: 500px) {
         .title {
             font-size: 14px;
+            margin: 0px 10px;
         }
     }
 </style>

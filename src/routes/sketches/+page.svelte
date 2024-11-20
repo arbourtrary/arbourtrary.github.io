@@ -6,7 +6,6 @@
     import About from "../components/About.svelte"
     import Projects from "../components/Projects.svelte"
     import Writings from "../components/Writings.svelte"
-    import Sketches from "../components/Sketches.svelte"
     import Contact from "../components/Contact.svelte"
 
     let scrollY = 0;
@@ -75,13 +74,8 @@
         dataFilename={'/data/writings.json'}
         {scrollY}
     />
-    <Sketches
-        sectionIndex={3}
-        dataFilename={'/data/sketches.json'}
-        {scrollY}
-    />
     <Contact
-        sectionIndex={4}
+        sectionIndex={3}
         {scrollY}
     />   
 {/if}
