@@ -7,7 +7,7 @@ const sketches = [
     "date": "11/19/24",
     "title": "Coalescing Text", 
     "slug": "coalescing-text",
-    "description": "Code sketch animating letters - words coaelscing slowly, evolving, synaesthetic, dissolving",
+    "description": "Code sketch animating letters - words coalescing slowly, evolving, synaesthetic, dissolving",
     "sketch": {
 		"name": "CoalescingText"
     },
