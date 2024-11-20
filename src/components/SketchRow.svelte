@@ -44,7 +44,6 @@
     
     const numCircles = 8;
     const circleSizes = [];
-    // console.log(circleSizes)
     for (let i = 0; i < numCircles; i++) {
         circleSizes.push(10 + randomNumber(`${i} ${sketch.title}`) * 10)
     }

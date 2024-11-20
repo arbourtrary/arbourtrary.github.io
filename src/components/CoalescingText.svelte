@@ -175,7 +175,6 @@
   onMount(async () => {
     initializeDimensions();
     [wordLetterColorMap, csvData] = await generateWordLetterColorMap(WORDS_FILEPATH);
-    console.log(csvData)
     animateTexts(wordLetterColorMap, csvData);
   });
 
@@ -236,7 +235,6 @@
   function animateTexts(wordLetterColorMap, csvData) {
         const activeLetters = new Set();
         const texts = getRandomItemsFromArray(csvData, numTexts).map(item => item["word"]);
-        console.log(texts)
         startTime = performance.now();
 
         texts.forEach((text, textIndex) => {
