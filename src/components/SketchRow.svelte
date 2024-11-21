@@ -127,6 +127,7 @@
         width: 50px;
         height: 50px;
         filter: brightness(1.05);
+        position: relative;
     }
     .title {
         font-family: var(--serif);
