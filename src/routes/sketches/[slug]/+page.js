@@ -12,7 +12,7 @@ const sketches = [
 		"name": "CoalescingText"
     },
     "filename": "/data/sketches/coalescing-text.txt",
-    "socialImage": "https://arbourtrary.com/images/src/routes/sketches/.jpg"
+    "socialImage": "https://arbourtrary.com/images/src/routes/sketches/social_sketch_0.jpg"
   }
 ]
 
