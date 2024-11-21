@@ -450,10 +450,10 @@
 
   .text-container {
     position: relative;
-    width: calc(100% - 40px);
     padding: 20px;
     box-sizing: border-box;
-    max-width: 600px;
+    width: min(600px, calc(100vw - 40px), calc(100vh - 40px));
+    height: min(600px, calc(100vw - 40px), calc(100vh - 40px));
     aspect-ratio: 1;
     border-radius: 50%;
     border: 1px solid var(--color-4);
