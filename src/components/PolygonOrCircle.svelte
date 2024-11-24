@@ -1,6 +1,6 @@
 <script>
 	import { lerpColorHCL } from "../utils/color.js"
-
+	import FisheyeLines from "./FisheyeLines.svelte"
 	let canvas;
 	let ctx;
 	let canvasSize = 4000;
@@ -105,8 +105,8 @@
 	button {
 		background: transparent;
 		border: none;
-		height: 30px;
-		width: 30px;
+		height: min(30px, 8vw);
+		width: min(30px, 8vw);
 		cursor: pointer;
 		color: var(--color-3);
 		transition: all 200ms linear;
@@ -126,13 +126,12 @@
 		letter-spacing: 3px;
 		font-size: min(4vw, 18px);
 	}
-
 	.num-sides {
 		color: var(--color-3);
 	}
 
 	.suffix {
-		font-size: 12px;
+		font-size: min(2.67vw, 12px);
 	}
 
 	h2 {
@@ -142,6 +141,7 @@
 
 	h3 {
 		margin-top: 0px;
+		font-size: min(5vw, 18px);
 	}
 
 	canvas {
