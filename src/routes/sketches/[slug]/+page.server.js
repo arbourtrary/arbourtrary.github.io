@@ -1,6 +1,7 @@
 export function entries() {
     return [
-        { slug: 'coalescing-text' }
+        { slug: 'coalescing-text' },
+        { slug: 'polygon-or-circle' }
     ];
 }
 
