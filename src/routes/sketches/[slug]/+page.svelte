@@ -2,6 +2,7 @@
     import { onMount } from 'svelte';
     // TODO: Need to figure out dynamic import or better page templating?
     import CoalescingText from '../../../components/CoalescingText.svelte';
+    import PolygonOrCircle from '../../../components/PolygonOrCircle.svelte';
     export let data;
 
     let content = "";
@@ -60,6 +61,8 @@
     <!-- TODO: Probably a better way to remove specific components from this -->
 	{#if data.sketch.name === "CoalescingText"}
         <CoalescingText/>
+    {:else if data.sketch.name === "PolygonOrCircle"}
+        <PolygonOrCircle/>
     {/if}
 </div>
 <div class="notes">
@@ -68,7 +71,7 @@
 
 <style>
     :global(:root) {
-        --selection-bg-color: var(--highlight);
+
         --header-height: 60px;
     }
     :global(.notes) {
@@ -89,6 +92,9 @@
     }
     :global(.indent) {
         margin: 0px 0px 10px 30px;
+    }
+    :global(.indent:last-of-type) {
+        margin-bottom: 0px;
     }
     :global(.indent span) {
         margin-left: 25px;
