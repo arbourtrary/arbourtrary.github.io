@@ -12,7 +12,7 @@ const sketches = [
 		  "name": "CoalescingText"
     },
     "filename": "/data/sketches/coalescing-text.txt",
-    "socialImage": "https://arbourtrary.com/images/social_sketch_0.jpg"
+    "socialImage": "https://arbourtrary.com/images/social_sketch_0_viz.jpg"
   },
   {
     "date": "12/03/24",
@@ -23,7 +23,7 @@ const sketches = [
       "name": "PolygonOrCircle"
     },
     "filename": "/data/sketches/polygon-or-circle.txt",
-    "socialImage": "https://arbourtrary.com/images/social_sketch_1.jpg"
+    "socialImage": "https://arbourtrary.com/images/social_sketch_1_viz.jpg"
   },
   {
     "date": "11/26/24",
@@ -34,7 +34,7 @@ const sketches = [
         "name": "DirectEtymologies"
       },
       "filename": "/data/sketches/direct-etymologies.txt",
-      "socialImage": "https://arbourtrary.com/images/social_sketch_2.jpg"
+      "socialImage": "https://arbourtrary.com/images/social_sketch_2_viz.jpg"
   }
 ]
 

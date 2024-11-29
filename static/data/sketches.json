@@ -8,7 +8,7 @@
 			"name": "CoalescingText"
 	    },
 		"filename": "/data/sketches/coalescing-text.txt",
-		"socialImage": "social_sketch_0.jpg"
+		"socialImage": "social_sketch_0_viz.jpg"
 	},
 	{
 		"date": "11/24/24",
@@ -19,7 +19,7 @@
 	      "name": "PolygonOrCircle"
 	    },
 	    "filename": "/data/sketches/polygon-or-circle.txt",
-	    "socialImage": "social_sketch_1.jpg"
+	    "socialImage": "social_sketch_1_viz.jpg"
 	},
 	{
 		"date": "11/26/24",
@@ -30,7 +30,7 @@
 	      "name": "DirectEtymologies"
 	    },
 	    "filename": "/data/sketches/direct-etymologies.txt",
-	    "socialImage": "social_sketch_2.jpg"
+	    "socialImage": "social_sketch_2_viz.jpg"
 	}
 ]
 
