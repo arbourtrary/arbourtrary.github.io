@@ -106,6 +106,10 @@
     .row:hover .title {
         border-bottom: 1px solid var(--black) !important;
     }
+    .droplet {
+        filter: brightness(1.05);
+        transition: all 200ms linear;
+    }
     .row:hover .droplet {
         filter: brightness(0.95);
     }
@@ -135,6 +139,8 @@
         margin: auto 0;
         margin-left: 10px;
         border-bottom: 1px solid #00000000;
+        background: var(--bg-color);
+        position: relative;
     }
     @media screen and (max-width: 700px) {
         /*.date {

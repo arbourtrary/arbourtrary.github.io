@@ -24,6 +24,17 @@ const sketches = [
     },
     "filename": "/data/sketches/polygon-or-circle.txt",
     "socialImage": "https://arbourtrary.com/images/social_sketch_1.jpg"
+  },
+  {
+    "date": "11/26/24",
+      "title": "Direct Etymologies", 
+      "slug": "direct-etymologies",
+      "description": "Scraping my own website to find etymologies of words that are the result of a direct lineage",
+      "sketch": {
+        "name": "DirectEtymologies"
+      },
+      "filename": "/data/sketches/direct-etymologies.txt",
+      "socialImage": "https://arbourtrary.com/images/social_sketch_2.jpg"
   }
 ]
 

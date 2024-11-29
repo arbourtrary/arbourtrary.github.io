@@ -3,6 +3,7 @@
     // TODO: Need to figure out dynamic import or better page templating?
     import CoalescingText from '../../../components/CoalescingText.svelte';
     import PolygonOrCircle from '../../../components/PolygonOrCircle.svelte';
+    import DirectEtymologies from '../../../components/DirectEtymologies.svelte';
     export let data;
 
     let content = "";
@@ -63,6 +64,8 @@
         <CoalescingText/>
     {:else if data.sketch.name === "PolygonOrCircle"}
         <PolygonOrCircle/>
+    {:else if data.sketch.name === "DirectEtymologies"}
+        <DirectEtymologies/>
     {/if}
 </div>
 <div class="notes">
@@ -102,8 +105,8 @@
         font-size: 15px;
     }
     .sketch {
-    	height: calc(100vh - var(--header-height) / 2);
-    	padding-top: calc(var(--header-height) / 2);
+    	min-height: calc(100vh - var(--header-height));
+    	padding-top: calc(var(--header-height));
     	display: flex;
     	flex-direction: column;
     	justify-content: center;
