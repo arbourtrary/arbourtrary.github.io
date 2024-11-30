@@ -84,6 +84,7 @@
 		color: var(--color-3);
 		transition: all 200ms linear;
 		margin-top: 10px;
+		overflow: visible;
 	}
 	.button-container {
 		min-width: 200px;

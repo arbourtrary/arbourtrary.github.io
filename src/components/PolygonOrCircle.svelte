@@ -110,6 +110,7 @@
 		cursor: pointer;
 		color: var(--color-3);
 		transition: all 200ms linear;
+		overflow: visible;
 	}
 	button:hover {
 		color: var(--color-1);
