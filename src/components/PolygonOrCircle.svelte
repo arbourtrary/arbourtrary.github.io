@@ -146,10 +146,11 @@
 
 	canvas {
 		width: min(600px, calc(100vw - 40px), calc(100vh - 40px));
-	    height: min(600px, calc(100vw - 40px), calc(100vh - 40px));
-	    aspect-ratio: 1;
-        position: relative;
-	    padding: 20px;
-	    box-sizing: border-box;
+    height: min(600px, calc(100vw - 40px), calc(100vh - 40px));
+    aspect-ratio: 1;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+	  z-index: 5;
 	}
 </style>
