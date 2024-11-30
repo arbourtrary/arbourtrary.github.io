@@ -111,6 +111,7 @@
 		color: var(--color-3);
 		transition: all 200ms linear;
 		overflow: visible;
+		padding: 0px;
 	}
 	button:hover {
 		color: var(--color-1);

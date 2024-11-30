@@ -85,6 +85,7 @@
 		transition: all 200ms linear;
 		margin-top: 10px;
 		overflow: visible;
+		padding: 0px;
 	}
 	.button-container {
 		min-width: 200px;
