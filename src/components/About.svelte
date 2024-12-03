@@ -39,7 +39,7 @@
     // "ɑrbərtrɛri", "deɪvɪd njukəm"
     // TODO: Build Spanish version toggle later
     // "David Morales" appears and everything switches - easter egg
-    let morphTexts = ["arbourtrary", "David Newcomb"];
+    let morphTexts = ["arbourtrary", "David Newcomb", "ɑrbərtrɛri", "David Morales"];
 
     onMount(async () => {
         initialOffset = window.innerHeight / 5;

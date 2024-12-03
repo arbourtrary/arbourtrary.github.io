@@ -1,0 +1,34 @@
+{
+	"nounoun": {
+		"pronunciation": ["nu", "nun"],
+		"definitions": [
+			"A fruit pouch snack - initially referred only to the <a href='https://www.amazon.fr/Bl%C3%A9dina-Gourdes-pur%C3%A9es-fruits-recettes/dp/B08CTK27VP?th=1' target='_blank'>Blédina</a> brand's fruit pouch that has a little nou-nours (French diminuitive for bear) on some of its packaging",
+			"Synonym for a lil' bear (<b>obsolete</b>)"
+		],
+		"partOfSpeech": "noun",
+		"alternateSpellings": [],
+		"etymology": [
+			{"language": "French", "word": "nou-nours"}
+		]
+	},
+	"m<span class='fallback-font-adjust'>ā</span>p &rarr; blobble": {
+		"pronunciation": ["mɑp", "&rarr;", "blɔ", "bəl"],
+		"definitions": [
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+		],
+		"partOfSpeech": "call-response",
+		"alternateSpellings": [],
+		"etymology": []
+	},
+	"pantatatoiyo": {
+		"pronunciation": ["poʊn", "tɑ", "tɑ", "tɔɪ", "joʊ"],
+		"definitions": [
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+		],
+		"partOfSpeech": "noun",
+		"alternateSpellings": [],
+		"etymology": [
+			{"language": "French", "word": "pantalon"}
+		]
+	}
+}

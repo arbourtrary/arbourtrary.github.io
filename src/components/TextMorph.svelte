@@ -33,9 +33,9 @@ onMount(() => {
 	// TODO: COULD NOT FIGURE OUT PERFORMANT ADAPTION
 	// TRY OOUT EFFECT IN THREEJS LATER
 
-	// elts.text1.textContent = texts[Math.round(Math.random())];
-	elts.text1.textContent = texts[textIndex % texts.length];
-	elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+	elts.text1.textContent = texts[Math.round(Math.random() * (texts.length - 1))];
+	// elts.text1.textContent = texts[textIndex % texts.length];
+	// elts.text2.textContent = texts[(textIndex + 1) % texts.length];
 
 	function doMorph() {
 		morph -= cooldown;
@@ -108,7 +108,7 @@ onMount(() => {
 	}
 
 	// TODO: make performant Start the animation.
-	animate();
+	// animate();
 })
 
 </script>
