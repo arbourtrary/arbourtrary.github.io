@@ -38,9 +38,9 @@
         style={`opacity: ${Math.pow(percent, 3)};`}
     >
         <a
-            class="logo twitter"
+            class="logo bluesky"
             style={`pointer-events: ${pointerEvents};`}
-            href="https://www.twitter.com/arbourtrary"
+            href="https://bsky.app/profile/arbourtrary.com"
             target="_blank">
         </a>
         <a
@@ -94,12 +94,12 @@
     .logo:hover {
         transform: scale(1.2);
     }
-    .twitter {
-        background: no-repeat center url("/images/twitter.png");
-        background-size: contain;
-    }
     .github {
         background: no-repeat center url("/images/github.png");
+        background-size: contain;
+    }
+    .bluesky {
+        background: no-repeat center url("/images/bluesky.png");
         background-size: contain;
     }
     @media screen and (max-width: 1000px) {

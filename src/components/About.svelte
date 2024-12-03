@@ -33,7 +33,8 @@
     let headerTexts = []
     let allInterests = []
     let allInspirations = []
-    let allImages = []
+    let masks = []
+    let maskOpacities = [0,0,0,0]
     let gradients = []
 
     // "ɑrbərtrɛri", "deɪvɪd njukəm"
@@ -49,7 +50,7 @@
         headerTexts = getFieldFromArrayOfObjects(data, 'header');
         allInterests = getFieldFromArrayOfObjects(data, 'interests');
         allInspirations = getFieldFromArrayOfObjects(data, 'inspirations');
-        allImages = getFieldFromArrayOfObjects(data, 'image');
+        masks = getFieldFromArrayOfObjects(data, 'mask');
         gradients = [
             `linear-gradient(to right, ${allColors[0]}, ${$textColor4}, ${$textColor4}, ${$textColor4})`,
             `linear-gradient(to right, ${$textColor4}, ${allColors[1]}, ${$textColor4}, ${$textColor4})`,
@@ -73,7 +74,7 @@
 
             // Loop through the headers
             if (prevIndex !== currentIndex) {
-                context.clearRect(0, 0, canvas.width, canvas.height)
+                // context.clearRect(0, 0, canvas.width, canvas.height)
                 for (let i = 0; i < headerTexts.length; i++) {
                     if (window.scrollY > initialOffset) {
                         // If the current index is the same as the looped index
@@ -84,7 +85,8 @@
                                 headers[i].classList.add('active');
                                 headers[i].style.color = activeColor
                             }
-                            paintBackground(canvas, context, images[i], 1)
+                            maskOpacities[i] = 0;
+                            // paintBackground(canvas, context, images[i], 1)
                             interests = allInterests[i]
                             inspirations = allInspirations[i]
                             linearGradient = gradients[i]
@@ -94,7 +96,8 @@
                                 headers[i].classList.remove('active');
                                 headers[i].style.color = $textColor4
                             }
-                            paintBackground(canvas, context, images[i], 0.2)
+                            maskOpacities[i] = 0.8;
+                            // paintBackground(canvas, context, images[i], 0.2)
                         }
                     } else {
                         linearGradient = `linear-gradient(to right, ${allColors.join(', ')})`;
@@ -103,7 +106,8 @@
                             headers[i].style.color = $textColor3;
                             activeColor = "#D0C6B6"                
                         }
-                        paintBackground(canvas, context, images[i], 1)
+                        maskOpacities[i] = 0;
+                        // paintBackground(canvas, context, images[i], 1)
                         interests = []
                         inspirations = []
                     }
@@ -121,13 +125,13 @@
     $: outerContainer && (scrollY >= (outerContainer.offsetTop - offset)) && (scrollY < (outerContainer.offsetTop + outerContainer.offsetHeight - offset)) && $section !== sectionIndex && section.set(sectionIndex)
 
     $: if (data && viewport) {
-        canvas = document.getElementById('viewport');
-        context = canvas.getContext('2d');
-        context.clearRect(0, 0, canvas.width, canvas.height)
-        allImages.forEach((imgFile) => {
-            const img = paintImage(canvas, context, imgFile, 1);
-            images.push(img);
-        })
+        // canvas = document.getElementById('viewport');
+        // context = canvas.getContext('2d');
+        // context.clearRect(0, 0, canvas.width, canvas.height)
+        // allImages.forEach((imgFile) => {
+        //     const img = paintImage(canvas, context, imgFile, 1);
+        //     images.push(img);
+        // })
     }
 
     $: linearGradientLine = Array.from({length: (currentIndex + 2)}, (_, i) => i + 1).map((elem) => $bgColor).join(", ")
@@ -190,7 +194,10 @@
             </div>
 
             <div class="img-container">
-                <canvas id="viewport"  height="1000" width="1000" bind:this={viewport}/>
+                <img src="/images/drawing.jpg"/>
+                {#each masks as mask, index}
+                    <img class="mask" style={`opacity: ${maskOpacities[index]};`} src={mask}/>
+                {/each}
             </div>
 
         {:else}
@@ -212,8 +219,10 @@
                 </div>
             </div>
             <div class="img-container">
-                <canvas id="viewport" height="700" width="700" bind:this={viewport}>
-                </canvas>
+                <img src="/images/drawing.jpg"/>
+                {#each masks as mask, index}
+                    <img class="mask" style={`opacity: ${maskOpacities[index]};`} src={mask}/>
+                {/each}
             </div>
             <div class="about-interests">
                 <div
@@ -500,6 +509,26 @@
         flex-direction: column;
         justify-content: center;
     }
+    .img-container img {
+        height: auto;
+        width: 100%;
+        position: absolute;
+        z-index: 22;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .img-container .mask {
+        position: absolute;
+        z-index: 23;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        opacity: 0.0;
+        transition: opacity 250ms ease-out;
+
+    }
     scrolling-anchor canvas {
         width: 100% !important;
         height: unset !important;
@@ -513,6 +542,7 @@
         padding-bottom: 5px;
         color: var(--color-3);
         padding-left: 21px;
+        transition: color 150ms ease-out;
     }
     :global(.about-header.active) {
         filter: saturate(130%);

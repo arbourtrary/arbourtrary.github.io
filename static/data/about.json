@@ -13,7 +13,7 @@
             "The Pudding",
             "R2D3"
         ],
-        "image": "/images/drawing_blue.png",
+        "mask": "/images/mask-blue.svg",
         "color": "#8CB2D3"
     },
     {
@@ -31,7 +31,7 @@
             "Work on Climate",
             "Pachama"
         ],
-        "image": "/images/drawing_green.png",
+        "mask": "/images/mask-green.svg",
         "color": "#AAC4A2"
     },
     {
@@ -49,7 +49,7 @@
             "La Alhambra",
             "Ramanujan"
         ],
-        "image": "/images/drawing_orange.png",
+        "mask": "/images/mask-orange.svg",
         "color": "#EFBD8D"
     },
     {
@@ -71,7 +71,7 @@
             "Tim Seibles",
             "Stephen Dunn"
         ],
-        "image": "/images/drawing_purple.png",
+        "mask": "/images/mask-purple.svg",
         "color": "#D2B0EC"
     }
 ]
