@@ -2,7 +2,8 @@ export function entries() {
     return [
         { slug: 'coalescing-text' },
         { slug: 'polygon-or-circle' },
-        { slug: 'direct-etymologies' }
+        { slug: 'direct-etymologies' },
+        { slug: 'original-words' }
     ];
 }
 

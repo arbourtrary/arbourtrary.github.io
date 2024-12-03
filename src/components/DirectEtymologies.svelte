@@ -1,31 +1,12 @@
 <script>
 	import { onMount } from 'svelte';
 	import { loadJSON } from "../utils/file.js";
+	import { languageToColor } from "../utils/linguistics.js"
 
 	let data;
 	let words;
 	let opacity = 0;
 	const ETYMOLOGIES_FILEPATH = "/data/sketches/direct-etymologies.json"
-	const languageToColor = {
-		'Latin': "var(--red)", 
-
-		'Old French': "var(--orange)",
-		'Middle French': "var(--orange)", 
-		'French': "var(--orange)", 
-
-		'Egyptian': "var(--yellow)",
-		'Hebrew': "var(--yellow)",
-
-		'Ancient Greek': "var(--green)", 
-
-		'English': "var(--blue)", 
-		'Middle English': "var(--blue)", 
-		'Old English': "var(--blue)",
-
-		'Old Norse': "var(--purple)", 
-		'German': "var(--purple)", 
-		'Anglo-Norman': "var(--indigo)" 
-	}
 
 	onMount(async () => {
 		data = await loadJSON(ETYMOLOGIES_FILEPATH);
@@ -44,7 +25,7 @@
 	{#if data}
 		<div class="etymology">
 		{#each words as word, index}
-			<h2 class="polygon-name">{word.split(" (")[0]}</h2><span style={`color: ${languageToColor[word.split(" (")[1].replace(")","")]}`} class="language">{word.split(" (")[1].replace(")","")}</span>
+			<h2 class="polygon-name">{word.split(" (")[0]}</h2><span style={`color: ${languageToColor(word.split(" (")[1].replace(")",""))}`} class="language">{word.split(" (")[1].replace(")","")}</span>
 			{#if index !== (words.length - 1)}
 				<div class="connector"></div>
 			{/if}
@@ -92,8 +73,6 @@
 		padding-top: 25px;
 		padding-bottom: 25px;
 		margin-bottom: 60px;
-/*		border-top: 0.5px solid var(--color-3);*/
-/*		border-bottom: 0.5px solid var(--color-3);*/
 		display: flex;
 		justify-content: center;
 	}

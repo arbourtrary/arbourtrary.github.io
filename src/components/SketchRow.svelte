@@ -42,10 +42,10 @@
         return rand();
     }
     
-    const numCircles = 8;
+    const numCircles = 14 + Math.round(randomNumber(`circles ${sketch.title}`)) * 3;
     const circleSizes = [];
     for (let i = 0; i < numCircles; i++) {
-        circleSizes.push(10 + randomNumber(`${i} ${sketch.title}`) * 10)
+        circleSizes.push(3 + randomNumber(`${i} ${sketch.title}`) * 15)
     }
 
     const colors = [
@@ -68,12 +68,12 @@
                 <div class="circle" style={`
                     height: ${circleSize}px;
                     width: ${circleSize}px;
-                    opacity: ${0.25 + randomNumber(`${i} opacity ${sketch.title}`) * 0.55};
+                    opacity: ${0.2 + randomNumber(`${i} opacity ${sketch.title}`) * 0.45};
                     background: ${color};
                     border-radius: 50%;
                     position: absolute;
-                    top: ${(0.15 + 0.6 * randomNumber(`${i} top ${sketch.title}`)) * 100}%;
-                    left: ${(0.15 + 0.6 * randomNumber(`${i} left ${sketch.title}`)) * 100}%;
+                    top: ${(0.15 + 0.55 * randomNumber(`${i} top ${sketch.title}`)) * 100}%;
+                    left: ${(0.15 + 0.55 * randomNumber(`${i} left ${sketch.title}`)) * 100}%;
                     transform: translate(-50%, -50%);
                 `}></div>
             {/each}
