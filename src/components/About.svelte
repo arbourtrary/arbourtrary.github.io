@@ -129,8 +129,8 @@
         <div class="about-container desktop">
             <div class="about-intro">
                 <div class="about-name">
-                    <div id="name-container">
-                        <span id="name" style={`background: ${linearGradient}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;`}>{texts[Math.round(Math.random() * (texts.length - 1))]}</span>
+                    <div class="name-container">
+                        <span class="name" style={`background: ${linearGradient}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;`}>{texts[Math.round(Math.random() * (texts.length - 1))]}</span>
                     </div>
                 </div>
                 <div class="header-container">
@@ -176,7 +176,7 @@
             </div>
 
             <div class="img-container">
-                <img src="/images/drawing.jpg" alt="a large, circular primary image - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
+                <img src="/images/drawing.jpg" height="800" width="800" alt="a large, circular primary image - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
                 {#each masks as mask, index}
                     <img class="mask" style={`opacity: ${maskOpacities[index]};`} src={mask} alt="mask for image"/>
                 {/each}
@@ -186,8 +186,8 @@
 
         <div class="about-container mobile">
             <div class="about-name">
-                <div id="name-container">
-                    <span id="name" style={`background: ${linearGradient}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;`}>{texts[Math.round(Math.random() * (texts.length - 1))]}</span>
+                <div class="name-container">
+                    <span class="name" style={`background: ${linearGradient}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;`}>{texts[Math.round(Math.random() * (texts.length - 1))]}</span>
                 </div>
                 <div class="header-container">
                     <div class="progress-bar-bg"></div>
@@ -201,7 +201,7 @@
                 </div>
             </div>
             <div class="img-container">
-                <img src="/images/drawing-mobile.jpg" alt="a large, circular primary image - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
+                <img src="/images/drawing-mobile.jpg" height="500" width="500" alt="a large, circular primary image - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
                 {#each masks as mask, index}
                     <img class="mask" style={`opacity: ${maskOpacities[index]};`} src={mask} alt="mask for image"/>
                 {/each}
@@ -295,7 +295,7 @@
     .about-name {
         position: relative;
     }
-    #name-container {
+    .name-container {
         position: relative;
         margin: auto;
         width: 100%;
@@ -303,7 +303,7 @@
         margin-bottom: 2px;
         text-align: left;
     }
-    #name {
+    .name {
         display: inline-block;
         letter-spacing: .1px;
         font-family: var(--serif), sans-serif, sans-serif;
@@ -602,10 +602,10 @@
         .line {
             padding-bottom: 5px;
         }
-        #name-container {
+        .name-container {
             text-align: center;
         }
-        #name {
+        .name {
             letter-spacing: .1px;
         }
         .about-container {

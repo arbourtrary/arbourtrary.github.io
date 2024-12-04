@@ -58,7 +58,7 @@
     }
     .title.active {
         color: var(--color-1);
-        border-bottom: 1px solid var(--color-1) !important;
+/*        border-bottom: 1px solid var(--color-1) !important;*/
     }
     a {
         text-decoration: none;
@@ -66,7 +66,7 @@
     .title:hover {
         cursor: pointer;
         color: var(--color-1);
-        border-bottom: 1px solid var(--color-1) !important;
+/*        border-bottom: 1px solid var(--color-1) !important;*/
     }
     @media screen and (max-width: 1000px) {
         .title {

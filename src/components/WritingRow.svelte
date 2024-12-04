@@ -1,23 +1,9 @@
 <script>
-    import { clamp } from '../utils/math.js'
     export let writing = {};
-    export let index = 0;
-    export let scrollY = 0;
-
-    let row;
-    let opacity = 0;
-    let percent = 0;
-
-    $: if (row && scrollY) {
-        percent = 1 - row.getBoundingClientRect().top / (window.innerHeight)
-        opacity = clamp(percent < 0.5 ? 1.5 * percent : 1, 0, 1);
-        // fadein til midpage then fadeout
-        // opacity = percent > 0.6 ? 0.8 - (percent - 0.4) : percent < 0.4 ? 2 * percent : 0.8
-    }
 </script>
 
 <a href={`/writings/${writing.slug}`}>
-    <div bind:this={row} class="row" style={`opacity: ${opacity}`}>
+    <div class="row">
         <!-- <div class="date">{@html writing.date}</div> -->
         <div class="droplet">
             <span style={`filter: ${writing?.filter};`}>

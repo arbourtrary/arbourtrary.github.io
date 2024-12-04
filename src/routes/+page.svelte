@@ -82,3 +82,12 @@
         {scrollY}
     />   
 {/if}
+
+
+<style>
+    :global(#about), :global(#projects), :global(#writings), :global(#sketches) {
+        border-bottom: 1px solid var(--color-3) !important;
+        width: min(90vw, 1100px) !important;
+        margin: 0 auto !important;
+    }
+</style>
