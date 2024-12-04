@@ -1,7 +1,5 @@
 <script>
-    import { section, isPortrait, bgColor, textColor3, textColor4 } from "../store.js"
-    import { paintImage, paintBackground } from "../utils/canvas.js"
-    import TextMorph from "./TextMorph.svelte";
+    import { section, bgColor, textColor3, textColor4 } from "../store.js"
     import { onMount } from "svelte";
     import { loadJSON } from "../utils/file.js";
     import { getFieldFromArrayOfObjects } from "../utils/array.js";
@@ -40,7 +38,7 @@
     // "ɑrbərtrɛri", "deɪvɪd njukəm"
     // TODO: Build Spanish version toggle later
     // "David Morales" appears and everything switches - easter egg
-    let morphTexts = ["arbourtrary", "David Newcomb", "ɑrbərtrɛri", "David Morales"];
+    let texts = ["arbourtrary", "David Newcomb", "ɑrbərtrɛri", "David Morales"];
 
     onMount(async () => {
         initialOffset = window.innerHeight / 5;
@@ -86,7 +84,6 @@
                                 headers[i].style.color = activeColor
                             }
                             maskOpacities[i] = 0;
-                            // paintBackground(canvas, context, images[i], 1)
                             interests = allInterests[i]
                             inspirations = allInspirations[i]
                             linearGradient = gradients[i]
@@ -97,7 +94,6 @@
                                 headers[i].style.color = $textColor4
                             }
                             maskOpacities[i] = 0.8;
-                            // paintBackground(canvas, context, images[i], 0.2)
                         }
                     } else {
                         linearGradient = `linear-gradient(to right, ${allColors.join(', ')})`;
@@ -107,7 +103,6 @@
                             activeColor = "#D0C6B6"                
                         }
                         maskOpacities[i] = 0;
-                        // paintBackground(canvas, context, images[i], 1)
                         interests = []
                         inspirations = []
                     }
@@ -124,32 +119,19 @@
 
     $: outerContainer && (scrollY >= (outerContainer.offsetTop - offset)) && (scrollY < (outerContainer.offsetTop + outerContainer.offsetHeight - offset)) && $section !== sectionIndex && section.set(sectionIndex)
 
-    $: if (data && viewport) {
-        // canvas = document.getElementById('viewport');
-        // context = canvas.getContext('2d');
-        // context.clearRect(0, 0, canvas.width, canvas.height)
-        // allImages.forEach((imgFile) => {
-        //     const img = paintImage(canvas, context, imgFile, 1);
-        //     images.push(img);
-        // })
-    }
-
     $: linearGradientLine = Array.from({length: (currentIndex + 2)}, (_, i) => i + 1).map((elem) => $bgColor).join(", ")
 </script>
 
 <svelte:window bind:innerWidth={innerWidth}/>
 
 <scrolling-anchor id="about" bind:this={outerContainer}>
-    <div class="about-container">
-
-        {#if !$isPortrait}
+    
+        <div class="about-container desktop">
             <div class="about-intro">
-                <div class="about-name desktop">
-                    <TextMorph
-                        texts={morphTexts}
-                        {linearGradient}
-                        shouldPause={currentIndex >= 0}
-                    />
+                <div class="about-name">
+                    <div id="name-container">
+                        <span id="name" style={`background: ${linearGradient}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;`}>{texts[Math.round(Math.random() * (texts.length - 1))]}</span>
+                    </div>
                 </div>
                 <div class="header-container">
                     <div class="progress-bar-bg"></div>
@@ -199,14 +181,14 @@
                     <img class="mask" style={`opacity: ${maskOpacities[index]};`} src={mask} alt="mask for image"/>
                 {/each}
             </div>
+        </div>
 
-        {:else}
-            <div class="about-name mobile">
-                <TextMorph
-                    texts={morphTexts}
-                    {linearGradient}
-                    shouldPause={currentIndex >= 0}
-                />
+
+        <div class="about-container mobile">
+            <div class="about-name">
+                <div id="name-container">
+                    <span id="name" style={`background: ${linearGradient}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;`}>{texts[Math.round(Math.random() * (texts.length - 1))]}</span>
+                </div>
                 <div class="header-container">
                     <div class="progress-bar-bg"></div>
                     <div
@@ -259,8 +241,7 @@
                     {/if}
                 </div>
             </div>
-        {/if}
-    </div>
+        </div>
 </scrolling-anchor>
 
 <style>
@@ -313,6 +294,32 @@
     }
     .about-name {
         position: relative;
+    }
+    #name-container {
+        position: relative;
+        margin: auto;
+        width: 100%;
+        z-index: 20;
+        margin-bottom: 2px;
+        text-align: left;
+    }
+    #name {
+        display: inline-block;
+        letter-spacing: .1px;
+        font-family: var(--serif), sans-serif, sans-serif;
+        font-size: 45px;
+        text-align: left;
+        font-weight: 600;
+        user-select: none;
+        width: max-content;
+        -webkit-backface-visibility: hidden;
+        -webkit-perspective: 1000;
+        -webkit-transform: translate3d(0,0,0);
+        -webkit-transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000;
+        transform: translate3d(0,0,0);
+        transform: translateZ(0);
     }
     .about-intro {
         width: 375px;
@@ -504,7 +511,7 @@
         position: relative;
         -webkit-transform: translate3d(0,0,1px);
         transform: translate3d(0,0,1px);
-        z-index: 20;
+        z-index: 2;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -567,6 +574,12 @@
         padding-bottom: 4px;
         margin-bottom: 0px;
     }
+    .desktop {
+        display: flex;
+    }
+    .mobile {
+        display: none;
+    }
     @media screen and (max-width: 1000px) {
         .progress-bar-bg {
             height: 1px;
@@ -588,6 +601,12 @@
         }
         .line {
             padding-bottom: 5px;
+        }
+        #name-container {
+            text-align: center;
+        }
+        #name {
+            letter-spacing: .1px;
         }
         .about-container {
             height: calc(100vh - 75px);
@@ -632,6 +651,12 @@
             padding: 0px 5px 2px 0px;
             color: var(--color-2);
             font-family: var(--serif);
+        }
+        .desktop {
+            display: none;
+        }
+        .mobile {
+            display: flex;
         }
     }
     @media screen and (max-width: 700px) {

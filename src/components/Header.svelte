@@ -14,11 +14,11 @@
 </script>
 
 <div class="header" bind:this={header}>
-    <div class="title active"><a on:click={() => section.set(0)} href="#about">About</a></div>
-    <div class="title"><a on:click={() => section.set(1)} href="#projects">Projects</a></div>
-    <div class="title"><a on:click={() => section.set(2)} href="#writings">Writings</a></div>
-    <div class="title"><a on:click={() => section.set(3)} href="#sketches">Sketches</a></div>
-    <div class="title"><a on:click={() => section.set(4)} href="#contact">Contact</a></div>
+    <a on:click={() => section.set(0)} href="#about" class="title active">About</a>
+    <a on:click={() => section.set(1)} href="#projects" class="title">Projects</a>
+    <a on:click={() => section.set(2)} href="#writings" class="title">Writings</a>
+    <a on:click={() => section.set(3)} href="#sketches" class="title">Sketches</a>
+    <a on:click={() => section.set(4)} href="#contact" class="title">Contact</a>
 </div>
 
 <style>
@@ -34,6 +34,7 @@
         background: var(--bg-color);
         z-index: 10;
         padding: 20px 0;
+        pointer-events: none;
         box-shadow: 
             0px 0px 10px var(--bg-color),
             0px 0px 10px var(--bg-color),
@@ -52,14 +53,15 @@
         padding-bottom: 3px;
         color: var(--color-2);
         transition: all 100ms ease-out;
+        z-index: 11;
+        pointer-events: all;
     }
     .title.active {
         color: var(--color-1);
         border-bottom: 1px solid var(--color-1) !important;
     }
-    .title a {
+    a {
         text-decoration: none;
-        color: inherit !important;
     }
     .title:hover {
         cursor: pointer;

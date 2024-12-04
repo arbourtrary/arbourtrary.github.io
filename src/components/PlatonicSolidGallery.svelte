@@ -1,5 +1,5 @@
 <script defer>
-    import { section, isPortrait, bgColor, textColor2, white } from "../store.js"
+    import { section, bgColor, textColor2, white } from "../store.js"
     import { onMount } from "svelte";
     import { loadJSON } from "../utils/file.js";
     import { clamp } from "../utils/math.js";
@@ -409,20 +409,18 @@
                 </div>
             </a>
             <div class="description">{description}</div>
-            {#if !$isPortrait}
-                <div class="details">
-                    {#if awards}
-                        <div class="detail">
-                            <p class="section-subtitle">Awards</p>
-                            <p class="detail-description">{@html awards}</p>
-                        </div>
-                    {/if}
+            <div class="details desktop">
+                {#if awards}
                     <div class="detail">
-                        <p class="section-subtitle">Tags</p>
-                        <p class="detail-description tags">{@html tags}</p>
+                        <p class="section-subtitle">Awards</p>
+                        <p class="detail-description">{@html awards}</p>
                     </div>
+                {/if}
+                <div class="detail">
+                    <p class="section-subtitle">Tags</p>
+                    <p class="detail-description tags">{@html tags}</p>
                 </div>
-            {/if}
+            </div>
         </div>
         <div class="canvas-container">
                 <div class="canvas"> 
@@ -622,21 +620,19 @@
         </div>
     </div>
 
-        {#if $isPortrait}
-            <div class="details">
-                {#if awards}
-                    <div class="detail">
-                        <p class="section-subtitle">Awards</p>
-                        <p class="detail-description">{@html awardsShort}</p>
-                    </div>
-                {:else}
-                    <div class="detail">
-                        <p class="section-subtitle">Tags</p>
-                        <p class="detail-description tags">{@html tags}</p>
-                    </div>
-                {/if}
-            </div>
-        {/if}
+        <div class="details mobile">
+            {#if awards}
+                <div class="detail">
+                    <p class="section-subtitle">Awards</p>
+                    <p class="detail-description">{@html awardsShort}</p>
+                </div>
+            {:else}
+                <div class="detail">
+                    <p class="section-subtitle">Tags</p>
+                    <p class="detail-description tags">{@html tags}</p>
+                </div>
+            {/if}
+        </div>
     </div>
 </div>
 
@@ -808,7 +804,13 @@
         font-size: 28px;
         font-family: var(--serif);
     }
+    .mobile {
+        display: none;
+    }
     @media screen and (max-width: 1000px) {
+        .mobile {
+            display: block;
+        }
         :global(.detail-description a) {
             border-bottom: 1px solid var(--color-2);
         }

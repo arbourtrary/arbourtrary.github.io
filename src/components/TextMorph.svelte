@@ -117,7 +117,7 @@ onMount(() => {
 
 <!-- The two texts -->
 <div id="container">
-	<span id="text1" style={`background: ${linearGradient}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;`}></span>
+	<span id="text1" style={`background: ${linearGradient}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;`}>{texts[Math.round(Math.random() * (texts.length - 1))]}</span>
 	<span id="text2" style={`background: ${linearGradient}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;`}></span>
 </div>
 

@@ -1,6 +1,6 @@
 <script>
     import { onMount } from "svelte";
-    import { isPortrait, bgColor, textColor1, textColor2, textColor3, textColor4, white } from '../store.js'
+    import { bgColor, textColor1, textColor2, textColor3, textColor4, white } from '../store.js'
     import Header from "../components/Header.svelte"
     import Progress from "../components/Progress.svelte"
     import About from "../components/About.svelte"
@@ -26,11 +26,8 @@
         textColor3.set(window.getComputedStyle(document.body).getPropertyValue('--color-3'))
         textColor4.set(window.getComputedStyle(document.body).getPropertyValue('--color-4'))
         white.set(window.getComputedStyle(document.body).getPropertyValue('--white'))
-        isPortrait.set(innerWidth < 1000)
         shouldHydrate = true;
-    })
-
-    $: isPortrait.set(innerWidth < 1000)   
+    })  
 </script>
 
 <svelte:window bind:scrollY bind:innerWidth/>
