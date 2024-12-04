@@ -47,9 +47,9 @@
 				<span class="pronunciation">
 					{#each entry.pronunciation as syllable, index}
 						{#if index > 0 && !syllable.startsWith("&") && !entry.pronunciation[index - 1].startsWith("&")}
-							<span class='bullet'>&#8226;</span>
+							&nbsp;<span class='bullet'>&#8226;</span>
 						{/if}
-						{@html syllable}&nbsp;
+						{@html syllable}
 					{/each}
 				</span> ] &nbsp;&nbsp;&nbsp;<span class="divider">|</span>&nbsp;&nbsp; <span class="part-of-speech">{@html entry.partOfSpeech}</span></h4>
 			<hr>
@@ -63,6 +63,17 @@
 					</span>
 				{/each}
 			</p>
+			{#if entry.alternateSpellings.length}
+				<p class="alternate-spellings">
+					<b><i>Alt.</i></b>:&nbsp;
+					{#each entry.alternateSpellings as spelling, index}
+						{#if index > 0}
+							,&nbsp;
+						{/if}
+						{@html spelling}
+					{/each}
+				</p>
+			{/if}
 			{#if entry.etymology.length}
 				<p class="etymology">
 					<b><i>Etymology</i></b>:&nbsp;
@@ -166,9 +177,12 @@
 	.entry .description .definition {
 		margin-right: 7px;
 	}
-	.entry .etymology {
-		margin-top: 15px;
+	.entry .etymology, .entry .alternate-spellings {
+		margin-top: 10px;
 		font-size: min(5vw, 20px);
+	}
+	.entry .alternate-spellings {
+		margin-bottom: 0px;
 	}
     :global(.entry a) {
         text-decoration: underline;
@@ -186,7 +200,7 @@
 		margin: 0 1px;
 	}
 	.entry .language {
-		font-weight: bold;
-		font-size: min(4.5vw, 18px);
+		font-weight: normal;
+		font-size: min(4vw, 16px);
 	}
 </style>

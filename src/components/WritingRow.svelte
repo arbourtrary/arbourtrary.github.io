@@ -21,7 +21,7 @@
         <!-- <div class="date">{@html writing.date}</div> -->
         <div class="droplet">
             <span style={`filter: ${writing?.filter};`}>
-                <img src={writing?.image} alt="watercolor droplet">
+                <img loading="lazy" src={writing?.image} alt="watercolor droplet">
             </span>
         </div>
         <div class="title">{writing.title}</div>

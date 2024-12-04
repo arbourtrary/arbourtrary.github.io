@@ -5,9 +5,8 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-		<link rel='stylesheet' href='%sveltekit.assets%/global.css'>
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
         
         <link rel='canonical' href='https://arbourtrary.com' />
 
@@ -17,10 +16,104 @@
         <link rel='icon' type='image/png' sizes='16x16' href='%sveltekit.assets%/images/arbourtrary-16x16.png'>
         <meta name='msapplication-TileColor' content='#F5F2EB'>
         <meta name='theme-color' content='#F5F2EB'>
+        <link rel="preload" as="image" href="/images/drawing.jpg">
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
+	<style>
+		:root {
+		    --serif: "IM Fell English", "Vollkorn", serif;
+		    --selection-bg-color: #CBC3B4;
+		    --selection-color: #FFFFFF;
+		    --bg-color: #F5F2EB;
+
+		    /* In case I want an off-shade of black/white */
+		    --black: #000000;
+		    --white: #FFFFFF;
+
+		    /* A muted rose red */
+		    --red: #B07676;
+		    /* derivative of #EFBD8D */
+		    --orange: #D8A06B;
+		    /* A softened yellow */
+		    --yellow: #B0A675;
+		    /* derivative of #AAC4A2 */
+		    --green: #6D8A64;
+		    /* derivative of #8CB2D3 */
+		    --blue: #7594B0;
+		    /* A muted indigo */
+		    --indigo: #757AB0;
+		    /* derivative of #D2B0EC */
+		    --purple: #9F79BC;
+
+		    /* Shades of color, ordered darkest (1) to lightest (n) */
+		    --color-1: #373531;
+		    --color-2: #908B80;
+		    --color-3: #A8A195;
+		    --color-4: #EAE6DF;
+		}
+
+		/*** Works on common browsers ***/
+		::selection{
+		    background-color: var(--selection-bg-color);
+		    color: var(--selection-color);
+		}
+		/*** Mozilla based browsers ***/
+		::-moz-selection{
+		    background-color: var(--selection-bg-color);
+		    color: var(--selection-color);
+		}
+
+		/***For Other Browsers ***/
+		::-o-selection{
+		    background-color: var(--selection-bg-color);
+		    color: var(--selection-color);
+		}
+
+		::-ms-selection{
+		    background-color: var(--selection-bg-color);
+		    color: var(--selection-color);
+		}
+
+		/*** For Webkit ***/
+		::-webkit-selection{
+		    background-color: var(--selection-bg-color);
+		    color: var(--selection-color);
+		}
+
+		body{
+		    margin: 0;
+		    background: var(--bg-color);
+		}
+		.section-subtitle{
+		    width: fit-content;
+		    font-size: 16px;
+		    color: var(--color-2);
+		    font-family: var(--serif);
+		    padding-bottom: 2px;
+		    margin-bottom: 10px;
+		    padding-right: 5px;
+		}
+		.section-description{
+		    color: var(--color-1);
+		    font-family: var(--serif);
+		}
+		.desktop{
+		    display: block;
+		}
+		.mobile{
+		    display: none;
+		}
+		@media screen and (max-width: 1000px) {
+		    .desktop{
+		        display: none;
+		    }
+		    .mobile{
+		        display: block;
+		    }
+		}
+	</style>
 </html>
 

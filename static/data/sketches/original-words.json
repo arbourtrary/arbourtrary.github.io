@@ -14,7 +14,7 @@
 	"m<span class='fallback-font-adjust'>ā</span>p &rarr; blobble": {
 		"pronunciation": ["mɑp", "&rarr;", "blɔ", "bəl"],
 		"definitions": [
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+			""
 		],
 		"partOfSpeech": "call-response",
 		"alternateSpellings": [],
@@ -23,10 +23,10 @@
 	"pantatatoiyo": {
 		"pronunciation": ["poʊn", "tɑ", "tɑ", "tɔɪ", "joʊ"],
 		"definitions": [
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+			"Pants, trousers, pantaloons, pajamas, playing with words before bedtime and finding a funny sound"
 		],
 		"partOfSpeech": "noun",
-		"alternateSpellings": [],
+		"alternateSpellings": ["pantatatoilo"],
 		"etymology": [
 			{"language": "French", "word": "pantalon"}
 		]
