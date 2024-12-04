@@ -4,7 +4,19 @@
 		<meta charset="utf-8" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+		<link
+		    rel="preload"
+		    href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap"
+		    as="style"
+		    onload="this.onload=null;this.rel='stylesheet'"
+		/>
+		<noscript>
+		    <link
+		        href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap"
+		        rel="stylesheet"
+		        type="text/css"
+		    />
+		</noscript>
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
         
@@ -17,6 +29,7 @@
         <meta name='msapplication-TileColor' content='#F5F2EB'>
         <meta name='theme-color' content='#F5F2EB'>
         <link rel="preload" as="image" href="%sveltekit.assets%/images/drawing.jpg">
+        <link rel="preload" as="image" href="%sveltekit.assets%/images/drawing-mobile.jpg">
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

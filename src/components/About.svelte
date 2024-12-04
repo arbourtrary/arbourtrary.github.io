@@ -194,9 +194,9 @@
             </div>
 
             <div class="img-container">
-                <img src="/images/drawing.jpg"/>
+                <img src="/images/drawing.jpg" alt="a large, circular primary image - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
                 {#each masks as mask, index}
-                    <img class="mask" style={`opacity: ${maskOpacities[index]};`} src={mask}/>
+                    <img class="mask" style={`opacity: ${maskOpacities[index]};`} src={mask} alt="mask for image"/>
                 {/each}
             </div>
 
@@ -219,9 +219,9 @@
                 </div>
             </div>
             <div class="img-container">
-                <img src="/images/drawing.jpg"/>
+                <img src="/images/drawing-mobile.jpg" alt="a large, circular primary image - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
                 {#each masks as mask, index}
-                    <img class="mask" style={`opacity: ${maskOpacities[index]};`} src={mask}/>
+                    <img class="mask" style={`opacity: ${maskOpacities[index]};`} src={mask} alt="mask for image"/>
                 {/each}
             </div>
             <div class="about-interests">

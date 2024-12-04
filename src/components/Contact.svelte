@@ -32,6 +32,7 @@
         class="background-image"
         src={`${(innerWidth < 1000) && (innerWidth < innerHeight) ? "/images/bg_bw_portrait.jpeg" : "/images/bg_bw_landscape.jpeg"}`}
         style={`opacity: ${opacity};`}
+        alt="background image patterned with an aperiodic monotile"
     >
     <div 
         class="background-contacts"
