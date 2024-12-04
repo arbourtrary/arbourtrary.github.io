@@ -38,7 +38,8 @@
     // "ɑrbərtrɛri", "deɪvɪd njukəm"
     // TODO: Build Spanish version toggle later
     // "David Morales" appears and everything switches - easter egg
-    let texts = ["arbourtrary", "David Newcomb", "ɑrbərtrɛri", "David Morales"];
+    // Maybe Greek letters? αρβουρτραρψ
+    let texts = ["arbourtrary", "David Newcomb", "David Morales"];
 
     onMount(async () => {
         initialOffset = window.innerHeight / 5;
