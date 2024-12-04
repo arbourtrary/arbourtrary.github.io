@@ -178,7 +178,7 @@
             <div class="img-container">
                 <img src="/images/drawing.jpg" height="800" width="800" alt="a large, circular primary image - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
                 {#each masks as mask, index}
-                    <img class="mask" style={`opacity: ${maskOpacities[index]};`} src={mask} alt="mask for image"/>
+                    <img height="1000" width="1000" class="mask" style={`opacity: ${maskOpacities[index]};`} src={mask} alt="mask for image"/>
                 {/each}
             </div>
         </div>
@@ -203,7 +203,7 @@
             <div class="img-container">
                 <img src="/images/drawing-mobile.jpg" height="500" width="500" alt="a large, circular primary image - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
                 {#each masks as mask, index}
-                    <img class="mask" style={`opacity: ${maskOpacities[index]};`} src={mask} alt="mask for image"/>
+                    <img height="1000" width="1000" class="mask" style={`opacity: ${maskOpacities[index]};`} src={mask} alt="mask for image"/>
                 {/each}
             </div>
             <div class="about-interests">
