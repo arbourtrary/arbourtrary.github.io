@@ -1,6 +1,7 @@
 <script>
     import { section } from "../store.js"
     import PlatonicSolidGallery from "./PlatonicSolidGallery.svelte"
+    import projects from '../data/projects.json';
 
     export let sectionIndex = 1;
     export let scrollY = 0;
@@ -14,7 +15,7 @@
 <div id="projects" bind:this={outerContainer}>
     <PlatonicSolidGallery
         platonicSolid="dodecahedron"
-        {dataFilename}
+        {projects}
         {scrollY}
     />  
 </div>

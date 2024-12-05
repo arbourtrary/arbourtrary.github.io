@@ -2,6 +2,7 @@
     import { section, bgColor, textColor3, textColor4 } from "../store.js"
     import { onMount } from "svelte";
     import { loadJSON } from "../utils/file.js";
+    import data from '../data/about.json';
     import { getFieldFromArrayOfObjects } from "../utils/array.js";
 
     export let sectionIndex = 0;
@@ -25,7 +26,6 @@
     let canvas;
     let context;
 
-    let data = null;
     let allColors = []
     let headers = [];
     let headerTexts = []
@@ -41,10 +41,9 @@
     // Maybe Greek letters? αρβουρτραρψ
     let texts = ["arbourtrary", "David Newcomb", "David Morales"];
 
-    onMount(async () => {
+    onMount(() => {
         initialOffset = window.innerHeight / 5;
         scrollingAnchorHeight = outerContainer.offsetHeight - window.innerHeight - initialOffset;
-        data = await loadJSON(dataFilename);
         allColors = getFieldFromArrayOfObjects(data, 'color');
         headerTexts = getFieldFromArrayOfObjects(data, 'header');
         allInterests = getFieldFromArrayOfObjects(data, 'interests');
