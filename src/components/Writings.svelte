@@ -3,12 +3,16 @@
     import { loadJSON } from "../utils/file.js";
     import { section } from "../store.js"
     import WritingRow from "./WritingRow.svelte";
-    import writings from '../data/writings.json';
 
     export let sectionIndex = 2;
     export let scrollY = 0;
+    export let dataFilename = "";
 
-    onMount(() => {
+    let writings = [];
+
+    onMount(async () => {
+        writings = await loadJSON(dataFilename);
+
         const newline = "&#10;"
         for(const writing of writings) {
             const date = new Date(writing.date)
@@ -25,9 +29,11 @@
 
 <div id="writings" bind:this={outerContainer}>
     <div class="writings-container">
-        {#each writings as writing}
+        {#each writings as writing, i}
             <WritingRow 
+                {scrollY}
                 {writing}
+                index={i}
             />
         {/each}
     </div>

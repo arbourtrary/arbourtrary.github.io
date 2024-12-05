@@ -3,12 +3,16 @@
     import { loadJSON } from "../utils/file.js";
     import { section } from "../store.js"
     import SketchRow from "./SketchRow.svelte";
-    import sketches from '../data/sketches.json';
 
     export let sectionIndex = 2;
     export let scrollY = 0;
+    export let dataFilename = "";
 
-    onMount(() => {
+    let sketches = [];
+
+    onMount(async () => {
+        sketches = await loadJSON(dataFilename);
+
         const newline = "&#10;"
         for(const sketch of sketches) {
             const date = new Date(sketch.date)
