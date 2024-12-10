@@ -1,5 +1,6 @@
 <script>
     import { onMount } from "svelte";
+    import { base } from '$app/paths'
     import { bgColor, textColor1, textColor2, textColor3, textColor4, white } from '../store.js'
     import Header from "../components/Header.svelte"
     import Progress from "../components/Progress.svelte"
@@ -49,8 +50,8 @@
     <meta name='twitter:title' content='arbourtrary' />
     <meta name='twitter:description' content='Trying out a few concepts. Writing about nature, tech, poetry, mathematics. Providing safe arbour in a darkening forest.' />
     <meta name='twitter:image:src' content='https://arbourtrary.com/images/arbourtrary.jpg' />
-    <link rel="preload" as="image" href="/images/drawing.jpg">
-    <link rel="preload" as="image" href="/images/drawing-mobile.jpg">
+    <link rel="preload" as="image" href={base + "/images/drawing.jpg"}>
+    <link rel="preload" as="image" href={base + "/images/drawing-mobile.jpg"}>
 </svelte:head>
 
 {#if shouldHydrate}
