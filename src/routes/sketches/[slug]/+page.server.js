@@ -3,7 +3,8 @@ export function entries() {
         { slug: 'coalescing-text' },
         { slug: 'polygon-or-circle' },
         { slug: 'direct-etymologies' },
-        { slug: 'original-words' }
+        { slug: 'childhood-dictionary' },
+        { slug: 'line-drawings' },
     ];
 }
 

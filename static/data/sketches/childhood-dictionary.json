@@ -1,0 +1,61 @@
+{
+	"nounoun": {
+		"pronunciation": ["nu", "nun"],
+		"definitions": [
+			"A fruit pouch snack - initially referred only to the <a href='https://www.amazon.fr/Bl%C3%A9dina-Gourdes-pur%C3%A9es-fruits-recettes/dp/B08CTK27VP?th=1' target='_blank'>Blédina</a> brand's fruit pouch that has a little nou-nours (French diminuitive for bear) on some of its packaging",
+			"Synonym for a lil' bear (<b>obsolete</b>)"
+		],
+		"partOfSpeech": "noun",
+		"alternateSpellings": [],
+		"etymology": [
+			{"language": "French", "word": "nou-nours"}
+		]
+	},
+	"māp &rarr; blobble": {
+		"pronunciation": ["mɑp", "&rarr;", "blɔ", "bəl"],
+		"definitions": [
+			"Sort of a nothing's going on at the moment, fill the silence by calling out māp and waiting for the other person to respond blobble, then laugh together"
+		],
+		"partOfSpeech": "call-response",
+		"alternateSpellings": ["maap &rarr; blauble"],
+		"etymology": []
+	},
+	"brrrm-brrrm-brrrm-baaa": {
+		"pronunciation": ["brm", "brm", "brm", "bɑ"],
+		"definitions": [
+			"Very happy sound with the expectation that papa or mama join in on the final <i>baaaaaaaa</i>"
+		],
+		"partOfSpeech": "interjection",
+		"alternateSpellings": [],
+		"etymology": []
+	},
+	"na-na-naaa-<u>Papa</u>": {
+		"pronunciation": ["nɑ", "nɑ", "nɑɑɑ", "____"],
+		"definitions": [
+			"Translates in a sing-song way to say &#8220;I love youuuu Papa\" or any other <u>fill-in-the-blank</u> person or animal or item"
+		],
+		"partOfSpeech": "sentence",
+		"alternateSpellings": [],
+		"etymology": []
+	},
+	"happybird": {
+		"pronunciation": ["hæ", "pi", "bɜrd"],
+		"definitions": [
+			"One specific little bird for a brief period of a few days in a book I can no longer remember the name of"
+		],
+		"partOfSpeech": "noun",
+		"alternateSpellings": [],
+		"etymology": [{"language": "English", "word": "hummingbird"}]
+	},
+	"pantatatoiyo": {
+		"pronunciation": ["poʊn", "tɑ", "tɑ", "tɔɪ", "joʊ"],
+		"definitions": [
+			"Pants, trousers, pantaloons, pajamas, playing with words before bedtime and finding a funny sound"
+		],
+		"partOfSpeech": "noun",
+		"alternateSpellings": ["pantatatoilo"],
+		"etymology": [
+			{"language": "French", "word": "pantalon"}
+		]
+	}
+}

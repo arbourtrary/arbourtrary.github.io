@@ -3,7 +3,7 @@
 	import { languageToColor, abbreviateLanguage } from "../utils/linguistics.js"
 	import { loadJSON } from "../utils/file.js";
 
-	const ORIGINAL_WORDS_FILEPATH = "/data/sketches/original-words.json"
+	const ORIGINAL_WORDS_FILEPATH = "/data/sketches/childhood-dictionary.json"
 
 	let data;
 	let fixedData;
@@ -39,7 +39,7 @@
 </script>
 
 
-<div class="graphic-container" id="original-words">
+<div class="graphic-container" id="childhood-dictionary">
 	{#if data}
 		<div class="entry">
 			<h2 class="word">{@html word}</h2>
@@ -98,7 +98,7 @@
 </div>
 
 <style>
-	:global(.sketch:has(#original-words)) {
+	:global(.sketch:has(#childhood-dictionary)) {
 		justify-content: start !important;
 	}
 	.graphic-container {

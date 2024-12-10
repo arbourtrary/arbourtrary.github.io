@@ -38,14 +38,25 @@ const sketches = [
   },
   {
     "date": "12/1/24",
-      "title": "Original Words", 
-      "slug": "original-words",
+      "title": "Childhood Dictionary", 
+      "slug": "childhood-dictionary",
       "description": "An ongoing collection of all the brand new words, chimeric words and otherwise original language that come from my toddlers",
       "sketch": {
-        "name": "OriginalWords"
+        "name": "ChildhoodDictionary"
       },
-      "filename": "/data/sketches/original-words.txt",
+      "filename": "/data/sketches/childhood-dictionary.txt",
       "socialImage": "https://arbourtrary.com/images/social_sketch_3_viz.jpg"
+  },
+  {
+    "date": "12/1/24",
+      "title": "Line Drawings", 
+      "slug": "line-drawings",
+      "description": "",
+      "sketch": {
+        "name": "LineDrawings"
+      },
+      "filename": "/data/sketches/line-drawings.txt",
+      "socialImage": "https://arbourtrary.com/images/social_sketch_4_viz.jpg"
   }
 ]
 

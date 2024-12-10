@@ -17,8 +17,10 @@ export function languageToColor(language) {
         'Middle English': "var(--blue)", 
         'Old English': "var(--blue)",
 
+        'Dutch': "var(--purple)", 
         'Old Norse': "var(--purple)", 
         'German': "var(--purple)", 
+
         'Anglo-Norman': "var(--indigo)"
     }
     if (language in colorMap) {
@@ -49,6 +51,8 @@ export function abbreviateLanguage(language) {
 
         'Old Norse': "Non.", 
         'German': "Ger.", 
+        'Dutch': "Nld.", 
+
         'Anglo-Norman': "Xno." 
     }
     if (language in abbreviationMap) {

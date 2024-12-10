@@ -4,7 +4,8 @@
     import CoalescingText from '../../../components/CoalescingText.svelte';
     import PolygonOrCircle from '../../../components/PolygonOrCircle.svelte';
     import DirectEtymologies from '../../../components/DirectEtymologies.svelte';
-    import OriginalWords from '../../../components/OriginalWords.svelte';
+    import ChildhoodDictionary from '../../../components/ChildhoodDictionary.svelte';
+    import LineDrawings from '../../../components/LineDrawings.svelte';
 
     export let data;
 
@@ -68,8 +69,10 @@
         <PolygonOrCircle/>
     {:else if data.sketch.name === "DirectEtymologies"}
         <DirectEtymologies/>
-    {:else if data.sketch.name === "OriginalWords"}
-        <OriginalWords/>
+    {:else if data.sketch.name === "ChildhoodDictionary"}
+        <ChildhoodDictionary/>
+    {:else if data.sketch.name === "LineDrawings"}
+        <LineDrawings/>
     {/if}
 </div>
 <div class="notes">
