@@ -49,8 +49,8 @@
     <meta name='twitter:title' content='arbourtrary' />
     <meta name='twitter:description' content='Trying out a few concepts. Writing about nature, tech, poetry, mathematics. Providing safe arbour in a darkening forest.' />
     <meta name='twitter:image:src' content='https://arbourtrary.com/images/arbourtrary.jpg' />
-    <link rel="preload" as="image" href="%sveltekit.assets%/images/drawing.jpg">
-    <link rel="preload" as="image" href="%sveltekit.assets%/images/drawing-mobile.jpg">
+    <link rel="preload" as="image" href="/images/drawing.jpg">
+    <link rel="preload" as="image" href="/images/drawing-mobile.jpg">
 </svelte:head>
 
 {#if shouldHydrate}
