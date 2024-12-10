@@ -51,7 +51,7 @@ const sketches = [
     "date": "12/1/24",
       "title": "Line Drawings", 
       "slug": "line-drawings",
-      "description": "",
+      "description": "Vectorizing and animating a handful of Wacław Szpakowski's beautiful, mazelike line drawings",
       "sketch": {
         "name": "LineDrawings"
       },
