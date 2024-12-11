@@ -495,6 +495,10 @@
         height: 300vh;
         display: block;
     }
+    img {
+        font-size: 0;
+        background: var(--bg-color);
+    }
     .about-container {
         position: sticky;
         top: 0;
