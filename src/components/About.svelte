@@ -177,7 +177,7 @@
             </div>
 
             <div class="img-container">
-                <img src="/images/drawing.jpg" height="800" width="800" alt="a large, circular primary image - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
+                <img class="drawing" src="/images/drawing.jpg" height="800" width="800" alt="a large, circular primary image - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
                 {#each masks as mask, index}
                     <img height="1000" width="1000" class="mask" style={`opacity: ${maskOpacities[index]};`} src={mask} alt="mask for image"/>
                 {/each}
@@ -202,7 +202,7 @@
                 </div>
             </div>
             <div class="img-container">
-                <img src="/images/drawing-mobile.jpg" height="500" width="500" alt="a large, circular primary image - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
+                <img class="drawing" src="/images/drawing-mobile.jpg" height="500" width="500" alt="a large, circular primary image - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
                 {#each masks as mask, index}
                     <img height="1000" width="1000" class="mask" style={`opacity: ${maskOpacities[index]};`} src={mask} alt="mask for image"/>
                 {/each}
@@ -528,6 +528,9 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+    .img-container .drawing {
+        background: var(--bg-color);
     }
     .img-container .mask {
         position: absolute;
