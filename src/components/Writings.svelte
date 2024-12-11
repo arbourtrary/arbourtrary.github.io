@@ -31,9 +31,7 @@
     <div class="writings-container">
         {#each writings as writing, i}
             <WritingRow 
-                {scrollY}
                 {writing}
-                index={i}
             />
         {/each}
     </div>

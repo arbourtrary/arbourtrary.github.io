@@ -32,6 +32,8 @@
         class="background-image"
         src={`${(innerWidth < 1000) && (innerWidth < innerHeight) ? "/images/bg_bw_portrait.jpeg" : "/images/bg_bw_landscape.jpeg"}`}
         style={`opacity: ${opacity};`}
+        width={(innerWidth < 1000) && (innerWidth < innerHeight) ? 1183 : 2145}
+        height={(innerWidth < 1000) && (innerWidth < innerHeight) ? 2145 : 1183}
         alt="background image patterned with an aperiodic monotile"
     >
     <div 
