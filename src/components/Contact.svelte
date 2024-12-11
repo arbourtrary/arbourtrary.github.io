@@ -52,6 +52,12 @@
             href="https://github.com/arbourtrary"
             target="_blank">
         </a>
+        <a
+            class="logo rss"
+            style={`pointer-events: ${pointerEvents};`}
+            href="https://arbourtrary.com/feed/rss"
+            target="_blank">
+        </a>
     </div>
 </div>
 <div id="contact"></div>
@@ -80,7 +86,7 @@
         position: fixed;
         height: 100vh;
         width: 100vw;
-        top: 0px;
+        top: 0;
         left: 0px;
         z-index: 11;
         display: flex;
@@ -89,13 +95,13 @@
         align-content: center;
     }
     .logo {
-        height: 75px;
-        width: 75px;
-        margin: 40px auto;
-        transition: all 100ms ease-in;
+        height: 60px;
+        width: 60px;
+        margin: 30px auto;
+        transition: all 200ms ease-in;
     }
     .logo:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
     .github {
         background: no-repeat center url("/images/github.png");
@@ -105,9 +111,23 @@
         background: no-repeat center url("/images/bluesky.png");
         background-size: contain;
     }
+    .rss {
+        height: 50px;
+        width: 50px;
+        background: no-repeat center url("/images/rss.png");
+        background-size: contain;
+    }
     @media screen and (max-width: 1000px) {
         .background-image {
             object-position: center;
+        }
+        .logo {
+            height: 55px;
+            width: 55px;
+        }
+        .rss {
+            height: 45px;
+            width: 45px;
         }
     }
 </style>
