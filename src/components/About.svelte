@@ -497,7 +497,6 @@
     }
     img {
         font-size: 0;
-        background: var(--bg-color);
     }
     .about-container {
         position: sticky;
