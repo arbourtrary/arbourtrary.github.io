@@ -410,12 +410,12 @@
             </a>
             <div class="description">{description}</div>
             <div class="details desktop">
-                {#if awards}
+                <!-- {#if awards}
                     <div class="detail">
                         <p class="section-subtitle">Awards</p>
                         <p class="detail-description">{@html awards}</p>
                     </div>
-                {/if}
+                {/if} -->
                 <div class="detail">
                     <p class="section-subtitle">Tags</p>
                     <p class="detail-description tags">{@html tags}</p>
@@ -621,17 +621,17 @@
     </div>
 
         <div class="details mobile">
-            {#if awards}
+<!--             {#if awards}
                 <div class="detail">
                     <p class="section-subtitle">Awards</p>
                     <p class="detail-description">{@html awardsShort}</p>
                 </div>
-            {:else}
+            {:else} -->
                 <div class="detail">
                     <p class="section-subtitle">Tags</p>
                     <p class="detail-description tags">{@html tags}</p>
                 </div>
-            {/if}
+            <!-- {/if} -->
         </div>
     </div>
 </div>
@@ -678,7 +678,7 @@
         fill-opacity: 0;
         fill: none;
         stroke: #A29B90;
-        stroke-width: 1;
+        stroke-width: 1.5;
         stroke-linecap: butt;
         stroke-linejoin: miter;
         stroke-dasharray: none;
@@ -703,7 +703,7 @@
     .platonic-gallery {
         display: flex;
         justify-content: center;
-        width: min(95vw, 1200px);
+        width: min(100%, 1200px);
         margin: 0 auto;
     }
     .background {
@@ -825,12 +825,13 @@
         }
         .details-container {
             width: 480px;
-            height: 110px;
+            min-height: 110px;
             margin: 0 auto;
+            margin-bottom: 15px;
         }
         .canvas-container {
-            width: min(80vh, 95vw, 750px);
-            height: min(80vh, 95vw, 750px);
+            width: min(60vh, 90vw, 750px);
+            height: min(60vh, 90vw, 750px);
             margin: 0 auto;
             padding: 0 0 10px 0;
         }
@@ -845,7 +846,8 @@
             width: unset !important;
         }
         .detail-description {
-            margin: 5px;
+            margin: 5px auto;
+            max-width: 480px;
         }
         .section-subtitle {
             margin: 0px auto;

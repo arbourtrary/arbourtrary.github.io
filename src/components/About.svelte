@@ -73,7 +73,6 @@
 
             // Loop through the headers
             if (prevIndex !== currentIndex) {
-                // context.clearRect(0, 0, canvas.width, canvas.height)
                 for (let i = 0; i < headerTexts.length; i++) {
                     if (window.scrollY > initialOffset) {
                         // If the current index is the same as the looped index
@@ -121,6 +120,7 @@
     $: outerContainer && (scrollY >= (outerContainer.offsetTop - offset)) && (scrollY < (outerContainer.offsetTop + outerContainer.offsetHeight - offset)) && $section !== sectionIndex && section.set(sectionIndex)
 
     $: linearGradientLine = Array.from({length: (currentIndex + 2)}, (_, i) => i + 1).map((elem) => $bgColor).join(", ")
+
 </script>
 
 <svelte:window bind:innerWidth={innerWidth}/>
@@ -177,7 +177,7 @@
             </div>
 
             <div class="img-container">
-                <img class="drawing" src="/images/drawing.jpg" height="800" width="800" alt="a large, circular primary image - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
+                <img class="drawing" src={innerWidth > 1000 ? "/images/drawing.jpg" : ""} height="800" width="800" alt="a large, circular primary image - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
                 {#each masks as mask, index}
                     <img height="1000" width="1000" class="mask" style={`opacity: ${maskOpacities[index]};`} src={mask} alt="mask for image"/>
                 {/each}
@@ -202,7 +202,7 @@
                 </div>
             </div>
             <div class="img-container">
-                <img class="drawing" src="/images/drawing-mobile.jpg" height="500" width="500" alt="a large, circular primary image - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
+                <img class="drawing" src={innerWidth <= 1000 ? "/images/drawing-mobile.jpg" : ""} height="500" width="500" alt="a large, circular primary image - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
                 {#each masks as mask, index}
                     <img height="1000" width="1000" class="mask" style={`opacity: ${maskOpacities[index]};`} src={mask} alt="mask for image"/>
                 {/each}
@@ -308,7 +308,7 @@
         display: inline-block;
         letter-spacing: .1px;
         font-family: var(--serif), sans-serif, sans-serif;
-        font-size: 45px;
+        font-size: min(45px, 11vw);
         text-align: left;
         font-weight: 600;
         user-select: none;
@@ -636,7 +636,7 @@
         .about-interests {
             padding-top: 0px;
             margin: 0px auto;
-            max-width: 340px;
+            max-width: 400px;
             height: 120px;
         }
         .img-container {

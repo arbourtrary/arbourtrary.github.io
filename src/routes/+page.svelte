@@ -50,8 +50,6 @@
     <meta name='twitter:title' content='arbourtrary' />
     <meta name='twitter:description' content='Trying out a few concepts. Writing about nature, tech, poetry, mathematics. Providing safe arbour in a darkening forest.' />
     <meta name='twitter:image:src' content='https://arbourtrary.com/images/arbourtrary.jpg' />
-    <link rel="preload" as="image" href="https://arbourtrary.com/images/drawing.jpg">
-    <link rel="preload" as="image" href="https://arbourtrary.com/images/drawing-mobile.jpg">
 </svelte:head>
 
 {#if shouldHydrate}
@@ -65,21 +63,25 @@
         {scrollY}
         dataFilename={'/data/about.json'}
     />
+    <hr>
     <Projects
         sectionIndex={1}
         dataFilename={'/data/projects.json'}
         {scrollY}
     />
+    <hr>
     <Writings
         sectionIndex={2}
         dataFilename={'/data/writings.json'}
         {scrollY}
     />
+    <hr>
     <Sketches
         sectionIndex={3}
         dataFilename={'/data/sketches.json'}
         {scrollY}
     />
+    <hr>
     <Contact
         sectionIndex={4}
         {scrollY}
@@ -89,8 +91,18 @@
 
 <style>
     :global(#about), :global(#projects), :global(#writings), :global(#sketches) {
-        border-bottom: 1px solid var(--color-3) !important;
         width: min(90vw, 1100px) !important;
         margin: 0 auto !important;
+    }
+    hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        width: min(90vw, 1100px) !important;
+        border-top: 1px solid var(--color-3);
+        margin: 25px auto !important;
+        padding: 0;
+        border-radius: 50%;
+        opacity: 0.9;
     }
 </style>
