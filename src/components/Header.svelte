@@ -29,7 +29,7 @@
     <div class="donate">
         <div class="logo">
             <a href="https://ko-fi.com/arbourtrary" target="_blank">
-            <img src="https://arbourtrary.com/images/kofi.png" alt="Ko-Fi donation logo">
+            <img src="https://arbourtrary.com/images/kofi.png" height="67" width="100" alt="Ko-Fi donation logo">
         </div>
     </div>
 </div>
@@ -137,7 +137,7 @@
         }
         .donate .logo {
             height: 15px;
-            width: 24px;
+            width: 22.5px;
         }
         .home svg {
             height: 17px;
