@@ -29,7 +29,7 @@
     <div class="donate">
         <div class="logo">
             <a href="https://ko-fi.com/arbourtrary" target="_blank">
-            <img src="https://arbourtrary.com/images/kofi.png">
+            <img src="https://arbourtrary.com/images/kofi.png" alt="Ko-Fi donation logo">
         </div>
     </div>
 </div>
