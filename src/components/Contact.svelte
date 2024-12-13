@@ -117,7 +117,6 @@
         width: 50px;
         background: no-repeat center url("/images/rss.png");
         background-size: contain;
-        display: none;
     }
     @media screen and (max-width: 1000px) {
         .background-image {
