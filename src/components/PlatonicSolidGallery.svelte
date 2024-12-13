@@ -438,7 +438,7 @@
                     height="100%"
                     viewBox="0 0 527.96284 261.57872"
                     version="1.1"
-                    id="svg5"
+                    
                     xml:space="preserve"
                     xmlns="http://www.w3.org/2000/svg"
                     xmlns:svg="http://www.w3.org/2000/svg"
