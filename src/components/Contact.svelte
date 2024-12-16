@@ -42,18 +42,21 @@
     >
         <a
             class="logo bluesky"
+            aria-label="arbourtrary link to bluesky"
             style={`pointer-events: ${pointerEvents};`}
             href="https://bsky.app/profile/arbourtrary.com"
             target="_blank">
         </a>
         <a
             class="logo github"
+            aria-label="arbourtrary link to github"
             style={`pointer-events: ${pointerEvents};`}
             href="https://github.com/arbourtrary"
             target="_blank">
         </a>
         <a
             class="logo rss"
+            aria-label="arbourtrary link to rss feed"
             style={`pointer-events: ${pointerEvents};`}
             href="https://arbourtrary.com/feed/rss"
             target="_blank">
