@@ -21,6 +21,7 @@
 </script>
 <svelte:head>
     <title>{data.title}</title>
+    <link rel='canonical' href={`https://arbourtrary.com/writings/${data.slug}`} />
     <meta name='description' content={data.description} />        
     <meta property='og:title' content={data.title} />
     <meta property='og:site_name' content='arbourtrary' />

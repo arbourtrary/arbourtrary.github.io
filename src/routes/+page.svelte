@@ -35,6 +35,8 @@
 
 <svelte:head>
     <title>ɑrbərtrɛri</title>
+    <link rel='canonical' href='https://arbourtrary.com' />
+
     <meta name='description' content='Trying out a couple concepts. Writing about nature, tech, poetry, mathematics. Providing safe arbour in a darkening forest.' />
         
     <meta property='og:title' content='arbourtrary' />
