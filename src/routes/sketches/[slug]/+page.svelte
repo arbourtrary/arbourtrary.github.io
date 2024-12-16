@@ -130,7 +130,7 @@
         position: relative;
     }
     .header {
-        height: 40px;
+        height: 41px;
         margin: 0 0 10px 0;
         width: 100%;
         display: flex;
@@ -140,15 +140,15 @@
         background: var(--bg-color);
         justify-content: center;
         z-index: 99999999;
-        padding: 5px 0;
+        padding: 10px;
+        box-sizing: border-box;
         border-bottom:  0.5px solid var(--color-2);
     }
     .donate {
-        position: absolute;
-        right: 10px;
-        height: 40px;
+        position: relative;
         display: flex;
         align-items: center;  
+        padding-right: 10px;
     }
     .donate .logo {
         height: 18px;
@@ -166,11 +166,10 @@
         filter: saturate(100%);
     }
     .home {
-        position: absolute;
-        left: 10px;
-        height: 40px;
+        position: relative;
         display: flex;
         align-items: center;
+        padding-left: 10px;
     }
     .home svg {
         height: 20px;
@@ -185,10 +184,12 @@
     .image-container {
         position: relative;
         height: 100%;
-        width: auto;
         margin: auto -6px;
         display: flex;
         align-items: center;
+        flex: 1;
+        width: 100%;
+        justify-content: center;
     }
     .image-container img {
         height: 100%;
