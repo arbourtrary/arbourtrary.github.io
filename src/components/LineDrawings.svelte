@@ -88,11 +88,17 @@
 			"var(--indigo)",
 			"var(--purple)"
 		]
-		const lowpoint = 70
-    	const midpoint = 90;
-    	const highpoint = 110;
+			const lowpoint = 117
+    	const highpoint = 122.5;
 
-    	const pct = (angle - lowpoint) / (highpoint - lowpoint);
+    	let pct = (angle - lowpoint) / (highpoint - lowpoint);
+    	// clamp
+    	if (pct > 1) {
+    		pct = 1
+    	}
+    	if (pct < 0) {
+    		pct = 0;
+    	}
     	const index = Math.round(pct * (colorArray.length - 1));
     	return colorArray[index];
 	}
@@ -129,13 +135,7 @@
 
 
 <div class="graphic-container" id="line-drawings">
-	
-
-	<!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 	<div class="line-drawing" bind:this={drawingDiv}></div>
-
 	<div class="button-container">
 		<button class="icon" on:click={() => setRandomDrawingWithoutReplacement()}>
 			<svg xmlns="http://www.w3.org/2000/svg" height="22px" fill="currentColor"viewBox="0 0 16 16">
