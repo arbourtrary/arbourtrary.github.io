@@ -5,3 +5,4 @@
 <p><b>Description</b>: Wanted to make something slow and peaceful, developing on the page. Each animated drawing is a single, uninterrupted line. And all the drawings are vectorized versions of <b>Wacław Szpakowski's</b> original works. I kinda gave up (for now) on a programmatic way to trace his lines that maintained the sharp corners and straight lines. I tried some out-of-the-box Python skeletonization libraries, medial axis transforms, etc but nothing quite got it. So what remains are squiggly vectors derived from <a href="https://inkscape.org/" target="_blank">Inkscape's</a> &#8220;Bitmap Trace - Centerline" feature.</p>
 <p><b>Sources</b></p>
 <p class="indent"><a href="https://svgartista.net/" target="_blank">SVG Artista</a> - very cool!</p>
+<p class="indent"><a href="https://devina.io/svg-minifier" target="_blank">Devina</a> - SVG minifier</p>
