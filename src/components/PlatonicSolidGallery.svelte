@@ -424,7 +424,7 @@
         </div>
         <div class="canvas-container">
                 <div class="canvas"> 
-                <a href={url} target="_blank" on:mouseenter={() => hoverScale = 5.2 } on:mouseleave={() => hoverScale = 5 }>
+                <a href={url} target="_blank" aria-label={`project link to ${title}`} on:mouseenter={() => hoverScale = 5.2 } on:mouseleave={() => hoverScale = 5 }>
                     <div class="hover-circle"></div>
                 </a>
 
