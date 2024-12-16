@@ -28,17 +28,18 @@
 <svelte:window bind:innerWidth={innerWidth} bind:innerHeight={innerHeight}/>
 
 <div class="background" bind:this={outerContainer}>
-	<img
+	
+    <div 
+        class="background-contacts"
+        style={`opacity: 1;`}
+    >
+    <img
         class="background-image"
         src={`${(innerWidth < 1000) && (innerWidth < innerHeight) ? "/images/bg_bw_portrait.jpeg" : "/images/bg_bw_landscape.jpeg"}`}
         style={`opacity: ${opacity};`}
         width={(innerWidth < 1000) && (innerWidth < innerHeight) ? 1183 : 2145}
         height={(innerWidth < 1000) && (innerWidth < innerHeight) ? 2145 : 1183}
         alt="background image patterned with an aperiodic monotile"
-    >
-    <div 
-        class="background-contacts"
-        style={`opacity: ${Math.pow(percent, 3)};`}
     >
         <a
             class="logo bluesky"
@@ -69,13 +70,13 @@
         height: 0px;
     }
     .background {
-    	height: 150vh;
+        height: 100vh;
     	position: relative;
         pointer-events: none;
     }
     .background-image {
 		transition: opacity 250ms linear;
-        position: fixed;
+        position: absolute;
 		height: 100vh;
 		width: 100vw;
 		top: 0px;
@@ -87,7 +88,6 @@
         mix-blend-mode: multiply;
     }
     .background-contacts {
-        position: fixed;
         height: 100vh;
         width: 100vw;
         top: 0;
