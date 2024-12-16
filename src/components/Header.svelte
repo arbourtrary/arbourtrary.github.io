@@ -46,7 +46,8 @@
         justify-content: center;
         background: var(--bg-color);
         z-index: 100;
-        padding: 15px 0;
+        padding: 10px;
+        box-sizing: border-box;
         border-bottom: 0.5px solid var(--color-2);
     }
     .title {
@@ -126,7 +127,6 @@
             margin: 0px 20px;
         }
         .header {
-            padding: 10px 0;
             border-bottom: none;
         }
     }
