@@ -43,25 +43,31 @@
         loading="lazy"
     >
         <a
-            class="logo bluesky"
+            class="logo"
             aria-label="arbourtrary link to bluesky"
             style={`pointer-events: ${pointerEvents};`}
             href="https://bsky.app/profile/arbourtrary.com"
-            target="_blank">
+            target="_blank"
+        >
+            <img class="bluesky" width="100" height="90" loading="lazy" src="/images/bluesky.png" alt="bluesky logo"/>
         </a>
         <a
             class="logo github"
             aria-label="arbourtrary link to github"
             style={`pointer-events: ${pointerEvents};`}
             href="https://github.com/arbourtrary"
-            target="_blank">
+            target="_blank"
+        >
+            <img class="github" width="100" height="100" loading="lazy" src="/images/github.png" alt="github logo"/>
         </a>
         <a
-            class="logo rss"
+            class="logo"
             aria-label="arbourtrary link to rss feed"
             style={`pointer-events: ${pointerEvents};`}
             href="https://arbourtrary.com/feed/rss"
-            target="_blank">
+            target="_blank"
+        >
+            <img class="rss" width="100" height="100" loading="lazy" src="/images/rss.png" alt="rss logo">
         </a>
     </div>
 </div>
@@ -104,23 +110,22 @@
         width: 60px;
         margin: 30px auto;
         transition: all 200ms ease-in;
+        display: flex;
+        justify-content: center;
     }
     .logo:hover {
         transform: scale(1.1);
     }
-    .github {
-        background: no-repeat center url("/images/github.png");
-        background-size: contain;
+    .logo img {
+        height: 100%;
+        width: 100%;
     }
     .bluesky {
-        background: no-repeat center url("/images/bluesky.png");
-        background-size: contain;
+        height: 90% !important;
     }
     .rss {
-        height: 50px;
-        width: 50px;
-        background: no-repeat center url("/images/rss.png");
-        background-size: contain;
+        height: 45px !important;
+        width: 45px !important;
     }
     @media screen and (max-width: 1000px) {
         .background-image {
@@ -131,8 +136,8 @@
             width: 55px;
         }
         .rss {
-            height: 45px;
-            width: 45px;
+            height: 40px !important;
+            width: 40px !important;
         }
     }
 </style>
