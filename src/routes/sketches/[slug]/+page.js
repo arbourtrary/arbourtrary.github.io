@@ -57,6 +57,17 @@ const sketches = [
       },
       "filename": "/data/sketches/line-drawings.txt",
       "socialImage": "https://arbourtrary.com/images/social_sketch_4_viz.jpg"
+  },
+  {
+    "date": "12/31/24",
+      "title": "Image Sampling", 
+      "slug": "image-sampling",
+      "description": "Recreating an image processing effect from the artist Kensuke Koike, finding beauty in the approximate",
+      "sketch": {
+        "name": "ImageSampling"
+      },
+      "filename": "/data/sketches/image-sampling.txt",
+      "socialImage": "https://arbourtrary.com/images/social_sketch_5_viz.jpg"
   }
 ]
 

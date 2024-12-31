@@ -17,6 +17,6 @@
 <span style="margin-left: 0px; color: var(--purple)">German</span>
 <span style="margin-left: 0px; color: var(--indigo)"> Anglo-Norman</span>
 </p>
-    <p><b>Sources</b></p>
+    <p style="margin-bottom: 10px;"><b>Sources</b></p>
     <p class="indent"><a href="http://etym.org/" target="_blank">Etymological Wordnet</a>- dataset </p>
     <p class="indent"><a href="https://ety-python.readthedocs.io/en/latest/" target="_blank">ety-python</a>- library to access data</p>

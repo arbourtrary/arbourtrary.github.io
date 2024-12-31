@@ -6,6 +6,7 @@
     import DirectEtymologies from '../../../components/DirectEtymologies.svelte';
     import ChildhoodDictionary from '../../../components/ChildhoodDictionary.svelte';
     import LineDrawings from '../../../components/LineDrawings.svelte';
+    import ImageSampling from '../../../components/ImageSampling.svelte';
 
     export let data;
 
@@ -74,6 +75,8 @@
         <ChildhoodDictionary/>
     {:else if data.sketch.name === "LineDrawings"}
         <LineDrawings/>
+    {:else if data.sketch.name === "ImageSampling"}
+        <ImageSampling/>
     {/if}
 </div>
 <div class="notes">
@@ -83,7 +86,7 @@
 <style>
     :global(:root) {
 
-        --header-height: 60px;
+        --header-height: 41px;
     }
     :global(.notes) {
         max-width: 600px;

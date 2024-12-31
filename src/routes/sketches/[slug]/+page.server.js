@@ -5,6 +5,7 @@ export function entries() {
         { slug: 'direct-etymologies' },
         { slug: 'childhood-dictionary' },
         { slug: 'line-drawings' },
+        { slug: 'image-sampling' }
     ];
 }
 
