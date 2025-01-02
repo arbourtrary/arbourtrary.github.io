@@ -27,7 +27,8 @@
     {url: `${imageFolder}/bird.jpg`, name: "Le petit Rolle Violet", artist: "Jacques Barraband", year: "1806", link: "http://digitalcollections.nypl.org/items/510d47d9-71cc-a3d9-e040-e00a18064a99"},
     {url: `${imageFolder}/rockwell.jpg`, name: "Triple Self-Portrait", artist: "Norman Rockwell", year: "1960", link: "https://en.wikipedia.org/wiki/Triple_Self-Portrait"},
     {url: `${imageFolder}/basquiat.jpg`, name: "Sugar", artist: "Jean-Michel Basquiat", year: "1982", link: "https://elialutz.com/le-mythe-des-artistes-maudits-de-baudelaire-a-basquiat/"},
-    {url: `${imageFolder}/escher.jpg`, name: "Hand with Reflecting Sphere", artist: "M.C. Escher", year: "1935", link: "https://www.escherinhetpaleis.nl/showpiece/hand-with-reflecting-sphere/?lang=en#"}
+    {url: `${imageFolder}/escher.jpg`, name: "Hand with Reflecting Sphere", artist: "M.C. Escher", year: "1935", link: "https://www.escherinhetpaleis.nl/showpiece/hand-with-reflecting-sphere/?lang=en#"},
+    {url: `${imageFolder}/lilies.jpg`, name: "Le Bassin aux nymphéas", artist: "Claude Monet", year: "1899", link: "https://www.metmuseum.org/art/collection/search/437127"}
   ]
 
   onMount(() => {
