@@ -67,6 +67,9 @@
         margin-left: 10px;
         border-bottom: 1px solid #00000000;
     }
+    .droplet img {
+        color: transparent;
+    }
     @media screen and (max-width: 700px) {
         /*.date {
             display: none;
