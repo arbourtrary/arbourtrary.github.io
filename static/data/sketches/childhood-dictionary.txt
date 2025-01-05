@@ -2,7 +2,7 @@
 
 <p><b>Inspiration</b>: My little 1-year-old walking around, discovering brand new sounds and words and formulations - really cool to transcribe some of her original words : )</p>
 
-<p><b>Description</b>: There are <a href="https://people.howstuffworks.com/how-many-languages-are-there.htm" target="_blank">thousands</a> of known languages out there which is incredible. Watching my kids learn to speak, it's fun to imagine the literally billions of fleeting dialects that children all around the world express as they discover language. So for now, I'm trying to transcribe these novel words / sounds and just encourage my kids to be playful and inventive with words.</p>
+<p><b>Description</b>: There are <a href="https://people.howstuffworks.com/how-many-languages-are-there.htm" target="_blank">thousands</a> of known languages out there which is incredible. Watching my kids learn to speak, it's fun to imagine the literally billions of fleeting dialects that children all around the world express as they discover language. So for now, I'm trying to capture these novel words / sounds and just encourage my kids to be playful and inventive with words.</p>
 
     <p><b>Languages</b></p> 
 <p class="indent" style="color: var(--orange)">French &rarr; Fre.</p>

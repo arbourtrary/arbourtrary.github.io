@@ -155,7 +155,8 @@
 		font-weight: normal;
 	}
 	.entry .pronunciation {
-		font-size: min(4.5vw, 18px);
+		font-size: min(4.25vw, 17px);
+		font-family: "Vollkorn";
 	}
 	.entry .divider {
 		color: var(--color-3);
