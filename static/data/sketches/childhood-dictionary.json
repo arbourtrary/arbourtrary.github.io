@@ -57,5 +57,94 @@
 		"etymology": [
 			{"language": "French", "word": "pantalon"}
 		]
+	},
+	"nano": {
+		"pronunciation": ["nɑ", "noʊ"],
+		"definitions": [
+			"All kinds of dinosaurs: pterodactyls, t-rexes, stegasauri (?), the occasional dragon, etc."
+		],
+		"partOfSpeech": "noun",
+		"alternateSpellings": [],
+		"etymology": [
+			{"language": "English", "word": "dino"}
+		]
+	},
+	"scoopy": {
+		"pronunciation": ["sku", "pi"],
+		"definitions": [
+			"Papa scooping up the little baby, sitting on the ground, then rocking back (scoooooop) and forward (yyyyyyyy)"
+		],
+		"partOfSpeech": "noun",
+		"alternateSpellings": ["scoooooop-yyyyyyyy"],
+		"etymology": [
+			{"language": "English", "word": "scoop"}
+		]
+	},
+	"<span class='apostrophe'>'</span>apopo": {
+		"pronunciation": ["æ", "poʊ", "poʊ"],
+		"definitions": [
+			"A pineapple, in particular a cool, Italian <a href='https://en.clementoni.com/products/fruit-puzzle' target='_blank'>puzzle toy</a>, but it also applies to the real, spiky, delicious fruit"
+		],
+		"partOfSpeech": "noun",
+		"alternateSpellings": [],
+		"etymology": [
+			{"language": "Tahitian", "word": "painapo"}
+		]
+	},
+	"<u>hibou</u><span class='apostrophe'>'</span>a": {
+		"pronunciation": ["i", "bu", "ɑ"],
+		"definitions": [
+			"A playful, formulaic suffix that can add an <b>-ah</b> sound to the end of a bunch of <u>fill-in-the-blank</u> words. Kind of a dimunitive, cute form of speech"
+		],
+		"partOfSpeech": "formulaic",
+		"alternateSpellings": ["nano<span class='apostrophe'>'</span>a", "mama<span class='apostrophe'>'</span>a"],
+		"etymology": [
+			{"language": "Tahitian", "word": "<span class='apostrophe'>'</span>a"}
+		]
+	},
+	"scarabéebaball": {
+		"pronunciation": ["skɑʁ", "ɑ", "beɪ", "bɔ", "bɔl"],
+		"definitions": [
+			"A basketball - a chimeric word, my little one learned the French scarabée (beetle) close to learning the English basketball"
+		],
+		"partOfSpeech": "chimera",
+		"alternateSpellings": [],
+		"etymology": [
+			{"language": "French", "word": "scarabée"},
+			{"language": "English", "word": "basketball"}
+		]
+	},
+	"wawoota": {
+		"pronunciation": ["wɑ", "wut", "ɑ"],
+		"definitions": [
+			"Really fun way to bypass the difficult, guttural <a href='https://en.wikipedia.org/wiki/Rhotic_consonant' target='_blank'>rhotic</a> in the French  word for yogurt"
+		],
+		"partOfSpeech": "noun",
+		"alternateSpellings": [],
+		"etymology": [
+			{"language": "French", "word": "yaourt"}
+		]
+	},
+	"pilu": {
+		"pronunciation": ["pi", "lu"],
+		"definitions": [
+			"Workmanlike acknowledgment, kind of a &lsquo;gotta work hard to pay the bills' vibe, repeated back and forth a couple times. Usually used when helping me clean up her high chair."
+		],
+		"partOfSpeech": "noun",
+		"alternateSpellings": ["pilou"],
+		"etymology": [
+			{"language": "Unknown", "word": "???"}
+		]
+	},
+	"aap": {
+		"pronunciation": ["ɑp"],
+		"definitions": [
+			"Noise indicating to herself and everyone around that she's &lsquo;about to take a big bite' of her food"
+		],
+		"partOfSpeech": "interjection",
+		"alternateSpellings": ["pilou"],
+		"etymology": [
+			{"language": "Unknown", "word": "???"}
+		]
 	}
 }

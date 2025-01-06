@@ -76,7 +76,7 @@
 			{/if}
 			{#if entry.etymology.length}
 				<p class="etymology">
-					<b><i>Etymology</i></b>:&nbsp;
+					<b><i>Ety.</i></b>:&nbsp;
 					{#each entry.etymology as item, index}	
 						{#if index > 0}
 							<span class="divider" style="color: var(--color-3);">&nbsp;&nbsp;|&nbsp;</span>
@@ -100,6 +100,9 @@
 <style>
 	:global(.sketch:has(#childhood-dictionary)) {
 		justify-content: start !important;
+	}
+	:global(.apostrophe) {
+		font-family: "Vollkorn" !important;
 	}
 	.graphic-container {
 		margin: 0 auto;
