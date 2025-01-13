@@ -119,13 +119,19 @@
 	}
 	.peakscape h2 {
 		text-align: center;
-		font-size: 30px;
+		font-size: min(28px, 5vw);
 		margin-top: 25px;
 		margin-bottom: 10px;
 	}
 	.peakscape h3 {
 		text-align: center;
-		font-size: 14px;
+		font-size: min(14px, 2.5vw);
 		margin-top: 0px;
+	}
+	@media only screen and (max-width: 600px) {
+		.peakscape h2 {
+			margin-top: 15px;
+			margin-bottom: 5px;
+		}
 	}
 </style>
