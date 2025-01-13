@@ -73,7 +73,7 @@ const sketches = [
     "date": "1/28/25",
       "title": "Island Peakscapes", 
       "slug": "island-peakscapes",
-      "description": "Taking inspiration from the Chaney Swiney's peakscapes and creating beautiful gradients of some of my favorite islands",
+      "description": "Taking inspiration from Chaney Swiney's peakscapes and creating beautiful gradients of some of my favorite islands",
       "sketch": {
         "name": "IslandPeakscapes"
       },
