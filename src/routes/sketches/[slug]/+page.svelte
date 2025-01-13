@@ -7,6 +7,7 @@
     import ChildhoodDictionary from '../../../components/ChildhoodDictionary.svelte';
     import LineDrawings from '../../../components/LineDrawings.svelte';
     import ImageSampling from '../../../components/ImageSampling.svelte';
+    import IslandPeakscapes from '../../../components/IslandPeakscapes.svelte';
 
     export let data;
 
@@ -77,6 +78,8 @@
         <LineDrawings/>
     {:else if data.sketch.name === "ImageSampling"}
         <ImageSampling/>
+    {:else if data.sketch.name === "IslandPeakscapes"}
+        <IslandPeakscapes/>
     {/if}
 </div>
 <div class="notes">

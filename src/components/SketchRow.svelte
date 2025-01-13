@@ -42,10 +42,10 @@
         return rand();
     }
     
-    const numCircles = 14 + Math.round(randomNumber(`circles ${sketch.title}`)) * 3;
+    const numCircles = 13 + Math.round(randomNumber(`circles ${sketch.title}`)) * 3;
     const circleSizes = [];
     for (let i = 0; i < numCircles; i++) {
-        circleSizes.push(3 + randomNumber(`${i} ${sketch.title}`) * 15)
+        circleSizes.push(2 + randomNumber(`${i} ${sketch.title}`) * 15)
     }
 
     const colors = [

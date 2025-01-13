@@ -68,6 +68,17 @@ const sketches = [
       },
       "filename": "/data/sketches/image-sampling.txt",
       "socialImage": "https://arbourtrary.com/images/social_sketch_5_viz.jpg"
+  },
+  {
+    "date": "1/28/25",
+      "title": "Dynamic Peakscapes", 
+      "slug": "island-peakscapes",
+      "description": "",
+      "sketch": {
+        "name": "IslandPeakscapes"
+      },
+      "filename": "/data/sketches/island-peakscapes.txt",
+      "socialImage": "https://arbourtrary.com/images/social_sketch_6_viz.jpg"
   }
 ]
 
