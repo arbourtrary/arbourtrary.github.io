@@ -851,7 +851,6 @@
             max-width: 100%;
         }
         .platonic-gallery {
-            width: min(95vw, 500px) !important;
             margin: 0 auto;
         }
         .platonic-gallery canvas {
