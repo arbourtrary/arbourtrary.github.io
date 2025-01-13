@@ -71,7 +71,7 @@ const sketches = [
   },
   {
     "date": "1/28/25",
-      "title": "Dynamic Peakscapes", 
+      "title": "Island Peakscapes", 
       "slug": "island-peakscapes",
       "description": "",
       "sketch": {
