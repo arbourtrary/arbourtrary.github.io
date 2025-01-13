@@ -859,7 +859,7 @@
         }
         .detail-description {
             margin: 5px 0;
-            max-width: 480px;
+            max-width: 350px;
         }
         .section-subtitle {
             margin: 0px auto;
