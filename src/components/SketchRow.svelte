@@ -45,7 +45,7 @@
     const numCircles = 13 + Math.round(randomNumber(`circles ${sketch.title}`)) * 3;
     const circleSizes = [];
     for (let i = 0; i < numCircles; i++) {
-        circleSizes.push(2 + randomNumber(`${i} ${sketch.title}`) * 15)
+        circleSizes.push(2 + randomNumber(`${i} ${sketch.title}`) * 12)
     }
 
     const colors = [
@@ -63,6 +63,8 @@
 <a href={`/sketches/${sketch.slug}`}>
     <div bind:this={row} class="row">
         <!-- <div class="date">{@html sketch.date}</div> -->
+        <div class="title">{sketch.title}</div>
+        <div class="connector"></div>
         <div class="droplet">
             {#each circleSizes as circleSize, i}
                 <div class="circle" style={`
@@ -78,7 +80,6 @@
                 `}></div>
             {/each}
         </div>
-        <div class="title">{sketch.title}</div>
     </div>
 </a>
 
@@ -97,18 +98,27 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
+        align-items: center;
         color: var(--color-1);
     }
     .row:hover {
         opacity: 1 !important;
         cursor: pointer;
     }
-    .row:hover .title {
-        border-bottom: 1px solid var(--black) !important;
-    }
     .droplet {
         filter: brightness(1.05);
         transition: all 200ms linear;
+    }
+    .connector {
+        width: 100%;
+        flex: 1;
+        height: 1px;
+        opacity: 0.4;
+        background: var(--color-3);
+        margin: 0 10px;
+    }
+    .row:hover .connector {
+        opacity: 1;
     }
     .row:hover .droplet {
         filter: brightness(0.95);
@@ -128,8 +138,8 @@
         margin-right: 10px;
     }*/
     .droplet {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         filter: brightness(1.05);
         position: relative;
     }
@@ -137,8 +147,6 @@
         font-family: var(--serif);
         font-size: 24px;
         margin: auto 0;
-        margin-left: 10px;
-        border-bottom: 1px solid #00000000;
         background: var(--bg-color);
         position: relative;
     }
@@ -147,8 +155,8 @@
             display: none;
         }*/
         .droplet {
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
         }
         .title {
             font-size: 22px;

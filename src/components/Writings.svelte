@@ -29,6 +29,7 @@
 
 <div id="writings" bind:this={outerContainer}>
     <div class="writings-container">
+        <h2>W R I T I N G S</h2>
         {#each writings as writing, i}
             <WritingRow 
                 {writing}
@@ -45,13 +46,28 @@
         flex-direction: row;
         margin: auto 0;
         justify-content: center;
+        padding-top: 60px!important;
+        margin-top: 60px !important;
     }
     .writings-container {
         width: min(95vw, 500px);
         display: flex;
         flex-direction: column;
         margin: auto;
-        min-height: 100vh;
         justify-content: center;
+    }
+    h2 {
+        padding-bottom: 3px;
+        width: fit-content;
+        margin-left: 10px;
+        color: var(--color-2);
+        font-family: "Vollkorn";
+        font-size: 16px;
+    }
+    @media only screen and (max-width: 600px) {
+        #writings {
+            padding-top: 45px!important;
+            margin-top: 15px !important;
+        }
     }
 </style>

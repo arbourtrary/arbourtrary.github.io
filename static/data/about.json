@@ -2,10 +2,10 @@
     {
         "header": "Creative Developer",
         "interests": [
+            "genuine human intelligence",
             "visual explainers",
             "mapping",
-            "threeJS",
-            "genuine human intelligence"
+            "threeJS"
         ],
         "inspirations": [
             "Immersive Garden",
@@ -28,8 +28,7 @@
         "inspirations": [
             "Elemental Excelerator",
             "Carbon Lighthouse",
-            "Work on Climate",
-            "Pachama"
+            "Work on Climate"
         ],
         "mask": "/images/mask-green.svg",
         "color": "#AAC4A2"
@@ -65,10 +64,10 @@
         ],
         "inspirations": [
             "Jorge Luis Borges",
-            "Langston Hughes",
-            "Mary Oliver",
-            "Walt Whitman",
             "Tim Seibles",
+            "Mary Oliver",
+            "Langston Hughes",
+            "Walt Whitman",
             "Stephen Dunn"
         ],
         "mask": "/images/mask-purple.svg",

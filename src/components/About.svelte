@@ -210,10 +210,10 @@
             <div class="about-interests">
                 <div
                     style={`
-                        padding-bottom: ${currentIndex >= 0 ? "0px" : '5px'};
+                        padding-bottom: ${currentIndex >= 0 ? "5px" : '5px'};
                         color: ${currentIndex >= 0 ? allColors[currentIndex] : 'var(--color-1)'};
                         font-weight: ${currentIndex >= 0 ? '900' : '300'};
-                        font-size: ${currentIndex >= 0 ? '28px' : '16px'};
+                        font-size: ${currentIndex >= 0 ? '24px' : '16px'};
                         ${currentIndex >= 0 ? "" : "margin: 15px auto 0px auto; border: none; text-transform: none; letter-spacing: normal;"}
                     `}
                     class="section-subtitle center">{currentIndex >= 0 ? headerTexts[currentIndex] : "Scroll to explore"}
@@ -507,6 +507,7 @@
         flex-direction: row;
         margin: auto 0;
         justify-content: center;
+        align-items: center;
     }
     .img-container {
         height: min(80vh, 85vw);
@@ -631,26 +632,34 @@
         .about-header {
             font-size: 22px;
             margin: 0;
-            text-align: center;
+            text-align: left;
         }
         .about-interests {
             padding-top: 0px;
-            margin: 0px auto;
-            max-width: 400px;
+            margin: 10px;
+            max-width: 220px;
             height: 120px;
         }
         .img-container {
             margin: 0 auto;
-            height: min(80vh, 90vw, 600px);
-            width: min(80vh, 90vw, 600px);
+            width: min(95vw, 500px);
+            height: min(95vw, 500px);
         }
         .center {
             text-align: center !important;
         }
-        .section-subtitle {
-            padding: 0px 5px 0px 5px;
+        .about-details {
+            text-align: left;
+            width: 100%;
+        }
+        .section-description {
             font-size: 16px;
-            margin: 0px auto 7px auto;
+        }
+        .section-subtitle {
+            padding: 0px;
+            padding-bottom: 10px;
+            font-size: 16px;
+            margin: 0px;
         }
         .section-column-title {
             margin:  0px;

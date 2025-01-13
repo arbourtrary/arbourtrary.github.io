@@ -66,21 +66,20 @@
         dataFilename={'/data/about.json'}
     />
     <hr>
-    <Projects
-        sectionIndex={1}
-        dataFilename={'/data/projects.json'}
-        {scrollY}
-    />
-    <hr>
     <Writings
         sectionIndex={2}
         dataFilename={'/data/writings.json'}
         {scrollY}
     />
-    <hr>
     <Sketches
         sectionIndex={3}
         dataFilename={'/data/sketches.json'}
+        {scrollY}
+    />
+    <hr>
+    <Projects
+        sectionIndex={1}
+        dataFilename={'/data/projects.json'}
         {scrollY}
     />
     <hr>

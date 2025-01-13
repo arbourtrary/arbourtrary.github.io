@@ -78,8 +78,8 @@
         <LineDrawings/>
     {:else if data.sketch.name === "ImageSampling"}
         <ImageSampling/>
-    {:else if data.sketch.name === "IslandPeakscapes"}
-        <IslandPeakscapes/>
+    {:else if data.sketch.name === "DynamicPeakscapes"}
+        <ImageSampling/>
     {/if}
 </div>
 <div class="notes">

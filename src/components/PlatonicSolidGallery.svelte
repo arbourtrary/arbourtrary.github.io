@@ -400,7 +400,8 @@
     <div class="foreground" style={`height: ${galleryHeight}px`} bind:this={foreground}></div>
 
     <div class="background">
-        <div class="details-container">            
+        <div class="details-container">
+            <h2>P R O J E C T S</h2>            
             <a href={url} target="_blank" aria-label={`project link to ${title}`}>
                 <div class="title"><span class="title-text">{@html title}</span>
                     <div class="external-link">
@@ -659,6 +660,13 @@
         color: var(--black);
         border-bottom: 1px solid var(--black);
     }
+    h2 {
+        padding-bottom: 3px;
+        width: fit-content;
+        color: var(--color-2);
+        font-family: "Vollkorn";
+        font-size: 16px;
+    }
     .unraveled-container {
         width: 100%;
         height: 70px;
@@ -704,7 +712,7 @@
         display: flex;
         justify-content: center;
         width: min(100%, 1200px);
-        margin: 0 auto;
+        margin: 10px
     }
     .background {
         width: 100%;
@@ -822,16 +830,17 @@
             padding-top: 50px;
             height: calc(100vh - 50px); 
             justify-content: center;
+            width: min(95vw, 500px);
         }
         .details-container {
             width: 480px;
             min-height: 110px;
-            margin: 0 auto;
+            margin: 0;
             margin-bottom: 15px;
         }
         .canvas-container {
-            width: min(60vh, 90vw, 750px);
-            height: min(60vh, 90vw, 750px);
+            width: min(60vh, 90vw, 500px);
+            height: min(60vh, 90vw, 500px);
             margin: 0 auto;
             padding: 0 0 10px 0;
         }
@@ -841,12 +850,16 @@
             margin: 0px auto;
             max-width: 100%;
         }
+        .platonic-gallery {
+            width: min(95vw, 500px) !important;
+            margin: 0 auto;
+        }
         .platonic-gallery canvas {
             height: 100% !important;
             width: unset !important;
         }
         .detail-description {
-            margin: 5px auto;
+            margin: 5px 0;
             max-width: 480px;
         }
         .section-subtitle {
@@ -863,15 +876,20 @@
             margin-bottom: 0px;
         }
         .title {
-            text-align: center;
+            text-align: left;
             margin: 5px 0 0 0;
         }
         .description, .details {
-            text-align: center;
+            text-align: left;
             margin: 5px 0 0 0;
         }
         .unraveled-container {
-            height: 70px;
+            height: 50px;
+            margin-top: 15px;
+        }
+        .detail-description, .section-subtitle, .title, .description, h2 {
+            margin-left: 10px;
+            margin-right: 10px;
         }
     }
 
@@ -882,10 +900,12 @@
     }
     @media screen and (max-width: 500px) {
         .detail-description {
-            margin: 0 auto;
             margin-top: 3px;
             max-width: 80vw;
             line-height: 1.8;
+        }
+        .title {
+            font-size: 24px;
         }
         .tags {
             line-height: unset !important;

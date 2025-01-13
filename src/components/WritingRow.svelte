@@ -5,12 +5,13 @@
 <a href={`/writings/${writing.slug}`}>
     <div class="row">
         <!-- <div class="date">{@html writing.date}</div> -->
+        <div class="title">{writing.title}</div>
+        <div class="connector"></div>
         <div class="droplet">
             <span style={`filter: ${writing?.filter};`}>
                 <img loading="lazy" src={writing?.image} alt="watercolor droplet">
             </span>
         </div>
-        <div class="title">{writing.title}</div>
     </div>
 </a>
 
@@ -29,14 +30,23 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
+        align-items: center;
         color: var(--color-1);
+    }
+    .connector {
+        width: 100%;
+        flex: 1;
+        height: 1px;
+        opacity: 0.4;
+        background: var(--color-3);
+        margin: 0 10px;
+    }
+    .row:hover .connector {
+        opacity: 1;
     }
     .row:hover {
         opacity: 1 !important;
         cursor: pointer;
-    }
-    .row:hover .title {
-        border-bottom: 1px solid var(--black) !important;
     }
     .row:hover .droplet {
         filter: brightness(0.95);
@@ -56,16 +66,14 @@
         margin-right: 10px;
     }*/
     .droplet {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         filter: brightness(1.05);
     }
     .title {
         font-family: var(--serif);
         font-size: 24px;
         margin: auto 0;
-        margin-left: 10px;
-        border-bottom: 1px solid #00000000;
     }
     .droplet img {
         color: transparent;
@@ -75,8 +83,8 @@
             display: none;
         }*/
         .droplet {
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
         }
         .title {
             font-size: 22px;

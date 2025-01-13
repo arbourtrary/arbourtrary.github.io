@@ -29,6 +29,7 @@
 
 <div id="sketches" bind:this={outerContainer}>
     <div class="sketches-container">
+        <h2>S K E T C H E S</h2>
         {#each sketches as sketch, i}
             <SketchRow 
                 {scrollY}
@@ -47,13 +48,28 @@
         flex-direction: row;
         margin: auto 0;
         justify-content: center;
+        padding: 60px 0 !important;
+        margin: 60px auto !important;
     }
     .sketches-container {
         width: min(95vw, 500px);
         display: flex;
         flex-direction: column;
         margin: auto;
-        min-height: 100vh;
         justify-content: center;
+    }
+    h2 {
+        padding-bottom: 3px;
+        width: fit-content;
+        margin-left: 10px;
+        color: var(--color-2);
+        font-family: "Vollkorn";
+        font-size: 16px;
+    }
+    @media only screen and (max-width: 600px) {
+        #sketches {
+            padding: 45px 0 !important;
+            margin: 15px auto !important;
+        }
     }
 </style>
