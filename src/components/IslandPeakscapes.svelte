@@ -17,6 +17,14 @@
 			"filter": "hue-rotate(975deg)",
 			"portrait": "/images/island-peakscapes/tahiti-close.png",
 			"landscape": "/images/island-peakscapes/tahiti.png"
+		},
+		{
+			"h2": "E L &nbsp; Y U N Q U E",
+			"h3": "P U E R T O &nbsp; R I C O",
+			"color": "var(--green)",
+			"filter": "hue-rotate(975deg)",
+			"portrait": "/images/island-peakscapes/el-yunque-close.png",
+			"landscape": "/images/island-peakscapes/el-yunque.png"
 		}
 	]
 
