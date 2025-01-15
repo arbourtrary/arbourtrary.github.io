@@ -3,6 +3,14 @@
 
 	const peaks = [
 		{
+			"h2": "B O R A - B O R A",
+			"h3": "P O L Y N E S I E &nbsp; F R A N Ç A I S E",
+			"color": "var(--green)",
+			"filter": "hue-rotate(975deg)",
+			"portrait": "/images/island-peakscapes/bora-bora-close.png",
+			"landscape": "/images/island-peakscapes/bora-bora.png"
+		},
+		{
 			"h2": "M O <span class='apostrophe'>'</span> O R E A",
 			"h3": "P O L Y N E S I E &nbsp; F R A N Ç A I S E",
 			"color": "var(--green)",
