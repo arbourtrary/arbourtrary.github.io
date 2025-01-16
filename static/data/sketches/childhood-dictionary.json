@@ -142,9 +142,18 @@
 			"Noise indicating to herself and everyone around that she's &lsquo;about to take a big bite' of her food"
 		],
 		"partOfSpeech": "interjection",
-		"alternateSpellings": ["pilou"],
+		"alternateSpellings": [],
 		"etymology": [
 			{"language": "Unknown", "word": "???"}
 		]
+	},
+	"pop!": {
+		"pronunciation": ["pɔp"],
+		"definitions": [
+			"A big pause, and a deep breath, then the word pop! and she's off and running, sprinting as fast as she can. <i>Usage:</i> Pop to Papa!"
+		],
+		"partOfSpeech": "interjection",
+		"alternateSpellings": [],
+		"etymology": []
 	}
 }
