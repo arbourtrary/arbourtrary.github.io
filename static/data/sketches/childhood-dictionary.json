@@ -115,7 +115,7 @@
 		]
 	},
 	"wawoota": {
-		"pronunciation": ["wɑ", "wut", "ɑ"],
+		"pronunciation": ["wɑ", "wu", "tɑ"],
 		"definitions": [
 			"Really fun way to bypass the difficult, guttural <a href='https://en.wikipedia.org/wiki/Rhotic_consonant' target='_blank'>rhotic</a> in the French  word for yogurt"
 		],
@@ -155,5 +155,17 @@
 		"partOfSpeech": "interjection",
 		"alternateSpellings": [],
 		"etymology": []
+	},
+	"moona": {
+		"pronunciation": ["mu", "nɑ"],
+		"definitions": [
+			"A beautiful word for the moon, full of wonder, wide-eyed staring up above early in the night"
+		],
+		"partOfSpeech": "noun",
+		"alternateSpellings": [],
+		"etymology": [
+			{"language": "English", "word": "moon"},
+			{"language": "Spanish", "word": "luna"}
+		]
 	}
 }

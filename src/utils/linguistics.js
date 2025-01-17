@@ -5,6 +5,7 @@ export function languageToColor(language) {
         'Old French': "var(--orange)",
         'Middle French': "var(--orange)", 
         'French': "var(--orange)", 
+        'Spanish': "var(--orange)", 
 
         'Egyptian': "var(--yellow)",
         'Hebrew': "var(--yellow)",
@@ -39,6 +40,7 @@ export function abbreviateLanguage(language) {
         'Old French': "Fro.",
         'Middle French': "Frm.", 
         'French': "Fre.", 
+        'Spanish': "Spa.", 
 
         'Egyptian': "Egy.",
         'Hebrew': "Heb.",
