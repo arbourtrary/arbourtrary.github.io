@@ -79,6 +79,17 @@ const sketches = [
       },
       "filename": "/data/sketches/island-peakscapes.txt",
       "socialImage": "https://arbourtrary.com/images/social_sketch_6_viz.jpg"
+  },
+  {
+    "date": "1/28/25",
+      "title": "Cistercian Ciphers", 
+      "slug": "cistercian-ciphers",
+      "description": "",
+      "sketch": {
+        "name": "CistercianCiphers"
+      },
+      "filename": "/data/sketches/cistercian-ciphers.txt",
+      "socialImage": "https://arbourtrary.com/images/social_sketch_7_viz.jpg"
   }
 ]
 

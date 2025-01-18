@@ -6,7 +6,8 @@ export function entries() {
         { slug: 'childhood-dictionary' },
         { slug: 'line-drawings' },
         { slug: 'image-sampling' },
-        { slug: 'island-peakscapes' }
+        { slug: 'island-peakscapes' },
+        { slug: 'cistercian-ciphers' }
     ];
 }
 
