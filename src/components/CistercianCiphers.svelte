@@ -47,7 +47,6 @@
 	}
 
 	function drawCistercianCipher(num, canvas, ctx){
-		console.log(num)
 		if (isNaN(num)) {
 			return;
 		}
