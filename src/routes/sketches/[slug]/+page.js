@@ -84,7 +84,7 @@ const sketches = [
     "date": "1/28/25",
       "title": "Cistercian Ciphers", 
       "slug": "cistercian-ciphers",
-      "description": "",
+      "description": "Learning the interesting symmetry of the Cistercian numeric runes with an annotated interactive",
       "sketch": {
         "name": "CistercianCiphers"
       },
