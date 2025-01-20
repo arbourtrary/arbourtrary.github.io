@@ -41,7 +41,7 @@
         var rand = splitmix32(seed[0]);
         return rand();
     }
-    
+
     const numCircles = 13 + Math.round(randomNumber(`circles ${sketch.title}`)) * 3;
     const circleSizes = [];
     for (let i = 0; i < numCircles; i++) {
@@ -62,7 +62,6 @@
 
 <a href={`/sketches/${sketch.slug}`}>
     <div bind:this={row} class="row">
-        <!-- <div class="date">{@html sketch.date}</div> -->
         <div class="title">{sketch.title}</div>
         <div class="connector"></div>
         <div class="droplet">
@@ -80,6 +79,7 @@
                 `}></div>
             {/each}
         </div>
+        <div class="date">{@html sketch.date}</div>
     </div>
 </a>
 
@@ -126,17 +126,18 @@
     .row:hover .title {
         color: var(--black);
     }
-    /*.row:hover .date {
+    .row:hover .date {
         color: var(--black);
     }
     .date {
         text-align: center;
         font-family: var(--serif);
+        color: var(--color-2);
         font-size: 14px;
         white-space: pre-line;
         margin: auto 0;
-        margin-right: 10px;
-    }*/
+        margin-left: 10px;
+    }
     .droplet {
         width: 40px;
         height: 40px;

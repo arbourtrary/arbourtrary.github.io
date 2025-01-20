@@ -4,7 +4,6 @@
 
 <a href={`/writings/${writing.slug}`}>
     <div class="row">
-        <!-- <div class="date">{@html writing.date}</div> -->
         <div class="title">{writing.title}</div>
         <div class="connector"></div>
         <div class="droplet">
@@ -12,6 +11,7 @@
                 <img loading="lazy" src={writing?.image} alt="watercolor droplet">
             </span>
         </div>
+        <div class="date">{@html writing.date}</div>
     </div>
 </a>
 
@@ -54,17 +54,18 @@
     .row:hover .title {
         color: var(--black);
     }
-    /*.row:hover .date {
+    .row:hover .date {
         color: var(--black);
     }
     .date {
         text-align: center;
         font-family: var(--serif);
+        color: var(--color-2);
         font-size: 14px;
         white-space: pre-line;
         margin: auto 0;
-        margin-right: 10px;
-    }*/
+        margin-left: 10px;
+    }
     .droplet {
         width: 40px;
         height: 40px;

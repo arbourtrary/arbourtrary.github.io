@@ -12,11 +12,14 @@
 
     onMount(async () => {
         writings = await loadJSON(dataFilename);
-
+        writings.reverse();
         const newline = "&#10;"
         for(const writing of writings) {
             const date = new Date(writing.date)
-            const dateFormatted = `${date.toLocaleString('default', { month: 'short' })}${newline}${date.getUTCFullYear()}`
+            const month = date.getMonth() + 1;
+            const formattedMonth = month < 10 ? `<span style="visibility: hidden;">1</span>${month}` : month;
+            const formattedYear = date.getFullYear().toString().slice(2);
+            const dateFormatted = `${formattedMonth}/${formattedYear}`;
             writing.date = dateFormatted
         }
     });
