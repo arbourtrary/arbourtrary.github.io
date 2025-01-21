@@ -1,5 +1,7 @@
 <script>
     import { onMount } from 'svelte';
+    import { clamp } from "../../../utils/math.js"
+
     // TODO: Need to figure out dynamic import or better page templating?
     import CoalescingText from '../../../components/CoalescingText.svelte';
     import PolygonOrCircle from '../../../components/PolygonOrCircle.svelte';
@@ -12,33 +14,49 @@
 
     export let data;
 
+    let sketch;
+    let sketchIndex;
+    let prevSketch;
+    let nextSketch;
     let content = "";
     let body;
 
     onMount(async () => {
-        const response = await fetch(data.filename)
+        const response = await fetch(data.sketch.filename)
+        sketch = data.sketch;
+        sketchIndex = sketch.index;
         content = await response.text();
         body = document.body;
-        document.documentElement.style.setProperty('--highlight', data.highlight);
+        document.documentElement.style.setProperty('--highlight', data.sketch.highlight);
     })
+    $: if (body) {
+        sketch = data.sketch;
+        sketchIndex = sketch.index;
+
+        const prevIndex = clamp(sketchIndex - 1, 0, data.sketches.length - 1);
+        prevSketch = (prevIndex !== sketchIndex) ? data.sketches[prevIndex] : data.sketches[data.sketches.length - 1];
+
+        const nextIndex = clamp(sketchIndex + 1, 0, data.sketches.length - 1);
+        nextSketch = (nextIndex !== sketchIndex) ? data.sketches[nextIndex] : data.sketches[0]; 
+    }
 </script>
 <svelte:head>
-    <link rel='canonical' href={`https://arbourtrary.com/sketches/${data.slug}`} />
-    <title>{data.title}</title>
-    <meta name='description' content={data.description} />        
-    <meta property='og:title' content={data.title} />
+    <link rel='canonical' href={`https://arbourtrary.com/sketches/${data.sketch.slug}`} />
+    <title>{data.sketch.title}</title>
+    <meta name='description' content={data.sketch.description} />        
+    <meta property='og:title' content={data.sketch.title} />
     <meta property='og:site_name' content='arbourtrary' />
-    <meta property='og:url' content={`https://arbourtrary.com/sketches/${data.slug}`} />
-    <meta property='og:description' content={data.description} />
+    <meta property='og:url' content={`https://arbourtrary.com/sketches/${data.sketch.slug}`} />
+    <meta property='og:description' content={data.sketch.description} />
     <meta property='og:locale' content='en_US' />
-    <meta property='og:image' content={data.socialImage} />
+    <meta property='og:image' content={data.sketch.socialImage} />
     
     <meta name='twitter:card' content='summary_large_image' />
-    <meta name='twitter:site' content={`https://arbourtrary.com/sketches/${data.slug}`} />
+    <meta name='twitter:site' content={`https://arbourtrary.com/sketches/${data.sketch.slug}`} />
     <meta name='twitter:creator' content='arbourtrary' />
-    <meta name='twitter:title' content={data.title} />
-    <meta name='twitter:description' content={data.description} />
-    <meta name='twitter:image:src' content={data.socialImage} />
+    <meta name='twitter:title' content={data.sketch.title} />
+    <meta name='twitter:description' content={data.sketch.description} />
+    <meta name='twitter:image:src' content={data.sketch.socialImage} />
 </svelte:head>
 
 <div class="header">
@@ -67,26 +85,44 @@
 
 <div class="sketch">
     <!-- TODO: Probably a better way to remove specific components from this -->
-	{#if data.sketch.name === "CoalescingText"}
+	{#if data.sketch.sketch.name === "CoalescingText"}
         <CoalescingText/>
-    {:else if data.sketch.name === "PolygonOrCircle"}
+    {:else if data.sketch.sketch.name === "PolygonOrCircle"}
         <PolygonOrCircle/>
-    {:else if data.sketch.name === "DirectEtymologies"}
+    {:else if data.sketch.sketch.name === "DirectEtymologies"}
         <DirectEtymologies/>
-    {:else if data.sketch.name === "ChildhoodDictionary"}
+    {:else if data.sketch.sketch.name === "ChildhoodDictionary"}
         <ChildhoodDictionary/>
-    {:else if data.sketch.name === "LineDrawings"}
+    {:else if data.sketch.sketch.name === "LineDrawings"}
         <LineDrawings/>
-    {:else if data.sketch.name === "ImageSampling"}
+    {:else if data.sketch.sketch.name === "ImageSampling"}
         <ImageSampling/>
-    {:else if data.sketch.name === "IslandPeakscapes"}
+    {:else if data.sketch.sketch.name === "IslandPeakscapes"}
         <IslandPeakscapes/>
-    {:else if data.sketch.name === "CistercianCiphers"}
+    {:else if data.sketch.sketch.name === "CistercianCiphers"}
         <CistercianCiphers/>
     {/if}
 </div>
 <div class="notes">
     {@html content}
+</div>
+<div class="more">
+    {#if prevSketch}
+        <a href={`/sketches/${prevSketch.slug}`} style="margin-right: 15px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor">
+              <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+            </svg>
+            <p style="text-align: left;">{prevSketch.title}</p>
+        </a>
+    {/if}
+    {#if nextSketch}
+        <a href={`/sketches/${nextSketch.slug}`} style="margin-left: 15px;">
+            <p style="text-align: right;">{nextSketch.title}</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+            </svg>
+        </a>
+    {/if}
 </div>
 
 <style>
@@ -133,6 +169,7 @@
         -o-transform: scale(-1, 1);
         -webkit-transform: scale(-1, 1);
         transform: scale(-1, 1);
+
     }
     .writ {
         margin: 0 10px;
@@ -285,8 +322,38 @@
     :global(.dipthongs span, .back span) {
         filter: drop-shadow(0 0 5px var(--purple)) drop-shadow(0 0 10px var(--purple)) drop-shadow(0 0 15px var(--purple));
     }
+    .more {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        margin-bottom: 60px;
+        max-width: 600px;
+    }
+    .more a {
+        display: flex;
+        gap: 3px;
+        text-decoration: none;
+        color: var(--color-1);
+    }
+    .more a:hover p {
+        background: var(--color-3);
+        text-decoration: none;
+        border-radius: 5px;
+        color: white;
+    }
+    .more p {
+        margin: 0px;
+        padding: 3px 5px;
+    }
+    .more svg {
+        width: 16px;
+        height: 16px;
+        align-self: center;
+    }
     @media only screen and (max-width: 640px) {
-        :global(.notes) {
+        :global(.notes), .more {
             margin: 0 20px;
             margin-bottom: 60px;
         }
@@ -311,6 +378,11 @@
         :global(.indent span) {
             margin-left: 15px;
             font-size: 14px;
+        }
+    }
+    @media only screen and (max-width: 400px) {
+         .more p {
+            max-width: 125px;
         }
     }
 </style>

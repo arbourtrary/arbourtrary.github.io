@@ -13,6 +13,7 @@
     onMount(async () => {
         sketches = await loadJSON(dataFilename);
         sketches.reverse();
+
         const newline = "&#10;"
         for(const sketch of sketches) {
             const date = new Date(sketch.date)

@@ -4,6 +4,7 @@ import { loadJSON } from '../../../utils/file.js'
 
 const sketches = [
   {
+    "index": 0,
     "date": "11/17/24",
     "title": "Coalescing Text", 
     "slug": "coalescing-text",
@@ -15,6 +16,7 @@ const sketches = [
     "socialImage": "https://arbourtrary.com/images/social_sketch_0_viz.jpg"
   },
   {
+    "index": 1,
     "date": "11/24/24",
     "title": "Polygon or Circle?", 
     "slug": "polygon-or-circle",
@@ -26,6 +28,7 @@ const sketches = [
     "socialImage": "https://arbourtrary.com/images/social_sketch_1_viz.jpg"
   },
   {
+    "index": 2,
     "date": "11/29/24",
       "title": "Direct Etymologies", 
       "slug": "direct-etymologies",
@@ -37,6 +40,7 @@ const sketches = [
       "socialImage": "https://arbourtrary.com/images/social_sketch_2_viz.jpg"
   },
   {
+    "index": 3,
     "date": "12/1/24",
       "title": "Childhood Dictionary", 
       "slug": "childhood-dictionary",
@@ -48,6 +52,7 @@ const sketches = [
       "socialImage": "https://arbourtrary.com/images/social_sketch_3_viz.jpg"
   },
   {
+    "index": 4,
     "date": "12/1/24",
       "title": "Line Drawings", 
       "slug": "line-drawings",
@@ -59,6 +64,7 @@ const sketches = [
       "socialImage": "https://arbourtrary.com/images/social_sketch_4_viz.jpg"
   },
   {
+    "index": 5,
     "date": "12/31/24",
       "title": "Image Sampling", 
       "slug": "image-sampling",
@@ -70,6 +76,7 @@ const sketches = [
       "socialImage": "https://arbourtrary.com/images/social_sketch_5_viz.jpg"
   },
   {
+    "index": 6,
     "date": "1/13/25",
       "title": "Island Peakscapes", 
       "slug": "island-peakscapes",
@@ -81,6 +88,7 @@ const sketches = [
       "socialImage": "https://arbourtrary.com/images/social_sketch_6_viz.jpg"
   },
   {
+    "index": 7,
     "date": "1/18/25",
       "title": "Cistercian Ciphers", 
       "slug": "cistercian-ciphers",
@@ -97,7 +105,7 @@ export async function load({ params }) {
   const sketch = sketches.find(item => item.slug === params.slug);
 
   if (sketch) {
-    return sketch;
+    return {sketch, sketches};
   }
  
   throw error(404, 'Not found');
