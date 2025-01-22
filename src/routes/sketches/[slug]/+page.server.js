@@ -7,7 +7,8 @@ export function entries() {
         { slug: 'line-drawings' },
         { slug: 'image-sampling' },
         { slug: 'island-peakscapes' },
-        { slug: 'cistercian-ciphers' }
+        { slug: 'cistercian-ciphers' },
+        { slug: 'climbing-trees' }
     ];
 }
 

@@ -98,6 +98,18 @@ const sketches = [
       },
       "filename": "/data/sketches/cistercian-ciphers.txt",
       "socialImage": "https://arbourtrary.com/images/social_sketch_7_viz.jpg"
+  },
+  {
+    "index": 8,
+    "date": "1/22/25",
+      "title": "Climbing Trees", 
+      "slug": "climbing-trees",
+      "description": "Reminiscing and collecting silhouettes of a few of my favorite trees",
+      "sketch": {
+        "name": "ClimbingTrees"
+      },
+      "filename": "/data/sketches/climbing-trees.txt",
+      "socialImage": "https://arbourtrary.com/images/social_sketch_8_viz.jpg"
   }
 ]
 

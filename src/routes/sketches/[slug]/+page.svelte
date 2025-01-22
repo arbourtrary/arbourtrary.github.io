@@ -11,6 +11,7 @@
     import ImageSampling from '../../../components/ImageSampling.svelte';
     import IslandPeakscapes from '../../../components/IslandPeakscapes.svelte';
     import CistercianCiphers from '../../../components/CistercianCiphers.svelte';
+    import ClimbingTrees from '../../../components/ClimbingTrees.svelte';
 
     export let data;
 
@@ -104,6 +105,8 @@
         <IslandPeakscapes/>
     {:else if data.sketch.sketch.name === "CistercianCiphers"}
         <CistercianCiphers/>
+    {:else if data.sketch.sketch.name === "ClimbingTrees"}
+        <ClimbingTrees/>
     {/if}
 </div>
 <div class="notes">
