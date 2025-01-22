@@ -192,7 +192,6 @@ const trees = [
 		max-width: min(90%, 500px);
   		max-height: min(80vh, 600px);
 		margin: 0 auto;
-		height: 100%;
 	}
 	.tree-silhouette h2 {
 		text-align: center;
