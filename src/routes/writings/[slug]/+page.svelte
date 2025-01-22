@@ -21,7 +21,6 @@
     onMount(async () => {
         fetchContent(data.writing.filename)
         body = document.body;
-        document.documentElement.style.setProperty('--highlight', data.writing.highlight);
     })
 
     $: if (body) {
@@ -32,7 +31,8 @@
         prevWriting = (prevIndex !== writingIndex) ? data.writings[prevIndex] : data.writings[data.writings.length - 1];
 
         const nextIndex = clamp(writingIndex + 1, 0, data.writings.length - 1);
-        nextWriting = (nextIndex !== writingIndex) ? data.writings[nextIndex] : data.writings[0]; 
+        nextWriting = (nextIndex !== writingIndex) ? data.writings[nextIndex] : data.writings[0];
+        document.documentElement.style.setProperty('--highlight', data.writing.highlight);
     }
 
     $: scrollProgress = body && clamp(scrollY / (body.scrollHeight - window.innerHeight), 0, 1)
