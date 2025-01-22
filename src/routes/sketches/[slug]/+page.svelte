@@ -30,7 +30,6 @@
     onMount(async () => {
         fetchContent(data.sketch.filename)
         body = document.body;
-        document.documentElement.style.setProperty('--highlight', data.sketch.highlight);
     })
     $: if (body) {
         sketch = data.sketch;
@@ -41,6 +40,7 @@
 
         const nextIndex = clamp(sketchIndex + 1, 0, data.sketches.length - 1);
         nextSketch = (nextIndex !== sketchIndex) ? data.sketches[nextIndex] : data.sketches[0]; 
+        document.documentElement.style.setProperty('--highlight', data.sketch.highlight);
     }
 </script>
 <svelte:head>
