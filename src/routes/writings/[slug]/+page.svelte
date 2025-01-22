@@ -5,37 +5,57 @@
     export let data;
 
     let scrollY = 0;
+    let writing;
+    let writingIndex;
+    let prevWriting;
+    let nextWriting;
     let content = "";
     let body;
+    let response;
+
+    async function fetchContent(filename) {
+        response = await fetch(filename)
+        content = await response.text();
+    }
 
     onMount(async () => {
-        const response = await fetch(data.filename)
-        content = await response.text();
+        fetchContent(data.writing.filename)
         body = document.body;
-        document.documentElement.style.setProperty('--highlight', data.highlight);
+        document.documentElement.style.setProperty('--highlight', data.writing.highlight);
     })
+
+    $: if (body) {
+        writing = data.writing;
+        writingIndex = writing.index;
+
+        const prevIndex = clamp(writingIndex - 1, 0, data.writings.length - 1);
+        prevWriting = (prevIndex !== writingIndex) ? data.writings[prevIndex] : data.writings[data.writings.length - 1];
+
+        const nextIndex = clamp(writingIndex + 1, 0, data.writings.length - 1);
+        nextWriting = (nextIndex !== writingIndex) ? data.writings[nextIndex] : data.writings[0]; 
+    }
 
     $: scrollProgress = body && clamp(scrollY / (body.scrollHeight - window.innerHeight), 0, 1)
 
     
 </script>
 <svelte:head>
-    <title>{data.title}</title>
-    <link rel='canonical' href={`https://arbourtrary.com/writings/${data.slug}`} />
-    <meta name='description' content={data.description} />        
-    <meta property='og:title' content={data.title} />
+    <title>{data.writing.title}</title>
+    <link rel='canonical' href={`https://arbourtrary.com/writings/${data.writing.slug}`} />
+    <meta name='description' content={data.writing.description} />        
+    <meta property='og:title' content={data.writing.title} />
     <meta property='og:site_name' content='arbourtrary' />
-    <meta property='og:url' content={`https://arbourtrary.com/writings/${data.slug}`} />
-    <meta property='og:description' content={data.description} />
+    <meta property='og:url' content={`https://arbourtrary.com/writings/${data.writing.slug}`} />
+    <meta property='og:description' content={data.writing.description} />
     <meta property='og:locale' content='en_US' />
-    <meta property='og:image' content={data.socialImage} />
+    <meta property='og:image' content={data.writing.socialImage} />
     
     <meta name='twitter:card' content='summary_large_image' />
-    <meta name='twitter:site' content={`https://arbourtrary.com/writings/${data.slug}`} />
+    <meta name='twitter:site' content={`https://arbourtrary.com/writings/${data.writing.slug}`} />
     <meta name='twitter:creator' content='arbourtrary' />
-    <meta name='twitter:title' content={data.title} />
-    <meta name='twitter:description' content={data.description} />
-    <meta name='twitter:image:src' content={data.socialImage} />
+    <meta name='twitter:title' content={data.writing.title} />
+    <meta name='twitter:description' content={data.writing.description} />
+    <meta name='twitter:image:src' content={data.writing.socialImage} />
 </svelte:head>
 <svelte:window bind:scrollY/>
 
@@ -49,30 +69,30 @@
     <div class="watermark-container">
         <!-- TODO: Refactor for a loop - I think this test worked well enough though -->
         <div class="image-container"  style="height: 40%;">
-            <img src={data.image} style={`
-                filter: ${data.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, 0, .25)) * 100}%);
+            <img src={data.writing.image} style={`
+                filter: ${data.writing.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, 0, .25)) * 100}%);
                 opacity: ${clamp(0 + mapToUnitRange(scrollProgress, 0, .25), 0, 1)}
             `}/>
         </div>
         <div class="image-container" style="height: 50%;">
-            <img src={data.image} style={`
-                filter: ${data.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .25, .5)) * 100}%);
+            <img src={data.writing.image} style={`
+                filter: ${data.writing.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .25, .5)) * 100}%);
                 opacity: ${clamp(0 + mapToUnitRange(scrollProgress, 0.25, .5, 0, 1))}
             `}/>
         </div>
         <div class="image-container" style="height: 80%;">
-            <img src={data.image} style={`
-                filter: ${data.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .5, .75)) * 100}%);
+            <img src={data.writing.image} style={`
+                filter: ${data.writing.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .5, .75)) * 100}%);
                 opacity: ${clamp(0 + mapToUnitRange(scrollProgress, 0.5, .75, 0, 1))}
             `}/>
         </div>
         <div class="image-container">
-            <img src={data.image} style={`
-                filter: ${data.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .75, 1)) * 100}%);
+            <img src={data.writing.image} style={`
+                filter: ${data.writing.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .75, 1)) * 100}%);
                 opacity: ${0 + mapToUnitRange(scrollProgress, 0.75, 1)}
             `}/>
-            <img src={data.image} style={`
-                filter: ${data.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .75, 1)) * 100}%);
+            <img src={data.writing.image} style={`
+                filter: ${data.writing.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .75, 1)) * 100}%);
                 opacity: ${0 + mapToUnitRange(scrollProgress, 0.75, 1)};
                 position: absolute;
                 top: 0;
@@ -81,20 +101,20 @@
             `}/>
         </div>
         <div class="image-container"  style="height: 80%;">
-            <img class="horizontal-mirror" src={data.image} style={`
-                filter: ${data.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .5, .75)) * 100}%);
+            <img class="horizontal-mirror" src={data.writing.image} style={`
+                filter: ${data.writing.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .5, .75)) * 100}%);
                 opacity: ${clamp(0 + mapToUnitRange(scrollProgress, .5, .75), 0, 1)}
             `}/>
         </div>
         <div class="image-container" style="height: 50%;">
-            <img class="horizontal-mirror" src={data.image} style={`
-                filter: ${data.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .25, .5)) * 100}%);
+            <img class="horizontal-mirror" src={data.writing.image} style={`
+                filter: ${data.writing.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .25, .5)) * 100}%);
                 opacity: ${clamp(0 + mapToUnitRange(scrollProgress, .25, .5), 0, 1)}
             `}/>
         </div>
         <div class="image-container"  style="height: 40%;">
-            <img class="horizontal-mirror" src={data.image} style={`
-                filter: ${data.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, 0, .25)) * 100}%);
+            <img class="horizontal-mirror" src={data.writing.image} style={`
+                filter: ${data.writing.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, 0, .25)) * 100}%);
                 opacity: ${clamp(0 + mapToUnitRange(scrollProgress, 0, .25), 0, 1)};
             `}/>
         </div>
@@ -107,8 +127,26 @@
     </div>
 </div>
 <div class="writ">
-    <div class="title">{data.title}</div>
+    <div class="title">{data.writing.title}</div>
     <div class="content">{@html marked(content)}</div>
+</div>
+<div class="more">
+    {#if prevWriting}
+        <a on:click={fetchContent(prevWriting.filename)} href={`/writings/${prevWriting.slug}`} style="margin-right: 15px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor">
+              <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+            </svg>
+            <p style="text-align: left;">{prevWriting.title}</p>
+        </a>
+    {/if}
+    {#if nextWriting}
+        <a on:click={fetchContent(nextWriting.filename)} href={`/writings/${nextWriting.slug}`} style="margin-left: 15px;">
+            <p style="text-align: right;">{nextWriting.title}</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+            </svg>
+        </a>
+    {/if}
 </div>
 
 <style>
@@ -192,6 +230,7 @@
         flex-direction: row;
         justify-content: center;
         height: 35px;
+        pointer-events: none;
     }
     .image-container {
         position: relative;
@@ -260,6 +299,44 @@
     :global(.italic) {
         font-style: italic;
     }
+    .more {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 600px;
+        margin-bottom: 60px;
+        margin-top: 30px;
+        padding-top: 60px;
+        border-top: 1px solid var(--color-3);
+    }
+    .more a {
+        display: flex;
+        gap: 3px;
+        text-decoration: none;
+        color: var(--color-1);
+    }
+    .more a:hover p {
+        text-decoration: underline;
+        color: var(--black);
+    }
+    .more p {
+        margin: 0px;
+        padding: 3px 5px;
+        font-family: var(--serif);
+    }
+    .more svg {
+        width: 16px;
+        height: 16px;
+        align-self: center;
+    }
+    @media only screen and (max-width: 640px) {
+        :global(.notes), .more {
+            margin: 0 20px;
+            margin-bottom: 60px;
+        }
+    }
     @media only screen and (max-width: 600px) {
         .title {
             font-size: 2em;
@@ -273,6 +350,11 @@
         }
         .content {
             font-size: 20px;
+        }
+    }
+    @media only screen and (max-width: 400px) {
+         .more p {
+            max-width: 125px;
         }
     }
 </style>

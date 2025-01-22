@@ -4,6 +4,7 @@ import { loadJSON } from '../../../utils/file.js'
 
 const writings = [
   {
+    "index": 0,
     "date": "5/1/23",
     "title": "Forest for the trees", 
     "slug": "forest-for-the-trees",
@@ -15,6 +16,7 @@ const writings = [
     "socialImage": "https://arbourtrary.com/images/social_droplet_0.jpg"
   },
   {
+    "index": 1,
     "date": "9/13/23",
     "title": "The future is irreducible", 
     "slug": "future-is-irreducible",
@@ -26,6 +28,7 @@ const writings = [
     "socialImage": "https://arbourtrary.com/images/social_droplet_1.jpg"
   },
   {
+    "index": 2,
     "date": "11/26/23",
     "title": "In real time", 
     "slug": "in-real-time",
@@ -37,6 +40,7 @@ const writings = [
     "socialImage": "https://arbourtrary.com/images/social_droplet_2.jpg"
   },
   {
+    "index": 3,
     "date": "10/23/24",
     "title": "Silvology", 
     "slug": "silvology",
@@ -54,7 +58,7 @@ export async function load({ params }) {
   const writing = writings.find(item => item.slug === params.slug);
 
   if (writing) {
-    return writing;
+    return {writing, writings};
   }
  
   throw error(404, 'Not found');
