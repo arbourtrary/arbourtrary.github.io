@@ -2,6 +2,8 @@
     import { marked } from "marked";
     import { onMount } from 'svelte';
     import { clamp, mapToUnitRange } from '../../../utils/math.js';
+    import Footer from '../../../components/Footer.svelte';
+
     export let data;
 
     let scrollY = 0;
@@ -148,6 +150,7 @@
         </a>
     {/if}
 </div>
+<Footer/>
 
 <style>
     :global(:root) {
@@ -306,9 +309,9 @@
         justify-content: space-between;
         margin: 0 auto;
         max-width: 600px;
-        margin-bottom: 60px;
+        margin-bottom: 30px;
         margin-top: 30px;
-        padding-top: 60px;
+        padding-top: 30px;
         border-top: 1px solid var(--color-3);
     }
     .more a {
@@ -334,7 +337,7 @@
     @media only screen and (max-width: 640px) {
         :global(.notes), .more {
             margin: 0 20px;
-            margin-bottom: 60px;
+            margin-bottom: 30px;
         }
     }
     @media only screen and (max-width: 600px) {

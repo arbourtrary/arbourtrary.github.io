@@ -2,6 +2,8 @@
     import { onMount } from 'svelte';
     import { clamp } from "../../../utils/math.js"
 
+    import Footer from '../../../components/Footer.svelte';
+
     // TODO: Need to figure out dynamic import or better page templating?
     import CoalescingText from '../../../components/CoalescingText.svelte';
     import PolygonOrCircle from '../../../components/PolygonOrCircle.svelte';
@@ -131,6 +133,8 @@
     {/if}
 </div>
 
+<Footer/>
+
 <style>
     :global(:root) {
 
@@ -141,7 +145,7 @@
         border-bottom: 1px solid var(--color-3);
         padding: 20px 0;
         margin: 0 auto;
-        margin-bottom: 60px;
+        margin-bottom: 30px;
     }
     :global(.notes h2) {
         color: var(--color-1);
@@ -334,7 +338,7 @@
         align-items: center;
         justify-content: space-between;
         margin: 0 auto;
-        margin-bottom: 60px;
+        margin-bottom: 30px;
         max-width: 600px;
     }
     .more a {
@@ -359,7 +363,7 @@
     @media only screen and (max-width: 640px) {
         :global(.notes), .more {
             margin: 0 20px;
-            margin-bottom: 60px;
+            margin-bottom: 30px;
         }
     }
     @media only screen and (max-width: 600px) {
