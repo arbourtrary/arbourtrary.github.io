@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths'
 	export let maxWidth = 600;
 </script>
 
@@ -9,7 +10,7 @@
         href="https://bsky.app/profile/arbourtrary.com"
         target="_blank"
     >
-        <img class="bluesky" width="100" height="90" loading="lazy" src="/images/bluesky.png" alt="bluesky logo"/>
+        <img class="bluesky" width="100" height="90" loading="lazy" src={base + "/images/bluesky.png"} alt="bluesky logo"/>
     </a>
     <a
         class="logo github"
@@ -17,7 +18,7 @@
         href="https://github.com/arbourtrary"
         target="_blank"
     >
-        <img class="github" width="100" height="100" loading="lazy" src="/images/github.png" alt="github logo"/>
+        <img class="github" width="100" height="100" loading="lazy" src={base + "/images/github.png"} alt="github logo"/>
     </a>
     <a
         class="logo"
@@ -25,7 +26,7 @@
         href="https://arbourtrary.com/feed/rss"
         target="_blank"
     >
-        <img class="rss" width="100" height="100" loading="lazy" src="/images/rss.png" alt="rss logo">
+        <img class="rss" width="100" height="100" loading="lazy" src={base + "/images/rss.png"} alt="rss logo">
     </a>
 </footer>
 
