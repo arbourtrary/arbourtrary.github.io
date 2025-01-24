@@ -91,6 +91,9 @@
         width: min(90vw, 1100px) !important;
         margin: 0 auto !important;
     }
+    img {
+        color: transparent !important;
+    }
     hr {
         display: block;
         height: 1px;
