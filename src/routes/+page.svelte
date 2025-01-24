@@ -60,11 +60,7 @@
     <Progress {scrollY}/>
 
     <!-- Sections -->
-    <About
-        sectionIndex={0}
-        {scrollY}
-        dataFilename={'/data/about.json'}
-    />
+    <About/>
     <hr>
     <Writings
         sectionIndex={2}
