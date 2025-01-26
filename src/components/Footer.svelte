@@ -6,11 +6,11 @@
 <footer style={`max-width: ${maxWidth}px;`}>
     <a
         class="logo"
-        aria-label="arbourtrary link to bluesky"
-        href="https://bsky.app/profile/arbourtrary.com"
+        aria-label="arbourtrary link to rss feed"
+        href="https://arbourtrary.com/feed/rss"
         target="_blank"
     >
-        <img class="bluesky" width="100" height="90" loading="lazy" src={base + "/images/bluesky.png"} alt="bluesky logo"/>
+        <img class="rss" width="100" height="100" loading="lazy" src={base + "/images/rss.png"} alt="rss logo">
     </a>
     <a
         class="logo github"
@@ -22,11 +22,11 @@
     </a>
     <a
         class="logo"
-        aria-label="arbourtrary link to rss feed"
-        href="https://arbourtrary.com/feed/rss"
+        aria-label="arbourtrary link to bluesky"
+        href="https://bsky.app/profile/arbourtrary.com"
         target="_blank"
     >
-        <img class="rss" width="100" height="100" loading="lazy" src={base + "/images/rss.png"} alt="rss logo">
+        <img class="bluesky" width="100" height="90" loading="lazy" src={base + "/images/bluesky.png"} alt="bluesky logo"/>
     </a>
 </footer>
 
