@@ -91,7 +91,7 @@
         width: min(90vw, 1100px) !important;
         margin: 0 auto !important;
     }
-    img {
+    :global(img) {
         color: transparent !important;
     }
     hr {

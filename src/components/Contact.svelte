@@ -112,6 +112,7 @@
         transition: all 200ms ease-in;
         display: flex;
         justify-content: center;
+        text-decoration: none;
     }
     .logo:hover {
         transform: scale(1.1);
@@ -119,6 +120,7 @@
     .logo img {
         height: 100%;
         width: 100%;
+        color: transparent;
     }
     .bluesky {
         height: 90% !important;
