@@ -17,19 +17,19 @@
 
 <svelte:window bind:innerWidth={innerWidth}/>
 
-<scrolling-anchor id="about">
+<scrolling-anchor id="intro">
     
-        <div class="about-container desktop">
-            <div class="about-intro">
-                <div class="about-name">
+        <div class="intro-container desktop">
+            <div class="intro-intro">
+                <div class="intro-name">
                     <div class="name-container">
                         <span class="name" style={`background: ${linearGradient}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;`}>{texts[Math.round(Math.random() * (texts.length - 1))]}</span>
                         <div class="progress-bar-bg"></div>
                     </div>
                 </div>
-                <div class="about-description">
-                    <div class="about-header">
-                        I'm a <span style="color: var(--blue)">creative developer</span> who enjoys making code sketches and writing about <span style="color: var(--green)">nature</span>, <span style="color: var(--orange)">mathematics</span> &amp; <span style="color: var(--purple)">poetry</span>
+                <div class="intro-description">
+                    <div class="intro-header">
+                        I'm a <span style="color: var(--blue)">creative developer</span> who enjoys making code sketches and writing intro <span style="color: var(--green)">nature</span>, <span style="color: var(--orange)">mathematics</span> &amp; <span style="color: var(--purple)">poetry</span>
                     </div>
                 </div>
             </div>
@@ -40,8 +40,8 @@
         </div>
 
 
-        <div class="about-container mobile">
-            <div class="about-name">
+        <div class="intro-container mobile">
+            <div class="intro-name">
                 <div class="name-container">
                     <span class="name" style={`background: ${linearGradient}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;`}>{texts[Math.round(Math.random() * (texts.length - 1))]}</span>
                 </div>
@@ -52,9 +52,9 @@
             <div class="img-container">
                 <img class="drawing" src={innerWidth <= 1000 ? "/images/drawing-mobile.jpg" : ""} height="500" width="500" alt="a large, circular primary image - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
             </div>
-            <div class="about-description">
-                <div class="about-header">
-                    I'm a <span style="color: var(--blue)">creative developer</span> who enjoys making code sketches and writing about <span style="color: var(--green)">nature</span>, <span style="color: var(--orange)">mathematics</span> &amp; <span style="color: var(--purple)">poetry</span>
+            <div class="intro-description">
+                <div class="intro-header">
+                    I'm a <span style="color: var(--blue)">creative developer</span> who enjoys making code sketches and writing intro <span style="color: var(--green)">nature</span>, <span style="color: var(--orange)">mathematics</span> &amp; <span style="color: var(--purple)">poetry</span>
                 </div>
             </div>
         </div>
@@ -76,7 +76,7 @@
         flex-direction: row;
         position: relative;
     }
-    .about-name {
+    .intro-name {
         position: relative;
         width: fit-content;
     }
@@ -106,7 +106,7 @@
         transform: translate3d(0,0,0);
         transform: translateZ(0);
     }
-    .about-intro {
+    .intro-intro {
         width: 375px;
         display: flex;
         flex-direction: column;
@@ -125,7 +125,7 @@
     img {
         font-size: 0;
     }
-    .about-container {
+    .intro-container {
         position: sticky;
         top: 0;
         display: flex;
@@ -161,7 +161,7 @@
     .img-container .drawing {
         background: var(--bg-color);
     }
-    .about-header {
+    .intro-header {
         font-size: 28px;
         font-family: var(--serif);
         font-weight: 300;
@@ -194,7 +194,7 @@
         .name {
             letter-spacing: .1px;
         }
-        .about-container {
+        .intro-container {
             height: calc(100vh - 75px);
             flex-direction: column;
             top: 55px;
@@ -203,11 +203,11 @@
             grid-row-gap: min(2vh, 10px);
             min-height: 0;
         }
-        .about-header {
+        .intro-header {
             font-size: 28px;
             text-align: left;
         }
-        .about-description {
+        .intro-description {
             padding-top: 0px;
             margin: 10px;
             max-width: calc(100% - 20px);
@@ -232,7 +232,7 @@
         }
     }
     @media screen and (max-width: 500px) {
-        .about-header {
+        .intro-header {
             font-size: 26px;
         }
     }

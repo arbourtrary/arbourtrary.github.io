@@ -4,7 +4,7 @@
     import { bgColor, textColor1, textColor2, textColor3, textColor4, white } from '../store.js'
     import Header from "../components/Header.svelte"
     import Progress from "../components/Progress.svelte"
-    import About from "../components/About.svelte"
+    import Intro from "../components/Intro.svelte"
     import Projects from "../components/Projects.svelte"
     import Writings from "../components/Writings.svelte"
     import Sketches from "../components/Sketches.svelte"
@@ -60,7 +60,7 @@
     <Progress {scrollY}/>
 
     <!-- Sections -->
-    <About/>
+    <Intro/>
     <hr>
     <Writings
         sectionIndex={2}

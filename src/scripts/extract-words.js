@@ -63,7 +63,7 @@ function generateWordList(directories) {
     }, []);
 
     allFiles = allFiles.concat([
-        "../../static/data/about.json",
+        "../../static/data/intro.json",
         "../../static/data/projects.json",
         "../../static/data/sketches.json",
         "../../static/data/writings.json"
