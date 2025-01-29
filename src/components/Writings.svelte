@@ -67,6 +67,11 @@
         font-family: "Vollkorn";
         font-size: 16px;
     }
+    @media only screen and (max-width: 700px) {
+        h2 {
+            font-size: 13px;
+        }
+    }
     @media only screen and (max-width: 600px) {
         #writings {
             padding-top: 45px!important;

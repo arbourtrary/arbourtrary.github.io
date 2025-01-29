@@ -896,6 +896,9 @@
         .detail {
             margin-bottom: 0px;
         }
+        h2 {
+            font-size: 13px;
+        }
     }
     @media screen and (max-width: 500px) {
         .detail-description {

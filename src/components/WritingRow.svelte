@@ -25,7 +25,7 @@
         height: 100%
     }
     .row {
-        margin: 10px;
+        margin: 5px 10px;
         transition: opacity 50ms linear;
         display: flex;
         flex-direction: row;

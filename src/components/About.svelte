@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="about-description">
-                    <div class="about-header s-nZ8U3HxS9vwg" style="color: var(--color-1); opacity: 0.7; line-height: 1.25;">
+                    <div class="about-header">
                         I'm a <span style="color: var(--blue)">creative developer</span> who enjoys making code sketches and writing about <span style="color: var(--green)">nature</span>, <span style="color: var(--orange)">mathematics</span> &amp; <span style="color: var(--purple)">poetry</span>
                     </div>
                 </div>
@@ -52,8 +52,8 @@
             <div class="img-container">
                 <img class="drawing" src={innerWidth <= 1000 ? "/images/drawing-mobile.jpg" : ""} height="500" width="500" alt="a large, circular primary image - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
             </div>
-            <div class="about-description s-nZ8U3HxS9vwg">
-                <div class="about-header s-nZ8U3HxS9vwg" style="color: var(--color-1); opacity: 0.7; line-height: 1.25;">
+            <div class="about-description">
+                <div class="about-header">
                     I'm a <span style="color: var(--blue)">creative developer</span> who enjoys making code sketches and writing about <span style="color: var(--green)">nature</span>, <span style="color: var(--orange)">mathematics</span> &amp; <span style="color: var(--purple)">poetry</span>
                 </div>
             </div>
@@ -172,6 +172,8 @@
         transition: color 150ms ease-out;
         max-width: 420px;
         margin-top: 5px;
+        opacity: 1;
+        line-height: 1.25;
     }
     .desktop {
         display: flex;
