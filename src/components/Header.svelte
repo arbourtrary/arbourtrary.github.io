@@ -139,9 +139,7 @@
             width: auto;
             margin: 0px 20px;
         }
-        .header {
-            border-bottom: none;
-        }
+
     }
     @media screen and (max-width: 550px) {
         .title {

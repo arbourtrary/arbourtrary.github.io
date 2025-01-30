@@ -7,8 +7,20 @@
     export let sectionIndex = 2;
     export let scrollY = 0;
     export let dataFilename = "";
+    export let splitByYear = false;
+    export let limit = 10;
 
+    let currentYear;
     let writings = [];
+
+    function isUniqueYear(year) {
+        if (year !== currentYear) {
+            currentYear = year;
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     onMount(async () => {
         writings = await loadJSON(dataFilename);
@@ -17,10 +29,12 @@
         for(const writing of writings) {
             const date = new Date(writing.date)
             const month = date.getMonth() + 1;
+            const fullYear = date.getFullYear();
             const formattedMonth = month < 10 ? `<span style="visibility: hidden;">1</span>${month}` : month;
-            const formattedYear = date.getFullYear().toString().slice(2);
+            const formattedYear = fullYear.toString().slice(2);
             const dateFormatted = `${formattedMonth}/${formattedYear}`;
             writing.date = dateFormatted
+            writing.year = fullYear;
         }
     });
 
@@ -32,11 +46,25 @@
 
 <div id="writings" bind:this={outerContainer}>
     <div class="writings-container">
-        <h2>W R I T I N G S</h2>
+        <a class="writings-header" href="/writings">
+            <h2>W R I T I N G S
+                {#if limit}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                    </svg>
+                {/if}
+            </h2>
+        </a>
+            
         {#each writings as writing, i}
-            <WritingRow 
-                {writing}
-            />
+            {#if (limit && i < limit) || (!limit)}
+                {#if splitByYear && isUniqueYear(writing.year)}
+                    <h2 class="year">{writing.year}</h2>
+                {/if}
+                <WritingRow 
+                    {writing}
+                />
+            {/if}
         {/each}
     </div>
 </div> 
@@ -59,17 +87,56 @@
         margin: auto;
         justify-content: center;
     }
+    .writings-header {
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        width: fit-content;
+    }
+    .writings-header:hover h2 {
+        color: var(--color-1);
+    }
     h2 {
         padding-bottom: 3px;
         width: fit-content;
         margin-left: 10px;
-        color: var(--color-2);
         font-family: "Vollkorn";
         font-size: 16px;
+        color: var(--color-2);
+        display: flex;
+        align-items: center;
+    }
+    h2 svg {
+        position: relative;
+        margin-left: 7px;
+        margin-bottom: 4px;
+        height: 16px;
+        width: 16px;
+    }
+    .year {
+        letter-spacing: 2px;
+        margin-top: 30px;
+        margin-bottom: 2px;
+    }
+    .see-all {
+        font-family: "Vollkorn";
+        color: var(--color-2);
+        text-decoration: none;
+        text-align: left;
+        padding-top: 10px;
+        width: fit-content;
+        margin-left: 10px;
     }
     @media only screen and (max-width: 700px) {
         h2 {
             font-size: 13px;
+        }
+        h2 svg {
+            position: relative;
+            margin-left: 7px;
+            margin-bottom: 2px;
+            height: 14px;
+            width: 14px;
         }
     }
     @media only screen and (max-width: 600px) {
