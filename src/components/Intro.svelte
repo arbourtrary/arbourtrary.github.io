@@ -29,7 +29,7 @@
                 </div>
                 <div class="intro-description">
                     <div class="intro-header">
-                        I'm a <span style="color: var(--blue)">creative developer</span> who enjoys making code sketches and writing intro <span style="color: var(--green)">nature</span>, <span style="color: var(--orange)">mathematics</span> &amp; <span style="color: var(--purple)">poetry</span>
+                        I'm a <span style="color: var(--blue)">creative developer</span> who enjoys making code sketches and writing about <span style="color: var(--green)">nature</span>, <span style="color: var(--orange)">mathematics</span> &amp; <span style="color: var(--purple)">poetry</span>
                     </div>
                 </div>
             </div>
@@ -54,7 +54,7 @@
             </div>
             <div class="intro-description">
                 <div class="intro-header">
-                    I'm a <span style="color: var(--blue)">creative developer</span> who enjoys making code sketches and writing intro <span style="color: var(--green)">nature</span>, <span style="color: var(--orange)">mathematics</span> &amp; <span style="color: var(--purple)">poetry</span>
+                    I'm a <span style="color: var(--blue)">creative developer</span> who enjoys making code sketches and writing about <span style="color: var(--green)">nature</span>, <span style="color: var(--orange)">mathematics</span> &amp; <span style="color: var(--purple)">poetry</span>
                 </div>
             </div>
         </div>

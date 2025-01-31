@@ -122,6 +122,13 @@
         h2 {
             font-size: 13px;
         }
+        h2 svg {
+            position: relative;
+            margin-left: 7px;
+            margin-bottom: 2px;
+            height: 14px;
+            width: 14px;
+        }
     }
     @media only screen and (max-width: 600px) {
         #sketches {

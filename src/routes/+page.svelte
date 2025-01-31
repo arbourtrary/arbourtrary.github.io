@@ -5,7 +5,7 @@
     import Header from "../components/Header.svelte"
     import Progress from "../components/Progress.svelte"
     import Intro from "../components/Intro.svelte"
-    import Projects from "../components/Projects.svelte"
+    import PlatonicProjects from "../components/PlatonicProjects.svelte"
     import Writings from "../components/Writings.svelte"
     import Sketches from "../components/Sketches.svelte"
     import Contact from "../components/Contact.svelte"
@@ -73,7 +73,7 @@
         {scrollY}
     />
     <hr>
-    <Projects
+    <PlatonicProjects
         sectionIndex={1}
         dataFilename={'/data/projects.json'}
         {scrollY}
