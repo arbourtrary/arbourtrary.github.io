@@ -75,6 +75,7 @@
         justify-content: center;
         padding-top: 60px!important;
         margin-top: 60px !important;
+        margin-bottom: 60px !important;
     }
     .projects-container {
         width: min(95vw, 500px);

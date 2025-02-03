@@ -183,5 +183,44 @@
     "image": "textures/fade_fallen_trees.jpg",
     "url": "https://www.sacbee.com/news/local/article272039637.html",
     "format": "Articles"
+  },
+  {
+    "title": "Ogallala Aquifer",
+    "publication": "Kansas City Star",
+    "description": "Kansas has been running out of water for decades. Why has no one fixed it?",
+    "year": "2023",
+    "date": "11/16/23",
+    "awards": [],
+    "awardsShort": [],
+    "tags": ["web components", "aquifer", "environmentalism", "water", "maplibre", "map"],
+    "image": "",
+    "url": "https://www.kansascity.com/news/state/kansas/article281294898.html",
+    "format": "Articles"
+  },
+  {
+    "title": "Miami Heat Island",
+    "publication": "Miami Herald",
+    "description": "Miami-Dade County’s urban tree project unable to shade residents from record heat",
+    "year": "2024",
+    "date": "4/22/24",
+    "awards": [],
+    "awardsShort": [],
+    "tags": ["web components", "map", "heat", "maplibre", "demographics", "climate change"],
+    "image": "",
+    "url": "https://www.miamiherald.com/news/local/environment/climate-change/article276415291.html",
+    "format": "Articles"
+  },
+  {
+    "title": "Private Eyes",
+    "publication": "News & Observer",
+    "description": "Camera by camera, North Carolina police build growing network to track vehicles",
+    "year": "2024",
+    "date": "5/1/24",
+    "awards": [],
+    "awardsShort": [],
+    "tags": ["web components", "map", "surveillance", "maplibre", "demographics"],
+    "image": "",
+    "url": "https://www.newsobserver.com/news/state/north-carolina/article286920890.html",
+    "format": "Articles"
   }
 ]

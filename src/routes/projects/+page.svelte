@@ -1,6 +1,8 @@
 <script>
     import Header from "../../components/Header.svelte"
     import Projects from "../../components/Projects.svelte"
+    import Footer from '../../components/Footer.svelte';
+
     import { onMount } from "svelte";
 
     let shouldHydrate = false;
@@ -17,6 +19,7 @@
         splitByFormat={true}
         limit={null}
     />
+    <Footer/>
 {/if}
 
 <style>
