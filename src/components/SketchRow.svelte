@@ -10,7 +10,7 @@
     const numCircles = 13 + Math.round(randomNumber(`circles ${sketch.title}`)) * 3;
     const circleSizes = [];
     for (let i = 0; i < numCircles; i++) {
-        circleSizes.push(2 + randomNumber(`${i} ${sketch.title}`) * 12)
+        circleSizes.push(2 + randomNumber(`${i} ${sketch.title}`) * 10)
     }
 
     const colors = [
