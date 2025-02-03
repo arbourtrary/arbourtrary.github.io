@@ -36,7 +36,7 @@
     "tags": ["d3", "svg", "basketball", "NBA", "triangle"],
     "image": "textures/fade_recordigami.jpg",
     "url": "https://narro.design/html/nba-recordigami.html",
-    "format": "Articles"
+    "format": "Narro"
   },
   {
     "title": "Puerto Rican Migration",
@@ -49,9 +49,8 @@
     "tags": ["d3", "Puerto Rico", "Census", "choropleth", "small multiples"],
     "image": "textures/fade_puerto_rico_migration.jpg",
     "url": "https://narro.design/html/puerto-rico-migration.html",
-    "format": "Articles"
+    "format": "Narro"
   },
-
   {
     "title": "Linguistics",
     "publication": "Narro",
@@ -63,7 +62,7 @@
     "tags": ["svelte", "gallery", "circle packing", "phoneme", "grapheme", "linguistics"],
     "image": "textures/fade_linguistics.jpg",
     "url": "https://narro.design/html/linguistics-intro.html",
-    "format": "Articles"
+    "format": "Narro"
   },
   {
     "title": "Around the World",
@@ -76,7 +75,7 @@
     "tags": ["d3", "r", "s3", "aws", "westworld", "international", "flags"],
     "image": "textures/fade_around_the_world.jpg",
     "url": "https://narro.design/html/around-the-world.html",
-    "format": "Articles"
+    "format": "Narro"
   },
   {
     "title": "House of Cards",
@@ -101,7 +100,7 @@
     "tags": ["svelte", "scrolling video", "audio", "surfside"],
     "image": "textures/fade_house_of_cards.jpg",
     "url": "https://www.miamiherald.com/news/special-reports/surfside-investigation/article256633336.html",
-    "format": "Articles"
+    "format": "Journalism"
   },
   {
     "title": "Made in Miami",
@@ -122,7 +121,7 @@
     "tags": ["d3", "js", "web component", "network", "haiti"],
     "image": "textures/fade_made_in_miami.jpg",
     "url": "https://www.miamiherald.com/news/nation-world/world/americas/haiti/article266152901.html",
-    "format": "Articles"
+    "format": "Journalism"
   },
   {
     "title": "Big Poultry",
@@ -135,7 +134,7 @@
     "tags": ["svelte", "incremental video", "maplibre", "north carolina"],
     "image": "textures/fade_big_poultry.jpg",
     "url": "https://www.charlotteobserver.com/news/state/north-carolina/article267887592.html",
-    "format": "Articles"
+    "format": "Journalism"
   },
   {
     "title": "Cut Off",
@@ -152,7 +151,7 @@
     "tags": ["svelte", "maplibre", "dataviz", "south carolina"],
     "image": "textures/fade_cut_off.jpg",
     "url": "https://www.thestate.com/news/state/south-carolina/article258302413.html",
-    "format": "Articles"
+    "format": "Journalism"
   },
   {
     "title": "Security for Sale",
@@ -169,7 +168,7 @@
     "tags": ["svelte", "maplibre", "hexbins", "american dream", "real estate", "north carolina"],
     "image": "textures/fade_security_for_sale.jpg",
     "url": "https://pulitzercenter.org/projects/security-sale",
-    "format": "Articles"
+    "format": "Journalism"
   },
   {
     "title": "Fallen Trees",
@@ -182,7 +181,7 @@
     "tags": ["svelte", "maplibre", "ai2svelte", "bar chart", "trees", "311", "sacramento", "service journalism"],
     "image": "textures/fade_fallen_trees.jpg",
     "url": "https://www.sacbee.com/news/local/article272039637.html",
-    "format": "Articles"
+    "format": "Journalism"
   },
   {
     "title": "Ogallala Aquifer",
@@ -195,7 +194,7 @@
     "tags": ["web components", "aquifer", "environmentalism", "water", "maplibre", "map"],
     "image": "",
     "url": "https://www.kansascity.com/news/state/kansas/article281294898.html",
-    "format": "Articles"
+    "format": "Journalism"
   },
   {
     "title": "Miami Heat Island",
@@ -208,7 +207,7 @@
     "tags": ["web components", "map", "heat", "maplibre", "demographics", "climate change"],
     "image": "",
     "url": "https://www.miamiherald.com/news/local/environment/climate-change/article276415291.html",
-    "format": "Articles"
+    "format": "Journalism"
   },
   {
     "title": "Private Eyes",
@@ -221,6 +220,32 @@
     "tags": ["web components", "map", "surveillance", "maplibre", "demographics"],
     "image": "",
     "url": "https://www.newsobserver.com/news/state/north-carolina/article286920890.html",
-    "format": "Articles"
+    "format": "Journalism"
+  },
+  {
+    "title": "9/11/74",
+    "publication": "Charlotte Observer",
+    "description": "It should have been an easy flight to Charlotte. But then something went horribly wrong.",
+    "year": "2024",
+    "date": "9/11/24",
+    "awards": [],
+    "awardsShort": [],
+    "tags": ["web components", "anniversary", "flight", "memorial", "tragedy", "audio"],
+    "image": "",
+    "url": "https://www.charlotteobserver.com/news/local/article290982455.html",
+    "format": "Journalism"
+  },
+  {
+    "title": "Forging Fortnite",
+    "publication": "Raleigh News & Observer",
+    "description": "How a North Carolina studio made the world’s biggest game",
+    "year": "2024",
+    "date": "10/15/24",
+    "awards": [],
+    "awardsShort": [],
+    "tags": ["web components", "quiz", "fortnite", "gaming"],
+    "image": "",
+    "url": "https://www.newsobserver.com/news/business/article292473374.html",
+    "format": "Journalism"
   }
 ]
