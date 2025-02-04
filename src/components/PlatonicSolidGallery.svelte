@@ -745,7 +745,8 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-        padding-top: 50px;
+        padding-top: 25px;
+        padding-bottom: 25px;
         height: calc(100vh - 50px); 
     }
     .details {
@@ -851,7 +852,6 @@
         }
         .background {
             flex-direction: column;
-            padding-top: 50px;
             height: calc(100vh - 50px); 
             justify-content: center;
             width: min(95vw, 500px);
