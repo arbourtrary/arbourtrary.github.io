@@ -1,6 +1,7 @@
 <script>
   import Footer from "./Footer.svelte";
   import { onMount } from 'svelte';
+  import { base } from '$app/paths'
 
   let isOpen = false;
   let overlay;
@@ -49,10 +50,10 @@
   <!-- Side Menu Panel -->
   <nav class="side-menu" class:open={isOpen}>
     <ul>
-      <li><a href="/about">About</a></li>
-      <li><a href="/writings">Writings</a></li>
-      <li><a href="/sketches">Sketches</a></li>
-      <li><a href="/projects">Projects</a></li>
+      <li><a href={base + "/about"}>About</a></li>
+      <li><a href={base + "/writings"}>Writings</a></li>
+      <li><a href={base + "/sketches"}>Sketches</a></li>
+      <li><a href={base + "/projects"}>Projects</a></li>
     </ul>
     
     <Footer/>
