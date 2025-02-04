@@ -77,8 +77,8 @@
         flex-direction: row;
         margin: auto 0;
         justify-content: center;
-        padding-top: 60px!important;
-        margin-top: 60px !important;
+        margin-top: 30px !important;
+        margin-bottom: 60px !important;
     }
     .writings-container {
         width: min(95vw, 500px);
@@ -113,6 +113,9 @@
         height: 16px;
         width: 16px;
     }
+    a:has(h2) {
+        pointer-events: none;
+    }
     .year {
         letter-spacing: 2px;
         margin-top: 30px;
@@ -137,12 +140,6 @@
             margin-bottom: 2px;
             height: 14px;
             width: 14px;
-        }
-    }
-    @media only screen and (max-width: 600px) {
-        #writings {
-            padding-top: 45px!important;
-            margin-top: 15px !important;
         }
     }
 </style>

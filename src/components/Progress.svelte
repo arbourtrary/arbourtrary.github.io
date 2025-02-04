@@ -54,9 +54,9 @@
     </svg>
 </div>
 
-<div class="progress-container-mobile">
+<!-- <div class="progress-container-mobile">
     <div class="progress-bar" style={`width: ${scrollProgress * 100}%`}></div>
-</div>
+</div> -->
 
 <style>
     .progress-container {

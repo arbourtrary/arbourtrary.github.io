@@ -77,8 +77,8 @@
         flex-direction: row;
         margin: auto 0;
         justify-content: center;
-        padding: 60px 0 !important;
-        margin: 60px auto !important;
+        margin: 30px auto !important;
+        margin-bottom: 60px !important;
     }
     .sketches-container {
         width: min(95vw, 500px);
@@ -113,6 +113,9 @@
         height: 16px;
         width: 16px;
     }
+    a:has(h2) {
+        pointer-events: none;
+    }
     .year {
         letter-spacing: 2px;
         margin-top: 30px;
@@ -128,12 +131,6 @@
             margin-bottom: 2px;
             height: 14px;
             width: 14px;
-        }
-    }
-    @media only screen and (max-width: 600px) {
-        #sketches {
-            padding: 45px 0 !important;
-            margin: 15px auto !important;
         }
     }
 </style>

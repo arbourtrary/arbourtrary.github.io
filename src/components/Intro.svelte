@@ -119,7 +119,7 @@
         width: min(90vw, 1100px);
         margin: 0 auto;
         position:relative;
-        height: 100vh;
+        height: calc(100vh - 41px);
         display: block;
     }
     img {
@@ -129,8 +129,7 @@
         position: sticky;
         top: 0;
         display: flex;
-        padding-top: 25px;
-        height: calc(100vh - 25px);
+        height: 100%;
         flex-direction: row;
         margin: auto 0;
         justify-content: center;

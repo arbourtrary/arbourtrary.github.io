@@ -14,7 +14,6 @@
     ]
     const color = colors[Math.round(randomNumber(`color ${project.title}`) * 100) % colors.length];
     const rotate = Math.round(randomNumber(`color ${project.title}`) * 360);
-    console.log(color)
 </script>
 
 <a href={project.url}>

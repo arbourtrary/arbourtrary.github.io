@@ -1,0 +1,7 @@
+<p>I'm David Newcomb Morales and I started this website as a place to express myself through code / writing / drawing. Doing so has opened my eyes to all kinds of other <a href="https://blogscroll.com/">digital gardens</a> and <a href="https://indieweb.org/IndieWeb_Carnival" target="_blank">indie web</a> corners of the internet.</p>
+
+<p>So now I try to follow and support those unique places. I'm very inspired by <a href="https://manuelmoreale.com/" target="_blank">Manuel Moreale</a> - his website and outlook. Also <a href="https://maggieappleton.com" target="_blank">Maggie Appleton</a> - her superb insight and design.</p>
+
+<p>Ultimately, I'm far more interested in the creativity of humans than the outputs of machines. So I want to contribute what I've got to that humanist future.</p>
+
+<p>Day to day, I work as a full-stack software engineer, and have leaned into the frontend lately. I still read and write poetry when I can, though most of my time / energy goes to my family and two little kids.</p>

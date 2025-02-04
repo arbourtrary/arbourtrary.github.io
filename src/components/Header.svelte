@@ -41,7 +41,7 @@
         height: 41px;
         width: 100vw;
         margin: 0 auto;
-        position: fixed;
+        position: relative;
         top: 0px;
         left: 0px;
         display: flex;
