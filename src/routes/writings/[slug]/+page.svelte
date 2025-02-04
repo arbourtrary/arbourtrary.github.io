@@ -255,7 +255,7 @@
         margin: 20px 0;
     }
     :global(.content > p) {
-        color: #333;
+        color: var(--color-1);
     }
     :global(.content > h3) {
         margin-bottom: 0px;

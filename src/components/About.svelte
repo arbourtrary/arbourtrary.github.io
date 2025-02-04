@@ -42,7 +42,7 @@
         margin: auto 0;
         justify-content: center;
         margin-top: 30px !important;
-        margin-bottom: 60px !important;
+        margin-bottom: 30px !important;
         --highlight: var(--blue);
     }
     .about-container {
@@ -78,8 +78,9 @@
     	font-size: 22px;
 		line-height: 1.4;
 		font-family: var(--serif);
-		margin: 0 10px;
-		margin-top: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
+        color: var(--color-1);
     }
     h2 {
         padding-bottom: 3px;
@@ -111,6 +112,11 @@
             margin-bottom: 2px;
             height: 14px;
             width: 14px;
+        }
+    }
+    @media only screen and (max-width: 600px) {
+        :global(#about-homepage p) {
+            font-size: 20px;
         }
     }
 </style>
