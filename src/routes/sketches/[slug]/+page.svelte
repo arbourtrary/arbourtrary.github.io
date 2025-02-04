@@ -201,7 +201,8 @@
         position: relative;
         display: flex;
         align-items: center;
-        padding-left: 10px;
+        padding-left: 5px;
+        width: 29px;
     }
     .home svg {
         height: 20px;

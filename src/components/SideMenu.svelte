@@ -87,6 +87,9 @@
   .menu-container {
     position: relative;
     display: flex;
+    width: 29px;
+    padding: 0px;
+    padding-right: 5px;
   }
 
   .menu-button {

@@ -185,6 +185,7 @@
         display: flex;
         align-items: center;
         color: var(--color-1);
+        width: 29px;
     }
     .home svg {
         height: 20px;

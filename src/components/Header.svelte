@@ -77,6 +77,7 @@
         padding-left: 5px;
         display: flex;
         align-items: center;
+        width: 29px;
     }
     .home svg {
         height: 20px;
