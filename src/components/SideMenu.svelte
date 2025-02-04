@@ -135,10 +135,16 @@
     font-size: var(--font-lg);
     text-decoration: none;
     transition: color 0.2s ease;
+    width: 100%;
+    display: block;
   }
 
   a:hover {
     color: var(--color-2);
+  }
+
+  .menu-button svg, .menu-button path {
+    color: var(--color-1);
   }
 
   .social-icons {
