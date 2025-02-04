@@ -1,5 +1,6 @@
 <script>
     import { section } from "../store.js"
+    import SideMenu from "./SideMenu.svelte"
 
     let header;
     let titles = [];
@@ -28,12 +29,7 @@
         <div style="margin-left: -3px; width: 14px; height: 14px; border-radius: 50%; opacity: 0.5; background: var(--indigo);">&nbsp;</div>
         <div style="margin-left: -2px; width: 10px; height: 10px; border-radius: 50%; opacity: 0.5; background: var(--purple);">&nbsp;</div>
     </div>
-    <div class="donate">
-        <div class="logo">
-            <a href="https://ko-fi.com/arbourtrary" target="_blank">
-            <img src="https://arbourtrary.com/images/kofi.png" height="67" width="100" alt="Ko-Fi donation logo">
-        </div>
-    </div>
+    <SideMenu/>
 </div>
 
 <style>
@@ -84,7 +80,6 @@
     .home svg {
         height: 20px;
         width: 20px;
-        color: darkgray;
     }
     .home svg:hover {
         cursor: pointer;
@@ -96,26 +91,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-    .donate {
-        padding-right: 5px;
-        display: flex;
-        align-items: center;  
-    }
-    .donate .logo {
-        height: 18px;
-        width: 27px;
-    }
-    .donate img {
-        height: 100%;
-        width: 100%;
-        opacity: 0.4;
-        filter: grayscale(100%);
-    }
-    .donate img:hover {
-        cursor: pointer;
-        opacity: 1;
-        filter: saturate(100%);
     }
     .title:hover {
         cursor: pointer;

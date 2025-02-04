@@ -63,6 +63,9 @@
 		    --color-2: #908B80;
 		    --color-3: #A8A195;
 		    --color-4: #EAE6DF;
+
+		    /* Trying to standardize some of the font sizes */
+		    --font-lg: 28px;
 		}
 
 		/*** Works on common browsers ***/
@@ -93,9 +96,12 @@
 		    color: var(--selection-color);
 		}
 
-		body{
+		body {
 		    margin: 0;
 		    background: var(--bg-color);
+		}
+		.no-overflow {
+			overflow: hidden;
 		}
 		.section-subtitle{
 		    width: fit-content;

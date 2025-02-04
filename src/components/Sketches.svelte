@@ -47,7 +47,7 @@
 
 <div id="sketches" bind:this={outerContainer}>
     <div class="sketches-container">
-        <a class="sketches-header" href="/sketches">
+        <a class="sketches-header" href="/sketches" style={limit ? "" : "pointer-events: none"}>
             <h2>S K E T C H E S
                 {#if limit}
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -112,9 +112,6 @@
         margin-bottom: 4px;
         height: 16px;
         width: 16px;
-    }
-    a:has(h2) {
-        pointer-events: none;
     }
     .year {
         letter-spacing: 2px;

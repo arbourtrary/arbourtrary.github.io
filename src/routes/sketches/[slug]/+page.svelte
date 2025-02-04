@@ -3,6 +3,7 @@
     import { clamp } from "../../../utils/math.js"
 
     import Footer from '../../../components/Footer.svelte';
+    import SideMenu from '../../../components/SideMenu.svelte';
 
     // TODO: Need to figure out dynamic import or better page templating?
     import CoalescingText from '../../../components/CoalescingText.svelte';
@@ -81,12 +82,7 @@
         <div style="margin-left: -3px; width: 14px; height: 14px; border-radius: 50%; opacity: 0.5; background: var(--indigo);">&nbsp;</div>
         <div style="margin-left: -2px; width: 10px; height: 10px; border-radius: 50%; opacity: 0.5; background: var(--purple);">&nbsp;</div>
     </div>
-    <div class="donate">
-        <div class="logo">
-            <a href="https://ko-fi.com/arbourtrary" target="_blank">
-            <img src="https://arbourtrary.com/images/kofi.png">
-        </div>
-    </div>
+    <SideMenu/>
 </div>
 
 <div class="sketch">
@@ -200,27 +196,6 @@
         box-sizing: border-box;
         border-bottom:  0.5px solid var(--color-2);
     }
-    .donate {
-        position: relative;
-        display: flex;
-        align-items: center;  
-        padding-right: 10px;
-    }
-    .donate .logo {
-        height: 18px;
-        width: 27px;
-    }
-    .donate img {
-        height: 100%;
-        width: 100%;
-        opacity: 0.4;
-        filter: grayscale(100%);
-    }
-    .donate img:hover {
-        cursor: pointer;
-        opacity: 1;
-        filter: saturate(100%);
-    }
     .home {
         position: relative;
         display: flex;
@@ -230,7 +205,7 @@
     .home svg {
         height: 20px;
         width: 20px;
-        color: darkgray;
+        color: var(--color-1);
     }
     .home svg:hover {
         cursor: pointer;

@@ -41,7 +41,7 @@
 
 <div id="projects-homepage">
     <div class="projects-container">
-        <a class="projects-header" href="/projects">
+        <a class="projects-header" href="/projects" style={limit ? "" : "pointer-events: none"}>
             <h2>P R O J E C T S
                 {#if limit}
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -107,9 +107,6 @@
         margin-bottom: 4px;
         height: 16px;
         width: 16px;
-    }
-    a:has(h2) {
-        pointer-events: none;
     }
     .format {
         letter-spacing: 2px;

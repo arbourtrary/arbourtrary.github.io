@@ -3,6 +3,7 @@
     import { onMount } from 'svelte';
     import { clamp, mapToUnitRange } from '../../../utils/math.js';
     import Footer from '../../../components/Footer.svelte';
+    import SideMenu from '../../../components/SideMenu.svelte';
 
     export let data;
 
@@ -121,12 +122,7 @@
             `}/>
         </div>
     </div>
-    <div class="donate">
-        <div class="logo">
-            <a href="https://ko-fi.com/arbourtrary" target="_blank">
-            <img src="https://arbourtrary.com/images/kofi.png">
-        </div>
-    </div>
+    <SideMenu/>
 </div>
 <div class="writ">
     <div class="title">{data.writing.title}</div>
@@ -182,37 +178,17 @@
         /*box-shadow: 0 0 1px var(--color-1)*/
         /*box-shadow: 0px 0px 40px var(--color-4);*/
     }
-    .donate {
-        position: relative;
-        padding-right: 10px;
-        display: flex;
-        align-items: center;  
-    }
-    .donate .logo {
-        height: 18px;
-        width: 27px;
-    }
-    .donate img {
-        height: 100%;
-        width: 100%;
-        opacity: 0.4;
-        filter: grayscale(100%);
-    }
-    .donate img:hover {
-        cursor: pointer;
-        opacity: 1;
-        filter: saturate(100%);
-    }
     .home {
         position: relative;
         padding-left: 10px;
         display: flex;
         align-items: center;
+        color: var(--color-1);
     }
     .home svg {
         height: 20px;
         width: 20px;
-        color: darkgray;
+        color: var(--color-1);
     }
     .home svg:hover {
         cursor: pointer;
