@@ -50,7 +50,7 @@
                 {/if}
             </h2>
         </a>
-            
+        <p>Kind of a catch-all category of various things I've worked on - articles, websites, self-published books of poems.</p>
         {#each projects as project, i}
             {#if (limit && i < limit) || (!limit)}
                 {#if splitByFormat && isUniqueFormat(project.format)}
@@ -84,12 +84,32 @@
     }
     .projects-header {
         cursor: pointer;
-        text-decoration: none;
+        text-decoration: none !important;
         transition: all 0.3s ease;
         width: fit-content;
     }
     .projects-header:hover h2 {
         color: var(--color-1);
+    }
+    #projects-homepage p {
+        font-family: var(--serif);
+        color: var(--color-1);
+        font-size: 18px;
+        margin: 0 10px;
+        margin-bottom: 15px;
+    }
+    #projects-homepage a {
+        text-decoration: underline;
+        padding: 0 2px;
+        color: var(--blue);
+        filter: brightness(0.85);
+    }
+    #projects-homepage a:hover {
+        background: var(--blue);
+        text-decoration: none;
+        border-radius: 5px;
+        color: white;
+        filter: brightness(1);
     }
     h2 {
         padding-bottom: 3px;

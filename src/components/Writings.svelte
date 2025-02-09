@@ -55,7 +55,7 @@
                 {/if}
             </h2>
         </a>
-            
+        <p>Somewhere to collect my thoughts / ideas / ramblings. Mostly write about nature, philosophies of time, geometry, maybe some software topics.</p>
         {#each writings as writing, i}
             {#if (limit && i < limit) || (!limit)}
                 {#if splitByYear && isUniqueYear(writing.year)}
@@ -89,12 +89,32 @@
     }
     .writings-header {
         cursor: pointer;
-        text-decoration: none;
+        text-decoration: none !important;
         transition: all 0.3s ease;
         width: fit-content;
     }
     .writings-header:hover h2 {
         color: var(--color-1);
+    }
+    #writings p {
+        font-family: var(--serif);
+        color: var(--color-1);
+        font-size: 18px;
+        margin: 0 10px;
+        margin-bottom: 15px;
+    }
+    #writings a {
+        text-decoration: underline;
+        padding: 0 2px;
+        color: var(--blue);
+        filter: brightness(0.85);
+    }
+    #writings a:hover {
+        background: var(--blue);
+        text-decoration: none;
+        border-radius: 5px;
+        color: white;
+        filter: brightness(1);
     }
     h2 {
         padding-bottom: 3px;
