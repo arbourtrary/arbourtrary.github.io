@@ -56,7 +56,9 @@
                 {/if}
             </h2>
         </a>
-        <p>Little creative code ideas that could sprout into something down the line. Goal is to get something done quickly, let it be rough around the edges, but do just enough to create a compelling idea.</p>
+        {#if !limit}
+            <p class="blurb">Little creative code ideas that could sprout into something down the line. Goal is to get something done quickly, let it be rough around the edges, but do just enough to create a compelling idea.</p>
+        {/if}
         {#each sketches as sketch, i}
             {#if (limit && i < limit) || (!limit)}
                 {#if splitByYear && isUniqueYear(sketch.year)}
@@ -97,20 +99,20 @@
     .sketches-header:hover h2 {
         color: var(--color-1);
     }
-    #sketches p {
+    .blurb {
         font-family: var(--serif);
         color: var(--color-1);
         font-size: 18px;
         margin: 0 10px;
         margin-bottom: 15px;
     }
-    #sketches a {
+    .blurb a {
         text-decoration: underline;
         padding: 0 2px;
         color: var(--blue);
         filter: brightness(0.85);
     }
-    #sketches a:hover {
+    .blurb a:hover {
         background: var(--blue);
         text-decoration: none;
         border-radius: 5px;
