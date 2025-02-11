@@ -38,6 +38,7 @@
     })
     $: if (body) {
         sketch = data.sketch;
+        fetchContent(data.sketch.filename)
         sketchIndex = sketch.index;
 
         const prevIndex = clamp(sketchIndex - 1, 0, data.sketches.length - 1);

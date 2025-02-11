@@ -29,6 +29,7 @@
 
     $: if (body) {
         writing = data.writing;
+        fetchContent(data.writing.filename)
         writingIndex = writing.index;
 
         const prevIndex = clamp(writingIndex - 1, 0, data.writings.length - 1);

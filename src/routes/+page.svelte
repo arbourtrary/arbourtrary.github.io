@@ -6,6 +6,7 @@
     import Progress from "../components/Progress.svelte"
     import Intro from "../components/Intro.svelte"
     import PlatonicProjects from "../components/PlatonicProjects.svelte"
+    import Poems from "../components/Poems.svelte"
     import Writings from "../components/Writings.svelte"
     import Sketches from "../components/Sketches.svelte"
     import Contact from "../components/Contact.svelte"
@@ -62,14 +63,19 @@
     <!-- Sections -->
     <Intro/>
     <hr>
-    <Writings
-        sectionIndex={2}
-        dataFilename={'/data/writings.json'}
-        {scrollY}
-    />
     <Sketches
         sectionIndex={3}
         dataFilename={'/data/sketches.json'}
+        {scrollY}
+    />
+    <Poems
+        sectionIndex={5}
+        dataFilename={'/data/poems.json'}
+        {scrollY}
+    />
+    <Writings
+        sectionIndex={2}
+        dataFilename={'/data/writings.json'}
         {scrollY}
     />
     <hr>
