@@ -22,7 +22,7 @@
 	<div id="books-homepage">
 	    <div class="books-container">
 	        <div class="books-header">
-	            <h2>B O O K S</h2>
+	            <h2 class="section-header">Books</h2>
 	        </div>
 
             <p class="blurb">Making a list of books that have really stuck with me, changed my outlook, inspired me, surprised me. The book image effect comes from the fascinating art of <a href="https://www.kensukekoike.com/" target="_blank">Kensuke Koike</a> - which I translated into code.</p>
@@ -95,21 +95,6 @@
         text-decoration: none;
         border-radius: 5px;
         color: white;
-    }
-    h2 {
-        padding-bottom: 3px;
-        width: fit-content;
-        margin-left: 10px;
-        font-family: "Vollkorn";
-        font-size: 16px;
-        color: var(--color-2);
-        display: flex;
-        align-items: center;
-    }
-    @media only screen and (max-width: 700px) {
-        h2 {
-            font-size: 13px;
-        }
     }
     @media only screen and (max-width: 600px) {
         .books {

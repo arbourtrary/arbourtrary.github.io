@@ -47,7 +47,7 @@
 <div id="writings" bind:this={outerContainer}>
     <div class="writings-container">
         <a class="writings-header" href="/writings" style={limit ? "" : "pointer-events: none"}>
-            <h2>W R I T I N G S
+            <h2 class="section-header">Writings
                 {#if limit}
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
@@ -61,7 +61,7 @@
         {#each writings as writing, i}
             {#if (limit && i < limit) || (!limit)}
                 {#if splitByYear && isUniqueYear(writing.year)}
-                    <h2 class="year">{writing.year}</h2>
+                    <h3 class="year section-subhead">{writing.year}</h3>
                 {/if}
                 <WritingRow 
                     {writing}
@@ -105,16 +105,6 @@
         margin: 0 10px;
         margin-bottom: 15px;
     }
-    h2 {
-        padding-bottom: 3px;
-        width: fit-content;
-        margin-left: 10px;
-        font-family: "Vollkorn";
-        font-size: 16px;
-        color: var(--color-2);
-        display: flex;
-        align-items: center;
-    }
     h2 svg {
         position: relative;
         margin-left: 7px;
@@ -128,9 +118,6 @@
         margin-bottom: 2px;
     }
     @media only screen and (max-width: 700px) {
-        h2 {
-            font-size: 13px;
-        }
         h2 svg {
             position: relative;
             margin-left: 7px;

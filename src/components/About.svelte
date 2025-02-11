@@ -20,7 +20,7 @@
 	<div id="about-homepage">
 	    <div class="about-container">
 	        <div class="about-header">
-	            <h2>A B O U T</h2>
+	            <h2 class="section-header">About</h2>
 	        </div>
 	        <div class="about-body">
 	        	{@html about}
@@ -75,20 +75,8 @@
         margin-right: 10px;
         color: var(--color-1);
     }
-    h2 {
-        padding-bottom: 3px;
-        width: fit-content;
-        margin-left: 10px;
-        font-family: "Vollkorn";
-        font-size: 16px;
-        color: var(--color-2);
-        display: flex;
-        align-items: center;
-    }
-    @media only screen and (max-width: 700px) {
-        h2 {
-            font-size: 13px;
-        }
+    :global(#about-homepage p:first-of-type) {
+        margin-top: 0px;
     }
     @media only screen and (max-width: 600px) {
         :global(#about-homepage p) {
