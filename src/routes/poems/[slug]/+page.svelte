@@ -118,7 +118,7 @@
         color: var(--color-2);
         font-size: 18px;
     }
-    .poem-date.month {
+    :global(.poem-date .month) {
         font-size: 16px;
     }
     .header {
@@ -302,8 +302,8 @@
         .poem-date {
             font-size: 16px;
         }
-        .poem-date.month {
-            font-size: 13px;
+        :global(.poem-date .month) {
+            font-size: 14px;
         }
     }
     @media only screen and (max-width: 400px) {
