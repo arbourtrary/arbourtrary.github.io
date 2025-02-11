@@ -12,7 +12,6 @@
     onMount(async () => {
         const response = await fetch(dataFilename);
         books = await response.json();
-        console.log(books)
     });
 
 </script>
