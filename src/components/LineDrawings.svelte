@@ -189,9 +189,10 @@
 		position: relative;
 		margin: 0 auto;
 		display: flex;
-  		flex-direction: column;
-  		justify-content: center;
-  		flex: 1;
+		flex-direction: column;
+		justify-content: center;
+		flex: 1;
+		color: transparent;
 	}
 	.duration-control {
 		display: flex;
