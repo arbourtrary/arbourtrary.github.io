@@ -8,7 +8,6 @@
 
     export let data;
 
-    let scrollY = 0;
     let poem;
     let poemIndex;
     let prevPoem;
@@ -59,7 +58,6 @@
     <meta name='twitter:description' content={data.poem.description} />
     <meta name='twitter:image:src' content={data.poem.socialImage} />
 </svelte:head>
-<svelte:window bind:scrollY/>
 
 <Header/>
 {#if content}
