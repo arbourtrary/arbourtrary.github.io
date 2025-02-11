@@ -22,6 +22,15 @@
         content = await response.json();
     }
 
+    const formatDate = (date) => {
+        const jsDate = new Date(date)
+        const month = jsDate.toLocaleString('en-US', { month: 'short' });
+        const fullYear = jsDate.getFullYear();
+        const formattedYear = fullYear.toString().slice(2);
+        const formattedDate = `<span class="month">${month}</span> <span style="font-family:'Vollkorn'">'</span>${formattedYear}`;
+        return formattedDate;
+    }
+
     onMount(async () => {
         fetchContent(data.poem.slug);
         body = document.body;
@@ -65,6 +74,7 @@
         <div class="title">{data.poem.name}</div>
         <div class="content">{@html marked(content["text"].replaceAll("\n","\n\n").replaceAll("/",""))}</div>
     </div>
+    <div class="poem-date">{@html formatDate(data.poem.date)}</div>
 {/if}
 <div class="more">
     {#if prevPoem}
@@ -99,6 +109,17 @@
     .poem {
         margin: 0 10px;
         position: relative;
+    }
+    .poem-date {
+        width: min(600px, 90vw);
+        margin: 0 auto;
+        padding-bottom: 15px;
+        font-family: var(--serif);
+        color: var(--color-2);
+        font-size: 18px;
+    }
+    .poem-date.month {
+        font-size: 16px;
     }
     .header {
         height: 41px;
@@ -177,30 +198,30 @@
         width: min(600px, 90vw);
         margin: 0 auto;
         font-size: 22px;
-        margin-bottom: 60px;
+        margin-bottom: 15px;
     }
-    :global(.content a) {
+    :global(.poem > .content a) {
         text-decoration: underline;
         padding: 2px;
         color: var(--highlight);
     }
-    :global(.content a:hover) {
+    :global(.poem > .content a:hover) {
         background: var(--highlight);
         text-decoration: none;
         border-radius: 5px;
         color: white;
     }
-    :global(.content > li) {
+    :global(.poem > .content > li) {
         margin: 20px 0;
     }
-    :global(.content > p) {
+    :global(.poem > .content > p) {
         color: var(--color-1);
         margin: 0;
         text-indent: -1em;
         padding-left: 1em;
         line-height: 1.5;
     }
-    :global(.content > h3) {
+    :global(.poem > .content > h3) {
         margin-bottom: 0px;
         margin-top: 45px;
     }
@@ -256,14 +277,17 @@
         align-self: center;
     }
     @media only screen and (max-width: 640px) {
-        :global(.notes), .more {
+        .more {
             margin: 0 20px;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
+            padding-top: 15px;
+            margin-top: 30px;
         }
     }
     @media only screen and (max-width: 600px) {
         .title {
             font-size: 1.5em;
+            padding-top: 45px;
         }
         :global(.content > p > a) {
             padding: 0px;
@@ -274,6 +298,12 @@
         }
         .content {
             font-size: 20px;
+        }
+        .poem-date {
+            font-size: 16px;
+        }
+        .poem-date.month {
+            font-size: 13px;
         }
     }
     @media only screen and (max-width: 400px) {

@@ -140,7 +140,6 @@
     }
     :global(.notes) {
         max-width: 600px;
-        border-bottom: 1px solid var(--color-3);
         padding: 20px 0;
         margin: 0 auto;
         margin-bottom: 30px;
@@ -318,6 +317,7 @@
         margin: 0 auto;
         margin-bottom: 30px;
         max-width: 600px;
+        border-top: 1px solid var(--color-3);;
     }
     .more a {
         display: flex;
@@ -341,7 +341,9 @@
     @media only screen and (max-width: 640px) {
         :global(.notes), .more {
             margin: 0 20px;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
+            padding-top: 15px;
+            margin-top: 30px;
         }
     }
     @media only screen and (max-width: 600px) {

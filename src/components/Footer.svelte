@@ -70,8 +70,9 @@
 	}
 	@media only screen and (max-width: 640px) {
 		footer {
-			margin: 30px 20px;
-			margin-bottom: 60px;
+			margin: 15px 20px;
+			margin-bottom: 30px;
+			padding-top: 30px;
 		}
 	}
 </style>

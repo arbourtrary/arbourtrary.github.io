@@ -314,9 +314,11 @@
         align-self: center;
     }
     @media only screen and (max-width: 640px) {
-        :global(.notes), .more {
+        .more {
             margin: 0 20px;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
+            padding-top: 15px;
+            margin-top: 30px;
         }
     }
     @media only screen and (max-width: 600px) {
