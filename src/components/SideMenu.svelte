@@ -51,6 +51,7 @@
   <nav class="side-menu" class:open={isOpen}>
     <ul>
       <li><a href={base + "/about"}>About</a></li>
+      <li><a href={base + "/books"}>Books</a></li>
       <li><a href={base + "/poems"}>Poems</a></li>
       <li><a href={base + "/projects"}>Projects</a></li>
       <li><a href={base + "/sketches"}>Sketches</a></li>
