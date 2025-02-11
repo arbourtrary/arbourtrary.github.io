@@ -54,10 +54,6 @@
     </svg>
 </div>
 
-<!-- <div class="progress-container-mobile">
-    <div class="progress-bar" style={`width: ${scrollProgress * 100}%`}></div>
-</div> -->
-
 <style>
     .progress-container {
         pointer-events: none;
@@ -91,36 +87,9 @@
         -webkit-transform: translate3d(0,0,0);
         transform: translate3d(0,0,0);
     }
-    .progress-container-mobile {
-        display: none;
-    }
     @media screen and (max-width: 1000px) {
         .progress-container {
             display: none;
-        }
-        .progress-container-mobile {
-            display: block;
-            position: fixed;
-            top: 40.5px;
-            left: 0px;
-            width: 100%;
-            height: 2px;
-            z-index: 101;
-            background: var(--color-4);
-        }
-        .progress-bar {
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            height: 2px;
-            width: 0px;
-            z-index: 102;
-            background: var(--color-1);
-        }
-    }
-    @media screen and (max-width: 550px) {
-        .progress-container-mobile {
-            top: 38.5px;
         }
     }
 </style>

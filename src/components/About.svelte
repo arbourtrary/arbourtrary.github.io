@@ -19,9 +19,9 @@
 {#if about}
 	<div id="about-homepage">
 	    <div class="about-container">
-	        <a class="about-header">
+	        <div class="about-header">
 	            <h2>A B O U T</h2>
-	        </a>
+	        </div>
 	        <div class="about-body">
 	        	{@html about}
 	    	</div>
@@ -31,9 +31,6 @@
 {/if}
 
 <style>
-	header {
-        border-bottom: 0.5px solid var(--color-2);
-    }
     #about-homepage {
         width: 100vw;
         position: relative;
@@ -53,13 +50,9 @@
         justify-content: center;
     }
     .about-header {
-        cursor: pointer;
         text-decoration: none;
         transition: all 0.3s ease;
         width: fit-content;
-    }
-    .about-header:hover h2 {
-        color: var(--color-1);
     }
     :global(.about-body a) {
         text-decoration: underline;
@@ -92,26 +85,9 @@
         display: flex;
         align-items: center;
     }
-    h2 svg {
-        position: relative;
-        margin-left: 7px;
-        margin-bottom: 4px;
-        height: 16px;
-        width: 16px;
-    }
-    a:has(h2) {
-        pointer-events: none;
-    }
     @media only screen and (max-width: 700px) {
         h2 {
             font-size: 13px;
-        }
-        h2 svg {
-            position: relative;
-            margin-left: 7px;
-            margin-bottom: 2px;
-            height: 14px;
-            width: 14px;
         }
     }
     @media only screen and (max-width: 600px) {

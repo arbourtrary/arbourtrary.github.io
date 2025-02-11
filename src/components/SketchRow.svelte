@@ -2,8 +2,6 @@
     import { randomNumber } from '../utils/identifier.js'
     import { clamp } from '../utils/math.js'
     export let sketch = {};
-    export let index = 0;
-    export let scrollY = 0;
 
     let row;
 
@@ -52,10 +50,6 @@
     a {
         color: unset;
         text-decoration: none;
-    }
-    img {
-        width:100%;
-        height: 100%
     }
     .row {
         margin: 5px 10px;

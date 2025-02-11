@@ -8,6 +8,11 @@
 
     export let data;
 
+    marked.use({
+      mangle: false,
+      headerIds: false
+    });
+
     let poem;
     let poemIndex;
     let prevPoem;
@@ -100,12 +105,6 @@
     :global(:root) {
         --selection-bg-color: var(--highlight);
     }
-    .horizontal-mirror {
-        -moz-transform: scale(-1, 1);
-        -o-transform: scale(-1, 1);
-        -webkit-transform: scale(-1, 1);
-        transform: scale(-1, 1);
-    }
     .poem {
         margin: 0 10px;
         position: relative;
@@ -120,67 +119,6 @@
     }
     :global(.poem-date .month) {
         font-size: 16px;
-    }
-    .header {
-        height: 41px;
-        margin: 0 0 10px 0;
-        width: 100%;
-        display: flex;
-        -webkit-display: flex;
-        position: fixed;
-        background: var(--bg-color);
-        justify-content: center;
-        z-index: 1;
-        padding: 10px;
-        box-sizing: border-box;
-        border-bottom:  0.5px solid var(--color-2);
-        /*box-shadow: 0 0 1px var(--color-1)*/
-        /*box-shadow: 0px 0px 40px var(--color-4);*/
-    }
-    .home {
-        position: relative;
-        padding-left: 5px;
-        display: flex;
-        align-items: center;
-        color: var(--color-1);
-        width: 29px;
-    }
-    .home svg {
-        height: 20px;
-        width: 20px;
-        color: var(--color-1);
-    }
-    .home svg:hover {
-        cursor: pointer;
-        color: var(--color-1);
-        stroke-width: 2;
-    }
-    .horizontal-spacer {
-        width: 100%;
-        flex: 1;
-    }
-    .watermark-container {
-        position: absolute;
-        top: 50%;
-        transform: translate(0, -50%);
-        width: 100%;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        height: 35px;
-        pointer-events: none;
-    }
-    .image-container {
-        position: relative;
-        height: 100%;
-        margin: auto -6px;
-    }
-    .image-container img {
-        height: 100%;
-        width: auto;
-        object-fit: contain;
-        opacity: 0;
     }
     .title, .content {
         font-family: var(--serif);
@@ -224,25 +162,6 @@
     :global(.poem > .content > h3) {
         margin-bottom: 0px;
         margin-top: 45px;
-    }
-    :global(.bold) {
-        color: var(--highlight);
-        font-weight: bold;
-    }
-    :global(.superscript) {
-        display: inline-block;
-        vertical-align: top;
-        position: relative;
-        top: -0.4em;
-        text-decoration:none !important;
-        color: var(--highlight);
-    }
-    :global(.superscript:hover) {
-        text-decoration: underline;
-        color: var(--color-1);
-    }
-    :global(.italic) {
-        font-style: italic;
     }
     .more {
         display: flex;
@@ -289,11 +208,11 @@
             font-size: 1.5em;
             padding-top: 45px;
         }
-        :global(.content > p > a) {
+        :global(.poem > .content > p > a) {
             padding: 0px;
             text-decoration: underline;
         }
-        :global(.content > h3) {
+        :global(.poem > .content > h3) {
             font-size: 1.2em;
         }
         .content {

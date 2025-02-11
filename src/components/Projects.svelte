@@ -100,19 +100,6 @@
         margin: 0 10px;
         margin-bottom: 15px;
     }
-    .blurb a {
-        text-decoration: underline;
-        padding: 0 2px;
-        color: var(--blue);
-        filter: brightness(0.85);
-    }
-    .blurb a:hover {
-        background: var(--blue);
-        text-decoration: none;
-        border-radius: 5px;
-        color: white;
-        filter: brightness(1);
-    }
     h2 {
         padding-bottom: 3px;
         width: fit-content;
@@ -136,15 +123,6 @@
         margin-bottom: 5px;
         text-transform: uppercase;
   		font-size: 12px;
-    }
-    .see-all {
-        font-family: "Vollkorn";
-        color: var(--color-2);
-        text-decoration: none;
-        text-align: left;
-        padding-top: 10px;
-        width: fit-content;
-        margin-left: 10px;
     }
     @media only screen and (max-width: 700px) {
         h2 {

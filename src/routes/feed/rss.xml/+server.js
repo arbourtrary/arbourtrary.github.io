@@ -2,6 +2,11 @@ import { marked } from "marked";
 
 export const prerender = true
 
+marked.use({
+  mangle: false,
+  headerIds: false
+});
+
 async function getText(event, filepath) {
   const response = await event.fetch(filepath);
   const text = await response.text();

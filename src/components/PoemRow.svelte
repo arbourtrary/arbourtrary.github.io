@@ -35,10 +35,6 @@
         color: unset;
         text-decoration: none;
     }
-    img {
-        width:100%;
-        height: 100%
-    }
     .row:hover .hexagon {
         filter: brightness(0.95);
     }
@@ -81,9 +77,6 @@
         opacity: 1 !important;
         cursor: pointer;
     }
-    .row:hover .droplet {
-        filter: brightness(0.95);
-    }
     .row:hover .title {
         color: var(--black);
     }
@@ -99,27 +92,12 @@
         margin: auto 0;
         margin-left: 10px;
     }
-    .droplet {
-        width: 30px;
-        height: 30px;
-        filter: brightness(1.05);
-    }
     .title {
         font-family: var(--serif);
         font-size: 24px;
         margin: auto 0;
     }
-    .droplet img {
-        color: transparent;
-    }
     @media screen and (max-width: 700px) {
-        /*.date {
-            display: none;
-        }*/
-        .droplet {
-            width: 30px;
-            height: 30px;
-        }
         .title {
             font-size: 22px;
         }

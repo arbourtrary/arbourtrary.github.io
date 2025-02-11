@@ -2,49 +2,28 @@
 	import { onMount } from 'svelte';
 	import { calculatePathAngles } from '../utils/svg.js';
 
-	import sequence3 from "../../static/images/line-drawings/sequence-03.svg?url&raw"
-	import sequence5 from "../../static/images/line-drawings/sequence-05.svg?url&raw"
-	import sequence6 from "../../static/images/line-drawings/sequence-06.svg?url&raw"
-	import sequence8 from "../../static/images/line-drawings/sequence-08.svg?url&raw"
-	import sequence12 from "../../static/images/line-drawings/sequence-12.svg?url&raw"
-	import sequence17 from "../../static/images/line-drawings/sequence-17.svg?url&raw"
-	import sequence19 from "../../static/images/line-drawings/sequence-19.svg?url&raw"
-	import sequence22 from "../../static/images/line-drawings/sequence-22.svg?url&raw"
-	import sequence25 from "../../static/images/line-drawings/sequence-25.svg?url&raw"
-	import sequence26 from "../../static/images/line-drawings/sequence-26.svg?url&raw"
-	import sequence27 from "../../static/images/line-drawings/sequence-27.svg?url&raw"
-	import sequence34 from "../../static/images/line-drawings/sequence-34.svg?url&raw"
-	import sequence35 from "../../static/images/line-drawings/sequence-35.svg?url&raw"
-	import sequence36 from "../../static/images/line-drawings/sequence-36.svg?url&raw"
-	import sequence41 from "../../static/images/line-drawings/sequence-41.svg?url&raw"
-	import sequence42 from "../../static/images/line-drawings/sequence-42.svg?url&raw"
-	import sequence46 from "../../static/images/line-drawings/sequence-46.svg?url&raw"
-	import sequence47 from "../../static/images/line-drawings/sequence-47.svg?url&raw"
-	import sequence48 from "../../static/images/line-drawings/sequence-48.svg?url&raw"
-	import sequence49 from "../../static/images/line-drawings/sequence-49.svg?url&raw"
-
 	const ANIMATION_DURATION = 10 // seconds;
-	const drawings = [
-		sequence3,
-		sequence5,
-		sequence6,
-		sequence8,
-		sequence12,
-		sequence17,
-		sequence19,
-		sequence22,
-		sequence25,
-		sequence26,
-		sequence27,
-		sequence34,
-		sequence35,
-		sequence36,
-		sequence41,
-		sequence42,
-		sequence46,
-		sequence47,
-		sequence48,
-		sequence49
+	const fixedUrls = [
+		"/images/line-drawings/sequence-03.svg?url&raw",
+		"/images/line-drawings/sequence-05.svg?url&raw",
+		"/images/line-drawings/sequence-06.svg?url&raw",
+		"/images/line-drawings/sequence-08.svg?url&raw",
+		"/images/line-drawings/sequence-12.svg?url&raw",
+		"/images/line-drawings/sequence-17.svg?url&raw",
+		"/images/line-drawings/sequence-19.svg?url&raw",
+		"/images/line-drawings/sequence-22.svg?url&raw",
+		"/images/line-drawings/sequence-25.svg?url&raw",
+		"/images/line-drawings/sequence-26.svg?url&raw",
+		"/images/line-drawings/sequence-27.svg?url&raw",
+		"/images/line-drawings/sequence-34.svg?url&raw",
+		"/images/line-drawings/sequence-35.svg?url&raw",
+		"/images/line-drawings/sequence-36.svg?url&raw",
+		"/images/line-drawings/sequence-41.svg?url&raw",
+		"/images/line-drawings/sequence-42.svg?url&raw",
+		"/images/line-drawings/sequence-46.svg?url&raw",
+		"/images/line-drawings/sequence-47.svg?url&raw",
+		"/images/line-drawings/sequence-48.svg?url&raw",
+		"/images/line-drawings/sequence-49.svg?url&raw"
 	]
 
 	let data;
@@ -54,16 +33,22 @@
 	let initialized = false;
 	let activeButtons = [false, false, false, true]
 
+	async function fetchSVG(url) {
+		const response = await fetch(url);
+		const svg = await response.text();
+		return svg;
+	}
+
 	onMount(() => {
-		data = JSON.parse(JSON.stringify(drawings));
-		setAnimationDuration(100 * ANIMATION_DURATION);
+		data = JSON.parse(JSON.stringify(fixedUrls));
+		setAnimationDuration(ANIMATION_DURATION * 100)
 	});
    
-	function setRandomDrawingWithoutReplacement() {
+	async function setRandomDrawingWithoutReplacement() {
 		const randomIndex = Math.round(Math.random() * (data.length - 1));
-		drawing = data[randomIndex]
-
+		drawing = await fetchSVG(data[randomIndex]);
 		drawingDiv.innerHTML = drawing;
+
 		const path = drawingDiv.children[0].querySelector('path')
 		length = path.getTotalLength();
 		const angle = calculatePathAngles(path.getAttribute("d")).averageAngle.toFixed(2);
@@ -200,7 +185,7 @@
 	button:hover, button.active {
 		color: var(--color-1);
 	}
-	.line-drawing {
+	:global(.line-drawing) {
 		position: relative;
 		margin: 0 auto;
 		display: flex;

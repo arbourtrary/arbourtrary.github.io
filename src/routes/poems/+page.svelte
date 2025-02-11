@@ -39,9 +39,3 @@
     />
     <Footer/>
 {/if}
-
-<style>
-    header {
-        border-bottom: 0.5px solid var(--color-2);
-    }
-</style>

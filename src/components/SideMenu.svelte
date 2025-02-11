@@ -148,29 +148,6 @@
     color: var(--color-1);
   }
 
-  .social-icons {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .icon {
-    width: 32px;
-    height: 32px;
-    object-fit: contain;
-    opacity: 0.8;
-    transition: opacity 0.2s ease;
-  }
-
-  .icon.kofi {
-    width: 48px;
-  }
-
-  .social-icons img:hover {
-    opacity: 1;
-  }
-
   @media only screen and (max-width: 640px) {
     :global(nav footer) {
         margin: unset !important;

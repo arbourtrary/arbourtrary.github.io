@@ -50,25 +50,6 @@
         box-sizing: border-box;
         border-bottom: 0.5px solid var(--color-2);
     }
-    .title {
-        width: 70px;
-        font-size: 16px;
-        font-family: var(--serif);
-        font-weight: 300;
-        letter-spacing: 0.5px;
-        text-align: center;
-        margin: 0px 40px;
-        color: var(--color-2);
-        transition: all 100ms ease-out;
-        z-index: 11;
-        pointer-events: all;
-    }
-    .title.active {
-        color: var(--color-1);
-/*        border-bottom: 1px solid var(--color-1) !important;*/
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: var(--color-1);
-    }
     a, a:visited {
         text-decoration: none;
     }
@@ -88,19 +69,6 @@
         color: var(--color-1);
         stroke-width: 2;
     }
-    .sections {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .title:hover {
-        cursor: pointer;
-        color: var(--color-1);
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: var(--color-1);
-/*        border-bottom: 1px solid var(--color-1) !important;*/
-    }
     .image-container {
         position: relative;
         height: 100%;
@@ -110,27 +78,5 @@
         flex: 1;
         width: 100%;
         justify-content: center;
-    }
-    @media screen and (max-width: 1000px) {
-        .title {
-            width: auto;
-            margin: 0px 20px;
-        }
-
-    }
-    @media screen and (max-width: 550px) {
-        .title {
-            font-size: 14px;
-            margin: 0px 13px;
-        }
-        .contact {
-            display: none;
-        }
-    }
-    @media screen and (max-width: 400px) {
-        .title {
-            font-size: 14px;
-            margin: 0px 10px;
-        }
     }
 </style>

@@ -6,7 +6,7 @@
 
 <div class="line-container">
 	{#each values as value, index}
-		<div class="line" style={colors.length ? `background: ${colors[index]}` : ""}></div>
+		<div class="line" style={`background: ${colors.length ? colors[index] : ""}; width: ${lineWidth}px`}></div>
 	{/each}
 </div>
 

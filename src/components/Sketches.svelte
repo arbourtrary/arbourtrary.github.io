@@ -106,19 +106,6 @@
         margin: 0 10px;
         margin-bottom: 15px;
     }
-    .blurb a {
-        text-decoration: underline;
-        padding: 0 2px;
-        color: var(--blue);
-        filter: brightness(0.85);
-    }
-    .blurb a:hover {
-        background: var(--blue);
-        text-decoration: none;
-        border-radius: 5px;
-        color: white;
-        filter: brightness(1);
-    }
     h2 {
         padding-bottom: 3px;
         width: fit-content;

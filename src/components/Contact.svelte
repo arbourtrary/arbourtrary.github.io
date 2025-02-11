@@ -39,7 +39,7 @@
         style={`opacity: ${opacity};`}
         width={(innerWidth < 1000) && (innerWidth < innerHeight) ? 1183 : 2145}
         height={(innerWidth < 1000) && (innerWidth < innerHeight) ? 2145 : 1183}
-        alt="background image patterned with an aperiodic monotile"
+        alt="background patterned with an aperiodic monotile"
         loading="lazy"
     >
         <a
