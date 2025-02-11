@@ -120,7 +120,7 @@ export function entries() {
         {"slug": "craftsmanship"},
         {"slug": "uniform-variance"},
         {"slug": "urgent-questionnaire"},
-        {"slug": "category-5"},
+        {"slug": "proposition-q"},
         {"slug": "bubble-talk"},
         {"slug": "regret"},
         {"slug": "city-of-cold-shoulders"},
