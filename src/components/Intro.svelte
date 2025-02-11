@@ -126,7 +126,7 @@
         font-size: 0;
     }
     .intro-container {
-        position: sticky;
+        position: relative;
         top: 0;
         display: flex;
         height: 100%;
@@ -194,9 +194,7 @@
             letter-spacing: .1px;
         }
         .intro-container {
-            height: calc(100vh - 75px);
             flex-direction: column;
-            top: 55px;
             transform: translate(0,0);
             padding-top: 0px;
             grid-row-gap: min(2vh, 10px);
