@@ -78,12 +78,12 @@
         dataFilename={'/data/writings.json'}
         {scrollY}
     />
-    <hr>
+<!--     <hr>
     <PlatonicProjects
         sectionIndex={1}
         dataFilename={'/data/projects.json'}
         {scrollY}
-    />
+    /> -->
     <hr>
     <Contact
         sectionIndex={4}
