@@ -479,7 +479,7 @@
 		.book {
 			padding-top: 30px;
 		}
-		.book canvas {
+		.book canvas, .book img {
 			max-width: 75px;
 		}
 		.book h3 {
