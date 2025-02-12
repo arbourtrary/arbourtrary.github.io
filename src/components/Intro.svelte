@@ -1,6 +1,6 @@
 <script>
-    import { section, bgColor, textColor3, textColor4 } from "../store.js"
     import { onMount } from "svelte";
+    import { base } from '$app/paths'
     import { loadJSON } from "../utils/file.js";
     import { getFieldFromArrayOfObjects } from "../utils/array.js";
 
@@ -17,6 +17,9 @@
 
 <svelte:window bind:innerWidth={innerWidth}/>
 
+<svelte:head>
+    <link rel="preload" as="image" href={base + "/images/drawing.webp"}>
+</svelte:head>
 <scrolling-anchor id="intro">
     
         <div class="intro-container desktop">
