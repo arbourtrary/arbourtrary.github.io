@@ -21,14 +21,14 @@
     <meta property='og:url' content="https://arbourtrary.com/poems" />
     <meta property='og:description' content="An ongoing collection of my poems, sometimes written out of reluctance. Sometimes in rapture." />
     <meta property='og:locale' content='en_US' />
-    <meta property='og:image' content="https://arbourtrary.com/images/social_poems.jpg" />
+    <meta property='og:image' content="https://arbourtrary.com/images/social_poems.webp" />
     
     <meta name='twitter:card' content='summary_large_image' />
     <meta name='twitter:site' content="https://arbourtrary.com/poems" />
     <meta name='twitter:creator' content='arbourtrary' />
     <meta name='twitter:title' content="Poems" />
     <meta name='twitter:description' content="An ongoing collection of my poems, sometimes written out of reluctance. Sometimes in rapture." />
-    <meta name='twitter:image:src' content="https://arbourtrary.com/images/social_poems.jpg" />
+    <meta name='twitter:image:src' content="https://arbourtrary.com/images/social_poems.webp" />
 </svelte:head>
 {#if shouldHydrate}
     <Header/>

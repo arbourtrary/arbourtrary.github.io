@@ -1,6 +1,6 @@
 <h2>Image Sampling</h2>
 <p><b>Inspiration</b>: The fascinating, sometimes disorienting, image processing by the Japanese artist <a href="https://fisheyemagazine.fr/article/le-passe-recompose-de-kensuke-koike/" target="_blank">Kensuke Koike</a> (see image below)</p>
-<img style="width: 100%;" src="/images/image-sampling/kensuke.jpg"/>
+<img style="width: 100%;" src="/images/image-sampling/kensuke.webp"/>
 
 <p><b>Description</b>: So much of the statistical world involves building a model: reducing reality to a more manageable number of dimensions. Even the billions of parameters in the largest LLMs are a simplification of the sheer complexity of reality.</p>
 <p>I think the rearrangements of <b>Kensuke Koike</b> provide beautiful intuition into the approximation of what's real. The work creates something wonderfully new, yet remains reminiscent, yearning, incomplete. A jumbled hint. I tried to recreate this effect in code and applied it to some of my favorite paintings and artworks.</p>

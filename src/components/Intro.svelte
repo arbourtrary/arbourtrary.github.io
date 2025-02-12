@@ -35,7 +35,7 @@
             </div>
 
             <div class="img-container">
-                <img class="drawing" src={innerWidth > 1000 ? "/images/drawing.jpg" : ""} height="800" width="800" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
+                <img class="drawing" src={innerWidth > 1000 ? "/images/drawing.webp" : ""} height="800" width="800" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
             </div>
         </div>
 
@@ -50,7 +50,7 @@
                 </div>
             </div>
             <div class="img-container">
-                <img class="drawing" src={innerWidth <= 1000 ? "/images/drawing-mobile.jpg" : ""} height="500" width="500" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
+                <img class="drawing" src={innerWidth <= 1000 ? "/images/drawing-mobile.webp" : ""} height="500" width="500" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
             </div>
             <div class="intro-description">
                 <div class="intro-header">

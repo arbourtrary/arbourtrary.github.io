@@ -79,29 +79,29 @@
     <div class="watermark-container">
         <!-- TODO: Refactor for a loop - I think this test worked well enough though -->
         <div class="image-container"  style="height: 40%;">
-            <img alt="droplet" src={data.writing.image} style={`
+            <img alt="droplet" src={base + data.writing.image} style={`
                 filter: ${data.writing.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, 0, .25)) * 100}%);
                 opacity: ${clamp(0 + mapToUnitRange(scrollProgress, 0, .25), 0, 1)}
             `}/>
         </div>
         <div class="image-container" style="height: 50%;">
-            <img alt="droplet" src={data.writing.image} style={`
+            <img alt="droplet" src={base + data.writing.image} style={`
                 filter: ${data.writing.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .25, .5)) * 100}%);
                 opacity: ${clamp(0 + mapToUnitRange(scrollProgress, 0.25, .5, 0, 1))}
             `}/>
         </div>
         <div class="image-container" style="height: 80%;">
-            <img alt="droplet" src={data.writing.image} style={`
+            <img alt="droplet" src={base + data.writing.image} style={`
                 filter: ${data.writing.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .5, .75)) * 100}%);
                 opacity: ${clamp(0 + mapToUnitRange(scrollProgress, 0.5, .75, 0, 1))}
             `}/>
         </div>
         <div class="image-container">
-            <img alt="droplet" src={data.writing.image} style={`
+            <img alt="droplet" src={base + data.writing.image} style={`
                 filter: ${data.writing.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .75, 1)) * 100}%);
                 opacity: ${0 + mapToUnitRange(scrollProgress, 0.75, 1)}
             `}/>
-            <img alt="droplet" src={data.writing.image} style={`
+            <img alt="droplet" src={base + data.writing.image} style={`
                 filter: ${data.writing.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .75, 1)) * 100}%);
                 opacity: ${0 + mapToUnitRange(scrollProgress, 0.75, 1)};
                 position: absolute;
@@ -111,19 +111,19 @@
             `}/>
         </div>
         <div class="image-container"  style="height: 80%;">
-            <img alt="droplet" class="horizontal-mirror" src={data.writing.image} style={`
+            <img alt="droplet" class="horizontal-mirror" src={base + data.writing.image} style={`
                 filter: ${data.writing.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .5, .75)) * 100}%);
                 opacity: ${clamp(0 + mapToUnitRange(scrollProgress, .5, .75), 0, 1)}
             `}/>
         </div>
         <div class="image-container" style="height: 50%;">
-            <img alt="droplet" class="horizontal-mirror" src={data.writing.image} style={`
+            <img alt="droplet" class="horizontal-mirror" src={base + data.writing.image} style={`
                 filter: ${data.writing.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, .25, .5)) * 100}%);
                 opacity: ${clamp(0 + mapToUnitRange(scrollProgress, .25, .5), 0, 1)}
             `}/>
         </div>
         <div class="image-container"  style="height: 40%;">
-            <img alt="droplet" class="horizontal-mirror" src={data.writing.image} style={`
+            <img alt="droplet" class="horizontal-mirror" src={base + data.writing.image} style={`
                 filter: ${data.writing.filter} grayscale(${(1 - mapToUnitRange(scrollProgress, 0, .25)) * 100}%);
                 opacity: ${clamp(0 + mapToUnitRange(scrollProgress, 0, .25), 0, 1)};
             `}/>

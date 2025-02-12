@@ -17,6 +17,8 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource/im-fell-english": "^4.5.8",
+		"@fontsource/im-fell-french-canon": "^5.1.1",
+		"@fontsource/lora": "^5.1.1",
 		"@fontsource/vollkorn": "^5.1.1",
 		"@sveltejs/adapter-static": "^2.0.2",
 		"marked": "^5.0.4",

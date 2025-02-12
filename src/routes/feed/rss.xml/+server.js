@@ -36,7 +36,7 @@ export async function GET(event) {
         <docs>https://www.rssboard.org/rss-specification</docs>
         <ttl>1440</ttl>
         <image>
-            <url>https://arbourtrary.com/images/arbourtrary-profile.jpg</url>
+            <url>https://arbourtrary.com/images/arbourtrary-profile.webp</url>
             <title>Arbourtrary RSS Feed</title>
             <link>https://arbourtrary.com</link>
         </image>

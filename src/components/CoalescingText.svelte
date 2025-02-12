@@ -440,7 +440,7 @@
 
 <style>
   :global(*) {
-    font-family: "IM Fell English", "Vollkorn";
+    font-family: var(--serif);
   }
 
   :global(::selection) {

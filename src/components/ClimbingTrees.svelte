@@ -7,8 +7,8 @@ const trees = [
     "h3": "Sequoia sempervirens",
     "color": "#a45a52",
     "filter": "brightness(0) invert(44%) sepia(17%) saturate(1325%) hue-rotate(317deg) brightness(88%) contrast(92%);",
-    "portrait": "/images/climbing-trees/redwood.png",
-    "landscape": "/images/climbing-trees/redwood.png",
+    "portrait": "/images/climbing-trees/redwood.webp",
+    "landscape": "/images/climbing-trees/redwood.webp",
     "height": "116"
   },
   {
@@ -16,8 +16,8 @@ const trees = [
     "h3": "Populus deltoides",
     "color": "#C5B6A6",
     "filter": "brightness(0) invert(80%) sepia(8%) saturate(538%) hue-rotate(350deg) brightness(95%) contrast(82%);",
-    "portrait": "/images/climbing-trees/cottonwood.png",
-    "landscape": "/images/climbing-trees/cottonwood.png",
+    "portrait": "/images/climbing-trees/cottonwood.webp",
+    "landscape": "/images/climbing-trees/cottonwood.webp",
     "height": "90"
   },
   {
@@ -25,8 +25,8 @@ const trees = [
     "h3": "Eriobotrya japonica",
     "color": "#D4A668",
     "filter": "brightness(0) invert(70%) sepia(33%) saturate(459%) hue-rotate(346deg) brightness(91%) contrast(89%)",
-    "portrait": "/images/climbing-trees/loquat.png",
-    "landscape": "/images/climbing-trees/loquat.png",
+    "portrait": "/images/climbing-trees/loquat.webp",
+    "landscape": "/images/climbing-trees/loquat.webp",
     "height": "25"
   },
   {
@@ -34,8 +34,8 @@ const trees = [
     "h3": "Cocos nucifera",
     "color": "var(--green)",
     "filter": "brightness(0) invert(49%) sepia(12%) saturate(831%) hue-rotate(61deg) brightness(100%) contrast(90%)",
-    "portrait": "/images/climbing-trees/palm.png",
-    "landscape": "/images/climbing-trees/palm.png",
+    "portrait": "/images/climbing-trees/palm.webp",
+    "landscape": "/images/climbing-trees/palm.webp",
     "height": "65"
   },
   {
@@ -43,8 +43,8 @@ const trees = [
     "h3": "Eucalyptus globulus",
     "color": "#5F8575",
     "filter": "brightness(0) invert(47%) sepia(28%) saturate(336%) hue-rotate(103deg) brightness(97%) contrast(86%);",
-    "portrait": "/images/climbing-trees/eucalyptus.png",
-    "landscape": "/images/climbing-trees/eucalyptus.png",
+    "portrait": "/images/climbing-trees/eucalyptus.webp",
+    "landscape": "/images/climbing-trees/eucalyptus.webp",
     "height": "80"
   },
   {
@@ -52,8 +52,8 @@ const trees = [
     "h3": "Citrus sinensis",
     "color": "#D8A06B",
     "filter": "brightness(0) invert(71%) sepia(27%) saturate(459%) hue-rotate(339deg) brightness(92%) contrast(84%)",
-    "portrait": "/images/climbing-trees/orange.png",
-    "landscape": "/images/climbing-trees/orange.png",
+    "portrait": "/images/climbing-trees/orange.webp",
+    "landscape": "/images/climbing-trees/orange.webp",
     "height": "30"
   },
   {
@@ -61,8 +61,8 @@ const trees = [
     "h3": "Citrus limon",
     "color": "#B0A675",
     "filter": "brightness(0) invert(71%) sepia(5%) saturate(1878%) hue-rotate(13deg) brightness(92%) contrast(94%);",
-    "portrait": "/images/climbing-trees/lemon.png",
-    "landscape": "/images/climbing-trees/lemon.png",
+    "portrait": "/images/climbing-trees/lemon.webp",
+    "landscape": "/images/climbing-trees/lemon.webp",
     "height": "20"
   },
   {
@@ -70,8 +70,8 @@ const trees = [
     "h3": "Quercus virginiana",
     "color": "#8D7267",
     "filter": "brightness(0) invert(46%) sepia(11%) saturate(568%) hue-rotate(326deg) brightness(94%) contrast(88%)",
-    "portrait": "/images/climbing-trees/oak.png",
-    "landscape": "/images/climbing-trees/oak.png",
+    "portrait": "/images/climbing-trees/oak.webp",
+    "landscape": "/images/climbing-trees/oak.webp",
     "height": "70"
   },
   {
@@ -79,8 +79,8 @@ const trees = [
     "h3": "Royal poinciana",
     "color": "#CC5F4B",
     "filter": "brightness(0) invert(49%) sepia(41%) saturate(829%) hue-rotate(327deg) brightness(94%) contrast(89%)",
-    "portrait": "/images/climbing-trees/flamboyan.png",
-    "landscape": "/images/climbing-trees/flamboyan.png",
+    "portrait": "/images/climbing-trees/flamboyan.webp",
+    "landscape": "/images/climbing-trees/flamboyan.webp",
     "height": "45"
   },
   {
@@ -88,8 +88,8 @@ const trees = [
     "h3": "Salix babylonica",
     "color": "#89A088",
     "filter": "brightness(0) invert(65%) sepia(9%) saturate(654%) hue-rotate(71deg) brightness(94%) contrast(88%)",
-    "portrait": "/images/climbing-trees/willow.png",
-    "landscape": "/images/climbing-trees/willow.png",
+    "portrait": "/images/climbing-trees/willow.webp",
+    "landscape": "/images/climbing-trees/willow.webp",
     "height": "65"
   }
 ]

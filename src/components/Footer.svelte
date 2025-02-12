@@ -10,7 +10,7 @@
         href="https://arbourtrary.com/feed/rss"
         target="_blank"
     >
-        <img class="rss" width="100" height="100" loading="lazy" src={base + "/images/rss.png"} alt="rss logo">
+        <img class="rss" width="100" height="100" loading="lazy" src={base + "/images/rss.webp"} alt="rss logo">
     </a>
     <a 
 		class="logo kofi"
@@ -18,7 +18,7 @@
 		href="https://ko-fi.com/arbourtrary"
 		target="_blank"
 	>
-		<img src="https://arbourtrary.com/images/kofi.png" height="67" width="100" alt="Ko-Fi donation logo">
+		<img src={base + "/images/kofi.webp"} height="67" width="100" alt="Ko-Fi donation logo">
     </a>
     <a
         class="logo github"
@@ -26,7 +26,7 @@
         href="https://github.com/arbourtrary"
         target="_blank"
     >
-        <img class="github" width="100" height="100" loading="lazy" src={base + "/images/github.png"} alt="github logo"/>
+        <img class="github" width="100" height="100" loading="lazy" src={base + "/images/github.webp"} alt="github logo"/>
     </a>
     <a
         class="logo"
@@ -34,7 +34,7 @@
         href="https://bsky.app/profile/arbourtrary.com"
         target="_blank"
     >
-        <img class="bluesky" width="100" height="90" loading="lazy" src={base + "/images/bluesky.png"} alt="bluesky logo"/>
+        <img class="bluesky" width="100" height="90" loading="lazy" src={base + "/images/bluesky.webp"} alt="bluesky logo"/>
     </a>
 </footer>
 

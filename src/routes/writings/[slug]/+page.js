@@ -12,8 +12,8 @@ const writings = [
     "filename": "/data/writings/forest-for-the-trees.txt",
     "highlight": "var(--green)",
     "filter": "invert(94%) sepia(10%) saturate(700%) hue-rotate(52deg) brightness(83%) contrast(83%)",
-    "image": "https://arbourtrary.com/images/droplet_0.png",
-    "socialImage": "https://arbourtrary.com/images/social_droplet_0.jpg"
+    "image": "/images/droplet_0.webp",
+    "socialImage": "/images/social_droplet_0.webp"
   },
   {
     "index": 1,
@@ -24,8 +24,8 @@ const writings = [
     "filename": "/data/writings/future-is-irreducible.txt",
     "highlight": "var(--orange)",
     "filter": "invert(90%) sepia(90%) saturate(5641%) hue-rotate(300deg) brightness(107%) contrast(88%)",
-    "image": "https://arbourtrary.com/images/droplet_1.png",
-    "socialImage": "https://arbourtrary.com/images/social_droplet_1.jpg"
+    "image": "/images/droplet_1.webp",
+    "socialImage": "/images/social_droplet_1.webp"
   },
   {
     "index": 2,
@@ -36,8 +36,8 @@ const writings = [
     "filename": "/data/writings/in-real-time.txt",
     "highlight": "var(--purple)",
     "filter": "invert(58%) sepia(57%) saturate(315%) hue-rotate(231deg) brightness(81%) contrast(88%)",
-    "image": "https://arbourtrary.com/images/droplet_2.png",
-    "socialImage": "https://arbourtrary.com/images/social_droplet_2.jpg"
+    "image": "/images/droplet_2.webp",
+    "socialImage": "/images/social_droplet_2.webp"
   },
   {
     "index": 3,
@@ -48,8 +48,8 @@ const writings = [
     "filename": "/data/writings/silvology.txt",
     "highlight": "var(--green)",
     "filter": "invert(94%) sepia(10%) saturate(700%) hue-rotate(52deg) brightness(83%) contrast(83%)",
-    "image": "https://arbourtrary.com/images/droplet_3.png",
-    "socialImage": "https://arbourtrary.com/images/social_droplet_3.jpg"
+    "image": "/images/droplet_3.webp",
+    "socialImage": "/images/social_droplet_3.webp"
   }
 ]
 

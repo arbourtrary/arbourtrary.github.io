@@ -45,14 +45,14 @@
     <meta property='og:url' content='https://arbourtrary.com' />
     <meta property='og:description' content='Trying out a couple concepts. Writing about nature, tech, poetry, mathematics. Providing safe arbour in a darkening forest.' />
     <meta property='og:locale' content='en_US' />
-    <meta property='og:image' content='https://arbourtrary.com/images/arbourtrary.jpg' />
+    <meta property='og:image' content='https://arbourtrary.com/images/arbourtrary.webp' />
     
     <meta name='twitter:card' content='summary_large_image' />
     <meta name='twitter:site' content='https://arbourtrary.com' />
     <meta name='twitter:creator' content='arbourtrary' />
     <meta name='twitter:title' content='arbourtrary' />
     <meta name='twitter:description' content='Trying out a few concepts. Writing about nature, tech, poetry, mathematics. Providing safe arbour in a darkening forest.' />
-    <meta name='twitter:image:src' content='https://arbourtrary.com/images/arbourtrary.jpg' />
+    <meta name='twitter:image:src' content='https://arbourtrary.com/images/arbourtrary.webp' />
 </svelte:head>
 
 {#if shouldHydrate}

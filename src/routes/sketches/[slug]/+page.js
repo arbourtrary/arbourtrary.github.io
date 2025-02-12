@@ -13,7 +13,7 @@ const sketches = [
 		  "name": "CoalescingText"
     },
     "filename": "/data/sketches/coalescing-text.txt",
-    "socialImage": "https://arbourtrary.com/images/social_sketch_0_viz.jpg"
+    "socialImage": "https://arbourtrary.com/images/social_sketch_0_viz.webp"
   },
   {
     "index": 1,
@@ -25,7 +25,7 @@ const sketches = [
       "name": "PolygonOrCircle"
     },
     "filename": "/data/sketches/polygon-or-circle.txt",
-    "socialImage": "https://arbourtrary.com/images/social_sketch_1_viz.jpg"
+    "socialImage": "https://arbourtrary.com/images/social_sketch_1_viz.webp"
   },
   {
     "index": 2,
@@ -37,7 +37,7 @@ const sketches = [
         "name": "DirectEtymologies"
       },
       "filename": "/data/sketches/direct-etymologies.txt",
-      "socialImage": "https://arbourtrary.com/images/social_sketch_2_viz.jpg"
+      "socialImage": "https://arbourtrary.com/images/social_sketch_2_viz.webp"
   },
   {
     "index": 3,
@@ -49,7 +49,7 @@ const sketches = [
         "name": "ChildhoodDictionary"
       },
       "filename": "/data/sketches/childhood-dictionary.txt",
-      "socialImage": "https://arbourtrary.com/images/social_sketch_3_viz.jpg"
+      "socialImage": "https://arbourtrary.com/images/social_sketch_3_viz.webp"
   },
   {
     "index": 4,
@@ -61,7 +61,7 @@ const sketches = [
         "name": "LineDrawings"
       },
       "filename": "/data/sketches/line-drawings.txt",
-      "socialImage": "https://arbourtrary.com/images/social_sketch_4_viz.jpg"
+      "socialImage": "https://arbourtrary.com/images/social_sketch_4_viz.webp"
   },
   {
     "index": 5,
@@ -73,7 +73,7 @@ const sketches = [
         "name": "ImageSampling"
       },
       "filename": "/data/sketches/image-sampling.txt",
-      "socialImage": "https://arbourtrary.com/images/social_sketch_5_viz.jpg"
+      "socialImage": "https://arbourtrary.com/images/social_sketch_5_viz.webp"
   },
   {
     "index": 6,
@@ -85,7 +85,7 @@ const sketches = [
         "name": "IslandPeakscapes"
       },
       "filename": "/data/sketches/island-peakscapes.txt",
-      "socialImage": "https://arbourtrary.com/images/social_sketch_6_viz.jpg"
+      "socialImage": "https://arbourtrary.com/images/social_sketch_6_viz.webp"
   },
   {
     "index": 7,
@@ -97,7 +97,7 @@ const sketches = [
         "name": "CistercianCiphers"
       },
       "filename": "/data/sketches/cistercian-ciphers.txt",
-      "socialImage": "https://arbourtrary.com/images/social_sketch_7_viz.jpg"
+      "socialImage": "https://arbourtrary.com/images/social_sketch_7_viz.webp"
   },
   {
     "index": 8,
@@ -109,7 +109,7 @@ const sketches = [
         "name": "ClimbingTrees"
       },
       "filename": "/data/sketches/climbing-trees.txt",
-      "socialImage": "https://arbourtrary.com/images/social_sketch_8_viz.jpg"
+      "socialImage": "https://arbourtrary.com/images/social_sketch_8_viz.webp"
   }
 ]
 

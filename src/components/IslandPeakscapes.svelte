@@ -7,32 +7,32 @@
 			"h3": "P O L Y N E S I E &nbsp; F R A N Ç A I S E",
 			"color": "var(--green)",
 			"filter": "hue-rotate(975deg)",
-			"portrait": "/images/island-peakscapes/bora-bora-close.png",
-			"landscape": "/images/island-peakscapes/bora-bora.png"
+			"portrait": "/images/island-peakscapes/bora-bora-close.webp",
+			"landscape": "/images/island-peakscapes/bora-bora.webp"
 		},
 		{
 			"h2": "M O <span class='apostrophe'>'</span> O R E A",
 			"h3": "P O L Y N E S I E &nbsp; F R A N Ç A I S E",
 			"color": "var(--green)",
 			"filter": "hue-rotate(975deg)",
-			"portrait": "/images/island-peakscapes/moorea-close.png",
-			"landscape": "/images/island-peakscapes/moorea.png"
+			"portrait": "/images/island-peakscapes/moorea-close.webp",
+			"landscape": "/images/island-peakscapes/moorea.webp"
 		},
 		{
 			"h2": "T A H I T I",
 			"h3": "P O L Y N E S I E &nbsp; F R A N Ç A I S E",
 			"color": "var(--green)",
 			"filter": "hue-rotate(975deg)",
-			"portrait": "/images/island-peakscapes/tahiti-close.png",
-			"landscape": "/images/island-peakscapes/tahiti.png"
+			"portrait": "/images/island-peakscapes/tahiti-close.webp",
+			"landscape": "/images/island-peakscapes/tahiti.webp"
 		},
 		{
 			"h2": "E L &nbsp; Y U N Q U E",
 			"h3": "P U E R T O &nbsp; R I C O",
 			"color": "var(--green)",
 			"filter": "hue-rotate(975deg)",
-			"portrait": "/images/island-peakscapes/el-yunque-close.png",
-			"landscape": "/images/island-peakscapes/el-yunque.png"
+			"portrait": "/images/island-peakscapes/el-yunque-close.webp",
+			"landscape": "/images/island-peakscapes/el-yunque.webp"
 		}
 	]
 

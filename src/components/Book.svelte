@@ -24,7 +24,7 @@
 			// const parentWidth = canvas.parentElement.offsetWidth;
 			// const widthRatio = canvas.offsetWidth / parentWidth;
 
-			const sizeFactor = 50 / 2785 // 0.000773298067	from silhouette.jpg
+			const sizeFactor = 50 / 2785 // 0.000773298067	from silhouette.webp
 			const dotSize = 2 * sizeFactor * img.width /// widthRatio;
 			
 			const finalX1 = canvas.width * .50 - 2 * dotSize * Math.sqrt(3) - dotSize / 2 - 1;
@@ -408,7 +408,7 @@
 
 <div class="book">
 	<a href={book.link} target="_blank">
-		<img alt="book placeholder" style={`display: ${!imageDrawn ? "block" : "none"}`} src="/images/books/placeholder.png"/>
+		<img alt="book placeholder" style={`display: ${!imageDrawn ? "block" : "none"}`} src="/images/books/placeholder.webp"/>
 		<canvas bind:this={final}/>
 	</a>
 	<div class="book-info">

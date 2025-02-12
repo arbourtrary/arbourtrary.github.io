@@ -4,7 +4,7 @@
 <p><b>Description</b>: Wanted a place to collect some of my favorite trees. Living in Northern California for about a decade, I was able to free-climb a bunch of redwoods, pines, oaks, and fruit trees. I also added in some favorites from my time in Puerto Rico (flamboyan) and Texas (live oak). There's nothing quite like the feeling of acension, leaning to hang with the wind and the leaves and the sun.</p>
 
 <p><b>Legend</b>: The graphic below is a phylogenetic tree of trees. It's a stylized legend to help understand how closely (or not) these trees are related to each other genetically. The oldest and least related to the others is the Redwood tree (240 Million years old), while the two most closely related are the Lemon and Orange trees, two of the youngest trees (~20 Million years old).</p>
-<img style="width: min(100%, 280px);" src="/images/climbing-trees/tree-of-trees.png"/>
+<img style="width: min(100%, 280px);" src="/images/climbing-trees/tree-of-trees.webp"/>
 
 <p style="margin-bottom: 10px;"><b>Sources</b></p>
 <p class="indent"><a href="https://www.ncbi.nlm.nih.gov/genbank/" targte="_blank">GenBank</a> - phylogenetics</p>

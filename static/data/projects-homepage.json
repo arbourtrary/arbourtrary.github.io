@@ -8,7 +8,7 @@
     "awards": [],
     "awardsShort": [],
     "tags": ["r", "lda", "network", "blurb", "book", "poetry", "surrealist", "stream of consciousness"],
-    "image": "textures/fade_in_a_word.jpg",
+    "image": "textures/fade_in_a_word.webp",
     "url": "https://www.blurb.com/b/10322155-in-a-word",
     "format": "Books"
   },
@@ -21,7 +21,7 @@
     "awards": [],
     "awardsShort": [],
     "tags": ["r", "graph theory", "spanning tree", "blurb", "book", "poetry", "nature", "technology", "humanity", "san francisco"],
-    "image": "textures/fade_revival.jpg",
+    "image": "textures/fade_revival.webp",
     "url": "https://www.blurb.com/b/10322111-revival",
     "format": "Books"
   },
@@ -34,7 +34,7 @@
     "awards": ["<a href='https://pudding.cool/process/pudding-cup-2021/'>Pudding Cup Honorary Mention</a>"],
     "awardsShort": ["<a href='https://pudding.cool/process/pudding-cup-2021/'>Pudding Cup Honorary Mention</a>"],
     "tags": ["d3", "svg", "basketball", "NBA", "triangle"],
-    "image": "textures/fade_recordigami.jpg",
+    "image": "textures/fade_recordigami.webp",
     "url": "https://narro.design/html/nba-recordigami.html",
     "format": "Narro"
   },
@@ -47,7 +47,7 @@
     "awards": [],
     "awardsShort": [],
     "tags": ["d3", "r", "s3", "aws", "westworld", "international", "flags"],
-    "image": "textures/fade_around_the_world.jpg",
+    "image": "textures/fade_around_the_world.webp",
     "url": "https://narro.design/html/around-the-world.html",
     "format": "Narro"
   },
@@ -60,7 +60,7 @@
     "awards": [],
     "awardsShort": [],
     "tags": ["svelte", "gallery", "circle packing", "phoneme", "grapheme", "linguistics"],
-    "image": "textures/fade_linguistics.jpg",
+    "image": "textures/fade_linguistics.webp",
     "url": "https://narro.design/html/linguistics-intro.html",
     "format": "Narro"
   },
@@ -73,7 +73,7 @@
     "awards": [],
     "awardsShort": [],
     "tags": ["d3", "Puerto Rico", "Census", "choropleth", "small multiples"],
-    "image": "textures/fade_puerto_rico_migration.jpg",
+    "image": "textures/fade_puerto_rico_migration.webp",
     "url": "https://narro.design/html/puerto-rico-migration.html",
     "format": "Narro"
   },
@@ -98,7 +98,7 @@
       "<a href='https://www.inma.org/blogs/main/post.cfm/inma-reveals-60-global-media-awards-first-place-winners-miami-herald-takes-top-prize' target='_blank'>INMA</a>"
     ],
     "tags": ["svelte", "scrolling video", "audio", "surfside"],
-    "image": "textures/fade_house_of_cards.jpg",
+    "image": "textures/fade_house_of_cards.webp",
     "url": "https://www.miamiherald.com/news/special-reports/surfside-investigation/article256633336.html",
     "format": "Journalism"
   },
@@ -115,7 +115,7 @@
       "<a href='https://snd.org/best-of-design-competitions/snd44-annual-creative-competition-results/' target='_blank'>SND Bronze Medal</a>",
       "<a href='https://scpress.org/23-annual-meeting/' target='_blank'>S.C. Press Association</a>"],
     "tags": ["svelte", "maplibre", "dataviz", "south carolina"],
-    "image": "textures/fade_cut_off.jpg",
+    "image": "textures/fade_cut_off.webp",
     "url": "https://www.thestate.com/news/state/south-carolina/article258302413.html",
     "format": "Journalism"
   },
@@ -132,7 +132,7 @@
       "<a href='https://scripps.com/fund/journalism/award-finalists/security-for-sale/' target='_blank'>Scripps Howard Award Finalist</a>"
     ],
     "tags": ["svelte", "maplibre", "hexbins", "american dream", "real estate", "north carolina"],
-    "image": "textures/fade_security_for_sale.jpg",
+    "image": "textures/fade_security_for_sale.webp",
     "url": "https://pulitzercenter.org/projects/security-sale",
     "format": "Journalism"
   },
@@ -145,7 +145,7 @@
     "awards": ["<a href='https://news.mit.edu/2023/mcelheny-award-science-journalism-honors-series-poultry-farming-environment-0403' target='_blank'>MIT Knight Science Journalism</a>", "<a href='https://nationalpress.org/award-story/capital-main-charlotte-observer-raleigh-news-observer-win-npf-stokes-award-for-best-environmental-reporting/' target='_blank'>Stokes Award for Energy & Environment</a>", "<a href='https://www.ire.org/2022-ire-award-winners/' target='_blank'>Investigative Reporters & Editors - IRE Award</a>"],
     "awardsShort": ["<a href='https://news.mit.edu/2023/mcelheny-award-science-journalism-honors-series-poultry-farming-environment-0403' target='_blank'>MIT Knight</a>", "<a href='https://nationalpress.org/award-story/capital-main-charlotte-observer-raleigh-news-observer-win-npf-stokes-award-for-best-environmental-reporting/' target='_blank'>Thomas Stokes</a>", "<a href='https://www.ire.org/2022-ire-award-winners/' target='_blank'>IRE</a>"],
     "tags": ["svelte", "incremental video", "maplibre", "north carolina"],
-    "image": "textures/fade_big_poultry.jpg",
+    "image": "textures/fade_big_poultry.webp",
     "url": "https://www.charlotteobserver.com/news/state/north-carolina/article267887592.html",
     "format": "Journalism"
   },
@@ -166,7 +166,7 @@
       "<a href='https://www.headlinerawards.org/wp-content/uploads/2023/05/2023-headliner-winners.pdf' target='_blank' style='white-space: nowrap;'>National Headliner Award</a>"
     ],
     "tags": ["d3", "js", "web component", "network", "haiti"],
-    "image": "textures/fade_made_in_miami.jpg",
+    "image": "textures/fade_made_in_miami.webp",
     "url": "https://www.miamiherald.com/news/nation-world/world/americas/haiti/article266152901.html",
     "format": "Journalism"
   },
@@ -179,7 +179,7 @@
     "awards": [],
     "awardsShort": [],
     "tags": ["svelte", "maplibre", "ai2svelte", "bar chart", "trees", "311", "sacramento", "service journalism"],
-    "image": "textures/fade_fallen_trees.jpg",
+    "image": "textures/fade_fallen_trees.webp",
     "url": "https://www.sacbee.com/news/local/article272039637.html",
     "format": "Journalism"
   },

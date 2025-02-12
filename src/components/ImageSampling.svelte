@@ -13,22 +13,22 @@
   let activeButtons = [true, false, false]
   let imageFolder = "/images/image-sampling/"
   let images = [
-    {url: `${imageFolder}/monalisa.jpg`, name: "Mona Lisa", artist: "Leonardo da Vinci", year: 1503, link: "https://www.louvre.fr/en/explore/the-palace/from-the-mona-lisa-to-the-wedding-feast-at-cana"},
-    {url: `${imageFolder}/vangogh-blue.jpg`, name: "Portrait de l'artiste", artist: "Vincent Van Gogh", year: 1889, link: "https://www.musee-orsay.fr/en/artworks/portrait-de-lartiste-747"},
-    {url: `${imageFolder}/vangogh-grey.jpg`, name: "Self-Portrait with Grey Felt Hat", artist: "Vincent Van Gogh", year: 1887, link: "https://www.vangoghmuseum.nl/en/collection/s0016V1962"},
-    {url: `${imageFolder}/earring.jpg`, name: "Girl with a Pearl Earring", artist: "Johannes Vermeer", year: 1665, link: "https://www.mauritshuis.nl/en/our-collection/artworks/670-girl-with-a-pearl-earring/"},
-    {url: `${imageFolder}/silhouette.jpg`, name: "Silhouette", artist: "William Henry Brown", year: "1828-83", link: "https://www.metmuseum.org/art/collection/search/825924"},
-    {url: `${imageFolder}/plate.png`, name: "Plate 148", artist: "Adolf Schmidt", year: "1890", link: "https://publicdomainreview.org/collection/schmidt-diatoms/"},
-    {url: `${imageFolder}/frida.jpg`, name: "Yo y mis pericos", artist: "Frida Kahlo", year: "1941", link: "https://www.nationalgeographic.com/adventure/article/famous-women-artists-self-portraits-culture"},
-    {url: `${imageFolder}/galatea.jpg`, name: "Galatea of the spheres", artist: "Salvador Dalí", year: "1952", link: "https://www.salvador-dali.org/en/museums/dali-theatre-museum-in-figueres/the-collection/131/galatea-of-the-spheres"},
-    {url: `${imageFolder}/magritte.jpg`, name: "The Son of Man", artist: "René Magritte", year: "1964", link: "https://www.riseart.com/article/2699/masterpiece-in-the-spotlight-the-son-of-man-magritte"},
-    {url: `${imageFolder}/octopus.jpg`, name: "Cephalopodes Pl. 2", artist: "Jean Baptiste Vérany", year: "1851", link: "https://publicdomainreview.org/collection/verany-cephalopods/"},
-    {url: `${imageFolder}/color.jpg`, name: "Elucidation of colors", artist: "James Sowerby", year: "1809", link: "https://publicdomainreview.org/collection/colour-wheels-charts-and-tables-through-history/"},
-    {url: `${imageFolder}/bird.jpg`, name: "Le petit Rolle Violet", artist: "Jacques Barraband", year: "1806", link: "http://digitalcollections.nypl.org/items/510d47d9-71cc-a3d9-e040-e00a18064a99"},
-    {url: `${imageFolder}/rockwell.jpg`, name: "Triple Self-Portrait", artist: "Norman Rockwell", year: "1960", link: "https://en.wikipedia.org/wiki/Triple_Self-Portrait"},
-    {url: `${imageFolder}/basquiat.jpg`, name: "Sugar", artist: "Jean-Michel Basquiat", year: "1982", link: "https://elialutz.com/le-mythe-des-artistes-maudits-de-baudelaire-a-basquiat/"},
-    {url: `${imageFolder}/escher.jpg`, name: "Hand with Reflecting Sphere", artist: "M.C. Escher", year: "1935", link: "https://www.escherinhetpaleis.nl/showpiece/hand-with-reflecting-sphere/?lang=en#"},
-    {url: `${imageFolder}/lilies.jpg`, name: "Le Bassin aux nymphéas", artist: "Claude Monet", year: "1899", link: "https://www.metmuseum.org/art/collection/search/437127"}
+    {url: `${imageFolder}/monalisa.webp`, name: "Mona Lisa", artist: "Leonardo da Vinci", year: 1503, link: "https://www.louvre.fr/en/explore/the-palace/from-the-mona-lisa-to-the-wedding-feast-at-cana"},
+    {url: `${imageFolder}/vangogh-blue.webp`, name: "Portrait de l'artiste", artist: "Vincent Van Gogh", year: 1889, link: "https://www.musee-orsay.fr/en/artworks/portrait-de-lartiste-747"},
+    {url: `${imageFolder}/vangogh-grey.webp`, name: "Self-Portrait with Grey Felt Hat", artist: "Vincent Van Gogh", year: 1887, link: "https://www.vangoghmuseum.nl/en/collection/s0016V1962"},
+    {url: `${imageFolder}/earring.webp`, name: "Girl with a Pearl Earring", artist: "Johannes Vermeer", year: 1665, link: "https://www.mauritshuis.nl/en/our-collection/artworks/670-girl-with-a-pearl-earring/"},
+    {url: `${imageFolder}/silhouette.webp`, name: "Silhouette", artist: "William Henry Brown", year: "1828-83", link: "https://www.metmuseum.org/art/collection/search/825924"},
+    {url: `${imageFolder}/plate.webp`, name: "Plate 148", artist: "Adolf Schmidt", year: "1890", link: "https://publicdomainreview.org/collection/schmidt-diatoms/"},
+    {url: `${imageFolder}/frida.webp`, name: "Yo y mis pericos", artist: "Frida Kahlo", year: "1941", link: "https://www.nationalgeographic.com/adventure/article/famous-women-artists-self-portraits-culture"},
+    {url: `${imageFolder}/galatea.webp`, name: "Galatea of the spheres", artist: "Salvador Dalí", year: "1952", link: "https://www.salvador-dali.org/en/museums/dali-theatre-museum-in-figueres/the-collection/131/galatea-of-the-spheres"},
+    {url: `${imageFolder}/magritte.webp`, name: "The Son of Man", artist: "René Magritte", year: "1964", link: "https://www.riseart.com/article/2699/masterpiece-in-the-spotlight-the-son-of-man-magritte"},
+    {url: `${imageFolder}/octopus.webp`, name: "Cephalopodes Pl. 2", artist: "Jean Baptiste Vérany", year: "1851", link: "https://publicdomainreview.org/collection/verany-cephalopods/"},
+    {url: `${imageFolder}/color.webp`, name: "Elucidation of colors", artist: "James Sowerby", year: "1809", link: "https://publicdomainreview.org/collection/colour-wheels-charts-and-tables-through-history/"},
+    {url: `${imageFolder}/bird.webp`, name: "Le petit Rolle Violet", artist: "Jacques Barraband", year: "1806", link: "http://digitalcollections.nypl.org/items/510d47d9-71cc-a3d9-e040-e00a18064a99"},
+    {url: `${imageFolder}/rockwell.webp`, name: "Triple Self-Portrait", artist: "Norman Rockwell", year: "1960", link: "https://en.wikipedia.org/wiki/Triple_Self-Portrait"},
+    {url: `${imageFolder}/basquiat.webp`, name: "Sugar", artist: "Jean-Michel Basquiat", year: "1982", link: "https://elialutz.com/le-mythe-des-artistes-maudits-de-baudelaire-a-basquiat/"},
+    {url: `${imageFolder}/escher.webp`, name: "Hand with Reflecting Sphere", artist: "M.C. Escher", year: "1935", link: "https://www.escherinhetpaleis.nl/showpiece/hand-with-reflecting-sphere/?lang=en#"},
+    {url: `${imageFolder}/lilies.webp`, name: "Le Bassin aux nymphéas", artist: "Claude Monet", year: "1899", link: "https://www.metmuseum.org/art/collection/search/437127"}
   ]
 
   onMount(() => {
@@ -76,7 +76,7 @@
         const parentWidth = canvas.parentElement.offsetWidth;
         const widthRatio = canvas.offsetWidth / parentWidth;
 
-        const sizeFactor = 50 / 2785 // 0.000773298067  from silhouette.jpg
+        const sizeFactor = 50 / 2785 // 0.000773298067  from silhouette.webp
         const dotSize = 2 * sizeFactor * img.width / widthRatio;
         
         // Create a temporary canvas for the original image

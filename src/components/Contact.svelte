@@ -35,7 +35,7 @@
     >
     <img
         class="background-image"
-        src={`${(innerWidth < 1000) && (innerWidth < innerHeight) ? "/images/bg_bw_portrait.jpeg" : "/images/bg_bw_landscape.jpeg"}`}
+        src={`${(innerWidth < 1000) && (innerWidth < innerHeight) ? "/images/bg_bw_portrait.webp" : "/images/bg_bw_landscape.webp"}`}
         style={`opacity: ${opacity};`}
         width={(innerWidth < 1000) && (innerWidth < innerHeight) ? 1183 : 2145}
         height={(innerWidth < 1000) && (innerWidth < innerHeight) ? 2145 : 1183}
@@ -49,7 +49,7 @@
             href="https://bsky.app/profile/arbourtrary.com"
             target="_blank"
         >
-            <img class="bluesky" width="100" height="90" loading="lazy" src="/images/bluesky.png" alt="bluesky logo"/>
+            <img class="bluesky" width="100" height="90" loading="lazy" src="/images/bluesky.webp" alt="bluesky logo"/>
         </a>
         <a
             class="logo github"
@@ -58,7 +58,7 @@
             href="https://github.com/arbourtrary"
             target="_blank"
         >
-            <img class="github" width="100" height="100" loading="lazy" src="/images/github.png" alt="github logo"/>
+            <img class="github" width="100" height="100" loading="lazy" src="/images/github.webp" alt="github logo"/>
         </a>
         <a
             class="logo"
@@ -67,7 +67,7 @@
             href="https://arbourtrary.com/feed/rss"
             target="_blank"
         >
-            <img class="rss" width="100" height="100" loading="lazy" src="/images/rss.png" alt="rss logo">
+            <img class="rss" width="100" height="100" loading="lazy" src="/images/rss.webp" alt="rss logo">
         </a>
     </div>
 </div>
