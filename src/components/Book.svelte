@@ -4,8 +4,9 @@
 	let backgroundColor = 'transparent';
 	let clippedCanvas;
 	let final;
-	let image = book.image;
+	let image = book?.image;
 	let imageLoaded = false;
+	let imageDrawn = false;
 
 	async function processImage(layout="pack", bgOpacity=0) {
 		const canvas = document.createElement("canvas");
@@ -328,7 +329,7 @@
 				dotCtx.beginPath();
 				dotCtx.arc(dotSize/2, dotSize/2, dotSize/2, 0, Math.PI * 2);
 				dotCtx.clip();
-				
+
 				// Draw the section of the original image into the dot
 				dotCtx.drawImage(
 						tempCanvas, 
@@ -390,6 +391,7 @@
 				0, 
 				0,
 			);
+			imageDrawn = true;
 		};
 		
 		img.onerror = (err) => {
@@ -405,7 +407,10 @@
 </script>
 
 <div class="book">
-	<a href={book.link} target="_blank"><canvas bind:this={final}/></a>
+	<a href={book.link} target="_blank">
+		<img alt="book placeholder" style={`display: ${!imageDrawn ? "block" : "none"}`} src="/images/books/placeholder.png"/>
+		<canvas bind:this={final}/>
+	</a>
 	<div class="book-info">
 		<a href={book.link} target="_blank">
 			<h3>{book.title}</h3>
@@ -426,13 +431,18 @@
 		border-top: 0.5px solid var(--color-2);
 	}
 	.book a {
+		position: relative;
 		text-decoration: none;
 		color: var(--color-1);
 	}
 	.book a:hover h3 {
 		text-decoration: underline;
 	}
-	.book canvas {
+	.book img {
+		position: absolute;
+		top: 0;
+	}
+	.book canvas, .book img {
 		cursor: pointer;
 		max-width: 90px;
 		opacity: 0.6;
