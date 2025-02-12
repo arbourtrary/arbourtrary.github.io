@@ -905,6 +905,9 @@
             margin-left: 10px;
             margin-right: 10px;
         }
+        .section-header {
+             margin-left: 10px !important;
+        }
     }
 
     @media screen and (max-width: 700px) {
