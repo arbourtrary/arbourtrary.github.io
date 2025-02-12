@@ -18,7 +18,7 @@
 <svelte:window bind:innerWidth={innerWidth}/>
 
 <svelte:head>
-    <link rel="preload" as="image" href={base + "/images/drawing.webp"}>
+    <link rel="preload" as="image" href={innerWidth > 1000 ? base + "/images/drawing.webp" : base + "/images/drawing-mobile.webp"}>
 </svelte:head>
 <scrolling-anchor id="intro">
     
