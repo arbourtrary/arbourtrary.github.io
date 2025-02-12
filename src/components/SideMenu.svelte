@@ -10,10 +10,6 @@
   onMount(() => {
     mounted = true;
   });
-
-  function isActive(path) {
-    return path === window.location.pathname;
-  }
   
   function toggleMenu() {
     isOpen = !isOpen;
@@ -52,12 +48,12 @@
   <!-- Side Menu Panel -->
   <nav class="side-menu" class:open={isOpen}>
     <ul>
-      <li class:active={isActive("/about")}><a href={base + "/about"}>About</a></li>
-      <li class:active={isActive("/books")}><a href={base + "/books"}>Books</a></li>
-      <li class:active={isActive("/poems")}><a href={base + "/poems"}>Poems</a></li>
-      <li class:active={isActive("/projects")}><a href={base + "/projects"}>Projects</a></li>
-      <li class:active={isActive("/sketches")}><a href={base + "/sketches"}>Sketches</a></li>
-      <li class:active={isActive("/writings")}><a href={base + "/writings"}>Writings</a></li>
+      <li><a href={base + "/about"}>About</a></li>
+      <li><a href={base + "/books"}>Books</a></li>
+      <li><a href={base + "/poems"}>Poems</a></li>
+      <li><a href={base + "/projects"}>Projects</a></li>
+      <li><a href={base + "/sketches"}>Sketches</a></li>
+      <li><a href={base + "/writings"}>Writings</a></li>
     </ul>
     
     <Footer/>

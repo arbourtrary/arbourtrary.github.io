@@ -274,6 +274,7 @@
         margin: 0 auto;
         margin-bottom: 30px;
         max-width: 600px;
+        padding-top: 30px;
         border-top: 1px solid var(--color-3);;
     }
     .more a {
