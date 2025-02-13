@@ -19,5 +19,19 @@
 		"image": "/images/books/upstream.webp",
 		"link": "https://bookshop.org/p/books/upstream-selected-essays-mary-oliver/586779",
 		"description": "An excellent poet, easily in my top 5 all-time. These essays revealed so much about her life, her philosophy - amazing for her to share such insight."
+	},
+	{
+		"author": "Stephen Dunn",
+		"title": "The Insistence of Beauty",
+		"image": "/images/books/insistence-beauty.webp",
+		"link": "https://bookshop.org/p/books/the-insistence-of-beauty-poems-stephen-dunn/8824822",
+		"description": "Something about his writing lulls me into a kind of familiarity, the casual way he delights. An absolute master of this poetic craft."
+	},
+	{
+		"author": "T.S. Eliot",
+		"title": "Four Quartets",
+		"image": "/images/books/four-quartets.webp",
+		"link": "https://bookshop.org/p/books/four-quartets-t-s-eliot/6670093",
+		"description": "This booklength poem is as intriguing and mystifying as any piece of writing. Read it again and again. Its depth and challenge will enlighten you with every pass."
 	}
 ]
