@@ -426,9 +426,11 @@
 
 <div class="book">
 	<a href={book.link} target="_blank">
-		<img class="placeholder" alt="book placeholder" src="/images/books/placeholder.webp"/>
-		<canvas style="display: none;" bind:this={final}/>
-		<img loading={loading} class="cover" alt="book cover" src={image}/>
+		<!-- <img class="placeholder" alt="book placeholder" src="/images/books/placeholder.webp"/> -->
+		<!-- <canvas style="display: none;" bind:this={final}/> -->
+		<figure>
+			<img loading={loading} class="cover" alt="book cover" src={image}/>
+		</figure>
 	</a>
 	<div class="book-info">
 		<a href={book.link} target="_blank">
@@ -458,10 +460,17 @@
 	.book a:hover h3 {
 		text-decoration: underline;
 	}
-	.book .placeholder {
+	.book figure {
+		width: 90px;
 		position: relative;
-		z-index: 0;
+		margin: 0;
+		padding: 0;
 	}
+/*	.book .placeholder {
+		position: absolute;
+		top: 0;
+		z-index: 0;
+	}*/
 	.book .cover {
 		position: absolute;
 		top: 0;
@@ -470,9 +479,10 @@
 	.book img {
 		opacity: 0.6;
 		cursor: pointer;
+		color: transparent;
 	}
 	.book canvas, .book img {
-		max-width: 90px;
+		width: 90px;
 		opacity: 0.6;
 		transition: all 500ms ease-out;
 	}
