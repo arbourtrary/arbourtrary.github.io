@@ -459,12 +459,12 @@
 		text-decoration: underline;
 	}
 	.book .placeholder {
-		position: absolute;
-		top: 0;
+		position: relative;
 		z-index: 0;
 	}
 	.book .cover {
-		position: relative;
+		position: absolute;
+		top: 0;
 		z-index: 1;
 	}
 	.book img {
