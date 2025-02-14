@@ -27,8 +27,11 @@
             <p class="blurb">Making a list of books that have really stuck with me, changed my outlook, inspired me, surprised me. The book image effect comes from the fascinating art of <a href="https://www.kensukekoike.com/" target="_blank">Kensuke Koike</a> - which I translated into code.</p>
 
             <div class="books">
-                {#each books as book}
-        	        <Book {book}/>
+                {#each books as book, i}
+        	        <Book 
+                        {book}
+                        loading={i > 4 ? "lazy" : "eager"}
+                    />
                 {/each}
             </div>
 	    </div>
