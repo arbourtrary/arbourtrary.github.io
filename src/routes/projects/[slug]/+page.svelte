@@ -40,33 +40,31 @@
     }
 
     function expandFigures() {
+        expand.classList.remove("active");  
+        collapse.classList.add("active");
         const figures = [...gallery.querySelectorAll("figure")];
         figures.forEach(figure => {
             figure.classList.add('active');
             const img = figure.querySelector("img");
             updateHeight(img, figure);
+            expanded = true;
         })
     }
 
     function collpaseFigures() {
+        expand.classList.add("active");  
+        collapse.classList.remove("active");
         const figures = [...gallery.querySelectorAll("figure")];
         figures.forEach(figure => {
             figure.classList.remove('active');
             const img = figure.querySelector("img");
             updateHeight(img, figure);
         })
+        expanded = false;
     }
 
     function handleExpansion() {
-        expand.classList.toggle("active");  
-        collapse.classList.toggle("active");
-        if (expanded) {
-            collpaseFigures();
-            expanded = false;
-        } else {
-            expandFigures();
-            expanded = true;
-        }
+        expanded ? collpaseFigures() : expandFigures();
     }
 
     function resetFigureStyle() {
@@ -109,7 +107,10 @@
         observers.push(resizeObserver);
     })
 
-    $: data && gallery && resetFigureStyle();
+    $: if (data && gallery) {
+        resetFigureStyle();
+        collpaseFigures();
+    }
     
 </script>
 <svelte:head>
