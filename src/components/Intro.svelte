@@ -28,7 +28,7 @@
                 </div>
                 <div class="intro-description">
                     <div class="intro-header">
-                        I'm a <span style="color: var(--blue)">creative developer</span> who enjoys making code sketches and writing about <span style="color: var(--green)">nature</span>, <span style="color: var(--orange)">mathematics</span> &amp; <span style="color: var(--purple)">poetry</span>
+                        I'm a <b><span style="color: var(--blue)">creative developer</span></b> who enjoys making code sketches and writing about <b><span style="color: var(--green)">nature</span></b>, <b><span style="color: var(--orange)">mathematics</span></b> &amp; <b><span style="color: var(--purple)">poetry</span></b>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
             </div>
             <div class="intro-description">
                 <div class="intro-header">
-                    I'm a <span style="color: var(--blue)">creative developer</span> who enjoys making code sketches and writing about <span style="color: var(--green)">nature</span>, <span style="color: var(--orange)">mathematics</span> &amp; <span style="color: var(--purple)">poetry</span>
+                    I'm a <b><span style="color: var(--blue)">creative developer</span></b> who enjoys making code sketches and writing about <b><span style="color: var(--green)">nature</span></b>, <b><span style="color: var(--orange)">mathematics</span></b> &amp; <b><span style="color: var(--purple)">poetry</span></b>
                 </div>
             </div>
         </div>
@@ -106,7 +106,7 @@
         transform: translateZ(0);
     }
     .intro-intro {
-        width: 375px;
+        width: 400px;
         display: flex;
         flex-direction: column;
         margin: auto 0;
@@ -115,7 +115,7 @@
     }
     scrolling-anchor {
         padding-bottom: 20px;
-        width: min(90vw, 1100px);
+        width: min(95vw, 1100px);
         margin: 0 auto;
         position:relative;
         height: calc(100vh - 41px);

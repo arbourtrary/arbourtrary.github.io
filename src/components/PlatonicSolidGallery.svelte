@@ -60,7 +60,7 @@
         title = projects[0].title;
         description = projects[0].description;
         publication = projects[0].publication;
-        url = projects[0].url;
+        url = `/projects/${projects[0].slug}`;
         year = projects[0].year;
         awards = projects[0].awards.join(" <div style='height: 5px'></div>");
         awardsShort = projects[0].awardsShort.join(" &ensp;");
@@ -327,7 +327,7 @@
                     title = indexData.title;
                     description = indexData.description;
                     publication = indexData.publication;
-                    url = indexData.url;
+                    url = `/projects/${indexData.slug}`;
                     year = indexData.year;
                     awards = indexData.awards.join(" <div style='height: 5px'></div>");
                     awardsShort = indexData.awardsShort.join(" &ensp;");
@@ -408,12 +408,8 @@
                     </svg>
                 </h2>
             </a>        
-            <a href={url} target="_blank" aria-label={`project link to ${title}`}>
-                <div class="title"><span class="title-text">{@html title}</span>
-                    <div class="external-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    </div>
-                </div>
+            <a href={url} aria-label={`project link to ${title}`}>
+                <div class="title"><span class="title-text">{@html title}</span></div>
             </a>
             <div class="description">{description}</div>
             <div class="details desktop">
@@ -431,7 +427,7 @@
         </div>
         <div class="canvas-container">
                 <div class="canvas"> 
-                <a href={url} target="_blank" aria-label={`project link to ${title}`} on:mouseenter={() => hoverScale = 5.2 } on:mouseleave={() => hoverScale = 5 }>
+                <a href={url} aria-label={`project link to ${title}`} on:mouseenter={() => hoverScale = 5.2 } on:mouseleave={() => hoverScale = 5 }>
                     <div class="hover-circle"></div>
                 </a>
 
@@ -786,23 +782,11 @@
     .title-text {
         border-bottom: 1px solid var(--color-2);
     }
-    .external-link {
-        display: inline-block;
-        height: 13px;
-        width: 13px;
-        position: absolute;
-        top: -5px;
-        padding-left: 5px;
-        color: var(--color-2);
-    }
     .title:hover {
          cursor: pointer;
     }
     .title:hover .title-text {
         border-bottom: 2px solid var(--black);
-        color: var(--black);
-    }
-    .title:hover .external-link {
         color: var(--black);
     }
     .description {

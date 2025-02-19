@@ -1,4 +1,5 @@
 <script>
+    import { base } from '$app/paths'
     import { randomNumber } from '../utils/identifier.js'
 
     export let project = {};
@@ -16,7 +17,7 @@
     const rotate = Math.round(randomNumber(`color ${project.title}`) * 360);
 </script>
 
-<a href={project.url}>
+<a href={base + `projects/${project.slug}`}>
     <div class="row">
         <div class="title">{project.title}</div>
         <div class="connector"></div>

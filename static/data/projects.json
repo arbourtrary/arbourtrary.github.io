@@ -1,5 +1,6 @@
 [{
     "title": "NBA Recordigami",
+    "slug": "nba-recordigami",
     "publication": "Narro",
     "description": "Tracing the history of the NBA through pioneering wins and losses during the regular season",
     "year": "2021",
@@ -12,6 +13,7 @@
   },
   {
     "title": "House of Cards",
+    "slug": "house-of-cards",
     "publication": "Miami Herald",
     "description": "An interactive reconstruction of the collapse of the Champlain Towers South 12-story condo in Surfside",
     "year": "2021",
@@ -36,6 +38,7 @@
   },
   {
     "title": "Big Poultry",
+    "slug": "big-poultry",
     "publication": "Charlotte Observer",
     "description": "With little oversight, NC poultry farms generate billions of pounds of untreated waste. Who pays the cost?",
     "year": "2023",
@@ -48,6 +51,7 @@
   },
   {
     "title": "Made in Miami",
+    "slug": "made-in-miami",
     "publication": "Miami Herald",
     "description": "A deep dive into a network of indivduals linked to the assassination of Haitian President Jovenel Moïse",
     "year": "2022",
@@ -68,6 +72,7 @@
   },
   {
     "title": "Cut Off",
+    "slug": "cut-off",
     "publication": "The State",
     "description": "In Columbia's 29203, limbs are being amputated at an alarming rate. It doesn't have to be this way.",
     "year": "2022",
@@ -84,6 +89,7 @@
   },
   {
     "title": "In a Word",
+    "slug": "in-a-word",
     "publication": "Article",
     "description": "A self-published, quasi-surrealist collection driven by associations with each poem's single-word title",
     "year": "2016",
@@ -96,6 +102,7 @@
   },
   {
     "title": "Security for Sale",
+    "slug": "security-for-sale",
     "publication": "Charlotte Observer",
     "description": "In 10 years, Wall Street amassed 40k residential homes in NC. Now renters & home buyers are paying the price",
     "year": "2023",
@@ -112,6 +119,7 @@
   },
   {
     "title": "Puerto Rican Migration",
+    "slug": "puerto-rican-migration",
     "publication": "Article",
     "description": "A pre-pandemic breakdown of Puerto Ricans in the diaspora who were returning to the island",
     "year": "2021",
@@ -124,6 +132,7 @@
   },
   {
     "title": "Fallen Trees",
+    "slug": "fallen-trees",
     "publication": "Sacramento Bee",
     "description": "Tree damage ‘we’ve never seen.’ Map shows thousands of 311 calls during Sacramento storms",
     "year": "2023",
@@ -136,6 +145,7 @@
   },
   {
     "title": "Linguistics",
+    "slug": "linguistics",
     "publication": "Narro",
     "description": "Phonemes and graphemes of a complex language - the sounds and spellings of English",
     "year": "2021",
@@ -148,6 +158,7 @@
   },
   {
     "title": "Around the World",
+    "slug": "around-the-world",
     "publication": "Narro",
     "description": "Exploring what it would look like to go from your doorstep, around the world and back again",
     "year": "2021",
@@ -160,6 +171,7 @@
   },
   {
     "title": "Revival",
+    "slug": "revival",
     "publication": "Blurb",
     "description": "A self-published poetry collection observing San Francisco's strained natural, technological, and human bindings",
     "year": "2018",

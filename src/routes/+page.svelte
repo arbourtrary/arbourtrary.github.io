@@ -94,7 +94,7 @@
 
 <style>
     :global(#about), :global(#projects), :global(#writings), :global(#sketches), :global(#poems) {
-        width: min(90vw, 1100px) !important;
+        width: min(95vw, 1100px) !important;
         margin: 0 auto !important;
     }
     :global(img) {
