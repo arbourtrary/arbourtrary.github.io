@@ -18,6 +18,9 @@
     let body;
     let response;
     let observers = [];
+    let expand;
+    let collapse;
+    let expanded = false;
 
     marked.use({
       mangle: false,
@@ -41,6 +44,36 @@
         const img = figure.querySelector("img");
         e.target.classList.toggle('active');
         updateHeight(img, figure);
+    }
+
+    function expandFigures() {
+        const figures = [...gallery.querySelectorAll("figure")];
+        figures.forEach(figure => {
+            figure.classList.add('active');
+            const img = figure.querySelector("img");
+            updateHeight(img, figure);
+        })
+    }
+
+    function collpaseFigures() {
+        const figures = [...gallery.querySelectorAll("figure")];
+        figures.forEach(figure => {
+            figure.classList.remove('active');
+            const img = figure.querySelector("img");
+            updateHeight(img, figure);
+        })
+    }
+
+    function handleExpansion() {
+        expand.classList.toggle("active");  
+        collapse.classList.toggle("active");
+        if (expanded) {
+            collpaseFigures();
+            expanded = false;
+        } else {
+            expandFigures();
+            expanded = true;
+        }
     }
 
     function fetchContent(slug) {
@@ -69,7 +102,7 @@
         const month = jsDate.toLocaleString('en-US', { month: 'short' });
         const fullYear = jsDate.getFullYear();
         const formattedYear = fullYear.toString().slice(2);
-        const formattedDate = `<span class="month">${month}</span> <span style="font-family:'Vollkorn'">'</span>${formattedYear}`;
+        const formattedDate = `<span class="month">${jsDate.getMonth() + 1}</span><span>/</span>${formattedYear}`;
         return formattedDate;
     }
 
@@ -130,22 +163,49 @@
                 </div>
                 </a>
             </div>
+            <div class="project-date">{@html formatDate(data.project.date)}</div>
     </div>
-    <!-- <div class="project-date">{@html formatDate(data.project.date)}</div> -->
+    
     {#if data.project.text}
-        <div class="project-tools">
+        <div class="project-section">
             <h2 class="section-header">Summary</h2>
             <p>{@html data.project.text}</p>
         </div>
     {/if}
+    {#if data.project.awards.length}
+        <div class="project-section">
+            <h2 class="section-header">Awards</h2>
+            {#each data.project.awards as award}
+                <p>{@html award}</p>
+            {/each}
+        </div>
+    {/if}
+    {#if data.project.team}
+        <div class="project-section">
+            <h2 class="section-header">Team</h2>
+            {#each data.project.team as teammate}
+                <p>{@html teammate}</p>
+            {/each}
+        </div>
+    {/if}
     {#if data.project.tools}
-        <div class="project-tools">
+        <div class="project-section">
             <h2 class="section-header">Tools</h2>
             <p>{data.project.tools.join(", ")}</p>
         </div>
     {/if}
     {#if data.project.gallery}
-        <h2 class="section-header" style="margin-bottom: 15px !important;">Gallery</h2>
+        <div class="gallery-header">
+            <h2 class="section-header">Gallery</h2>
+            <button on:click={() => handleExpansion()}>
+                <svg bind:this={expand} class="active" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 8M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10"/>
+                </svg>
+                <svg bind:this={collapse} xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-arrows-collapse" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 8m7-8a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 4.293V.5A.5.5 0 0 1 8 0m-.5 11.707-1.146 1.147a.5.5 0 0 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 11.707V15.5a.5.5 0 0 1-1 0z"/>
+                </svg>
+            </button>
+        </div>
         <div class="project-gallery" bind:this={gallery}>
             {#each data.project.gallery as photo, i}
                 <figure 
@@ -184,15 +244,18 @@
     :global(:root) {
         --selection-bg-color: var(--highlight);
     }
-    .project, .project-date, .content, .project-gallery, .section-header, .project-tools {
+    .project, .content, .project-gallery, .section-header, .gallery-header, .project-section {
         width: min(600px, 90vw);
         margin: 0 auto;
     }
     .project {
+        margin-top: 45px;
         position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     .project-date {
-        padding-bottom: 15px;
         font-family: var(--serif);
         color: var(--color-2);
         font-size: 18px;
@@ -200,17 +263,45 @@
     :global(.project-date .month) {
         font-size: 16px;
     }
-    .project-tools {
+    .project-section {
         display: flex;
         flex-direction: column;
-        gap: 10px;
-        margin-top: 45px;
-        margin-bottom: 45px;
+        gap: 7px;
+        margin: 40px auto;
+    }
+    .section-header {
+        font-size: 0.8rem;
     }
     h2 {
         line-height: 1;
     }
-    .project-tools p {
+    .gallery-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        margin-bottom: 10px;
+    }
+    .gallery-header button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        padding: 0;
+        height: 23px;
+        width: 20px;
+        color: var(--color-2);
+        transition: all 0.3s ease;
+        padding-bottom: 3px;
+    }
+    .gallery-header button svg {
+        display: none;
+    }
+    .gallery-header button svg.active {
+        display: block;
+    }
+    .gallery-header button:hover {
+        color: var(--color-1);
+    }
+    .project-section p {
         margin: 0;
         font-family: var(--serif);
         color: var(--color-1);
@@ -222,12 +313,9 @@
     .title {
         cursor: pointer;
         font-size: 1.75rem;
-        margin-top: 60px;
         text-align: left;
-        margin-bottom: 15px;
         font-weight: bold;
         position: relative;
-        padding-bottom: 1px;
         border-bottom: 1px solid var(--color-2);
         width: fit-content;
     }
@@ -274,10 +362,22 @@
         opacity: 1;
     }
     .project a {
+        padding-right: 20px;
+    }
+    .project a, :global(.project-section a) {
         text-decoration: none;
         color: var(--color-1);
         width: fit-content;
-        padding-right: 20px;
+    }
+    :global(.project-section a) {
+        text-decoration: underline;
+        text-decoration-color: var(--color-2);
+        text-decoration-thickness: 0.5px;
+        text-underline-offset: 3px;
+    }
+    :global(.project-section a:hover) {
+        text-decoration-color: var(--color-1);
+        text-decoration-thickness: 1px;
     }
     img {
         height: 100%;
@@ -370,7 +470,7 @@
     }
     @media only screen and (max-width: 600px) {
         .title {
-            font-size: 1.5em;
+            font-size: 1.65em;
         }
         :global(.project > .content > p > a) {
             padding: 0px;
@@ -387,6 +487,9 @@
         }
         :global(.project-date .month) {
             font-size: 14px;
+        }
+        .section-header {
+            font-size: 0.75rem;
         }
     }
     @media only screen and (max-width: 400px) {
