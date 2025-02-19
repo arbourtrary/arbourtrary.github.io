@@ -4,6 +4,7 @@
     import { loadJSON } from "../utils/file.js";
     import { clamp } from "../utils/math.js";
     import { hexToRgb } from "../utils/color.js";
+    import { base } from '$app/paths'
 
     import * as THREE from 'three';
     // TODO: generalize to have this extend a platonic solid gallery component
@@ -60,7 +61,7 @@
         title = projects[0].title;
         description = projects[0].description;
         publication = projects[0].publication;
-        url = `/projects/${projects[0].slug}`;
+        url = base + `/projects/${projects[0].slug}`;
         year = projects[0].year;
         awards = projects[0].awards.join(" <div style='height: 5px'></div>");
         awardsShort = projects[0].awardsShort.join(" &ensp;");
@@ -327,7 +328,7 @@
                     title = indexData.title;
                     description = indexData.description;
                     publication = indexData.publication;
-                    url = `/projects/${indexData.slug}`;
+                    url = base + `/projects/${indexData.slug}`;
                     year = indexData.year;
                     awards = indexData.awards.join(" <div style='height: 5px'></div>");
                     awardsShort = indexData.awardsShort.join(" &ensp;");
