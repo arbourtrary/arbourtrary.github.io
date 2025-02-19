@@ -2,7 +2,6 @@
     import { marked } from "marked";
     import { onMount } from 'svelte';
     import { base } from '$app/paths'
-    import { page } from '$app/stores';
     import { clamp, mapToUnitRange } from '../../../utils/math.js';
     import Header from '../../../components/Header.svelte';
     import Footer from '../../../components/Footer.svelte';
@@ -163,7 +162,7 @@
 {/if}
 <div class="more">
     {#if prevProject}
-        <a on:click={fetchContent(prevProject.slug)} href={`/projects/${prevProject.slug}`} style="margin-right: 15px;">
+        <a on:click={fetchContent(prevProject.slug)} href={base + `/projects/${prevProject.slug}`} style="margin-right: 15px;">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor">
               <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
             </svg>
@@ -171,7 +170,7 @@
         </a>
     {/if}
     {#if nextProject}
-        <a on:click={fetchContent(nextProject.slug)} href={`/projects/${nextProject.slug}`} style="margin-left: 15px;">
+        <a on:click={fetchContent(nextProject.slug)} href={base + `/projects/${nextProject.slug}`} style="margin-left: 15px;">
             <p style="text-align: right;">{nextProject.title}</p>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
