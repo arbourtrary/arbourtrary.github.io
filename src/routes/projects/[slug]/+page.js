@@ -83,7 +83,7 @@ const projects = [
     "image": "textures/fade_recordigami.webp",
     "url": "https://narro.design/html/nba-recordigami.html",
     "format": "Narro",
-    "text": "",
+    "text": "I saw a very interesting 538 article a while back displaying an NFL team record in a triangular fashion. Each square represented a unique team record. I combined this approach with Jon Bois' <a href='https://www.sbnation.com/2016/12/7/13856392/chart-party-scorigami' target='_blank'>scorigami</a> to determine which NBA teams were the first to achieve a record like 73-9 or 9-73. The result was this colorful decade by decade expansion of what team records have been achieved.",
     "tools": [
       "d3",
       "python"
@@ -109,7 +109,7 @@ const projects = [
     "image": "textures/fade_around_the_world.webp",
     "url": "https://narro.design/html/around-the-world.html",
     "format": "Narro",
-    "text": "",
+    "text": "Visually inspired by Westworld's <a href='https://www.reddit.com/r/westworld/comments/fw37d5/what_is_the_divergence_thing/' target='_blank'>divergence</a> visualization, I created a circular visualization of the entire world's elevation. The interactive map shows an exaggerated cross-section of Earth, with oceans in blue and land in green. Each cross-section slices the globe in half, cutting through the North Pole, the South Pole and the input location.",
     "tools": [
       "d3",
       "python"
@@ -137,7 +137,7 @@ const projects = [
     "image": "textures/fade_linguistics.webp",
     "url": "https://narro.design/html/linguistics-intro.html",
     "format": "Narro",
-    "text": "",
+    "text": "I'm fascinated by language so I dove into a bunch of details about the sounds and spellings of English. I emerged with a better understanding of its complexities and created a new <a href='https://github.com/narroviz/data-linguistics' target='_blank'>dataset</a> mapping phonemes to graphemes. This article was a soft intro to this linguistic building blocks.",
     "tools": [
       "d3",
       "svelte"
@@ -164,7 +164,7 @@ const projects = [
     "image": "textures/fade_puerto_rico_migration.webp",
     "url": "https://narro.design/html/puerto-rico-migration.html",
     "format": "Narro",
-    "text": "",
+    "text": "Most of the narrative of Puerto Rico in the 2010s and 2020s displayed collapse and emigration (and people were right to focus on this, for many reasons). As a Puerto Rican, I wanted to see if there were causes for hope, bright spots in some of the data. So I focused on people moving to the island and highlighted a few stories of resilient people returning from the diaspora.",
     "tools": [
       "d3",
       "svelte"
@@ -202,7 +202,7 @@ const projects = [
     "image": "textures/fade_house_of_cards.webp",
     "url": "https://www.miamiherald.com/news/special-reports/surfside-investigation/article256633336.html",
     "format": "Journalism",
-    "text": "",
+    "text": "For this devastating tragedy and harsh topic, we worked hard to illustrate and demonstrate the failure modes of the collapse of Champlain Towers in Surfside, FL. The hope was to inform, to help residents in similar towers look for warning signs, and ultimately, to hold the developers responsible. It was the first time I worked to implement scrolling videos and I learned a mountain about frame rates and frame types to optimize the process.",
     "tools": [
       "svelte",
       "handbrake"
@@ -242,7 +242,7 @@ const projects = [
     "image": "textures/fade_cut_off.webp",
     "url": "https://www.thestate.com/news/state/south-carolina/article258302413.html",
     "format": "Journalism",
-    "text": "",
+    "text": "Reporting on the sky-high rate of amputations related to diabetes in South Carolina, we aimed to blend personal stories with data storytelling. I leaned heavily on Svelte and MapLibre to create <a href='https://github.com/mcclatchy/svelte-map' target='_blank'>svelte-map</a>, a tool I primarily built for scrollytelling maps.",
     "tools": [
       "svelte",
       "maplibre"
@@ -276,7 +276,7 @@ const projects = [
     "image": "textures/fade_security_for_sale.webp",
     "url": "https://pulitzercenter.org/projects/security-sale",
     "format": "Journalism",
-    "text": "",
+    "text": "There are systematic reasons home ownership has become more and more out of reach. One factor is private capital buying up homes with cash in bulk, essentially converting neighborhoods to private equity cash cows. We pilloried these machinations and mapped the infectious spread of the problem across North Carolina.",
     "tools": [
       "svelte",
       "maplibre"
@@ -303,11 +303,11 @@ const projects = [
     "awards": ["<a href='https://news.mit.edu/2023/mcelheny-award-science-journalism-honors-series-poultry-farming-environment-0403' target='_blank'>MIT Knight Science Journalism</a>", "<a href='https://nationalpress.org/award-story/capital-main-charlotte-observer-raleigh-news-observer-win-npf-stokes-award-for-best-environmental-reporting/' target='_blank'>Stokes Award for Energy & Environment</a>", "<a href='https://www.ire.org/2022-ire-award-winners/' target='_blank'>Investigative Reporters & Editors - IRE Award</a>"],
     "awardsShort": ["<a href='https://news.mit.edu/2023/mcelheny-award-science-journalism-honors-series-poultry-farming-environment-0403' target='_blank'>MIT Knight</a>", "<a href='https://nationalpress.org/award-story/capital-main-charlotte-observer-raleigh-news-observer-win-npf-stokes-award-for-best-environmental-reporting/' target='_blank'>Thomas Stokes</a>", "<a href='https://www.ire.org/2022-ire-award-winners/' target='_blank'>IRE</a>"],
     "tags": ["svelte", "incremental video", "maplibre", "north carolina"],
-    "team": ["<a href='https://www.rachelhandley.com/' target='_blank'>Rachel Handley</a> (illustration)", "<a href='https://www.saljamea.com/' target='_blank'>Sohail Al-Jamea</a> (animation)", "<a href='https://semerriam.github.io/' target='_blank'>Susan Merriam</a> (dataviz)"],
+    "team": ["<a href='https://www.jackohman.net/' target='_blank'>Jack Ohman</a> (cartoonist)", "<a href='https://www.rachelhandley.com/' target='_blank'>Rachel Handley</a> (illustration)", "<a href='https://www.saljamea.com/' target='_blank'>Sohail Al-Jamea</a> (animation)", "<a href='https://semerriam.github.io/' target='_blank'>Susan Merriam</a> (dataviz)"],
     "image": "textures/fade_big_poultry.webp",
     "url": "https://www.charlotteobserver.com/news/state/north-carolina/article267887592.html",
     "format": "Journalism",
-    "text": "",
+    "text": "I built an incremental video + text web component to handle a step by step animated, cartoon trailer. In the explainer, we show the various ways the poultry industry in NC hides its pollution and papers over its damages with legislation preventing the collection of data.",
     "tools": [
       "svelte",
       "maplibre"
@@ -345,7 +345,7 @@ const projects = [
     "image": "textures/fade_made_in_miami.webp",
     "url": "https://www.miamiherald.com/news/nation-world/world/americas/haiti/article266152901.html",
     "format": "Journalism",
-    "text": "",
+    "text": "After the assassination of Haitian president, Jovenel Moïse, we worked with the excellent <a href='https://en.wikipedia.org/wiki/Jacqueline_Charles' target='_blank'>Jacquie Charles</a> to consolidate, display and animate the complexities of this calamity. I wrote a couple new tools: one to handle scrollytelling with network connections (d3) and one to handle scrollytelling with 3D scenes in the browser (threeJS).",
     "tools": [
       "svelte",
       "d3",
@@ -379,7 +379,7 @@ const projects = [
     "image": "textures/fade_fallen_trees.webp",
     "url": "https://www.sacbee.com/news/local/article272039637.html",
     "format": "Journalism",
-    "text": "",
+    "text": "Open data is a blessing and Sacramento does a very good job with tree-related data and 311 data. After a particularly devastating storm, we worked with the service journalism team to visualize the extent of the damage to trees and structures across the city.",
     "tools": [
       "svelte",
       "ai2svelte",
@@ -409,7 +409,7 @@ const projects = [
     "image": "",
     "url": "https://www.kansascity.com/news/state/kansas/article281294898.html",
     "format": "Journalism",
-    "text": "",
+    "text": "I learned a lot about aquifers in this project and began to understand the extent to which the massive Ogallala Aquifer is being drained. On the tech side, I played around with combining the map scrollytelling with some simple animated dataviz. It was a fun process to create a seamless scroll experience.",
     "tools": [
       "svelte",
       "web components",
@@ -440,7 +440,7 @@ const projects = [
     "image": "",
     "url": "https://www.miamiherald.com/news/local/environment/climate-change/article276415291.html",
     "format": "Journalism",
-    "text": "",
+    "text": "Miami is heating up and the local government has been unable to meet its goals of alleviating the heat through planting trees. This project combined a lot of interesting components - watercolor-inspired illustrations, satellite data, demographics, thermal imagery and custom dataviz. It helped push me to create a more fully defined library of modular web components.",
     "tools": [
       "svelte",
       "web components",
@@ -471,7 +471,7 @@ const projects = [
     "image": "",
     "url": "https://www.newsobserver.com/news/state/north-carolina/article286920890.html",
     "format": "Journalism",
-    "text": "",
+    "text": "Private surveillance companies track license plates across the country, sometimes granting local police departments an ability to surveil vast amounts of the population. Regulation of its use has gone largely unchecked. I built the theming engine and web component library for the items that power the story's visuals.",
     "tools": [
       "svelte",
       "web components",
@@ -500,7 +500,7 @@ const projects = [
     "image": "",
     "url": "https://www.charlotteobserver.com/news/local/article290982455.html",
     "format": "Journalism",
-    "text": "",
+    "text": "A very comprehensive retrospective for the 50th anniversary of a tragic plane crash. Used texture and a documentarian's approach to tell the narrative of survivors, victims and their families. Built a few new components to better incorporate audio snippets into the story.",
     "tools": [
       "web components"
     ],
@@ -526,7 +526,7 @@ const projects = [
     "image": "",
     "url": "https://www.newsobserver.com/news/business/article292473374.html",
     "format": "Journalism",
-    "text": "",
+    "text": "It was nice to have a more light-hearted article to work on. With the Fortnite theme, we added a bunch of Lottie-based animations and other gaming-type design / animation to spruce up the story and give it a delightful feel. Tried to use color and modularity to keep the reader moving through the story and the series.",
     "tools": [
       "web components"
     ],
