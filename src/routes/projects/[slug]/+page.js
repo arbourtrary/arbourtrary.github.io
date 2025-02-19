@@ -1,6 +1,7 @@
 import { error } from '@sveltejs/kit';
 import { loadJSON } from '../../../utils/file.js'
- 
+import { clamp } from '../../../utils/math.js';
+
 
 const projects = [
   {
@@ -543,8 +544,15 @@ const projects = [
 export async function load({ params }) {
   const project = projects.find(item => item.slug === params.slug);
 
+  const projectIndex = project.index;
+  const prevIndex = clamp(projectIndex - 1, 0, projects.length - 1);
+  const nextIndex = clamp(projectIndex + 1, 0, projects.length - 1);
+  
+  project.prev = (prevIndex !== projectIndex) ? projects[prevIndex] : projects[projects.length - 1];
+  project.next = (nextIndex !== projectIndex) ? projects[nextIndex] : projects[0];
+
   if (project) {
-    return {project, projects};
+    return {project};
   }
  
   throw error(404, 'Not found');
