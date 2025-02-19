@@ -1,8 +1,5 @@
 <script>
     import { marked } from "marked";
-    import { onMount } from 'svelte';
-    import { base } from '$app/paths'
-    import { clamp, mapToUnitRange } from '../../../utils/math.js';
     import Header from '../../../components/Header.svelte';
     import Footer from '../../../components/Footer.svelte';
 
@@ -13,20 +10,6 @@
       headerIds: false
     });
 
-    let poem;
-    let poemIndex;
-    let prevPoem;
-    let nextPoem;
-    let content = "";
-    let body;
-    let response;
-
-    async function fetchContent(slug) {
-        const filename = `/data/poems/${slug}.json`;
-        response = await fetch(filename)
-        content = await response.json();
-    }
-
     const formatDate = (date) => {
         const jsDate = new Date(date)
         const month = jsDate.toLocaleString('en-US', { month: 'short' });
@@ -35,24 +18,6 @@
         const formattedDate = `<span class="month">${month}</span> <span style="font-family:'Vollkorn'">'</span>${formattedYear}`;
         return formattedDate;
     }
-
-    onMount(async () => {
-        fetchContent(data.poem.slug);
-        body = document.body;
-    })
-
-    $: if (body) {
-        poem = data.poem;
-        fetchContent(data.poem.slug);
-        poemIndex = poem.index;
-
-        const prevIndex = clamp(poemIndex - 1, 0, data.poems.length - 1);
-        prevPoem = (prevIndex !== poemIndex) ? data.poems[prevIndex] : data.poems[data.poems.length - 1];
-
-        const nextIndex = clamp(poemIndex + 1, 0, data.poems.length - 1);
-        nextPoem = (nextIndex !== poemIndex) ? data.poems[nextIndex] : data.poems[0];
-    }
-    
 </script>
 <svelte:head>
     <title>{data.poem.name}</title>
@@ -74,25 +39,25 @@
 </svelte:head>
 
 <Header/>
-{#if content}
+{#if data.poem.content}
     <div class="poem">
         <div class="title">{data.poem.name}</div>
-        <div class="content">{@html marked(content["text"].replaceAll("\n","\n\n").replaceAll("/",""))}</div>
+        <div class="content">{@html marked(data.poem.content.text.replaceAll("\n","\n\n").replaceAll("/",""))}</div>
     </div>
     <div class="poem-date">{@html formatDate(data.poem.date)}</div>
 {/if}
 <div class="more">
-    {#if prevPoem}
-        <a on:click={fetchContent(prevPoem.slug)} href={`/poems/${prevPoem.slug}`} style="margin-right: 15px;">
+    {#if data.poem.prev}
+        <a href={`/poems/${data.poem.prev.slug}`} style="margin-right: 15px;">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor">
               <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
             </svg>
-            <p style="text-align: left;">{prevPoem.name}</p>
+            <p style="text-align: left;">{data.poem.prev.name}</p>
         </a>
     {/if}
-    {#if nextPoem}
-        <a on:click={fetchContent(nextPoem.slug)} href={`/poems/${nextPoem.slug}`} style="margin-left: 15px;">
-            <p style="text-align: right;">{nextPoem.name}</p>
+    {#if data.poem.next}
+        <a href={`/poems/${data.poem.next.slug}`} style="margin-left: 15px;">
+            <p style="text-align: right;">{data.poem.next.name}</p>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
             </svg>

@@ -1,6 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { loadJSON } from '../../../utils/file.js'
- 
+import { clamp } from '../../../utils/math.js';  
 
 const writings = [
   {
@@ -53,12 +52,21 @@ const writings = [
   }
 ]
 
-export async function load({ params }) {
-  // const writings = await loadJSON('/data/writings.json')
+export async function load({ params, fetch }) {
   const writing = writings.find(item => item.slug === params.slug);
 
+  const writingIndex = writing.index;
+  const prevIndex = clamp(writingIndex - 1, 0, writings.length - 1);
+  const nextIndex = clamp(writingIndex + 1, 0, writings.length - 1);
+  
+  writing.prev = (prevIndex !== writingIndex) ? writings[prevIndex] : writings[writings.length - 1];
+  writing.next = (nextIndex !== writingIndex) ? writings[nextIndex] : writings[0];
+  
+  const response = await fetch(`/data/writings/${writing.slug}.txt`);
+  writing.content = await response.text();
+
   if (writing) {
-    return {writing, writings};
+    return {writing};
   }
  
   throw error(404, 'Not found');

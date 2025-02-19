@@ -1,6 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { loadJSON } from '../../../utils/file.js'
- 
+import { clamp } from '../../../utils/math.js'; 
 
 const sketches = [
   {
@@ -113,11 +112,21 @@ const sketches = [
   }
 ]
 
-export async function load({ params }) {
+export async function load({ params, fetch }) {
   const sketch = sketches.find(item => item.slug === params.slug);
 
+  const sketchIndex = sketch.index;
+  const prevIndex = clamp(sketchIndex - 1, 0, sketches.length - 1);
+  const nextIndex = clamp(sketchIndex + 1, 0, sketches.length - 1);
+  
+  sketch.prev = (prevIndex !== sketchIndex) ? sketches[prevIndex] : sketches[sketches.length - 1];
+  sketch.next = (nextIndex !== sketchIndex) ? sketches[nextIndex] : sketches[0];
+  
+  const response = await fetch(sketch.filename)
+  sketch.content = await response.text();
+
   if (sketch) {
-    return {sketch, sketches};
+    return {sketch};
   }
  
   throw error(404, 'Not found');

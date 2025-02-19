@@ -2,7 +2,6 @@
     import { marked } from "marked";
     import { onMount } from 'svelte';
     import { base } from '$app/paths'
-    import { mapToUnitRange } from '../../../utils/math.js';
     import Header from '../../../components/Header.svelte';
     import Footer from '../../../components/Footer.svelte';
 
@@ -10,12 +9,8 @@
 
     let DEFAULT_HEIGHT = 100;
     let gallery;
-    let project;
-    let projectIndex;
-    let content = "";
-    let body;
-    let response;
     let observers = [];
+
     let expand;
     let collapse;
     let expanded = false;

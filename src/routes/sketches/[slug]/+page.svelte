@@ -1,6 +1,4 @@
 <script>
-    import { onMount } from 'svelte';
-    import { clamp } from "../../../utils/math.js"
     import { base } from '$app/paths'
 
     import Footer from '../../../components/Footer.svelte';
@@ -18,36 +16,6 @@
     import ClimbingTrees from '../../../components/ClimbingTrees.svelte';
 
     export let data;
-
-    let sketch;
-    let sketchIndex;
-    let prevSketch;
-    let nextSketch;
-    let content = "";
-    let body;
-    let response;
-
-    async function fetchContent(filename) {
-        response = await fetch(filename)
-        content = await response.text();
-    }
-
-    onMount(async () => {
-        fetchContent(data.sketch.filename)
-        body = document.body;
-    })
-    $: if (body) {
-        sketch = data.sketch;
-        fetchContent(data.sketch.filename)
-        sketchIndex = sketch.index;
-
-        const prevIndex = clamp(sketchIndex - 1, 0, data.sketches.length - 1);
-        prevSketch = (prevIndex !== sketchIndex) ? data.sketches[prevIndex] : data.sketches[data.sketches.length - 1];
-
-        const nextIndex = clamp(sketchIndex + 1, 0, data.sketches.length - 1);
-        nextSketch = (nextIndex !== sketchIndex) ? data.sketches[nextIndex] : data.sketches[0]; 
-        document.documentElement.style.setProperty('--highlight', data.sketch.highlight);
-    }
 </script>
 <svelte:head>
     <link rel='canonical' href={`https://arbourtrary.com/sketches/${data.sketch.slug}`} />
@@ -110,20 +78,20 @@
     {/if}
 </div>
 <div class="notes">
-    {@html content}
+    {@html data.sketch.content}
 </div>
 <div class="more">
-    {#if prevSketch}
-        <a on:click={fetchContent(prevSketch.filename)} href={`/sketches/${prevSketch.slug}`} style="margin-right: 15px;">
+    {#if data.sketch.prev}
+        <a href={`/sketches/${data.sketch.prev.slug}`} style="margin-right: 15px;">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor">
               <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
             </svg>
-            <p style="text-align: left;">{prevSketch.title}</p>
+            <p style="text-align: left;">{data.sketch.prev.title}</p>
         </a>
     {/if}
-    {#if nextSketch}
-        <a on:click={fetchContent(nextSketch.filename)} href={`/sketches/${nextSketch.slug}`} style="margin-left: 15px;">
-            <p style="text-align: right;">{nextSketch.title}</p>
+    {#if data.sketch.next}
+        <a href={`/sketches/${data.sketch.next.slug}`} style="margin-left: 15px;">
+            <p style="text-align: right;">{data.sketch.next.title}</p>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
             </svg>
