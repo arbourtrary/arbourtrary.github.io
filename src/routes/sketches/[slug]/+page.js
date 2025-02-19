@@ -1,4 +1,5 @@
 import { error } from '@sveltejs/kit';
+import { base } from '$app/paths';
 import { clamp } from '../../../utils/math.js'; 
 
 const sketches = [
@@ -112,6 +113,10 @@ const sketches = [
   }
 ]
 
+function formatContent(content) {
+  return content.replaceAll('src="', `src="${base}`)
+}
+
 export async function load({ params, fetch }) {
   const sketch = sketches.find(item => item.slug === params.slug);
 
@@ -123,7 +128,8 @@ export async function load({ params, fetch }) {
   sketch.next = (nextIndex !== sketchIndex) ? sketches[nextIndex] : sketches[0];
   
   const response = await fetch(sketch.filename)
-  sketch.content = await response.text();
+  const content = await response.text();
+  sketch.content = formatContent(content);
 
   if (sketch) {
     return {sketch};

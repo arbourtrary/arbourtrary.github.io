@@ -12,7 +12,7 @@
   let activeIndex = 0;
   let imageLoaded = false;
   let activeButtons = [true, false, false]
-  let imageFolder = base + "/images/image-sampling/"
+  let imageFolder = base + "/images/image-sampling"
   let images = [
     {url: `${imageFolder}/monalisa.webp`, name: "Mona Lisa", artist: "Leonardo da Vinci", year: 1503, link: "https://www.louvre.fr/en/explore/the-palace/from-the-mona-lisa-to-the-wedding-feast-at-cana"},
     {url: `${imageFolder}/vangogh-blue.webp`, name: "Portrait de l'artiste", artist: "Vincent Van Gogh", year: 1889, link: "https://www.musee-orsay.fr/en/artworks/portrait-de-lartiste-747"},
@@ -406,7 +406,7 @@
     img.onerror = (err) => {
         console.error('Error loading image:', err);
     };
-    
+    console.log(image.url)
     img.src = image.url;
   }
 
