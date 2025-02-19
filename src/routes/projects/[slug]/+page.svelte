@@ -242,7 +242,7 @@
         grid-template-columns: 100%;
         grid-template-rows: auto auto;
         gap: 10px;
-
+        margin-bottom: 45px;
     }
     figure {
         cursor: pointer;
