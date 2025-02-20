@@ -1,0 +1,331 @@
+[
+	{
+		"artist": "Led Zeppelin",
+		"title": "Kashmir",
+		"image": "/images/music/sampled-kashmir.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Emerson, Lake & Palmer",
+		"title": "From the Beginning",
+		"image": "/images/music/sampled-from-the-beginning.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Yes",
+		"title": "Roundabout",
+		"image": "/images/music/sampled-roundabout.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "America",
+		"title": "A Horse With No Name",
+		"image": "/images/music/sampled-a-horse-with-no-name.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "The Doobie Brothers",
+		"title": "Listen to the Music",
+		"image": "/images/music/sampled-listen-to-the-music.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "The Who",
+		"title": "Won't Get Fooled Again",
+		"image": "/images/music/sampled-wont-get-fooled-again.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Pink Floyd",
+		"title": "Time",
+		"image": "/images/music/sampled-time.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Electric Light Orchestra",
+		"title": "Mr. Blue Sky",
+		"image": "/images/music/sampled-mr-blue-sky.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Modest Mouse",
+		"title": "Float On",
+		"image": "/images/music/sampled-float-on.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "The Shins",
+		"title": "New Slang",
+		"image": "/images/music/sampled-new-slang.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Oakenfold",
+		"title": "Starry Eyed Surprise",
+		"image": "/images/music/sampled-starry-eyed-surprise.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Death Cab For Cutie",
+		"title": "I Will Follow You into the Dark",
+		"image": "/images/music/sampled-i-will-follow-you-into-the-dark.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Postal Service",
+		"title": "Such Great Heights",
+		"image": "/images/music/sampled-such-great-heights.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "The Strokes",
+		"title": "Hard to Explain",
+		"image": "/images/music/sampled-hard-to-explain.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Muse",
+		"title": "Map of the Problematique",
+		"image": "/images/music/sampled-map-of-the-problematique.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Pixies",
+		"title": "Where Is My Mind?",
+		"image": "/images/music/sampled-where-is-my-mind.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "MGMT",
+		"title": "Kids",
+		"image": "/images/music/sampled-kids.jpg",
+		"link": "https://www.youtube.com/watch?v=fe4EK4HSPkI",
+		"description": ""
+	},
+	{
+		"artist": "TV on the Radio",
+		"title": "Wolf Like Me",
+		"image": "/images/music/sampled-wolf-like-me.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Edward Sharpe &amp; the Magentic Zeros",
+		"title": "40 Day Dream",
+		"image": "/images/music/sampled-40-day-dream.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Kid Cudi",
+		"title": "Simple As",
+		"image": "/images/music/sampled-simple-as.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Led Zeppelin",
+		"title": "Going to California",
+		"image": "/images/music/sampled-going-to-california.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Devendra Banhart",
+		"title": "Santa Maria de Feira",
+		"image": "/images/music/sampled-santa-maria-de-feira.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Kishi Bashi",
+		"title": "Bright Whites",
+		"image": "/images/music/sampled-bright-whites.jpg",
+		"link": "https://www.youtube.com/watch?v=0C6g7JfYztE",
+		"description": ""
+	},
+	{
+		"artist": "Danny Brown",
+		"title": "Grown Up",
+		"image": "/images/music/sampled-grown-up.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Woodie Guthrie",
+		"title": "Pastures of Plenty",
+		"image": "/images/music/sampled-pastures-of-plenty.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Chance the Rapper",
+		"title": "Everybody's Something",
+		"image": "/images/music/sampled-everybodys-something.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Dr. Dog",
+		"title": "Heart it Races",
+		"image": "/images/music/sampled-heart-it-races.jpg",
+		"link": "https://www.youtube.com/watch?v=w_o649i8HU8",
+		"description": ""
+	},
+	{
+		"artist": "Trio Los Panchos",
+		"title": "Me Voy Pa'l Pueblo",
+		"image": "/images/music/sampled-me-voy-pal-pueblo.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Earl Sweatshirt",
+		"title": "Chum",
+		"image": "/images/music/sampled-chum.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "El Gran Combo",
+		"title": "El Caballo Pelotero",
+		"image": "/images/music/sampled-el-caballo-pelotero.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Cherub",
+		"title": "Doses &amp; Mimosas",
+		"image": "/images/music/sampled-doses-mimosas.jpg",
+		"link": "https://www.youtube.com/watch?v=E45fogGN_Y8",
+		"description": ""
+	},
+	{
+		"artist": "Shakey Graves",
+		"title": "Unlucky Skin",
+		"image": "/images/music/sampled-unlucky-skin.jpg",
+		"link": "https://www.youtube.com/watch?v=4jvJ9coV4J8",
+		"description": ""
+	},
+	{
+		"artist": "Vance Joy",
+		"title": "Riptide",
+		"image": "/images/music/sampled-riptide.jpg",
+		"link": "https://www.youtube.com/watch?v=uJ_1HMAGb4k",
+		"description": ""
+	},
+	{
+		"artist": "G-Eazy, Devon Baldwin",
+		"title": "Let's Get Lost",
+		"image": "/images/music/sampled-lets-get-lost.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "LCD Soundsystem",
+		"title": "Dance Yrself Clean",
+		"image": "/images/music/sampled-dance-yrself-clean.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Future Islands",
+		"title": "Balance",
+		"image": "/images/music/sampled-balance.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Hot Chocolate",
+		"title": "Sexy Thing",
+		"image": "/images/music/sampled-sexy-thing.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Post Malone, Swae Lee",
+		"title": "Sunflower",
+		"image": "/images/music/sampled-sunflower.jpg",
+		"link": "https://www.youtube.com/watch?v=ApXoWvfEYVU",
+		"description": ""
+	},
+	{
+		"artist": "Chairman Maf",
+		"title": "Diva",
+		"image": "/images/music/sampled-diva.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "DRAM, Lil Yachty",
+		"title": "Broccoli",
+		"image": "/images/music/sampled-broccoli.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Big Black Delta",
+		"title": "Side of the Road",
+		"image": "/images/music/sampled-side-of-the-road.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Doja Cat",
+		"title": "Go To Town",
+		"image": "/images/music/sampled-go-to-town.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Vince Staples",
+		"title": "Norf Norf",
+		"image": "/images/music/sampled-norf-norf.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "KYLE",
+		"title": "YES!",
+		"image": "/images/music/sampled-yes.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Coast Modern",
+		"title": "Hollow Life",
+		"image": "/images/music/sampled-hollow-life.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Goth Babe",
+		"title": "Sometimes",
+		"image": "/images/music/sampled-sometimes.jpg",
+		"link": "",
+		"description": ""
+	},
+	{
+		"artist": "Bad Bunny",
+		"title": "DTmF",
+		"image": "/images/music/sampled-dtmf.jpg",
+		"link": "",
+		"description": ""
+	}
+]
