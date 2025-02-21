@@ -406,7 +406,6 @@
     img.onerror = (err) => {
         console.error('Error loading image:', err);
     };
-    console.log(image.url)
     img.src = image.url;
   }
 

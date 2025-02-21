@@ -517,8 +517,8 @@
 		.book {
 			padding-top: 30px;
 		}
-		.book canvas, .book img {
-			max-width: 75px;
+		.book figure, .book canvas, .book img {
+			max-width: 80px;
 		}
 		.book h3 {
 			font-size: 22px;

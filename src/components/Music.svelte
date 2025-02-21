@@ -12,7 +12,6 @@
     onMount(async () => {
         const response = await fetch(dataFilename);
         songs = await response.json();
-        console.log(songs)
     });
 
 </script>
@@ -25,7 +24,7 @@
 	            <h2 class="section-header">Music</h2>
 	        </div>
 
-            <p class="blurb">Making a list of songs that have really stuck with me, changed my outlook, inspired me, surprised me. The song image effect comes from the fascinating art of <a href="https://www.kensukekoike.com/" target="_blank">Kensuke Koike</a> - which I translated into code.</p>
+            <p class="blurb">Making a list of songs that have really stuck with me, changed my outlook, inspired me, surprised me. <a href="https://open.spotify.com/playlist/49MNODTluYpP4z6s0CccPz?si=9e9c9c962cc344de">playlist</a></p>
 
             <div class="songs">
                 {#each songs as song, i}

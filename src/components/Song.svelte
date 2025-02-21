@@ -518,8 +518,8 @@
 		.song {
 			padding-top: 30px;
 		}
-		.song canvas, .song img {
-			max-width: 75px;
+		.song figure, .song canvas, .song img {
+			max-width: 80px;
 		}
 		.song h3 {
 			font-size: 22px;

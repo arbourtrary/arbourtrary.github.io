@@ -16,7 +16,7 @@ const projects = [
     "image": "textures/fade_in_a_word.webp",
     "url": "https://www.blurb.com/b/10322155-in-a-word",
     "format": "Books",
-    "text": "I compiled this book, more than I wrote it. So thematically, it's pretty scattered. Stylistically, it's early in my writing, often repetitive. I still find some lines and poems pretty interesting and they could be further developed. The visuals are heavy on symmetry, minimalism, and network / graph analysis.",
+    "text": "I compiled this book of poems, more than I wrote it. So thematically, it's pretty scattered. Stylistically, it's early in my writing, often repetitive. I still find some lines and poems intriguing and I'd like to explore those a bit. The visuals are heavy on symmetry, minimalism, and network / graph analysis.",
     "tools": [
       "pencil",
       "paper",
