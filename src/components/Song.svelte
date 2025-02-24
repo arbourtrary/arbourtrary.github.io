@@ -437,7 +437,7 @@
 			<h3>{@html song.title}</h3>
 		</a>
 		<h4>{@html song.artist}</h4>
-		<p>{song.description}</p>
+		<p>{@html song.description}</p>
 	</div>
 </div>
 
@@ -460,6 +460,17 @@
 	.song a:hover h3 {
 		text-decoration: underline;
 	}
+    :global(.song-info > p a) {
+        text-decoration: none;
+        padding: 0px 3px;
+        color: var(--blue);
+    }
+    :global(.song-info > p a:hover) {
+        background: var(--blue);
+        text-decoration: none;
+        border-radius: 5px;
+        color: white;
+    }
 	.song figure {
 		min-height: 130px;
 		width: 90px;
