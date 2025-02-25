@@ -424,22 +424,24 @@
 	}
 </script>
 
-<div class="song">
-	<a href={song.link} target="_blank">
-		<!-- <img class="placeholder" alt="song placeholder" src="/images/songs/placeholder.webp"/> -->
-		<!-- <canvas bind:this={final}/> -->
-		<figure>
-			<img loading={loading} class="cover" alt="song cover" src={image}/>
-		</figure>
-	</a>
-	<div class="song-info">
+{#if song.description}
+	<div class="song">
 		<a href={song.link} target="_blank">
-			<h3>{@html song.title}</h3>
+			<!-- <img class="placeholder" alt="song placeholder" src="/images/songs/placeholder.webp"/> -->
+			<!-- <canvas bind:this={final}/> -->
+			<figure>
+				<img loading={loading} class="cover" alt="song cover" src={image}/>
+			</figure>
 		</a>
-		<h4>{@html song.artist}</h4>
-		<p>{@html song.description}</p>
+		<div class="song-info">
+			<a href={song.link} target="_blank">
+				<h3>{@html song.title}</h3>
+			</a>
+			<h4>{@html song.artist}</h4>
+			<p>{@html song.description}</p>
+		</div>
 	</div>
-</div>
+{/if}
 
 <style>
 	.song {
