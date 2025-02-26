@@ -39,7 +39,7 @@
 		"title": "Listen to the Music",
 		"image": "/images/music/sampled-listen-to-the-music.webp",
 		"link": "https://www.youtube.com/watch?v=S3ta4T9tIUM",
-		"description": "An happy and feel-good rhythm, some bluesy sound. Helps me feel relaxed and hopeful."
+		"description": "A happy and feel-good rhythm, some bluesy sound. Helps me feel relaxed and hopeful."
 	},
 	{
 		"artist": "The Who",
@@ -60,7 +60,7 @@
 		"title": "Mr. Blue Sky",
 		"image": "/images/music/sampled-mr-blue-sky.webp",
 		"link": "https://www.youtube.com/watch?v=aQUlA8Hcv4s",
-		"description": "Ecstatic, feel-good, hopping beat. Love that the song made its way into a Guardians of the Galaxy intro with <a href='https://www.youtube.com/watch?v=tzIzfceEc4Y' target='_blank'>Groot.</a>"
+		"description": "Ecstatic, feel-good, hopping beat. So happy that the song made its way into a Guardians of the Galaxy intro with <a href='https://www.youtube.com/watch?v=tzIzfceEc4Y' target='_blank'>Groot.</a>"
 	},
 	{
 		"artist": "Modest Mouse",
@@ -81,7 +81,7 @@
 		"title": "Starry Eyed Surprise",
 		"image": "/images/music/sampled-starry-eyed-surprise.webp",
 		"link": "https://www.youtube.com/watch?v=7odMzSb6WUQ",
-		"description": "Pure nostalgia. Before <i>vibes</i>, this was was a vibe. And yes, I first heard this song with that roller-skating beachy <a href='https://www.youtube.com/watch?v=ZmBDeswu2dI' target='_blank'>Coca-Cola commercial.</a> So good."
+		"description": "Pure nostalgia. Before <i>vibes</i>, this was a vibe. And yes, I first heard this song with that roller-skating beachy <a href='https://www.youtube.com/watch?v=ZmBDeswu2dI' target='_blank'>Coca-Cola commercial.</a> So good."
 	},
 	{
 		"artist": "Death Cab For Cutie",
@@ -102,7 +102,7 @@
 		"title": "Such Great Heights",
 		"image": "/images/music/sampled-such-great-heights.webp",
 		"link": "https://www.youtube.com/watch?v=0wrsZog8qXg",
-		"description": "Muted, repetitive and dreamy. Love how they somehow blended this together into a floating, detached, inspiring experience."
+		"description": "Muted, repetitive and dreamy. Admire how they somehow blended this together into a floating, detached, inspiring experience."
 	},
 	{
 		"artist": "The Strokes",
@@ -140,248 +140,262 @@
 		"description": "A frenzy. Wild in its pitch. The drums man the drums and that fevered voice. Full volume, wondrous chaos."
 	},
 	{
+		"artist": "M.I.A.",
+		"title": "Paper Planes",
+		"image": "/images/music/sampled-paper-planes.webp",
+		"link": "https://www.youtube.com/watch?v=ewRjZoRtu0Y",
+		"description": "First heard this song in a high school pottery class and soon after, heard it immortalizd in Pineapple Express. Iconic song of the era."
+	},
+	{
 		"artist": "Edward Sharpe &amp; the Magentic Zeros",
 		"title": "40 Day Dream",
 		"image": "/images/music/sampled-40-day-dream.webp",
 		"link": "https://www.youtube.com/watch?v=_7nD1T7mjp8",
-		"description": ""
+		"description": "They have a raucous, uplifting energy in a bunch of songs (and some sort of Messiah complex for the frontman). Really fun to see them live!"
 	},
 	{
 		"artist": "Kid Cudi",
-		"title": "Simple As",
-		"image": "/images/music/sampled-simple-as.webp",
-		"link": "https://www.youtube.com/watch?v=bOGXO7v9nCY",
-		"description": ""
+		"title": "Pursuit of Happiness",
+		"image": "/images/music/sampled-pursuit-of-happiness.webp",
+		"link": "https://www.youtube.com/watch?v=7xzU9Qqdqww",
+		"description": "Moody, gripping, surreal. Could've (should've?) added <a href='https://www.youtube.com/watch?v=bOGXO7v9nCY'>Simple As...</a> or <a href='https://www.youtube.com/watch?v=VrDfSZ_6f4U'>Day 'N' Nite</a> or <a href='https://www.youtube.com/watch?v=N4yOHlNKcxs'>Make Her Say</a>. Everything was so good on that album."
+	},
+	{
+		"artist": "Ganglians",
+		"title": "Cryin' Smoke",
+		"image": "/images/music/sampled-cryin-smoke.webp",
+		"link": "https://www.youtube.com/watch?v=kXC1Km379uo",
+		"description": "Brings back days exploring riverside trails in the middle of the Texas summer. That delirious heat, this floaty, languishing song."
 	},
 	{
 		"artist": "Led Zeppelin",
 		"title": "Going to California",
 		"image": "/images/music/sampled-going-to-california.webp",
 		"link": "https://www.youtube.com/watch?v=nhVfuacsLDw",
-		"description": ""
+		"description": "Had to add an artist double. At this point in my life, I actually was moving to California and this song had so much peace in it. Beautiful memories."
 	},
 	{
 		"artist": "Papercuts",
 		"title": "Future Primitive",
 		"image": "/images/music/sampled-future-primitive.webp",
 		"link": "https://www.youtube.com/watch?v=Ja5nsXVxfs4",
-		"description": ""
+		"description": "A primal drum, a guiding bass. Sometimes, simplicity says the most. I step outside myself anytime I really listen to this song."
 	},
 	{
 		"artist": "STRFKR",
 		"title": "Rawnald Gregory Erickson the Second",
 		"image": "/images/music/sampled-rawnald-gregory-erickson-the-second.webp",
 		"link": "https://www.youtube.com/watch?v=5Z8oYH_bhnA",
-		"description": ""
+		"description": "Another bass-song perfect for zoning out, relaxing in this wonderful mood. Does it make any sense? No. Does it need to? Also no :)"
 	},
 	{
 		"artist": "Wakey!Wakey!",
 		"title": "Twenty Two",
 		"image": "/images/music/sampled-twenty-two.webp",
 		"link": "https://www.youtube.com/watch?v=E9erLl6RPww",
-		"description": ""
+		"description": "I'm not heavily into lyrics as the driving connection to my songs. So to my blurry mind, this song is as happy and carefree as anything in the list. Beautiful whistling here too."
 	},
 	{
 		"artist": "Devendra Banhart",
 		"title": "Santa Maria de Feira",
 		"image": "/images/music/sampled-santa-maria-de-feira.webp",
 		"link": "https://www.youtube.com/watch?v=9m4VDrbviPs",
-		"description": ""
+		"description": "A very romantic and peaceful song. Like drawing yourself a forest bath. Immerse yourself in the calm."
 	},
 	{
 		"artist": "Bombay Bicycle Club",
 		"title": "Always Like This",
 		"image": "/images/music/sampled-always-like-this.webp",
 		"link": "https://www.youtube.com/watch?v=-QKj62RKBrM",
-		"description": ""
+		"description": "Strong into my indie phase (maybe never left it?), I liked mostly everything by this band. Somehow can't get enough of British bands' sensibility."
 	},
 	{
 		"artist": "Kishi Bashi",
 		"title": "Bright Whites",
 		"image": "/images/music/sampled-bright-whites.webp",
 		"link": "https://www.youtube.com/watch?v=0C6g7JfYztE",
-		"description": ""
+		"description": "What a very weird and experimental man with a mesmerizing violin. His music is all over the map and seeing him looping live was a trip."
 	},
 	{
 		"artist": "Cults ft. Freddie Gibbs",
 		"title": "Bad Things",
 		"image": "/images/music/sampled-bad-things.webp",
 		"link": "https://www.youtube.com/watch?v=t7Z5nki_E7M",
-		"description": ""
+		"description": "There was this brief pinnacle of the intersection of rap + indie (see also Chance's <a href='https://www.youtube.com/watch?v=it1e4JvXuCE' target='_blank'>Yolo</a> sampling Santigold). This is one of the best in the genre."
 	},
 	{
 		"artist": "Woodie Guthrie",
 		"title": "Pastures of Plenty",
 		"image": "/images/music/sampled-pastures-of-plenty.webp",
 		"link": "https://www.youtube.com/watch?v=pQ5zA368EJs",
-		"description": ""
+		"description": "An American icon. I'm enthralled by folk music across cultures, the mythology, the lyrics. &lsquo;Always we ramble, that river and I...'"
 	},
 	{
 		"artist": "Chance the Rapper",
 		"title": "Everybody's Something",
 		"image": "/images/music/sampled-everybodys-something.webp",
 		"link": "https://www.youtube.com/watch?v=Gctf0n8b3F4",
-		"description": ""
+		"description": "Acid Rap is an album worth the full listen, repeat, repeat, ad infinitum. Does anyone have more fun with language than Chance? Incredible wordplay."
 	},
 	{
 		"artist": "Dr. Dog",
 		"title": "Heart it Races",
 		"image": "/images/music/sampled-heart-it-races.webp",
-		"link": "https://www.youtube.com/watch?v=w_o649i8HU8",
-		"description": ""
+		"link": "https://www.youtube.com/watch?v=IQqa588F9Vs",
+		"description": "The only other contender to be my favorite song. I can live in the drums, the bass, the raw sound, the off-kilter lyrics. It's a hazy, wild sort of energy that I love to inhabit."
 	},
 	{
 		"artist": "Trio Los Panchos",
 		"title": "Me Voy Pa'l Pueblo",
 		"image": "/images/music/sampled-me-voy-pal-pueblo.webp",
 		"link": "https://www.youtube.com/watch?v=FE9XX0kPYbE",
-		"description": ""
+		"description": "Una canción que Abuelo solía silbar y tararear. Era de Yabucoa, conocía la vida y la música de los jíbaros. Una hermosa canción."
 	},
 	{
 		"artist": "Earl Sweatshirt",
 		"title": "Chum",
 		"image": "/images/music/sampled-chum.webp",
 		"link": "https://www.youtube.com/watch?v=FCbWLSZrZfw",
-		"description": ""
+		"description": "Rich piano, rich metaphor - feels like a heavy confessional. Hadn't heard anything like this before and haven't heard anything like it since."
 	},
 	{
 		"artist": "Azealia Banks",
 		"title": "212",
 		"image": "/images/music/sampled-212.webp",
 		"link": "https://www.youtube.com/watch?v=i3Jv9fNPjgk",
-		"description": ""
+		"description": "Badass, spiky, irreverent. Utterly unique rap and the music video is hilarious with that Mickey Mouse sweater."
 	},
 	{
 		"artist": "El Gran Combo",
 		"title": "El Caballo Pelotero",
 		"image": "/images/music/sampled-el-caballo-pelotero.webp",
 		"link": "https://www.youtube.com/watch?v=hq3yWw0wEEo",
-		"description": ""
+		"description": "Es una canción loquita, llena de tonterias. Me encanta eso y el ritmo es El Gran Combo clásico: un estilo de salsa bién energético."
 	},
 	{
 		"artist": "Cherub",
 		"title": "Doses &amp; Mimosas",
 		"image": "/images/music/sampled-doses-mimosas.webp",
 		"link": "https://www.youtube.com/watch?v=E45fogGN_Y8",
-		"description": ""
+		"description": "The sound is airy, sublime even. Almost lulls you into forgetting this a song for haters, by haters. Purpose built for the brashest times in your life."
 	},
 	{
 		"artist": "Shakey Graves",
 		"title": "Unlucky Skin",
 		"image": "/images/music/sampled-unlucky-skin.webp",
 		"link": "https://www.youtube.com/watch?v=4jvJ9coV4J8",
-		"description": ""
+		"description": "Feels like the banjo is weaving some sort of riddle that the song is trying to answer. There's a world in there I can't quite escape."
 	},
 	{
 		"artist": "Vance Joy",
 		"title": "Riptide",
 		"image": "/images/music/sampled-riptide.webp",
 		"link": "https://www.youtube.com/watch?v=uJ_1HMAGb4k",
-		"description": ""
+		"description": "A gorgeous song sung with a melancholic depth of love. My wife and I love singing it together. Also, for about the first 10 years of owning an ukulele, this was the only song I could play."
 	},
 	{
 		"artist": "G-Eazy, Devon Baldwin",
 		"title": "Let's Get Lost",
 		"image": "/images/music/sampled-lets-get-lost.webp",
 		"link": "https://www.youtube.com/watch?v=pruKV1chnHA",
-		"description": ""
+		"description": "I guess G-Eazy is a decent rapper, but his songs are easily at their best when they're collabs. Love the juxtaposition of Devon Baldwin's voice with the muffled beat and detached rap."
 	},
 	{
 		"artist": "LCD Soundsystem",
 		"title": "Dance Yrself Clean",
 		"image": "/images/music/sampled-dance-yrself-clean.webp",
 		"link": "https://www.youtube.com/watch?v=9ZNkPA_zUd4",
-		"description": ""
+		"description": "Somehow I'll never know exactly what the lyrics are at each point of this nearly nine-minute-long song. All I know is that by the end I feel so free. It's an ecstatic experience - a nighttime highway riding to the beach, windows down. Also, this <a href='https://www.youtube.com/watch?v=1-VCWUtNm-4' href='_blank'>urban ski</a> video - perfection."
 	},
 	{
 		"artist": "Danny Brown",
 		"title": "Grown Up",
 		"image": "/images/music/sampled-grown-up.webp",
 		"link": "https://www.youtube.com/watch?v=32RAzqA5UNc",
-		"description": ""
+		"description": "An uplifting song with happy chords - carries some nostalgia of running around as little kids, dreaming of some incredible future."
 	},
 	{
 		"artist": "Future Islands",
 		"title": "Balance",
 		"image": "/images/music/sampled-balance.webp",
 		"link": "https://www.youtube.com/watch?v=g0LJNEQz-E4",
-		"description": ""
+		"description": "If you ever need a reason to care about humans making music, go see this frontman perform. It will cure anything that ails you - such powerful, honest energy and emotion."
 	},
 	{
 		"artist": "Hot Chocolate",
 		"title": "You Sexy Thing",
 		"image": "/images/music/sampled-you-sexy-thing.webp",
 		"link": "https://www.youtube.com/watch?v=YUY9Y9RFiHY",
-		"description": ""
+		"description": "The funkiest, sexiest song out there. This was the song for my wife and I's first dance - such a happy vibe!"
 	},
 	{
 		"artist": "Post Malone, Swae Lee",
 		"title": "Sunflower",
 		"image": "/images/music/sampled-sunflower.webp",
 		"link": "https://www.youtube.com/watch?v=ApXoWvfEYVU",
-		"description": ""
+		"description": "The best song in an unbelievably, ground-breakingly good movie about a Puerto Rican Spiderman? Yes, please."
 	},
 	{
 		"artist": "Chairman Maf",
 		"title": "Diva",
 		"image": "/images/music/sampled-diva.webp",
 		"link": "https://www.youtube.com/watch?v=CKchWalsJP4",
-		"description": ""
+		"description": "Started getting into some more lo-fi, but then found an upbeat offshot of sampled voice and rhythm. Violin here mixes so, so well."
 	},
 	{
 		"artist": "DRAM, Lil Yachty",
 		"title": "Broccoli",
 		"image": "/images/music/sampled-broccoli.webp",
 		"link": "https://www.youtube.com/watch?v=K44j-sb1SRY",
-		"description": ""
+		"description": "Some music is just plain fun. And for whatever reason, this song just feels so light-hearted and loose. Great chorus."
 	},
 	{
 		"artist": "Big Black Delta",
 		"title": "Side of the Road",
 		"image": "/images/music/sampled-side-of-the-road.webp",
 		"link": "https://www.youtube.com/watch?v=dmRlxYLYHtY",
-		"description": ""
+		"description": "Set the mood for a lot of late night train commutes. Has this expanisve intensity and unintelligible meaning. Kicked off some excellent poetic escapades for me."
 	},
 	{
 		"artist": "Doja Cat",
 		"title": "Go To Town",
 		"image": "/images/music/sampled-go-to-town.webp",
 		"link": "https://www.youtube.com/watch?v=TLiGA_wrNp0",
-		"description": ""
+		"description": "Another one - so witty, fun catchy. Doja Cat is a master lyricist with such a flowing, versatile voice. Wraps you up in the melody."
 	},
 	{
 		"artist": "Vince Staples",
 		"title": "Norf Norf",
 		"image": "/images/music/sampled-norf-norf.webp",
 		"link": "https://www.youtube.com/watch?v=mb6Jc4juSF8",
-		"description": ""
+		"description": "From the opening, the is the best kind of strange. The hollow, concrete, prolonged blaring follows the flow and jaunty overlaid beat. Hypnotic."
 	},
 	{
 		"artist": "KYLE",
 		"title": "YES!",
 		"image": "/images/music/sampled-yes.webp",
 		"link": "https://www.youtube.com/watch?v=cvC4lwuiUM4",
-		"description": ""
+		"description": "Blended sort of guitar riff with the most confident rap. Feel it, live it for a minute. Enjoy it, play it again. Yes!"
 	},
 	{
 		"artist": "Coast Modern",
 		"title": "Hollow Life",
 		"image": "/images/music/sampled-hollow-life.webp",
 		"link": "https://www.youtube.com/watch?v=ntrQJ64jfxs",
-		"description": ""
+		"description": "Very West coast, hipster, beachy, slacker. Somehow they mixed the apathy, beauty, and yearning into a really beautiful song."
 	},
 	{
 		"artist": "Goth Babe",
 		"title": "Sometimes",
 		"image": "/images/music/sampled-sometimes.webp",
 		"link": "https://www.youtube.com/watch?v=1-vail_qC-c",
-		"description": ""
+		"description": "His music speaks so well to the parts of me that want to hike, camp, follow paths to the oceans and rivers. Really puts me into a dreamy, imaginative trance."
 	},
 	{
 		"artist": "Bad Bunny",
 		"title": "DTmF",
 		"image": "/images/music/sampled-dtmf.webp",
 		"link": "https://www.youtube.com/watch?v=ES60TsyqrAA",
-		"description": ""
+		"description": "A longtime holdout, Bad Bunny finally won me over. Este álbum tiene todo que ver con lo que significa ser boricua. Los ritmos, los tambores, la plena - lleno de nostalgia y belleza."
 	}
 ]

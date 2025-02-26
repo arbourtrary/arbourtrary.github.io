@@ -73,8 +73,8 @@
 
 			const scatterCenters = [
 				// -4 column
-				{x: canvas.width * .18, y: canvas.height * .10},
-				{x: canvas.width * .18, y: canvas.height * .16},
+				// {x: canvas.width * .18, y: canvas.height * .10},
+				// {x: canvas.width * .18, y: canvas.height * .16},
 				{x: canvas.width * .18, y: canvas.height * .22},
 				{x: canvas.width * .18, y: canvas.height * .28},
 				{x: canvas.width * .18, y: canvas.height * .34},
@@ -85,8 +85,8 @@
 				{x: canvas.width * .18, y: canvas.height * .64},
 
 				// -3 column
-				{x: canvas.width * .26, y: canvas.height * (.10 - 0.025)},
-				{x: canvas.width * .26, y: canvas.height * (.16 - 0.025)},
+				// {x: canvas.width * .26, y: canvas.height * (.10 - 0.025)},
+				// {x: canvas.width * .26, y: canvas.height * (.16 - 0.025)},
 				{x: canvas.width * .26, y: canvas.height * (.22 - 0.025)},
 				{x: canvas.width * .26, y: canvas.height * (.28 - 0.025)},
 				{x: canvas.width * .26, y: canvas.height * (.34 - 0.025)},
@@ -98,7 +98,7 @@
 				{x: canvas.width * .26, y: canvas.height * (.70 - 0.025)},
 
 				// - 2 column
-				{x: canvas.width * .34, y: canvas.height * .10},
+				// {x: canvas.width * .34, y: canvas.height * .10},
 				{x: canvas.width * .34, y: canvas.height * .16},
 				{x: canvas.width * .34, y: canvas.height * .22},
 				{x: canvas.width * .34, y: canvas.height * .28},
@@ -111,7 +111,7 @@
 				{x: canvas.width * .34, y: canvas.height * .70},
 
 				// -1 column
-				{x: canvas.width * .42, y: canvas.height * (.10 - 0.025)},
+				// {x: canvas.width * .42, y: canvas.height * (.10 - 0.025)},
 				{x: canvas.width * .42, y: canvas.height * (.16 - 0.025)},
 				{x: canvas.width * .42, y: canvas.height * (.22 - 0.025)},
 				{x: canvas.width * .42, y: canvas.height * (.28 - 0.025)},
@@ -139,7 +139,7 @@
 				{x: canvas.width * .50, y: canvas.height * .76},
 
 				// + 1 column
-				{x: canvas.width * .58, y: canvas.height * (.10 - 0.025)},
+				// {x: canvas.width * .58, y: canvas.height * (.10 - 0.025)},
 				{x: canvas.width * .58, y: canvas.height * (.16 - 0.025)},
 				{x: canvas.width * .58, y: canvas.height * (.22 - 0.025)},
 				{x: canvas.width * .58, y: canvas.height * (.28 - 0.025)},
@@ -153,7 +153,7 @@
 				{x: canvas.width * .58, y: canvas.height * (.76 - 0.025)},
 
 				// + 2 column
-				{x: canvas.width * .66, y: canvas.height * .10},
+				// {x: canvas.width * .66, y: canvas.height * .10},
 				{x: canvas.width * .66, y: canvas.height * .16},
 				{x: canvas.width * .66, y: canvas.height * .22},
 				{x: canvas.width * .66, y: canvas.height * .28},
@@ -166,8 +166,8 @@
 				{x: canvas.width * .66, y: canvas.height * .70},
 
 				// + 3 column
-				{x: canvas.width * .74, y: canvas.height * (.10 - 0.025)},
-				{x: canvas.width * .74, y: canvas.height * (.16 - 0.025)},
+				// {x: canvas.width * .74, y: canvas.height * (.10 - 0.025)},
+				// {x: canvas.width * .74, y: canvas.height * (.16 - 0.025)},
 				{x: canvas.width * .74, y: canvas.height * (.22 - 0.025)},
 				{x: canvas.width * .74, y: canvas.height * (.28 - 0.025)},
 				{x: canvas.width * .74, y: canvas.height * (.34 - 0.025)},
@@ -179,8 +179,8 @@
 				{x: canvas.width * .74, y: canvas.height * (.70 - 0.025)},
 
 				// + 4 column
-				{x: canvas.width * .82, y: canvas.height * .10},
-				{x: canvas.width * .82, y: canvas.height * .16},
+				// {x: canvas.width * .82, y: canvas.height * .10},
+				// {x: canvas.width * .82, y: canvas.height * .16},
 				{x: canvas.width * .82, y: canvas.height * .22},
 				{x: canvas.width * .82, y: canvas.height * .28},
 				{x: canvas.width * .82, y: canvas.height * .34},
@@ -194,8 +194,8 @@
 
 			const compressedCenters = [
 				// - 4 column
-				{x: canvas.width * .50 - 4 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize},
-				{x: canvas.width * .50 - 4 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize + dotSize * 1},
+				// {x: canvas.width * .50 - 4 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize},
+				// {x: canvas.width * .50 - 4 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize + dotSize * 1},
 				{x: canvas.width * .50 - 4 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize + dotSize * 2},
 				{x: canvas.width * .50 - 4 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize + dotSize * 3},
 				{x: canvas.width * .50 - 4 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize + dotSize * 4},
@@ -206,8 +206,8 @@
 				{x: canvas.width * .50 - 4 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize + dotSize * 9},
 
 				// - 3 column
-				{x: canvas.width * .50 - 3 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2},
-				{x: canvas.width * .50 - 3 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2 + dotSize * 1},
+				// {x: canvas.width * .50 - 3 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2},
+				// {x: canvas.width * .50 - 3 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2 + dotSize * 1},
 				{x: canvas.width * .50 - 3 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2 + dotSize * 2},
 				{x: canvas.width * .50 - 3 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2 + dotSize * 3},
 				{x: canvas.width * .50 - 3 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2 + dotSize * 4},
@@ -219,7 +219,7 @@
 				{x: canvas.width * .50 - 3 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2 + dotSize * 10},
 
 				// - 2 column
-				{x: canvas.width * .50 - 2 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize},
+				// {x: canvas.width * .50 - 2 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize},
 				{x: canvas.width * .50 - 2 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize + dotSize * 1},
 				{x: canvas.width * .50 - 2 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize + dotSize * 2},
 				{x: canvas.width * .50 - 2 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize + dotSize * 3},
@@ -232,7 +232,7 @@
 				{x: canvas.width * .50 - 2 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize + dotSize * 10},
 
 				// - 1 column
-				{x: canvas.width * .50 - (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2},
+				// {x: canvas.width * .50 - (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2},
 				{x: canvas.width * .50 - (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2 + dotSize * 1},
 				{x: canvas.width * .50 - (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2 + dotSize * 2},
 				{x: canvas.width * .50 - (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2 + dotSize * 3},
@@ -260,7 +260,7 @@
 				{x: canvas.width * .50, y: canvas.height * .50 - 5.5 * dotSize + dotSize * 11},
 
 				// + 1 column
-				{x: canvas.width * .50 + (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2},
+				// {x: canvas.width * .50 + (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2},
 				{x: canvas.width * .50 + (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2 + dotSize * 1},
 				{x: canvas.width * .50 + (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2 + dotSize * 2},
 				{x: canvas.width * .50 + (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2 + dotSize * 3},
@@ -274,7 +274,7 @@
 				{x: canvas.width * .50 + (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2 + dotSize * 11},
 
 				// + 2 column
-				{x: canvas.width * .50 + 2 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize},
+				// {x: canvas.width * .50 + 2 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize},
 				{x: canvas.width * .50 + 2 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize + dotSize * 1},
 				{x: canvas.width * .50 + 2 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize + dotSize * 2},
 				{x: canvas.width * .50 + 2 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize + dotSize * 3},
@@ -287,8 +287,8 @@
 				{x: canvas.width * .50 + 2 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize + dotSize * 10},
 
 				// + 3 column
-				{x: canvas.width * .50 + 3 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2},
-				{x: canvas.width * .50 + 3 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2 + dotSize * 1},
+				// {x: canvas.width * .50 + 3 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2},
+				// {x: canvas.width * .50 + 3 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2 + dotSize * 1},
 				{x: canvas.width * .50 + 3 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2 + dotSize * 2},
 				{x: canvas.width * .50 + 3 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2 + dotSize * 3},
 				{x: canvas.width * .50 + 3 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2 + dotSize * 4},
@@ -300,8 +300,8 @@
 				{x: canvas.width * .50 + 3 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize - dotSize/2 + dotSize * 10},
 
 				// + 4 column
-				{x: canvas.width * .50 + 4 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize},
-				{x: canvas.width * .50 + 4 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize + dotSize * 1},
+				// {x: canvas.width * .50 + 4 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize},
+				// {x: canvas.width * .50 + 4 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize + dotSize * 1},
 				{x: canvas.width * .50 + 4 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize + dotSize * 2},
 				{x: canvas.width * .50 + 4 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize + dotSize * 3},
 				{x: canvas.width * .50 + 4 * (dotSize/2) * Math.sqrt(3), y: canvas.height * .50 - 5.5 * dotSize + dotSize * 4},
@@ -378,7 +378,7 @@
 			clippedCtx.drawImage(
 				canvas, 
 				.5 * canvas.width - clippedWidth / 2, 
-				.5 * canvas.height - dotSize * 6.5 - .5, 
+				.5 * canvas.height - dotSize * 6, 
 				clippedWidth, 
 				clippedHeight,
 				0,
@@ -424,7 +424,7 @@
 	}
 </script>
 
-{#if song.description}
+{#if song}
 	<div class="song">
 		<a href={song.link} target="_blank">
 			<!-- <img class="placeholder" alt="song placeholder" src="/images/songs/placeholder.webp"/> -->

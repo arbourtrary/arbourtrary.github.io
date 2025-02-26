@@ -16,7 +16,7 @@
     <meta property='og:title' content="Music" />
     <meta property='og:site_name' content='arbourtrary' />
     <meta property='og:url' content="https://arbourtrary.com/music" />
-    <meta property='og:description' content="" />
+    <meta property='og:description' content="Tracing a quasi-chronological path through the evolution of my musical taste. So many incredible songs and genres." />
     <meta property='og:locale' content='en_US' />
     <meta property='og:image' content="https://arbourtrary.com/images/social_music.webp" />
     
@@ -24,7 +24,7 @@
     <meta name='twitter:site' content="https://arbourtrary.com/music" />
     <meta name='twitter:creator' content='arbourtrary' />
     <meta name='twitter:title' content="Music" />
-    <meta name='twitter:description' content="" />
+    <meta name='twitter:description' content="Tracing a quasi-chronological path through the evolution of my musical taste. So many incredible songs and genres." />
     <meta name='twitter:image:src' content="https://arbourtrary.com/images/social_music.webp" />
 </svelte:head>
 {#if shouldHydrate}
