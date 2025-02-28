@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths'
 	export let book = {};
 	export let loading = 'eager';
 
@@ -429,7 +430,7 @@
 		<!-- <img class="placeholder" alt="book placeholder" src="/images/books/placeholder.webp"/> -->
 		<!-- <canvas style="display: none;" bind:this={final}/> -->
 		<figure>
-			<img loading={loading} class="cover" alt="book cover" src={image}/>
+			<img loading={loading} class="cover" alt="book cover" src={base + image}/>
 		</figure>
 	</a>
 	<div class="book-info">
