@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths'
     import { onMount } from "svelte";
     import { loadJSON } from "../utils/file.js";
 
@@ -112,7 +113,7 @@
 							left: ${honeycombCenters[i].x};
 							top: ${honeycombCenters[i].y};
 						`}>
-						<img src={row.image}>
+						<img src={base + row.image} alt="Kensuke-Koike-sampled album cover"/>
 					</div>
 				</a>
 				{/each}

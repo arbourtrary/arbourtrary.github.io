@@ -16,7 +16,7 @@
 	            <h2 class="section-header">Music</h2>
 	        </div>
 
-            <p class="blurb">There's a bunch of songs that I've played on repeat over the years. And I've compiled as many as I could remember. They kinda chronicle my musical journey as my knowledge and taste steadily expanded. A lot of nostalgia creating this - also made a Spotify <a href="https://open.spotify.com/playlist/49MNODTluYpP4z6s0CccPz?si=9e9c9c962cc344de">playlist</a> to accompany the list.</p>
+            <p class="blurb">There's a bunch of songs that I've played on repeat over the years. And I've compiled as many as I could remember. They kinda chronicle my musical journey as my knowledge and taste steadily expanded. A lot of nostalgia creating this - also made a Spotify <a href="https://open.spotify.com/playlist/49MNODTluYpP4z6s0CccPz?si=9e9c9c962cc344de" target="_blank">playlist</a> to accompany the list.</p>
 
             <div class="songs">
                 {#each songs as song, i}

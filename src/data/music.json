@@ -68,12 +68,12 @@
 		"title": "Mr. Blue Sky",
 		"image": "/images/music/sampled-mr-blue-sky.webp",
 		"link": "https://www.youtube.com/watch?v=aQUlA8Hcv4s",
-		"description": "Ecstatic, feel-good, hopping beat. So happy that the song made its way into a Guardians of the Galaxy intro with <a href='https://www.youtube.com/watch?v=tzIzfceEc4Y' target='_blank'>Groot.</a>",
+		"description": "Ecstatic, feel-good, hopping beat. So happy that the song made its way into a Guardians of the Galaxy intro with <a href='https://www.youtube.com/watch?v=tzIzfceEc4Y/' target='_blank'>Groot.</a>",
 		"slug": "mr-blue-sky"
 	},
 	{
 		"artist": "Modest Mouse",
-		"title": "Float On",
+		"title": "Float On", 
 		"image": "/images/music/sampled-float-on.webp",
 		"link": "https://www.youtube.com/watch?v=CTAud5O7Qqk",
 		"description": "My first true favorite song that I &lsquo;discovered' - it was like a revelation. Heard it on the radio driving in Mayagüez with my cousin and it opened up a whole new world for me. So upbeat, love the bass, love the snare.",
@@ -92,7 +92,7 @@
 		"title": "Starry Eyed Surprise",
 		"image": "/images/music/sampled-starry-eyed-surprise.webp",
 		"link": "https://www.youtube.com/watch?v=7odMzSb6WUQ",
-		"description": "Pure nostalgia. Before <i>vibes</i>, this was a vibe. And yes, I first heard this song with that roller-skating beachy <a href='https://www.youtube.com/watch?v=ZmBDeswu2dI' target='_blank'>Coca-Cola commercial.</a> So good.",
+		"description": "Pure nostalgia. Before <i>vibes</i>, this was a vibe. And yes, I first heard this song with that roller-skating beachy <a href='https://www.youtube.com/watch?v=ZmBDeswu2dI/' target='_blank'>Coca-Cola commercial.</a> So good.",
 		"slug": "starry-eyed-surprise"
 	},
 	{
@@ -180,7 +180,7 @@
 		"title": "Pursuit of Happiness",
 		"image": "/images/music/sampled-pursuit-of-happiness.webp",
 		"link": "https://www.youtube.com/watch?v=7xzU9Qqdqww",
-		"description": "Moody, gripping, surreal. Could've (should've?) added <a href='https://www.youtube.com/watch?v=bOGXO7v9nCY'>Simple As...</a> or <a href='https://www.youtube.com/watch?v=VrDfSZ_6f4U'>Day 'N' Nite</a> or <a href='https://www.youtube.com/watch?v=N4yOHlNKcxs'>Make Her Say</a>. Everything was so good on that album.",
+		"description": "Moody, gripping, surreal. Could've (should've?) added <a href='https://www.youtube.com/watch?v=bOGXO7v9nCY/' target='_blank'>Simple As...</a> or <a href='https://www.youtube.com/watch?v=VrDfSZ_6f4U/' target='_blank'>Day 'N' Nite</a> or <a href='https://www.youtube.com/watch?v=N4yOHlNKcxs/' target='_blank'>Make Her Say</a>. Everything was so good on that album.",
 		"slug": "pursuit-of-happiness"
 	},
 	{
@@ -252,7 +252,7 @@
 		"title": "Bad Things",
 		"image": "/images/music/sampled-bad-things.webp",
 		"link": "https://www.youtube.com/watch?v=t7Z5nki_E7M",
-		"description": "There was this brief pinnacle of the intersection of rap + indie (see also Chance's <a href='https://www.youtube.com/watch?v=it1e4JvXuCE' target='_blank'>Yolo</a> sampling Santigold). This is one of the best in the genre.",
+		"description": "There was this brief pinnacle of the intersection of rap + indie (see also Chance's <a href='https://www.youtube.com/watch?v=it1e4JvXuCE/' target='_blank'>Yolo</a> sampling Santigold). This is one of the best in the genre.",
 		"slug": "bad-things"
 	},
 	{
