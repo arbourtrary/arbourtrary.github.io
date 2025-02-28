@@ -256,7 +256,7 @@
     	.title {
             font-size: 24px;
         }
-        .description {
+        .music-summary p {
             font-size: 16px;
         }
     }
