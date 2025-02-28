@@ -1,12 +1,7 @@
 <script>
-    import { section } from "../store.js"
-
-    export let sectionIndex = 3;
     export let scrollY = 0;
 
     let outerContainer;
-    $: offset = window.innerHeight / 2
-    $: outerContainer && (scrollY >= (outerContainer.offsetTop - offset)) && (scrollY < (outerContainer.offsetTop + outerContainer.offsetHeight - offset)) && $section !== sectionIndex && section.set(sectionIndex)
 
     let percent = 0
     let opacity = 0;
@@ -18,8 +13,6 @@
         percent = 0;
     	opacity = 0;
     }
-
-    $: pointerEvents = $section === sectionIndex ? 'all' : 'none'
 
     let innerWidth = window.innerWidth
     let innerHeight = window.innerHeight
@@ -45,7 +38,6 @@
         <a
             class="logo"
             aria-label="arbourtrary link to bluesky"
-            style={`pointer-events: ${pointerEvents};`}
             href="https://bsky.app/profile/arbourtrary.com"
             target="_blank"
         >
@@ -54,7 +46,6 @@
         <a
             class="logo github"
             aria-label="arbourtrary link to github"
-            style={`pointer-events: ${pointerEvents};`}
             href="https://github.com/arbourtrary"
             target="_blank"
         >
@@ -63,7 +54,6 @@
         <a
             class="logo"
             aria-label="arbourtrary link to rss feed"
-            style={`pointer-events: ${pointerEvents};`}
             href="https://arbourtrary.com/feed/rss"
             target="_blank"
         >
@@ -113,6 +103,7 @@
         display: flex;
         justify-content: center;
         text-decoration: none;
+        pointer-events: all;
     }
     .logo:hover {
         transform: scale(1.1);

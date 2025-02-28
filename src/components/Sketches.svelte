@@ -1,11 +1,8 @@
 <script>
     import { onMount } from "svelte";
     import { loadJSON } from "../utils/file.js";
-    import { section } from "../store.js"
     import SketchRow from "./SketchRow.svelte";
 
-    export let sectionIndex = 2;
-    export let scrollY = 0;
     export let dataFilename = "";
     export let splitByYear = false;
     export let limit = 10;
@@ -38,14 +35,10 @@
             sketch.year = fullYear;
         }
     });
-
-    let outerContainer;
-    $: offset = window.innerHeight / 2;
-    $: outerContainer && (scrollY >= (outerContainer.offsetTop - offset)) && (scrollY < (outerContainer.offsetTop + outerContainer.offsetHeight - offset)) && $section !== sectionIndex && section.set(sectionIndex)
 </script>
 
 
-<div id="sketches" bind:this={outerContainer}>
+<div id="sketches">
     <div class="sketches-container">
         <a class="sketches-header" href="/sketches" style={limit ? "" : "pointer-events: none"}>
             <h2 class="section-header">Sketches

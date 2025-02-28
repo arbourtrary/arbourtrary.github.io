@@ -1,5 +1,5 @@
 <script defer>
-    import { section, bgColor, textColor2, white } from "../store.js"
+    import { bgColor, textColor2, white } from "../store.js"
     import { onMount } from "svelte";
     import { loadJSON } from "../utils/file.js";
     import { clamp } from "../utils/math.js";
@@ -312,7 +312,7 @@
     }
 
     function updateGallery() {
-        if ($section === 1 && projects.length && actualGroup.children.length) {
+        if (projects.length && actualGroup.children.length) {
             index = gallery ? Math.floor((scrollY - gallery?.parentElement?.offsetTop) / itemHeight) : 0;
             index = clamp(index, 0, numberOfSides - 1)
 

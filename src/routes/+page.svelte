@@ -64,36 +64,28 @@
     <Intro/>
     <hr>
     <Sketches
-        sectionIndex={3}
         dataFilename={'/data/sketches.json'}
-        {scrollY}
     />
     <Poems
-        sectionIndex={5}
         dataFilename={'/data/poems.json'}
-        {scrollY}
     />
     <Writings
-        sectionIndex={2}
         dataFilename={'/data/writings.json'}
-        {scrollY}
     />
     <hr>
     <PlatonicProjects
-        sectionIndex={1}
         dataFilename={'/data/projects.json'}
         {scrollY}
     />
     <hr>
     <Contact
-        sectionIndex={4}
         {scrollY}
     />   
 {/if}
 
 
 <style>
-    :global(#about), :global(#projects), :global(#writings), :global(#sketches), :global(#poems) {
+    :global(#about), :global(#projects), :global(#writings), :global(#sketches), :global(#poems), :global(#music) {
         width: min(95vw, 1100px) !important;
         margin: 0 auto !important;
     }
