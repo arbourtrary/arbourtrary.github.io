@@ -5,15 +5,7 @@
     import Song from "./Song.svelte"
     import Footer from './Footer.svelte';
 
-    export let dataFilename = "";
-
-    let songs = [];
-
-    onMount(async () => {
-        const response = await fetch(dataFilename);
-        songs = await response.json();
-    });
-
+    export let songs = [];
 </script>
 
 <Header/>

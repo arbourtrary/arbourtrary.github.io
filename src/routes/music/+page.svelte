@@ -1,14 +1,8 @@
 <script>
     import Music from "../../components/Music.svelte"
-
-    import { onMount } from "svelte";
-
-    let shouldHydrate = false;
-
-    onMount(() => {
-        shouldHydrate = true;
-    })  
+    import songs from '../../data/music.json'
 </script>
+
 <svelte:head>
     <title>Music</title>
     <link rel='canonical' href="https://arbourtrary.com/music" />
@@ -27,8 +21,9 @@
     <meta name='twitter:description' content="Tracing a quasi-chronological path through the evolution of my musical taste. So many incredible songs and genres." />
     <meta name='twitter:image:src' content="https://arbourtrary.com/images/social_music.webp" />
 </svelte:head>
-{#if shouldHydrate}
+
+{#if songs}
     <Music
-        dataFilename={'/data/music.json'}
+        {songs}
     />
 {/if}

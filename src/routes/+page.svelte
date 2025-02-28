@@ -10,6 +10,7 @@
     import Writings from "../components/Writings.svelte"
     import Sketches from "../components/Sketches.svelte"
     import Contact from "../components/Contact.svelte"
+    import HoneycombImages from "../components/HoneycombImages.svelte"
 
     let scrollY = 0;
     let innerWidth;
@@ -76,6 +77,10 @@
     <PlatonicProjects
         dataFilename={'/data/projects.json'}
         {scrollY}
+    />
+    <hr>
+    <HoneycombImages
+        dataFilename={'/data/music.json'}
     />
     <hr>
     <Contact

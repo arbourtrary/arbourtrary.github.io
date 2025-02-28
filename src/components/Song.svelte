@@ -425,7 +425,7 @@
 </script>
 
 {#if song}
-	<div class="song">
+	<div class="song" id={`${song.slug}`}>
 		<a href={song.link} target="_blank">
 			<!-- <img class="placeholder" alt="song placeholder" src="/images/songs/placeholder.webp"/> -->
 			<!-- <canvas bind:this={final}/> -->

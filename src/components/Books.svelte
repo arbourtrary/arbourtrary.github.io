@@ -5,15 +5,7 @@
     import Book from "./Book.svelte"
     import Footer from './Footer.svelte';
 
-    export let dataFilename = "";
-
-    let books = [];
-
-    onMount(async () => {
-        const response = await fetch(dataFilename);
-        books = await response.json();
-    });
-
+    export let books = [];
 </script>
 
 <Header/>

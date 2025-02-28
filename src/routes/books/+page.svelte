@@ -1,14 +1,8 @@
 <script>
     import Books from "../../components/Books.svelte"
-
-    import { onMount } from "svelte";
-
-    let shouldHydrate = false;
-
-    onMount(() => {
-        shouldHydrate = true;
-    })  
+    import books from '../../data/books.json'
 </script>
+
 <svelte:head>
     <title>Books</title>
     <link rel='canonical' href="https://arbourtrary.com/books" />
@@ -27,8 +21,9 @@
     <meta name='twitter:description' content="Making a list of books that have really stuck with me, changed my outlook, inspired me, surprised me." />
     <meta name='twitter:image:src' content="https://arbourtrary.com/images/social_books.webp" />
 </svelte:head>
-{#if shouldHydrate}
+
+{#if books}
     <Books
-        dataFilename={'/data/books.json'}
+        {books}
     />
 {/if}
