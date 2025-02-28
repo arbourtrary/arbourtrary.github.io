@@ -267,7 +267,15 @@ export function entries() {
         {"slug": "it-is-enough"},
         {"slug": "frank"},
         {"slug": "koan-ii"},
-        {"slug": "on-longing"}
+        {"slug": "on-longing"},
+        {"slug": "thinking-back"},
+        {"slug": "a-trip-home"},
+        {"slug": "sail"},
+        {"slug": "aging"},
+        {"slug": "addiction"},
+        {"slug": "i-was"},
+        {"slug": "quark"},
+        {"slug": "ekstasis"}
     ]
 }
 
