@@ -1,6 +1,7 @@
 <script>
 	import { marked } from "marked";
 	import { onMount } from "svelte";
+	import { base } from '$app/paths'
 
 	marked.use({
 	  mangle: false,
@@ -439,7 +440,7 @@
 
 
 <div class="song" id={`${song.slug}`}>
-	<a href={song.link} target="_blank">
+	<a href={base + song.link} target="_blank">
 		<!-- <img class="placeholder" alt="song placeholder" src="/images/songs/placeholder.webp"/> -->
 		<!-- <canvas bind:this={final}/> -->
 		<figure>
@@ -447,7 +448,7 @@
 		</figure>
 	</a>
 	<div class="song-info">
-		<a href={song.link} target="_blank">
+		<a href={base + song.link} target="_blank">
 			<h3>{@html song.title}</h3>
 		</a>
 		<h4>{@html song.artist}</h4>
