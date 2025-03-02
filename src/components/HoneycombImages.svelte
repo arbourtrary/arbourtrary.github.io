@@ -17,6 +17,10 @@
 	let initialData;
 	let n = 19;
 	let gap = 4;
+	let numRows = 5;
+	let honeycombAspectRatio = 0.7562923524;
+	let cellAspectRatio = 0.6329113924;
+	let maxCellWidth = 110; // pixels
 
     onMount(async () => {
         data = await loadJSON(dataFilename);
@@ -27,14 +31,17 @@
 
     $: if (innerWidth || outerHeight) {
     	if (honeycomb) {
-	    	if (honeycomb.offsetHeight < (1.2 * honeycomb.offsetWidth)) {
-	    		cellY = honeycomb.offsetHeight / 5;
-	    		cellX = cellY / 1.58;
+    		// Honeycomb aspect-ratio is 0.7562923524 (inv. is 1.32224)
+    		// So giving some leeway to use height as limiting factor (0.9 multiplier)
+	    	if (honeycomb.offsetHeight < (.9 / honeycombAspectRatio * honeycomb.offsetWidth)) {
+	    		cellY = honeycomb.offsetHeight / numRows;
+	    		cellX = cellY * cellAspectRatio
 	    	} else {
-	    		cellX = Math.min(110, (honeycomb.offsetWidth - 4 * gap) / 5);
-	    		cellY = 1.58 * cellX;
+	    		cellX = Math.min(maxCellWidth, (honeycomb.offsetWidth - (numRows - 1) * gap) / numRows);
+	    		cellY = cellX / cellAspectRatio;
 	    	}
-	    	
+	    	// 7 / 12 is a value that results from my implementation of the Kensuke Koike sampling
+	    	// it's the height of the inner rectangle of the hexagon (7 circles out of the 12)
 	    	cellZ = 7 / 12 * cellY;
 	    	// honeycomb.style.height = `${3 * cellY + 2 * Math.sqrt(3) * gap + 2 * cellZ}px`;
 	    	honeycombCenters = getHoneycombCenters(cellX, cellY, cellZ, gap);
