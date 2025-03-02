@@ -27,9 +27,7 @@
 
     $: if (innerWidth || outerHeight) {
     	if (honeycomb) {
-    		console.log(honeycomb.offsetWidth, honeycomb.offsetHeight)
 	    	if (honeycomb.offsetHeight < (1.2 * honeycomb.offsetWidth)) {
-	    		console.log("here")
 	    		cellY = honeycomb.offsetHeight / 5;
 	    		cellX = cellY / 1.58;
 	    	} else {
