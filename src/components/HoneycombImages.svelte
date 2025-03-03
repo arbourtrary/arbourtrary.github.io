@@ -118,7 +118,7 @@
 							left: ${honeycombCenters[i].x};
 							top: ${honeycombCenters[i].y};
 						`}>
-						<img src={base + row.image} alt="Kensuke-Koike-sampled album cover"/>
+						<img loading="lazy" src={base + row.image} alt={`Kensuke-Koike-sampled album cover for ${row.title} by ${row.artist}`}/>
 					</div>
 				</a>
 				{/each}
