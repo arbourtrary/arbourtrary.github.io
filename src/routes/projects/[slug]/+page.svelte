@@ -82,7 +82,7 @@
         const month = jsDate.toLocaleString('en-US', { month: 'short' });
         const fullYear = jsDate.getFullYear();
         const formattedYear = fullYear.toString().slice(2);
-        const formattedDate = `<span class="month">${jsDate.getMonth() + 1}</span><span>/</span>${formattedYear}`;
+        const formattedDate = `<span class="month">${month}</span> ${fullYear}`;
         return formattedDate;
     }
 
@@ -461,6 +461,12 @@
         }
         .content {
             font-size: 20px;
+        }
+        .project {
+            margin-top: 30px;
+            align-items: start;
+            flex-direction: column-reverse;
+            gap: 10px;
         }
         .project-date {
             font-size: 16px;
