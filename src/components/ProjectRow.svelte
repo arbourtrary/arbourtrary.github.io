@@ -1,6 +1,7 @@
 <script>
     import { base } from '$app/paths'
     import { randomNumber } from '../utils/identifier.js'
+    import { getTwoDigitMonthYearDate } from '../utils/date.js';
 
     export let project = {};
 
@@ -26,7 +27,7 @@
 				<path d="M 76.21 24.77 L 0 80 L -76.21 24.77 L -47.14 -64.77 L 47.14 -64.77 Z" fill-opacity={0.5} fill={color} stroke={color} stroke-width="5"/>
 			</svg>
         </div>
-        <div class="date">{@html project.date}</div>
+        <div class="date">{@html getTwoDigitMonthYearDate(project.date)}</div>
     </div>
 </a>
 

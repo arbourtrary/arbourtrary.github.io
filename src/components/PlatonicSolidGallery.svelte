@@ -10,7 +10,7 @@
     // TODO: generalize to have this extend a platonic solid gallery component
     export let platonicSolid = "dodecahedron"
     export let modelFilename = `models/${platonicSolid}.glb`
-    export let dataFilename = "";
+    export let projects = [];
     export let scrollY = 0;
 
     import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';    
@@ -40,7 +40,6 @@
     let prevIndex = 0;
     let index = 0;
     let unraveledFaces = [];
-    let projects = [];
     let hover = false;
     let hoverScale = 5;
 
@@ -71,7 +70,6 @@
 
     onMount(async () => {
         unraveledFaces = [...document.querySelectorAll(".pentagon")];
-        projects = await loadJSON(dataFilename);
     });
 
     const setPathLength = () => {

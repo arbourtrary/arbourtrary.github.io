@@ -1,15 +1,14 @@
 <script>
     import { onMount } from "svelte";
-    import { loadJSON } from "../utils/file.js";
     import { section } from "../store.js"
+    import { sortByDateString } from "../utils/array.js";
     import ProjectRow from "./ProjectRow.svelte";
 
-    export let dataFilename = "";
+    export let projects = [];
     export let splitByFormat = true;
     export let limit = 10;
 
     let currentFormat;
-    let projects = [];
 
     function isUniqueFormat(format) {
         if (format !== currentFormat) {
@@ -19,23 +18,6 @@
             return false;
         }
     }
-
-    onMount(async () => {
-        projects = await loadJSON(dataFilename);
-        projects.reverse();
-        const newline = "&#10;"
-        for(const project of projects) {
-            const date = new Date(project.date)
-            const month = date.getMonth() + 1;
-            const fullYear = date.getFullYear();
-            const formattedMonth = month < 10 ? `<span style="visibility: hidden;">1</span>${month}` : month;
-            const formattedYear = fullYear.toString().slice(2);
-            const dateFormatted = `${formattedMonth}/${formattedYear}`;
-            project.date = dateFormatted
-            project.year = fullYear;
-        }
-    });
-
 </script>
 
 
@@ -53,7 +35,7 @@
         {#if !limit}
             <p class="blurb">Kind of a catch-all category of various things I've worked on - articles, websites, self-published books of poems.</p>
         {/if}
-        {#each projects as project, i}
+        {#each sortByDateString(projects, "date") as project, i}
             {#if (limit && i < limit) || (!limit)}
                 {#if splitByFormat && isUniqueFormat(project.format)}
                     <h3 class="format section-subhead">{project.format}</h3>

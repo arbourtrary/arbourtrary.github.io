@@ -1,7 +1,7 @@
 <script>
     import { onMount } from "svelte";
     import { base } from '$app/paths'
-    import { loadJSON } from "../utils/file.js";
+    import introData from "../data/intro.json";
     import { getFieldFromArrayOfObjects } from "../utils/array.js";
 
     let innerWidth = window.innerWidth
@@ -13,6 +13,11 @@
     let texts = ["arbourtrary", "David Newcomb", "David Morales"];
     let linearGradient = "linear-gradient(to right, #8CB2D3, #AAC4A2, #EFBD8D, #D2B0EC);"
 
+    let intro;
+
+    onMount(() => {
+        intro = introData;
+    });
 </script>
 
 <svelte:window bind:innerWidth={innerWidth}/>

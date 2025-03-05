@@ -1,16 +1,15 @@
 <script>
 	import { onMount } from 'svelte';
-	import { loadJSON } from "../utils/file.js";
 	import { languageToColor } from "../utils/linguistics.js"
+	import etymologiesData from "../data/sketches/direct-etymologies.json";
 
 	let fixedData;
 	let data;
 	let words;
 	let opacity = 0;
-	const ETYMOLOGIES_FILEPATH = "/data/sketches/direct-etymologies.json"
 
-	onMount(async () => {
-		fixedData = await loadJSON(ETYMOLOGIES_FILEPATH);
+	onMount(() => {
+		fixedData = etymologiesData;
 		data = JSON.parse(JSON.stringify(fixedData));
 		setRandomEntryWithoutReplacement();
 	});

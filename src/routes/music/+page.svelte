@@ -1,6 +1,15 @@
 <script>
+    import Header from "../../components/Header.svelte"
     import Music from "../../components/Music.svelte"
-    import songs from '../../data/music.json'
+    import Footer from '../../components/Footer.svelte';
+    import musicData from "../../data/music.json";
+    import { onMount } from "svelte";
+
+    let shouldHydrate = false;
+
+    onMount(() => {
+        shouldHydrate = true;
+    })  
 </script>
 
 <svelte:head>
@@ -22,8 +31,11 @@
     <meta name='twitter:image:src' content="https://arbourtrary.com/images/social_music.webp" />
 </svelte:head>
 
-{#if songs}
+{#if shouldHydrate}
+    <Header/>
     <Music
-        {songs}
+        music={musicData}
+        limit={null}
     />
+    <Footer/>
 {/if}

@@ -1,6 +1,7 @@
 <script>
     import { randomNumber } from '../utils/identifier.js'
     import { clamp } from '../utils/math.js'
+    import { getTwoDigitMonthYearDate } from '../utils/date.js';
     export let sketch = {};
 
     let row;
@@ -42,7 +43,7 @@
                 `}></div>
             {/each}
         </div>
-        <div class="date">{@html sketch.date}</div>
+        <div class="date">{@html getTwoDigitMonthYearDate(sketch.date)}</div>
     </div>
 </a>
 

@@ -2,7 +2,7 @@
     import Header from "../../components/Header.svelte"
     import Projects from "../../components/Projects.svelte"
     import Footer from '../../components/Footer.svelte';
-
+    import projectsData from "../../data/projects-homepage.json";
     import { onMount } from "svelte";
 
     let shouldHydrate = false;
@@ -15,7 +15,7 @@
 {#if shouldHydrate}
     <Header/>
     <Projects
-        dataFilename={'/data/projects-homepage.json'}
+        projects={projectsData}
         splitByFormat={true}
         limit={null}
     />

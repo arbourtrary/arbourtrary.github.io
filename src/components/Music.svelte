@@ -1,15 +1,12 @@
 <script>
     import { onMount } from "svelte";
-    import { loadJSON } from "../utils/file.js";
-    import Header from "./Header.svelte"
     import Song from "./Song.svelte"
-    import Footer from './Footer.svelte';
 
-    export let songs = [];
+    export let music = [];
+    export let limit = 10;
 </script>
 
-<Header/>
-{#if songs}
+{#if music}
 	<div id="songs-homepage">
 	    <div class="songs-container">
 	        <div class="songs-header">
@@ -19,7 +16,7 @@
             <p class="blurb">There's a bunch of songs that I've played on repeat over the years. And I've compiled as many as I could remember. They kinda chronicle my musical journey as my knowledge and taste steadily expanded. A lot of nostalgia creating this - also made a Spotify <a href="https://open.spotify.com/playlist/49MNODTluYpP4z6s0CccPz?si=9e9c9c962cc344de" target="_blank">playlist</a> to accompany the list.</p>
 
             <div class="songs">
-                {#each songs as song, i}
+                {#each music as song, i}
         	        <Song 
                         {song}
                         loading={i > 4 ? "lazy" : "eager"}
@@ -28,7 +25,6 @@
             </div>
 	    </div>
 	</div> 
-	<Footer/>
 {/if}
 
 <style>

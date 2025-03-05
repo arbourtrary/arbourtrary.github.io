@@ -1,0 +1,10 @@
+<h2>Cistercian Ciphers</h2>
+<p><b>Inspiration</b>: (1) The Hungarian-monk-founded <a href="https://www.cistercian.org/">Cistercian</a> school I went to in Texas and (2) the code and cool project page on <a href="https://akosnikhazy.github.io/cistercian-numerals/">Cistercian numerals</a> by <a href="https://bsky.app/profile/yzahk.in">Ákos Nikházy</a></p>
+
+<p><b>Description</b>: It turns out the Cistercians (an order of Catholic monks) created a numeric system that could represent the numbers 1 - 9999. The ciphers have nice symmetry and, with some practice, become quick to read. I annotated them up top to show the locations of the ones, tens, hundreds and thousands. A quick clickthrough has a fun sort of stick-figure flipbook aesthetic. Probably what they were going for with these runes...</p>
+
+<p><b>Legend</b>
+<img style="width: 100%;" src="/images/cistercian-ciphers/ciphers.webp"/>
+
+<p style="margin-bottom: 10px;"><b>Sources</b></p>
+<p class="indent"><a href="https://yzahk.in/" targte="_blank">Ákos Nikházy</a> - canvas code</p>

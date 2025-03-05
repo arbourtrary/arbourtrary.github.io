@@ -1,6 +1,15 @@
 <script>
+    import Header from "../../components/Header.svelte"
     import Books from "../../components/Books.svelte"
-    import books from '../../data/books.json'
+    import Footer from '../../components/Footer.svelte';
+    import booksData from "../../data/books.json";
+    import { onMount } from "svelte";
+
+    let shouldHydrate = false;
+
+    onMount(() => {
+        shouldHydrate = true;
+    })  
 </script>
 
 <svelte:head>
@@ -22,8 +31,11 @@
     <meta name='twitter:image:src' content="https://arbourtrary.com/images/social_books.webp" />
 </svelte:head>
 
-{#if books}
+{#if shouldHydrate}
+    <Header/>
     <Books
-        {books}
+        books={booksData}
+        limit={null}
     />
+    <Footer/>
 {/if}

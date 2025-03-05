@@ -1,4 +1,6 @@
 <script>
+    import { getTwoDigitMonthYearDate } from '../utils/date.js';
+
     export let writing = {};
 </script>
 
@@ -11,7 +13,7 @@
                 <img loading="lazy" src={writing?.image} alt="watercolor droplet">
             </span>
         </div>
-        <div class="date">{@html writing.date}</div>
+        <div class="date">{@html getTwoDigitMonthYearDate(writing.date)}</div>
     </div>
 </a>
 

@@ -3,7 +3,7 @@
     import { onMount } from "svelte";
     import { loadJSON } from "../utils/file.js";
 
-	export let dataFilename;
+	export let music;
 
 	let innerWidth = window.innerWidth;
 	let outerHeight;
@@ -23,7 +23,7 @@
 	let maxCellWidth = 110; // pixels
 
     onMount(async () => {
-        data = await loadJSON(dataFilename);
+		const data = JSON.parse(JSON.stringify(music));
 		shuffled = data.sort(() => 0.5 - Math.random());
 		initialData = shuffled.slice(0, n);
     });

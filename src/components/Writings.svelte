@@ -1,14 +1,14 @@
 <script>
     import { onMount } from "svelte";
-    import { loadJSON } from "../utils/file.js";
+    import { sortByDateString } from "../utils/array.js";
+    import { getFullYear } from "../utils/date.js";
     import WritingRow from "./WritingRow.svelte";
 
-    export let dataFilename = "";
+    export let writings = [];
     export let splitByYear = false;
     export let limit = 10;
 
     let currentYear;
-    let writings = [];
 
     function isUniqueYear(year) {
         if (year !== currentYear) {
@@ -18,22 +18,6 @@
             return false;
         }
     }
-
-    onMount(async () => {
-        writings = await loadJSON(dataFilename);
-        writings.reverse();
-        const newline = "&#10;"
-        for(const writing of writings) {
-            const date = new Date(writing.date)
-            const month = date.getMonth() + 1;
-            const fullYear = date.getFullYear();
-            const formattedMonth = month < 10 ? `<span style="visibility: hidden;">1</span>${month}` : month;
-            const formattedYear = fullYear.toString().slice(2);
-            const dateFormatted = `${formattedMonth}/${formattedYear}`;
-            writing.date = dateFormatted
-            writing.year = fullYear;
-        }
-    });
 </script>
 
 
@@ -51,10 +35,10 @@
         {#if !limit}
             <p class="blurb">Somewhere to collect my thoughts / ideas / ramblings. Mostly write about nature, philosophies of time, geometry, maybe some software topics.</p>
         {/if}
-        {#each writings as writing, i}
+        {#each sortByDateString(writings, "date") as writing, i}
             {#if (limit && i < limit) || (!limit)}
-                {#if splitByYear && isUniqueYear(writing.year)}
-                    <h3 class="year section-subhead">{writing.year}</h3>
+                {#if splitByYear && isUniqueYear(getFullYear(writing.date))}
+                    <h3 class="year section-subhead">{getFullYear(writing.date)}</h3>
                 {/if}
                 <WritingRow 
                     {writing}

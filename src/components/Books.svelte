@@ -1,14 +1,15 @@
 <script>
     import { onMount } from "svelte";
-    import { loadJSON } from "../utils/file.js";
-    import Header from "./Header.svelte"
     import Book from "./Book.svelte"
-    import Footer from './Footer.svelte';
 
     export let books = [];
+    export let limit = 10;
+
+    onMount(() => {
+        books.reverse();
+    });
 </script>
 
-<Header/>
 {#if books}
 	<div id="books-homepage">
 	    <div class="books-container">
@@ -28,7 +29,6 @@
             </div>
 	    </div>
 	</div> 
-	<Footer/>
 {/if}
 
 <style>

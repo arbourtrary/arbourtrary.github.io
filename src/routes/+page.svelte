@@ -11,11 +11,15 @@
     import Sketches from "../components/Sketches.svelte"
     import Contact from "../components/Contact.svelte"
     import HoneycombImages from "../components/HoneycombImages.svelte"
+    import sketchesData from "../data/sketches.json";
+    import poemsData from "../data/poems.json";
+    import writingsData from "../data/writings.json";
+    import projectsData from "../data/projects.json";
+    import musicData from "../data/music.json";
 
     let scrollY = 0;
     let innerWidth;
     let shouldHydrate = false;
-
 
     onMount(() => {
         innerWidth = window.innerWidth;
@@ -65,29 +69,28 @@
     <Intro/>
     <hr>
     <Sketches
-        dataFilename={'/data/sketches.json'}
+        sketches={sketchesData}
     />
     <Poems
-        dataFilename={'/data/poems.json'}
+        poems={poemsData}
     />
     <Writings
-        dataFilename={'/data/writings.json'}
+        writings={writingsData}
     />
     <hr>
     <PlatonicProjects
-        dataFilename={'/data/projects.json'}
+        projects={projectsData}
         {scrollY}
     />
     <hr>
     <HoneycombImages
-        dataFilename={'/data/music.json'}
+        music={musicData}
     />
     <hr>
     <Contact
         {scrollY}
     />   
 {/if}
-
 
 <style>
     :global(#about), :global(#projects), :global(#writings), :global(#sketches), :global(#poems), :global(#music) {

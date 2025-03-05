@@ -1,0 +1,171 @@
+{
+	"nounoun": {
+		"pronunciation": ["nu", "nun"],
+		"definitions": [
+			"A fruit pouch snack - initially referred only to the <a href='https://www.amazon.fr/Bl%C3%A9dina-Gourdes-pur%C3%A9es-fruits-recettes/dp/B08CTK27VP?th=1' target='_blank'>Blédina</a> brand's fruit pouch that has a little nou-nours (French diminuitive for bear) on some of its packaging",
+			"Synonym for a lil' bear (<b>obsolete</b>)"
+		],
+		"partOfSpeech": "noun",
+		"alternateSpellings": [],
+		"etymology": [
+			{"language": "French", "word": "nou-nours"}
+		]
+	},
+	"māp &rarr; blobble": {
+		"pronunciation": ["mɑp", "&rarr;", "blɔ", "bəl"],
+		"definitions": [
+			"Sort of a nothing's going on at the moment, fill the silence by calling out māp and waiting for the other person to respond blobble, then laugh together"
+		],
+		"partOfSpeech": "call-response",
+		"alternateSpellings": ["maap &rarr; blauble"],
+		"etymology": []
+	},
+	"brrrm-brrrm-brrrm-baaa": {
+		"pronunciation": ["brm", "brm", "brm", "bɑ"],
+		"definitions": [
+			"Very happy sound with the expectation that papa or mama join in on the final <i>baaaaaaaa</i>"
+		],
+		"partOfSpeech": "interjection",
+		"alternateSpellings": [],
+		"etymology": []
+	},
+	"na-na-naaa-<u>Papa</u>": {
+		"pronunciation": ["nɑ", "nɑ", "nɑɑɑ", "____"],
+		"definitions": [
+			"Translates in a sing-song way to say &#8220;I love youuuu Papa\" or any other <u>fill-in-the-blank</u> person or animal or item"
+		],
+		"partOfSpeech": "sentence",
+		"alternateSpellings": [],
+		"etymology": []
+	},
+	"happybird": {
+		"pronunciation": ["hæ", "pi", "bɜrd"],
+		"definitions": [
+			"One specific little bird for a brief period of a few days in a book I can no longer remember the name of"
+		],
+		"partOfSpeech": "noun",
+		"alternateSpellings": [],
+		"etymology": [{"language": "English", "word": "hummingbird"}]
+	},
+	"pantatatoiyo": {
+		"pronunciation": ["poʊn", "tɑ", "tɑ", "tɔɪ", "joʊ"],
+		"definitions": [
+			"Pants, trousers, pantaloons, pajamas, playing with words before bedtime and finding a funny sound"
+		],
+		"partOfSpeech": "noun",
+		"alternateSpellings": ["pantatatoilo"],
+		"etymology": [
+			{"language": "French", "word": "pantalon"}
+		]
+	},
+	"nano": {
+		"pronunciation": ["nɑ", "noʊ"],
+		"definitions": [
+			"All kinds of dinosaurs: pterodactyls, t-rexes, stegasauri (?), the occasional dragon, etc."
+		],
+		"partOfSpeech": "noun",
+		"alternateSpellings": [],
+		"etymology": [
+			{"language": "English", "word": "dino"}
+		]
+	},
+	"scoopy": {
+		"pronunciation": ["sku", "pi"],
+		"definitions": [
+			"Papa scooping up the little baby, sitting on the ground, then rocking back (scoooooop) and forward (yyyyyyyy)"
+		],
+		"partOfSpeech": "noun",
+		"alternateSpellings": ["scoooooop-yyyyyyyy"],
+		"etymology": [
+			{"language": "English", "word": "scoop"}
+		]
+	},
+	"<span class='apostrophe'>'</span>apopo": {
+		"pronunciation": ["æ", "poʊ", "poʊ"],
+		"definitions": [
+			"A pineapple, in particular a cool, Italian <a href='https://en.clementoni.com/products/fruit-puzzle' target='_blank'>puzzle toy</a>, but it also applies to the real, spiky, delicious fruit"
+		],
+		"partOfSpeech": "noun",
+		"alternateSpellings": [],
+		"etymology": [
+			{"language": "Tahitian", "word": "painapo"}
+		]
+	},
+	"<u>hibou</u><span class='apostrophe'>'</span>a": {
+		"pronunciation": ["i", "bu", "ɑ"],
+		"definitions": [
+			"A playful, formulaic suffix that can add an <b>-ah</b> sound to the end of a bunch of <u>fill-in-the-blank</u> words. Kind of a dimunitive, cute form of speech"
+		],
+		"partOfSpeech": "formulaic",
+		"alternateSpellings": ["nano<span class='apostrophe'>'</span>a", "mama<span class='apostrophe'>'</span>a"],
+		"etymology": [
+			{"language": "Tahitian", "word": "<span class='apostrophe'>'</span>a"}
+		]
+	},
+	"scarabéebaball": {
+		"pronunciation": ["skɑʁ", "ɑ", "beɪ", "bɔ", "bɔl"],
+		"definitions": [
+			"A basketball - a funny, chimeric word, my little one learned the French scarabée (beetle) and around the same time she first heard the word basketball"
+		],
+		"partOfSpeech": "chimeric",
+		"alternateSpellings": [],
+		"etymology": [
+			{"language": "French", "word": "scarabée"},
+			{"language": "English", "word": "basketball"}
+		]
+	},
+	"wawoota": {
+		"pronunciation": ["wɑ", "wu", "tɑ"],
+		"definitions": [
+			"Really fun way to bypass the difficult, guttural <a href='https://en.wikipedia.org/wiki/Rhotic_consonant' target='_blank'>rhotic</a> in the French  word for yogurt"
+		],
+		"partOfSpeech": "noun",
+		"alternateSpellings": [],
+		"etymology": [
+			{"language": "French", "word": "yaourt"}
+		]
+	},
+	"pilu": {
+		"pronunciation": ["pi", "lu"],
+		"definitions": [
+			"Workmanlike acknowledgment, kind of a &lsquo;gotta work hard to pay the bills' vibe, repeated back and forth a couple times. Usually used when helping me clean up her high chair."
+		],
+		"partOfSpeech": "noun",
+		"alternateSpellings": ["pilou"],
+		"etymology": [
+			{"language": "Unknown", "word": "???"}
+		]
+	},
+	"aap": {
+		"pronunciation": ["ɑp"],
+		"definitions": [
+			"Noise indicating to herself and everyone around that she's &lsquo;about to take a big bite' of her food"
+		],
+		"partOfSpeech": "interjection",
+		"alternateSpellings": [],
+		"etymology": [
+			{"language": "Unknown", "word": "???"}
+		]
+	},
+	"pop!": {
+		"pronunciation": ["pɔp"],
+		"definitions": [
+			"A big pause, and a deep breath, then the word pop! and she's off and running, sprinting as fast as she can. <i>Usage:</i> Pop to Papa!"
+		],
+		"partOfSpeech": "interjection",
+		"alternateSpellings": [],
+		"etymology": []
+	},
+	"moona": {
+		"pronunciation": ["mu", "nɑ"],
+		"definitions": [
+			"A beautiful word for the moon, full of wonder, wide-eyed staring up above early in the night"
+		],
+		"partOfSpeech": "noun",
+		"alternateSpellings": [],
+		"etymology": [
+			{"language": "English", "word": "moon"},
+			{"language": "Spanish", "word": "luna"}
+		]
+	}
+}

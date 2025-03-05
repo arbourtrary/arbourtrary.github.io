@@ -1,19 +1,15 @@
 <script>
 	import { onMount } from 'svelte';
 	import { languageToColor, abbreviateLanguage } from "../utils/linguistics.js"
-	import { loadJSON } from "../utils/file.js";
-
-	const ORIGINAL_WORDS_FILEPATH = "/data/sketches/childhood-dictionary.json"
+	import dictionaryData from "../data/sketches/childhood-dictionary.json";
 
 	let data;
 	let fixedData;
 	let word;
 	let entry;
 
-	
-
-	onMount(async () => {
-		fixedData = await loadJSON(ORIGINAL_WORDS_FILEPATH);
+	onMount(() => {
+		fixedData = dictionaryData;
 		data = JSON.parse(JSON.stringify(fixedData));
 		setRandomWordWithoutReplacement();
 	});

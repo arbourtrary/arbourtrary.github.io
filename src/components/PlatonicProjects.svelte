@@ -2,13 +2,13 @@
     import PlatonicSolidGallery from "./PlatonicSolidGallery.svelte"
 
     export let scrollY = 0;
-    export let dataFilename = "";
+    export let projects = [];
 </script>
 
 <div id="projects">
     <PlatonicSolidGallery
         platonicSolid="dodecahedron"
-        {dataFilename}
+        {projects}
         {scrollY}
     />  
 </div>

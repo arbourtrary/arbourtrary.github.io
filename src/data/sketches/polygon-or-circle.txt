@@ -1,0 +1,7 @@
+<h2>Polygon or circle?</h2>
+    <p><b>Inspiration</b>: The limit of a regular <i>n</i>-gon as <i>n</i> &rarr; <span class="infinity">&#8734;</span>&nbsp; is a circle.</p>
+
+    <p><b>Description</b>: In the physical world, a perfect circle does not exist and cannot be drawn. In the world of pixels and perception, however, there is some point at which our eyes no longer discern the <i>n</i>-gon. I think, for this graphic, I see a circle around the <i>85</i>-gon and up. Very dependent on size, canvas resolution, widths, color etc. Zooming in, the illusion breaks down even at the hectogon (<i>100</i>-gon). Was also fun familiarizing myself with some of these unusual names for regular polygons : )</p>
+    <p style="margin-bottom: 10px;"><b>Sources</b></p>
+    <p class="indent"><a href="https://www.kirupa.com/canvas/easily_draw_any_polygon.htm" target="_blank">Kirupa</a>- code for drawing <i>n</i>-gons</p> 
+    <p class="indent"><a href="https://en.wikipedia.org/wiki/List_of_polygons" target="_blank">Wikipedia</a>- regular polygon names</p>

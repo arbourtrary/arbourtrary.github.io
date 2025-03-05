@@ -1,5 +1,6 @@
 <script>
     import { randomNumber } from '../utils/identifier.js'
+    import { getTwoDigitMonthYearDate } from '../utils/date.js';
 
     export let poem = {};
 
@@ -26,7 +27,7 @@
                 <path fill-opacity={0.5} fill={color} stroke={color} stroke-width="5" d="M0,92.375l46.188-80h92.378l46.185,80l-46.185,80H46.188L0,92.375z"/>
             </svg>
         </div>
-        <div class="date">{@html poem.date}</div>
+        <div class="date">{@html getTwoDigitMonthYearDate(poem.date)}</div>
     </div>
 </a>
 

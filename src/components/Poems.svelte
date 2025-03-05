@@ -1,14 +1,14 @@
 <script>
     import { onMount } from "svelte";
-    import { loadJSON } from "../utils/file.js";
+    import { sortByDateString } from "../utils/array.js";
+    import { getFullYear } from "../utils/date.js";
     import PoemRow from "./PoemRow.svelte";
-
-    export let dataFilename = "";
+    
+    export let poems = [];
     export let splitByYear = false;
     export let limit = 10;
 
     let currentYear;
-    let poems = [];
 
     function isUniqueYear(year) {
         if (year !== currentYear) {
@@ -18,22 +18,6 @@
             return false;
         }
     }
-
-    onMount(async () => {
-        poems = await loadJSON(dataFilename);
-        poems.reverse();
-        const newline = "&#10;"
-        for(const poem of poems) {
-            const date = new Date(poem.date)
-            const month = date.getMonth() + 1;
-            const fullYear = date.getFullYear();
-            const formattedMonth = month < 10 ? `<span style="visibility: hidden;">1</span>${month}` : month;
-            const formattedYear = fullYear.toString().slice(2);
-            const dateFormatted = `${formattedMonth}/${formattedYear}`;
-            poem.date = dateFormatted
-            poem.year = fullYear;
-        }
-    });
 </script>
 
 
@@ -51,10 +35,10 @@
         {#if !limit}
             <p class="blurb">I can't say these are all good or worth your time. I can say I wrote them, sometimes out of reluctance. Sometimes in rapture.</p>
         {/if}
-        {#each poems as poem, i}
+        {#each sortByDateString(poems, "date") as poem, i}
             {#if (limit && i < limit) || (!limit)}
-                {#if splitByYear && isUniqueYear(poem.year)}
-                    <h3 class="year section-subhead">{poem.year}</h3>
+                {#if splitByYear && isUniqueYear(getFullYear(poem.date))}
+                    <h3 class="year section-subhead">{getFullYear(poem.date)}</h3>
                 {/if}
                 <PoemRow 
                     {poem}

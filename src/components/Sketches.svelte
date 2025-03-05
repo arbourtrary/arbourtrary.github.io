@@ -1,14 +1,14 @@
 <script>
     import { onMount } from "svelte";
-    import { loadJSON } from "../utils/file.js";
     import SketchRow from "./SketchRow.svelte";
+    import { sortByDateString } from "../utils/array.js";
+    import { getFullYear } from "../utils/date.js";
 
-    export let dataFilename = "";
+    export let sketches = [];
     export let splitByYear = false;
     export let limit = 10;
 
     let currentYear;
-    let sketches = [];
 
     function isUniqueYear(year) {
         if (year !== currentYear) {
@@ -18,23 +18,6 @@
             return false;
         }
     }
-
-    onMount(async () => {
-        sketches = await loadJSON(dataFilename);
-        sketches.reverse();
-
-        const newline = "&#10;"
-        for(const sketch of sketches) {
-            const date = new Date(sketch.date)
-            const month = date.getMonth() + 1;
-            const fullYear = date.getFullYear();
-            const formattedMonth = month < 10 ? `<span style="visibility: hidden;">1</span>${month}` : month;
-            const formattedYear = fullYear.toString().slice(2);
-            const dateFormatted = `${formattedMonth}/${formattedYear}`;
-            sketch.date = dateFormatted
-            sketch.year = fullYear;
-        }
-    });
 </script>
 
 
@@ -52,10 +35,10 @@
         {#if !limit}
             <p class="blurb">Little creative code ideas that could sprout into something down the line. Goal is to get something done quickly, let it be rough around the edges, but do just enough to create a compelling idea.</p>
         {/if}
-        {#each sketches as sketch, i}
+        {#each sortByDateString(sketches, "date") as sketch, i}
             {#if (limit && i < limit) || (!limit)}
-                {#if splitByYear && isUniqueYear(sketch.year)}
-                    <h3 class="year section-subhead">{sketch.year}</h3>
+                {#if splitByYear && isUniqueYear(getFullYear(sketch.date))}
+                    <h3 class="year section-subhead">{getFullYear(sketch.date)}</h3>
                 {/if}
                 <SketchRow 
                     {sketch}

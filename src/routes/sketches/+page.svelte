@@ -2,7 +2,7 @@
     import Header from "../../components/Header.svelte"
     import Sketches from "../../components/Sketches.svelte"
     import Footer from '../../components/Footer.svelte';
-
+    import sketchesData from "../../data/sketches.json";
     import { onMount } from "svelte";
 
     let shouldHydrate = false;
@@ -15,7 +15,7 @@
 {#if shouldHydrate}
     <Header/>
     <Sketches
-        dataFilename={'/data/sketches.json'}
+        sketches={sketchesData}
         splitByYear={true}
         limit={null}
     />
