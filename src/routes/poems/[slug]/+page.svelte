@@ -15,8 +15,7 @@
         const jsDate = new Date(date)
         const month = jsDate.toLocaleString('en-US', { month: 'short' });
         const fullYear = jsDate.getFullYear();
-        const formattedYear = fullYear.toString().slice(2);
-        const formattedDate = `<span class="month">${month}</span> <span style="font-family:'Vollkorn'">'</span>${formattedYear}`;
+        const formattedDate = `<span class="month">${month}</span> ${fullYear}`;
         return formattedDate;
     }
 </script>
