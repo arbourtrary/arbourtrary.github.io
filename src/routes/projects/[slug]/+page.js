@@ -274,7 +274,7 @@ const projects = [
     "tags": ["svelte", "maplibre", "hexbins", "american dream", "real estate", "north carolina"],
     "team": ["<a href='https://www.rachelhandley.com/' target='_blank'>Rachel Handley</a> (illustration)", "<a href='https://www.saljamea.com/' target='_blank'>Sohail Al-Jamea</a> (animation)"],
     "image": "textures/fade_security_for_sale.webp",
-    "url": "https://pulitzercenter.org/projects/security-sale",
+    "url": "https://www.charlotteobserver.com/news/business/article260606172.html",
     "format": "Journalism",
     "text": "There are systematic reasons home ownership has become more and more out of reach. One factor is private capital buying up homes with cash in bulk, essentially converting neighborhoods to private equity cash cows. We pilloried these machinations and mapped the infectious spread of the problem across North Carolina.",
     "tools": [
