@@ -507,16 +507,11 @@
 		z-index: 1;
 	}
 	.song img {
-		opacity: 0.6;
-		cursor: pointer;
-		color: transparent;
-	}
-	.song canvas, .song img {
 		width: 90px;
 		opacity: 0.6;
 		transition: all 500ms ease-out;
 	}
-	.song canvas:hover, .song img:hover {
+	.song img:hover {
 		opacity: 0.85;
 	}
 	.song h3, .song h4 {
@@ -547,7 +542,7 @@
 		.song {
 			padding-top: 30px;
 		}
-		.song figure, .song canvas, .song img {
+		.song figure, .song img {
 			max-width: 80px;
 		}
 		.song h3 {

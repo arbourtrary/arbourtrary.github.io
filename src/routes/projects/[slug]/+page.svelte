@@ -189,6 +189,8 @@
             {#each data.project.gallery as photo, i}
                 <figure 
                     on:click={(e) => handleClick(e, i)}
+                    on:keydown={(e) => e.key === 'Enter' && handleClick(e, i)}
+                    tabindex="0"
                 >
                     <img 
                         alt={`Gallery image ${i + 1}`}
@@ -223,7 +225,7 @@
     :global(:root) {
         --selection-bg-color: var(--highlight);
     }
-    .project, .content, .project-gallery, .section-header, .gallery-header, .project-section {
+    .project, .project-gallery, .section-header, .gallery-header, .project-section {
         width: min(600px, 90vw);
         margin: 0 auto;
     }
@@ -448,6 +450,10 @@
         }
     }
     @media only screen and (max-width: 600px) {
+        .project, .project-gallery, .section-header, .gallery-header, .project-section {
+            width: 90vw;
+            margin: 0 auto;
+        }
         .title {
             font-size: 1.65em;
         }

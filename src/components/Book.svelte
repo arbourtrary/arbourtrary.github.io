@@ -478,16 +478,11 @@
 		z-index: 1;
 	}
 	.book img {
-		opacity: 0.6;
-		cursor: pointer;
-		color: transparent;
-	}
-	.book canvas, .book img {
 		width: 90px;
 		opacity: 0.6;
 		transition: all 500ms ease-out;
 	}
-	.book canvas:hover, .book img:hover {
+	.book img:hover {
 		opacity: 0.85;
 	}
 	.book h3, .book h4 {
@@ -518,7 +513,7 @@
 		.book {
 			padding-top: 30px;
 		}
-		.book figure, .book canvas, .book img {
+		.book figure, .book img {
 			max-width: 80px;
 		}
 		.book h3 {
