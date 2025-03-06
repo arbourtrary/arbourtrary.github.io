@@ -1,22 +1,12 @@
 <script>
     import { base } from '$app/paths'
-
     import Footer from '../../../components/Footer.svelte';
     import SideMenu from '../../../components/SideMenu.svelte';
-
-    // TODO: Need to figure out dynamic import or better page templating?
-    import CoalescingText from '../../../components/CoalescingText.svelte';
-    import PolygonOrCircle from '../../../components/PolygonOrCircle.svelte';
-    import DirectEtymologies from '../../../components/DirectEtymologies.svelte';
-    import ChildhoodDictionary from '../../../components/ChildhoodDictionary.svelte';
-    import LineDrawings from '../../../components/LineDrawings.svelte';
-    import ImageSampling from '../../../components/ImageSampling.svelte';
-    import IslandPeakscapes from '../../../components/IslandPeakscapes.svelte';
-    import CistercianCiphers from '../../../components/CistercianCiphers.svelte';
-    import ClimbingTrees from '../../../components/ClimbingTrees.svelte';
+    import DynamicSketch from '../../../components/DynamicSketch.svelte';
 
     export let data;
 </script>
+
 <svelte:head>
     <link rel='canonical' href={`https://arbourtrary.com/sketches/${data.sketch.slug}`} />
     <title>{data.sketch.title}</title>
@@ -56,30 +46,13 @@
 </div>
 
 <div class="sketch">
-    <!-- TODO: Probably a better way to remove specific components from this -->
-	{#if data.sketch.sketch.name === "CoalescingText"}
-        <CoalescingText/>
-    {:else if data.sketch.sketch.name === "PolygonOrCircle"}
-        <PolygonOrCircle/>
-    {:else if data.sketch.sketch.name === "DirectEtymologies"}
-        <DirectEtymologies/>
-    {:else if data.sketch.sketch.name === "ChildhoodDictionary"}
-        <ChildhoodDictionary/>
-    {:else if data.sketch.sketch.name === "LineDrawings"}
-        <LineDrawings/>
-    {:else if data.sketch.sketch.name === "ImageSampling"}
-        <ImageSampling/>
-    {:else if data.sketch.sketch.name === "IslandPeakscapes"}
-        <IslandPeakscapes/>
-    {:else if data.sketch.sketch.name === "CistercianCiphers"}
-        <CistercianCiphers/>
-    {:else if data.sketch.sketch.name === "ClimbingTrees"}
-        <ClimbingTrees/>
-    {/if}
+    <DynamicSketch componentName={data.sketch.sketch.name} />
 </div>
+
 <div class="notes">
     {@html data.sketch.content}
 </div>
+
 <div class="more">
     {#if data.sketch.prev}
         <a href={base + `/sketches/${data.sketch.prev.slug}`} style="margin-right: 15px;">
@@ -103,7 +76,6 @@
 
 <style>
     :global(:root) {
-
         --header-height: 41px;
     }
     :global(.notes) {
@@ -113,12 +85,14 @@
         margin-bottom: 30px;
     }
     :global(.notes h2) {
+        font-family: var(--serif);
         color: var(--color-1);
         text-align: center;
         padding-bottom: 10px;
         border-bottom: 1px solid var(--color-3);
     }
     :global(.notes p) {
+        font-family: var(--serif);
         color: var(--color-1);
     }
     :global(.indent) {
@@ -138,6 +112,7 @@
     	display: flex;
     	flex-direction: column;
     	justify-content: center;
+        font-family: var(--serif);
     }
     .header {
         height: 41px;
