@@ -3,7 +3,7 @@
     import Song from "./Song.svelte"
 
     export let music = [];
-    export let limit = 10;
+    export const limit = 10;
 </script>
 
 {#if music}

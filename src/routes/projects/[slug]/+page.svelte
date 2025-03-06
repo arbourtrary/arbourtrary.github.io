@@ -189,8 +189,7 @@
             {#each data.project.gallery as photo, i}
                 <figure 
                     on:click={(e) => handleClick(e, i)}
-                    on:keydown={(e) => e.key === 'Enter' && handleClick(e, i)}
-                    tabindex="0"
+                    on:keydown={(e) => handleClick(e, i)}
                 >
                     <img 
                         alt={`Gallery image ${i + 1}`}
@@ -288,7 +287,7 @@
         color: var(--color-1);
         font-size: 18px;
     }
-    .title, .content {
+    .title {
         font-family: var(--serif);
     }
     .title {
@@ -299,10 +298,6 @@
         position: relative;
         border-bottom: 1px solid var(--color-2);
         width: fit-content;
-    }
-    .content {
-        font-size: 22px;
-        margin-bottom: 15px;
     }
     .project-gallery {
         display: grid;
@@ -370,29 +365,6 @@
         transition: all 0.5s ease;
         pointer-events: none;
     }
-    :global(.project > .content a) {
-        text-decoration: underline;
-        padding: 2px;
-        color: var(--highlight);
-    }
-    :global(.project > .content a:hover) {
-        background: var(--highlight);
-        text-decoration: none;
-        border-radius: 5px;
-        color: white;
-    }
-    :global(.project > .content > li) {
-        margin: 20px 0;
-    }
-    :global(.project > .content > p) {
-        color: var(--color-1);
-        margin: 0;
-        line-height: 1.5;
-    }
-    :global(.project > .content > h3) {
-        margin-bottom: 0px;
-        margin-top: 45px;
-    }
     .more {
         display: flex;
         flex-direction: row;
@@ -456,16 +428,6 @@
         }
         .title {
             font-size: 1.65em;
-        }
-        :global(.project > .content > p > a) {
-            padding: 0px;
-            text-decoration: underline;
-        }
-        :global(.project > .content > h3) {
-            font-size: 1.2em;
-        }
-        .content {
-            font-size: 20px;
         }
         .project {
             margin-top: 30px;

@@ -3,7 +3,7 @@
     import Book from "./Book.svelte"
 
     export let books = [];
-    export let limit = 10;
+    export const limit = 10;
 
     onMount(() => {
         books.reverse();
