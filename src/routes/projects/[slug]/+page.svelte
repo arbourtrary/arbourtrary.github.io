@@ -424,7 +424,6 @@
     @media only screen and (max-width: 600px) {
         .project, .project-gallery, .section-header, .gallery-header, .project-section {
             width: 90vw;
-            margin: 0 auto;
         }
         .title {
             font-size: 1.65em;
