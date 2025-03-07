@@ -160,6 +160,14 @@
 		"slug": "wolf-like-me"
 	},
 	{
+		"artist": "Blind Pilot",
+		"title": "One Red Thread",
+		"image": "/images/music/sampled-one-red-thread.webp",
+		"link": "https://www.youtube.com/watch?v=0c4aDKsX-TU",
+		"description": "Their music has a clear, heartfelt passion. Seeing them live in Dallas and later in Monterey just confirmed that energy and emotion - a very poetic kind of band.",
+		"slug": "one-red-thread"
+	},
+	{
 		"artist": "M.I.A.",
 		"title": "Paper Planes",
 		"image": "/images/music/sampled-paper-planes.webp",
