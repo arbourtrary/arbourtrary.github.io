@@ -75,13 +75,6 @@
         --name-filter: brightness(1.1);
         --intro-img-filter: brightness(1.35);
     }
-    @media (prefers-color-scheme: dark) {
-        :root {
-           --name-linear-gradient: linear-gradient(to right, var(--blue), var(--green), var(--yellow), var(--purple));
-            --name-filter: brightness(1.1);
-            --intro-img-filter: brightness(1.35);
-        }
-    }
     .progress-bar-bg {
         height: 1px;
         width: 100%;

@@ -449,11 +449,6 @@
 	:root.dark-theme {
 		--book-opacity: 0.8;
 	}
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --book-opacity: 0.8;
-        }
-    }
 	.book {
 		margin: auto 10px;
 		text-decoration: none;

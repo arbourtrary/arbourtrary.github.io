@@ -54,12 +54,6 @@
         --circle-opacity: 0.8;
         --theme-fill: var(--color-1);
     }
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --circle-opacity: 0.8;
-            --theme-fill: var(--color-1);
-        }
-    }
     .header {
         height: 41px;
         width: 100vw;

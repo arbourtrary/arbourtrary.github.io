@@ -135,11 +135,6 @@
 	:root.dark-theme {
 		--cell-opacity: 0.9;
 	}
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --cell-opacity: 0.9;
-        }
-    }
 	#music {
         width: 100vw;
         position: relative;

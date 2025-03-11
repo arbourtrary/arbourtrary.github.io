@@ -466,11 +466,6 @@
 	:root.dark-theme {
 		--song-opacity: 0.8;
 	}
-	@media (prefers-color-scheme: dark) {
-        :root {
-            --song-opacity: 0.8;
-        }
-    }
 	.song {
 		margin: auto 10px;
 		text-decoration: none;
