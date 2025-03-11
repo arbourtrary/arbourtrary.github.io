@@ -24,7 +24,7 @@
         <div class="hexagon" style={`transform-origin: center; transform: rotate(${rotate}deg);`}>
             <svg fill="currentColor" height="75%" width="75%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                  viewBox="0 0 184.751 184.751" xml:space="preserve">
-                <path fill-opacity={0.5} fill={color} stroke={color} stroke-width="5" d="M0,92.375l46.188-80h92.378l46.185,80l-46.185,80H46.188L0,92.375z"/>
+                <path fill={color} stroke={color} stroke-width="5" d="M0,92.375l46.188-80h92.378l46.185,80l-46.185,80H46.188L0,92.375z"/>
             </svg>
         </div>
         <div class="date">{@html getTwoDigitMonthYearDate(poem.date)}</div>
@@ -32,6 +32,12 @@
 </a>
 
 <style>
+    :root {
+        --hexagon-opacity: 0.5;
+    }
+    :root.dark-theme {
+        --hexagon-opacity: 0.8;
+    }
     a {
         color: unset;
         text-decoration: none;
@@ -53,6 +59,9 @@
     .hexagon > svg {
         margin: auto;
         overflow: visible;
+    }
+    .hexagon path {
+        fill-opacity: var(--hexagon-opacity);
     }
     .row {
         margin: 5px 10px;
@@ -79,10 +88,10 @@
         cursor: pointer;
     }
     .row:hover .title {
-        color: var(--black);
+        color: var(--color-1);
     }
     .row:hover .date {
-        color: var(--black);
+        color: var(--color-1);
     }
     .date {
         text-align: center;

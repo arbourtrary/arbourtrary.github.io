@@ -64,10 +64,10 @@
         filter: brightness(0.95);
     }
     .row:hover .title {
-        color: var(--black);
+        color: var(--color-1);
     }
     .row:hover .date {
-        color: var(--black);
+        color: var(--color-1);
     }
     .row:hover .pentagon {
     	opacity: 1;

@@ -104,6 +104,7 @@
         justify-content: center;
         text-decoration: none;
         pointer-events: all;
+        filter: var(--logo-filter);
     }
     .logo:hover {
         transform: scale(1.1);

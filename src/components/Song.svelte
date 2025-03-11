@@ -460,6 +460,12 @@
 
 
 <style>
+	:root {
+		--song-opacity: 0.6;
+	}
+	:root.dark-theme {
+		--song-opacity: 0.8;
+	}
 	.song {
 		margin: auto 10px;
 		text-decoration: none;
@@ -508,14 +514,15 @@
 	}
 	.song img {
 		width: 90px;
-		opacity: 0.6;
+		opacity: var(--song-opacity);
 		transition: all 500ms ease-out;
 	}
 	.song img:hover {
-		opacity: 0.85;
+		opacity: 1;
 	}
 	.song h3, .song h4 {
 		font-family: var(--serif);
+		color: var(--color-1);
 	}
 	.song h3 {
 		margin-bottom: 0px;
@@ -526,7 +533,6 @@
 	}
 	.song h4 {
 		margin-top: 5px;
-		opacity: 0.8;
 		font-size: 20px;
 		margin-bottom: 5px;
 	}

@@ -84,10 +84,10 @@
         filter: brightness(0.95);
     }
     .row:hover .title {
-        color: var(--black);
+        color: var(--color-1);
     }
     .row:hover .date {
-        color: var(--black);
+        color: var(--color-1);
     }
     .date {
         text-align: center;
@@ -108,7 +108,6 @@
         font-family: var(--serif);
         font-size: 24px;
         margin: auto 0;
-        background: var(--bg-color);
         position: relative;
     }
     @media screen and (max-width: 700px) {

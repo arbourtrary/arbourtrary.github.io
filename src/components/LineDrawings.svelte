@@ -240,4 +240,8 @@
 	      animation: animate-svg-stroke-1 var(--svg-duration) linear 0s both;
 }
 
+:global(.line-drawing path) {
+	stroke: var(--color-2);
+}
+
 </style>

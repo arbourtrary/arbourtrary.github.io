@@ -658,8 +658,8 @@
         padding-bottom: 0px;
     }
     :global(.detail-description a:hover) {
-        color: var(--black);
-        border-bottom: 1px solid var(--black);
+        color: var(--color-1);
+        border-bottom: 1px solid var(--color-1);
     }
     .projects-header {
         cursor: pointer;
@@ -785,8 +785,8 @@
          cursor: pointer;
     }
     .title:hover .title-text {
-        border-bottom: 2px solid var(--black);
-        color: var(--black);
+        border-bottom: 2px solid var(--color-1);
+        color: var(--color-1);
     }
     .description {
         font-size: 18px;

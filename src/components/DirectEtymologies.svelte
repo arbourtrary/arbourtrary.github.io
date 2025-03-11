@@ -97,6 +97,7 @@
   		justify-content: center;
   		flex: 1;
   		transition: all 100ms linear;
+  		color: var(--color-1);
 	}
 	h2 {
 		margin-top: 0px;

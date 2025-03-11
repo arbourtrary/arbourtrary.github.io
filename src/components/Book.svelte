@@ -443,6 +443,12 @@
 </div>
 
 <style>
+	:root {
+		--book-opacity: 0.6;
+	}
+	:root.dark-theme {
+		--book-opacity: 0.8;
+	}
 	.book {
 		margin: auto 10px;
 		text-decoration: none;
@@ -479,14 +485,15 @@
 	}
 	.book img {
 		width: 90px;
-		opacity: 0.6;
+		opacity: var(--book-opacity);
 		transition: all 500ms ease-out;
 	}
 	.book img:hover {
-		opacity: 0.85;
+		opacity: 1;
 	}
 	.book h3, .book h4 {
 		font-family: var(--serif);
+		color: var(--color-1);
 	}
 	.book h3 {
 		margin-bottom: 0px;
@@ -497,7 +504,6 @@
 	}
 	.book h4 {
 		margin-top: 5px;
-		opacity: 0.8;
 		font-size: 20px;
 		margin-bottom: 5px;
 	}

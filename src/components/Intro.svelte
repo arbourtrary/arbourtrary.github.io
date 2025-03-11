@@ -11,7 +11,6 @@
     // "David Morales" appears and everything switches - easter egg
     // Maybe Greek letters? αρβουρτραρψ
     let texts = ["arbourtrary", "David Newcomb", "David Morales"];
-    let linearGradient = "linear-gradient(to right, #8CB2D3, #AAC4A2, #EFBD8D, #D2B0EC);"
 
     let intro;
 
@@ -27,7 +26,9 @@
             <div class="intro-intro">
                 <div class="intro-name">
                     <div class="name-container">
-                        <span class="name" style={`background: ${linearGradient}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;`}>{texts[Math.round(Math.random() * (texts.length - 1))]}</span>
+                        <span class="name">
+                            {texts[Math.round(Math.random() * (texts.length - 1))]}
+                        </span>
                         <div class="progress-bar-bg"></div>
                     </div>
                 </div>
@@ -47,7 +48,9 @@
         <div class="intro-container mobile">
             <div class="intro-name">
                 <div class="name-container">
-                    <span class="name" style={`background: ${linearGradient}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;`}>{texts[Math.round(Math.random() * (texts.length - 1))]}</span>
+                    <span class="name">
+                        {texts[Math.round(Math.random() * (texts.length - 1))]}
+                    </span>
                 </div>
                 <div class="header-container">
                     <div class="progress-bar-bg"></div>
@@ -65,6 +68,14 @@
 </scrolling-anchor>
 
 <style>
+    :root {
+        --name-linear-gradient: linear-gradient(to right, #8CB2D3, #AAC4A2, #EFBD8D, #D2B0EC);
+        --name-filter: brightness(1);
+    }
+    :root.dark-theme {
+        --name-linear-gradient: linear-gradient(to right, var(--blue), var(--green), var(--yellow), var(--purple));
+        --name-filter: brightness(1.25);
+    }
     .progress-bar-bg {
         height: 1px;
         width: 100%;
@@ -109,6 +120,10 @@
         perspective: 1000;
         transform: translate3d(0,0,0);
         transform: translateZ(0);
+        background: var(--name-linear-gradient);
+        filter: var(--name-filter);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
     .intro-intro {
         width: 400px;
@@ -161,9 +176,6 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
-    .img-container .drawing {
-        background: var(--bg-color);
-    }
     .intro-header {
         font-size: 28px;
         font-family: var(--serif);
@@ -172,7 +184,6 @@
         margin: 0 auto;
         padding-bottom: 5px;
         color: var(--color-1);
-        transition: color 150ms ease-out;
         max-width: 420px;
         margin-top: 5px;
         opacity: 1;

@@ -53,14 +53,13 @@
 	footer img {
 		height: 25px;
 		width: auto;
-		filter: brightness(0) grayscale(1);
-		opacity: 0.2;
+		filter: var(--logo-filter);
+		opacity: 0.8;
 		transition: opacity 200ms ease;
 		color: transparent;
 	}
 	footer a:hover img {
-		filter: brightness(0);
-		opacity: 0.8;
+		opacity: 1;
 	}
 	.logo {
 		display: flex;

@@ -129,6 +129,12 @@
 
 
 <style>
+	:root {
+		--cell-opacity: 0.65;
+	}
+	:root.dark-theme {
+		--cell-opacity: 0.9;
+	}
 	#music {
         width: 100vw;
         position: relative;
@@ -180,15 +186,13 @@
 	.cell {
 		cursor: pointer;
 		position: absolute;
-/*		filter: brightness(0.95);*/
 		transform-origin: center;
 		transform: translate(-50%, -50%) scale(0.98);
-		opacity: 0.65;
+		opacity: var(--cell-opacity);
 		transition: all 800ms ease;
 
 	}
 	.cell:hover {
-/*		filter: brightness(1);*/
 		transform: translate(-50%, -50%) scale(1);
 		opacity: 1;
 	}

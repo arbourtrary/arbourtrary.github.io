@@ -33,9 +33,35 @@
 	<style>
 		:root {
 		    --serif: "IM Fell English", "Vollkorn", serif;
+
+			/* Light theme variables */
+		    --bg-color-light: #F5F2EB;
+		    --color-1-light: #373531;
+		    --color-2-light: #908B80;
+		    --color-3-light: #A8A195;
+		    --color-4-light: #EAE6DF;
+		    --logo-filter-light: brightness(0) invert(59%) sepia(9%) saturate(355%) hue-rotate(3deg) brightness(91%) contrast(86%);
+
+			/* Dark theme variables */
+		    --bg-color-dark: #292825;
+		    --color-1-dark: #EAE6DF;
+		    --color-2-dark: #A8A195;
+		    --color-3-dark: #908B80;
+		    --color-4-dark: #373531;
+		    --logo-filter-dark: brightness(0) invert(95%) sepia(6%) saturate(192%) hue-rotate(360deg) brightness(98%) contrast(90%);
+
+
+			/* Themed variables */
+		    --bg-color: var(--bg-color-light);
 		    --selection-bg-color: #CBC3B4;
 		    --selection-color: #FFFFFF;
-		    --bg-color: #F5F2EB;
+		    /* Shades of color, ordered darkest (1) to lightest (n) */
+		    --color-1: var(--color-1-light);
+		    --color-2: var(--color-2-light);
+		    --color-3: var(--color-3-light);
+		    --color-4: var(--color-4-light);
+		    --logo-filter: var(--logo-filter-light);
+		    --highlight: var(--color-1-light);
 
 		    /* In case I want an off-shade of black/white */
 		    --black: #000000;
@@ -57,15 +83,36 @@
 		    /* derivative of #D2B0EC */
 		    --purple: #9F79BC;
 
-
-		    /* Shades of color, ordered darkest (1) to lightest (n) */
-		    --color-1: #373531;
-		    --color-2: #908B80;
-		    --color-3: #A8A195;
-		    --color-4: #EAE6DF;
-
 		    /* Trying to standardize some of the font sizes */
 		    --font-lg: 28px;
+		}
+
+		:root.dark-theme {
+			/* Themed variables */
+		    --bg-color: var(--bg-color-dark);
+		    --selection-bg-color: #CBC3B4;
+		    --selection-color: #FFFFFF;
+		    --color-1: var(--color-1-dark);
+		    --color-2: var(--color-2-dark);
+		    --color-3: var(--color-3-dark);
+		    --color-4: var(--color-4-dark);
+		    --logo-filter: var(--logo-filter-dark);
+		    --highlight: var(--color-1-dark);
+		}
+
+		@media (prefers-color-scheme: dark) {
+		  :root:not(.light-theme) {
+			/* Themed variables */
+		    --bg-color: var(--bg-color-light);
+		    --selection-bg-color: #CBC3B4;
+		    --selection-color: #FFFFFF;
+		    --color-1: var(--color-1-dark);
+		    --color-2: var(--color-2-dark);
+		    --color-3: var(--color-3-dark);
+		    --color-4: var(--color-4-dark);
+		    --logo-filter: var(--logo-filter-dark);
+		    --highlight: var(--color-1-dark);
+		  }
 		}
 
 		/*** Works on common browsers ***/
@@ -99,6 +146,7 @@
 		body {
 		    margin: 0;
 		    background: var(--bg-color);
+			transition: all 0.3s ease;
 		}
 		.no-overflow {
 			overflow: hidden;

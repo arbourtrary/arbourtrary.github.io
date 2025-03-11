@@ -87,6 +87,7 @@
     }
     .title, .content {
         font-family: var(--serif);
+        color: var(--color-1);
     }
     .title {
         width: min(600px, 90vw);
@@ -148,7 +149,7 @@
     }
     .more a:hover p {
         text-decoration: underline;
-        color: var(--black);
+        color: var(--color-1);
     }
     .more p {
         margin: 0px;

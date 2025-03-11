@@ -133,6 +133,7 @@
 		color: var(--color-1);
 	}
 	.entry {
+		color: var(--color-1);
 		padding: 20px;
 		position: relative;
 		margin: 0 auto;

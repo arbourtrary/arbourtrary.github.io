@@ -385,7 +385,7 @@
     }
     .more a:hover p {
         text-decoration: underline;
-        color: var(--black);
+        color: var(--color-1);
     }
     .more p {
         margin: 0px;
@@ -408,7 +408,7 @@
     }
     .title:hover .external-link {
         cursor: pointer;
-        color: var(--black);
+        color: var(--color-1);
     }
     .title:hover {
         border-bottom: 1px solid var(--color-1);

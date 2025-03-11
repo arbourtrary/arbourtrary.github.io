@@ -1,4 +1,5 @@
 <script>
+	import { textColor1 } from '../store.js'
 	import { lerpColorHCL } from "../utils/color.js"
 	import FisheyeLines from "./FisheyeLines.svelte"
 	let canvas;
@@ -127,6 +128,7 @@
 		text-transform: uppercase;
 		letter-spacing: 3px;
 		font-size: min(4vw, 18px);
+		color: var(--color-1);
 	}
 	.num-sides {
 		color: var(--color-3);
