@@ -271,7 +271,7 @@
 		font-family: "Vollkorn";
 		opacity: 0.7;
 		margin: 0px;
-		z-index: 100;
+		z-index: 11;
 		width: min(18vw, 90px);
 	}
 	/* Chrome, Safari, Edge, Opera */
