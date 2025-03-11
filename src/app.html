@@ -40,6 +40,7 @@
 		    --color-2-light: #908B80;
 		    --color-3-light: #A8A195;
 		    --color-4-light: #EAE6DF;
+		    --blue-light: #7594B0;
 		    --logo-filter-light: brightness(0) invert(59%) sepia(9%) saturate(355%) hue-rotate(3deg) brightness(91%) contrast(86%);
 
 			/* Dark theme variables */
@@ -48,6 +49,7 @@
 		    --color-2-dark: #A8A195;
 		    --color-3-dark: #908B80;
 		    --color-4-dark: #373531;
+		    --blue-dark: #98B1C7;
 		    --logo-filter-dark: brightness(0) invert(95%) sepia(6%) saturate(192%) hue-rotate(360deg) brightness(98%) contrast(90%);
 
 
@@ -77,7 +79,7 @@
 		    /* derivative of #AAC4A2 */
 		    --green: #6D8A64;
 		    /* derivative of #8CB2D3 */
-		    --blue: #7594B0;
+		    --blue: var(--blue-light);
 		    /* A muted indigo */
 		    --indigo: #757AB0;
 		    /* derivative of #D2B0EC */
@@ -96,12 +98,13 @@
 		    --color-2: var(--color-2-dark);
 		    --color-3: var(--color-3-dark);
 		    --color-4: var(--color-4-dark);
+		    --blue: var(--blue-dark);
 		    --logo-filter: var(--logo-filter-dark);
 		    --highlight: var(--color-1-dark);
 		}
 
 		@media (prefers-color-scheme: dark) {
-		  :root:not(.light-theme) {
+		  :root {
 			/* Themed variables */
 		    --bg-color: var(--bg-color-light);
 		    --selection-bg-color: #CBC3B4;
@@ -110,6 +113,7 @@
 		    --color-2: var(--color-2-dark);
 		    --color-3: var(--color-3-dark);
 		    --color-4: var(--color-4-dark);
+		    --blue: var(--blue-dark);
 		    --logo-filter: var(--logo-filter-dark);
 		    --highlight: var(--color-1-dark);
 		  }

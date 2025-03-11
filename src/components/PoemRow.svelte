@@ -38,6 +38,11 @@
     :root.dark-theme {
         --hexagon-opacity: 0.8;
     }
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --hexagon-opacity: 0.8;
+        }
+    }
     a {
         color: unset;
         text-decoration: none;
