@@ -4,6 +4,8 @@
     import introData from "../data/intro.json";
     import { getFieldFromArrayOfObjects } from "../utils/array.js";
 
+    let innerWidth = window.innerWidth
+
     // "ɑrbərtrɛri", "deɪvɪd njukəm"
     // TODO: Build Spanish version toggle later
     // "David Morales" appears and everything switches - easter egg
@@ -15,10 +17,11 @@
     onMount(() => {
         intro = introData;
     });
-
 </script>
 
+<svelte:window bind:innerWidth={innerWidth}/>
 <scrolling-anchor id="intro">
+    
         <div class="intro-container desktop">
             <div class="intro-intro">
                 <div class="intro-name">
@@ -37,7 +40,7 @@
             </div>
 
             <div class="img-container">
-                <img class="drawing" src="/images/drawing.webp" height="800" width="800" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
+                <img class="drawing" src={innerWidth > 1000 ? "/images/drawing.webp" : ""} height="800" width="800" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
             </div>
         </div>
 
@@ -54,7 +57,7 @@
                 </div>
             </div>
             <div class="img-container">
-                <img class="drawing" src="/images/drawing-mobile.webp" height="500" width="500" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
+                <img class="drawing" src={innerWidth <= 1000 ? "/images/drawing-mobile.webp" : ""} height="500" width="500" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
             </div>
             <div class="intro-description">
                 <div class="intro-header">
