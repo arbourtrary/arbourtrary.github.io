@@ -140,11 +140,12 @@
         margin-right: 40px;
     }
     scrolling-anchor {
+        padding-top: var(--header-height);
         padding-bottom: 20px;
         width: min(95vw, 1100px);
         margin: 0 auto;
         position:relative;
-        height: calc(100vh - 41px);
+        height: calc(100vh - var(--header-height));
         display: block;
     }
     img {

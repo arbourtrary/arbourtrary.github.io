@@ -62,7 +62,9 @@
 
 {#if shouldHydrate}
     <!-- Sticky elements -->
-    <Header/>
+    <Header
+        position="fixed"
+    />
     <Progress {scrollY}/>
 
     <!-- Sections -->

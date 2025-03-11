@@ -731,9 +731,8 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-        padding-top: 25px;
-        padding-bottom: 25px;
-        height: calc(100vh - 50px); 
+        padding-top: var(--header-height);
+        height: calc(100vh - var(--header-height)); 
     }
     .details {
         margin-top: 50px;
