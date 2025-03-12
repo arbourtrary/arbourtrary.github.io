@@ -24,7 +24,7 @@
         <div class="connector"></div>
         <div class="pentagon" style={`transform-origin: center; transform: rotate(${rotate}deg);`}>
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="-100 -100 200 200">
-				<path d="M 76.21 24.77 L 0 80 L -76.21 24.77 L -47.14 -64.77 L 47.14 -64.77 Z" fill-opacity={0.5} fill={color} stroke={color} stroke-width="5"/>
+				<path d="M 76.21 24.77 L 0 80 L -76.21 24.77 L -47.14 -64.77 L 47.14 -64.77 Z"fill={color} stroke={color} stroke-width="5"/>
 			</svg>
         </div>
         <div class="date">{@html getTwoDigitMonthYearDate(project.date)}</div>
@@ -32,6 +32,12 @@
 </a>
 
 <style>
+    :root {
+        --pentagon-opacity: 0.5;
+    }
+    :root.dark-theme {
+        --pentagon-opacity: 0.8;
+    }
     a {
         color: unset;
         text-decoration: none;
@@ -87,6 +93,9 @@
 	  opacity: 0.8;
 	  transition: all 0.3s ease;
 	}
+    .pentagon path {
+        fill-opacity: var(--pentagon-opacity);
+    }
     .title {
         font-family: var(--serif);
         font-size: 24px;
