@@ -221,6 +221,12 @@
 <Footer/>
 
 <style>
+    :root {
+        --project-gallery-opacity: 0.65;
+    }
+    :root.dark-theme {
+        --project-gallery-opacity: 0.8;
+    }
     :global(:root) {
         --selection-bg-color: var(--highlight);
     }
@@ -361,7 +367,7 @@
         object-fit: cover;
         object-position: center;
         filter: blur(0px);
-        opacity: 0.65;
+        opacity: var(--project-gallery-opacity);
         transition: all 0.5s ease;
         pointer-events: none;
     }
