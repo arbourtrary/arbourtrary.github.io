@@ -528,7 +528,7 @@
                             id="pentagon-route"
                             pathLength="1"
                             stroke-width="3"
-                            stroke="#746F67"
+                            stroke="var(--color-1)"
                             fill="none" 
                             d="m 137.52669,112.07243 2e-5,99.27748 -84.041698,-61.10194 31.857468,-99.237934 104.54305,0.06382 32.1296,99.174094 84.5386,-38.05529 32.1296,99.17408 104.54307,0.0639 31.85747,-99.23793 -84.04169,-61.101995 v 99.277535"
                         />
@@ -685,7 +685,7 @@
     .pentagon {
         opacity: 1;
         fill-opacity: 0;
-        fill: #C2BBAC;
+        fill: var(--color-3);
         transition: all 150ms ease-in;
     }
     .pentagon:first-child {
@@ -695,7 +695,7 @@
         opacity: 1;
         fill-opacity: 0;
         fill: none;
-        stroke: #A29B90;
+        stroke: var(--color-3);
         stroke-width: 1.5;
         stroke-linecap: butt;
         stroke-linejoin: miter;
