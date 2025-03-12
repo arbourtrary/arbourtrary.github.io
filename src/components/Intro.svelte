@@ -76,7 +76,7 @@
     :root.dark-theme {
         --name-linear-gradient: linear-gradient(to right, var(--blue), var(--green), var(--yellow), var(--purple));
         --name-filter: brightness(1.1);
-        --intro-img-filter: brightness(1.35);
+        --intro-img-filter: brightness(1) drop-shadow(0px 1px var(--color-1));
     }
     .progress-bar-bg {
         height: 1px;
