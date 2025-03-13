@@ -48,6 +48,7 @@
             aria-label="arbourtrary link to github"
             href="https://github.com/arbourtrary"
             target="_blank"
+            rel="me"
         >
             <img class="github" width="100" height="100" loading="lazy" src="/images/github.webp" alt="github logo"/>
         </a>
