@@ -275,7 +275,8 @@ export function entries() {
         {"slug": "addiction"},
         {"slug": "i-was"},
         {"slug": "quark"},
-        {"slug": "ekstasis"}
+        {"slug": "ekstasis"},
+        {"slug": "paradisiac"},
     ]
 }
 

@@ -2209,6 +2209,14 @@ const poems = [
     "age": 32,
     "slug": "ekstasis",
     "index": 275
+  },
+  {
+    "name": "Paradisiac",
+    "rating": 8,
+    "date": "3/20/2025",
+    "age": 33,
+    "slug": "paradisiac",
+    "index": 276
   }
 ]
 
