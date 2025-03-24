@@ -261,7 +261,7 @@
       pointer-events: none;
   }
   :global(.image-container.active) {
-    opacity: 1;
+    opacity: 1 !important;
   }
   :global(.image-container.active .filtered-image) {
     filter: blur(0px);
