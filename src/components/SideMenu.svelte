@@ -50,6 +50,7 @@
       <li><a href={base + "/about"}>About</a></li>
       <li><a href={base + "/books"}>Books</a></li>
       <li><a href={base + "/music"}>Music</a></li>
+      <li><a href={base + "/photos"}>Photos</a></li>
       <li><a href={base + "/poems"}>Poems</a></li>
       <li><a href={base + "/projects"}>Projects</a></li>
       <li><a href={base + "/sketches"}>Sketches</a></li>
