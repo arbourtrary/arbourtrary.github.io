@@ -3,6 +3,11 @@
     import { base } from '$app/paths'
     import introData from "../data/intro.json";
     import { getFieldFromArrayOfObjects } from "../utils/array.js";
+    import { createLoadObserver } from '../utils/dom.js'
+    
+    const onload = createLoadObserver((element) => {
+        element.classList.remove("preload");
+    })
 
     let innerWidth = window.innerWidth
 
@@ -40,7 +45,7 @@
             </div>
 
             <div class="img-container">
-                <img class="drawing" src={innerWidth > 1000 ? "/images/drawing.webp" : ""} height="800" width="800" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
+                <img use:onload class="drawing preload" src={innerWidth > 1000 ? "/images/drawing.webp" : ""} height="800" width="800" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
             </div>
         </div>
 
@@ -57,7 +62,7 @@
                 </div>
             </div>
             <div class="img-container">
-                <img class="drawing" src={innerWidth <= 1000 ? "/images/drawing-mobile.webp" : ""} height="500" width="500" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
+                <img use:onload class="drawing preload" src={innerWidth <= 1000 ? "/images/drawing-mobile.webp" : ""} height="500" width="500" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
             </div>
             <div class="intro-description">
                 <div class="intro-header">
@@ -71,12 +76,12 @@
     :root {
         --name-linear-gradient: linear-gradient(to right, #8CB2D3, #AAC4A2, #EFBD8D, #D2B0EC);
         --name-filter: brightness(1);
-        --intro-img-filter: brightness(1);
+        --intro-img-filter: blur(0px) brightness(1) !important;
     }
     :root.dark-theme {
         --name-linear-gradient: linear-gradient(to right, var(--blue), var(--green), var(--yellow), var(--purple));
         --name-filter: brightness(1.1);
-        --intro-img-filter: brightness(1) drop-shadow(0px 1px var(--color-1));
+        --intro-img-filter: blur(0px) brightness(1) drop-shadow(0px 1px var(--color-1)) !important;
     }
     .progress-bar-bg {
         height: 1px;
@@ -177,8 +182,15 @@
         z-index: 22;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
         filter: var(--intro-img-filter);
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+        transition: all 2s ease;
+    }
+    .img-container img.preload {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.95);
+        filter: blur(2px);
     }
     .intro-header {
         font-size: 28px;
