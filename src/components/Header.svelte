@@ -75,6 +75,7 @@
         opacity: var(--circle-opacity);
     }
     a, a:visited {
+        cursor: pointer;
         text-decoration: none;
     }
     .home {
