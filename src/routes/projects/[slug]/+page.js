@@ -427,8 +427,8 @@ const projects = [
     "index": 12
   },
   {
-    "title": "Miami Heat Island",
-    "slug": "miami-heat-island",
+    "title": "Miami Tree Canopy",
+    "slug": "miami-tree-canopy",
     "publication": "Miami Herald",
     "description": "Miami-Dade County’s urban tree project unable to shade residents from record heat",
     "year": "2024",
