@@ -185,7 +185,7 @@
         filter: var(--intro-img-filter);
         transform: translate(-50%, -50%) scale(1);
         opacity: 1;
-        transition: all 2s ease;
+        transition: all 1s ease;
     }
     .img-container img.preload {
         opacity: 0;
