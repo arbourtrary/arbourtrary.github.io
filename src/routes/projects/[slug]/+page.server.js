@@ -13,7 +13,7 @@ export function entries() {
         {"slug": "made-in-miami"},
         {"slug": "fallen-trees"},
         {"slug": "ogallala-aquifer"},
-        {"slug": "miami-heat-island"},
+        {"slug": "miami-tree-canopy"},
         {"slug": "private-eyes"},
         {"slug": "9-11-74"},
         {"slug": "forging-fortnite"}
