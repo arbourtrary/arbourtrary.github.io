@@ -2,6 +2,8 @@
     import { randomNumber } from '../utils/identifier.js'
     import { clamp } from '../utils/math.js'
     import { getTwoDigitMonthYearDate } from '../utils/date.js';
+    import { base } from '$app/paths'
+
     export let sketch = {};
 
     let row;
@@ -24,7 +26,7 @@
     const color = colors[Math.round(randomNumber(`color ${sketch.title}`) * 100) % colors.length];
 </script>
 
-<a href={`/sketches/${sketch.slug}`}>
+<a href={`${base}/sketches/${sketch.slug}`}>
     <div bind:this={row} class="row">
         <div class="title">{sketch.title}</div>
         <div class="connector"></div>
