@@ -3,6 +3,7 @@
     import SketchRow from "./SketchRow.svelte";
     import { sortByDateString } from "../utils/array.js";
     import { getFullYear } from "../utils/date.js";
+    import { base } from '$app/paths'
 
     export let sketches = [];
     export let splitByYear = false;
@@ -23,7 +24,7 @@
 
 <div id="sketches">
     <div class="sketches-container">
-        <a class="sketches-header" href="/sketches" style={limit ? "" : "pointer-events: none"}>
+        <a class="sketches-header" href={base + "/sketches"} style={limit ? "" : "pointer-events: none"}>
             <h2 class="section-header">Sketches
                 {#if limit}
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">

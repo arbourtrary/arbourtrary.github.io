@@ -2,6 +2,7 @@
     import { onMount } from "svelte";
     import { section } from "../store.js"
     import { sortByDateString } from "../utils/array.js";
+    import { base } from '$app/paths'
     import ProjectRow from "./ProjectRow.svelte";
 
     export let projects = [];
@@ -23,7 +24,7 @@
 
 <div id="projects-homepage">
     <div class="projects-container">
-        <a class="projects-header" href="/projects" style={limit ? "" : "pointer-events: none"}>
+        <a class="projects-header" href={base + "/projects"} style={limit ? "" : "pointer-events: none"}>
             <h2 class="section-header" style={`margin-left: ${limit ? "0px" : "10px"};`}>Projects
                 {#if limit}
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">

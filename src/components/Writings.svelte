@@ -2,6 +2,7 @@
     import { onMount } from "svelte";
     import { sortByDateString } from "../utils/array.js";
     import { getFullYear } from "../utils/date.js";
+    import { base } from '$app/paths'
     import WritingRow from "./WritingRow.svelte";
 
     export let writings = [];
@@ -23,7 +24,7 @@
 
 <div id="writings">
     <div class="writings-container">
-        <a class="writings-header" href="/writings" style={limit ? "" : "pointer-events: none"}>
+        <a class="writings-header" href={base + "/writings"} style={limit ? "" : "pointer-events: none"}>
             <h2 class="section-header">Writings
                 {#if limit}
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
