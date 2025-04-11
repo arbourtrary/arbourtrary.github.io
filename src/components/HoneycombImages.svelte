@@ -5,7 +5,8 @@
 
 	export let music;
 
-	let innerWidth = window.innerWidth;
+	let mounted = false;
+	let innerWidth;
 	let outerHeight;
 	let honeycomb;
 	let honeycombCenters = [];
@@ -26,10 +27,11 @@
 		const data = JSON.parse(JSON.stringify(music));
 		shuffled = data.sort(() => 0.5 - Math.random());
 		initialData = shuffled.slice(0, n);
+		mounted = true;
     });
 
 
-    $: if (innerWidth || outerHeight) {
+    $: if (mounted && (innerWidth || outerHeight)) {
     	if (honeycomb) {
     		// Honeycomb aspect-ratio is 0.7562923524 (inv. is 1.32224)
     		// So giving some leeway to use height as limiting factor (0.9 multiplier)
@@ -231,6 +233,9 @@
         margin: 5px 0px 0 10px;
     }
     @media only screen and (max-width: 1000px) {
+    	.honeycomb {
+        	width: min(70vh, 70vw, 500px);
+    	}
     	.music-container {
 			width: min(95vw, 500px);
     	}

@@ -19,16 +19,16 @@
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 	<script>
-		const setFavicon = () => {
-		    const favicon = document.querySelector('link[rel="icon"]');
-		    favicon.href = (window.matchMedia('(prefers-color-scheme: dark)').matches)
-		                    ? '%sveltekit.assets%/images/arbourtrary-inverse-32x32.png'
-		                    : '%sveltekit.assets%/images/arbourtrary-32x32.png';
-		};
-		setFavicon();
-		window
-		    .matchMedia('(prefers-color-scheme: dark)')
-		    .addEventListener('change', setFavicon);
+		// const setFavicon = () => {
+		//     const favicon = document.querySelector('link[rel="icon"]');
+		//     favicon.href = (window.matchMedia('(prefers-color-scheme: dark)').matches)
+		//                     ? '%sveltekit.assets%/images/arbourtrary-inverse-32x32.png'
+		//                     : '%sveltekit.assets%/images/arbourtrary-32x32.png';
+		// };
+		// // setFavicon();
+		// window
+		//     .matchMedia('(prefers-color-scheme: dark)')
+		//     .addEventListener('change', setFavicon);
 
 	</script>
 	<style>

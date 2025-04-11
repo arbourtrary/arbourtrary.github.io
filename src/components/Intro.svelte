@@ -1,5 +1,6 @@
 <script>
     import { onMount } from "svelte";
+    import { browser } from '$app/environment';
     import { base } from '$app/paths'
     import introData from "../data/intro.json";
     import { getFieldFromArrayOfObjects } from "../utils/array.js";
@@ -7,62 +8,32 @@
     
     const onload = createLoadObserver((element) => {
         element.classList.remove("preload");
-    })
-
-    let innerWidth = window.innerWidth
-
-    // "ɑrbərtrɛri", "deɪvɪd njukəm"
-    // TODO: Build Spanish version toggle later
-    // "David Morales" appears and everything switches - easter egg
-    // Maybe Greek letters? αρβουρτραρψ
+    });
+    
     let texts = ["arbourtrary", "David Newcomb", "David Morales"];
-
+    let selectedText = "&nbsp;"; // Default value for SSR
     let intro;
-
+    
     onMount(() => {
+        // Move all browser-specific logic inside onMount
         intro = introData;
+        
+        // Set random name only on client-side
+        selectedText = texts[Math.floor(Math.random() * texts.length)]
     });
 </script>
 
-<svelte:window bind:innerWidth={innerWidth}/>
 <scrolling-anchor id="intro">
-    
-        <div class="intro-container desktop">
-            <div class="intro-intro">
-                <div class="intro-name">
-                    <div class="name-container">
-                        <span class="name">
-                            {texts[Math.round(Math.random() * (texts.length - 1))]}
-                        </span>
-                        <div class="progress-bar-bg"></div>
-                    </div>
-                </div>
-                <div class="intro-description">
-                    <div class="intro-header">
-                        I'm a <span style="color: var(--blue)">creative developer</span> who enjoys making code sketches and writing about <span style="color: var(--green)">nature</span>, <span style="color: var(--orange)">mathematics</span> &amp; <span style="color: var(--purple)">poetry</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="img-container">
-                <img use:onload class="drawing preload" src={innerWidth > 1000 ? "/images/drawing.webp" : ""} height="800" width="800" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
-            </div>
-        </div>
-
-
-        <div class="intro-container mobile">
+    <!-- Desktop version - will be hidden by CSS on smaller screens -->
+    <div class="intro-container desktop">
+        <div class="intro-intro">
             <div class="intro-name">
                 <div class="name-container">
                     <span class="name">
-                        {texts[Math.round(Math.random() * (texts.length - 1))]}
+                        {@html selectedText}
                     </span>
-                </div>
-                <div class="header-container">
                     <div class="progress-bar-bg"></div>
                 </div>
-            </div>
-            <div class="img-container">
-                <img use:onload class="drawing preload" src={innerWidth <= 1000 ? "/images/drawing-mobile.webp" : ""} height="500" width="500" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
             </div>
             <div class="intro-description">
                 <div class="intro-header">
@@ -70,6 +41,36 @@
                 </div>
             </div>
         </div>
+        <div class="img-container">
+            {#if browser}
+                <img use:onload class="drawing preload" src="/images/drawing.webp" height="800" width="800" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
+            {/if}
+        </div>
+    </div>
+    
+    <!-- Mobile version - will be hidden by CSS on larger screens -->
+    <div class="intro-container mobile">
+        <div class="intro-name">
+            <div class="name-container">
+                <span class="name">
+                    {@html selectedText}
+                </span>
+            </div>
+            <div class="header-container">
+                <div class="progress-bar-bg"></div>
+            </div>
+        </div>
+        <div class="img-container">
+            {#if browser}
+                <img use:onload class="drawing preload" src="/images/drawing-mobile.webp" height="500" width="500" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
+            {/if}
+        </div>
+        <div class="intro-description">
+            <div class="intro-header">
+                I'm a <span style="color: var(--blue)">creative developer</span> who enjoys making code sketches and writing about <span style="color: var(--green)">nature</span>, <span style="color: var(--orange)">mathematics</span> &amp; <span style="color: var(--purple)">poetry</span>
+            </div>
+        </div>
+    </div>
 </scrolling-anchor>
 
 <style>
@@ -185,7 +186,7 @@
         filter: var(--intro-img-filter);
         transform: translate(-50%, -50%) scale(1);
         opacity: 1;
-        transition: all 1s ease;
+        transition: all 0.75s ease;
     }
     .img-container img.preload {
         opacity: 0;

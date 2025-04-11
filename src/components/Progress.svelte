@@ -1,11 +1,14 @@
 <script>
     import { clamp } from "../utils/math.js";
+    import { onMount } from "svelte";
 
     export let scrollY = 0;
 
     let path;
     let pathLength;
     let dashArray;
+    let mounted;
+    let windowAspectRatio;
 
     const setPathLength = () => {
         pathLength = path.getTotalLength();
@@ -18,16 +21,24 @@
     // let end = 1;
     // let diff = 0;
 
+    onMount(() => {
+        mounted = true;
+    });
+
     $: diff =  (1 - svgAspectRatio / windowAspectRatio);
     $: end = svgAspectRatio < windowAspectRatio ? 1 - diff : 1;
 
-    $: scrollProgress = start + clamp(scrollY / (document.body.offsetHeight - window.innerHeight), 0, 1) * (end - start);
+    $: if (mounted && document) {
+        scrollProgress = start + clamp(scrollY / (document.body.offsetHeight - window.innerHeight), 0, 1) * (end - start);
+    }
 
     $: if (path) {
         path.style.strokeDashoffset = 1 - scrollProgress;
     }
 
-    $: windowAspectRatio = window.innerWidth / window.innerHeight
+    $: if (mounted && window) {
+        windowAspectRatio = window.innerWidth / window.innerHeight
+    }
 </script>
 
 <div class="progress-container">

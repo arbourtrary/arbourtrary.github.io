@@ -1,12 +1,22 @@
 <script>
+    import { onMount } from "svelte";
+
     export let scrollY = 0;
 
     let outerContainer;
-
+    let innerWidth;
+    let innerHeight;
+    let mounted = false;
     let percent = 0
     let opacity = 0;
 
-    $: if (outerContainer && scrollY > 0) {
+    onMount(() => {
+        mounted = true;
+        innerWidth = window.innerWidth;
+        innerHeight = window.innerHeight;
+    });
+
+    $: if (mounted && (outerContainer && scrollY > 0)) {
         percent = 1 - (outerContainer.getBoundingClientRect().top + window.innerHeight / 2) / (window.innerHeight);
         opacity = percent / 5;
     } else {
@@ -14,8 +24,7 @@
     	opacity = 0;
     }
 
-    let innerWidth = window.innerWidth
-    let innerHeight = window.innerHeight
+    
 </script>
 
 <svelte:window bind:innerWidth={innerWidth} bind:innerHeight={innerHeight}/>

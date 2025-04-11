@@ -15,11 +15,15 @@
 
     import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';    
 
-    let innerWidth = window.innerWidth;
+    let innerWidth;
+    let outerHeight;
     let numberOfSides = getNumberOfSides(platonicSolid);
     let drawn = false;
     let initiated = false;
+    let mounted = false;
     let canvas;
+    let galleryHeight;
+    let itemHeight;
     let scene;
     let camera;
     let mesh;
@@ -69,7 +73,9 @@
     
 
     onMount(async () => {
+        mounted = true;
         unraveledFaces = [...document.querySelectorAll(".pentagon")];
+        innerWidth = window.innerWidth
     });
 
     const setPathLength = () => {
@@ -374,15 +380,17 @@
     };
 
 
-    window.requestAnimationFrame(() => { updateGallery() })
+    $: mounted && window.requestAnimationFrame(() => { updateGallery() })
 
-    $: !drawn && canvas && projects.length && drawPlatonicSolid(platonicSolid);
-    $: windowHeight = window.outerHeight;
-    $: itemHeight = windowHeight / 1.2
-    $: galleryHeight = itemHeight * numberOfSides + windowHeight;
+    $: mounted && !drawn && canvas && projects.length && drawPlatonicSolid(platonicSolid);
+    $: if (mounted && window?.outerHeight) {
+        outerHeight = window.outerHeight;
+        itemHeight = outerHeight / 1.2
+        galleryHeight = itemHeight * numberOfSides + outerHeight;
+    }
 
     // Updating the minimap paths
-    $: if(foreground) {
+    $: if (mounted && foreground) {
         scrollProgress = calculateScrollPercentage(foreground, scrollY)
         piecewiseProgress = clamp(piecewisePoints[index] + (scrollProgress - lerpPoints[index]) / (lerpPoints[index + 1] - lerpPoints[index]) * (piecewisePoints[index + 1] - piecewisePoints[index]), 0, 1)
 
