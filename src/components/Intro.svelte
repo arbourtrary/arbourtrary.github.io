@@ -6,10 +6,6 @@
     import { getFieldFromArrayOfObjects } from "../utils/array.js";
     import { createLoadObserver } from '../utils/dom.js'
     
-    const onload = createLoadObserver((element) => {
-        element.classList.remove("preload");
-    });
-    
     let texts = ["arbourtrary", "David Newcomb", "David Morales"];
     let selectedText = "&nbsp;"; // Default value for SSR
     let intro;
@@ -43,7 +39,7 @@
         </div>
         <div class="img-container">
             {#if browser}
-                <img use:onload class="drawing preload" src={base + "/images/drawing.webp"} height="800" width="800" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
+                <img class="drawing" src={base + "/images/drawing.webp"} height="800" width="800" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
             {/if}
         </div>
     </div>
@@ -62,7 +58,7 @@
         </div>
         <div class="img-container">
             {#if browser}
-                <img use:onload class="drawing preload" src={base + "/images/drawing-mobile.webp"} height="500" width="500" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
+                <img class="drawing" src={base + "/images/drawing-mobile.webp"} height="500" width="500" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
             {/if}
         </div>
         <div class="intro-description">
@@ -187,11 +183,6 @@
         transform: translate(-50%, -50%) scale(1);
         opacity: 1;
         transition: all 0.75s ease;
-    }
-    .img-container img.preload {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.95);
-        filter: blur(2px);
     }
     .intro-header {
         font-size: 28px;
