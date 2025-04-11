@@ -43,7 +43,7 @@
         </div>
         <div class="img-container">
             {#if browser}
-                <img use:onload class="drawing preload" src="/images/drawing.webp" height="800" width="800" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
+                <img use:onload class="drawing preload" src={base + "/images/drawing.webp"} height="800" width="800" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
             {/if}
         </div>
     </div>
@@ -62,7 +62,7 @@
         </div>
         <div class="img-container">
             {#if browser}
-                <img use:onload class="drawing preload" src="/images/drawing-mobile.webp" height="500" width="500" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
+                <img use:onload class="drawing preload" src={base + "/images/drawing-mobile.webp"} height="500" width="500" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
             {/if}
         </div>
         <div class="intro-description">
