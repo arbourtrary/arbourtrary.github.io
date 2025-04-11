@@ -1,6 +1,7 @@
 <script>
     import { randomNumber } from '../utils/identifier.js'
     import { getTwoDigitMonthYearDate } from '../utils/date.js';
+    import { base } from '$app/paths'
 
     export let poem = {};
 
@@ -17,7 +18,7 @@
     const rotate = Math.round(randomNumber(`color ${poem.name}`) * 360);
 </script>
 
-<a href={`/poems/${poem.slug}`}>
+<a href={`${base}/poems/${poem.slug}`}>
     <div class="row">
         <div class="title">{poem.name}</div>
         <div class="connector"></div>

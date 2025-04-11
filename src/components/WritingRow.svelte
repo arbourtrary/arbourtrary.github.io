@@ -1,10 +1,11 @@
 <script>
+    import { base } from '$app/paths'
     import { getTwoDigitMonthYearDate } from '../utils/date.js';
 
     export let writing = {};
 </script>
 
-<a href={`/writings/${writing.slug}`}>
+<a href={`${base}/writings/${writing.slug}`}>
     <div class="row">
         <div class="title">{writing.title}</div>
         <div class="connector"></div>
