@@ -39,7 +39,27 @@
         </div>
         <div class="img-container">
             {#if browser}
-                <img class="drawing" src={base + "/images/drawing.webp"} height="800" width="800" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
+                <picture>
+                    <!-- Mobile image - only loads on small screens -->
+                    <source 
+                        media="(max-width: 767px)" 
+                        srcset=""
+                        width="500" 
+                        height="500">
+                    <!-- Desktop image - only loads on larger screens -->
+                    <source 
+                        media="(min-width: 768px)" 
+                        srcset="{base}/images/drawing.webp"
+                        width="800" 
+                        height="800">
+                    <!-- Fallback image (will use the appropriate source above) -->
+                    <img class="drawing" 
+                        src="" 
+                        alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"
+                        width="800"
+                        height="800">
+                </picture>
+                <!-- <img class="drawing" src={base + "/images/drawing.webp"} height="800" width="800" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/> -->
             {/if}
         </div>
     </div>
@@ -58,7 +78,27 @@
         </div>
         <div class="img-container">
             {#if browser}
-                <img class="drawing" src={base + "/images/drawing-mobile.webp"} height="500" width="500" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/>
+                <picture>
+                    <!-- Mobile image - only loads on small screens -->
+                    <source 
+                        media="(max-width: 767px)" 
+                        srcset="{base}/images/drawing-mobile.webp"
+                        width="500" 
+                        height="500">
+                    <!-- Desktop image - only loads on larger screens -->
+                    <source 
+                        media="(min-width: 768px)" 
+                        srcset=""
+                        width="800" 
+                        height="800">
+                    <!-- Fallback image (will use the appropriate source above) -->
+                    <img class="drawing" 
+                        src="" 
+                        alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"
+                        width="800"
+                        height="800">
+                </picture>
+                <!-- <img class="drawing" src={base + "/images/drawing-mobile.webp"} height="500" width="500" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/> -->
             {/if}
         </div>
         <div class="intro-description">
@@ -171,7 +211,7 @@
         flex-direction: column;
         justify-content: center;
     }
-    .img-container img {
+    .img-container picture {
         height: 100%;
         width: 100%;
         position: absolute;
@@ -179,10 +219,16 @@
         z-index: 22;
         top: 50%;
         left: 50%;
-        filter: var(--intro-img-filter);
         transform: translate(-50%, -50%) scale(1);
         opacity: 1;
         transition: all 0.75s ease;
+    }
+    .img-container img {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        object-fit: contain;
+        filter: var(--intro-img-filter);
     }
     .intro-header {
         font-size: 28px;
