@@ -42,13 +42,13 @@
                 <picture>
                     <!-- Mobile image - only loads on small screens -->
                     <source 
-                        media="(max-width: 767px)" 
+                        media="(max-width: 1000px)" 
                         srcset=""
                         width="500" 
                         height="500">
                     <!-- Desktop image - only loads on larger screens -->
                     <source 
-                        media="(min-width: 768px)" 
+                        media="(min-width: 1000px)" 
                         srcset="{base}/images/drawing.webp"
                         width="800" 
                         height="800">
@@ -81,13 +81,13 @@
                 <picture>
                     <!-- Mobile image - only loads on small screens -->
                     <source 
-                        media="(max-width: 767px)" 
+                        media="(max-width: 1000px)" 
                         srcset="{base}/images/drawing-mobile.webp"
                         width="500" 
                         height="500">
                     <!-- Desktop image - only loads on larger screens -->
                     <source 
-                        media="(min-width: 768px)" 
+                        media="(min-width: 1000px)" 
                         srcset=""
                         width="800" 
                         height="800">
