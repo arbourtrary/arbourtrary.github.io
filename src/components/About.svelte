@@ -55,17 +55,17 @@
         width: fit-content;
     }
     :global(.about-body a) {
+        color: var(--color-1);
         text-decoration: underline;
-        padding: 2px;
-        color: var(--highlight);
-        filter: brightness(0.85);
+        text-decoration-color: var(--color-2);
+        text-decoration-thickness: 0.5px;
+        text-underline-offset: 3px;
     }
     :global(.about-body a:hover) {
-        background: var(--highlight);
-        text-decoration: none;
-        border-radius: 5px;
-        color: white;
-        filter: brightness(1);
+        color: var(--color-1);
+        text-decoration: underline;
+        text-decoration-color: var(--color-1);
+        text-decoration-thickness: 1px;
     }
     :global(#about-homepage p) {
     	font-size: 22px;

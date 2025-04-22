@@ -135,13 +135,18 @@
     font-family: var(--serif);
     font-size: var(--font-lg);
     text-decoration: none;
+    text-decoration-color: var(--color-2);
+    text-decoration-thickness: 0.5px;
+    text-underline-offset: 3px;
     transition: color 0.2s ease;
     width: 100%;
     display: block;
   }
 
   a:hover {
-    color: var(--blue);
+    text-decoration: underline;
+    text-decoration-color: var(--color-1);
+    text-decoration-thickness: 1px;
   }
 
   .menu-button svg, .menu-button path {
