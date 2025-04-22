@@ -140,15 +140,17 @@
         justify-content: center;
     }
     :global(.notes a) {
+        color: var(--color-1);
         text-decoration: underline;
-        padding: 0px 3px;
-        color: var(--color-2);
+        text-decoration-color: var(--color-2);
+        text-decoration-thickness: 0.5px;
+        text-underline-offset: 3px;
     }
     :global(.notes a:hover) {
-        background: var(--color-3);
-        text-decoration: none;
-        border-radius: 5px;
-        color: white;
+        color: var(--color-1);
+        text-decoration: underline;
+        text-decoration-color: var(--color-1);
+        text-decoration-thickness: 1px;
     }
     :global(.bold) {
         color: var(--highlight);

@@ -1,4 +1,4 @@
-<h3 id="overgrowth">Overgrowth</h3>
+<h3 id="overgrowth" style="margin-top: 1em;">Overgrowth</h3>
 
 There are dim pockets in the woods, quiet places. Tree bark coursing with ants, crumbling branches, dark and humid. There's an allure to their stillness, unmistakable smell. Organic residue and soft ground. 
 
