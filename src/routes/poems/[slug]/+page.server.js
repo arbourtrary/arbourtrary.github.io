@@ -277,6 +277,7 @@ export function entries() {
         {"slug": "quark"},
         {"slug": "ekstasis"},
         {"slug": "paradisiac"},
+        {"slug": "lagoon"}
     ]
 }
 
