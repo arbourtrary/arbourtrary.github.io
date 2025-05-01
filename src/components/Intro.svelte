@@ -49,7 +49,7 @@
                     <!-- Desktop image - only loads on larger screens -->
                     <source 
                         media="(min-width: 1000px)" 
-                        srcset="{base}/images/drawing.webp"
+                        srcset="https://res.cloudinary.com/dlglytv7y/image/upload/v1746131853/drawing_vflzmh.webp"
                         width="800" 
                         height="800">
                     <!-- Fallback image (will use the appropriate source above) -->
@@ -82,7 +82,7 @@
                     <!-- Mobile image - only loads on small screens -->
                     <source 
                         media="(max-width: 1000px)" 
-                        srcset="{base}/images/drawing-mobile.webp"
+                        srcset="https://res.cloudinary.com/dlglytv7y/image/upload/v1746131853/drawing-mobile_q1ijm1.webp"
                         width="500" 
                         height="500">
                     <!-- Desktop image - only loads on larger screens -->
