@@ -9,6 +9,7 @@
     import { onMount } from "svelte";
 
     let DEFAULT_HEIGHT = 40;
+    let MAX_WIDTH = 800;
     let shouldHydrate = false;
     let gallery;
 
@@ -25,7 +26,7 @@
         const naturalRatio = img.naturalHeight / img.naturalWidth;
         const isActive = parent.classList.contains('active');
 
-        const baseWidth = parent.offsetWidth;
+        const baseWidth = window.innerWidth > MAX_WIDTH ? parent.parentNode.offsetWidth : parent.offsetWidth;
         const height = baseWidth * naturalRatio;
         const figure = parent.querySelector("figure");
 
@@ -163,18 +164,23 @@
         text-decoration-color: var(--color-1);
         text-decoration-thickness: 1px;
     }
+  .gallery {
+    width: min(800px, 90vw);
+    margin: 0 auto;
+    max-width: 800px;
+  }
   .gallery, .gallery-header {
-    width: min(600px, 90vw);
     margin: 0 auto;
   }
   .section-header {
     margin-left: 0px;
   }
   .gallery-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 10px;
+    width: min(600px, 90vw);
   }
   .gallery-header button {
       border: none;
@@ -208,10 +214,6 @@
         text-transform: uppercase;
         letter-spacing: 2px;
   }
-  .gallery {
-    margin: 0 auto;
-    max-width: 600px;
-  }
   .image-container {
     display: flex;
     justify-content: center;
@@ -224,6 +226,8 @@
     height: 40px;
     cursor: pointer;
     opacity: 0.8;
+    width: min(600px, 100%);
+    margin: 0 auto;
   }
   .image-container:hover {
     opacity: 1;
@@ -262,6 +266,7 @@
   }
   :global(.image-container.active) {
     opacity: 1 !important;
+    width: min(800px, 100%) !important;
   }
   :global(.image-container.active .filtered-image) {
     filter: blur(0px);
