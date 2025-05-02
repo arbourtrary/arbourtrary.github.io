@@ -5,7 +5,7 @@
     console.log(base)
 </script>
 
-<scrolling-anchor id="intro">
+<div id="intro">
     <div class="intro-container desktop">
         <div class="intro-intro">
             <div class="intro-name">
@@ -73,7 +73,7 @@
             <div class="intro-header">{@html introText}</div>
         </div>
     </div>
-</scrolling-anchor>
+</div>
 
 <style>
     :root {
@@ -152,13 +152,13 @@
         gap: 10px;
         margin-right: 40px;
     }
-    scrolling-anchor {
+    #intro {
         padding-top: var(--header-height);
         padding-bottom: 20px;
         width: min(95vw, 1100px);
         margin: 0 auto;
         position:relative;
-        height: calc(100vh - var(--header-height));
+        height: calc(100vh - 41px);
         display: block;
     }
     img {
@@ -229,7 +229,9 @@
         display: none;
     }
     @media screen and (max-width: 1000px) {
-        
+        #intro {
+            display: flex;
+        }
         .header-container {
             width: min(350px, 100%);
             position: relative;
