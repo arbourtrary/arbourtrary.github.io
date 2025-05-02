@@ -50,6 +50,11 @@
             <!-- {#if browser} -->
                 <picture>
                     <source 
+                        media="(max-width: 500px)" 
+                        srcset="{base}/images/drawing-mobile-sm.webp"
+                        width="500" 
+                        height="500">
+                    <source 
                         media="(max-width: 1000px)" 
                         srcset="{base}/images/drawing-mobile.webp"
                         width="500" 

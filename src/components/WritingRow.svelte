@@ -11,7 +11,7 @@
         <div class="connector"></div>
         <div class="droplet">
             <span style={`filter: ${writing?.filter};`}>
-                <img loading="lazy" src={base + writing?.image} alt="watercolor droplet">
+                <img loading="lazy" src={base + writing?.image.replace(".webp", "_sm.webp")} alt="watercolor droplet">
             </span>
         </div>
         <div class="date">{@html getTwoDigitMonthYearDate(writing.date)}</div>
