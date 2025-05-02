@@ -9,7 +9,7 @@
     import Poems from "../components/Poems.svelte"
     import Writings from "../components/Writings.svelte"
     import Sketches from "../components/Sketches.svelte"
-    import Contact from "../components/Contact.svelte"
+    import Footer from "../components/Footer.svelte"
     import HoneycombImages from "../components/HoneycombImages.svelte"
     import sketchesData from "../data/sketches.json";
     import poemsData from "../data/poems.json";
@@ -18,26 +18,9 @@
     import musicData from "../data/music.json";
 
     let scrollY = 0;
-    let innerWidth;
-    let shouldHydrate = true;
-
-    // onMount(() => {
-    //     innerWidth = window.innerWidth;
-    //     window.addEventListener('resize', () => {
-    //       let vh = window.outerHeight * 0.01;
-    //       document.documentElement.style.setProperty('--vh', `${vh}px`);
-    //     });
-    //     bgColor.set(window.getComputedStyle(document.body).getPropertyValue('--bg-color'))
-    //     textColor1.set(window.getComputedStyle(document.body).getPropertyValue('--color-1'))
-    //     textColor2.set(window.getComputedStyle(document.body).getPropertyValue('--color-2'))
-    //     textColor3.set(window.getComputedStyle(document.body).getPropertyValue('--color-3'))
-    //     textColor4.set(window.getComputedStyle(document.body).getPropertyValue('--color-4'))
-    //     white.set(window.getComputedStyle(document.body).getPropertyValue('--white'))
-    //     shouldHydrate = true;
-    // })  
 </script>
 
-<svelte:window bind:scrollY bind:innerWidth/>
+<svelte:window bind:scrollY/>
 
 <svelte:head>
     <title>ɑrbərtrɛri</title>
@@ -60,39 +43,34 @@
     <meta name='twitter:image:src' content='https://arbourtrary.com/images/arbourtrary.webp' />
 </svelte:head>
 
-{#if shouldHydrate}
-    <!-- Sticky elements -->
-    <Header
-        position="fixed"
-    />
-    <Progress {scrollY}/>
+<!-- Sticky elements -->
+<Header
+    position="fixed"
+/>
+<Progress {scrollY}/>
 
-    <!-- Sections -->
-    <Intro/>
-    <hr>
-    <Sketches
-        sketches={sketchesData}
-    />
-    <Poems
-        poems={poemsData}
-    />
-    <Writings
-        writings={writingsData}
-    />
-    <hr>
-    <PlatonicProjects
-        projects={projectsData}
-        {scrollY}
-    />
-    <hr>
-    <HoneycombImages
-        music={musicData}
-    />
-    <hr>
-    <Contact
-        {scrollY}
-    />   
-{/if}
+<!-- Sections -->
+<Intro/>
+<hr>
+<Sketches
+    sketches={sketchesData}
+/>
+<Poems
+    poems={poemsData}
+/>
+<Writings
+    writings={writingsData}
+/>
+<hr>
+<PlatonicProjects
+    projects={projectsData}
+    {scrollY}
+/>
+<hr>
+<HoneycombImages
+    music={musicData}
+/>
+<Footer/>   
 
 <style>
     :global(#about), :global(#projects), :global(#writings), :global(#sketches), :global(#poems), :global(#music) {

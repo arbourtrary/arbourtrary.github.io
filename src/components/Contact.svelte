@@ -1,57 +1,46 @@
 <script>
     import { onMount } from "svelte";
-    import { base } from '$app/paths'
-
-    export let scrollY = 0;
-
-    let outerContainer;
-    let innerWidth;
-    let innerHeight;
-    let mounted = false;
-    let percent = 0
-    let opacity = 0;
-
-    onMount(() => {
-        mounted = true;
-        innerWidth = window.innerWidth;
-        innerHeight = window.innerHeight;
-    });
-
-    $: if (mounted && (outerContainer && scrollY > 0)) {
-        percent = 1 - (outerContainer.getBoundingClientRect().top + window.innerHeight / 2) / (window.innerHeight);
-        opacity = percent / 5;
-    } else {
-        percent = 0;
-    	opacity = 0;
-    }
-
+    import { base } from '$app/paths';
+    // export let scrollY = 0;
+    // let outerContainer;
+    // let mounted = false;
+    // let percent = 0;
+    // let opacity = 0;
     
+    // onMount(() => {
+    //     mounted = true;
+    // });
+    
+    // $: if (mounted && (outerContainer && scrollY > 0)) {
+    //     percent = 1 - (outerContainer.getBoundingClientRect().top + window.innerHeight / 2) / (window.innerHeight);
+    //     opacity = percent / 5;
+    // } else {
+    //     percent = 0;
+    //     opacity = 0;
+    // }
 </script>
 
-<svelte:window bind:innerWidth={innerWidth} bind:innerHeight={innerHeight}/>
-
-<div class="background" bind:this={outerContainer}>
-	
-    <div 
-        class="background-contacts"
-        style={`opacity: 1;`}
-    >
-    <img
-        class="background-image"
-        src={`${(innerWidth < 1000) && (innerWidth < innerHeight) ? base + "/images/bg_bw_portrait.webp" : base + "/images/bg_bw_landscape.webp"}`}
-        style={`opacity: ${opacity};`}
-        width={(innerWidth < 1000) && (innerWidth < innerHeight) ? 1183 : 2145}
-        height={(innerWidth < 1000) && (innerWidth < innerHeight) ? 2145 : 1183}
-        alt="background patterned with an aperiodic monotile"
-        loading="lazy"
-    >
+<div class="background">
+    <div class="background-contacts" style="opacity: 1;">
+        <!-- <picture>
+            <source media="(max-width: 1000px) and (orientation: portrait)" srcset="{base}/images/bg_bw_portrait.webp" />
+            <source media="(min-width: 1001px), (orientation: landscape)" srcset="{base}/images/bg_bw_landscape.webp" />
+            <img
+                class="background-image"
+                src="{base}/images/bg_bw_landscape.webp"
+                style={`opacity: ${opacity};`}
+                alt="background patterned with an aperiodic monotile"
+                loading="lazy"
+            />
+        </picture> -->
+        
         <a
             class="logo"
             aria-label="arbourtrary link to bluesky"
             href="https://bsky.app/profile/arbourtrary.com"
             target="_blank"
         >
-            <img class="bluesky" width="100" height="90" loading="lazy" src={base + "/images/bluesky.webp"} alt="bluesky logo"/>
+            <img class="bluesky" width="100" height="90" loading="lazy" src="{base}/images/bluesky.webp" alt="bluesky logo"/>
         </a>
         <a
             class="logo github"
@@ -60,7 +49,7 @@
             target="_blank"
             rel="me"
         >
-            <img class="github" width="100" height="100" loading="lazy" src={base + "/images/github.webp"} alt="github logo"/>
+            <img class="github" width="100" height="100" loading="lazy" src="{base}/images/github.webp" alt="github logo"/>
         </a>
         <a
             class="logo"
@@ -68,31 +57,32 @@
             href="https://arbourtrary.com/feed/rss"
             target="_blank"
         >
-            <img class="rss" width="100" height="100" loading="lazy" src={base + "/images/rss.webp"} alt="rss logo">
+            <img class="rss" width="100" height="100" loading="lazy" src="{base}/images/rss.webp" alt="rss logo" />
         </a>
     </div>
 </div>
 <div id="contact"></div>
+
 <style>
     #contact {
         height: 0px;
     }
     .background {
         height: 100vh;
-    	position: relative;
+        position: relative;
         pointer-events: none;
     }
     .background-image {
-		transition: opacity 250ms linear;
+        transition: opacity 250ms linear;
         position: absolute;
-		height: 100vh;
-		width: 100vw;
-		top: 0px;
-		left: 0px;
-		z-index: 10;
-		pointer-events: none;
-		object-fit: cover;
-		object-position: top right;
+        height: 100vh;
+        width: 100vw;
+        top: 0px;
+        left: 0px;
+        z-index: 10;
+        pointer-events: none;
+        object-fit: cover;
+        object-position: top right;
         mix-blend-mode: multiply;
     }
     .background-contacts {

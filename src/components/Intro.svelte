@@ -1,110 +1,74 @@
 <script>
-    import { onMount } from "svelte";
-    import { browser } from '$app/environment';
     import { base } from '$app/paths'
-    import introData from "../data/intro.json";
-    import { getFieldFromArrayOfObjects } from "../utils/array.js";
-    import { createLoadObserver } from '../utils/dom.js'
-    
-    let texts = ["arbourtrary", "David Newcomb", "David Morales"];
-    let selectedText = "&nbsp;"; // Default value for SSR
-    let intro;
-    
-    onMount(() => {
-        // Move all browser-specific logic inside onMount
-        intro = introData;
-        
-        // Set random name only on client-side
-        selectedText = texts[Math.floor(Math.random() * texts.length)]
-    });
+    let introText = `I'm a <span style="color: var(--blue)">creative developer</span> who enjoys making code sketches and writing about <span style="color: var(--green)">nature</span>, <span style="color: var(--orange)">mathematics</span> &amp; <span style="color: var(--purple)">poetry</span>`
+    let imageText = "a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"
 </script>
 
 <scrolling-anchor id="intro">
-    <!-- Desktop version - will be hidden by CSS on smaller screens -->
     <div class="intro-container desktop">
         <div class="intro-intro">
             <div class="intro-name">
-                <div class="name-container">
-                    <span class="name">
-                        {@html selectedText}
-                    </span>
+                <div class="name-container"></div>
+                <div class="header-container">
                     <div class="progress-bar-bg"></div>
                 </div>
             </div>
             <div class="intro-description">
-                <div class="intro-header">
-                    I'm a <span style="color: var(--blue)">creative developer</span> who enjoys making code sketches and writing about <span style="color: var(--green)">nature</span>, <span style="color: var(--orange)">mathematics</span> &amp; <span style="color: var(--purple)">poetry</span>
-                </div>
+                <div class="intro-header">{@html introText}</div>
             </div>
         </div>
         <div class="img-container">
-            {#if browser}
-                <picture>
-                    <!-- Mobile image - only loads on small screens -->
+            <!-- {#if browser} -->
+                <picture width="800" height="800">
                     <source 
                         media="(max-width: 1000px)" 
                         srcset=""
                         width="500" 
                         height="500">
-                    <!-- Desktop image - only loads on larger screens -->
                     <source 
                         media="(min-width: 1000px)" 
                         srcset="{base}/images/drawing.webp"
                         width="800" 
                         height="800">
-                    <!-- Fallback image (will use the appropriate source above) -->
                     <img class="drawing" 
                         src="" 
-                        alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"
+                        alt={imageText}
                         width="800"
                         height="800">
                 </picture>
-                <!-- <img class="drawing" src={base + "/images/drawing.webp"} height="800" width="800" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/> -->
-            {/if}
+            <!-- {/if} -->
         </div>
     </div>
-    
-    <!-- Mobile version - will be hidden by CSS on larger screens -->
     <div class="intro-container mobile">
         <div class="intro-name">
-            <div class="name-container">
-                <span class="name">
-                    {@html selectedText}
-                </span>
-            </div>
+            <div class="name-container"></div>
             <div class="header-container">
                 <div class="progress-bar-bg"></div>
             </div>
         </div>
         <div class="img-container">
-            {#if browser}
+            <!-- {#if browser} -->
                 <picture>
-                    <!-- Mobile image - only loads on small screens -->
                     <source 
                         media="(max-width: 1000px)" 
                         srcset="{base}/images/drawing-mobile.webp"
                         width="500" 
                         height="500">
-                    <!-- Desktop image - only loads on larger screens -->
                     <source 
                         media="(min-width: 1000px)" 
                         srcset=""
                         width="800" 
                         height="800">
-                    <!-- Fallback image (will use the appropriate source above) -->
                     <img class="drawing" 
                         src="" 
-                        alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"
+                        alt={imageText}
                         width="800"
                         height="800">
                 </picture>
-                <!-- <img class="drawing" src={base + "/images/drawing-mobile.webp"} height="500" width="500" alt="a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"/> -->
-            {/if}
+            <!-- {/if} -->
         </div>
         <div class="intro-description">
-            <div class="intro-header">
-                I'm a <span style="color: var(--blue)">creative developer</span> who enjoys making code sketches and writing about <span style="color: var(--green)">nature</span>, <span style="color: var(--orange)">mathematics</span> &amp; <span style="color: var(--purple)">poetry</span>
-            </div>
+            <div class="intro-header">{@html introText}</div>
         </div>
     </div>
 </scrolling-anchor>
@@ -147,27 +111,36 @@
         margin-bottom: 2px;
         text-align: left;
     }
-    .name {
-        display: inline-block;
-        letter-spacing: .1px;
-        font-family: var(--serif), sans-serif, sans-serif;
-        font-size: min(45px, 11vw);
-        text-align: left;
-        font-weight: 600;
-        user-select: none;
-        width: max-content;
-        -webkit-backface-visibility: hidden;
-        -webkit-perspective: 1000;
-        -webkit-transform: translate3d(0,0,0);
-        -webkit-transform: translateZ(0);
-        backface-visibility: hidden;
-        perspective: 1000;
-        transform: translate3d(0,0,0);
-        transform: translateZ(0);
-        background: var(--name-linear-gradient);
-        filter: var(--name-filter);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+    .name-container:after {
+      content: "arbourtrary";
+      display: inline-block;
+      font-family: var(--serif), sans-serif;
+      font-size: min(45px, 11vw);
+      text-align: left;
+      font-weight: 600;
+      letter-spacing: .1px;
+      user-select: none;
+      width: max-content;
+      
+      -webkit-backface-visibility: hidden;
+      -webkit-perspective: 1000;
+      -webkit-transform: translate3d(0,0,0);
+      -webkit-transform: translateZ(0);
+      backface-visibility: hidden;
+      perspective: 1000;
+      transform: translate3d(0,0,0);
+      transform: translateZ(0);
+      
+      background: var(--name-linear-gradient);
+      filter: var(--name-filter);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      
+      animation-name: smooth-content-change;
+      animation-duration: 5s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
     }
     .intro-intro {
         width: 400px;
@@ -222,13 +195,17 @@
         transform: translate(-50%, -50%) scale(1);
         opacity: 1;
         transition: all 0.75s ease;
+        aspect-ratio: 1;
     }
     .img-container img {
-        height: 100%;
+        height: auto;
         width: 100%;
         position: absolute;
         object-fit: contain;
+        aspect-ratio: 1;
         filter: var(--intro-img-filter);
+        top: 50%;
+        transform: translate(0, -50%);
     }
     .intro-header {
         font-size: 28px;
