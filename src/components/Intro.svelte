@@ -18,25 +18,23 @@
             </div>
         </div>
         <div class="img-container">
-            <!-- {#if browser} -->
-                <picture width="800" height="800">
-                    <source 
-                        media="(max-width: 1000px)" 
-                        srcset=""
-                        width="500" 
-                        height="500">
-                    <source 
-                        media="(min-width: 1000px)" 
-                        srcset="{base}/images/drawing.webp"
-                        width="800" 
-                        height="800">
-                    <img class="drawing" 
-                        src="" 
-                        alt={imageText}
-                        width="800"
-                        height="800">
-                </picture>
-            <!-- {/if} -->
+            <picture>
+                <source 
+                    media="(max-width: 1000px)" 
+                    srcset=""
+                    width="500" 
+                    height="500">
+                <source 
+                    media="(min-width: 1000px)" 
+                    srcset="{base}/images/drawing.webp"
+                    width="800" 
+                    height="800">
+                <img class="drawing" 
+                    src="" 
+                    alt={imageText}
+                    width="800"
+                    height="800">
+            </picture>
         </div>
     </div>
     <div class="intro-container mobile">
@@ -47,30 +45,28 @@
             </div>
         </div>
         <div class="img-container">
-            <!-- {#if browser} -->
-                <picture>
-                    <source 
-                        media="(max-width: 500px)" 
-                        srcset="{base}/images/drawing-mobile-sm.webp"
-                        width="500" 
-                        height="500">
-                    <source 
-                        media="(max-width: 1000px)" 
-                        srcset="{base}/images/drawing-mobile.webp"
-                        width="500" 
-                        height="500">
-                    <source 
-                        media="(min-width: 1000px)" 
-                        srcset=""
-                        width="800" 
-                        height="800">
-                    <img class="drawing" 
-                        src="" 
-                        alt={imageText}
-                        width="800"
-                        height="800">
-                </picture>
-            <!-- {/if} -->
+            <picture>
+                <source 
+                    media="(max-width: 500px)" 
+                    srcset="{base}/images/drawing-mobile-sm.webp"
+                    width="400" 
+                    height="400">
+                <source 
+                    media="(max-width: 1000px)" 
+                    srcset="{base}/images/drawing-mobile.webp"
+                    width="600" 
+                    height="600">
+                <source 
+                    media="(min-width: 1000px)" 
+                    srcset=""
+                    width="800" 
+                    height="800">
+                <img class="drawing" 
+                    src="" 
+                    alt={imageText}
+                    width="500"
+                    height="500">
+            </picture>
         </div>
         <div class="intro-description">
             <div class="intro-header">{@html introText}</div>
