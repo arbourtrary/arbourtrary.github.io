@@ -64,6 +64,9 @@
 	.logo {
 		display: flex;
 	}
+	.kofi img {
+		width: 34px;
+	}
 	.kofi img, .rss {
 		height: 23px;
 	}

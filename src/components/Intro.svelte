@@ -2,6 +2,7 @@
     import { base } from '$app/paths'
     let introText = `I'm a <span style="color: var(--blue)">creative developer</span> who enjoys making code sketches and writing about <span style="color: var(--green)">nature</span>, <span style="color: var(--orange)">mathematics</span> &amp; <span style="color: var(--purple)">poetry</span>`
     let imageText = "a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"
+    console.log(base)
 </script>
 
 <scrolling-anchor id="intro">
