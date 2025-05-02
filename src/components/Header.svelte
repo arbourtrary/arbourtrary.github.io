@@ -17,7 +17,7 @@
 </script>
 
 <div class="header" bind:this={header} style={`position: ${position}`}>
-    <button on:click={() => document.documentElement.classList.toggle('dark-theme')}>
+    <button on:click={() => document.documentElement.classList.toggle('dark-theme')} aria-label="Theme toggle">
         <div class="home">
             <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke-width="1.5" stroke="currentColor" version="1.1" viewBox="0 0 20 20">
               <path class="st0" d="M8.5,2.3c.2.2.2.6,0,.9-.6,1.1-.9,2.3-.9,3.5,0,4,3.3,7.3,7.3,7.3.5,0,1,0,1.5-.2.3,0,.6,0,.8.3.2.3.2.6,0,.9-1.6,2-4,3.1-6.5,3.1-4.6,0-8.3-3.7-8.3-8.3S4.6,3.3,7.6,2.1c.3-.1.7,0,.9.2"/>
