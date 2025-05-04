@@ -30,6 +30,7 @@
                     width="800" 
                     height="800">
                 <img class="drawing" 
+                    fetchpriority="high"
                     src="" 
                     alt={imageText}
                     width="800"
@@ -62,6 +63,7 @@
                     width="800" 
                     height="800">
                 <img class="drawing" 
+                    fetchpriority="high"
                     src="" 
                     alt={imageText}
                     width="500"
