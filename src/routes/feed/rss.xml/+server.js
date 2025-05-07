@@ -1,6 +1,6 @@
 import { marked } from "marked";
-import writings from "../../../data/poems.json";
-import sketches from "../../../data/poems.json";
+import writings from "../../../data/writings.json";
+import sketches from "../../../data/sketches.json";
 import poems from "../../../data/poems.json";
 
 export const prerender = true
