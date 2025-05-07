@@ -485,15 +485,17 @@
 		text-decoration: underline;
 	}
     :global(.song-info > p a) {
-        text-decoration: none;
-        padding: 0px 3px;
-        color: var(--blue);
+        color: var(--color-1);
+        text-decoration: underline;
+        text-decoration-color: var(--color-2);
+        text-decoration-thickness: 0.5px;
+        text-underline-offset: 3px;
     }
     :global(.song-info > p a:hover) {
-        background: var(--blue);
-        text-decoration: none;
-        border-radius: 5px;
-        color: white;
+        color: var(--color-1);
+        text-decoration: underline;
+        text-decoration-color: var(--color-1);
+        text-decoration-thickness: 1px;
     }
 	.song figure {
 		min-height: 130px;
