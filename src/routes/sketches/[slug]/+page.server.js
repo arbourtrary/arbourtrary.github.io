@@ -1,15 +1,9 @@
+import sketches from "../../../data/sketches.json";
+
 export function entries() {
-    return [
-        { slug: 'coalescing-text' },
-        { slug: 'polygon-or-circle' },
-        { slug: 'direct-etymologies' },
-        { slug: 'childhood-dictionary' },
-        { slug: 'line-drawings' },
-        { slug: 'image-sampling' },
-        { slug: 'island-peakscapes' },
-        { slug: 'cistercian-ciphers' },
-        { slug: 'climbing-trees' }
-    ];
+    return sketches.map(sketch => {
+       return {"slug": sketch.slug}
+    });
 }
 
 export const ssr = true;

@@ -1,7 +1,6 @@
 <script>
     import { onMount } from "svelte";
     import { section } from "../store.js"
-    import { sortByDateString } from "../utils/array.js";
     import { base } from '$app/paths'
     import ProjectRow from "./ProjectRow.svelte";
 
@@ -36,7 +35,7 @@
         {#if !limit}
             <p class="blurb">Kind of a catch-all category of various things I've worked on - articles, websites, self-published books of poems.</p>
         {/if}
-        {#each sortByDateString(projects, "date") as project, i}
+        {#each projects.slice().reverse() as project, i}
             {#if (limit && i < limit) || (!limit)}
                 {#if splitByFormat && isUniqueFormat(project.format)}
                     <h3 class="format section-subhead">{project.format}</h3>

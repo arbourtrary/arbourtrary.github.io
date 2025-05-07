@@ -11,7 +11,25 @@
     "tags": ["r", "lda", "network", "blurb", "book", "poetry", "surrealist", "stream of consciousness"],
     "image": "textures/fade_in_a_word.webp",
     "url": "https://www.blurb.com/b/10322155-in-a-word",
-    "format": "Books"
+    "format": "Books",
+    "text": "I compiled this book of poems, more than I wrote it. So thematically, it's pretty scattered. Stylistically, it's early in my writing, often repetitive. I still find some lines and poems intriguing and I'd like to explore those a bit. The visuals are heavy on symmetry, minimalism, and network / graph analysis.",
+    "tools": [
+      "pencil",
+      "paper",
+      "patience",
+      "R",
+      "bookwright"
+    ],
+    "gallery": [
+      "poem-slopegraph.webp",
+      "poem-wheel-1.webp",
+      "poem-wheel-2.webp",
+      "poem-wheel-3.webp",
+      "poem-wheel-4.webp",
+      "poem-wheel-5.webp",
+      "poem-wheel-6.webp"
+    ],
+    "index": 0
   },
   {
     "title": "Revival",
@@ -25,7 +43,28 @@
     "tags": ["r", "graph theory", "spanning tree", "blurb", "book", "poetry", "nature", "technology", "humanity", "san francisco"],
     "image": "textures/fade_revival.webp",
     "url": "https://www.blurb.com/b/10322111-revival",
-    "format": "Books"
+    "format": "Books",
+    "text": "I wrote this book in a flurry of a year. Looking back, there were many spots I'd cut, swap out, or just let sit. I wrote every spare minute I could find, often on the train, sometimes finding lines mid-walk, molding them mind-wise until I could jot them down. It's a snapshot of San Francisco from my vantage. All the visualizations in the book find inspiration from urban data and railroads.",
+    "tools": [
+      "pencil",
+      "paper",
+      "patience",
+      "R",
+      "bookwright"
+    ],
+    "gallery": [
+      "sf-rivers.webp",
+      "table-of-contents.webp",
+      "sections.webp",
+      "nature-left.webp",
+      "nature-right.webp",
+      "technology-left.webp",
+      "technology-right.webp",
+      "humanity-left.webp",
+      "humanity-right.webp",
+      "spanning-trees.webp"
+    ],
+    "index": 1
   },
   {
     "title": "NBA Recordigami",
@@ -34,12 +73,24 @@
     "description": "Tracing the history of the NBA through pioneering wins and losses during the regular season",
     "year": "2021",
     "date": "05/01/21",
-    "awards": ["<a href='https://pudding.cool/process/pudding-cup-2021/'>Pudding Cup Honorary Mention</a>"],
-    "awardsShort": ["<a href='https://pudding.cool/process/pudding-cup-2021/'>Pudding Cup Honorary Mention</a>"],
+    "awards": ["<a href='https://pudding.cool/process/pudding-cup-2021/' target='_blank'>Pudding Cup Honorary Mention</a>"],
+    "awardsShort": ["<a href='https://pudding.cool/process/pudding-cup-2021/' target='_blank'>Pudding Cup Honorary Mention</a>"],
     "tags": ["d3", "svg", "basketball", "NBA", "triangle"],
     "image": "textures/fade_recordigami.webp",
     "url": "https://narro.design/html/nba-recordigami.html",
-    "format": "Narro"
+    "format": "Narro",
+    "text": "I saw a very interesting 538 article a while back displaying an NFL team record in a triangular fashion. Each square represented a unique team record. I combined this approach with Jon Bois' <a href='https://www.sbnation.com/2016/12/7/13856392/chart-party-scorigami' target='_blank'>scorigami</a> to determine which NBA teams were the first to achieve a record like 73-9 or 9-73. The result was this colorful decade by decade expansion of what team records have been achieved.",
+    "tools": [
+      "d3",
+      "python"
+    ],
+    "gallery": [
+      "all-decades.webp",
+      "mavericks.webp",
+      "bulls.webp",
+      "supersonics.webp"
+    ],
+    "index": 2
   },
   {
     "title": "Around the World",
@@ -53,7 +104,21 @@
     "tags": ["d3", "r", "s3", "aws", "westworld", "international", "flags"],
     "image": "textures/fade_around_the_world.webp",
     "url": "https://narro.design/html/around-the-world.html",
-    "format": "Narro"
+    "format": "Narro",
+    "text": "Visually inspired by Westworld's <a href='https://www.reddit.com/r/westworld/comments/fw37d5/what_is_the_divergence_thing/' target='_blank'>divergence</a> visualization, I created a circular visualization of the entire world's elevation. The interactive map shows an exaggerated cross-section of Earth, with oceans in blue and land in green. Each cross-section slices the globe in half, cutting through the North Pole, the South Pole and the input location.",
+    "tools": [
+      "d3",
+      "python"
+    ],
+    "gallery": [
+      "papeete.webp",
+      "mt-everest.webp",
+      "iceland.webp",
+      "puerto-rico.webp",
+      "santo-domingo.webp",
+      "texas.webp"
+    ],
+    "index": 3
   },
   {
     "title": "Linguistics",
@@ -67,7 +132,20 @@
     "tags": ["svelte", "gallery", "circle packing", "phoneme", "grapheme", "linguistics"],
     "image": "textures/fade_linguistics.webp",
     "url": "https://narro.design/html/linguistics-intro.html",
-    "format": "Narro"
+    "format": "Narro",
+    "text": "I'm fascinated by language so I dove into a bunch of details about the sounds and spellings of English. I emerged with a better understanding of its complexities and created a new <a href='https://github.com/narroviz/data-linguistics' target='_blank'>dataset</a> mapping phonemes to graphemes. This article was a soft intro to this linguistic building blocks.",
+    "tools": [
+      "d3",
+      "svelte"
+    ],
+    "gallery": [
+      "linguistics.webp",
+      "phonemes.webp",
+      "graphemes.webp",
+      "phonemes-graphemes.webp",
+      "ukulele.webp"
+    ],
+    "index": 4
   },
   {
     "title": "Puerto Rican Migration",
@@ -81,7 +159,18 @@
     "tags": ["d3", "Puerto Rico", "Census", "choropleth", "small multiples"],
     "image": "textures/fade_puerto_rico_migration.webp",
     "url": "https://narro.design/html/puerto-rico-migration.html",
-    "format": "Narro"
+    "format": "Narro",
+    "text": "Most of the narrative of Puerto Rico in the 2010s and 2020s displayed collapse and emigration (and people were right to focus on this, for many reasons). As a Puerto Rican, I wanted to see if there were causes for hope, bright spots in some of the data. So I focused on people moving to the island and highlighted a few stories of resilient people returning from the diaspora.",
+    "tools": [
+      "d3",
+      "svelte"
+    ],
+    "gallery": [
+      "puerto-rico.webp",
+      "mayaguez.webp",
+      "migration.webp"
+    ],
+    "index": 5
   },
   {
     "title": "House of Cards",
@@ -92,22 +181,44 @@
     "date": "12/30/21",
     "awards": [
       "<a href='https://scripps.com/wp-content/uploads/2022/06/SHA-2021_Program_2.pdf' target='_blank'>Scripps Howard Award</a>",
-      "<a href='https://winners.webbyawards.com/2022/websites-and-mobile-sites/features-design/best-individual-editorial-feature-media-company/219009/house-of-cards'>Webby for Best Editorial Feature</a>",
+      "<a href='https://winners.webbyawards.com/2022/websites-and-mobile-sites/features-design/best-individual-editorial-feature-media-company/219009/house-of-cards' target='_blank'>Webby for Best Editorial Feature</a>",
       "<a href='https://knightfoundation.org/esserman-knight-journalism-awards-2022-nominations/' target='_blank'>Esserman-Knight Journalism Award</a>",
       "<a href='https://snd.org/best-of-design-competitions/2020-best-of-digital-design-results/' target='_blank'>Society for News Design Award of Excellence</a>",
       "<a href='https://www.inma.org/blogs/main/post.cfm/inma-reveals-60-global-media-awards-first-place-winners-miami-herald-takes-top-prize' target='_blank'>INMA Best in Show</a>"
     ],
     "awardsShort": [
       "<a href='https://scripps.com/wp-content/uploads/2022/06/SHA-2021_Program_2.pdf' target='_blank'>Scripps Howard</a>",
-      "<a href='https://winners.webbyawards.com/2022/websites-and-mobile-sites/features-design/best-individual-editorial-feature-media-company/219009/house-of-cards'>Webby</a>",
+      "<a href='https://winners.webbyawards.com/2022/websites-and-mobile-sites/features-design/best-individual-editorial-feature-media-company/219009/house-of-cards' target='_blank'>Webby</a>",
       "<a href='https://knightfoundation.org/esserman-knight-journalism-awards-2022-nominations/' target='_blank'>Esserman-Knight</a>",
       "<a href='https://snd.org/best-of-design-competitions/2020-best-of-digital-design-results/' target='_blank'>SND</a>",
       "<a href='https://www.inma.org/blogs/main/post.cfm/inma-reveals-60-global-media-awards-first-place-winners-miami-herald-takes-top-prize' target='_blank'>INMA</a>"
     ],
     "tags": ["svelte", "scrolling video", "audio", "surfside"],
+    "team": ["<a href='https://www.rachelhandley.com/' target='_blank'>Rachel Handley</a> (illustration)", "<a href='https://www.saljamea.com/' target='_blank'>Sohail Al-Jamea</a> (animation)", "<a href='https://albright.online/' target='_blank'>Aaron Albright</a> (web dev)"],
     "image": "textures/fade_house_of_cards.webp",
     "url": "https://www.miamiherald.com/news/special-reports/surfside-investigation/article256633336.html",
-    "format": "Journalism"
+    "format": "Journalism",
+    "text": "For this devastating tragedy and harsh topic, we worked hard to illustrate and demonstrate the failure modes of the collapse of Champlain Towers in Surfside, FL. The hope was to inform, to help residents in similar towers look for warning signs, and ultimately, to hold the developers responsible. It was the first time I worked to implement scrolling videos and I learned a mountain about frame rates and frame types to optimize the process.",
+    "tools": [
+      "svelte",
+      "handbrake"
+    ],
+    "gallery": [
+      "intro-1.webp",
+      "intro-2.webp",
+      "intro-3.webp",
+      "building-pipes.webp",
+      "building-floors.webp",
+      "schematic-1.webp",
+      "schematic-2.webp",
+      "schematic-3.webp",
+      "schematic-4.webp",
+      "schematic-5.webp",
+      "schematic-6.webp",
+      "aftermath.webp",
+      "cards.webp"
+    ],
+    "index": 6
   },
   {
     "title": "Cut Off",
@@ -123,9 +234,25 @@
       "<a href='https://snd.org/best-of-design-competitions/snd44-annual-creative-competition-results/' target='_blank'>SND Bronze Medal</a>",
       "<a href='https://scpress.org/23-annual-meeting/' target='_blank'>S.C. Press Association</a>"],
     "tags": ["svelte", "maplibre", "dataviz", "south carolina"],
+    "team": ["<a href='https://www.rachelhandley.com/' target='_blank'>Rachel Handley</a> (illustration)", "<a href='https://www.saljamea.com/' target='_blank'>Sohail Al-Jamea</a> (animation)"],
     "image": "textures/fade_cut_off.webp",
     "url": "https://www.thestate.com/news/state/south-carolina/article258302413.html",
-    "format": "Journalism"
+    "format": "Journalism",
+    "text": "Reporting on the sky-high rate of amputations related to diabetes in South Carolina, we aimed to blend personal stories with data storytelling. I leaned heavily on Svelte and MapLibre to create <a href='https://github.com/mcclatchy/svelte-map' target='_blank'>svelte-map</a>, a tool I primarily built for scrollytelling maps.",
+    "tools": [
+      "svelte",
+      "maplibre"
+    ],
+    "gallery": [
+      "intro.webp",
+      "map.webp",
+      "zoom.webp",
+      "zipcode.webp",
+      "grocery.webp",
+      "bargain.webp",
+      "triptych.webp"
+    ],
+    "index": 7
   },
   {
     "title": "Security for Sale",
@@ -141,9 +268,26 @@
       "<a href='https://scripps.com/fund/journalism/award-finalists/security-for-sale/' target='_blank'>Scripps Howard Award Finalist</a>"
     ],
     "tags": ["svelte", "maplibre", "hexbins", "american dream", "real estate", "north carolina"],
+    "team": ["<a href='https://www.rachelhandley.com/' target='_blank'>Rachel Handley</a> (illustration)", "<a href='https://www.saljamea.com/' target='_blank'>Sohail Al-Jamea</a> (animation)"],
     "image": "textures/fade_security_for_sale.webp",
     "url": "https://www.charlotteobserver.com/news/business/article260606172.html",
-    "format": "Journalism"
+    "format": "Journalism",
+    "text": "There are systematic reasons home ownership has become more and more out of reach. One factor is private capital buying up homes with cash in bulk, essentially converting neighborhoods to private equity cash cows. We pilloried these machinations and mapped the infectious spread of the problem across North Carolina.",
+    "tools": [
+      "svelte",
+      "maplibre"
+    ],
+    "gallery": [
+      "intro-1.webp",
+      "intro-2.webp",
+      "map-nc.webp",
+      "map-mecklenburg.webp",
+      "map-neighborhood.webp",
+      "map-drone.webp",
+      "map-triangle.webp",
+      "map-nc-dots.webp"
+    ],
+    "index": 8
   },
   {
     "title": "Big Poultry",
@@ -155,9 +299,25 @@
     "awards": ["<a href='https://news.mit.edu/2023/mcelheny-award-science-journalism-honors-series-poultry-farming-environment-0403' target='_blank'>MIT Knight Science Journalism</a>", "<a href='https://nationalpress.org/award-story/capital-main-charlotte-observer-raleigh-news-observer-win-npf-stokes-award-for-best-environmental-reporting/' target='_blank'>Stokes Award for Energy & Environment</a>", "<a href='https://www.ire.org/2022-ire-award-winners/' target='_blank'>Investigative Reporters & Editors - IRE Award</a>"],
     "awardsShort": ["<a href='https://news.mit.edu/2023/mcelheny-award-science-journalism-honors-series-poultry-farming-environment-0403' target='_blank'>MIT Knight</a>", "<a href='https://nationalpress.org/award-story/capital-main-charlotte-observer-raleigh-news-observer-win-npf-stokes-award-for-best-environmental-reporting/' target='_blank'>Thomas Stokes</a>", "<a href='https://www.ire.org/2022-ire-award-winners/' target='_blank'>IRE</a>"],
     "tags": ["svelte", "incremental video", "maplibre", "north carolina"],
+    "team": ["<a href='https://www.jackohman.net/' target='_blank'>Jack Ohman</a> (cartoonist)", "<a href='https://www.rachelhandley.com/' target='_blank'>Rachel Handley</a> (illustration)", "<a href='https://www.saljamea.com/' target='_blank'>Sohail Al-Jamea</a> (animation)", "<a href='https://semerriam.github.io/' target='_blank'>Susan Merriam</a> (dataviz)"],
     "image": "textures/fade_big_poultry.webp",
     "url": "https://www.charlotteobserver.com/news/state/north-carolina/article267887592.html",
-    "format": "Journalism"
+    "format": "Journalism",
+    "text": "I built an incremental video + text web component to handle a step by step animated, cartoon trailer. In the explainer, we show the various ways the poultry industry in NC hides its pollution and papers over its damages with legislation preventing the collection of data.",
+    "tools": [
+      "svelte",
+      "maplibre"
+    ],
+    "gallery": [
+        "intro-1.webp",
+        "intro-2.webp",
+        "intro-3.webp",
+        "intro-5.webp",
+        "intro-6.webp",
+        "intro-7.webp",
+        "intro-8.webp"
+    ],
+    "index": 9
   },
   {
     "title": "Made in Miami",
@@ -177,9 +337,29 @@
       "<a href='https://www.headlinerawards.org/wp-content/uploads/2023/05/2023-headliner-winners.pdf' target='_blank' style='white-space: nowrap;'>National Headliner Award</a>"
     ],
     "tags": ["d3", "js", "web component", "network", "haiti"],
+    "team": ["<a href='https://www.rachelhandley.com/' target='_blank'>Rachel Handley</a> (illustration)", "<a href='https://www.saljamea.com/' target='_blank'>Sohail Al-Jamea</a> (animation)"],
     "image": "textures/fade_made_in_miami.webp",
     "url": "https://www.miamiherald.com/news/nation-world/world/americas/haiti/article266152901.html",
-    "format": "Journalism"
+    "format": "Journalism",
+    "text": "After the assassination of Haitian president, Jovenel Moïse, we worked with the excellent <a href='https://en.wikipedia.org/wiki/Jacqueline_Charles' target='_blank'>Jacquie Charles</a> to consolidate, display and animate the complexities of this calamity. I wrote a couple new tools: one to handle scrollytelling with network connections (d3) and one to handle scrollytelling with 3D scenes in the browser (threeJS).",
+    "tools": [
+      "svelte",
+      "d3",
+      "threeJS",
+      "web components"
+    ],
+    "gallery": [
+      "intro.webp",
+      "network-1.webp",
+      "network-2.webp",
+      "network-3.webp",
+      "network-4.webp",
+      "particles-1.webp",
+      "particles-2.webp",
+      "particles-3.webp",
+      "particles-4.webp"
+    ],
+    "index": 10
   },
   {
     "title": "Fallen Trees",
@@ -191,9 +371,25 @@
     "awards": [],
     "awardsShort": [],
     "tags": ["svelte", "maplibre", "ai2svelte", "bar chart", "trees", "311", "sacramento", "service journalism"],
+    "team": ["<a href='https://www.behance.net/garnerygab0a95#' target='_blank'>Gabby McCall</a> (illustration)"],
     "image": "textures/fade_fallen_trees.webp",
     "url": "https://www.sacbee.com/news/local/article272039637.html",
-    "format": "Journalism"
+    "format": "Journalism",
+    "text": "Open data is a blessing and Sacramento does a very good job with tree-related data and 311 data. After a particularly devastating storm, we worked with the service journalism team to visualize the extent of the damage to trees and structures across the city.",
+    "tools": [
+      "svelte",
+      "ai2svelte",
+      "maplibre",
+      "web components"
+    ],
+    "gallery": [
+      "intro.webp",
+      "map-1.webp",
+      "map-2.webp",
+      "map-3.webp",
+      "map-4.webp"
+    ],
+    "index": 11
   },
   {
     "title": "Ogallala Aquifer",
@@ -205,9 +401,26 @@
     "awards": [],
     "awardsShort": [],
     "tags": ["web components", "aquifer", "environmentalism", "water", "maplibre", "map"],
+    "team": ["<a href='https://www.kansascity.com/profile/219034300/neil-nakahodo' target='_blank'>Neil Nakahodo</a> (illustration)"],
     "image": "",
     "url": "https://www.kansascity.com/news/state/kansas/article281294898.html",
-    "format": "Journalism"
+    "format": "Journalism",
+    "text": "I learned a lot about aquifers in this project and began to understand the extent to which the massive Ogallala Aquifer is being drained. On the tech side, I played around with combining the map scrollytelling with some simple animated dataviz. It was a fun process to create a seamless scroll experience.",
+    "tools": [
+      "svelte",
+      "web components",
+      "maplibre"
+    ],
+    "gallery": [
+      "map-1.webp",
+      "map-2.webp",
+      "map-3.webp",
+      "map-4.webp",
+      "map-5.webp",
+      "map-6.webp",
+      "map-7.webp"
+    ],
+    "index": 12
   },
   {
     "title": "Miami Tree Canopy",
@@ -219,9 +432,26 @@
     "awards": [],
     "awardsShort": [],
     "tags": ["web components", "map", "heat", "maplibre", "demographics", "climate change"],
+    "team": ["<a href='https://www.rachelhandley.com/' target='_blank'>Rachel Handley</a> (illustration)"],
     "image": "",
     "url": "https://www.miamiherald.com/news/local/environment/climate-change/article276415291.html",
-    "format": "Journalism"
+    "format": "Journalism",
+    "text": "Miami is heating up and the local government has been unable to meet its goals of alleviating the heat through planting trees. This project combined a lot of interesting components - watercolor-inspired illustrations, satellite data, demographics, thermal imagery and custom dataviz. It helped push me to create a more fully defined library of modular web components.",
+    "tools": [
+      "svelte",
+      "web components",
+      "maplibre"
+    ],
+    "gallery": [
+      "map-1.webp",
+      "map-2.webp",
+      "map-3.webp",
+      "heat.webp",
+      "thermal.webp",
+      "tree-cover-3.webp",
+      "tree-cover-2.webp"
+    ],
+    "index": 13
   },
   {
     "title": "Private Eyes",
@@ -233,9 +463,24 @@
     "awards": [],
     "awardsShort": [],
     "tags": ["web components", "map", "surveillance", "maplibre", "demographics"],
+    "team": ["<a href='https://www.saljamea.com/' target='_blank'>Sohail Al-Jamea</a> (animation)", "<a href='https://semerriam.github.io/' target='_blank'>Susan Merriam</a> (dataviz)"],
     "image": "",
     "url": "https://www.newsobserver.com/news/state/north-carolina/article286920890.html",
-    "format": "Journalism"
+    "format": "Journalism",
+    "text": "Private surveillance companies track license plates across the country, sometimes granting local police departments an ability to surveil vast amounts of the population. Regulation of its use has gone largely unchecked. I built the theming engine and web component library for the items that power the story's visuals.",
+    "tools": [
+      "svelte",
+      "web components",
+      "maplibre"
+    ],
+    "gallery": [
+      "map-1.webp",
+      "map-2.webp",
+      "map-3.webp",
+      "map-4.webp",
+      "map-5.webp"
+    ],
+    "index": 14
   },
   {
     "title": "9/11/74",
@@ -247,9 +492,21 @@
     "awards": [],
     "awardsShort": [],
     "tags": ["web components", "anniversary", "flight", "memorial", "tragedy", "audio"],
+    "team": ["<a href='https://www.saljamea.com/' target='_blank'>Sohail Al-Jamea</a> (animation)"],
     "image": "",
     "url": "https://www.charlotteobserver.com/news/local/article290982455.html",
-    "format": "Journalism"
+    "format": "Journalism",
+    "text": "A very comprehensive retrospective for the 50th anniversary of a tragic plane crash. Used texture and a documentarian's approach to tell the narrative of survivors, victims and their families. Built a few new components to better incorporate audio snippets into the story.",
+    "tools": [
+      "web components"
+    ],
+    "gallery": [
+      "intro.webp",
+      "plane-1.webp",
+      "plane-2.webp",
+      "plane-3.webp"
+    ],
+    "index": 15
   },
   {
     "title": "Forging Fortnite",
@@ -261,8 +518,20 @@
     "awards": [],
     "awardsShort": [],
     "tags": ["web components", "quiz", "fortnite", "gaming"],
+    "team": ["<a href='https://www.rachelhandley.com/' target='_blank'>Rachel Handley</a> (illustration)", "<a href='https://www.saljamea.com/' target='_blank'>Sohail Al-Jamea</a> (animation)"],
     "image": "",
     "url": "https://www.newsobserver.com/news/business/article292473374.html",
-    "format": "Journalism"
+    "format": "Journalism",
+    "text": "It was nice to have a more light-hearted article to work on. With the Fortnite theme, we added a bunch of Lottie-based animations and other gaming-type design / animation to spruce up the story and give it a delightful feel. Tried to use color and modularity to keep the reader moving through the story and the series.",
+    "tools": [
+      "web components"
+    ],
+    "gallery": [
+      "intro-1.webp",
+      "intro-2.webp",
+      "intro-3.webp",
+      "intro-4.webp"
+    ],
+    "index": 16
   }
 ]

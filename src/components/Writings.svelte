@@ -1,6 +1,5 @@
 <script>
     import { onMount } from "svelte";
-    import { sortByDateString } from "../utils/array.js";
     import { getFullYear } from "../utils/date.js";
     import { base } from '$app/paths'
     import WritingRow from "./WritingRow.svelte";
@@ -36,7 +35,7 @@
         {#if !limit}
             <p class="blurb">Somewhere to collect my thoughts / ideas / ramblings. Mostly write about nature, philosophies of time, geometry, maybe some software topics.</p>
         {/if}
-        {#each sortByDateString(writings, "date") as writing, i}
+        {#each writings.slice().reverse() as writing, i}
             {#if (limit && i < limit) || (!limit)}
                 {#if splitByYear && isUniqueYear(getFullYear(writing.date))}
                     <h3 class="year section-subhead">{getFullYear(writing.date)}</h3>

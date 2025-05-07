@@ -1,7 +1,6 @@
 <script>
     import { onMount } from "svelte";
     import SketchRow from "./SketchRow.svelte";
-    import { sortByDateString } from "../utils/array.js";
     import { getFullYear } from "../utils/date.js";
     import { base } from '$app/paths'
 
@@ -36,7 +35,7 @@
         {#if !limit}
             <p class="blurb">Little creative code ideas that could sprout into something down the line. Goal is to get something done quickly, let it be rough around the edges, but do just enough to create a compelling idea.</p>
         {/if}
-        {#each sortByDateString(sketches, "date") as sketch, i}
+        {#each sketches.slice().reverse() as sketch, i}
             {#if (limit && i < limit) || (!limit)}
                 {#if splitByYear && isUniqueYear(getFullYear(sketch.date))}
                     <h3 class="year section-subhead">{getFullYear(sketch.date)}</h3>
