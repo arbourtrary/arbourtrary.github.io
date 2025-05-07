@@ -9,11 +9,11 @@ export async function load({ params, fetch }) {
   const prevIndex = clamp(poemIndex - 1, 0, poems.length - 1);
   const nextIndex = clamp(poemIndex + 1, 0, poems.length - 1);
   
-  poem["prev"] = (prevIndex !== poemIndex) ? poems[prevIndex] : "";
-  poem["next"] = (nextIndex !== poemIndex) ? poems[nextIndex] : "";
+  poem.prev = (prevIndex !== poemIndex) ? poems[prevIndex] : "";
+  poem.next = (nextIndex !== poemIndex) ? poems[nextIndex] : "";
   
   const response = await fetch(`/data/poems/${poem.slug}.json`);
-  poem["content"] = await response.json();
+  poem.content = await response.json();
 
   if (poem) {
     return {poem};
