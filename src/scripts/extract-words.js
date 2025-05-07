@@ -97,8 +97,8 @@ function generateWordList(directories) {
 // Example usage
 try {
     const result = generateWordList([
-        '../../static/data/sketches',
-        '../../static/data/writings'
+        '../data/sketches',
+        '../data/writings'
         // Add more directories as needed
     ]);
     
