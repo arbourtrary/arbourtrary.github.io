@@ -17,11 +17,11 @@
 	let shuffled;
 	let initialData;
 	let n = 19;
-	let gap = 4;
+	let gap = 5;
 	let numRows = 5;
 	let honeycombAspectRatio = 0.7562923524;
 	let cellAspectRatio = 0.6329113924;
-	let maxCellWidth = 110; // pixels
+	let maxCellWidth = 85; // pixels
 
     onMount(async () => {
 		const data = JSON.parse(JSON.stringify(music));
