@@ -1,4 +1,7 @@
 import { marked } from "marked";
+import writings from "../../../data/poems.json";
+import sketches from "../../../data/poems.json";
+import poems from "../../../data/poems.json";
 
 export const prerender = true
 
@@ -26,8 +29,6 @@ export async function GET(event) {
   })
 
   // writings
-  const responseWriting = await event.fetch('/data/writings.json');
-  const writings = await responseWriting.json();
   writings.forEach(writing => writing.category = "Article");
   writings.forEach(writing => writing.route = "writings");
   const writingTexts = await Promise.all(writings.map(writing => getText(event, writing.filename)));
@@ -35,8 +36,6 @@ export async function GET(event) {
   writings.forEach((writing,index) => writing.marked = writingMarkedTexts[index]);
 
   // sketches
-  const responseSketch = await event.fetch('/data/sketches.json');
-  const sketches = await responseSketch.json();
   sketches.forEach(sketch => sketch.category = "Sketch");
   sketches.forEach(sketch => sketch.route = "sketches");
   const sketchTexts = await Promise.all(sketches.map(sketch => getText(event, sketch.filename)));
@@ -44,8 +43,6 @@ export async function GET(event) {
   sketches.forEach((sketch,index) => sketch.marked = sketchMarkedTexts[index]);
 
   // poems
-  const responsePoem = await event.fetch('/data/poems.json');
-  const poems = await responsePoem.json();
   poems.forEach(poem => poem.category = "Poem");
   poems.forEach(poem => poem.route = "poems");
   const poemTexts = await Promise.all(poems.map(poem => getJSON(event, `/data/poems/${poem.slug}.json`)));
