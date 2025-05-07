@@ -1,6 +1,5 @@
 <script>
     import { onMount } from "svelte";
-    import { sortByDateString } from "../utils/array.js";
     import { getFullYear } from "../utils/date.js";
     import { base } from '$app/paths'
     import PoemRow from "./PoemRow.svelte";
@@ -36,7 +35,7 @@
         {#if !limit}
             <p class="blurb">I can't say these are all good or worth your time. I can say I wrote them, sometimes out of reluctance. Sometimes in rapture.</p>
         {/if}
-        {#each sortByDateString(poems, "date") as poem, i}
+        {#each poems.toReversed() as poem, i}
             {#if (limit && i < limit) || (!limit)}
                 {#if splitByYear && isUniqueYear(getFullYear(poem.date))}
                     <h3 class="year section-subhead">{getFullYear(poem.date)}</h3>
