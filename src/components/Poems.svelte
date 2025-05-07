@@ -35,7 +35,7 @@
         {#if !limit}
             <p class="blurb">I can't say these are all good or worth your time. I can say I wrote them, sometimes out of reluctance. Sometimes in rapture.</p>
         {/if}
-        {#each poems.toReversed() as poem, i}
+        {#each poems.slice().reverse() as poem, i}
             {#if (limit && i < limit) || (!limit)}
                 {#if splitByYear && isUniqueYear(getFullYear(poem.date))}
                     <h3 class="year section-subhead">{getFullYear(poem.date)}</h3>
