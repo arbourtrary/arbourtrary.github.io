@@ -1,6 +1,6 @@
 <script>
     import { base } from '$app/paths'
-    let introText = `I'm a <span style="color: var(--blue)">creative developer</span> who enjoys making code sketches and writing about <span style="color: var(--green)">nature</span>, <span style="color: var(--orange)">mathematics</span> &amp; <span style="color: var(--purple)">poetry</span>`
+    let introText = `I'm a <span style="color: var(--blue)">creative developer</span> who enjoys musing about <span style="color: var(--green)">nature</span>, <span style="color: var(--orange)">mathematics</span> &amp; <span style="color: var(--purple)">poetry</span>`
     let imageText = "a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"
 </script>
 
@@ -218,7 +218,7 @@
         margin: 0 auto;
         padding-bottom: 5px;
         color: var(--color-1);
-        max-width: 420px;
+        max-width: 335px;
         margin-top: 5px;
         opacity: 1;
         line-height: 1.25;
@@ -259,7 +259,7 @@
         .intro-description {
             padding-top: 0px;
             margin: 10px;
-            max-width: calc(100% - 20px);
+            max-width: min(calc(100% - 20px), 310px)
         }
         .img-container {
             margin: 0 auto;
