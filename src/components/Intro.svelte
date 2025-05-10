@@ -218,7 +218,7 @@
         margin: 0 auto;
         padding-bottom: 5px;
         color: var(--color-1);
-        max-width: 335px;
+        width: 340px;
         margin-top: 5px;
         opacity: 1;
         line-height: 1.25;
