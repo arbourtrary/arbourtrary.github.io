@@ -52,11 +52,11 @@
 <!-- Sections -->
 <Intro/>
 <hr>
-<Sketches
-    sketches={sketchesData}
-/>
 <Poems
     poems={poemsData}
+/>
+<Sketches
+    sketches={sketchesData}
 />
 <Writings
     writings={writingsData}
