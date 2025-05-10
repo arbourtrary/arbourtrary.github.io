@@ -146,7 +146,7 @@
       animation-iteration-count: infinite;
     }
     .intro-intro {
-        width: 400px;
+        width: 360px;
         display: flex;
         flex-direction: column;
         margin: auto 0;
@@ -259,7 +259,7 @@
         .intro-description {
             padding-top: 0px;
             margin: 10px;
-            max-width: min(calc(100% - 20px), 310px)
+            max-width: min(calc(100% - 20px), 335px)
         }
         .img-container {
             margin: 0 auto;
@@ -283,6 +283,9 @@
     @media screen and (max-width: 500px) {
         .intro-header {
             font-size: 26px;
+        }
+        .intro-description {
+            max-width: min(calc(100% - 20px), 310px)
         }
     }
 </style>
