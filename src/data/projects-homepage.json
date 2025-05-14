@@ -28,8 +28,7 @@
       "poem-wheel-4.webp",
       "poem-wheel-5.webp",
       "poem-wheel-6.webp"
-    ],
-    "index": 0
+    ]
   },
   {
     "title": "Revival",
@@ -63,8 +62,7 @@
       "humanity-left.webp",
       "humanity-right.webp",
       "spanning-trees.webp"
-    ],
-    "index": 1
+    ]
   },
   {
     "title": "NBA Recordigami",
@@ -89,8 +87,7 @@
       "mavericks.webp",
       "bulls.webp",
       "supersonics.webp"
-    ],
-    "index": 2
+    ]
   },
   {
     "title": "Around the World",
@@ -117,8 +114,7 @@
       "puerto-rico.webp",
       "santo-domingo.webp",
       "texas.webp"
-    ],
-    "index": 3
+    ]
   },
   {
     "title": "Linguistics",
@@ -144,8 +140,7 @@
       "graphemes.webp",
       "phonemes-graphemes.webp",
       "ukulele.webp"
-    ],
-    "index": 4
+    ]
   },
   {
     "title": "Puerto Rican Migration",
@@ -169,8 +164,7 @@
       "puerto-rico.webp",
       "mayaguez.webp",
       "migration.webp"
-    ],
-    "index": 5
+    ]
   },
   {
     "title": "House of Cards",
@@ -217,8 +211,7 @@
       "schematic-6.webp",
       "aftermath.webp",
       "cards.webp"
-    ],
-    "index": 6
+    ]
   },
   {
     "title": "Cut Off",
@@ -251,8 +244,7 @@
       "grocery.webp",
       "bargain.webp",
       "triptych.webp"
-    ],
-    "index": 7
+    ]
   },
   {
     "title": "Security for Sale",
@@ -286,8 +278,7 @@
       "map-drone.webp",
       "map-triangle.webp",
       "map-nc-dots.webp"
-    ],
-    "index": 8
+    ]
   },
   {
     "title": "Big Poultry",
@@ -316,8 +307,7 @@
         "intro-6.webp",
         "intro-7.webp",
         "intro-8.webp"
-    ],
-    "index": 9
+    ]
   },
   {
     "title": "Made in Miami",
@@ -358,8 +348,7 @@
       "particles-2.webp",
       "particles-3.webp",
       "particles-4.webp"
-    ],
-    "index": 10
+    ]
   },
   {
     "title": "Fallen Trees",
@@ -388,8 +377,35 @@
       "map-2.webp",
       "map-3.webp",
       "map-4.webp"
+    ]
+  },
+  {
+    "title": "Devalos Perkins",
+    "slug": "devalos-perkins",
+    "publication": "Charlotte Observer",
+    "description": "Purgatory behind bars: He’s spent 11 years in jail — and no one knows if he’s guilty",
+    "year": "2023",
+    "date": "07/13/23",
+    "awards": [],
+    "awardsShort": [],
+    "tags": ["web components", "ai2svelte"],
+    "team": ["<a href='https://www.rachelhandley.com/' target='_blank'>Rachel Handley</a> (illustration)", "<a href='https://www.behance.net/garnerygab0a95#' target='_blank'>Gabby McCall</a> (design)"],
+    "image": "",
+    "url": "https://www.charlotteobserver.com/news/local/crime/article275067396.html",
+    "format": "Journalism",
+    "text": "With difficult, highly sensitive topics, it often helps to employ illustration and symbolism. In this series, I worked with very talented illustrators and designers to create a page style that evokes the pain of solitary confinement.",
+    "tools": [
+      "web components",
+      "ai2svelte"
     ],
-    "index": 11
+    "gallery": [
+      "lead-1.webp",
+      "lead-2.webp",
+      "lead-3.webp",
+      "lead-4.webp",
+      "dataviz.webp",
+      "timeline.webp"
+    ]
   },
   {
     "title": "Ogallala Aquifer",
@@ -419,8 +435,7 @@
       "map-5.webp",
       "map-6.webp",
       "map-7.webp"
-    ],
-    "index": 12
+    ]
   },
   {
     "title": "Miami Tree Canopy",
@@ -450,8 +465,7 @@
       "thermal.webp",
       "tree-cover-3.webp",
       "tree-cover-2.webp"
-    ],
-    "index": 13
+    ]
   },
   {
     "title": "Private Eyes",
@@ -479,8 +493,7 @@
       "map-3.webp",
       "map-4.webp",
       "map-5.webp"
-    ],
-    "index": 14
+    ]
   },
   {
     "title": "9/11/74",
@@ -489,7 +502,9 @@
     "description": "It should have been an easy flight to Charlotte. But then something went horribly wrong.",
     "year": "2024",
     "date": "9/11/24",
-    "awards": [],
+    "awards": [
+      "<a href='https://www.headlinerawards.org/wp-content/uploads/2025/04/2025-Headliner-Awards-Winners.pdf' target='_blank'>National Headliner Award</a>"
+    ],
     "awardsShort": [],
     "tags": ["web components", "anniversary", "flight", "memorial", "tragedy", "audio"],
     "team": ["<a href='https://www.saljamea.com/' target='_blank'>Sohail Al-Jamea</a> (animation)"],
@@ -505,8 +520,7 @@
       "plane-1.webp",
       "plane-2.webp",
       "plane-3.webp"
-    ],
-    "index": 15
+    ]
   },
   {
     "title": "Forging Fortnite",
@@ -531,7 +545,6 @@
       "intro-2.webp",
       "intro-3.webp",
       "intro-4.webp"
-    ],
-    "index": 16
+    ]
   }
 ]
