@@ -215,7 +215,7 @@
         font-family: var(--serif);
         font-weight: 300;
         text-align: left;
-        margin: 0 auto;
+        margin: 5px auto 0 0;
         padding-bottom: 5px;
         color: var(--color-1);
         width: 340px;
