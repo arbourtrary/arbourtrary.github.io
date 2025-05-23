@@ -218,7 +218,7 @@
         margin: 5px auto 0 0;
         padding-bottom: 5px;
         color: var(--color-1);
-        width: 340px;
+        width: min(340px, 100%);
         margin-top: 5px;
         opacity: 1;
         line-height: 1.25;

@@ -1,5 +1,6 @@
 :root {
     --serif: "IM Fell English", "Vollkorn", serif;
+    -webkit-font-smoothing: antialiased;
     --selection-bg-color: #CBC3B4;
     --selection-color: #FFFFFF;
     --bg-color: #F5F2EB;
