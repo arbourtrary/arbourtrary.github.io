@@ -216,6 +216,78 @@ Anyhow I've collected some examples of the beige website here and I'll keep addi
       </figure>
     </a>
   </div>
+
+  <div class="image-container">
+    <a href="https://www.thibaudallie.com/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/thibaudallie.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://anhvn.com/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/anhvn.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://kupajo.com/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/kupajo.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://public.work/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/public.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://app.wordware.ai/lp" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/wordware.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://anvaka.github.io/city-roads" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/city-roads.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://jzhao.xyz/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/jzhao.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://www.chloeyan.me/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/chloeyan.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://smartupvisuals.com/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/smartupvisuals.webp"/>
+      </figure>
+    </a>
+  </div>
 </div>
 
 
