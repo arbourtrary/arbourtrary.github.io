@@ -1,0 +1,277 @@
+Around 2020, I noticed beige website design popping up. And when I started my digital garden in 2023, I chose that direction. My favorite examples of the genre pair up classic / vintage serif fonts with illustrations. I think the idea is simply to evoke old books and human writing.
+
+In the past couple years, led by Anthropic, a handful of LLM-related websites have co-opted the design style. Their branding in general aims to give the machine an implied humanity. Sometimes I wonder if that's how they've tricked me into using Claude more than other models...
+
+Anyhow I've collected some examples of the beige website here and I'll keep adding them as I find them. Admittedly, a couple might lean more gray when I see them in context here.
+
+<h3>Examples</h3>
+
+<div class="gallery">
+
+  <div class="image-container">
+    <a href="https://chartogne-taillet.com/en" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/chartogne-taillet.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://www.readthesequences.com/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/readthesequences.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://www.park.photos/?ref=onepagelove" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/park.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://www.futurelibrary.no/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/futurelibrary.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://www.fromjason.xyz/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/fromjason.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://asteriskmag.com/issues/01" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/asteriskmag.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://manuelmoreale.com/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/manuelmoreale.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://ai-2027.com/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/ai-2027.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://maggieappleton.com/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/maggieappleton.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://strut.so/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/strut.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://daylightcomputer.com/faq" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/daylightcomputer.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://www.lesswrong.com/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/less-wrong.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://veleyross.wedding/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/veleyross.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://matrix.uhoreg.ca/stateres/tufte-css/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/tufte-css.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://habby.day/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/habby.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://garden.sunils.in/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/sunil.webp"/>
+      </figure>
+    </a>
+  </div>
+
+
+  <div class="image-container">
+    <a href="https://www.anthropic.com/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/anthropic.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://vale.rocks/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/vale.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://fi-le.net/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/fi-le.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://paulstamatiou.com/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/paulstamatiou.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://spectrum.ieee.org/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/spectrum-ieee.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://nicolasbouliane.com/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/nicolasbouliane.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://piccalil.li/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/piccalilli.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://kayserifserif.place/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/kayserifserif.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://albertofortin.com/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/albertofortin.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://www.thewayofcode.com/#2" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/thewayofcode.webp"/>
+      </figure>
+    </a>
+  </div>
+</div>
+
+
+
+<style>
+.gallery {
+    width: min(600px, 90vw);
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  .gallery {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+  }
+  .gallery > .image-container {
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    border: 1px solid transparent;
+    height: 100px;
+    cursor: pointer;
+    width: min(600px, 100%);
+    margin: 0 auto;
+    border: 1px solid var(--color-3);
+  }
+  .gallery > .image-container a {
+    width: 100%;
+    padding: 0px;
+  }
+  .image-container:hover {
+    border: 1px solid var(--color-1);
+  }
+  .image-container figure {
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+    opacity: 1;
+    margin: 0;
+    transition: all 0.5s ease;
+    pointer-events: none;
+  }
+  .image-container img {
+    position: absolute;
+    top: 0%;
+    transform: translate(0, 0%);
+    width: 100%;
+    height: auto;
+    transition: all 0.5s ease;
+    pointer-events: none;
+  }
+</style>
