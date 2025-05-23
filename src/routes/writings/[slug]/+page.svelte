@@ -36,14 +36,14 @@
     <meta property='og:url' content={`https://arbourtrary.com/writings/${data.writing.slug}`} />
     <meta property='og:description' content={data.writing.description} />
     <meta property='og:locale' content='en_US' />
-    <meta property='og:image' content={data.writing.socialImage} />
+    <meta property='og:image' content={`https://arbourtrary.com/images/${data.writing.socialImage}`} />
     
     <meta name='twitter:card' content='summary_large_image' />
     <meta name='twitter:site' content={`https://arbourtrary.com/writings/${data.writing.slug}`} />
     <meta name='twitter:creator' content='arbourtrary' />
     <meta name='twitter:title' content={data.writing.title} />
     <meta name='twitter:description' content={data.writing.description} />
-    <meta name='twitter:image:src' content={data.writing.socialImage} />
+    <meta name='twitter:image:src' content={`https://arbourtrary.com/images/${data.writing.socialImage}`} />
 </svelte:head>
 <svelte:window bind:scrollY/>
 
