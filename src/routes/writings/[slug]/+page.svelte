@@ -19,6 +19,10 @@
     onMount(async () => {
         body = document.body;
     })
+
+    function formatContent(content) {
+        return marked(content.replaceAll('src="/images', `src="${base}/images`))
+    }
         
     $: body && document.documentElement.style.setProperty('--highlight', data.writing.highlight);
     $: scrollProgress = body && clamp(scrollY / (body.scrollHeight - window.innerHeight), 0, 1)
@@ -110,7 +114,7 @@
 </div>
 <div class="writ">
     <div class="title">{data.writing.title}</div>
-    <div class="content">{@html marked(data.writing.content)}</div>
+    <div class="content">{@html formatContent(data.writing.content)}</div>
 </div>
 <div class="more">
     {#if data.writing.prev}
