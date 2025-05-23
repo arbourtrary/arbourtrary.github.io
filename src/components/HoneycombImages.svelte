@@ -199,13 +199,13 @@
 		opacity: 1;
 	}
 	.cell:hover img {
-		filter: drop-shadow(0px 0px 0.5px var(--color-3));
+		filter: drop-shadow(0px 0px 0.5px var(--color-1));
 	}
 	img {
 		width: 100%;
 		height: 100%;
 		transition: all 800ms ease;
-		filter: drop-shadow(0px 0px 1px var(--color-3));
+		filter: drop-shadow(0px 0px 0px var(--color-1));
 	}
     h2 svg {
         position: relative;

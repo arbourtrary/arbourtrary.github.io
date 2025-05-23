@@ -487,6 +487,7 @@
 		width: 90px;
 		opacity: var(--book-opacity);
 		transition: all 500ms ease-out;
+		filter: drop-shadow(0px 0px 0px var(--color-1));
 	}
 	.book img:hover {
 		opacity: 1;
