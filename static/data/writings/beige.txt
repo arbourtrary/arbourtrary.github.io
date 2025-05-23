@@ -288,6 +288,21 @@ Anyhow I've collected some examples of the beige website here and I'll keep addi
       </figure>
     </a>
   </div>
+  <div class="image-container">
+    <a href="https://kontinentalist.com/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/kontinentalist.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://lapis-story.com/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/lapis.webp"/>
+      </figure>
+    </a>
+  </div>
 </div>
 
 
