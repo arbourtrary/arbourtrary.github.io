@@ -303,6 +303,71 @@ Anyhow I've collected some examples of the beige website here and I'll keep addi
       </figure>
     </a>
   </div>
+
+  <div class="image-container">
+    <a href="https://blog.singleton.io/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/singleton.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://maharshi.bearblog.dev/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/maharshi.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://justinpombrio.net/archive/penrose-maze/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/justinpombrio.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://www.c82.net/euclid/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/euclid.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://silentpoems.net/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/silentpoems.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://worksinprogress.co/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/worksinprogress.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://meyerweb.com/eric/thoughts/2023/12/06/three-decades-of-html/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/meyerweb.webp"/>
+      </figure>
+    </a>
+  </div>
+
+  <div class="image-container">
+    <a href="https://andrewwalpole.com/" target="_blank">
+      <figure>
+        <img class="filtered-image" src="/images/writings/beige/andrewwalpole.webp"/>
+      </figure>
+    </a>
+  </div>
+
 </div>
 
 
