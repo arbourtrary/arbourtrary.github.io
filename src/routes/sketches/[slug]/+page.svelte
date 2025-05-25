@@ -17,14 +17,14 @@
     <meta property='og:url' content={`https://arbourtrary.com/sketches/${data.sketch.slug}`} />
     <meta property='og:description' content={data.sketch.description} />
     <meta property='og:locale' content='en_US' />
-    <meta property='og:image' content={data.sketch.socialImage} />
+    <meta property='og:image' content={`https://arbourtrary.com/images/${data.sketch.socialImage}`} />
     
     <meta name='twitter:card' content='summary_large_image' />
     <meta name='twitter:site' content={`https://arbourtrary.com/sketches/${data.sketch.slug}`} />
     <meta name='twitter:creator' content='arbourtrary' />
     <meta name='twitter:title' content={data.sketch.title} />
     <meta name='twitter:description' content={data.sketch.description} />
-    <meta name='twitter:image:src' content={data.sketch.socialImage} />
+    <meta name='twitter:image:src' content={`https://arbourtrary.com/images/${data.sketch.socialImage}`} />
 </svelte:head>
 
 <Header position="fixed"/>
@@ -100,48 +100,6 @@
     	flex-direction: column;
     	justify-content: center;
         font-family: var(--serif);
-    }
-    .header {
-        height: 41px;
-        margin: 0 0 10px 0;
-        width: 100%;
-        display: flex;
-        -webkit-display: flex;
-        position: fixed;
-        top: 0;
-        background: var(--bg-color);
-        justify-content: center;
-        z-index: 99999999;
-        padding: 10px;
-        box-sizing: border-box;
-        border-bottom:  0.5px solid var(--color-2);
-    }
-    .home {
-        position: relative;
-        display: flex;
-        align-items: center;
-        padding-left: 5px;
-        width: 29px;
-    }
-    .home svg {
-        height: 20px;
-        width: 20px;
-        color: var(--color-1);
-    }
-    .home svg:hover {
-        cursor: pointer;
-        color: var(--color-1);
-        stroke-width: 2;
-    }
-    .image-container {
-        position: relative;
-        height: 100%;
-        margin: auto -6px;
-        display: flex;
-        align-items: center;
-        flex: 1;
-        width: 100%;
-        justify-content: center;
     }
     :global(.notes a) {
         color: var(--color-1);

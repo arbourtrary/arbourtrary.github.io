@@ -8,12 +8,12 @@
 		"preview": "vite preview --host"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^2.0.0",
-		"@sveltejs/kit": "^1.16.3",
+		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/kit": "^2.0.0",
 		"rollup-plugin-visualizer": "^5.14.0",
-		"svelte": "^3.54.0",
+		"svelte": "^5.0.0",
 		"three": "^0.144.0",
-		"vite": ">=4.3.0"
+		"vite": "^5.0.0"
 	},
 	"type": "module",
 	"dependencies": {
