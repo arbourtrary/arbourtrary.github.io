@@ -9,17 +9,17 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/adapter-static": "^3.0.8",
 		"@sveltejs/kit": "^2.0.0",
 		"rollup-plugin-visualizer": "^5.14.0",
 		"svelte": "^5.0.0",
 		"three": "^0.144.0",
-		"vite": "^5.0.0"
+		"vite": "^6.0.0"
 	},
 	"type": "module",
 	"dependencies": {
 		"@fontsource/im-fell-english": "^4.5.8",
 		"@fontsource/vollkorn": "^5.1.1",
-		"@sveltejs/adapter-static": "^2.0.2",
 		"marked": "^5.0.4",
 		"n": "^9.0.1"
 	}

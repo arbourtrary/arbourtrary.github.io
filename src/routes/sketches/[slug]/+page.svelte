@@ -133,8 +133,6 @@
     :global(.italic) {
         font-style: italic;
     }
-
-    /* TODO: Coalescing Text - find home for specific CSS elsewhere */
     :global(.plosives span) {
         filter: drop-shadow(0 0 5px var(--red)) drop-shadow(0 0 10px var(--red)) drop-shadow(0 0 15px var(--red));
     }
@@ -165,7 +163,7 @@
         margin-bottom: 30px;
         max-width: 600px;
         padding-top: 30px;
-        border-top: 1px solid var(--color-3);;
+        border-top: 1px solid var(--color-3);
     }
     .more a {
         display: flex;
