@@ -31,7 +31,9 @@
                     </svg>
                 {/if}
             </h2>
-            <data>{projects.length}</data>
+            {#if !limit}
+                <data>{projects.length}</data>
+            {/if}
         </a>
         {#if !limit}
             <p class="blurb">Kind of a catch-all category of various things I've worked on - articles, websites, self-published books of poems.</p>

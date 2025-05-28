@@ -31,7 +31,9 @@
                     </svg>
                 {/if}
             </h2>
-            <data>{poems.length}</data>
+            {#if !limit}
+                <data>{poems.length}</data>
+            {/if}
         </a>
         {#if !limit}
             <p class="blurb">I can't say these are all good or worth your time. I can say I wrote them, sometimes out of reluctance. Sometimes in rapture.</p>

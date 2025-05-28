@@ -31,7 +31,9 @@
                     </svg>
                 {/if}
             </h2>
-            <data>{sketches.length}</data>
+            {#if !limit}
+                <data>{sketches.length}</data>
+            {/if}
         </a>
         {#if !limit}
             <p class="blurb">Little creative code ideas that could sprout into something down the line. Goal is to get something done quickly, let it be rough around the edges, but do just enough to create a compelling idea.</p>

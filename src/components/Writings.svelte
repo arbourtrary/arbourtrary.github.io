@@ -31,7 +31,9 @@
                     </svg>
                 {/if}
             </h2>
-            <data>{writings.length}</data>
+            {#if !limit}
+                <data>{writings.length}</data>
+            {/if}
         </a>
         {#if !limit}
             <p class="blurb">Somewhere to collect my thoughts / ideas / ramblings. Mostly write about nature, philosophies of time, geometry, maybe some software topics.</p>
