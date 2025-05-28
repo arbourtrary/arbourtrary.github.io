@@ -31,6 +31,7 @@
                     </svg>
                 {/if}
             </h2>
+            <data>{poems.length}</data>
         </a>
         {#if !limit}
             <p class="blurb">I can't say these are all good or worth your time. I can say I wrote them, sometimes out of reluctance. Sometimes in rapture.</p>
@@ -71,6 +72,17 @@
         text-decoration: none !important;
         transition: all 0.3s ease;
         width: fit-content;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    .poems-header data {
+        font-size: 16px;
+        font-family: "Vollkorn";
+        font-weight: 400;
+        color: var(--color-2);
+        margin-right: 5px;
     }
     .poems-header:hover h2 {
         color: var(--color-1);

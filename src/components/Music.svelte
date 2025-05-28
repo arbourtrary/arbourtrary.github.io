@@ -11,6 +11,7 @@
 	    <div class="songs-container">
 	        <div class="songs-header">
 	            <h2 class="section-header">Music</h2>
+                <data>{music.length}</data>
 	        </div>
 
             <p class="blurb">There's a bunch of songs that I've played on repeat over the years. And I've compiled as many as I could remember. They kinda chronicle my musical journey as my knowledge and taste steadily expanded. A lot of nostalgia creating this - also made a Spotify <a href="https://open.spotify.com/playlist/49MNODTluYpP4z6s0CccPz?si=9e9c9c962cc344de" target="_blank">playlist</a> to accompany the list.</p>
@@ -53,7 +54,17 @@
     .songs-header {
         text-decoration: none;
         transition: all 0.3s ease;
-        width: fit-content;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    .songs-header data {
+        font-size: 16px;
+        font-family: "Vollkorn";
+        font-weight: 400;
+        color: var(--color-2);
+        margin-right: 5px;
     }
     .blurb {
         font-family: var(--serif);

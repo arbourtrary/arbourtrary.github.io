@@ -15,6 +15,7 @@
 	    <div class="books-container">
 	        <div class="books-header">
 	            <h2 class="section-header">Books</h2>
+                <data>{books.length}</data>
 	        </div>
 
             <p class="blurb">Making a list of books that have really stuck with me, changed my outlook, inspired me, surprised me. The book image effect comes from the fascinating art of <a href="https://www.kensukekoike.com/" target="_blank">Kensuke Koike</a> - which I translated into code.</p>
@@ -57,7 +58,17 @@
     .books-header {
         text-decoration: none;
         transition: all 0.3s ease;
-        width: fit-content;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    .books-header data {
+        font-size: 16px;
+        font-family: "Vollkorn";
+        font-weight: 400;
+        color: var(--color-2);
+        margin-right: 5px;
     }
     .blurb {
         font-family: var(--serif);

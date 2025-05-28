@@ -31,6 +31,7 @@
                     </svg>
                 {/if}
             </h2>
+            <data>{projects.length}</data>
         </a>
         {#if !limit}
             <p class="blurb">Kind of a catch-all category of various things I've worked on - articles, websites, self-published books of poems.</p>
@@ -70,7 +71,17 @@
         cursor: pointer;
         text-decoration: none !important;
         transition: all 0.3s ease;
-        width: fit-content;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    .projects-header data {
+        font-size: 16px;
+        font-family: "Vollkorn";
+        font-weight: 400;
+        color: var(--color-2);
+        margin-right: 5px;
     }
     .projects-header:hover h2 {
         color: var(--color-1);

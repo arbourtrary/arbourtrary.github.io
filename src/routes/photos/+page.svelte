@@ -1,89 +1,86 @@
+<script>
+  import Header from "../../components/Header.svelte"
+  import Music from "../../components/Music.svelte"
+  import Footer from '../../components/Footer.svelte';
+  import photoData from "../../data/photos.json";
+  import { onMount } from "svelte";
 
+  let DEFAULT_HEIGHT = 40;
+  let MAX_WIDTH = 800;
+  let shouldHydrate = false;
+  let gallery;
 
+  let expand;
+  let collapse;
+  let expanded = false;
 
-  <script>
-    import Header from "../../components/Header.svelte"
-    import Music from "../../components/Music.svelte"
-    import Footer from '../../components/Footer.svelte';
-    import photoData from "../../data/photos.json";
-    import { onMount } from "svelte";
+  onMount(() => {
+      shouldHydrate = true;
+  })  
 
-    let DEFAULT_HEIGHT = 40;
-    let MAX_WIDTH = 800;
-    let shouldHydrate = false;
-    let gallery;
+  function updateHeight(img, parent) {
+    if (img?.complete) {
+      const naturalRatio = img.naturalHeight / img.naturalWidth;
+      const isActive = parent.classList.contains('active');
 
-    let expand;
-    let collapse;
-    let expanded = false;
+      const baseWidth = window.innerWidth > MAX_WIDTH ? parent.parentNode.offsetWidth : parent.offsetWidth;
+      const height = baseWidth * naturalRatio;
+      const figure = parent.querySelector("figure");
 
-    onMount(() => {
-        shouldHydrate = true;
-    })  
-
-    function updateHeight(img, parent) {
-      if (img?.complete) {
-        const naturalRatio = img.naturalHeight / img.naturalWidth;
-        const isActive = parent.classList.contains('active');
-
-        const baseWidth = window.innerWidth > MAX_WIDTH ? parent.parentNode.offsetWidth : parent.offsetWidth;
-        const height = baseWidth * naturalRatio;
-        const figure = parent.querySelector("figure");
-
-        parent.style.height = isActive ? `${height}px` : `${DEFAULT_HEIGHT}px`;
-        figure.style.height = isActive ? `${height}px` : `${DEFAULT_HEIGHT}px`;
-      }
+      parent.style.height = isActive ? `${height}px` : `${DEFAULT_HEIGHT}px`;
+      figure.style.height = isActive ? `${height}px` : `${DEFAULT_HEIGHT}px`;
     }
-      
-    function handleClick(e, index) {
-      const parent = e.target;
-      const img = parent.querySelector("img");
-      e.target.classList.toggle('active');
-      updateHeight(img, parent);
-    }
+  }
+    
+  function handleClick(e, index) {
+    const parent = e.target;
+    const img = parent.querySelector("img");
+    e.target.classList.toggle('active');
+    updateHeight(img, parent);
+  }
 
-    function expandFigures() {
-        expand.classList.remove("active");  
-        collapse.classList.add("active");
-        const figures = [...gallery.querySelectorAll(".image-container")];
-        figures.forEach(figure => {
-            figure.classList.add('active');
-            const img = figure.querySelector("img");
-            updateHeight(img, figure);
-            expanded = true;
-        })
-    }
+  function expandFigures() {
+      expand.classList.remove("active");  
+      collapse.classList.add("active");
+      const figures = [...gallery.querySelectorAll(".image-container")];
+      figures.forEach(figure => {
+          figure.classList.add('active');
+          const img = figure.querySelector("img");
+          updateHeight(img, figure);
+          expanded = true;
+      })
+  }
 
-    function collpaseFigures() {
-        expand.classList.add("active");  
-        collapse.classList.remove("active");
-        const figures = [...gallery.querySelectorAll(".image-container")];
-        figures.forEach(figure => {
-            figure.classList.remove('active');
-            const img = figure.querySelector("img");
-            updateHeight(img, figure);
-        })
-        expanded = false;
-    }
+  function collpaseFigures() {
+      expand.classList.add("active");  
+      collapse.classList.remove("active");
+      const figures = [...gallery.querySelectorAll(".image-container")];
+      figures.forEach(figure => {
+          figure.classList.remove('active');
+          const img = figure.querySelector("img");
+          updateHeight(img, figure);
+      })
+      expanded = false;
+  }
 
-    function handleExpansion() {
-        expanded ? collpaseFigures() : expandFigures();
-    }
+  function handleExpansion() {
+      expanded ? collpaseFigures() : expandFigures();
+  }
 
-    function resetFigureStyle() {
-        const figures = [...gallery.querySelectorAll(".image-container")];
-        figures.forEach(figure => {
-            if (figure) {
-                figure.removeAttribute('style');
-                figure.classList.remove("active");
-            }
-        });
-    }
+  function resetFigureStyle() {
+      const figures = [...gallery.querySelectorAll(".image-container")];
+      figures.forEach(figure => {
+          if (figure) {
+              figure.removeAttribute('style');
+              figure.classList.remove("active");
+          }
+      });
+  }
 
-    $: if (gallery) {
-        resetFigureStyle();
-        collpaseFigures();
-    }
+  $: if (gallery) {
+      resetFigureStyle();
+      collpaseFigures();
+  }
 </script>
 
 <svelte:head>
@@ -110,7 +107,10 @@
 
 
     <div id="photos-homepage">
-      <h2 class="section-header s-7zkFwywqcCts">Photos</h2>
+      <div class="photo-header">
+        <h2 class="section-header s-7zkFwywqcCts">Photos</h2>
+        <data>{photoData.length}</data>
+      </div>
       <p class="blurb">As long as I can remember, I've enjoyed taking photos mostly of nature - trees, oceans, lakes, flowers. Sometimes there's cool geometry in a building or a bridge. The blurred, grainy style is inspired by this <a href='https://photogradient.com/' target='_blank'>Photo Gradient</a> tool by <a href='https://www.danield.design/' target='_blank'>Daniel Destanfis</a>.</p>
     </div>
     <div class="gallery-header">
@@ -175,6 +175,19 @@
   .section-header {
     margin-left: 0px;
   }
+  .photo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 3px;
+  }
+  .photo-header data {
+    font-size: 16px;
+    font-family: "Vollkorn";
+    font-weight: 400;
+    color: var(--color-2);
+  }
   .gallery-header {
     display: flex;
     justify-content: space-between;
@@ -204,7 +217,6 @@
   }
   .subsection-header {
       font-size: 0.8rem;
-      padding-bottom: 3px;
         width: fit-content;
         margin: 0;
         font-family: "Vollkorn";

@@ -31,6 +31,7 @@
                     </svg>
                 {/if}
             </h2>
+            <data>{writings.length}</data>
         </a>
         {#if !limit}
             <p class="blurb">Somewhere to collect my thoughts / ideas / ramblings. Mostly write about nature, philosophies of time, geometry, maybe some software topics.</p>
@@ -70,7 +71,17 @@
         cursor: pointer;
         text-decoration: none !important;
         transition: all 0.3s ease;
-        width: fit-content;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    .writings-header data {
+        font-size: 16px;
+        font-family: "Vollkorn";
+        font-weight: 400;
+        color: var(--color-2);
+        margin-right: 5px;
     }
     .writings-header:hover h2 {
         color: var(--color-1);
