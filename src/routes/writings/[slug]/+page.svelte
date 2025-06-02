@@ -5,6 +5,7 @@
     import { clamp, mapToUnitRange } from '../../../utils/math.js';
     import Footer from '../../../components/Footer.svelte';
     import SideMenu from '../../../components/SideMenu.svelte';
+    import BasketballTable from '../../../components/BasketballTable.svelte';
 
     export let data;
     let body;

@@ -1,0 +1,67 @@
+I have a couple of young kids (6-month old and 2 year old), so my days of burning time watching NBA games is long gone. I still try to keep up with the league, though. And during these 2025 playoffs, I follow along by intermittently refreshing the pages on Paul Martinez's excellent website: <a href='https://www.plaintextsports.com' target='_blank'>plaintextsports.com</a>
+
+Since all I can focus on are the game stats periodically ticking, I started noticing patterns. Like how often the Pacers and Thunder, as entire teams, would hover above or around <strong>50%</strong> field goal, <strong>40%</strong> 3-pt and <strong>90%</strong> free-throw percentages. Each team even finished a game hitting that 50-40-90 mark. Super efficient stuff.
+
+We like to keep track of the <a href="https://en.wikipedia.org/wiki/50%E2%80%9340%E2%80%9390_club" target="_blank">50-40-90 club</a> for season averages of (mostly) legendary individual players: Bird, Reggie, Nash, Dirk, KD, Steph et. al. So I figured I'd take a deep dive into teamwide 50-40-90's and write up what I find<a href="#1" class="superscript">1</a>. 
+
+<i>Disclaimer</i>: I'm aware there are many better ways to describe a team's shooting performance nowadays, but I enjoy the heuristic. I added true shooting percentages to the tables to provide some extra context.
+
+<h3>The Playoffs</h3>
+
+Let's start off by looking into the playoffs. The 3-point line has been around since 1979-80 in the NBA, and since then we've seen <b>64</b> instances of a teamwide playoff 50-40-90. 
+
+Teams hitting those marks went 59-5 (.922) - admittedly more losses than I anticipated, but still very, very good. Teams hitting the marks in the Finals went 3-2 (.600).
+
+Turns out the Thunder and Pacers are the only teams to hit 50-40-90 in the playoffs over the past 2 years. Should lead to some impressive shot-making in this year's Finals.
+
+Interestingly, the Phoenix Suns lead all franchises with <b>10</b> playoff occurrences of the teamwide 50-40-90. All that offensive firepower leading to zero titles is perhaps an indictment against chasing these numbers...
+
+<basketball-table gameType="Playoffs" title="Playoff <span style='font-family: Vollkorn'>50-40-90'</span>s" subtitle="A list of all the playoff games from the start of the 3-point era where a team achieved 50+% field goal, 40+% 3-pt and 90+% free throw percentages"></basketball-table>
+
+<h3>The Regular Season</h3>
+
+In the regular season, the teamwide 50-40-90 has happened <b>1041</b> times - around 1% of games in the time period - leading to a record of 909-132 (.873).
+
+I don't know why I thought it would be even more of a guaranteed win hitting those numbers - guess I was anchored on a somewhat undeserved awe of the thresholds. That win percentage would translate to a 71 or 72 win season though, which is pretty dominating.
+
+Interestingly, the Indiana Pacers lead the league with 61 occurrences. Sadly, these offensive displays have also led them to exactly zero titles. Although maybe, just maybe, they can fix that this year.
+
+<basketball-table gameType="Regular Season" title="Regular Season <span style='font-family: Vollkorn'>50-40-90'</span>s" subtitle="A list of all the regular season times from the start of the 3-point era where a team scored 50+% field goal, 40+% 3-pt and 90+% free throw percentages"></basketball-table>
+
+<h3>An Artifact</h3>
+
+With so many 50-40-90 occurrences, it turned out that 7 times, both teams hit those marks in the same game. They've mostly happened in the past decade, speaking to the increase in efficiency and league-wide shooting talent.
+
+In this mini dataset, I still found it odd that the 2018 Warriors could have lost any game in which they went 50-40-90. I clicked into it and looked at the <a href="https://www.basketball-reference.com/boxscores/201803290GSW.html" target="_blank">box score</a>. Not only did Steph and Klay not play, but KD also got ejected less than 20 minutes into the game, after shooting poorly.
+
+The weird part then became the fact that they still hit the 50-40-90. And it happened mostly because of a sharpshooting Quinn Cook who went 12/15. Digging further, it turns out Quinn is the sole and founding member of the G-League <a href="https://en.wikipedia.org/wiki/50%E2%80%9340%E2%80%9390_club#NBA_G_League" target="_blank">50-40-90 club</a>. So in a full-circle way, it made sense after all.
+
+<basketball-table class="dueling" limit=100 title="Dueling <span style='font-family: Vollkorn'>50-40-90'</span>s" double="true" subtitle="A list of all the regular season times from the start of the 3-point era where both teams achieved 50+% field goal, 40+% 3-pt and 90+% free throw percentages"></basketball-table>
+
+<h3>A More Exclusive Club</h3>
+
+I originally thought the teamwide 50-40-90 was going to be rare. With 1000+ occurrences (~25 per season), I felt sort of underwhelmed. So I've upped the stakes here and filtered for a more exclusive 60-60-90 club.
+
+It's an order of magnitude more difficult to accomplish with just <b>14</b> instances so far, and none in the playoffs. As an avid Mavs fan, my favorite part of the list is that a <a href="https://www.basketball-reference.com/boxscores/200904050DAL.html" target="_blank">Dirk + Kidd + the JET + Barea</a> team qualified.
+
+My second favorite part is that somehow the pre-LeBron Cavs joined this club, but were the only ones to lose the game. In 2016, the <a href="https://www.youtube.com/watch?v=-zd62MxKXp8" target="_blank">Chosen One</a> really did break a nasty franchise curse.
+
+<basketball-table limit=100 title="Regular Season <span style='font-family: Vollkorn'>60-60-90'</span>s" fgp="0.6" tpp="0.6" ftp="0.9"  subtitle="A list of all the regular season times from the start of the 3-point era where a team scored 60+% field goal, 60+% 3-pt and 90+% free throw percentages"></basketball-table>
+
+<h3>The Platonic Ideal</h3>
+
+A version of the perfect teamwide 50-40-90 game would be that every single player who attempts shots also hits those thresholds. 
+
+Crunching the numbers, I didn't find any games that quite met this player-by-player elite shooting display. I found a few games that came fairly close, even exceeding the marks in some categories.
+<ul>
+<li>2000 New York Knicks: <a href="https://www.basketball-reference.com/boxscores/200001300NYK.html" target="_blank">40-50-100</a></li>
+<li>1990 Charlotte Hornets: <a href="https://www.basketball-reference.com/boxscores/199004100CHH.html" target="_blank">40-40-100</a></li>
+<li>2025 Miami Heat: <a href="https://www.basketball-reference.com/boxscores/202502280MIA.html" target="_blank">40-30-80</a></li>
+</ul>
+
+Maybe in a decade, I'll check back on this and see whether the elusive club has any members.
+
+
+<h3>References</h3>
+
+1. Data from Kaggle <a id="1" href="https://www.kaggle.com/datasets/eoinamoore/historical-nba-data-and-player-box-scores" target="_blank">NBA Dataset</a> - Box Scores & Stats (1947 - now). <span id="2">I used <a href="https://github.com/aotimme/gocsv" target="_blank">gocsv</a> + Python for data processing</span>
