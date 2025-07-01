@@ -1,0 +1,8 @@
+[
+	{
+		"name": "scrolling-video",
+		"link": "https://www.github.com/arbourtrary/scrolling-video",
+		"tags": ["open-source", "MIT", "web-component", "JS"],
+		"description": "A web component to allow anyone to create a scrolling video. The repo's README has some best practices, including a quick guide and templates for how to pre-process your video with <a href='https://handbrake.fr/' target='_blank'>Handbrake</a>."
+	}
+]

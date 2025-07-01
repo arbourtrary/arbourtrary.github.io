@@ -54,6 +54,7 @@
       <li><a href={base + "/poems"}>Poems</a></li>
       <li><a href={base + "/projects"}>Projects</a></li>
       <li><a href={base + "/sketches"}>Sketches</a></li>
+      <li><a href={base + "/tools"}>Tools</a></li>
       <li><a href={base + "/writings"}>Writings</a></li>
     </ul>
     

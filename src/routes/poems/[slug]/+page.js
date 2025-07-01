@@ -3,6 +3,7 @@ import { clamp } from '../../../utils/math.js';
 import poems from "../../../data/poems.json";
 
 export async function load({ params, fetch }) {
+  const slugs = poems.map(item => item.slug);
   const poemIndex = poems.findIndex(item => item.slug === params.slug);
 
   const poem = poems[poemIndex];
@@ -16,7 +17,7 @@ export async function load({ params, fetch }) {
   poem.content = await response.json();
 
   if (poem) {
-    return {poem};
+    return {poem, slugs};
   }
  
   throw error(404, 'Not found');
