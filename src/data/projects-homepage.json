@@ -545,5 +545,60 @@
       "intro-3.webp",
       "intro-4.webp"
     ]
+  },
+  {
+    "title": "Kohberger Trial",
+    "slug": "kohberger-trial",
+    "publication": "Idaho Statesman",
+    "description": "Kohberger's attorney saved him from possible firing squad",
+    "year": "2025",
+    "date": "7/9/25",
+    "awards": [],
+    "awardsShort": [],
+    "tags": ["web components", "murder", "kohberger", "trial", "judge", "prosecutor", "public defender"],
+    "team": "",
+    "image": "",
+    "url": "https://www.idahostatesman.com/news/local/crime/article310334370.html",
+    "format": "Journalism",
+    "text": "In the wake of gruesome murders, the Idaho reporting team commissioned me to theme their stories and provide photo illustrations as lead art for the important figures in the trial. It was my first crack at photo collage / illustration.",
+    "tools": [
+      "web components",
+      "adobe"
+    ],
+    "gallery": [
+      "prosecutor.webp",
+      "defender.webp",
+      "judge.webp"
+    ]
+  },
+  {
+    "title": "Killer Train",
+    "slug": "killer-train",
+    "publication": "Miami Herald",
+    "description": "Brightline death toll surpasses 180, but safeguards are still lacking",
+    "year": "2025",
+    "date": "7/15/25",
+    "awards": [],
+    "awardsShort": [],
+    "tags": ["web components", "trains", "miami"],
+    "team": ["<a href='https://www.rachelhandley.com/' target='_blank'>Rachel Handley</a> (illustration)", "<a href='https://www.saljamea.com/' target='_blank'>Sohail Al-Jamea</a> (animation)", "<a href='https://www.semerriam.github.io/' target='_blank'>Susan Merriam</a> (dataviz)"],
+    "image": "",
+    "url": "https://www.miamiherald.com/news/local/article308679915.html",
+    "format": "Journalism",
+    "text": "A human-centered investigation into the dangers posed by Florida railroad Brightline's faltering approach to rail safety. The narrative, paired with unassailable data proving claims, made for a very compelling local story that entered the national discussion.",
+    "tools": [
+      "web components",
+      "maplibre",
+      "svelte"
+    ],
+    "gallery": [
+      "trains-illo.webp",
+      "deaths-map.webp",
+      "deaths-table.webp",
+      "exposure.webp",
+      "fencing.webp",
+      "highway.webp",
+      "woman-illo.webp"
+    ]
   }
 ]
