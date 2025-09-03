@@ -114,7 +114,7 @@
     <SideMenu/>
 </div>
 <div class="writ">
-    <div class="title">{data.writing.title}</div>
+    <div class="title">{@html data.writing.title}</div>
     <div class="content">{@html formatContent(data.writing.content)}</div>
 </div>
 <div class="more">
@@ -123,14 +123,14 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor">
               <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
             </svg>
-            <p style="text-align: left;">{data.writing.prev.title}</p>
+            <p style="text-align: left;">{@html data.writing.prev.title}</p>
         </a>
     {:else}
         <p></p>
     {/if}
     {#if data.writing.next}
         <a href={base + `/writings/${data.writing.next.slug}`} style="margin-left: 15px; margin-right: 0px;">
-            <p style="text-align: right;">{data.writing.next.title}</p>
+            <p style="text-align: right;">{@html data.writing.next.title}</p>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
             </svg>
@@ -235,7 +235,7 @@
         font-size: 2.4em;
         margin: 0 auto;
         padding-top: 80px;
-        text-align: center;
+        text-align: left;
     }
     .content {
         width: min(600px, 90vw);
