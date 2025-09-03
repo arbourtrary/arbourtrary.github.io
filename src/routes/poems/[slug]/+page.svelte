@@ -50,7 +50,7 @@
 <Header/>
 {#if data.poem.content}
     <div class="poem">
-        <div class="title">{data.poem.name}</div>
+        <div class="title">{@html data.poem.name}</div>
         <div class="content">{@html marked(data.poem.content.text.replaceAll("\n","\n\n").replaceAll("/",""))}</div>
     </div>
     <div class="poem-date">{@html formatDate(data.poem.date)}</div>

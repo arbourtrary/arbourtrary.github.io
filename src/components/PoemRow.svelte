@@ -20,7 +20,7 @@
 
 <a href={`${base}/poems/${poem.slug}`}>
     <div class="row">
-        <div class="title">{poem.name}</div>
+        <div class="title">{@html poem.name}</div>
         <div class="connector"></div>
         <div class="hexagon" style={`transform-origin: center; transform: rotate(${rotate}deg);`}>
             <svg fill="currentColor" height="75%" width="75%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
