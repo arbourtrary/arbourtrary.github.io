@@ -1,0 +1,4 @@
+License: https://arbourtrary.com/license.xml
+
+User-agent: Googlebot
+Allow: /
