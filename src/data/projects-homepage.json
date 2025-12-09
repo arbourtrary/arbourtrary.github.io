@@ -601,5 +601,32 @@
       "highway.webp",
       "woman-illo.webp"
     ]
+  },
+  {
+    "title": "NC Data Centers",
+    "slug": "data-centers",
+    "publication": "Charlotte Observer",
+    "description": "Charlotte’s data center surge — pricey, power-hungry and shrouded in secrecy",
+    "year": "2025",
+    "date": "12/2/25",
+    "awards": [],
+    "awardsShort": [],
+    "tags": ["web components", "data centers", "ai"],
+    "image": "",
+    "url": "https://www.charlotteobserver.com/news/business/article312306586.html",
+    "format": "Journalism",
+    "text": "An investigation communicating the impact of data center growth in North Carolina. Visual explainer of the resource intensiveness of sending a single prompt to a chatbot, then scaled to 1 million messages.",
+    "tools": [
+      "web components",
+      "maplibre",
+      "svelte"
+    ],
+    "gallery": [
+      "lead.webp",
+      "single-prompt.webp",
+      "million-prompts.webp",
+      "map.webp",
+      "quote.webp"
+    ]
   }
 ]
