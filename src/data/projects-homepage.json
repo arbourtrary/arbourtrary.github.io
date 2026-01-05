@@ -628,5 +628,37 @@
       "map.webp",
       "quote.webp"
     ]
+  },
+  {
+    "title": "Immigration Crackdown",
+    "slug": "immigration-crackdown",
+    "publication": "Miami Herald",
+    "description": "Florida’s mass deportation campaign sweeps up 20,000, including those with clean records",
+    "year": "2025",
+    "date": "12/31/25",
+    "awards": [],
+    "awardsShort": [],
+    "tags": ["web components", "immigration", "deportation"],
+    "image": "",
+    "url": "https://www.miamiherald.com/news/local/immigration/article313214962.html",
+    "format": "Journalism",
+    "text": "A detailed look at people's lives upended by the massive deportation crackdown in Florida (and nationwide). Difficult footage to sift through - the reporters did an excellent job stressing the humanity of those being apprehended.",
+    "tools": [
+      "web components",
+      "maplibre",
+      "svelte"
+    ],
+    "gallery": [
+      "intro.webp",
+      "number.webp",
+      "quad.webp",
+      "slider.webp",
+      "torture.webp",
+      "pr.webp",
+      "fl.webp",
+      "tx.webp",
+      "quotes.webp",
+      "docs.webp"
+    ]
   }
 ]
