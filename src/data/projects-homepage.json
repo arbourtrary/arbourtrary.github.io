@@ -603,7 +603,7 @@
     ]
   },
   {
-    "title": "NC Data Centers",
+    "title": "Data Centers",
     "slug": "data-centers",
     "publication": "Charlotte Observer",
     "description": "Charlotte’s data center surge — pricey, power-hungry and shrouded in secrecy",
@@ -627,6 +627,35 @@
       "million-prompts.webp",
       "map.webp",
       "quote.webp"
+    ]
+  },
+  {
+    "title": "Salaries Database",
+    "slug": "salaries-database",
+    "publication": "Sacramento Bee",
+    "description": "A searchable database to find government wages &amp; compensation records for public state workers in CA job departments.",
+    "year": "2025",
+    "date": "12/10/25",
+    "awards": [],
+    "awardsShort": [],
+    "tags": ["web components", "salary", "government"],
+    "team": ["<a href='https://www.behance.net/garnerygab0a95#' target='_blank'>Gabby McCall</a> (design)"],
+    "image": "",
+    "url": "https://www.sacbee.com/news/databases/state-pay/article229468549.html",
+    "format": "Journalism",
+    "text": "Revamped the landing page for a heavily visited story about state worker salaries in California. Data lived in CASPIO, made a frontend work to surface some more interesting takeaways to the reader.",
+    "tools": [
+      "web components",
+      "layercake",
+      "d3",
+      "svelte"
+    ],
+    "gallery": [
+      "beeswarm.webp",
+      "table.webp",
+      "details.webp",
+      "top.webp",
+      "explore.webp"
     ]
   },
   {
