@@ -98,6 +98,18 @@
       },
       "filename": "/data/sketches/climbing-trees.txt",
       "socialImage": "social_sketch_8_viz.webp"
+  },
+  {
+    "index": 9,
+    "date": "1/27/26",
+      "title": "Rising Temperature", 
+      "slug": "rising-temperature",
+      "description": "Analogizing climate change with the meltdown of LLM responses under increasing temperature",
+      "sketch": {
+        "name": "RisingTemperature"
+      },
+      "filename": "/data/sketches/rising-temperature.txt",
+      "socialImage": "social_sketch_9_viz.webp"
   }
 ]
 

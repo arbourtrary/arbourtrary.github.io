@@ -6,5 +6,5 @@
 <p>I think the rearrangements of <b>Kensuke Koike</b> provide beautiful intuition into the approximation of what's real. The work creates something wonderfully new, yet remains reminiscent, yearning, incomplete. A jumbled hint. I tried to recreate this effect in code and applied it to some of my favorite paintings and artworks.</p>
 
 <p style="margin-bottom: 10px;"><b>Sources</b></p>
-<p class="indent"><a href="https://www.kensukekoike.com/" targte="_blank">Kensuke Koike</a> - visual artist</p>
-<p class="indent"><a href="https://public.work/" targte="_blank">Public Work</a> - public domain artwork</p>
+<p class="indent"><a href="https://www.kensukekoike.com/" target="_blank">Kensuke Koike</a> - visual artist</p>
+<p class="indent"><a href="https://public.work/" target="_blank">Public Work</a> - public domain artwork</p>

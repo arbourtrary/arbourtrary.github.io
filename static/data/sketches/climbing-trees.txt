@@ -7,5 +7,5 @@
 <img style="width: min(100%, 280px);" src="/images/climbing-trees/tree-of-trees.webp"/>
 
 <p style="margin-bottom: 10px;"><b>Sources</b></p>
-<p class="indent"><a href="https://www.ncbi.nlm.nih.gov/genbank/" targte="_blank">GenBank</a> - phylogenetics</p>
-<p class="indent"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4868591/" targte="_blank">PhySortR</a> - plot</p>
+<p class="indent"><a href="https://www.ncbi.nlm.nih.gov/genbank/" target="_blank">GenBank</a> - phylogenetics</p>
+<p class="indent"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4868591/" target="_blank">PhySortR</a> - plot</p>
