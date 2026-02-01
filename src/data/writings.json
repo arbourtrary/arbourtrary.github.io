@@ -77,10 +77,10 @@
             "socialImage": "social_droplet_6.webp"
         },
         {
-            "date": "2/31/26",
+            "date": "2/1/26",
             "title": "Finding a clearing", 
             "slug": "finding-a-clearing",
-            "description": "Even a broken one gets it right twice a day",
+            "description": "On inviting a little bit of serendipity and calm into your life",
             "filename": "/data/writings/finding-a-clearing.txt",
             "highlight": "var(--green)",
             "filter": "invert(94%) sepia(10%) saturate(700%) hue-rotate(52deg) brightness(83%) contrast(83%)",
