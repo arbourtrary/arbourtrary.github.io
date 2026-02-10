@@ -9,5 +9,6 @@ export const sketchComponents = {
     IslandPeakscapes: () => import('/src/components/IslandPeakscapes.svelte'),
     CistercianCiphers: () => import('/src/components/CistercianCiphers.svelte'),
     ClimbingTrees: () => import('/src/components/ClimbingTrees.svelte'),
-    RisingTemperature: () => import('/src/components/RisingTemperature.svelte')
+    RisingTemperature: () => import('/src/components/RisingTemperature.svelte'),
+    CrosswordHeatmap: () => import('/src/components/CrosswordHeatmap.svelte')
 }; 

@@ -110,6 +110,18 @@
       },
       "filename": "/data/sketches/rising-temperature.txt",
       "socialImage": "social_sketch_9_viz.webp"
+  },
+  {
+    "index": 10,
+    "date": "2/2/26",
+      "title": "Crossword Heatmap", 
+      "slug": "crossword-heatmap",
+      "description": "",
+      "sketch": {
+        "name": "CrosswordHeatmap"
+      },
+      "filename": "/data/sketches/crossword-heatmap.txt",
+      "socialImage": "social_sketch_10_viz.webp"
   }
 ]
 
