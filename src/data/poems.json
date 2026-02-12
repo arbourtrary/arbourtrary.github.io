@@ -2028,5 +2028,12 @@
     "date": "11/27/2025",
     "age": 34,
     "slug": "antique-tropic"
+  },
+  {
+    "name": "Garden Fence",
+    "rating": 5,
+    "date": "2/10/2026",
+    "age": 34,
+    "slug": "garden-fence"
   }
 ]
