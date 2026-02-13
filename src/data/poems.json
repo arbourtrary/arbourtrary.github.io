@@ -848,7 +848,7 @@
   },
   {
     "name": "Bubble Talk",
-    "rating": 3,
+    "rating": 8,
     "date": "6/15/2017",
     "age": 25,
     "slug": "bubble-talk"
@@ -1114,7 +1114,7 @@
   },
   {
     "name": "Bland",
-    "rating": 5,
+    "rating": 2,
     "date": "11/4/2017",
     "age": 25,
     "slug": "bland"
@@ -1135,14 +1135,14 @@
   },
   {
     "name": "Currency",
-    "rating": 4,
+    "rating": 9,
     "date": "12/23/2017",
     "age": 26,
     "slug": "currency"
   },
   {
     "name": "Wavering Belief",
-    "rating": 2,
+    "rating": 9,
     "date": "12/24/2017",
     "age": 26,
     "slug": "wavering-belief"
@@ -1892,7 +1892,7 @@
   {
     "name": "Sail",
     "rating": 3,
-    "date": "7/24/2024",
+    "date": "7/20/2024",
     "age": 32,
     "slug": "sail"
   },
@@ -1940,7 +1940,7 @@
   },
   {
     "name": "Lagoon",
-    "rating": 8,
+    "rating": 4,
     "date": "4/26/2025",
     "age": 33,
     "slug": "lagoon"
@@ -2003,14 +2003,14 @@
   },
   {
     "name": "Optimist",
-    "rating": 3,
+    "rating": 6,
     "date": "8/15/2025",
     "age": 33,
     "slug": "optimist"
   },
   {
     "name": "Wordless",
-    "rating": 3,
+    "rating": 4,
     "date": "8/22/2025",
     "age": 33,
     "slug": "wordless"
