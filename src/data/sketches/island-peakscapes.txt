@@ -1,9 +1,0 @@
-<h2>Island Peakscapes</h2>
-<p><b>Inspiration</b>: A series of <a href="https://bsky.app/profile/chaneyswiney.com/post/3lckzeb22bk22" target="_blank">beautiful maps</a> created by <b>Chaney Swiney</b>, composed with excellent colors, typography and framing</p>
-
-<p><b>Description</b>: Felt like this was such a cool type of map that I wanted to try my hand at it. Focused on some of the islands that mean the most to me. I think the original maps were made in <a href="https://www.naturalgfx.com/php/secure_order.php" target="_blank">Natural Scene Designer</a> by starting with a <a href="https://www.naturalgfx.com/manuals/NSDPremium7MacManual.pdf" target="_blank">Distance Mask</a> effect. I wanted to order the product, but it seems to be CD/DVD based - a wild flex in the year 2025. So I pivoted to what's good enough and free - got an approximately similar effect using the QGIS <a href="https://plugins.qgis.org/plugins/DEMto3D/" target="_blank">DEMto3D</a> plugin combined with Blender's <a href="https://www.reddit.com/r/blender/comments/l6wjn2/how_to_use_the_mist_pass/" target="_blank">Mist Pass</a> - may also be worth investigating <a href="https://www.youtube.com/watch?v=_vcakofmtV0" target="_blank">distance to camera</a> + textures?</p>
-
-<p style="margin-bottom: 10px;"><b>Sources</b></p>
-<p class="indent"><a href="https://chaneyswiney.com/cartography" target="_blank">Chaney Swiney</a> - peakscapes</p>
-<p class="indent"><a href="https://portal.opentopography.org/raster?opentopoID=OTNED.012021.4269.1" target="_blank">Open Topography</a> - DEM</p>
-<p class="indent"><a href="https://www.data.gouv.fr/fr/datasets/modeles-numeriques-de-terrain-mnt-des-iles-de-la-polynesie-francaise/" target="_blank">data.gouv.fr</a> - DEM</p>
