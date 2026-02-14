@@ -14,12 +14,6 @@
 		setRandomEntryWithoutReplacement();
 	});
 
-	function getRandomEntry(dict) {
-		const keys = Object.keys(dict);
-		const randomIndex = Math.round(Math.random() * (keys.length - 1));
-		return dict[keys[randomIndex]];
-	}
-
 	function setRandomEntryWithoutReplacement() {
 		const keys = Object.keys(data);
 		const randomIndex = Math.round(Math.random() * (keys.length - 1));

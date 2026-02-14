@@ -4,18 +4,62 @@
     <p><b>Languages</b></p>
     <p class="indent" style="display: flex; flex-wrap: wrap; gap: 15px; max-width: 500px; line-height: 0.75;">
 <span style="margin-left: 0px; color: var(--red)">Latin</span>
+
 <span style="margin-left: 0px; color: var(--orange)">Old French</span>
 <span style="margin-left: 0px; color: var(--orange)">Middle French</span>
 <span style="margin-left: 0px; color: var(--orange)">French</span>
+<span style="margin-left: 0px; color: var(--orange)">Spanish</span>
+<span style="margin-left: 0px; color: var(--orange)">Italian</span>
+<span style="margin-left: 0px; color: var(--orange)">Portuguese</span>
+<span style="margin-left: 0px; color: var(--orange)">Old Provençal</span>
+
 <span style="margin-left: 0px; color: var(--yellow)">Egyptian</span>
 <span style="margin-left: 0px; color: var(--yellow)">Hebrew</span>
+<span style="margin-left: 0px; color: var(--yellow)">Arabic</span>
+
 <span style="margin-left: 0px; color: var(--green)">Ancient Greek</span>
+
 <span style="margin-left: 0px; color: var(--blue)">English</span>
 <span style="margin-left: 0px; color: var(--blue)">Middle English</span>
 <span style="margin-left: 0px; color: var(--blue)">Old English</span>
-<span style="margin-left: 0px; color: var(--purple)">Old Norse</span>
+<span style="margin-left: 0px; color: var(--blue)">Scots</span>
+
+<span style="margin-left: 0px; color: var(--purple)">Dutch</span>
 <span style="margin-left: 0px; color: var(--purple)">German</span>
-<span style="margin-left: 0px; color: var(--indigo)"> Anglo-Norman</span>
+<span style="margin-left: 0px; color: var(--purple)">Old Dutch</span>
+<span style="margin-left: 0px; color: var(--purple)">Middle Dutch</span>
+<span style="margin-left: 0px; color: var(--purple)">Old High German</span>
+<span style="margin-left: 0px; color: var(--purple)">Middle Low German</span>
+<span style="margin-left: 0px; color: var(--purple)">Yiddish</span>
+
+<span style="margin-left: 0px; color: var(--indigo)">Old Norse</span>
+<span style="margin-left: 0px; color: var(--indigo)">Norwegian</span>
+<span style="margin-left: 0px; color: var(--indigo)">Proto-Germanic</span>
+<span style="margin-left: 0px; color: var(--indigo)">Anglo-Norman</span>
+
+<span style="margin-left: 0px; color: var(--coral)">Sanskrit</span>
+<span style="margin-left: 0px; color: var(--coral)">Hindi</span>
+<span style="margin-left: 0px; color: var(--coral)">Gujarati</span>
+<span style="margin-left: 0px; color: var(--coral)">Kannada</span>
+<span style="margin-left: 0px; color: var(--coral)">Persian</span>
+<span style="margin-left: 0px; color: var(--coral)">Pahlavi</span>
+
+<span style="margin-left: 0px; color: var(--slate)">Russian</span>
+
+<span style="margin-left: 0px; color: var(--teal)">Mandarin Chinese</span>
+<span style="margin-left: 0px; color: var(--teal)">Japanese</span>
+
+<span style="margin-left: 0px; color: var(--seafoam)">Malay</span>
+<span style="margin-left: 0px; color: var(--seafoam)">Hawaiian</span>
+<span style="margin-left: 0px; color: var(--seafoam)">Tahitian</span>
+<span style="margin-left: 0px; color: var(--seafoam)">Taino</span>
+
+<span style="margin-left: 0px; color: var(--mauve)">Romany</span>
+<span style="margin-left: 0px; color: var(--mauve)">Angloromani</span>
+
+<span style="margin-left: 0px; color: var(--bronze)">Engenni</span>
+
+<span style="margin-left: 0px; color: var(--gray)">Unknown</span>
 </p>
     <p style="margin-bottom: 10px;"><b>Sources</b></p>
     <p class="indent"><a href="http://etym.org/" target="_blank">Etymological Wordnet</a>- dataset </p>

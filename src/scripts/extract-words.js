@@ -7,22 +7,15 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Function to walk through directories recursively
-function walkDirectories(dir, fileList = []) {
-    const files = readdirSync(dir);
-    
-    files.forEach(file => {
-        const filePath = join(dir, file);
-        const stat = statSync(filePath);
-        
-        if (stat.isDirectory()) {
-            walkDirectories(filePath, fileList);
-        } else if (extname(file) === '.txt') {
-            fileList.push(filePath);
-        }
-    });
-    
-    return fileList;
+// Function to list .txt and .json files in a directory (non-recursive)
+function listFiles(dir) {
+    const validExts = new Set(['.txt', '.json']);
+    return readdirSync(dir)
+        .filter(file => {
+            const filePath = join(dir, file);
+            return statSync(filePath).isFile() && validExts.has(extname(file));
+        })
+        .map(file => join(dir, file));
 }
 
 // Provided extractContent function
@@ -40,34 +33,48 @@ function extractContent(s) {
         .trim();                   // Trim leading/trailing whitespace
 }
 
+// Recursively extract all string values from a JSON structure
+function extractStrings(obj) {
+    if (typeof obj === 'string') return obj;
+    if (Array.isArray(obj)) return obj.map(extractStrings).join(' ');
+    if (obj && typeof obj === 'object') return Object.values(obj).map(extractStrings).join(' ');
+    return '';
+}
+
 // Function to process a single file and extract unique words
 function processFile(filePath) {
-    const content = readFileSync(filePath, 'utf8');
+    const raw = readFileSync(filePath, 'utf8');
+    let content;
+    if (extname(filePath) === '.json') {
+        content = extractStrings(JSON.parse(raw));
+    } else {
+        content = raw;
+    }
     const cleanContent = extractContent(content);
-    
+
     // Split into words and remove punctuation, numbers, etc.
     const words = cleanContent
         .toLowerCase()
         .replace(/[^a-z\s]/g, ' ')
         .split(/\s+/)
         .filter(word => word.length > 0);
-    
+
     return new Set(words);
 }
 
 // Main function to process all files and generate CSV
 function generateWordList(directories) {
-    // Get all txt files from all directories
+    // Get all txt and json files from all directories (non-recursive)
     let allFiles = directories.reduce((acc, dir) => {
-        return acc.concat(walkDirectories(dir));
+        return acc.concat(listFiles(dir));
     }, []);
 
-    allFiles = allFiles.concat([
-        "../data/intro.json",
-        "../data/projects.json",
-        "../data/sketches.json",
-        "../data/writings.json"
-    ]);
+    // allFiles = allFiles.concat([
+    //     "../data/intro.json",
+    //     "../data/projects.json",
+    //     "../data/sketches.json",
+    //     "../data/writings.json"
+    // ]);
     console.log(allFiles)
     
     // Process all files and collect unique words
@@ -97,8 +104,11 @@ function generateWordList(directories) {
 // Example usage
 try {
     const result = generateWordList([
-        '../data/sketches',
-        '../data/writings'
+        '../data',
+        '../../static/data/about',
+        '../../static/data/poems',
+        '../../static/data/sketches',
+        '../../static/data/writings'
         // Add more directories as needed
     ]);
     
