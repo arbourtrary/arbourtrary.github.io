@@ -21,15 +21,31 @@
 	<script>
 		const setFavicon = () => {
 		    const favicon = document.querySelector('link[rel="icon"]');
-		    favicon.href = (window.matchMedia('(prefers-color-scheme: dark)').matches)
+		    favicon.href = document.documentElement.classList.contains('dark-theme')
 		                    ? '%sveltekit.assets%/images/arbourtrary-inverse-32x32.png'
 		                    : '%sveltekit.assets%/images/arbourtrary-32x32.png';
 		};
-		// setFavicon();
-		window
-		    .matchMedia('(prefers-color-scheme: dark)')
-		    .addEventListener('change', setFavicon);
 
+		const osDarkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+		if (osDarkQuery.matches) {
+		    document.documentElement.classList.add('dark-theme');
+		}
+		setFavicon();
+
+		window.toggleTheme = () => {
+		    document.documentElement.classList.toggle('dark-theme');
+		    setFavicon();
+		};
+
+		osDarkQuery.addEventListener('change', (e) => {
+		    if (e.matches) {
+		        document.documentElement.classList.add('dark-theme');
+		    } else {
+		        document.documentElement.classList.remove('dark-theme');
+		    }
+		    setFavicon();
+		});
 	</script>
 	<style>
 		:root {
