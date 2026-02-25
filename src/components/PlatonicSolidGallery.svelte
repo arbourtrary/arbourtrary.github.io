@@ -448,7 +448,7 @@
                     height="100%"
                     viewBox="0 0 527.96284 261.57872"
                     version="1.1"
-                    
+                    style="overflow: visible !important;"
                     xml:space="preserve"
                     xmlns="http://www.w3.org/2000/svg"
                     xmlns:svg="http://www.w3.org/2000/svg"
