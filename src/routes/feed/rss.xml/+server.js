@@ -16,11 +16,6 @@ async function getText(event, filepath) {
   return text;
 }
 
-async function getJSON(event, filepath) {
-  const response = await event.fetch(filepath);
-  const text = await response.json();
-  return text;
-}
 
 export async function GET(event) {
   event.setHeaders({
@@ -45,8 +40,8 @@ export async function GET(event) {
   // poems
   poems.forEach(poem => poem.category = "Poem");
   poems.forEach(poem => poem.route = "poems");
-  const poemTexts = await Promise.all(poems.map(poem => getJSON(event, `/data/poems/${poem.slug}.json`)));
-  const poemMarkedTexts = poemTexts.map(poem => marked(poem["text"].replaceAll("\n","<br>").replaceAll("<br><br><br>", "<br><br>").replaceAll("/","")));
+  const poemTexts = await Promise.all(poems.map(poem => getText(event, `/data/poems/${poem.slug}.txt`)));
+  const poemMarkedTexts = poemTexts.map(text => text.trim().replaceAll('\n\n', '<br><br>').replaceAll('\n', '<br>'));
   poems.forEach((poem,index) => poem.marked = poemMarkedTexts[index]);
 
   // Function to sort array by date
