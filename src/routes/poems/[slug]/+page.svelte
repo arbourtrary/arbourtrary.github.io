@@ -1,16 +1,10 @@
 <script>
-    import { marked } from "marked";
     import { base } from "$app/paths";
     import Header from '../../../components/Header.svelte';
     import Footer from '../../../components/Footer.svelte';
 
     export let data;
     let randomButton;
-
-    marked.use({
-      mangle: false,
-      headerIds: false
-    });
 
     const formatDate = (date) => {
         const jsDate = new Date(date)
@@ -19,6 +13,10 @@
         const formattedDate = `<span class="month">${month}</span> ${fullYear}`;
         return formattedDate;
     }
+
+    const renderTxt = (text) => text.trim().split('\n')
+        .map(line => line === '' ? '<p>&nbsp;</p>' : `<p>${line}</p>`)
+        .join('');
 
     const getRandomPoemUrl = () => {
         const slug = data.slugs[Math.round(Math.random() * (data.slugs.length - 1))];
@@ -51,7 +49,7 @@
 {#if data.poem.content}
     <div class="poem">
         <div class="title">{@html data.poem.name}</div>
-        <div class="content">{@html marked(data.poem.content.text.replaceAll("\n","\n\n").replaceAll("/",""))}</div>
+        <div class="content">{@html renderTxt(data.poem.content)}</div>
     </div>
     <div class="poem-date">{@html formatDate(data.poem.date)}</div>
 {/if}

@@ -13,8 +13,8 @@ export async function load({ params, fetch }) {
   poem.prev = (prevIndex !== poemIndex) ? poems[prevIndex] : "";
   poem.next = (nextIndex !== poemIndex) ? poems[nextIndex] : "";
   
-  const response = await fetch(`/data/poems/${poem.slug}.json`);
-  poem.content = await response.json();
+  const response = await fetch(`/data/poems/${poem.slug}.txt`);
+  poem.content = await response.text();
 
   if (poem) {
     return {poem, slugs};
