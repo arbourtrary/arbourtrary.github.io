@@ -601,7 +601,6 @@
         justify-content: center;
         gap: 0;
         margin-bottom: 24px;
-        border-bottom: 1px solid var(--color-2);
     }
 
     .tab {
