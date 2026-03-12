@@ -1,5 +1,12 @@
 [
 	{
+		"name": "dot-sampler",
+		"link": "/tools/dot-sampler",
+		"external": false,
+		"tags": ["JS"],
+		"description": "Upload any image and rearrange it as a field of circular dot samples, inspired by the cut-and-rearranged photography of <a href='https://www.kensukekoike.com/' target='_blank'>Kensuke Koike</a>. Design your own dot layout in the pattern editor."
+	},
+	{
 		"name": "scrolling-video",
 		"link": "https://www.github.com/arbourtrary/scrolling-video",
 		"tags": ["open-source", "MIT", "web-component", "JS"],

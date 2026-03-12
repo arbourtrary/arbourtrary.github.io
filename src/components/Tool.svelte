@@ -29,7 +29,7 @@
 <div class="tool">
 
 	<div class="tool-info">
-		<a href={tool.link} target="_blank">
+		<a href={tool.link} target={tool.external !== false ? "_blank" : "_self"}>
 			<h3>{@html tool.name}</h3>
 		</a>
 		<p>{@html tool.description}</p>
