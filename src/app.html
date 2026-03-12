@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <link rel="alternate" type="application/rss+xml"  href="https://arbourtrary.com/feed/rss.xml"  title="Arbourtrary RSS Feed">
 
         <link rel="apple-touch-icon" href="%sveltekit.assets%/images/arbourtrary-256x256.jpg">
@@ -12,13 +12,7 @@
         <meta name='msapplication-TileColor' content='#F5F2EB'>
         <meta name='theme-color' content='#F5F2EB'>
         <link rel="me" href="https://github.com/arbourtrary"/>
-        <script async defer src="https://scripts.withcabin.com/hello.js"></script>
-		%sveltekit.head%
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
-	</body>
-	<script>
+        <script>
 		const setFavicon = () => {
 		    const favicon = document.querySelector('link[rel="icon"]');
 		    favicon.href = document.documentElement.classList.contains('dark-theme')
@@ -31,7 +25,6 @@
 		if (osDarkQuery.matches) {
 		    document.documentElement.classList.add('dark-theme');
 		}
-		setFavicon();
 
 		window.toggleTheme = () => {
 		    document.documentElement.classList.toggle('dark-theme');
@@ -228,5 +221,14 @@
 		    }
 		}
 	</style>
+        <script async defer src="https://scripts.withcabin.com/hello.js"></script>
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+	<script>
+		document.addEventListener('DOMContentLoaded', setFavicon);
+	</script>
 </html>
 
