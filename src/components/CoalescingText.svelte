@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onMount, onDestroy } from 'svelte';
 
   let textContainer;
   let graphicWidth;
@@ -162,6 +162,22 @@
   }
 
   let innerRadius, outerRadius, fadeRadius;
+  let animationFrameId = null;
+  let isVisible = false;
+  let observer;
+
+  function startAnimate() {
+    if (!animationFrameId) {
+      animationFrameId = requestAnimationFrame(animate);
+    }
+  }
+
+  function stopAnimate() {
+    if (animationFrameId) {
+      cancelAnimationFrame(animationFrameId);
+      animationFrameId = null;
+    }
+  }
 
   function initializeDimensions() {
     if (textContainer) {
@@ -177,7 +193,21 @@
   onMount(async () => {
     initializeDimensions();
     [wordLetterColorMap, csvData] = await generateWordLetterColorMap(WORDS_FILEPATH);
+
+    observer = new IntersectionObserver((entries) => {
+      isVisible = entries[0].isIntersecting;
+      if (isVisible) startAnimate();
+      else stopAnimate();
+    }, { threshold: 0.1 });
+
+    if (textContainer) observer.observe(textContainer);
+
     animateTexts(wordLetterColorMap, csvData);
+  });
+
+  onDestroy(() => {
+    stopAnimate();
+    observer?.disconnect();
   });
 
   function getTextElement(text, index) {
@@ -266,7 +296,7 @@
           });
         });
         activeLetterArray.push(activeLetters);
-        // requestAnimationFrame(animate);
+        startAnimate();
       }
 
       function setInitialStyles(element, text, textIndex, letterIndex, textDiv, wordLetterColorMap) {
@@ -295,7 +325,6 @@
           textShadow: textShadow,
           position: "absolute"
         });
-        requestAnimationFrame(animate)
       }
 
       function animate(timestamp) {
@@ -335,13 +364,13 @@
 
         // Next animation
         if (elapsed >= TIMING.NEXT) {
-          // textContainer.innerHTML = '';
+          animationFrameId = null;
           currentRound++;
           animateTexts(wordLetterColorMap, csvData);
           return;
         }
 
-        requestAnimationFrame(animate);
+        animationFrameId = isVisible ? requestAnimationFrame(animate) : null;
       }
 
       function applyInnerRadiusStyles(element, textDiv, letterIndex) {

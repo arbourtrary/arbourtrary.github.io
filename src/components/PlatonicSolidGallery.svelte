@@ -1,6 +1,6 @@
 <script defer>
     import { bgColor, textColor2, white } from "../store.js"
-    import { onMount } from "svelte";
+    import { onMount, onDestroy } from "svelte";
     import { loadJSON } from "../utils/file.js";
     import { clamp } from "../utils/math.js";
     import { hexToRgb } from "../utils/color.js";
@@ -46,6 +46,9 @@
     let unraveledFaces = [];
     let hover = false;
     let hoverScale = 5;
+    let isVisible = false;
+    let rafId = null;
+    let intersectionObserver;
 
     const loader = new GLTFLoader();
 
@@ -72,10 +75,45 @@
     }
     
 
+    function startAnimation() {
+        if (!rafId) {
+            rafId = window.requestAnimationFrame(updateGallery);
+        }
+    }
+
+    function stopAnimation() {
+        if (rafId) {
+            window.cancelAnimationFrame(rafId);
+            rafId = null;
+        }
+    }
+
     onMount(async () => {
         mounted = true;
         unraveledFaces = [...document.querySelectorAll(".pentagon")];
-        innerWidth = window.innerWidth
+        innerWidth = window.innerWidth;
+
+        intersectionObserver = new IntersectionObserver((entries) => {
+            isVisible = entries[0].isIntersecting;
+            if (isVisible) startAnimation();
+        }, { threshold: 0.01 });
+
+        if (gallery) intersectionObserver.observe(gallery);
+    });
+
+    onDestroy(() => {
+        stopAnimation();
+        intersectionObserver?.disconnect();
+        if (renderer) renderer.dispose();
+        if (scene) {
+            scene.traverse((obj) => {
+                if (obj.geometry) obj.geometry.dispose();
+                if (obj.material) {
+                    if (Array.isArray(obj.material)) obj.material.forEach(m => m.dispose());
+                    else obj.material.dispose();
+                }
+            });
+        }
     });
 
     const setPathLength = () => {
@@ -376,11 +414,9 @@
             }
             renderer.render(scene, camera);
         }
-        window.requestAnimationFrame(updateGallery);
+        rafId = isVisible ? window.requestAnimationFrame(updateGallery) : null;
     };
 
-
-    $: mounted && window.requestAnimationFrame(() => { updateGallery() })
 
     $: mounted && !drawn && canvas && projects.length && drawPlatonicSolid(platonicSolid);
     $: if (mounted && window?.outerHeight) {
