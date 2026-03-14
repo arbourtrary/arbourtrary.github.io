@@ -3,7 +3,7 @@
   import Music from "../../components/Music.svelte"
   import Footer from '../../components/Footer.svelte';
   import photoData from "../../data/photos.json";
-  import { onMount } from "svelte";
+  import { onMount, onDestroy, afterUpdate } from "svelte";
 
   let DEFAULT_HEIGHT = 40;
   let MAX_WIDTH = 800;
@@ -14,9 +14,14 @@
   let collapse;
   let expanded = false;
 
+  const BATCH_SIZE = 30;
+  let visibleCount = BATCH_SIZE;
+  let sentinel;
+  let loadObserver;
+
   onMount(() => {
       shouldHydrate = true;
-  })  
+  })
 
   function updateHeight(img, parent) {
     if (img?.complete) {
@@ -77,6 +82,25 @@
       });
   }
 
+  function attachSentinelObserver() {
+      if (!sentinel || visibleCount >= photoData.length) return;
+      loadObserver?.disconnect();
+      loadObserver = new IntersectionObserver((entries) => {
+          if (entries[0].isIntersecting) {
+              visibleCount = Math.min(visibleCount + BATCH_SIZE, photoData.length);
+          }
+      }, { rootMargin: "200px" });
+      loadObserver.observe(sentinel);
+  }
+
+  afterUpdate(() => {
+      if (sentinel) attachSentinelObserver();
+  });
+
+  onDestroy(() => {
+      loadObserver?.disconnect();
+  });
+
   $: if (gallery) {
       resetFigureStyle();
       collpaseFigures();
@@ -125,14 +149,17 @@
         </button>
     </div>
     <div class="gallery" bind:this={gallery}>
-      {#each photoData as photo, i}
+      {#each photoData.slice(0, visibleCount) as photo, i}
         <div class="image-container" on:click={(e) => handleClick(e, i)} on:keydown={(e) => handleClick(e, i)}>
             <figure>
-              <img loading={i > 20 ? "lazy" : "eager"} class="filtered-image" src={`/images/photos/${photo.filename}`}/>
+              <img loading={i < 5 ? "eager" : "lazy"} class="filtered-image" src={`/images/photos/${photo.filename}`}/>
               <div class="noise"></div>
           </figure>
         </div>
       {/each}
+      {#if visibleCount < photoData.length}
+        <div bind:this={sentinel} class="sentinel"></div>
+      {/if}
     </div>
     <Footer/>
 {/if}
@@ -233,7 +260,7 @@
     overflow: hidden;
     border-radius: 10px;
 /*    box-shadow: 0px 0px 1px rgba(3, 7, 18, 0.02), 0px 0px 4px rgba(3, 7, 18, 0.03), 0px 0px 9px rgba(3, 7, 18, 0.05), 0px 0px 15px rgba(3, 7, 18, 0.06), 0px 0px 24px rgba(3, 7, 18, 0.08);*/
-    transition: all 0.5s ease;
+    transition: height 0.5s ease, width 0.5s ease, opacity 0.5s ease;
     border: 1px solid transparent;
     height: 40px;
     cursor: pointer;
@@ -252,7 +279,7 @@
     position: relative;
     opacity: 1;
     margin: 0;
-    transition: all 0.5s ease;
+    transition: height 0.5s ease;
     pointer-events: none;
   }
   .filtered-image {
@@ -262,7 +289,7 @@
     width: 100%;
     height: auto;
     filter: blur(20px);
-    transition: all 0.5s ease;
+    transition: filter 0.5s ease;
     pointer-events: none;
   }
   .noise {
@@ -270,7 +297,7 @@
       height: 100%;
       opacity: 0.2;
 /*      filter: contrast(170%) brightness(100%);*/
-      transition: all 0.5s ease;
+      transition: opacity 0.5s ease;
       background: linear-gradient(0deg, rgba(255,255,255,0.005), rgba(255,255,255,0.005)), url("/images/photos/noise.webp");
 
 /*      url("data:image/svg+xml,%3Csvg viewBox='0 0 347 347' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3.74' numOctaves='20' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")*/
@@ -288,6 +315,10 @@
   }
   .image-container:last-of-type {
     margin-bottom: 60px !important;
+  }
+  .sentinel {
+    height: 1px;
+    width: 100%;
   }
   @media only screen and (max-width: 600px) {
       .gallery, .gallery-header {
