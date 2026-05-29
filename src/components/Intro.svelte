@@ -1,6 +1,6 @@
 <script>
     import { base } from '$app/paths'
-    let introText = `I'm a <span style="color: var(--blue)">creative developer</span> who enjoys musing about <span style="color: var(--green)">nature</span>, <span style="color: var(--orange)">mathematics</span> &amp; <span style="color: var(--purple)">poetry</span>`
+    let introText = `<span style="color: var(--blue)">Creative dev</span> who enjoys musing about <span style="color: var(--green)">nature</span>, <span style="color: var(--orange)">math</span> &amp; <span style="color: var(--purple)">poetry</span><br>Founder at <a class="company" href="https://www.wanderwhim.com" target="_blank">Wanderwhim</a>. `
     let imageText = "a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"
 </script>
 
@@ -86,6 +86,19 @@
         --name-linear-gradient: linear-gradient(to right, var(--blue), var(--green), var(--yellow), var(--purple));
         --name-filter: brightness(1.1);
         --intro-img-filter: blur(0px) brightness(1) drop-shadow(0px 1px var(--color-1)) !important;
+    }
+    :global(.company) {
+        color: var(--color-1);
+        text-decoration: underline;
+        text-decoration-color: var(--color-2);
+        text-decoration-thickness: 0.5px;
+        text-underline-offset: 3px;
+    }
+    :global(.company:hover) {
+        color: var(--color-1);
+        text-decoration: underline;
+        text-decoration-color: var(--color-1);
+        text-decoration-thickness: 1px;
     }
     .progress-bar-bg {
         height: 1px;
@@ -211,7 +224,7 @@
         transform: translate(0, -50%);
     }
     .intro-header {
-        font-size: 28px;
+        font-size: 24px;
         font-family: var(--serif);
         font-weight: 300;
         text-align: left;
@@ -253,7 +266,7 @@
             margin: 0 auto;
         }
         .intro-header {
-            font-size: 28px;
+            font-size: 24px;
             text-align: left;
             width: min(340px, 100%);
         }
@@ -283,10 +296,10 @@
     }
     @media screen and (max-width: 500px) {
         .intro-header {
-            font-size: 26px;
+            font-size: 22px;
         }
         .intro-description {
-            max-width: min(calc(100% - 20px), 310px)
+            max-width: min(calc(100% - 20px), 290px)
         }
     }
 </style>
