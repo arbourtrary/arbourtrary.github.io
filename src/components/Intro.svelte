@@ -224,7 +224,7 @@
         transform: translate(0, -50%);
     }
     .intro-header {
-        font-size: 24px;
+        font-size: 26px;
         font-family: var(--serif);
         font-weight: 300;
         text-align: left;
