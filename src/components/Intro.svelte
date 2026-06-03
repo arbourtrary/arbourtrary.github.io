@@ -231,7 +231,7 @@
         margin: 5px auto 0 0;
         padding-bottom: 5px;
         color: var(--color-1);
-        width: 340px;
+        width: 342px;
         margin-top: 5px;
         opacity: 1;
         line-height: 1.25;
@@ -268,7 +268,7 @@
         .intro-header {
             font-size: 24px;
             text-align: left;
-            width: min(340px, 100%);
+            width: min(342px, 100%);
         }
         .intro-description {
             padding-top: 0px;
