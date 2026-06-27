@@ -2077,5 +2077,12 @@
     "date": "4/15/2026",
     "age": 34,
     "slug": "orbic"
+  },
+  {
+    "name": "Frontier",
+    "rating": 3,
+    "date": "6/27/2026",
+    "age": 34,
+    "slug": "frontier"
   }
 ]
