@@ -1,0 +1,71 @@
+<!doctype html>
+<!--
+  Share image for the Company Anagrams sketch.
+  Open this file in a browser to preview it. Run ./render.sh to write
+  static/images/social_sketch_11_viz.webp.
+  Everything you'd want to change is in CONFIG below.
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Company Anagrams Social</title>
+<link rel="stylesheet" href="../../node_modules/@fontsource/im-fell-english/index.css">
+<style>
+    html, body { margin: 0; background: #e9e5dc; }
+    #card { position: relative; overflow: hidden; font-family: "IM Fell English", serif; }
+    #card span { position: absolute; white-space: pre; line-height: 1; }
+</style>
+</head>
+<body>
+<div id="card"></div>
+<script>
+const CONFIG = {
+    width: 1500,
+    height: 802,
+    background: '#F5F2EB',          // --bg-color
+    color: '#373531',               // --color-1
+
+    // company above a line, its anagram below turned 180°
+    company: 'vercel',
+    anagram: 'clever',
+    size: 240,                      // font size, px
+    lineGap: 52,                    // space between each word and the line, px
+    lineOverhang: 36,               // how far the line runs past the longer word, px
+    lineWeight: 1.5,                // px
+};
+
+const card = document.getElementById('card');
+Object.assign(card.style, { width: `${CONFIG.width}px`, height: `${CONFIG.height}px`, background: CONFIG.background });
+
+function add(str) {
+    const el = document.createElement('span');
+    el.textContent = str;
+    Object.assign(el.style, { fontSize: `${CONFIG.size}px`, color: CONFIG.color });
+    card.appendChild(el);
+    return el;
+}
+
+document.fonts.load(`40px "IM Fell English"`).then(() => {
+    const { size, lineGap, lineWeight, lineOverhang } = CONFIG;
+    const top = add(CONFIG.company);
+    const bottom = add(CONFIG.anagram);
+    const lineY = CONFIG.height / 2;
+    // line-height 1 leaves room for descenders under the baseline; tuck each word down onto the line
+    const descent = size * 0.22;
+    top.style.left = `${(CONFIG.width - top.offsetWidth) / 2}px`;
+    top.style.top = `${lineY - lineGap - size + descent}px`;
+    // rotated around its own center, so its box mirrors the top word's around the line
+    bottom.style.left = `${(CONFIG.width - bottom.offsetWidth) / 2}px`;
+    bottom.style.top = `${lineY + lineGap - descent}px`;
+    bottom.style.transform = 'rotate(180deg)';
+
+    const line = add('');
+    const lineW = Math.max(top.offsetWidth, bottom.offsetWidth) + lineOverhang * 2;
+    Object.assign(line.style, {
+        left: `${(CONFIG.width - lineW) / 2}px`, top: `${lineY - lineWeight / 2}px`,
+        width: `${lineW}px`, height: `${lineWeight}px`, background: CONFIG.color,
+    });
+});
+</script>
+</body>
+</html>

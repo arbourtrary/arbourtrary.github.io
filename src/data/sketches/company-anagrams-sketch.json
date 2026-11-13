@@ -1,0 +1,491 @@
+[
+	{
+		"name": "Vercel",
+		"words": [
+			"clever"
+		]
+	},
+	{
+		"name": "Renault",
+		"words": [
+			"neutral"
+		]
+	},
+	{
+		"name": "Siemens",
+		"words": [
+			"nemesis"
+		]
+	},
+	{
+		"name": "Atlassian",
+		"words": [
+			"assailant"
+		]
+	},
+	{
+		"name": "Pontiac",
+		"words": [
+			"caption"
+		]
+	},
+	{
+		"name": "Replit",
+		"words": [
+			"triple"
+		]
+	},
+	{
+		"name": "Cartier",
+		"words": [
+			"erratic"
+		]
+	},
+	{
+		"name": "Ericsson",
+		"words": [
+			"necrosis"
+		]
+	},
+	{
+		"name": "Stripe",
+		"words": [
+			"priest",
+			"sprite"
+		]
+	},
+	{
+		"name": "Redfin",
+		"words": [
+			"friend",
+			"finder"
+		]
+	},
+	{
+		"name": "Lacoste",
+		"words": [
+			"lactose",
+			"locates"
+		]
+	},
+	{
+		"name": "Vimeo",
+		"words": [
+			"movie"
+		]
+	},
+	{
+		"name": "DirecTV",
+		"words": [
+			"verdict"
+		]
+	},
+	{
+		"name": "Docker",
+		"words": [
+			"rocked"
+		]
+	},
+	{
+		"name": "Converse",
+		"words": [
+			"conserve"
+		]
+	},
+	{
+		"name": "Tesla",
+		"words": [
+			"steal",
+			"least",
+			"tales",
+			"slate",
+			"stale"
+		]
+	},
+	{
+		"name": "Velcro",
+		"words": [
+			"clover"
+		]
+	},
+	{
+		"name": "Proton",
+		"words": [
+			"pronto"
+		]
+	},
+	{
+		"name": "Nespresso",
+		"words": [
+			"responses"
+		]
+	},
+	{
+		"name": "Red Hat",
+		"words": [
+			"thread",
+			"hatred",
+			"dearth"
+		]
+	},
+	{
+		"name": "Verisign",
+		"words": [
+			"revising"
+		]
+	},
+	{
+		"name": "Wayfair",
+		"words": [
+			"fairway"
+		]
+	},
+	{
+		"name": "Agilent",
+		"words": [
+			"gelatin"
+		]
+	},
+	{
+		"name": "Ricoh",
+		"words": [
+			"choir"
+		]
+	},
+	{
+		"name": "Geely",
+		"words": [
+			"elegy"
+		]
+	},
+	{
+		"name": "Garmin",
+		"words": [
+			"margin",
+			"arming"
+		]
+	},
+	{
+		"name": "Framer",
+		"words": [
+			"farmer"
+		]
+	},
+	{
+		"name": "Staples",
+		"words": [
+			"pastels"
+		]
+	},
+	{
+		"name": "Wired",
+		"words": [
+			"weird",
+			"wider"
+		]
+	},
+	{
+		"name": "Carlyle",
+		"words": [
+			"clearly"
+		]
+	},
+	{
+		"name": "Pearson",
+		"words": [
+			"persona"
+		]
+	},
+	{
+		"name": "Atmel",
+		"words": [
+			"metal"
+		]
+	},
+	{
+		"name": "Braun",
+		"words": [
+			"urban"
+		]
+	},
+	{
+		"name": "Atari",
+		"words": [
+			"tiara"
+		]
+	},
+	{
+		"name": "Supreme",
+		"words": [
+			"presume"
+		]
+	},
+	{
+		"name": "Signal",
+		"words": [
+			"aligns"
+		]
+	},
+	{
+		"name": "Maersk",
+		"words": [
+			"makers"
+		]
+	},
+	{
+		"name": "Naver",
+		"words": [
+			"raven"
+		]
+	},
+	{
+		"name": "Carvana",
+		"words": [
+			"caravan"
+		]
+	},
+	{
+		"name": "Tecmo",
+		"words": [
+			"comet"
+		]
+	},
+	{
+		"name": "Palm",
+		"words": [
+			"lamp"
+		]
+	},
+	{
+		"name": "Adobe",
+		"words": [
+			"abode"
+		]
+	},
+	{
+		"name": "Meta",
+		"words": [
+			"team",
+			"meat",
+			"mate",
+			"tame"
+		]
+	},
+	{
+		"name": "Sony",
+		"words": [
+			"nosy"
+		]
+	},
+	{
+		"name": "Slack",
+		"words": [
+			"lacks"
+		]
+	},
+	{
+		"name": "Intel",
+		"words": [
+			"inlet"
+		]
+	},
+	{
+		"name": "Porsche",
+		"words": [
+			"porches"
+		]
+	},
+	{
+		"name": "Opel",
+		"words": [
+			"pole"
+		]
+	},
+	{
+		"name": "Acer",
+		"words": [
+			"care",
+			"race",
+			"acre"
+		]
+	},
+	{
+		"name": "Lidl",
+		"words": [
+			"dill"
+		]
+	},
+	{
+		"name": "SEAT",
+		"words": [
+			"east",
+			"eats"
+		]
+	},
+	{
+		"name": "Sharp",
+		"words": [
+			"harps"
+		]
+	},
+	{
+		"name": "Aldi",
+		"words": [
+			"dial",
+			"laid"
+		]
+	},
+	{
+		"name": "Vespa",
+		"words": [
+			"paves"
+		]
+	},
+	{
+		"name": "Lego",
+		"words": [
+			"ogle"
+		]
+	},
+	{
+		"name": "Elsevier",
+		"words": [
+			"relieves"
+		]
+	},
+	{
+		"name": "Mars",
+		"words": [
+			"arms",
+			"rams"
+		]
+	},
+	{
+		"name": "ASML",
+		"words": [
+			"slam"
+		]
+	},
+	{
+		"name": "Fendi",
+		"words": [
+			"fined",
+			"fiend"
+		]
+	},
+	{
+		"name": "Fila",
+		"words": [
+			"fail"
+		]
+	},
+	{
+		"name": "Singer",
+		"words": [
+			"resign",
+			"reigns",
+			"signer"
+		]
+	},
+	{
+		"name": "DICE",
+		"words": [
+			"iced"
+		]
+	},
+	{
+		"name": "ESET",
+		"words": [
+			"tees"
+		]
+	},
+	{
+		"name": "Mango",
+		"words": [
+			"among"
+		]
+	},
+	{
+		"name": "Scion",
+		"words": [
+			"coins",
+			"icons",
+			"sonic"
+		]
+	},
+	{
+		"name": "Sprint",
+		"words": [
+			"prints"
+		]
+	},
+	{
+		"name": "Cray",
+		"words": [
+			"racy"
+		]
+	},
+	{
+		"name": "Esri",
+		"words": [
+			"rise",
+			"sire"
+		]
+	},
+	{
+		"name": "United",
+		"words": [
+			"untied"
+		]
+	},
+	{
+		"name": "Nexon",
+		"words": [
+			"xenon"
+		]
+	},
+	{
+		"name": "Grab",
+		"words": [
+			"brag",
+			"garb"
+		]
+	},
+	{
+		"name": "GOAT",
+		"words": [
+			"toga"
+		]
+	},
+	{
+		"name": "Hinge",
+		"words": [
+			"neigh"
+		]
+	},
+	{
+		"name": "Lever",
+		"words": [
+			"revel"
+		]
+	},
+	{
+		"name": "Neon",
+		"words": [
+			"none"
+		]
+	},
+	{
+		"name": "Ramp",
+		"words": [
+			"pram"
+		]
+	},
+	{
+		"name": "Resend",
+		"words": [
+			"sender",
+			"denser"
+		]
+	}
+]

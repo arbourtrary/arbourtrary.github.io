@@ -1,0 +1,96 @@
+<h2>Company Anagrams</h2>
+<p><b>Inspiration</b>: My brain is a jumble of parenting, tech news and word games. One day in my boredom I thought about the company name Vercel. It seemed odd, and I wondered where that name came from. Then realized <b>Vercel</b> is an anagram of <b>clever</b>. I can't verify if that was intentionally done by their hired branding agency? But it made me wonder about other companies.</p>
+
+<p><b>Description</b>: To figure out if other companies were anagrams like this, I pulled together some data sources and filtered for (ideally / mostly) companies people actually recognize. The list is biased towards tech: the 1,000 largest US-listed companies by market cap from the SEC, companies with articles on 25 or more Wikipedias from Wikidata, Y Combinator's top companies, and a handful of other sources.</p>
+
+<p><b>Method</b>: English words come from <a href="http://wordlist.aspell.net" target="_blank">SCOWL</a>'s standard-size dictionary, filtered out if they're not in the 70,000 most common words in Peter Norvig's counts from the Google Web Trillion Word Corpus.</p>
+
+<p style="margin-top: 30px;"><b>Appendix</b></p>
+<!-- appendix:start -->
+<div style="display: grid; grid-template-columns: max-content 1fr; column-gap: 40px; row-gap: 6px; margin-left: 30px;">
+<p style="margin: 0;"><a href="#" data-company="Acer">Acer</a></p><p style="margin: 0; color: var(--color-2);">care, race, acre</p>
+<p style="margin: 0;"><a href="#" data-company="Adobe">Adobe</a></p><p style="margin: 0; color: var(--color-2);">abode</p>
+<p style="margin: 0;"><a href="#" data-company="Agilent">Agilent</a></p><p style="margin: 0; color: var(--color-2);">gelatin</p>
+<p style="margin: 0;"><a href="#" data-company="Aldi">Aldi</a></p><p style="margin: 0; color: var(--color-2);">dial, laid</p>
+<p style="margin: 0;"><a href="#" data-company="ASML">ASML</a></p><p style="margin: 0; color: var(--color-2);">slam</p>
+<p style="margin: 0;"><a href="#" data-company="Atari">Atari</a></p><p style="margin: 0; color: var(--color-2);">tiara</p>
+<p style="margin: 0;"><a href="#" data-company="Atlassian">Atlassian</a></p><p style="margin: 0; color: var(--color-2);">assailant</p>
+<p style="margin: 0;"><a href="#" data-company="Atmel">Atmel</a></p><p style="margin: 0; color: var(--color-2);">metal</p>
+<p style="margin: 0;"><a href="#" data-company="Braun">Braun</a></p><p style="margin: 0; color: var(--color-2);">urban</p>
+<p style="margin: 0;"><a href="#" data-company="Carlyle">Carlyle</a></p><p style="margin: 0; color: var(--color-2);">clearly</p>
+<p style="margin: 0;"><a href="#" data-company="Cartier">Cartier</a></p><p style="margin: 0; color: var(--color-2);">erratic</p>
+<p style="margin: 0;"><a href="#" data-company="Carvana">Carvana</a></p><p style="margin: 0; color: var(--color-2);">caravan</p>
+<p style="margin: 0;"><a href="#" data-company="Converse">Converse</a></p><p style="margin: 0; color: var(--color-2);">conserve</p>
+<p style="margin: 0;"><a href="#" data-company="Cray">Cray</a></p><p style="margin: 0; color: var(--color-2);">racy</p>
+<p style="margin: 0;"><a href="#" data-company="DICE">DICE</a></p><p style="margin: 0; color: var(--color-2);">iced</p>
+<p style="margin: 0;"><a href="#" data-company="DirecTV">DirecTV</a></p><p style="margin: 0; color: var(--color-2);">verdict</p>
+<p style="margin: 0;"><a href="#" data-company="Docker">Docker</a></p><p style="margin: 0; color: var(--color-2);">rocked</p>
+<p style="margin: 0;"><a href="#" data-company="Elsevier">Elsevier</a></p><p style="margin: 0; color: var(--color-2);">relieves</p>
+<p style="margin: 0;"><a href="#" data-company="Ericsson">Ericsson</a></p><p style="margin: 0; color: var(--color-2);">necrosis</p>
+<p style="margin: 0;"><a href="#" data-company="ESET">ESET</a></p><p style="margin: 0; color: var(--color-2);">tees</p>
+<p style="margin: 0;"><a href="#" data-company="Esri">Esri</a></p><p style="margin: 0; color: var(--color-2);">rise, sire</p>
+<p style="margin: 0;"><a href="#" data-company="Fendi">Fendi</a></p><p style="margin: 0; color: var(--color-2);">fined, fiend</p>
+<p style="margin: 0;"><a href="#" data-company="Fila">Fila</a></p><p style="margin: 0; color: var(--color-2);">fail</p>
+<p style="margin: 0;"><a href="#" data-company="Framer">Framer</a></p><p style="margin: 0; color: var(--color-2);">farmer</p>
+<p style="margin: 0;"><a href="#" data-company="Garmin">Garmin</a></p><p style="margin: 0; color: var(--color-2);">margin, arming</p>
+<p style="margin: 0;"><a href="#" data-company="Geely">Geely</a></p><p style="margin: 0; color: var(--color-2);">elegy</p>
+<p style="margin: 0;"><a href="#" data-company="GOAT">GOAT</a></p><p style="margin: 0; color: var(--color-2);">toga</p>
+<p style="margin: 0;"><a href="#" data-company="Grab">Grab</a></p><p style="margin: 0; color: var(--color-2);">brag, garb</p>
+<p style="margin: 0;"><a href="#" data-company="Hinge">Hinge</a></p><p style="margin: 0; color: var(--color-2);">neigh</p>
+<p style="margin: 0;"><a href="#" data-company="Intel">Intel</a></p><p style="margin: 0; color: var(--color-2);">inlet</p>
+<p style="margin: 0;"><a href="#" data-company="Lacoste">Lacoste</a></p><p style="margin: 0; color: var(--color-2);">lactose, locates</p>
+<p style="margin: 0;"><a href="#" data-company="Lego">Lego</a></p><p style="margin: 0; color: var(--color-2);">ogle</p>
+<p style="margin: 0;"><a href="#" data-company="Lever">Lever</a></p><p style="margin: 0; color: var(--color-2);">revel</p>
+<p style="margin: 0;"><a href="#" data-company="Lidl">Lidl</a></p><p style="margin: 0; color: var(--color-2);">dill</p>
+<p style="margin: 0;"><a href="#" data-company="Maersk">Maersk</a></p><p style="margin: 0; color: var(--color-2);">makers</p>
+<p style="margin: 0;"><a href="#" data-company="Mango">Mango</a></p><p style="margin: 0; color: var(--color-2);">among</p>
+<p style="margin: 0;"><a href="#" data-company="Mars">Mars</a></p><p style="margin: 0; color: var(--color-2);">arms, rams</p>
+<p style="margin: 0;"><a href="#" data-company="Meta">Meta</a></p><p style="margin: 0; color: var(--color-2);">team, meat, mate, tame</p>
+<p style="margin: 0;"><a href="#" data-company="Naver">Naver</a></p><p style="margin: 0; color: var(--color-2);">raven</p>
+<p style="margin: 0;"><a href="#" data-company="Neon">Neon</a></p><p style="margin: 0; color: var(--color-2);">none</p>
+<p style="margin: 0;"><a href="#" data-company="Nespresso">Nespresso</a></p><p style="margin: 0; color: var(--color-2);">responses</p>
+<p style="margin: 0;"><a href="#" data-company="Nexon">Nexon</a></p><p style="margin: 0; color: var(--color-2);">xenon</p>
+<p style="margin: 0;"><a href="#" data-company="Opel">Opel</a></p><p style="margin: 0; color: var(--color-2);">pole</p>
+<p style="margin: 0;"><a href="#" data-company="Palm">Palm</a></p><p style="margin: 0; color: var(--color-2);">lamp</p>
+<p style="margin: 0;"><a href="#" data-company="Pearson">Pearson</a></p><p style="margin: 0; color: var(--color-2);">persona</p>
+<p style="margin: 0;"><a href="#" data-company="Pontiac">Pontiac</a></p><p style="margin: 0; color: var(--color-2);">caption</p>
+<p style="margin: 0;"><a href="#" data-company="Porsche">Porsche</a></p><p style="margin: 0; color: var(--color-2);">porches</p>
+<p style="margin: 0;"><a href="#" data-company="Proton">Proton</a></p><p style="margin: 0; color: var(--color-2);">pronto</p>
+<p style="margin: 0;"><a href="#" data-company="Ramp">Ramp</a></p><p style="margin: 0; color: var(--color-2);">pram</p>
+<p style="margin: 0;"><a href="#" data-company="Red Hat">Red Hat</a></p><p style="margin: 0; color: var(--color-2);">thread, hatred, dearth</p>
+<p style="margin: 0;"><a href="#" data-company="Redfin">Redfin</a></p><p style="margin: 0; color: var(--color-2);">friend, finder</p>
+<p style="margin: 0;"><a href="#" data-company="Renault">Renault</a></p><p style="margin: 0; color: var(--color-2);">neutral</p>
+<p style="margin: 0;"><a href="#" data-company="Replit">Replit</a></p><p style="margin: 0; color: var(--color-2);">triple</p>
+<p style="margin: 0;"><a href="#" data-company="Resend">Resend</a></p><p style="margin: 0; color: var(--color-2);">sender, denser</p>
+<p style="margin: 0;"><a href="#" data-company="Ricoh">Ricoh</a></p><p style="margin: 0; color: var(--color-2);">choir</p>
+<p style="margin: 0;"><a href="#" data-company="Scion">Scion</a></p><p style="margin: 0; color: var(--color-2);">coins, icons, sonic</p>
+<p style="margin: 0;"><a href="#" data-company="SEAT">SEAT</a></p><p style="margin: 0; color: var(--color-2);">east, eats</p>
+<p style="margin: 0;"><a href="#" data-company="Sharp">Sharp</a></p><p style="margin: 0; color: var(--color-2);">harps</p>
+<p style="margin: 0;"><a href="#" data-company="Siemens">Siemens</a></p><p style="margin: 0; color: var(--color-2);">nemesis</p>
+<p style="margin: 0;"><a href="#" data-company="Signal">Signal</a></p><p style="margin: 0; color: var(--color-2);">aligns</p>
+<p style="margin: 0;"><a href="#" data-company="Singer">Singer</a></p><p style="margin: 0; color: var(--color-2);">resign, reigns, signer</p>
+<p style="margin: 0;"><a href="#" data-company="Slack">Slack</a></p><p style="margin: 0; color: var(--color-2);">lacks</p>
+<p style="margin: 0;"><a href="#" data-company="Sony">Sony</a></p><p style="margin: 0; color: var(--color-2);">nosy</p>
+<p style="margin: 0;"><a href="#" data-company="Sprint">Sprint</a></p><p style="margin: 0; color: var(--color-2);">prints</p>
+<p style="margin: 0;"><a href="#" data-company="Staples">Staples</a></p><p style="margin: 0; color: var(--color-2);">pastels</p>
+<p style="margin: 0;"><a href="#" data-company="Stripe">Stripe</a></p><p style="margin: 0; color: var(--color-2);">priest, sprite</p>
+<p style="margin: 0;"><a href="#" data-company="Supreme">Supreme</a></p><p style="margin: 0; color: var(--color-2);">presume</p>
+<p style="margin: 0;"><a href="#" data-company="Tecmo">Tecmo</a></p><p style="margin: 0; color: var(--color-2);">comet</p>
+<p style="margin: 0;"><a href="#" data-company="Tesla">Tesla</a></p><p style="margin: 0; color: var(--color-2);">least, tales, steal, slate, stale</p>
+<p style="margin: 0;"><a href="#" data-company="United">United</a></p><p style="margin: 0; color: var(--color-2);">untied</p>
+<p style="margin: 0;"><a href="#" data-company="Velcro">Velcro</a></p><p style="margin: 0; color: var(--color-2);">clover</p>
+<p style="margin: 0;"><a href="#" data-company="Vercel">Vercel</a></p><p style="margin: 0; color: var(--color-2);">clever</p>
+<p style="margin: 0;"><a href="#" data-company="Verisign">Verisign</a></p><p style="margin: 0; color: var(--color-2);">revising</p>
+<p style="margin: 0;"><a href="#" data-company="Vespa">Vespa</a></p><p style="margin: 0; color: var(--color-2);">paves</p>
+<p style="margin: 0;"><a href="#" data-company="Vimeo">Vimeo</a></p><p style="margin: 0; color: var(--color-2);">movie</p>
+<p style="margin: 0;"><a href="#" data-company="Wayfair">Wayfair</a></p><p style="margin: 0; color: var(--color-2);">fairway</p>
+<p style="margin: 0;"><a href="#" data-company="Wired">Wired</a></p><p style="margin: 0; color: var(--color-2);">weird, wider</p>
+</div>
+<!-- appendix:end -->
+
+<p style="margin-top: 30px;"><b>Sources</b></p>
+<p class="indent"><a href="https://www.wikidata.org" target="_blank">Wikidata</a></p>
+<p class="indent"><a href="https://www.sec.gov/files/company_tickers.json" target="_blank">SEC EDGAR company tickers</a></p>
+<p class="indent"><a href="https://github.com/yc-oss/api" target="_blank">Y Combinator companies (yc-oss)</a></p>
+<p class="indent"><a href="http://wordlist.aspell.net" target="_blank">SCOWL word lists, Kevin Atkinson</a></p>
+<p class="indent"><a href="https://norvig.com/ngrams/" target="_blank">Natural Language Corpus Data, Peter Norvig</a></p>

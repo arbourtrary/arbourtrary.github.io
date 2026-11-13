@@ -122,6 +122,17 @@
       },
       "filename": "/data/sketches/crossword-heatmap.txt",
       "socialImage": "social_sketch_10_viz.webp"
+  },
+  {
+    "index": 11,
+    "date": "11/12/26",
+      "title": "Company Anagrams", 
+      "slug": "company-anagrams",
+      "description": "Company names whose letters rearrange into one or several English words",
+      "sketch": {
+        "name": "CompanyAnagrams"
+      },
+      "filename": "/data/sketches/company-anagrams.txt",
+      "socialImage": "social_sketch_11_viz.webp"
   }
 ]
-

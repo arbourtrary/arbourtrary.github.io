@@ -10,5 +10,6 @@ export const sketchComponents = {
     CistercianCiphers: () => import('/src/components/CistercianCiphers.svelte'),
     ClimbingTrees: () => import('/src/components/ClimbingTrees.svelte'),
     RisingTemperature: () => import('/src/components/RisingTemperature.svelte'),
-    CrosswordHeatmap: () => import('/src/components/CrosswordHeatmap.svelte')
+    CrosswordHeatmap: () => import('/src/components/CrosswordHeatmap.svelte'),
+    CompanyAnagrams: () => import('/src/components/CompanyAnagrams.svelte')
 }; 
