@@ -91,7 +91,7 @@
             word.textContent = '';
             letters = [...texts[0]].filter(ch => ch !== ' ').map(ch => {
                 const el = document.createElement('span');
-                el.className = 'letter';
+                el.className = 'anagram-letter';
                 el.textContent = ch;
                 word.appendChild(el);
                 return { ch, el, x: 0 };
@@ -340,7 +340,7 @@
         position: relative;
         height: 1.4em;
     }
-    .word :global(.letter) {
+    .word :global(.anagram-letter) {
         position: absolute;
         left: 0;
         top: 0.2em;
