@@ -107,7 +107,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        background: #D0C6B6;
+        background: #D4D4D0;
         z-index: 1;
     }
     .header-container {

@@ -162,7 +162,7 @@
     }
     
  		// Shadow
-		ctx.shadowColor = "#F5F2EB";
+		ctx.shadowColor = "#F8F8F6";
 		ctx.shadowOffsetX = 0;
 		ctx.shadowOffsetY = 0;	
 		ctx.shadowBlur = 5;

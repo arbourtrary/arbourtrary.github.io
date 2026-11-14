@@ -49,7 +49,7 @@
       ctx.closePath();
 
             // Shadow
-	ctx.shadowColor = "#A8A195";
+	ctx.shadowColor = "#A3A3A0";
 	ctx.shadowOffsetX = 0;
 	ctx.shadowOffsetY = 0;	
 	ctx.shadowBlur = 15;
