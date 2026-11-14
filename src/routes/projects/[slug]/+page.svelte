@@ -4,6 +4,7 @@
     import { base } from '$app/paths'
     import Header from '../../../components/Header.svelte';
     import Footer from '../../../components/Footer.svelte';
+    import FlipbookDemos from '../../../components/FlipbookDemos.svelte';
 
     export let data;
 
@@ -149,6 +150,12 @@
         <div class="project-section">
             <h2 class="section-header">Summary</h2>
             <p>{@html data.project.text}</p>
+        </div>
+    {/if}
+    {#if data.project.slug === "flipbook-foundry"}
+        <div class="project-section">
+            <h2 class="section-header">Try it</h2>
+            <FlipbookDemos />
         </div>
     {/if}
     {#if data.project.awards.length}

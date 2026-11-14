@@ -21,6 +21,7 @@
 		"@fontsource/courier-prime": "^5.2.6",
 		"@fontsource/im-fell-english": "^4.5.8",
 		"@fontsource/vollkorn": "^5.1.1",
+		"flipbook-foundry": "^0.1.0",
 		"marked": "^5.0.4",
 		"n": "^9.0.1"
 	}
