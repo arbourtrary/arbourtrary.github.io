@@ -45,7 +45,8 @@
   </button>
 
   <!-- Side Menu Panel -->
-  <nav class="side-menu" class:open={isOpen}>
+  <!-- Eager code preload: iOS Safari swallows the first tap if hover-preload injects route CSS mid-tap -->
+  <nav class="side-menu" class:open={isOpen} data-sveltekit-preload-code="eager">
     <ul>
       <li><a href={base + "/"}>Home</a></li>
       <li><a href={base + "/about"}>About</a></li>
