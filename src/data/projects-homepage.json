@@ -689,5 +689,40 @@
       "quotes.webp",
       "docs.webp"
     ]
+  },
+  {
+    "title": "Flipbook Foundry",
+    "slug": "flipbook-foundry",
+    "publication": "Open source",
+    "description": "An animation library where every frame of every stick figure is a character in a font",
+    "year": "2026",
+    "date": "11/14/26",
+    "awards": [],
+    "awardsShort": [],
+    "tags": [
+      "open source",
+      "animation",
+      "typography",
+      "fonts"
+    ],
+    "image": "",
+    "url": "https://flipbook-foundry.pages.dev",
+    "format": "Open Source",
+    "text": "A stick-figure animation library where each drawing is a glyph: 93 actions and 2,614 hand-timed frames baked into one font, played by swapping one character for the next. A figure can stand in the middle of a sentence, a crowd of hundreds can share a canvas, and letters grow legs. The demo has a Swarm! button that moves a few hundred of them into the page, and a pair of thieves who steal letters out of a heading and sheepishly bring them back.",
+    "tools": [
+      "svelte",
+      "react",
+      "typescript",
+      "opentype.js",
+      "canvas"
+    ],
+    "gallery": [
+      "hero.webp",
+      "swarm.webp",
+      "swarm-2.webp",
+      "thieves.webp",
+      "glyphs.webp",
+      "actions.webp"
+    ]
   }
 ]

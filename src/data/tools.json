@@ -1,5 +1,11 @@
 [
 	{
+		"name": "flipbook-foundry",
+		"link": "https://flipbook-foundry.pages.dev",
+		"tags": ["open-source", "MIT", "JS"],
+		"description": "An animation library where every frame is a glyph: 93 stick-figure actions baked into a font, with a framer-motion-style API for Svelte, React and plain JS. Figures sit inline in a sentence or run across a canvas by the hundreds. Code on <a href='https://github.com/arbourtrary/flipbook-foundry' target='_blank'>GitHub</a>."
+	},
+	{
 		"name": "dot-sampler",
 		"link": "/tools/dot-sampler",
 		"external": false,
