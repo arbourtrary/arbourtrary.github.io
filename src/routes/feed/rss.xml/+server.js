@@ -1,4 +1,5 @@
 import { marked } from "marked";
+import { base } from "$app/paths";
 import writings from "../../../data/writings.json";
 import sketches from "../../../data/sketches.json";
 import poems from "../../../data/poems.json";
@@ -10,8 +11,9 @@ marked.use({
   headerIds: false
 });
 
+// Static files live under the base path while prerendering (BASE_PATH in CI).
 async function getText(event, filepath) {
-  const response = await event.fetch(filepath);
+  const response = await event.fetch(base + filepath);
   const text = await response.text();
   return text;
 }

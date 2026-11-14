@@ -17,7 +17,7 @@ export async function load({ params, fetch }) {
   sketch.prev = (prevIndex !== sketchIndex) ? sketches[prevIndex] : "";
   sketch.next = (nextIndex !== sketchIndex) ? sketches[nextIndex] : "";
   
-  const response = await fetch(sketch.filename)
+  const response = await fetch(base + sketch.filename)
   const content = await response.text();
   sketch.content = formatContent(content);
 
