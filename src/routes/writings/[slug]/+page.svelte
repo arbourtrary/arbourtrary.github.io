@@ -1,7 +1,8 @@
 <script>
     import { marked } from "marked";
     import { onMount } from 'svelte';
-    import { base } from '$app/paths'
+    import { getBase } from '../../../utils/paths.js';
+    const base = getBase();
     import { clamp, mapToUnitRange } from '../../../utils/math.js';
     import Footer from '../../../components/Footer.svelte';
     import SideMenu from '../../../components/SideMenu.svelte';
@@ -22,7 +23,9 @@
     })
 
     function formatContent(content) {
-        return marked(content.replaceAll('src="/images', `src="${base}/images`))
+        // Writings render at /writings/<slug>: one level up is the site root
+        // under any base path, and the same string on server and client.
+        return marked(content.replaceAll('src="/images', 'src="../images'))
     }
         
     $: body && document.documentElement.style.setProperty('--highlight', data.writing.highlight);

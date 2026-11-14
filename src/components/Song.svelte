@@ -1,7 +1,8 @@
 <script>
 	import { marked } from "marked";
 	import { onMount } from "svelte";
-	import { base } from '$app/paths'
+	import { getBase } from '../utils/paths.js';
+	const base = getBase();
 
 	marked.use({
 	  mangle: false,

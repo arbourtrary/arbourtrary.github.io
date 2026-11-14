@@ -2,7 +2,8 @@
     import { onMount } from "svelte";
     import SketchRow from "./SketchRow.svelte";
     import { getFullYear } from "../utils/date.js";
-    import { base } from '$app/paths'
+    import { getBase } from '../utils/paths.js';
+    const base = getBase();
 
     export let sketches = [];
     export let splitByYear = false;

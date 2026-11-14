@@ -1,6 +1,7 @@
 <script>
     import { onMount } from "svelte";
-    import { base } from '$app/paths';
+    import { getBase } from '../utils/paths.js';
+    const base = getBase();
     // export let scrollY = 0;
     // let outerContainer;
     // let mounted = false;

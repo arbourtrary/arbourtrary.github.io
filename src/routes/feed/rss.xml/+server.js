@@ -1,5 +1,5 @@
 import { marked } from "marked";
-import { base } from "$app/paths";
+import { getBase } from '../../../utils/paths.js';
 import writings from "../../../data/writings.json";
 import sketches from "../../../data/sketches.json";
 import poems from "../../../data/poems.json";
@@ -13,7 +13,7 @@ marked.use({
 
 // Static files live under the base path while prerendering (BASE_PATH in CI).
 async function getText(event, filepath) {
-  const response = await event.fetch(base + filepath);
+  const response = await event.fetch(getBase() + filepath);
   const text = await response.text();
   return text;
 }
@@ -21,7 +21,7 @@ async function getText(event, filepath) {
 
 export async function GET(event) {
   event.setHeaders({
-    'Cache-Control': `max-age=0, s-max-age=3600`,
+    'Cache-Control': `max-age=0, s-maxage=3600`,
     'Content-Type': 'application/xml'
   })
 

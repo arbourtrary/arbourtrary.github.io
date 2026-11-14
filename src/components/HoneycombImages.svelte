@@ -1,5 +1,6 @@
 <script>
-	import { base } from '$app/paths'
+	import { getBase } from '../utils/paths.js';
+	const base = getBase();
     import { onMount } from "svelte";
     import { loadJSON } from "../utils/file.js";
 

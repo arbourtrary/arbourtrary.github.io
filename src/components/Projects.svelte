@@ -1,7 +1,8 @@
 <script>
     import { onMount } from "svelte";
     import { section } from "../store.js"
-    import { base } from '$app/paths'
+    import { getBase } from '../utils/paths.js';
+    const base = getBase();
     import ProjectRow from "./ProjectRow.svelte";
 
     export let projects = [];

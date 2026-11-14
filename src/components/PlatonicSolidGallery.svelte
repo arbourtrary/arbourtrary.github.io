@@ -4,7 +4,8 @@
     import { loadJSON } from "../utils/file.js";
     import { clamp } from "../utils/math.js";
     import { hexToRgb } from "../utils/color.js";
-    import { base } from '$app/paths'
+    import { getBase } from '../utils/paths.js';
+    const base = getBase();
 
     import * as THREE from 'three';
     // TODO: generalize to have this extend a platonic solid gallery component

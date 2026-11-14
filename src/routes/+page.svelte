@@ -1,6 +1,7 @@
 <script>
     import { onMount } from "svelte";
-    import { base } from '$app/paths'
+    import { getBase } from '../utils/paths.js';
+    const base = getBase();
     import { bgColor, textColor1, textColor2, textColor3, textColor4, white } from '../store.js'
     import Header from "../components/Header.svelte"
     import Progress from "../components/Progress.svelte"

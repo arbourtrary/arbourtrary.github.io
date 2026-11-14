@@ -1,7 +1,8 @@
 <script>
     import { onMount } from "svelte";
     import { getFullYear } from "../utils/date.js";
-    import { base } from '$app/paths'
+    import { getBase } from '../utils/paths.js';
+    const base = getBase();
     import WritingRow from "./WritingRow.svelte";
 
     export let writings = [];

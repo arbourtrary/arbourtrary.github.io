@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { base } from '$app/paths';
+import { getBase } from '../../../utils/paths.js';
 import { clamp } from '../../../utils/math.js';  
 import poems from "../../../data/poems.json";
 
@@ -14,7 +14,7 @@ export async function load({ params, fetch }) {
   poem.prev = (prevIndex !== poemIndex) ? poems[prevIndex] : "";
   poem.next = (nextIndex !== poemIndex) ? poems[nextIndex] : "";
   
-  const response = await fetch(`${base}/data/poems/${poem.slug}.txt`);
+  const response = await fetch(`${getBase()}/data/poems/${poem.slug}.txt`);
   poem.content = await response.text();
 
   if (poem) {

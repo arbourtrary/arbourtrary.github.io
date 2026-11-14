@@ -1,10 +1,12 @@
 import { error } from '@sveltejs/kit';
-import { base } from '$app/paths';
+import { getBase } from '../../../utils/paths.js';
 import { clamp } from '../../../utils/math.js'; 
 import sketches from "../../../data/sketches.json";
 
 function formatContent(content) {
-  return content.replaceAll('src="', `src="${base}`)
+  // Sketch text only renders at /sketches/<slug>, so one level up is the site
+  // root under any base path — and the same string on server and client.
+  return content.replaceAll('src="/', 'src="../')
 }
 
 export async function load({ params, fetch }) {
@@ -17,7 +19,7 @@ export async function load({ params, fetch }) {
   sketch.prev = (prevIndex !== sketchIndex) ? sketches[prevIndex] : "";
   sketch.next = (nextIndex !== sketchIndex) ? sketches[nextIndex] : "";
   
-  const response = await fetch(base + sketch.filename)
+  const response = await fetch(getBase() + sketch.filename)
   const content = await response.text();
   sketch.content = formatContent(content);
 

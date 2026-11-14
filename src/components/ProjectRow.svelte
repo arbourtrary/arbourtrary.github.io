@@ -1,5 +1,6 @@
 <script>
-    import { base } from '$app/paths'
+    import { getBase } from '../utils/paths.js';
+    const base = getBase();
     import { randomNumber } from '../utils/identifier.js'
     import { getTwoDigitMonthYearDate } from '../utils/date.js';
 

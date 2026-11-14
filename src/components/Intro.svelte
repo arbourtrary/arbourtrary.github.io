@@ -1,5 +1,6 @@
 <script>
-    import { base } from '$app/paths'
+    import { getBase } from '../utils/paths.js';
+    const base = getBase();
     let introText = `<span style="color: var(--blue)">Creative dev</span> who enjoys musing about <span style="color: var(--green)">nature</span>, <span style="color: var(--orange)">math</span> &amp; <span style="color: var(--purple)">poetry</span><br>Founder at <a class="company" href="https://www.wanderwhim.com" target="_blank">Wanderwhim</a>. `
     let imageText = "a large, circular primary drawing - it's a multicolored geometric hand-drawn design with 4 interlocked, interwoven parts (blue, green, orange, purple)"
 </script>

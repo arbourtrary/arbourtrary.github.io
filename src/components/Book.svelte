@@ -1,5 +1,6 @@
 <script>
-	import { base } from '$app/paths'
+	import { getBase } from '../utils/paths.js';
+	const base = getBase();
 	export let book = {};
 	export let loading = 'eager';
 

@@ -2,7 +2,8 @@
     import { randomNumber } from '../utils/identifier.js'
     import { clamp } from '../utils/math.js'
     import { getTwoDigitMonthYearDate } from '../utils/date.js';
-    import { base } from '$app/paths'
+    import { getBase } from '../utils/paths.js';
+    const base = getBase();
 
     export let sketch = {};
 

@@ -4,7 +4,8 @@
   shadow: "none"
 }} />
 <script>
-  import { base } from '$app/paths'
+  import { getBase } from '../utils/paths.js';
+  const base = getBase();
   // TODO: generalize this with JSON data attribute
   import games from "../data/writings/50-40-90/games-50-40-90.json";
 

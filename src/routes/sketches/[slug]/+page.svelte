@@ -1,5 +1,6 @@
 <script>
-    import { base } from '$app/paths'
+    import { getBase } from '../../../utils/paths.js';
+    const base = getBase();
     import Header from '../../../components/Header.svelte';
     import Footer from '../../../components/Footer.svelte';
     import SideMenu from '../../../components/SideMenu.svelte';

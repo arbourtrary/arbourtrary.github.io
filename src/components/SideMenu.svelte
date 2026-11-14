@@ -1,7 +1,8 @@
 <script>
   import Footer from "./Footer.svelte";
   import { onMount } from 'svelte';
-  import { base } from '$app/paths'
+  import { getBase } from '../utils/paths.js';
+  const base = getBase();
 
   let isOpen = false;
   let overlay;
