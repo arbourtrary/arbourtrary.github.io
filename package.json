@@ -8,7 +8,6 @@
 		"preview": "vite preview --host"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/adapter-static": "^3.0.8",
 		"@sveltejs/kit": "^2.0.0",
 		"rollup-plugin-visualizer": "^5.14.0",
@@ -17,6 +16,9 @@
 		"vite": "^6.0.0"
 	},
 	"type": "module",
+	"overrides": {
+		"cookie": "^0.7.2"
+	},
 	"dependencies": {
 		"@fontsource/courier-prime": "^5.2.6",
 		"@fontsource/im-fell-english": "^4.5.8",

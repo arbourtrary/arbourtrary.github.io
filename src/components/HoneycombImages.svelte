@@ -109,7 +109,7 @@
 			<p class="description">An ongoing list through all the songs I've loved over the years. I wrote a little blurb for each song evoking some memory or feeling. Should be a life-long process of expansion and discovery.</p>
 		</div>
 		<div class="honeycomb" bind:this={honeycomb}>
-			{#if honeycombCenters && initialData}
+			{#if honeycombCenters.length && initialData}
 				{#each initialData as row,i}
 				<a href={base + `/music/#${row.slug}`}>
 					<div 
