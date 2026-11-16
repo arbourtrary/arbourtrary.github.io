@@ -4,6 +4,7 @@
     // inherit the text colour and flip when you point at them.
     import { onMount } from "svelte";
     import { Page, Figure } from "flipbook-foundry/svelte";
+    import { getLibrary } from "flipbook-foundry";
 
     const story =
         "Bob {walk} left the house at nine. Sue {wave} waved from the window, and the dog {run} chased the postman. " +
@@ -12,6 +13,9 @@
     let width = 0;
     let ink = "#373531";
     let font = "";
+    // Figures are characters in their own font; shown before it arrives
+    // they flash the system's "missing glyph" box. Hold them until it lands.
+    let figuresReady = false;
 
     // The page draws its words on a canvas, so it needs the site's font and
     // ink spelled out — and told again when the theme flips.
@@ -25,6 +29,9 @@
         mo.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
         const f = '400 18px "IM Fell English"';
         document.fonts.load(f).finally(() => (font = f));
+        getLibrary()
+            .load(["regular"], undefined, ["idle", "wave", "sit-idle"])
+            .then(() => (figuresReady = true));
         return () => mo.disconnect();
     });
 </script>
@@ -36,7 +43,7 @@
         {/key}
     {/if}
 
-    <p>
+    <p class:figures-ready={figuresReady}>
         Or drop one into any sentence. This one <Figure animate="idle" whileHover="backflip" /> does a backflip when you point at it,
         this one <Figure animate="wave" whileHover="cheer" /> just wants to say hello, and this one
         <Figure animate="sit-idle" whileHover="stand-up" /> is taking a break.
@@ -55,5 +62,11 @@
         color: var(--color-1);
         font-size: 18px;
         line-height: 1.6;
+    }
+    .demos p :global(.flipbook-figure) {
+        visibility: hidden;
+    }
+    .demos p.figures-ready :global(.flipbook-figure) {
+        visibility: visible;
     }
 </style>
